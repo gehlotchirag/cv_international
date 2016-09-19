@@ -1,0 +1,108 @@
+.cart-header{
+	margin: $spacing;
+	@include heading();
+}
+.cart-item{
+	padding: 2%;
+	position:relative;
+	.delete-cart-item{
+		position: absolute;
+    	top: 2%;
+   		right: 2%;
+	}
+	.cart-item-img-container{
+		width: 35%;
+    	img{
+    		padding: 2%;
+	    	border: $section-border;
+    	}
+    	.quantity{
+    		margin-top: 10px;
+    		.glyphicon{
+    			color: #bababa;
+    		}
+    		.count{
+    			margin: 0px 3px;
+    		}
+    	}
+	}
+	.cart-item-info{
+		vertical-align: top;
+		margin-left: 2%;
+		width: 60%;
+		line-height: 1.6;
+		.cart-item-name{
+			@include ellipsis();
+		}
+		.cart-item-seller{
+			font-size: $small-font;
+		}
+		.cart-item-note{
+			color: $link-color;
+			text-decoration: underline;
+		}
+		.edit{
+			color: $link-color;
+			font-size: $small-font;
+			text-decoration: underline;
+		}
+	}
+}
+.coupon-code{
+	padding: $spacing;
+	.coupon-input-container{
+		width: 70%;
+		margin-bottom: 0;
+		.coupon-input{
+			border:0;
+			border-bottom: 1px solid #e2e2e2;
+	    	border-radius: 0;
+	    	@include box-shadow(0px 0px);
+		}
+	}
+	.apply-btn{
+		border-radius: 0;
+		width: 28%;
+	}
+}
+.total-box{
+	line-height: 1.8;
+	.total{
+		color: $brand-color;
+	}
+}
+.checkout-bar{
+	.total-price{
+		width: 40%;
+		margin-top:1%;
+	}
+	.proceed-btn{
+		width: 52%;
+		margin: 0% 2%;
+		background-color: $brand-color;
+	    color: white;
+	    border: none;
+	    padding: 5px;
+	    height: 36px;
+	    line-height: 27px;
+	    margin-top: 6px;
+	    font-weight: bold;
+	    letter-spacing: 1px;
+	    vertical-align: bottom;
+	}
+	.total-price-val{
+		font-size: $large-font;
+		color: $brand-color;
+		font-weight: bold;
+	}
+	.total-price-header{
+		font-size: $small-font;
+		color: #bababa;
+	}
+}
+.quantity-change{
+	background-color: #e2e2e2;
+    width: 18px;
+    border-radius: 50%;
+    display: inline-block;
+}

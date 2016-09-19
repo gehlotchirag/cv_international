@@ -1,0 +1,36 @@
+//Section - Listing Page
+.sort-filter{
+	position:fixed;
+	bottom: 0;
+	width:100%;
+	background-color:#e2e2e2;
+	height: $sort-filter-height;
+	border-top: $section-border;
+	font-size: $sort-filter-font-size;
+	text-align:center;
+	z-index:99;
+	.sort, .filter{
+		width:48%;
+		display:inline-block;
+	}
+	.sort-filter-text{
+		display:inline-block;
+		text-align: left;
+	    padding-top: 5px;
+	    vertical-align: top;
+		.sort-filter-status{
+			font-size: 12px;
+		}
+		margin-left: 5px;
+	}
+	.sort-filter-icon{
+		font-size: $sort-filter-icon-size;
+		margin-top: ($sort-filter-height - $sort-filter-icon-size)/2;
+	}
+	.separator{
+    	display: inline-block;
+		border-left: 1px solid #888888;
+		height: $sort-filter-height/3;
+		margin-top: $sort-filter-height/6;
+	}
+}

@@ -1,0 +1,111 @@
+.product-img-container{
+	position:relative;
+	padding-bottom: $in-spacing;
+	border-bottom: #section-border;
+	background-color: $white;
+	margin-bottom: $in-spacing;
+	.product-img{
+		width:100%;
+	}
+	.stitch-value{
+		position:absolute;
+		top: 2%;
+	    left: 2%;
+	    padding: 4px;
+	    background-color: $brand-color;
+	    color: white;
+	    letter-spacing: 1px;
+	}
+}
+.product-info{
+	@extend .section-box;
+	@extend .site-container;
+	padding: $in-spacing;
+	.product-name{
+		font-weight: bold;
+	}
+	line-height: 24px;
+	.actual-price, .discount{
+		font-size: 12px;
+		margin-left: 2%;
+	}
+	.discount{
+		background-color: #4fb456;
+    	color: white;
+    	padding: 2px;
+	}
+	.size-chart-link{
+		font-size: 11px;
+		color: $link-color;
+		text-decoration: underline;
+	}
+	.product-size{
+	    width: 30px;
+	    height: 30px;
+	    text-align: center;
+	    border: 1px solid #464646;
+	    margin-right: 6px;
+	    display:inline-block;
+	    line-height: 30px;
+	}
+	.product-size-container{
+		margin-bottom: 2%;
+	}
+}
+.product-details{
+	@extend .section-box;
+	@extend .site-container;
+	padding: $in-spacing;
+}
+.product-sub-header{
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+}
+.product-share{
+	@extend .section-box;
+	@extend .site-container;
+	padding: $in-spacing;
+	.share-icons{
+		display:inline-block;
+		.product-share-icon{
+			display:inline-block;
+			width: 25px;
+    		margin-left: 15px;
+		}
+	}
+}
+.trust-builders{
+	@extend .section-box;
+	@extend .site-container;
+	padding: $in-spacing;
+	.center{
+		margin: 2% 18%;
+	}
+	.trust-item{
+		display:inline-block;
+		.trust-icon{
+			width: 40px;
+			margin-bottom:10px;
+		}
+	}
+}
+.product-buy-btns{
+	.purchase{
+		width: 44%;
+	    margin: 0% 2%;
+	    border: 1px solid #e2e2e2;
+	    padding: 5px;
+	    height: 36px;
+	    line-height: 27px;
+	    margin-top: 6px;
+	    font-weight: bold;
+	    letter-spacing: 1px;
+	    @include box-shadow(1px 1px 2px #e2e2e2);
+	}
+	.buy-btn{
+		background-color: $brand-color;
+	    color: white;
+	    border: none;
+	}
+}

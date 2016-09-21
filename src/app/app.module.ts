@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { ListingComponent } from './listing';
 import { ProductComponent } from './product';
+import { SingleRowComponent, TwoColumnComponent } from './shared';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { ProductComponent } from './product';
     AppComponent,
     HomeComponent,
     ListingComponent,
-    ProductComponent,
+    ProductComponent, SingleRowComponent, TwoColumnComponent,
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

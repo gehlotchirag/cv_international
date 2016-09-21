@@ -12,14 +12,14 @@ import { ProductService } from './product.service';
 })
 export class ProductComponent implements OnInit {
 
-  product: Observable<Product[]>;
+  products: Observable<Product[]>;
 
 
   constructor(private productService : ProductService) {
 
   }
   ngOnInit() {
-    this.product=this.productService.getProducts();
+    this.products=this.productService.getProducts();
   }
 
 

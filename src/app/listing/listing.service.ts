@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
-import { Listing } from './listing'
+import {LISTING_URL_PREFIX} from '../urls';
+import { Listing } from './listing';
+
 
 @Injectable()
 export class ListingService {
 
-  private listingsUrl = 'https://api.myjson.com/bins/wkp6';
+  private listingsUrl = LISTING_URL_PREFIX;
 
   constructor(private http: Http){}
 

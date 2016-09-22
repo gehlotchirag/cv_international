@@ -3,11 +3,12 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
 import { Product } from './product';
+import {PRODUCT_DETAIL_PREFIX} from '../urls';
 
 @Injectable()
 export  class ProductService{
 
-    private productUrl="https://api.myjson.com/bins/3o0y2";
+    private productUrl= PRODUCT_DETAIL_PREFIX;
 
     constructor(private http: Http) {}
 

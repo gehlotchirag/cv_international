@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewContainerRef, ViewChild, ComponentRef, ComponentFactoryResolver } from '@angular/core';
+import { ComponentFactory } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 
 import { HomeService } from './home.service';
@@ -7,6 +8,7 @@ import { WidgetFactoryService } from '../shared'
 @Component({
   selector: 'cvi-home',
   providers: [HomeService, WidgetFactoryService],
+  // providers: [HomeService],
   templateUrl: './home-dynamic.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -19,9 +21,12 @@ export class HomeComponent implements OnInit {
   children: Observable<any[]>;
 
   constructor(private resolver: ComponentFactoryResolver,
-              private homeService: HomeService
-  ) {
-    this.children = this.homeService.getComponentsData()
+              private homeService: HomeService,
+              private widgetFactoryService: WidgetFactoryService
+  ) //
+  {
+    this.children = this.homeService.getComponentsData();
+    console.log(this.children);
   }
 
   ngOnInit(){
@@ -55,15 +60,23 @@ export class HomeComponent implements OnInit {
   }
 
   loadComponent(component: any){
-    try {
-      let componentType = WidgetFactoryService.getWidgetBaseClassName(component.type);
-      let factory = this.resolver
-                  .resolveComponentFactory(componentType);
-      let cmpRef = this.contentContainer.createComponent(factory);
-      cmpRef.instance['widgetData'] = component.data
+    if('widgets' in component){
+      for(let widget of component['widgets']){
+        try {
+          let componentType = this.widgetFactoryService.getWidgetBaseClassName(widget.type);
+          let factory = this.resolver
+                      .resolveComponentFactory(componentType);
+          // console.log(factory);
+          let cmpRef = this.contentContainer.createComponent(factory);
+          // cmpRef.instance['widgetData'] = component.data
+        }
+        catch(e){
+          console.error(e);
+        }
+      }
     }
-    catch(e){
-      console.error('Encountered Error while creating child component');
+    else {
+      return;
     }
   }
 

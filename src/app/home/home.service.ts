@@ -7,7 +7,7 @@ import { HOME_DASHBOARD_URL } from '../urls';
 @Injectable()
 export class HomeService {
 
-  private dashboardUrl = 'HOME_DASHBOARD_URL';
+  private dashboardUrl = HOME_DASHBOARD_URL;
 
   constructor(private http: Http){}
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { SingleRowComponent, TwoColumnComponent } from './'
+import { SingleRowComponent } from './single-row/single-row.component';
+import { TwoColumnComponent } from './two-column/two-column.component';
 
 @Injectable()
 export class WidgetFactoryService {

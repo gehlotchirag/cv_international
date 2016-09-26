@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewContainerRef, ViewChild, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { ComponentFactory } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
+
+import { Product } from '../product/product';
 
 import { HomeService } from './home.service';
 import { WidgetFactoryService } from '../shared'
@@ -19,6 +21,7 @@ export class HomeComponent implements OnInit {
   private isViewInitialized:boolean = false;
 
   children: Observable<any[]>;
+  cartContents: Product[];
 
   constructor(private resolver: ComponentFactoryResolver,
               private homeService: HomeService,
@@ -26,7 +29,13 @@ export class HomeComponent implements OnInit {
   ) //
   {
     this.children = this.homeService.getComponentsData();
-    console.log(this.children);
+    this.homeService.getCartContentsData().pluck('products').subscribe(
+      (data: Product[]) => {
+        this.cartContents = data
+        let cart = document.getElementById('js-cart-count')
+        cart.textContent = String(this.cartContents ? this.cartContents.length : '');
+      }
+    , (error) => console.error(error));
   }
 
   ngOnInit(){

@@ -20,6 +20,19 @@ export class ProductComponent implements OnInit {
   }
   ngOnInit() {
     this.products=this.productService.getProducts();
+
+    this.productService.getProducts()
+        .subscribe(
+            (data:any)=> this.products = data
+           /* (data)=> {
+              const myArray = [];
+              for (let key in data) {
+                myArray.push(data[key]);
+              }
+              this.products=myArray;
+            }*/
+        );
+
   }
 
 

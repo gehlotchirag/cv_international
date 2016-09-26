@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs';
+
 
 import { Product } from './product';
 import {PRODUCT_DETAIL_PREFIX} from '../urls';
@@ -17,4 +18,5 @@ export  class ProductService{
             .get(this.productUrl)
             .map((r:Response)=> r.json() as Product[]);
     }
+
 }

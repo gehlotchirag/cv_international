@@ -1,15 +1,15 @@
 <span id="product-page">
-	<div  class="product-container">
+	<div *ngIf="products"  class="product-container">
 		<div class="product-img-container">
-			<img src="images/product.jpg" class="product-img">
-			<span class="stitch-value">Stitched</span>
+			<img src="{{products.image}}" class="product-img">
+			<span class="stitch-value">{{products.attributes}}</span>
 		</div>
 		<div class="product-info">
-			<div class="product-name">Black Color Silk Lehenga</div>
+			<div class="product-name">{{products.name}}</div>
 			<div class="product-price-container">
-				<span class="discount-price">$80</span>
-				<span class="actual-price"><s>$100</s></span>
-				<span class="discount text-uppercase text-success">20% Off</span>
+				<span class="discount-price">{{products.discounted_price}}</span>
+				<span class="actual-price"><s>{{products.price}}</s></span>
+				<span class="discount text-uppercase text-success">{{products.discount_percentage}}Off</span>
 			</div>
 			<div class="product-size-container">
 				<div class="product-size-header">
@@ -23,7 +23,7 @@
 					<div class="product-size">XXL</div>
 				</div>
 			</div>
-			<div class="product-shipping-cost">Shipping Cost: <span class="shipping-cost">$10</span></div>
+			<div class="product-shipping-cost">Shipping Cost: <span class="shipping-cost">{{products.shipping_cost}}</span></div>
 			<div class="product-delivery-time">Delivery Time: <span class="delivery-time">8 days</span></div>
 		</div>
 		<div class="product-details">

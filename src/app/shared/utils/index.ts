@@ -1,1 +1,1 @@
-export * from './is-empty';
+export * from './concat-all';

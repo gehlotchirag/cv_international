@@ -12,6 +12,7 @@ import { ListingComponent } from './listing';
 import { ProductComponent } from './product';
 import { SingleRowComponent } from './shared/widgets/single-row/single-row.component';
 import { TwoColumnComponent } from './shared/widgets/two-column/two-column.component';
+import { ProductAttributePipe } from './product/product-attribute.pipe';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { TwoColumnComponent } from './shared/widgets/two-column/two-column.compo
     ProductComponent,
     SingleRowComponent,
     TwoColumnComponent,
+    ProductAttributePipe
   ],
   entryComponents: [SingleRowComponent, TwoColumnComponent],
   providers: [appRoutingProviders],

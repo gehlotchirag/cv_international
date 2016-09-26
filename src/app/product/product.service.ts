@@ -4,12 +4,12 @@ import { Observable } from 'rxjs';
 
 
 import { Product } from './product';
-import {PRODUCT_DETAIL_PREFIX} from '../urls';
+import {PRODUCT_DETAIL_URL} from '../urls';
 
 @Injectable()
 export  class ProductService{
 
-    private productUrl= PRODUCT_DETAIL_PREFIX;
+    private productUrl= PRODUCT_DETAIL_URL;
 
     constructor(private http: Http) {}
 

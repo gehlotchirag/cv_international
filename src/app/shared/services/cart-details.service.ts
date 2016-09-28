@@ -1,21 +1,30 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
+import { Http, Response } from '@angular/http';
 
-import { CART_CONTENTS_URL } from '../../urls';
+import { HttpClientService } from './http-client.service';
 import { Product } from '../../product/product';
 
 @Injectable()
 export class CartDetailsService {
-  private cartContentsUrl = CART_CONTENTS_URL;
+  private cartContentsUrl = '4y2ik';
   private cartContents: Product[];
+  private isCartInitialized: boolean  = false;
 
-  constructor(private http: Http){}
+  constructor(private httpClient: HttpClientService){}
 
-  fetchCartDetails(): Observable<Product[]> {
-    return this.http
-               .get(this.cartContentsUrl)
-               .map((r: Response) => { return r.json() as Product[] });
+  fetchCartDetails(callback: (d: any) => void ): void {
+    this.httpClient
+       .get(this.cartContentsUrl)
+       .map((r: Response) => { return r.json() as Product[] })
+       .pluck('products')
+       .subscribe(
+         (data: Product[]) => { this.cartContents = data, callback(data) },
+         (error) => console.error(error),
+         () => {
+           this.isCartInitialized = true
+         }
+       )
   }
 
   addCartSellerNote(productId: string, sellerNote: string) {
@@ -66,8 +75,7 @@ export class CartDetailsService {
     return this.cartContents.length;
   }
 
-  get isCartKeyInStorage(){
-      return false;
+  get isInitialized(): boolean {
+    return this.isCartInitialized;
   }
-
 }

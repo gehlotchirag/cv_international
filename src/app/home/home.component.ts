@@ -5,11 +5,12 @@ import { Observable } from 'rxjs/Observable';
 import { Product } from '../product/product';
 
 import { HomeService } from './home.service';
+import { CartDetailsService } from '../shared/services/cart-details.service'
 import { WidgetFactoryService } from '../shared'
 
 @Component({
   selector: 'cvi-home',
-  providers: [HomeService, WidgetFactoryService],
+  providers: [HomeService, WidgetFactoryService, CartDetailsService],
   // providers: [HomeService],
   templateUrl: './home-dynamic.component.html',
   styleUrls: ['./home.component.css']
@@ -25,17 +26,17 @@ export class HomeComponent implements OnInit {
 
   constructor(private resolver: ComponentFactoryResolver,
               private homeService: HomeService,
-              private widgetFactoryService: WidgetFactoryService
+              private widgetFactoryService: WidgetFactoryService,
+              private cartService: CartDetailsService
   )
   {
     this.children = this.homeService.getComponentsData();
-    this.homeService.getCartContentsData().pluck('products').subscribe(
-      (data: Product[]) => {
-        this.cartContents = data
+    if(!this.cartService.isInitialized){
+      this.cartService.fetchCartDetails((data) => {
         let cart = document.getElementById('js-cart-count')
-        cart.textContent = String(this.cartContents ? this.cartContents.length : '');
-      }
-    , (error) => console.error(error));
+        cart.textContent = String(data ? data.length : '');
+      });
+    }
   }
 
   ngOnInit(){
@@ -75,9 +76,7 @@ export class HomeComponent implements OnInit {
           let componentType = this.widgetFactoryService.getWidgetBaseClassName(widget.type);
           let factory = this.resolver
                       .resolveComponentFactory(componentType);
-          // console.log(factory);
           let cmpRef = this.contentContainer.createComponent(factory);
-          // cmpRef.instance['widgetData'] = component.data
         }
         catch(e){
           console.error(e);

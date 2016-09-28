@@ -2,20 +2,20 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs';
 
-
+import { HttpClientService } from '../shared/services/http-client.service'
 import { Product } from './product';
-import {PRODUCT_DETAIL_URL} from '../urls';
+
 
 @Injectable()
 export  class ProductService{
 
-    private productUrl= PRODUCT_DETAIL_URL;
+    private productDetailUrl= '29638';
 
-    constructor(private http: Http) {}
+    constructor(private httpClient: HttpClientService) {}
 
-    getProducts(): Observable<Product[]>{
-        return this.http
-            .get(this.productUrl)
+    getProductDetail(): Observable<Product[]>{
+        return this.httpClient
+            .get(this.productDetailUrl)
             .map((r:Response)=> r.json() as Product[]);
     }
 

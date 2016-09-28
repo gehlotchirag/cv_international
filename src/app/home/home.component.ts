@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   constructor(private resolver: ComponentFactoryResolver,
               private homeService: HomeService,
               private widgetFactoryService: WidgetFactoryService
-  ) //
+  )
   {
     this.children = this.homeService.getComponentsData();
     this.homeService.getCartContentsData().pluck('products').subscribe(

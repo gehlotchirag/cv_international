@@ -21,19 +21,22 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    let productDetailStream = this.productService.getProducts();
+    let productDetailStream = this.productService.getProductDetail().publish();
         productDetailStream.subscribe(
             (data:any) => {
               this.products = data
             },
             (error: any) => console.error(error),
+            () => console.log('completed')
         );
         productDetailStream.pluck('attributes').reduce(ProductComponent.reduceAttributes, {}).subscribe(
           (data: any) => {
             this.attributes = data
           },
-          (error: any) => console.error(error)
+          (error: any) => console.error(error),
+          () => console.log('completed')
         )
+        productDetailStream.connect()
   }
 
   static reduceAttributes(prevItem, nextItem){

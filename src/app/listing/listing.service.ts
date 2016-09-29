@@ -2,19 +2,19 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
-import {LISTING_URL_PREFIX} from '../urls';
 import { Listing } from './listing';
+import { HttpClientService } from '../shared/services/http-client.service'
 
 
 @Injectable()
 export class ListingService {
 
-  private listingsUrl = LISTING_URL_PREFIX;
+  private listingsUrl = 'wkp6';
 
-  constructor(private http: Http){}
+  constructor(private httpClient: HttpClientService){}
 
   getListings(): Observable<Listing[]> {
-    return  this.http
+    return  this.httpClient
                 .get(this.listingsUrl)
                 .map((r: Response) => r.json() as Listing[]);
   }

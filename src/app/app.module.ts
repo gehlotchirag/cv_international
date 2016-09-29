@@ -13,6 +13,7 @@ import { ProductComponent } from './product';
 import { SingleRowComponent } from './shared/widgets/single-row/single-row.component';
 import { TwoColumnComponent } from './shared/widgets/two-column/two-column.component';
 import { ProductAttributePipe } from './product/product-attribute.pipe';
+import { HttpClientService } from './shared/services/http-client.service';
 
 @NgModule({
   imports: [
@@ -31,7 +32,7 @@ import { ProductAttributePipe } from './product/product-attribute.pipe';
     ProductAttributePipe
   ],
   entryComponents: [SingleRowComponent, TwoColumnComponent],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, HttpClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

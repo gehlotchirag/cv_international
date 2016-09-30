@@ -16,7 +16,7 @@ var ENV_MAP = {
     'API_URL': 'https://craftsvilla.com/international/'
   },
   'post': {
-    'API_URL': 'http://requestb.in/'
+    'API_URL': 'https://appapi2.craftsvilla.com/'
   }
 }
 

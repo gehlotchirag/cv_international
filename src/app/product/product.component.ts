@@ -48,4 +48,22 @@ export class ProductComponent implements OnInit {
     return prevItem;
   }
 
+    addToCart(cardData) {
+        this.productService.addToCart(cardData).subscribe(
+            data => {
+                // refresh the list
+                console.log("called add to card");
+                return true;
+            },
+            error => {
+                console.error("Error not found!");
+                return Observable.throw(error);
+            }
+        );
+    }
+
+    // clicked(event) {
+    //     console.log('test');
+    // }
+
 }

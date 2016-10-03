@@ -11,13 +11,13 @@ export  class ProductService{
 
 
 
-    private cardData={
-        "customerId": "1650977",
+    private cartData={
+        // "customerId": "1650977",
         "productId": "3576388",
         "qty": 1
     };
 
-    private productDetailUrl= '29638';
+    private productDetailUrl= '1/public/catalog/productDetail?productId=4563463';
 
 
     constructor(private httpClient: HttpClientService,
@@ -30,13 +30,14 @@ export  class ProductService{
             .map((r:Response)=> r.json() as Product[]);
     }
 
-    addToCart(cardData) {
-        console.log('in add to cart');
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-        console.log(options);
-        let body = JSON.stringify(cardData);
-        return this.http.post('https://appapi2.craftsvilla.com/1/personal/cart/addToMyCart', body, headers).map((res: Response) => res.json());
-    }
+    // addToCart(cartData) {
+    //     let headers = {
+    //         'content-type': 'application/json',
+    //         'x-version-code': '23',
+    //         'x-session': '12_57f20d48968117.11775943'
+    //     };
+    //     let body =this.cartData;
+    //     return this.httpClient.post('1/personal/cart/addToMyCart', body, headers).map((res: Response) => res.json());
+    // }
 
 }

@@ -22,14 +22,14 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     let productDetailStream = this.productService.getProductDetail().publish();
-        productDetailStream.subscribe(
+        productDetailStream.pluck('d').subscribe(
             (data:any) => {
               this.products = data
             },
             (error: any) => console.error(error),
             () => console.log('completed')
         );
-        productDetailStream.pluck('attributes').reduce(ProductComponent.reduceAttributes, {}).subscribe(
+        productDetailStream.pluck('d', 'productAttributes').reduce(ProductComponent.reduceAttributes, {}).subscribe(
           (data: any) => {
             this.attributes = data
           },
@@ -41,26 +41,26 @@ export class ProductComponent implements OnInit {
 
   static reduceAttributes(prevItem, nextItem){
   	nextItem.forEach(function(item){
-    	for(var keys in item){
-      	prevItem[keys] = item[keys];
-      }
+    	// for(var keys in item){
+      	    prevItem[item['key']] = item['value'];
+        // }
     });
     return prevItem;
   }
 
-    addToCart(cardData) {
-        this.productService.addToCart(cardData).subscribe(
-            data => {
-                // refresh the list
-                console.log("called add to card");
-                return true;
-            },
-            error => {
-                console.error("Error not found!");
-                return Observable.throw(error);
-            }
-        );
-    }
+    // addToCart(cardData) {
+    //     this.productService.addToCart(cardData).subscribe(
+    //         data => {
+    //             // refresh the list
+    //             console.log("called add to card");
+    //             return true;
+    //         },
+    //         error => {
+    //             console.error("Error not found!");
+    //             return Observable.throw(error);
+    //         }
+    //     );
+    // }
 
     // clicked(event) {
     //     console.log('test');

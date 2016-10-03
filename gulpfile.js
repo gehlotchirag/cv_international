@@ -4,7 +4,7 @@ var gulpUtil = require('gulp-util');
 
 var ENV_MAP = {
   'dev': {
-    'API_URL': 'https://api.myjson.com/bins/'
+    'API_URL': 'https://appapi2.craftsvilla.com/'
   },
   'qa': {
     'API_URL': 'https://qa.craftsvilla.com/'
@@ -15,9 +15,6 @@ var ENV_MAP = {
   'production': {
     'API_URL': 'https://craftsvilla.com/international/'
   },
-  'post': {
-    'API_URL': 'https://appapi2.craftsvilla.com/'
-  }
 }
 
 var ENVIRONMENTS = ['dev', 'qa', 'staging', 'production', 'post']

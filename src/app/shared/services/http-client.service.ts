@@ -5,7 +5,7 @@ import { Http, Headers, URLSearchParams } from '@angular/http';
 export class HttpClientService {
   private http: Http;
   private headers = new Headers();
-  private BASE_URL = 'https://api.myjson.com/bins/';
+  private BASE_URL = 'https://appapi2.craftsvilla.com/';
 
   constructor(http: Http) {
     this.http = http;
@@ -54,13 +54,13 @@ export class HttpClientService {
     let tempHeaderObj = new Headers(this.headers);
     if(headersObj){
       for(let key in headersObj){
-        var headerMapping = headersObj[key];
-        if(headerMapping['type'] == 'append'){
-          headerMapping.append(key, headerMapping['value']);
-        }
-        else if(headerMapping['type'] == 'set'){
-          headerMapping.set(key, headerMapping['value']);
-        }
+        // var headerMapping = headersObj[key];
+        // if(headerMapping['type'] == 'append'){
+          tempHeaderObj.append(key, headersObj[key]);
+        // }
+        // else if(headerMapping['type'] == 'set'){
+        //   headerMapping.set(key, headerMapping['value']);
+        // }
       }
     }
     let modifiedURL: string  = `${this.BASE_URL}${url}`;

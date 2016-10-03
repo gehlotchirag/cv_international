@@ -5,12 +5,13 @@ import { Observable } from 'rxjs/Observable';
 import { Product } from '../product/product';
 
 import { HomeService } from './home.service';
+import { ProductService } from '../product/product.service';
 import { CartDetailsService } from '../shared/services/cart-details.service'
 import { WidgetFactoryService } from '../shared'
 
 @Component({
   selector: 'cvi-home',
-  providers: [HomeService, WidgetFactoryService, CartDetailsService],
+  providers: [HomeService, WidgetFactoryService, CartDetailsService, ProductService],
   // providers: [HomeService],
   templateUrl: './home-dynamic.component.html',
   styleUrls: ['./home.component.css']
@@ -32,10 +33,7 @@ export class HomeComponent implements OnInit {
   {
     this.children = this.homeService.getComponentsData();
     if(!this.cartService.isInitialized){
-      this.cartService.fetchCartDetails((data) => {
-        let cart = document.getElementById('js-cart-count')
-        cart.textContent = String(data ? data.length : '');
-      });
+      this.cartService.fetchCartDetails();
     }
   }
 

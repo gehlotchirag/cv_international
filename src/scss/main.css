@@ -631,3 +631,7 @@ label {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }
+
+.margin-45-percent{
+  margin:45%;
+}

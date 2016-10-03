@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 
 import { HttpClientService } from './http-client.service';
 import { Product } from '../../product/product';
@@ -11,15 +11,24 @@ export class CartDetailsService {
   private cartContents: Product[];
   private isCartInitialized: boolean  = false;
 
-  constructor(private httpClient: HttpClientService){}
+  constructor(private httpClient: HttpClientService,
+              private http: Http
+  ){}
 
-  fetchCartDetails(callback: (d: any) => void ): void {
+  private updateCartCountView(){
+    let cart = document.getElementById('js-cart-count');
+    cart.textContent = String(this.cartContents ? this.cartContents.length : 0);
+  }
+
+  fetchCartDetails(): void {
     this.httpClient
        .get(this.cartContentsUrl)
        .map((r: Response) => { return r.json() as Product[] })
        .pluck('products')
        .subscribe(
-         (data: Product[]) => { this.cartContents = data, callback(data) },
+         (data: Product[]) => { this.cartContents = data;
+           this.updateCartCountView();
+          },
          (error) => console.error(error),
          () => {
            this.isCartInitialized = true
@@ -59,8 +68,25 @@ export class CartDetailsService {
 
   }
 
-  addToCart(productId: string, qty: string){
-    // Needs CustomerID
+  addToCart(productId: string, qty: number){
+    let body = {productId, qty}
+    let addToCartUrl = '1/personal/cart/addToMyCart'
+    let headers = {
+      'content-type': 'application/json',
+      'x-version-code': '23',
+      'x-session': '12_57ecf40dcacc92.83690143'
+    };
+    this.httpClient
+        .post(addToCartUrl, body, headers)
+        .subscribe(
+          (data: any) =>  {
+            console.log('posted product to cart')
+            // this.cartContents = data['d']['products'];
+            // this.updateCartCountView();
+          },
+          (error) => console.error(error),
+          () => console.log('completed')
+        )
   }
 
   removeFromCart(productIds: string[]){

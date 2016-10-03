@@ -3,15 +3,16 @@
 		<div class="box-header">
 			<span class="pull-left box-header-text listing-category-name"><strong>LISTINGS</strong></span>
 		</div>
+
 		<div class="listing-box-body">
-			<div *ngFor="let listing of listings | async" class="listing-product">
-				<img src="{{listing.image}}" class="listing-product-img img-responsive">
-				<div class="listing-product-name">{{listing.name}}</div>
-				<!-- <div class="listing-product-price-container">
-					<span class="discount-price">$80</span>
-					<span class="actual-price"><s>$100</s></span>
-					<span class="discount text-uppercase text-success"><strong>20% Off</strong></span>
-				</div> -->
+			<div *ngFor="let listing of listings" class="listing-product">
+				<img src="http://img1.craftsvilla.com/orig{{listing.imgUrl}}" class="listing-product-img img-responsive">
+				<div class="listing-product-name">{{listing.productName}}</div>
+				<div class="listing-product-price-container">
+					<span class="discount-price">{{listing.discountedPrice}}</span>
+					<span class="actual-price"><s>{{listing.regularPrice}}</s></span>
+					<span class="discount text-uppercase text-success"><strong>{{listing.discountPercentage}}% Off</strong></span>
+				</div>
 			</div>
 		</div>
 	</div>

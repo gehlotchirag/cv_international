@@ -1,7 +1,7 @@
 <span id="product-page">
 	<div *ngIf="products"  class="product-container">
 		<div class="product-img-container">
-			<img src="{{products.image}}" class="product-img">
+			<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}" class="product-img">
 			<span class="stitch-value">{{attributes | productAttributePipe: 'Stitching Type'}}</span>
 		</div>
 		<div class="product-info">

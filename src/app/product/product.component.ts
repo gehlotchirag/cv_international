@@ -28,9 +28,9 @@ export class ProductComponent implements OnInit {
       'productId': 4563463
     }
     let productDetailStream = this.productService.getProductDetail(searchObj).publish();
-        productDetailStream.subscribe(
+        productDetailStream.pluck('d').subscribe(
             (data:any) => {
-              this.products = data['d']
+              this.products = data
             },
             (error: any) => console.error(error),
             () => console.log('completed')
@@ -46,7 +46,6 @@ export class ProductComponent implements OnInit {
   }
 
   clicked(event: any): void {
-    // event.preventDefault();
     let productId =  "3576388";
     let qty = 1;
     this.cartDetailsService.addToCart(productId, qty)
@@ -54,29 +53,9 @@ export class ProductComponent implements OnInit {
 
   static reduceAttributes(prevItem, nextItem){
   	nextItem.forEach(function(item){
-    	for(var keys in item){
-      	prevItem[keys] = item[keys];
-      }
+      prevItem[item['key']] = item['value'];
     });
     return prevItem;
   }
-
-    addToCart(cardData) {
-        this.productService.addToCart(cardData).subscribe(
-            data => {
-                // refresh the list
-                console.log("called add to card");
-                return true;
-            },
-            error => {
-                console.error("Error not found!");
-                return Observable.throw(error);
-            }
-        );
-    }
-
-    // clicked(event) {
-    //     console.log('test');
-    // }
 
 }

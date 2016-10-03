@@ -11,12 +11,76 @@ import { ListingService } from './listing.service';
   providers: [ListingService]
 })
 export class ListingComponent implements OnInit {
-  listings: Observable<Listing[]>;
+    listings: any;// Observable<Listing[]>;
+    filters: any;
+    responseCategoryList;
 
-  constructor(private listingService: ListingService) { }
+    constructor(private listingService: ListingService) {
+    }
 
-  ngOnInit(): void {
-    this.listings = this.listingService.getListings()
-  }
+    private categorytList ={
+        "categoryId": [
+            10001,
+            10015,
+            10064,
+            10004
+        ],
+        "filters": {
+            "codProducts": "COD Available",
+            "color": [
+                "Red",
+                "Black",
+                "White"
+            ],
+            "discountedPrice": "Above 50%",
+            "price": [
+                {
+                    "max": "2000",
+                    "min": "1000"
+                }
+            ]
+        },
+        "pageId": 1,
+        "perPage": 10,
+        "sorts": {
+            "discountedPriceOrder": "High to Low",
+            "newestSort": "Newest",
+            "priceOrder": "High to Low",
+            "relevance": "Popular"
+        }
+    };
+
+    ngOnInit(): void {
+        this.loadCategoryList(this.categorytList);
+    }
+
+    loadCategoryList(categorytList) {
+       let listingStream =  this.listingService.loadCategoryList().publish();
+
+        listingStream.pluck('d', 'funnelOptions', 'filters').subscribe(
+            data => {
+                console.log('filters are ' ,data);
+                this.filters = data;
+            },
+            (error) => console.error(error),
+            () => console.log('completed')
+        )
+
+        listingStream.pluck('d', 'products').subscribe(
+            data => {
+                // refresh the list
+                console.log('products', data);
+                this.listings = data;
+                // return true;
+            },
+            // data => responseCategoryList = JSON.stringify(data), // put the data returned from the server in our variable
+            error => {
+                console.error("Error not found!");
+                return Observable.throw(error);
+            }
+        );
+
+        listingStream.connect();
+    }
 
 }

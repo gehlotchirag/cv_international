@@ -15,9 +15,6 @@ var ENV_MAP = {
   'production': {
     'API_URL': 'https://craftsvilla.com/international/'
   },
-  'post': {
-    'API_URL': 'https://appapi2.craftsvilla.com/'
-  }
 }
 
 var ENVIRONMENTS = ['dev', 'qa', 'staging', 'production', 'post']

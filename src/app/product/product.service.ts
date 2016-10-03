@@ -8,7 +8,13 @@ import { Product } from './product';
 
 @Injectable()
 export  class ProductService{
-    private productDetailUrl= '1/public/catalog/productDetail';
+    private cartData={
+        "productId": "3576388",
+        "qty": 1
+    };
+
+    private productDetailUrl= '1/public/catalog/productDetail?productId=4563463';
+
     constructor(private httpClient: HttpClientService,
                 private http: Http
     ) {}
@@ -18,5 +24,4 @@ export  class ProductService{
             .get(this.productDetailUrl, {})
             .map((r:Response)=> r.json() as Product[]);
     }
-
 }

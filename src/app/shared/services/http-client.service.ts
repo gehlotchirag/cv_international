@@ -9,7 +9,7 @@ export class HttpClientService {
 
   constructor(http: Http) {
     this.http = http;
-    this.headers.append('Content-Type', 'application/json');
+    this.headers.append('content-type', 'application/json');
   }
 
   setHeader(name: string, value: string){
@@ -54,13 +54,7 @@ export class HttpClientService {
     let tempHeaderObj = new Headers(this.headers);
     if(headersObj){
       for(let key in headersObj){
-        // var headerMapping = headersObj[key];
-        // if(headerMapping['type'] == 'append'){
-          tempHeaderObj.append(key, headersObj[key]);
-        // }
-        // else if(headerMapping['type'] == 'set'){
-        //   headerMapping.set(key, headerMapping['value']);
-        // }
+        tempHeaderObj.append(key, headersObj[key]);
       }
     }
     let modifiedURL: string  = `${this.BASE_URL}${url}`;

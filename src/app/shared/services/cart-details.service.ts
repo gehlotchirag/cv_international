@@ -72,9 +72,9 @@ export class CartDetailsService {
     let body = {productId, qty}
     let addToCartUrl = '1/personal/cart/addToMyCart'
     let headers = {
-      'content-type': 'application/json',
+      // 'content-type': 'application/json',
       'x-version-code': '23',
-      'x-session': '12_57ecf40dcacc92.83690143'
+      'x-session': '12_57f20d48968117.11775943'
     };
     this.httpClient
         .post(addToCartUrl, body, headers)

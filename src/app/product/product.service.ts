@@ -9,13 +9,13 @@ import { Product } from './product';
 @Injectable()
 export  class ProductService{
 
-    private productDetailUrl= '29638';
+    private productDetailUrl= '1/public/catalog/productDetail';
 
     constructor(private httpClient: HttpClientService) {}
 
-    getProductDetail(): Observable<Product[]>{
+    getProductDetail(searchObj: any): Observable<Product[]>{
         return this.httpClient
-            .get(this.productDetailUrl)
+            .get(this.productDetailUrl, searchObj)
             .map((r:Response)=> r.json() as Product[]);
     }
 

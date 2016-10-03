@@ -4,6 +4,7 @@ import { Observable }        from 'rxjs/Observable';
 import { Listing } from './listing';
 import { ListingService } from './listing.service';
 
+
 @Component({
   selector: 'cvi-listing',
   templateUrl: './listing.component.html',

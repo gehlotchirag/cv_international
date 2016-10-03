@@ -24,4 +24,5 @@ export  class ProductService{
             .get(this.productDetailUrl, {})
             .map((r:Response)=> r.json() as Product[]);
     }
+
 }

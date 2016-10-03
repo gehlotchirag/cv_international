@@ -5,26 +5,26 @@
 			<span class="stitch-value">{{attributes | productAttributePipe: 'Stitching Type'}}</span>
 		</div>
 		<div class="product-info">
-			<div class="product-name">{{products.name}}</div>
+			<div class="product-name">{{products.productName}}</div>
 			<div class="product-price-container">
-				<span class="discount-price">{{products.discounted_price}}</span>
-				<span class="actual-price"><s>{{products.price}}</s></span>
-				<span class="discount text-uppercase text-success">{{products.discount_percentage}}Off</span>
+				<span class="discount-price">{{products.discountedPrice}}</span>
+				<span class="actual-price"><s>{{products.regularPrice}}</s></span>
+				<span class="discount text-uppercase text-success">{{products.discountPercentage}}% Off</span>
 			</div>
 			<div class="product-size-container">
 				<div class="product-size-header">
 					Select Size <span class="size-chart-link pull-right">See Size Chart</span>
 				</div>
-				<div>
-					<div class="product-size">S</div>
-					<div class="product-size">M</div>
-					<div class="product-size">L</div>
-					<div class="product-size">XL</div>
-					<div class="product-size">XXL</div>
+				<div *ngFor="let size of sizes">
+					<div class="product-size"> {{size}} </div>
+					<!--<div class="product-size">M</div>-->
+					<!--<div class="product-size">L</div>-->
+					<!--<div class="product-size">XL</div>-->
+					<!--<div class="product-size">XXL</div>-->
 				</div>
 			</div>
-			<div class="product-shipping-cost">Shipping Cost: <span class="shipping-cost">{{products.shipping_cost}}</span></div>
-			<div class="product-delivery-time">Delivery Time: <span class="delivery-time">8 days</span></div>
+			<div class="product-shipping-cost">Shipping Cost: <span class="shipping-cost">{{products.shippingCostWorld}}</span></div>
+			<div class="product-delivery-time">Delivery Time: <span class="delivery-time">{{products.estimatedDeliveryTime}}</span></div>
 		</div>
 		<div class="product-details">
 			<div class="product-sub-header">PRODUCT DETAILS</div>
@@ -81,9 +81,12 @@
 				<div class="name">100%<br>Authentic</div>
 			</div>
 		</div>
+		<div class="product-buy-btns   text-center">
+				<div class="add-cart-btn purchase inline" (click)="addWish($event)">ADD TO WISH LIST</div>
+		</div>
 		<div class="product-buy-btns fixed-bottom-bar text-center">
-			<div class="add-cart-btn purchase inline" (click)="clicked()">ADD TO CART</div>
-			<div class="buy-btn purchase inline">BUY NOW</div>
+			<div class="add-cart-btn purchase inline" (click)="addClick($event)">ADD TO CART</div>
+			<div class="buy-btn purchase inline" (click)="clicked($event)">BUY NOW</div>
 		</div>
 	</div>
 </span>

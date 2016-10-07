@@ -16,6 +16,9 @@
 			</div>
 		</div>
 	</div>
+	<div *ngFor="let filter of filters">
+				{{filter.esFilterName}}
+			</div>
 	<div class="sort-filter">
 		<div class="sort">
 			<span class="glyphicon glyphicon-sort sort-filter-icon"></span>
@@ -28,9 +31,10 @@
 		<div class="filter">
 			<span class="glyphicon glyphicon-filter sort-filter-icon"></span>
 			<div class="sort-filter-text">
-				<div class="sort-filter-header">Filter</div>
+				<div class="sort-filter-header" (click)="getFilters($event)">Filter</div>
 				<div class="sort-filter-status">Category, size</div>
 			</div>
+
 		</div>
 	</div>
 </span>

@@ -67,6 +67,33 @@
 				<img src="images/pinterest.png" class="product-share-icon">
 			</div>
 		</div>
+			<div class="col-xs-12 nopadding" id="view_recommended_products">
+				<div class="clearfix"></div>
+				<h4 class="borderbottom product_name">Similar Products</h4>
+				<div class="flex-center">
+					<div *ngFor="let similarProduct of similarProducts" class="col-xs-6 col-md-3 product mob_padding">
+						<div class="product-image-container">
+							<a href="/catalog/product/view/id/3156693/s/marvelous-cream-red-bangluru-silk-and-viscos-sarees">
+								<img src="http://img1.craftsvilla.com/thumb/216x216{{similarProduct.imgUrl}}" alt="{{similarProduct.productName}}" title="{{similarProduct.productName}}" class="product-image"></a></div><div class="product-details-container col-xs-12"><a href="/catalog/product/view/id/3156693/s/marvelous-cream-red-bangluru-silk-and-viscos-sarees">
+							<div class="product-name truncate">{{similarProduct.productName}}</div>
+						</a>
+						<a href="/worldofstyle" title="World Of Style" target="_blank">
+							<div class="vendor-name">{{ similarProduct.vendorDetails.vendorName }}</div>
+						</a>
+						<div class="price-container col-xs-12 nopadding">
+							<div class="col-xs-6 col-md-8 nopadding">
+								<div class="col-xs-12 col-md-6 discounted-price price nopadding">Rs {{similarProduct.discountedPrice}}</div>
+								<div class="col-xs-12 col-md-6 original-price price nopadding">Rs <s> {{similarProduct.regularPrice}}</s> </div>
+							</div>
+							<div class="col-xs-6 col-md-4 save-percent nopadding">Save {{similarProduct.discountPercentage}}%</div>
+						</div>
+						</div>
+						<div class="wishit text-center" onclick="dataLayer.push({&quot;event&quot;:&quot;ProductBookmarkedEvent&quot;,&quot;eventName&quot;:&quot;ProductBookmarked&quot;,&quot;productId&quot;:&quot;3156693&quot;,&quot;type&quot;:&quot;addedToWishlist&quot;,&quot;category&quot;:&quot;NA&quot;,&quot;subCategory&quot;:&quot;NA&quot;,&quot;source&quot;:&quot;productDetailsPage&quot;});">
+							<i class="fa fa-heart-o fa-2x" id="wishicon-3156693"></i></div>
+
+					</div>
+				</div>
+			</div>
 		<div class="trust-builders text-center">
 			<div class="trust-item text-center">
 				<img src="images/shield.png" class="trust-icon">

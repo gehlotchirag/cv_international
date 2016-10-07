@@ -66,6 +66,7 @@ export class ListingComponent implements OnInit {
             (error) => console.error(error),
             () => console.log('completed')
         )
+    
 
         listingStream.pluck('d', 'products').subscribe(
             data => {
@@ -81,7 +82,13 @@ export class ListingComponent implements OnInit {
             }
         );
 
+
         listingStream.connect();
     }
+
+    getFilters(event: any): void {
+        console.log(this.filters);
+    }
+
 
 }

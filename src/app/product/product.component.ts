@@ -16,11 +16,15 @@ import { WishListService } from '../shared/services/wish-list.service';
 export class ProductComponent implements OnInit {
 
     products: Observable<Product[]>;
+    similarProducts: Observable<Product[]>;
+    vendorDetail :any;
     attributes: Observable<Object>;
     sizes: Observable<Object>;
     colors : Observable<Object>;
-    productID=['4794785','4794785'];
-    customerId="1696318"
+    vendorName: any;
+    productID=['4170101','4170101'];
+    customerId="1696318";
+
 
   constructor(private productService : ProductService,
               private cartDetailsService: CartDetailsService,
@@ -31,7 +35,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     let searchObj = {
-      'productId': 4563463
+      'productId': 4170101
     }
     let productDetailStream = this.productService.getProductDetail(searchObj).publish();
         productDetailStream.pluck('d').subscribe(
@@ -57,6 +61,27 @@ export class ProductComponent implements OnInit {
           () => console.log('completed')
       )
         productDetailStream.connect()
+
+      let similarProductsStream=this.productService.getSimilarProducts('417012').publish();
+
+        similarProductsStream.pluck('d','products').subscribe(
+            (data:any)=>{
+                this.similarProducts=data
+                console.log(this.similarProducts)
+            },
+            (error:any)=>console.error(error),
+            ()=>console.log(' similar completed')
+        );
+      // similarProductsStream.pluck('d','products').subscribe(
+      //     (data:any)=>{
+      //         this.vendorDetail=data['vendorName']
+      //         console.log(this.vendorDetail)
+      //     },
+      //     (error:any)=>console.error(error),
+      //     ()=>console.log(' similar completed')
+      // )
+
+      similarProductsStream.connect()
   }
 
 
@@ -75,6 +100,7 @@ export class ProductComponent implements OnInit {
 
     addClick(event: any): void {
         console.log("click event");
+        this.cartDetailsService.addToCart('1696318','4170101',1)
     }
 
 

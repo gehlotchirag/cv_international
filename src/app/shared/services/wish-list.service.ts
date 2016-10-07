@@ -28,7 +28,7 @@ export class WishListService {
             .post(addToWishListUrl, body, headers)
             .subscribe(
                 (res: Response) => {
-                    console.log('wishlist servie')
+                    console.log('wishlist servie'+res)
                     return res.json() as Observable<any>;
                 },
                 (error) => console.error(error),

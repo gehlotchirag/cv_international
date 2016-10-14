@@ -13,6 +13,7 @@ import { ProductComponent } from './product';
 import { SingleRowComponent } from './shared/widgets/single-row/single-row.component';
 import { TwoColumnComponent } from './shared/widgets/two-column/two-column.component';
 import { ProductAttributePipe } from './product/product-attribute.pipe';
+import { CategoryFilterPipe } from './listing/category-filter.pipe';
 import { HttpClientService } from './shared/services/http-client.service';
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HttpClientService } from './shared/services/http-client.service';
     ProductComponent,
     SingleRowComponent,
     TwoColumnComponent,
-    ProductAttributePipe
+    ProductAttributePipe,
+    CategoryFilterPipe
   ],
   entryComponents: [SingleRowComponent, TwoColumnComponent],
   providers: [appRoutingProviders, HttpClientService],

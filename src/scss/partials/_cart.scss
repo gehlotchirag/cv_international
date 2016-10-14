@@ -1,108 +1,109 @@
-.cart-header{
-	margin: $spacing;
-	@include heading();
-}
-.cart-item{
-	padding: 2%;
-	position:relative;
-	.delete-cart-item{
+//Common
+.bag-container{
+	.bag-header{
+		height: 50px;
+    	line-height: 50px;
+    	color: $font-light;
+   		.heading{
+   			font-size: $font-xl;
+    		font-weight: bold;
+   		}
+	}
+	.bag-item{
+		position:relative;
+		border: $border;
+		padding: 2%;
+		margin-bottom:20px;
+		.break{
+			height: 10px;
+		}
+	}
+	.delete-bag-item{
 		position: absolute;
-    	top: 2%;
-   		right: 2%;
+		top: 5px;
+		right: 10px;
 	}
-	.cart-item-img-container{
-		width: 35%;
-    	img{
-    		padding: 2%;
-	    	border: $section-border;
-    	}
-    	.quantity{
-    		margin-top: 10px;
-    		.glyphicon{
-    			color: #bababa;
-    		}
-    		.count{
-    			margin: 0px 3px;
-    		}
-    	}
-	}
-	.cart-item-info{
-		vertical-align: top;
-		margin-left: 2%;
-		width: 60%;
-		line-height: 1.6;
-		.cart-item-name{
-			@include ellipsis();
+}
+//Desktop
+@media only screen  and (min-width : 1050px) {
+	.bag-container{
+		width: 74%;
+		margin-right: 1%;
+   		padding: 0px 20px;
+		.bag-item-img{
+			width: 18%;
+	    	margin-right: 2%;
 		}
-		.cart-item-seller{
-			font-size: $small-font;
+		.bag-item-info{
+			width: 76%;
+			.cart-spec{
+				margin-right: 12%;
+			}
+			.bag-item-stitch-cost{
+				height: 26px;
+			}
 		}
-		.cart-item-note{
-			color: $link-color;
-			text-decoration: underline;
-		}
-		.edit{
-			color: $link-color;
-			font-size: $small-font;
-			text-decoration: underline;
+		.cart-item-action{
+			.action-item{
+				color: #b6b6b6;
+				margin-right:15px;
+			}
 		}
 	}
 }
-.coupon-code{
-	padding: $spacing;
-	.coupon-input-container{
-		width: 70%;
-		margin-bottom: 0;
-		.coupon-input{
-			border:0;
-			border-bottom: 1px solid #e2e2e2;
-	    	border-radius: 0;
-	    	@include box-shadow(0px 0px);
+
+
+//Mobile
+@media only screen  and (max-width : 1050px) {
+	.bag-container{
+		margin-right:0;
+		width: 100%;
+		padding: 0% 2%;
+		.bag-item{
+			float:left;
+			margin-bottom: 2%;
+			.break{
+				height:0;
+			}
+		}
+		.bag-item-img{
+			width: 35%;
+	    	margin-right: 2%;
+		}
+		.bag-item-info{
+			width: 59%;
+			float: left;
+			.cart-spec{
+				margin: 0;
+		    	float: left;
+		    	margin-right: 10px;
+			}
+			.cart-spec-header{
+				display: inline-block;
+			}
+			.cart-spec-value{
+				display: inline-block;
+			}
+			.bag-item-specs{
+				margin: 10px 0px;
+			}
+			.bag-item-name{
+				@include ellipsis();
+			}
+			.bag-item-stitch-cost{
+				width: 100%;
+    			float: left;
+    			margin-top: 10px;
+			}
+		}
+		hr{
+			margin-bottom:10px;
+		}
+		.cart-item-action{
+			.action-item{
+				margin-right: 10px;
+			}
 		}
 	}
-	.apply-btn{
-		border-radius: 0;
-		width: 28%;
-	}
 }
-.total-box{
-	line-height: 1.8;
-	.total{
-		color: $brand-color;
-	}
-}
-.checkout-bar{
-	.total-price{
-		width: 40%;
-		margin-top:1%;
-	}
-	.proceed-btn{
-		width: 52%;
-		margin: 0% 2%;
-		background-color: $brand-color;
-	    color: white;
-	    border: none;
-	    padding: 5px;
-	    height: 36px;
-	    line-height: 27px;
-	    margin-top: 6px;
-	    font-weight: bold;
-	    letter-spacing: 1px;
-	    vertical-align: bottom;
-	}
-	.total-price-val{
-		font-size: $large-font;
-		color: $brand-color;
-		font-weight: bold;
-	}
-	.total-price-header{
-		font-size: $small-font;
-		color: #bababa;
-	}
-}
-.quantity-change{
-	background-color: #e2e2e2;
-    width: 18px;
-    border-radius: 50%;
-    display: inline-block;
-}
+

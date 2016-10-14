@@ -1,14 +1,22 @@
-// Mixins and Variables
-@import "modules/variables";
-@import "modules/mixins";
+	// Mixins and Variables
+	@import "modules/variables";
+	@import "modules/mixins";
 
-// Partials
-@import "partials/common";
-@import "partials/home";
-@import "partials/listing";
-@import "partials/product";
-@import "partials/cart";
-@import "partials/checkout";
-@import "partials/payment";
+	//Partials
+	@import "partials/cart";
+	@import "partials/checkout";
+	@import "partials/elements";
+	@import "partials/footer";
+	@import "partials/header";
+	@import "partials/home";
+	@import "partials/info";
+	@import "partials/listing";
+	@import "partials/login";
+	@import "partials/product";
+	@import "partials/profile";
+	@import "partials/static";
+	@import "partials/thanks";
+	@import "partials/wishlist";
 
-// Vendors
+	// Vendors
+	@import "vendors/bootstrap";

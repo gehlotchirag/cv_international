@@ -13,7 +13,7 @@ import { WidgetFactoryService } from '../shared'
   selector: 'cvi-home',
   providers: [HomeService, WidgetFactoryService, CartDetailsService, ProductService],
   // providers: [HomeService],
-  templateUrl: './home-dynamic.component.html',
+  templateUrl: './home.component.html', //'./home-dynamic.component.html',
   styleUrls: ['./home.component.css']
 })
 

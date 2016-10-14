@@ -1,119 +1,180 @@
-<span id="product-page">
-	<div *ngIf="products"  class="product-container">
-		<div class="product-img-container">
-			<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}" class="product-img">
-			<span class="stitch-value">{{attributes | productAttributePipe: 'Stitching Type'}}</span>
-		</div>
-		<div class="product-info">
-			<div class="product-name">{{products.productName}}</div>
-			<div class="product-price-container">
-				<span class="discount-price">{{products.discountedPrice}}</span>
-				<span class="actual-price"><s>{{products.regularPrice}}</s></span>
-				<span class="discount text-uppercase text-success">{{products.discountPercentage}}% Off</span>
-			</div>
-			<div class="product-size-container">
-				<div class="product-size-header">
-					Select Size <span class="size-chart-link pull-right">See Size Chart</span>
-				</div>
-				<div *ngFor="let size of sizes">
-					<div class="product-size"> {{size}} </div>
-					<!--<div class="product-size">M</div>-->
-					<!--<div class="product-size">L</div>-->
-					<!--<div class="product-size">XL</div>-->
-					<!--<div class="product-size">XXL</div>-->
-				</div>
-			</div>
-			<div class="product-shipping-cost">Shipping Cost: <span class="shipping-cost">{{products.shippingCostWorld}}</span></div>
-			<div class="product-delivery-time">Delivery Time: <span class="delivery-time">{{products.estimatedDeliveryTime}}</span></div>
-		</div>
-		<div class="product-details">
-			<div class="product-sub-header">PRODUCT DETAILS</div>
-			<div class="product-details-table">
-				<table class="table table-striped">
-					<tbody>
-						<tr>
-							<td>Length</td>
-							<td>2 mtr</td>
-						</tr>
-						<tr>
-							<td>Fabric</td>
-							<td>Santoon</td>
-						</tr>
-						<tr>
-							<td>Dupatta Color</td>
-							<td>Black</td>
-						</tr>
-						<tr>
-							<td>Length</td>
-							<td>2 mtr</td>
-						</tr>
-						<tr>
-							<td>Fabric</td>
-							<td>Santoon</td>
-						</tr>
-						<tr>
-							<td>Dupatta Color</td>
-							<td>Black</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<div class="product-share">
-			<span class="product-sub-header">SHARE</span>
-			<div class="share-icons">
-				<img src="images/facebook.png" class="product-share-icon">
-				<img src="images/twitter.png" class="product-share-icon">
-				<img src="images/pinterest.png" class="product-share-icon">
-			</div>
-		</div>
-			<div class="col-xs-12 nopadding" id="view_recommended_products">
-				<div class="clearfix"></div>
-				<h4 class="borderbottom product_name">Similar Products</h4>
-				<div class="flex-center">
-					<div *ngFor="let similarProduct of similarProducts" class="col-xs-6 col-md-3 product mob_padding">
-						<div class="product-image-container">
-							<a href="/catalog/product/view/id/3156693/s/marvelous-cream-red-bangluru-silk-and-viscos-sarees">
-								<img src="http://img1.craftsvilla.com/thumb/216x216{{similarProduct.imgUrl}}" alt="{{similarProduct.productName}}" title="{{similarProduct.productName}}" class="product-image"></a></div><div class="product-details-container col-xs-12"><a href="/catalog/product/view/id/3156693/s/marvelous-cream-red-bangluru-silk-and-viscos-sarees">
-							<div class="product-name truncate">{{similarProduct.productName}}</div>
-						</a>
-						<a href="/worldofstyle" title="World Of Style" target="_blank">
-							<div class="vendor-name">{{ similarProduct.vendorDetails.vendorName }}</div>
-						</a>
-						<div class="price-container col-xs-12 nopadding">
-							<div class="col-xs-6 col-md-8 nopadding">
-								<div class="col-xs-12 col-md-6 discounted-price price nopadding">Rs {{similarProduct.discountedPrice}}</div>
-								<div class="col-xs-12 col-md-6 original-price price nopadding">Rs <s> {{similarProduct.regularPrice}}</s> </div>
-							</div>
-							<div class="col-xs-6 col-md-4 save-percent nopadding">Save {{similarProduct.discountPercentage}}%</div>
-						</div>
-						</div>
-						<div class="wishit text-center" onclick="dataLayer.push({&quot;event&quot;:&quot;ProductBookmarkedEvent&quot;,&quot;eventName&quot;:&quot;ProductBookmarked&quot;,&quot;productId&quot;:&quot;3156693&quot;,&quot;type&quot;:&quot;addedToWishlist&quot;,&quot;category&quot;:&quot;NA&quot;,&quot;subCategory&quot;:&quot;NA&quot;,&quot;source&quot;:&quot;productDetailsPage&quot;});">
-							<i class="fa fa-heart-o fa-2x" id="wishicon-3156693"></i></div>
 
+
+<div class="content product-page">
+	<div class="contain hide-sm">
+		<ol class="breadcrumb">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Women</a></li>
+			<li><a href="#">Lehengas</a></li>
+			<li class="active">Black Color Goergette Lehenga</li>
+		</ol>
+	</div>
+
+	<div class="product-container">
+		<div class="contain" *ngIf="products" >
+			<div class="product-thumbnails inline pull-left hide-sm">
+				<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}"  class="img-responsive">
+				<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}"  class="img-responsive">
+				<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}"  class="img-responsive">
+			</div>
+			<div class="product-img-container inline pull-left text-center">
+				<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}"  class="img-responsive">
+			</div>
+			<!--<div class="product-img-container inline pull-left">-->
+				<!--<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}"  width="500" class="img-responsive">-->
+			<!--</div>-->
+			<div class="product-info-container inline pull-left mob-contain">
+					<span class="mob-bg-white">
+						<div class="name mob-section-heading"><h1>{{products.productName}}</h1></div>
+							<div class="price mob-section-body">
+							<span class="discounted-price">$80</span>
+							&nbsp;<span class="actual-price"><s>$100</s></span>
+							&nbsp;<span class="discount green">20% off</span>
+							<span class="pull-right details-wishlist-container"><img src="images/wishlist-product.png" class="img-responsive wishlist-details-page inline mob-inline"> Add to Wishlist</span>
+						</div>
+							<span class="add-to-bag-block">
+							<div class="size occupy mob-inline cover">
+								<div class="heading mob-section-heading">
+									<span class="pull-left">Select Stitch Type</span>
+								</div>
+								<div class="stitching occupy mob-section-body">
+									<select>
+										<option>Select Stitching...</option>
+										<option>Unstitched</option>
+										<option>Stitched</option>
+										<option>Semi-stitched</option>
+									</select>
+								</div>
+								<div class="heading select-size-header mob-section-heading">
+									<span class="pull-left">Select Size</span>
+									<span class="pull-right mob-link link" data-toggle="modal" data-target="#sizeChartModal">Size Chart</span>
+								</div>
+								<div class="sizes occupy mob-section-body" *ngFor="let size of sizes">
+										<span class="size-box">{{size}}</span>
+								</div>
+							</div>
+							<div class="stitch"></div>
+							<div class="add-to-bag occupy fixed-bottom-bar product-buy-btns">
+								<button class="btn btn-default add-cart-btn flat-btn purchase">ADD TO BAG</button>
+								<button class="btn btn-brand buy-btn flat-btn purchase">BUY NOW</button>
+							</div>
+						</span>
+							<div class="shipping-cost mob-inline inline">
+							<div class="heading mob-section-heading">Shipping Cost</div>
+							<div class="shipping-cost-value mob-section-body">$${{products.shippingCostWorld}}</div>
+						</div>
+						<div class="shipping-cost mob-inline inline">
+							<div class="heading mob-section-heading">Delivery Time</div>
+							<div class="shipping-cost-value mob-section-body">{{products.estimatedDeliveryTime}} days</div>
+						</div>
+						<div class="sold-by inline hide-sm">
+							<div class="heading mob-section-heading">Sold by</div>
+							<div class="shipping-cost-value">Fabfiza <span class="badge">4.2/5</span></div>
+						</div>
+						<hr>
+						<div class="description">
+							<div class="heading mob-section-heading">Description</div>
+							<div class="body mob-section-body">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							</div>
+						</div>
+						<hr>
+						<div class="share-product hide-sm"><span class="header">Share on &nbsp;</span> <i class="fa fa-facebook" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-pinterest" aria-hidden="true"></i></div>
+					</span>
+
+
+				<div class="description">
+					<div class="heading">Description</div>
+					<div class="body">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 					</div>
 				</div>
 			</div>
-		<div class="trust-builders text-center">
-			<div class="trust-item text-center">
-				<img src="images/shield.png" class="trust-icon">
-				<div class="name">100% Payment<br>Protection</div>
-			</div>
-			<div class="trust-item text-center center">
-				<img src="images/returns.png" class="trust-icon">
-				<div class="name">Easy<br>Returns</div>
-			</div>
-			<div class="trust-item text-center">
-				<img src="images/authentic.png" class="trust-icon">
-				<div class="name">100%<br>Authentic</div>
-			</div>
-		</div>
-		<div class="product-buy-btns   text-center">
-				<div class="add-cart-btn purchase inline" (click)="addWish($event)">ADD TO WISH LIST</div>
-		</div>
-		<div class="product-buy-btns fixed-bottom-bar text-center">
-			<div class="add-cart-btn purchase inline" (click)="addClick($event)">ADD TO CART</div>
-			<div class="buy-btn purchase inline" (click)="clicked($event)">BUY NOW</div>
 		</div>
 	</div>
-</span>
+	<div class="contain">
+		<div  class="recommendation-box bg-white occupy text-center">
+			<div class="heading"><h3>Similar Products</h3></div>
+			<div class="product-listing" *ngFor="let similarProduct of similarProducts">
+				<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
+				<img src="http://img1.craftsvilla.com/thumb/216x216{{similarProduct.imgUrl}}" alt="{{similarProduct.productName}}" title="{{similarProduct.productName}}" class="img-responsive">
+				<div class="product-info">
+					<div class="product-name">{{similarProduct.productName}}</div>
+					<div class="product-price">
+						<span class="discounted-price">${{similarProduct.discountedPrice}}</span>
+						&nbsp;<span class="actual-price"><s>${{similarProduct.regularPrice}}</s></span>
+						<span class="discount pull-right">{{similarProduct.discountPercentage}}%</span>
+					</div>
+				</div>
+
+
+			</div>
+			<!--<a href="/worldofstyle" title="World Of Style" target="_blank">-->
+				<!--<div class="vendor-name">{{ similarProduct.vendorDetails.vendorName }}</div>-->
+			<!--</a>-->
+
+
+			<!--<div class="wishit text-center" onclick="dataLayer.push({&quot;event&quot;:&quot;ProductBookmarkedEvent&quot;,&quot;eventName&quot;:&quot;ProductBookmarked&quot;,&quot;productId&quot;:&quot;3156693&quot;,&quot;type&quot;:&quot;addedToWishlist&quot;,&quot;category&quot;:&quot;NA&quot;,&quot;subCategory&quot;:&quot;NA&quot;,&quot;source&quot;:&quot;productDetailsPage&quot;});">-->
+				<!--<i class="fa fa-heart-o fa-2x" id="wishicon-3156693"></i></div>-->
+
+		</div>
+	</div>
+	<div class="contain">
+		<div class="recommendation-box bg-white occupy text-center">
+			<div class="heading"><h3>Recommended for you</h3></div>
+			<hr>
+			<div class="recommended-products">
+				<div class="product-listing">
+					<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
+					<img src="images/product.jpg" class="img-responsive">
+					<div class="product-info">
+						<div class="product-name">Black Zari Work Cotton Saree</div>
+						<div class="product-price">
+							<span class="discounted-price">$80</span>
+							&nbsp;<span class="actual-price"><s>$100</s></span>
+							<span class="discount pull-right">20%</span>
+						</div>
+					</div>
+				</div>
+				<div class="product-listing">
+					<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
+					<img src="images/product.jpg" class="img-responsive">
+					<div class="product-info">
+						<div class="product-name">Black Zari Work Cotton Saree</div>
+						<div class="product-price">
+							<span class="discounted-price">$80</span>
+							&nbsp;<span class="actual-price"><s>$100</s></span>
+							<span class="discount pull-right">20%</span>
+						</div>
+					</div>
+				</div>
+				<div class="product-listing">
+					<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
+					<img src="images/product.jpg" class="img-responsive">
+					<div class="product-info">
+						<div class="product-name">Black Zari Work Cotton Saree</div>
+						<div class="product-price">
+							<span class="discounted-price">$80</span>
+							&nbsp;<span class="actual-price"><s>$100</s></span>
+							<span class="discount pull-right">20%</span>
+						</div>
+					</div>
+				</div>
+				<div class="product-listing">
+					<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
+					<img src="images/product.jpg" class="img-responsive">
+					<div class="product-info">
+						<div class="product-name">Black Zari Work Cotton Saree</div>
+						<div class="product-price">
+							<span class="discounted-price">$80</span>
+							&nbsp;<span class="actual-price"><s>$100</s></span>
+							<span class="discount pull-right">20%</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

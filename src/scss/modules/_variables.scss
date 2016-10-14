@@ -1,43 +1,33 @@
-//VARIABLES
+//Common, Header and Footer
 
-//Common
-$site-background: #f5f5f5;
-$section-border: 1px solid #e2e2e2;
-$white: #ffffff;
-$spacing: 2%;
-$in-spacing: 2%;
-$line-height: 1 !important;
-$brand-color: #f63550;
-$link-color: #18a1b1;
+//Font Sizes
+$font-xs: 10px;
+$font-small: 12px;
+$font-med: 14px;
+$font-large: 16px;
+$font-xl: 18px;
+
+
+//Colors
+$brand-color: #981937;
+$brand-2: #981937;
+$background-color: #f4f1eb;
+$font-light: #6b6b6b;
+$font-ul: #b4b4b4;
+$font-dark: #333333;
+$green: #4bc653;
+
+
+//Heights and Widths
+$top-menu-height: 30px;
+$flag-height: 14px;
+$mid-menu-height: 80px;
+$contain-width: 95%;
+$contain-max-width: 1230px;
+$slider-height: 400px;
 $bottom-bar-height: 50px;
-$small-font: 12px;
-$large-font: 16px;
-$green: #5cb85c;
-
-//Header
-$header-height: 50px;
-$menu-icon-size: 20px;
-$logo-height: 24px;
-$header-padding: ($header-height - $menu-icon-size)/2;
-$menu-logo-width: 70%;
-
-//Home Page
-$buyer-protection-height: 60px;
-$buyer-font-size: 16px;
-$shield-height: 18px;
-$box-header-height: 40px;
-$box-header-font-size: 14px;
-$box-header-side-padding: 2%;
-$single-category-width: 24%;
-$listing-footer-height: 40px;
-$view-all-font-size: 12px;
-$listing-horiz-img-width: 30%;
-$collection-box-size: (100% - $spacing*3)/2;
-
-//Listing Page
-$sort-filter-font-size: 16px;
 $sort-filter-height: 50px;
 $sort-filter-icon-size: 20px;
 
-//Checkout Page
-$circle-size: 15px;
+//Borders
+$border: 1px solid #e2e2e2;

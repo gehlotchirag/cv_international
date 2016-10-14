@@ -1,111 +1,264 @@
-.product-img-container{
-	position:relative;
-	padding-bottom: $in-spacing;
-	border-bottom: #section-border;
-	background-color: $white;
-	margin-bottom: $in-spacing;
-	.product-img{
-		width:100%;
-	}
-	.stitch-value{
-		position:absolute;
-		top: 2%;
-	    left: 2%;
-	    padding: 4px;
-	    background-color: $brand-color;
-	    color: white;
-	    letter-spacing: 1px;
-	}
-}
-.product-info{
-	@extend .section-box;
-	@extend .site-container;
-	padding: $in-spacing;
-	.product-name{
-		font-weight: bold;
-	}
-	line-height: 24px;
-	.actual-price, .discount{
-		font-size: 12px;
-		margin-left: 2%;
-	}
-	.discount{
-		background-color: #4fb456;
-    	color: white;
-    	padding: 2px;
-	}
-	.size-chart-link{
-		font-size: 11px;
-		color: $link-color;
-		text-decoration: underline;
-	}
-	.product-size{
-	    width: 30px;
-	    height: 30px;
-	    text-align: center;
-	    border: 1px solid #464646;
-	    margin-right: 6px;
-	    display:inline-block;
-	    line-height: 30px;
-	}
-	.product-size-container{
-		margin-bottom: 2%;
-	}
-}
-.product-details{
-	@extend .section-box;
-	@extend .site-container;
-	padding: $in-spacing;
-}
-.product-sub-header{
-	height: 40px;
-	line-height: 40px;
-	font-weight: bold;
-}
-.product-share{
-	@extend .section-box;
-	@extend .site-container;
-	padding: $in-spacing;
-	.share-icons{
-		display:inline-block;
-		.product-share-icon{
-			display:inline-block;
-			width: 25px;
-    		margin-left: 15px;
+@media only screen  and (min-width : 1050px) {
+	.product-page{
+		.section-heading{
+			text-align:left;
+		    height: 40px;
+		    line-height: 40px;
+		    font-size: 16px;
+		    font-weight: bold;
+		}
+		.similar-products{
+			width: 30%;
+			float:left;
+			padding: 2%;
+			padding-top: 1%;
+			border-left: 1px solid #e2e2e2;
+			.product-listing{
+				width: 48%;
+				margin-bottom:0;
+				.product-name{
+					@include ellipsis();
+				}
+			}
 		}
 	}
-}
-.trust-builders{
-	@extend .section-box;
-	@extend .site-container;
-	padding: $in-spacing;
-	.center{
-		margin: 2% 18%;
+	.details-wishlist-container{
+		margin-top:8px;
 	}
-	.trust-item{
-		display:inline-block;
-		.trust-icon{
-			width: 40px;
+	.product-container{
+		background-color: white;
+		float:left;
+		width: 100%;
+		border-top: $border;
+		margin-bottom: 20px;
+		.share-product{
+			font-size: $font-xl;
+			.header{
+				font-size: 14px;
+			}
+			.fa{
+				cursor:pointer;
+			}	
+		}
+	}
+	.product-thumbnails{
+		width: 5%;
+		padding-top: 20px;
+		img{
+			border: 1px solid #e2e2e2;
 			margin-bottom:10px;
 		}
 	}
+	.product-details-container{
+		padding: 2%;
+		padding-top: 1%;
+		width: 68%;
+		margin-right:2%;
+		float:left;
+	}
+	.stitch-status{
+		padding: 2px 6px;
+		border: 1px dashed #474646;
+	}
+	.product-img-container{
+		padding-top: 20px;
+		width: 53%;
+		margin-right: 2%;
+		position:relative;
+		img{
+			margin:auto;
+		}
+	}
+	.product-info-container{
+		width: 40%;
+		padding: 2%;
+		padding-top: 0;
+		padding-right: 0;
+		//border-left: 1px solid #e2e2e2;
+		.heading{
+			font-size: 12px;
+			font-weight:bold;
+			.link{
+				font-weight: normal;
+				color:black;
+			}
+		}
+		.name h1{
+			font-size: 16px;
+			font-weight:bold;
+			margin-bottom: 10px;
+		}
+		.price{
+			margin-top: 20px;
+		}
+		.discounted-price{
+			font-size: 20px;
+			margin-top:10px;
+		}
+		.discount{
+			font-size: 14px;
+		}
+		.actual-price{
+			font-size: 14px;
+		}
+		.add-to-bag-block{
+			background-color: $background-color;
+			border: 1px solid #e2e2e2;
+			padding: 15px;
+			width: 100%;
+			display: inline-block;
+			margin:15px 0px;
+		}
+		.sizes{
+			margin-top:5px;
+		}
+		.stitching{
+			margin-top:5px;
+			margin-bottom:20px;
+			select{
+				height: 40px;
+			    border: 1px solid #cdcdcd;
+			    width: 100%;
+			    color: #606060;
+			    padding-left: 10px;
+			}
+		}
+		.size-box{
+			display: inline-block;
+		    width: 40px;
+		    height: 40px;
+		    line-height: 40px;
+		    text-align: center;
+		    margin-right: 10px;
+		    border: 2px solid #959595;
+		    color:#959595;
+			&:hover{
+				border: 2px solid #474646;
+				cursor:pointer;
+		    	color:#474646;
+			}
+		}
+		.add-to-bag{
+			margin-top:20px;
+			.btn{
+				@include border-radius(0px);
+				width: 49%;
+			    height: 40px;
+			    line-height: 30px;
+			    margin-right: 2%;
+			    float: left;
+			}
+			.buy-btn{
+				margin-right:0;
+			}
+		}
+		.shipping-cost{
+			margin-right:60px;
+		}
+	}
+	.recommendation-box{
+		margin-top:20px;
+		padding: 2%;
+		padding-top: 1%;
+	}
+	.recommendation-box .product-listing{
+		width: 17.5%;
+	}
 }
-.product-buy-btns{
-	.purchase{
-		width: 44%;
-	    margin: 0% 2%;
-	    border: 1px solid #e2e2e2;
-	    padding: 5px;
-	    height: 36px;
-	    line-height: 27px;
-	    margin-top: 6px;
-	    font-weight: bold;
-	    letter-spacing: 1px;
-	    @include box-shadow(1px 1px 2px #e2e2e2);
+
+//Mobile
+@media only screen  and (max-width : 1050px) {
+	.product-page{
+		.shipping-cost{
+			width: 50%;
+			float:left;
+			margin-top:10px;
+		}
+		.details-wishlist-container{
+		    margin-top: 6px;
+		}
+		.description, .select-size-header, .size{
+			float:left;
+			margin-top: 10px;
+		}
+		.size{
+			background-color: #f5f5f5;
+    		border: 1px solid #e2e2e2;
+    		margin: 2%;
+    		width: auto;
+		}
+		.size-box{
+			display:inline-block;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			border: 1px solid #bababa;
+			text-align: center;
+			margin-right:10px;
+		}
+		.stitching{
+			select{
+				width: 100%;
+				height: 40px;
+			}
+		}
+		.name h1{
+			font-size: 16px;
+		    font-weight: bold;
+		    line-height: 24px;
+		    margin-top: 10px;
+		}
+		.discounted-price{
+			font-size: 20px;
+			margin-top:10px;
+		}
+		.discount{
+			font-size: 14px;
+		}
+		.actual-price{
+			font-size: 14px;
+			color: #b5b5b5;
+		}
+		.product-buy-btns{
+			.purchase{
+				width: 47%;
+    			margin-left: 2%;
+    			float: left;
+			    border: 1px solid #e2e2e2;
+			    padding: 5px;
+			    height: 36px;
+			    line-height: 27px;
+			    margin-top: 6px;
+			    font-weight: bold;
+			    letter-spacing: 1px;
+			    @include box-shadow(1px 1px 2px #e2e2e2);
+			}
+			.buy-btn{
+				background-color: $brand-color;
+			    color: white;
+			    border: none;
+			}
+		}
+		.product-img-container{
+			background-color: white;
+			width: 100%;
+			margin-bottom: 5px;
+			img{
+				margin:auto;
+			}
+		}
+		.add-to-bag{
+			margin-left: -2%;
+		}
 	}
-	.buy-btn{
-		background-color: $brand-color;
-	    color: white;
-	    border: none;
-	}
+}
+
+//Common
+.wishlist-details-page{
+	display: inline-block !important;
+	width: 16px;
+	vertical-align: top;
+}
+.table-striped > tbody > tr:nth-of-type(odd){
+	background-color: $background-color !important;
 }

@@ -1,0 +1,286 @@
+@media only screen  and (min-width : 1050px) {
+	.top-menu{
+		height: $top-menu-height;
+		line-height: $top-menu-height;
+		border-bottom: $border;
+		font-size: $font-small;
+		.buyer-protection{
+			img{
+				vertical-align: sub;
+				width:18px;
+			}
+		}
+	}
+	.top-menu-item{
+		margin-left: 18px;
+	}
+	.mid-menu{
+		height: $mid-menu-height;
+		line-height: $mid-menu-height;
+		background-color: #fff;
+		border-bottom: $border;
+	}
+	.flag{
+		vertical-align: sub;
+		height: $flag-height;
+		margin-top: -2px;
+	}
+	.logo{
+		width: 20%;
+	}
+	.search{
+		width: 60%;
+		height: 34px;
+		margin-top: ($mid-menu-height - 34px)/2;
+		.input-group{
+			float: left;
+    		width: 80%;
+			.input-group-addon{
+				background-color: $brand-2;
+	    		color: white;
+	    		border: 1px solid $brand-2;
+	    		cursor:pointer;
+				@include border-radius(0px 3px 3px 0px);
+			}
+			.main-search-input{
+				@include box-shadow(0px 0px);
+				@include border-radius(3px);
+			}
+		}
+		.drop-menu{
+			display:none;
+		}
+	}
+	.options{
+		width: 20%;
+		line-height: 20px;
+		margin-top: 30px;
+		text-align:right;
+		.option{
+			position:relative;
+			margin-left: 28px;
+		}
+		.icon{
+			width:18px;
+		}
+	}
+	.checkout-status{
+		letter-spacing: 2px;
+	    font-size: $font-small;
+		.status{
+			color: $font-ul;
+			float:left;
+			height: 30px;
+			line-height: 30px;
+	    	text-align: center;
+		}
+		.bag{
+			margin-left: 42px;
+		}
+		.shipping{
+			margin-left: 100px;
+		}
+		.payment{
+			margin-left: 84px;
+		}
+		.circle-container{
+			margin-left: 50px;
+		}
+		.circle{
+			width: 10px;
+		    height: 10px;
+		    background-color: #e2e2e2;
+		    border-radius: 50%;
+		    float:left;
+		    margin-top: 35px;
+		}
+		.line{
+			width: 140px;
+		    height: 2px;
+		    line-height: 2px;
+		    background-color: #e2e2e2;
+		    vertical-align: middle;
+		    float:left;
+		    margin-top: 39px;
+		}
+		.active{
+			color: $green;
+			font-weight: bold;
+		}
+		.active-circle{
+		    background-color: $green;
+		}
+		.active-line{
+		    background-color: $green;
+		}
+	}
+	.categories-dropdown{
+		float: left;
+	    margin-right: 2%;
+	    line-height: 0;
+	    height: 34px;
+	    width: 18%;
+	    position:relative;
+	    .btn{
+	    	width: 100%;
+		    text-align: left;
+		    letter-spacing: 1px;
+		    font-size: 12px;
+		    height: 34px;
+		    line-height: 22px;
+		    color: grey;
+		    font-weight: bold;
+		    @include border-radius(3px);
+	    }
+	    .menu-drop{
+	    	display:none;
+	    	position:absolute;
+	    	z-index:100;
+	    	left: -74px;
+	    	margin-top: -10px;
+	    }
+	    .menu-list{
+    		width: 200px;
+    		background-color: white;
+    		height: 400px;
+    		border: 1px solid #e2e2e2;
+    		li{
+    			&:hover{
+    				width: 199px !important;
+    			}
+    		}
+	    }
+	    .menu-sub-cat{
+	    	width: 714px;
+    		left: 200px;
+    		border: 1px solid #e2e2e2;
+    		border-left: 0;
+	    }
+	}
+	.dropdown-flag{
+		border: 0 !important;
+	    display: inline-block;
+	    background-color: transparent !important;
+	    font-size: 11px !important;
+	    line-height: 10px;
+	    letter-spacing: 1px;
+	    padding-left: 0 !important;
+	}
+}
+
+@media only screen  and (max-width : 1050px) {
+	.search{
+		margin-top: 1%;
+		.form-control{
+			@include border-radius(0px);
+			@include box-shadow(0px 0px);
+		}
+		.input-group-addon{
+			@include border-radius(0px);
+		}
+	}
+	.logo{
+		height: 40px;
+	    line-height: 46px;
+	    width: 50%;
+		img{
+			height: 24px;
+    		vertical-align: sub;
+    		margin-right: 3%;
+		}
+		.menu-icon{
+			height: 20px;
+		}
+	}
+	.menu-btn{
+		font-size: $font-xl;
+	}
+	.options{
+		position: absolute;
+	    right: 2%;
+	    height: 40px;
+	    font-size: 18px;
+	    line-height: 44px;
+	    padding-top: 9px;
+	    .cart{
+	    	margin-right: 15px;
+	    }
+	    .option{
+	    	position:relative;
+	    	width: 20px;
+	    }
+	}
+	.header{
+		margin-bottom: 0px;
+	}
+	.checkout-header{
+		.mid-menu{
+			width: 100%;
+		    height: 44px;
+		    background-color: white;
+		    padding: 2px 2%;
+		    color: black;
+		    border-bottom: 1px solid #e2e2e2;
+		}
+		.logo{
+			width: 100%;
+		}
+		.checkout-status{
+			width: 100%;
+			text-align:center;
+			padding: 20px 0px 10px 0px;
+			.line{
+				width: 40%;
+			    height: 2px;
+			    line-height: 2px;
+			    background-color: #e2e2e2;
+			    vertical-align: middle;
+			    margin-top: -4px;
+			    display: inline-block;
+			}
+			.circle{
+				width: 10px;
+			    height: 10px;
+			    background-color: #e2e2e2;
+			    border-radius: 50%;
+			    display: inline-block;
+			}
+			.circle-container{
+				margin-left: 0;
+			}
+			.status{
+				display: inline-block;
+    			text-align: left;
+			}
+			.shipping{
+				margin-left: 31%;
+    			margin-right: 21%;
+			}
+			.active{
+				color: $green;
+				font-weight: bold;
+			}
+			.active-circle{
+			    background-color: $green;
+			}
+			.active-line{
+			    background-color: $green;
+			}
+		}
+	}
+}
+
+//Common
+.notification-circle{
+	width: 12px;
+    height: 12px;
+    font-size: 8px;
+    line-height: 12px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #e34141;
+    position: absolute;
+    color: white;
+    top: -3px;
+    right: -7px;
+}

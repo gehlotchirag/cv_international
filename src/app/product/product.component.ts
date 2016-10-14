@@ -95,7 +95,9 @@ export class ProductComponent implements OnInit {
   // }
 
     addWish(event: any): void {
+        console.log('addWish');
         this.wishListService.addToWishList(this.customerId,this.productID);
+
     }
 
     addClick(event: any): void {

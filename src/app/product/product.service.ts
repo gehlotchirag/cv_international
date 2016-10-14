@@ -13,8 +13,8 @@ export  class ProductService{
         "qty": 1
     };
 
-        private productDetailUrl= '1/public/catalog/productDetail?productId=4563463';
-        private similarProductsUrl='1/public/catalog/similarProducts?productId=4170101';
+        private productDetailUrl= '1/public/catalog/productDetail?productId=5280331';
+        private similarProductsUrl='1/public/catalog/similarProducts?productId=5280331';
 
     constructor(private httpClient: HttpClientService,
                 private http: Http

@@ -1,5 +1,3 @@
-
-
 <div class="content product-page">
 	<div class="contain hide-sm">
 		<ol class="breadcrumb">
@@ -12,26 +10,28 @@
 
 	<div class="product-container">
 		<div class="contain" *ngIf="products" >
-			<div class="product-thumbnails inline pull-left hide-sm">
-				<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}"  class="img-responsive">
-				<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}"  class="img-responsive">
-				<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}"  class="img-responsive">
-			</div>
 			<div class="product-img-container inline pull-left text-center">
-				<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}"  class="img-responsive">
+				<div class="side-img left-container hide-sm">
+					<div class="overlay"></div>
+					<div class="left-img"></div>
+				</div>
+				<img src="images/left-arrow.png" class="arrow left-arrow hide-sm">
+				<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}" class="img-responsive main-product-img" style="width:500px; height:500px;">
+				<img src="images/right-arrow.png" class="arrow right-arrow hide-sm">
+				<div class="side-img right-container hide-sm">
+					<div class="overlay"></div>
+					<div class="right-img"></div>
+				</div>
 			</div>
-			<!--<div class="product-img-container inline pull-left">-->
-				<!--<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}"  width="500" class="img-responsive">-->
-			<!--</div>-->
 			<div class="product-info-container inline pull-left mob-contain">
 					<span class="mob-bg-white">
 						<div class="name mob-section-heading"><h1>{{products.productName}}</h1></div>
 							<div class="price mob-section-body">
-							<span class="discounted-price">$80</span>
-							&nbsp;<span class="actual-price"><s>$100</s></span>
-							&nbsp;<span class="discount green">20% off</span>
-							<span class="pull-right details-wishlist-container"><img src="images/wishlist-product.png" class="img-responsive wishlist-details-page inline mob-inline"> Add to Wishlist</span>
-						</div>
+								<span class="discounted-price">${{products.discountedPrice}}</span>
+								&nbsp;<span class="actual-price"><s>${{products.regularPrice}}</s></span>
+								&nbsp;<span class="discount green">{{products.discountPercentage}}% off</span>
+								<span class="pull-right details-wishlist-container" (click)="addWish($event)"><img src="images/wishlist-product.png" class="img-responsive wishlist-details-page inline mob-inline" > Add to Wishlist</span>
+							</div>
 							<span class="add-to-bag-block">
 							<div class="size occupy mob-inline cover">
 								<div class="heading mob-section-heading">
@@ -55,11 +55,11 @@
 							</div>
 							<div class="stitch"></div>
 							<div class="add-to-bag occupy fixed-bottom-bar product-buy-btns">
-								<button class="btn btn-default add-cart-btn flat-btn purchase">ADD TO BAG</button>
+								<button class="btn btn-default add-cart-btn flat-btn purchase" (click)="addClick($event)">ADD TO BAG</button>
 								<button class="btn btn-brand buy-btn flat-btn purchase">BUY NOW</button>
 							</div>
 						</span>
-							<div class="shipping-cost mob-inline inline">
+						<div class="shipping-cost mob-inline inline">
 							<div class="heading mob-section-heading">Shipping Cost</div>
 							<div class="shipping-cost-value mob-section-body">$${{products.shippingCostWorld}}</div>
 						</div>
@@ -69,7 +69,7 @@
 						</div>
 						<div class="sold-by inline hide-sm">
 							<div class="heading mob-section-heading">Sold by</div>
-							<div class="shipping-cost-value">Fabfiza <span class="badge">4.2/5</span></div>
+							<div class="shipping-cost-value">{{products.vendorName}} <span class="badge">4.2/5</span></div>
 						</div>
 						<hr>
 						<div class="description">
@@ -82,50 +82,139 @@
 						<hr>
 						<div class="share-product hide-sm"><span class="header">Share on &nbsp;</span> <i class="fa fa-facebook" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-pinterest" aria-hidden="true"></i></div>
 					</span>
-
-
-				<div class="description">
-					<div class="heading">Description</div>
-					<div class="body">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			</div>
+		</div>
+	</div>
+	<div class="contain mob-contain">
+		<div class="mob-bg-white bg-white occupy">
+			<div class="product-details-container">
+				<div class="mob-section-heading section-heading">PRODUCT DETAILS</div>
+				<table class="table table-striped">
+					<tr>
+						<td>Style</td>
+						<td>Designer</td>
+					</tr>
+					<tr>
+						<td>Wash Care</td>
+						<td>Dry Clean</td>
+					</tr>
+					<tr>
+						<td>Color</td>
+						<td>Black</td>
+					</tr>
+					<tr>
+						<td>Style</td>
+						<td>Designer</td>
+					</tr>
+					<tr>
+						<td>Wash Care</td>
+						<td>Dry Clean</td>
+					</tr>
+					<tr>
+						<td>Color</td>
+						<td>Black</td>
+					</tr>
+					<tr>
+						<td>Style</td>
+						<td>Designer</td>
+					</tr>
+					<tr>
+						<td>Wash Care</td>
+						<td>Dry Clean</td>
+					</tr>
+					<tr>
+						<td>Color</td>
+						<td>Black</td>
+					</tr>
+					<tr>
+						<td>Style</td>
+						<td>Designer</td>
+					</tr>
+				</table>
+			</div>
+			<div class="similar-products hide-sm">
+				<div class="section-heading">SIMILAR PRODUCTS</div>
+				<div class="product-listing" *ngFor="let similarProduct of similarProducts">
+					<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
+					<img src="http://img1.craftsvilla.com/thumb/216x216{{similarProduct.imgUrl}}" class="img-responsive">
+					<div class="product-info">
+						<div class="product-name">{{similarProduct.productName}}</div>
+						<div class="product-price">
+							<span class="discounted-price">${{similarProduct.discountedPrice}}</span>
+							&nbsp;<span class="actual-price"><s>${{similarProduct.regularPrice}}</s></span>
+							&nbsp;<span class="discount">{{similarProduct.discountPercentage}}%</span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="contain">
-		<div  class="recommendation-box bg-white occupy text-center">
-			<div class="heading"><h3>Similar Products</h3></div>
-			<div class="product-listing" *ngFor="let similarProduct of similarProducts">
-				<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
-				<img src="http://img1.craftsvilla.com/thumb/216x216{{similarProduct.imgUrl}}" alt="{{similarProduct.productName}}" title="{{similarProduct.productName}}" class="img-responsive">
-				<div class="product-info">
-					<div class="product-name">{{similarProduct.productName}}</div>
-					<div class="product-price">
-						<span class="discounted-price">${{similarProduct.discountedPrice}}</span>
-						&nbsp;<span class="actual-price"><s>${{similarProduct.regularPrice}}</s></span>
-						<span class="discount pull-right">{{similarProduct.discountPercentage}}%</span>
+	<div class="occupy mob-section">
+		<div class="contain bg-white mob-bg-white home-section home-listing">
+			<div class="section-header mob-section-heading">
+				<span class="heading pull-left">Recommendations</span>
+			</div>
+			<div class="section-body text-center page-listing">
+				<img src="images/left-arrow.png" class="pull-left listing-arrow hide-sm">
+				<div class="product-listing">
+					<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
+					<img src="images/product.jpg" class="img-responsive">
+					<div class="product-info">
+						<div class="product-name">Black Zari Work Cotton Saree</div>
+						<div class="product-price">
+							<span class="discounted-price">$80</span>
+							&nbsp;<span class="actual-price"><s>$100</s></span>
+							&nbsp;<span class="discount">20%</span>
+						</div>
 					</div>
 				</div>
-
-
+				<div class="product-listing">
+					<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
+					<img src="images/product.jpg" class="img-responsive">
+					<div class="product-info">
+						<div class="product-name">Black Zari Work Cotton Saree</div>
+						<div class="product-price">
+							<span class="discounted-price">$80</span>
+							&nbsp;<span class="actual-price"><s>$100</s></span>
+							&nbsp;<span class="discount">20%</span>
+						</div>
+					</div>
+				</div>
+				<div class="product-listing">
+					<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
+					<img src="images/product.jpg" class="img-responsive">
+					<div class="product-info">
+						<div class="product-name">Black Zari Work Cotton Saree</div>
+						<div class="product-price">
+							<span class="discounted-price">$80</span>
+							&nbsp;<span class="actual-price"><s>$100</s></span>
+							&nbsp;<span class="discount">20%</span>
+						</div>
+					</div>
+				</div>
+				<div class="product-listing">
+					<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
+					<img src="images/product.jpg" class="img-responsive">
+					<div class="product-info">
+						<div class="product-name">Black Zari Work Cotton Saree</div>
+						<div class="product-price">
+							<span class="discounted-price">$80</span>
+							&nbsp;<span class="actual-price"><s>$100</s></span>
+							&nbsp;<span class="discount">20%</span>
+						</div>
+					</div>
+				</div>
+				<img src="images/right-arrow.png" class="pull-right listing-arrow hide-sm">
 			</div>
-			<!--<a href="/worldofstyle" title="World Of Style" target="_blank">-->
-				<!--<div class="vendor-name">{{ similarProduct.vendorDetails.vendorName }}</div>-->
-			<!--</a>-->
-
-
-			<!--<div class="wishit text-center" onclick="dataLayer.push({&quot;event&quot;:&quot;ProductBookmarkedEvent&quot;,&quot;eventName&quot;:&quot;ProductBookmarked&quot;,&quot;productId&quot;:&quot;3156693&quot;,&quot;type&quot;:&quot;addedToWishlist&quot;,&quot;category&quot;:&quot;NA&quot;,&quot;subCategory&quot;:&quot;NA&quot;,&quot;source&quot;:&quot;productDetailsPage&quot;});">-->
-				<!--<i class="fa fa-heart-o fa-2x" id="wishicon-3156693"></i></div>-->
-
 		</div>
 	</div>
-	<div class="contain">
-		<div class="recommendation-box bg-white occupy text-center">
-			<div class="heading"><h3>Recommended for you</h3></div>
-			<hr>
-			<div class="recommended-products">
+	<div class="occupy mob-section">
+		<div class="contain bg-white mob-bg-white home-section home-listing">
+			<div class="section-header mob-section-heading">
+				<span class="heading pull-left">Recently Viewed</span>
+			</div>
+			<div class="section-body text-center page-listing">
+				<img src="images/left-arrow.png" class="pull-left listing-arrow hide-sm">
 				<div class="product-listing">
 					<span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
 					<img src="images/product.jpg" class="img-responsive">
@@ -134,7 +223,7 @@
 						<div class="product-price">
 							<span class="discounted-price">$80</span>
 							&nbsp;<span class="actual-price"><s>$100</s></span>
-							<span class="discount pull-right">20%</span>
+							&nbsp;<span class="discount">20%</span>
 						</div>
 					</div>
 				</div>
@@ -146,7 +235,7 @@
 						<div class="product-price">
 							<span class="discounted-price">$80</span>
 							&nbsp;<span class="actual-price"><s>$100</s></span>
-							<span class="discount pull-right">20%</span>
+							&nbsp;<span class="discount">20%</span>
 						</div>
 					</div>
 				</div>
@@ -158,7 +247,7 @@
 						<div class="product-price">
 							<span class="discounted-price">$80</span>
 							&nbsp;<span class="actual-price"><s>$100</s></span>
-							<span class="discount pull-right">20%</span>
+							&nbsp;<span class="discount">20%</span>
 						</div>
 					</div>
 				</div>
@@ -170,11 +259,13 @@
 						<div class="product-price">
 							<span class="discounted-price">$80</span>
 							&nbsp;<span class="actual-price"><s>$100</s></span>
-							<span class="discount pull-right">20%</span>
+							&nbsp;<span class="discount">20%</span>
 						</div>
 					</div>
 				</div>
+				<img src="images/right-arrow.png" class="pull-right listing-arrow hide-sm">
 			</div>
 		</div>
 	</div>
 </div>
+

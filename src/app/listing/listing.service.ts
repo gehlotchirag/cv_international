@@ -9,39 +9,9 @@ import { HttpClientService } from '../shared/services/http-client.service'
 @Injectable()
 export class ListingService {
 
-  private categorytList={
-    "categoryId": [
-      10001,
-      10015,
-      10064,
-      10004
-    ],
-    "filters": {
-      "codProducts": "COD Available",
-      "color": [
-        "Red",
-        "Black",
-        "White"
-      ],
-      "discountedPrice": "Above 50%",
-      "price": [
-        {
-          "max": "2000",
-          "min": "1000"
-        }
-      ]
-    },
-    "pageId": 1,
-    "perPage": 10,
-    "sorts": {
-      "discountedPriceOrder": "High to Low",
-      "newestSort": "Newest",
-      "priceOrder": "High to Low",
-      "relevance": "Popular"
-    }
-  };
 
-  private listingsUrl = 'wkp6';
+
+  private listingsUrl = '1/public/catalog/categoryProductList';
 
   constructor(
       private httpClient: HttpClientService,
@@ -50,7 +20,7 @@ export class ListingService {
 
 
 
-  loadCategoryList():  Observable<Listing[]> {
+/*  loadCategoryList():  Observable<Listing[]> {
     this.httpClient.setHeader('x-version-code', '23');
     // let headers = new Headers({
     //   'x-version-code': 23,
@@ -58,6 +28,18 @@ export class ListingService {
     // let options = new RequestOptions({ headers: headers });
     let body = this.categorytList;
     return this.httpClient.post('1/public/catalog/categoryProductList', this.categorytList, {}).map((res: Response) => res.json());
+      //return this.httpClient.get(this.listingsUrl,  {}).map((res: Response) => res.json() as Listing[]);
+  }*/
+
+  loadCategoryList(params:Object):  Observable<Listing[]> {
+      return this.httpClient
+        .get(this.listingsUrl, params)
+        .map((res: Response) => res.json() as Listing[])
+        .catch((err)=>{
+          console.error(err)
+          return Observable.of<Listing[]>([]);
+        });
+
   }
 
 

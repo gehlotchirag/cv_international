@@ -6,12 +6,14 @@ import { ProductService } from './product.service';
 import { ProductAttributePipe } from './product-attribute.pipe';
 import { CartDetailsService } from '../shared/services/cart-details.service';
 import { WishListService } from '../shared/services/wish-list.service';
+import { KeysPipe } from './keys.pipe';
 
 @Component({
   selector: 'cvi-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
   providers:[ ProductService , CartDetailsService , WishListService ],
+
 })
 export class ProductComponent implements OnInit {
 
@@ -19,8 +21,12 @@ export class ProductComponent implements OnInit {
     similarProducts: Observable<Product[]>;
     vendorDetail :any;
     attributes: Observable<Object>;
+    sizeChartHeaders: string[];
+    sizeChartData: any[];
     sizes: Observable<Object>;
     colors : Observable<Object>;
+    vendorDetails: Observable<Object>;
+    columns: any[];
     vendorName: any;
     productID=['4170101','4170101'];
     customerId="1696318";
@@ -30,14 +36,15 @@ export class ProductComponent implements OnInit {
               private cartDetailsService: CartDetailsService,
               private wishListService : WishListService
   ) {
-
+    this.sizeChartData = [];
+    this.sizeChartHeaders = [];
   }
 
   ngOnInit() {
     let searchObj = {
       'productId': 4170101
     }
-    let productDetailStream = this.productService.getProductDetail(searchObj).publish();
+    let productDetailStream = this.productService.getProductDetail().publish();
         productDetailStream.pluck('d').subscribe(
             (data:any) => {
               this.products = data
@@ -45,9 +52,11 @@ export class ProductComponent implements OnInit {
             (error: any) => console.error(error),
             () => console.log('completed')
         );
-        productDetailStream.pluck('d', 'productAttributes').reduce(ProductComponent.reduceAttributes, {}).subscribe(
+        productDetailStream.pluck('d', 'productAttributes').subscribe(
           (data: any) => {
             this.attributes = data
+
+              console.log(this.attributes)
           },
           (error: any) => console.error(error),
           () => console.log('completed')
@@ -60,9 +69,28 @@ export class ProductComponent implements OnInit {
           (error: any) => console.error(error),
           () => console.log('completed')
       )
-        productDetailStream.connect()
+      productDetailStream.pluck('d', 'chartList').subscribe(
+            (data:any) => {
+              this.columns = data['columns']
+              for(let i=0; i < this.columns.length; i++){
+                this.sizeChartHeaders.push(this.columns[i].name);
+                this.sizeChartData.push(this.columns[i].values);
+              }
+            },
+            (error: any) => console.error(error),
+            () => console.log('completed')
+        )
+      productDetailStream.pluck('d', 'vendorDetails').subscribe(
+            (data:any) => {
+              this.vendorDetails = data
+            },
+            (error: any) => console.error(error),
+            () => console.log('completed')
+        )
+     productDetailStream.connect()
 
-      let similarProductsStream=this.productService.getSimilarProducts('417012').publish();
+
+     /* let similarProductsStream=this.productService.getSimilarProducts('417012').publish();
 
         similarProductsStream.pluck('d','products').subscribe(
             (data:any)=>{
@@ -72,16 +100,8 @@ export class ProductComponent implements OnInit {
             (error:any)=>console.error(error),
             ()=>console.log(' similar completed')
         );
-      // similarProductsStream.pluck('d','products').subscribe(
-      //     (data:any)=>{
-      //         this.vendorDetail=data['vendorName']
-      //         console.log(this.vendorDetail)
-      //     },
-      //     (error:any)=>console.error(error),
-      //     ()=>console.log(' similar completed')
-      // )
 
-      similarProductsStream.connect()
+      similarProductsStream.connect()*/
   }
 
 

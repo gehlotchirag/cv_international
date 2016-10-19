@@ -4,7 +4,7 @@ import { Observable }        from 'rxjs/Observable';
 import { Listing  } from './listing';
 import { ListingService } from './listing.service';
 import {forEach} from "@angular/router/src/utils/collection";
-import { CategoryFilterPipe } from './category-filter.pipe'
+ import { CategoryFilterPipe } from './category-filter.pipe'
 
 // import {PaginationService, IPaginationInstance} from "./pagination.service";
 
@@ -16,8 +16,7 @@ import { CategoryFilterPipe } from './category-filter.pipe'
   selector: 'cvi-listing',
   templateUrl: './listing.component.html',
   styleUrls: ['./listing.component.css'],
-  providers: [ListingService],
-    pipes:[CategoryFilterPipe]
+  providers: [ListingService]
 })
 export class ListingComponent implements OnInit {
     listings: any;// Observable<Listing[]>;
@@ -35,15 +34,45 @@ export class ListingComponent implements OnInit {
 
 
     ngOnInit(): void {
-        this.loadCategoryList();
+         let params={
+    "categoryId": [
+      10001,
+      10016,
+      10064,
+      10004
+    ],
+    "filters": {
+      "codProducts": "COD Available",
+      // "color": [
+      //   "Red",
+      //   "Black",
+      //   "White"
+      // ],
+      "discountedPrice": "Above 50%",
+      "price": [
+        {
+          "max": "2000",
+          "min": "1000"
+        }
+      ]
+    },
+    "pageId": 1,
+    "perPage": 10,
+    "sorts": {
+      "discountedPriceOrder": "High to Low",
+      "newestSort": "Newest",
+      "priceOrder": "High to Low",
+      "relevance": "Popular"
     }
+  };
 
-    loadCategoryList() {
-       let listingStream =  this.listingService.loadCategoryList().publish();
+
+       let listingStream =  this.listingService.loadCategoryList(params).publish();
 
         listingStream.pluck('d').subscribe(
             data => {
                 this.productList = data;
+                console.log('productlist: ',this.productList);
 
             },
             (error) => console.error(error),
@@ -58,7 +87,7 @@ export class ListingComponent implements OnInit {
             (error) => console.error(error),
             () => console.log('completed')
         )
-    
+
 
         listingStream.pluck('d', 'products').subscribe(
             data => {
@@ -76,10 +105,10 @@ export class ListingComponent implements OnInit {
 
 
         listingStream.connect();
-    }
 
 
 
+}
 
 }
 

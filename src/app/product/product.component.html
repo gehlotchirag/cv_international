@@ -16,7 +16,8 @@
 					<div class="left-img"></div>
 				</div>
 				<img src="images/left-arrow.png" class="arrow left-arrow hide-sm">
-				<img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}" class="img-responsive main-product-img" style="width:500px; height:500px;">
+        <!-- <img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}" class="img-responsive main-product-img" style="width:500px; height:500px;"> -->
+				<img src="{{products.imgUrl}}" class="img-responsive main-product-img" style="width:500px; height:500px;">
 				<img src="images/right-arrow.png" class="arrow right-arrow hide-sm">
 				<div class="side-img right-container hide-sm">
 					<div class="overlay"></div>
@@ -61,7 +62,7 @@
 						</span>
 						<div class="shipping-cost mob-inline inline">
 							<div class="heading mob-section-heading">Shipping Cost</div>
-							<div class="shipping-cost-value mob-section-body">$${{products.shippingCostWorld}}</div>
+							<div class="shipping-cost-value mob-section-body">{{products.shippingCostWorld}}</div>
 						</div>
 						<div class="shipping-cost mob-inline inline">
 							<div class="heading mob-section-heading">Delivery Time</div>
@@ -69,14 +70,14 @@
 						</div>
 						<div class="sold-by inline hide-sm">
 							<div class="heading mob-section-heading">Sold by</div>
-							<div class="shipping-cost-value">{{products.vendorName}} <span class="badge">4.2/5</span></div>
+							<div class="shipping-cost-value">{{vendorDetails.vendorName}} </div>
 						</div>
 						<hr>
 						<div class="description">
 							<div class="heading mob-section-heading">Description</div>
 							<div class="body mob-section-body">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								{{products.description}}
+
 							</div>
 						</div>
 						<hr>
@@ -90,46 +91,11 @@
 			<div class="product-details-container">
 				<div class="mob-section-heading section-heading">PRODUCT DETAILS</div>
 				<table class="table table-striped">
-					<tr>
-						<td>Style</td>
-						<td>Designer</td>
+					<tr *ngFor="let attribute of attributes">
+						<td>{{attribute.key}}</td>
+						<td>{{attribute.value}}</td>
 					</tr>
-					<tr>
-						<td>Wash Care</td>
-						<td>Dry Clean</td>
-					</tr>
-					<tr>
-						<td>Color</td>
-						<td>Black</td>
-					</tr>
-					<tr>
-						<td>Style</td>
-						<td>Designer</td>
-					</tr>
-					<tr>
-						<td>Wash Care</td>
-						<td>Dry Clean</td>
-					</tr>
-					<tr>
-						<td>Color</td>
-						<td>Black</td>
-					</tr>
-					<tr>
-						<td>Style</td>
-						<td>Designer</td>
-					</tr>
-					<tr>
-						<td>Wash Care</td>
-						<td>Dry Clean</td>
-					</tr>
-					<tr>
-						<td>Color</td>
-						<td>Black</td>
-					</tr>
-					<tr>
-						<td>Style</td>
-						<td>Designer</td>
-					</tr>
+
 				</table>
 			</div>
 			<div class="similar-products hide-sm">
@@ -268,4 +234,43 @@
 		</div>
 	</div>
 </div>
+<div class="modal fade" tabindex="-1" role="dialog" id="sizeChartModal">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Size Chart</h4>
+	      </div>
+	      <div class="modal-body">
+	        <div class="row">
+				<div class="col-sm-5 text-center">
+					<img src="#">
+					<p>All measurements shown are of the garment</p>
+				</div>
+				<div class="col-sm-7">
+					<p><strong>Dimensions for Women</strong></p>
+					<table class="table table-bordered"  >
+						<thead >
+							<tr class="active">
+								<th *ngFor="let columnName of sizeChartHeaders">{{columnName}}</th>
+						</tr>
+						</thead>
+						<tbody *ngIf="sizeChartData">
+						<tr *ngFor="let temp of sizeChartData[0]; let i=index">
+								<td *ngFor="let j of sizeChartData"> {{ j[i] }}</td>
+						</tr>
 
+   <!--  <tr  *ngFor="let column of columns">
+
+                <td>{{column.values}}</td>
+              </tr> -->
+
+
+						</tbody>
+					</table>
+				</div>
+	        </div>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->

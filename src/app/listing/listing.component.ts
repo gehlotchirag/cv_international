@@ -5,6 +5,7 @@ import { Observable }        from 'rxjs/Observable';
 import { Listing  } from './listing';
 import { ListingService } from './listing.service';
 import {forEach} from "@angular/router/src/utils/collection";
+import { CategoryFilterPipe } from './category-filter.pipe'
 
 // import {PaginationService, IPaginationInstance} from "./pagination.service";
 

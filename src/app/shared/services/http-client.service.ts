@@ -37,9 +37,10 @@ export class HttpClientService {
   get(url: string, searchObj?: Object) {
     let searchParams = new URLSearchParams();
     if(searchObj){
-      for(let key in searchObj){
+      /*for(let key in searchObj){
         searchParams.set(key, searchObj[key]);
-      }
+      }*/
+        searchParams.set('params', JSON.stringify(searchObj));
     }
     let modifiedURL: string = `${this.BASE_URL}${url}`;
     return this.http.get( modifiedURL, {

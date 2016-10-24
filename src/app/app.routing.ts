@@ -7,7 +7,10 @@ import { ProductComponent } from './product';
 
 const appRoutes: Routes = [
   {path: 'listing', component: ListingComponent},
-  {path: 'product', component: ProductComponent},
+  {path: 'product', children: [
+      { path: ':id', component: ProductComponent, pathMatch: 'full'}
+    ]
+  },
   {path: '', component: HomeComponent}
 ];
 

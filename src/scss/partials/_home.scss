@@ -32,14 +32,16 @@
 	    width: 328%;
 	    top: 0;
 	    background-color: white;
-	    height: 400px;
+	    min-height: 400px;
 	    z-index: 99;
 	    border-left: 1px solid #e2e2e2;
 		ul{
 			list-style-type: none;
 			padding: 10px 18px;
 			width: 33%;
-			float:left;
+			display: inline-block;
+			vertical-align: top;
+			// float:left;
 			li{
 				line-height: 2.1;
 				@include ellipsis();
@@ -77,7 +79,7 @@
 			    	}
 			    }
 		    	.header{
-		    		background-color: $brand-2;
+		    		background-color: $brand-color;
 		    		color:white;
 		    		letter-spacing: 3px;
 		    		height: 44px;
@@ -102,14 +104,14 @@
 		.extra-menu{
 			width: 22%;
 			height: $slider-height;
-			background-color: white;
 		    .middle{
-		    	border-bottom: $border;
-		    	border-top: $border;
+		    	margin-top: 5px;
+    			margin-bottom: 5px;
 		    }
 		    .extra-menu-item{
-		    	height:33%;
+		    	height:130px;
 		    	width: 100%;
+				background-color: white;
 		    	.heading{
 		    		font-size: $font-small;
 		    		font-weight: bold;
@@ -134,7 +136,7 @@
 		    	}
 		    }
 		}
-		
+
 	}
 	.notification-bar{
 		height: 40px;
@@ -237,6 +239,9 @@
 		width: 100%;
 		margin: 0%;
 	}
+	.carousel-inner .item .product-listing:nth-child(5){
+		display:none;
+	}
 	.trust-section{
 		padding: 2%;
 	}
@@ -250,8 +255,37 @@
 	    .extra-menu-item{
 	    	width: 96%;
 	    	margin-left:2%;
-	    	height: 100px;
     		background-color: white;
 	    }
+	}
+	.hide-tab{
+		display: none;
+	}
+}
+
+@media only screen and (max-width : 760px) {
+	.hide-tab{
+		display: block;
+	}
+}
+
+//Common
+.carousel-control.left, .carousel-control.right{
+	background-image: none !important;
+}
+.cb{
+	//background-color: grey;
+	//height: 250px;
+	margin:5px 0;
+	padding: 0 5px !important;
+	img{
+		margin:auto;
+	}
+}
+.block-container{
+	width: 100%;
+	.row{
+		margin-left: -5px !important;
+		margin-right: -5px !important;
 	}
 }

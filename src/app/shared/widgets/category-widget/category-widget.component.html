@@ -1,0 +1,20 @@
+<div class="occupy mob-section">
+  <div class="contain bg-white mob-bg-white home-section">
+    <div class="section-header mob-section-heading">
+      <span class="heading pull-left">
+        <img src="images/ethnic-1.png">
+        {{ header }}
+      </span>
+      <!-- <button class="btn btn-brand btn-xs view-more pull-right">View more</button> -->
+    </div>
+    <div class="section-body mob-section-body">
+      <div *ngFor="let item of dataItems; let i = index;"
+            class="box"
+            [ngClass]="{'box-1 hide-sm': i == first, 'box-2 last hide-sm': i==1, 'last': i == last}">
+        <a [href]="item.dataUrl">
+          <img [src]="item.imageUrl" class="img-responsive">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

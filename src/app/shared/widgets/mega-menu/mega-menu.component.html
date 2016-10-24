@@ -1,0 +1,25 @@
+<div class="menu pull-left bg-white hide-sm">
+  <ul class="list-unstyled menu-list"
+    (mouseleave)="onMouseLeave()"
+    (selectedCategory)="getSelectedCategory($event)">
+    <li class="header">
+      <span class="glyphicon glyphicon-th-list"></span>
+      <strong>SHOP BY CATEGORY</strong>
+    </li>
+    <cv-menu-link
+        *ngFor="let menuCategoryData of menuCategoriesData"
+        [categoryData]="menuCategoryData"
+        (selectedCategory)="getSelectedCategory($event)">
+    </cv-menu-link>
+    <div class="menu-sub-cat" *ngIf="activeCategoryData">
+      <ul class="sub-cat-list" *ngFor="let subCategory of activeCategoryData.data">
+        <li class="sub-cat-list-item sub-cat-list-header">{{ subCategory.name }}</li>
+        <li class="sub-cat-list-item" *ngFor="let subSubCategory of subCategory.data">
+          <a [routerLink]="[ subSubCategory.href ]">
+            {{ subSubCategory.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ul>
+</div>

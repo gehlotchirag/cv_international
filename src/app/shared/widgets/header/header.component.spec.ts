@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { SingleRowComponent } from './single-row.component';
+import { HeaderComponent } from './header.component';
 
-describe('Component: SigleRow', () => {
+describe('Component: Header', () => {
   it('should create an instance', () => {
-    let component = new SigleRowComponent();
+    let component = new HeaderComponent();
     expect(component).toBeTruthy();
   });
 });

@@ -8,6 +8,7 @@
 		display: inline-block;
 	    width: 100%;
 		.footer-list-group{
+			display:block;
 			padding-left:0;
 			li{
 				list-style-type: none;
@@ -17,6 +18,9 @@
 	    		line-height: 30px;
 	    		a{
 			    	color: $font-light !important;
+			    	&:hover{
+						color: $font-dark !important;
+			    	}
 	    		}
 			}
 		}
@@ -28,6 +32,7 @@
 			.fa{
 				font-size: 24px;
 				width: 20%;
+				cursor:pointer;
 			}
 		}
 		.footer-row-2{

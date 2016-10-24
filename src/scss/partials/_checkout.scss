@@ -38,7 +38,7 @@
 		}
 		.review-order{
 			margin-bottom:10px;
-			display:none;
+			//display:none;
 		}
 		.review-order-header{
 			text-decoration:underline;
@@ -125,6 +125,11 @@
     	font-weight: bold;
         margin-left: 20px;
 	}
+	.social-login{
+		img{
+			cursor:pointer;
+		}
+	}
 }
 
 @media only screen  and (max-width : 1050px) {
@@ -147,6 +152,9 @@
 	    img{
 	    	margin:auto;
 	    }
+	}
+	.checkout-status{
+		display:none;
 	}
 	.checkout-summary{
 		width: 100%;
@@ -189,11 +197,14 @@
 		    }
 		    .checkout-btn{
 		    	width: 96%;
-			   	margin: 2%;
+			    margin: 0 2%;
 			    display: inline-block;
 			    font-weight: bold;
 			    letter-spacing: 1px;
 			    float: right;
+			    height: 36px;
+			    line-height: 26px;
+			    margin-top: 7px;
 		    }
 		    .total-price-header{
 		    	font-size: 12px;
@@ -206,6 +217,9 @@
 		    }
 		}
 	}
+    .apply-coupons{
+    	margin-bottom: 10px;
+    }
 	.checkout-step{
 		padding: 2%;
 		margin-bottom: 2%;

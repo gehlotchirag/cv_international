@@ -15,6 +15,7 @@ import { TwoColumnComponent } from './shared/widgets/two-column/two-column.compo
 import { ProductAttributePipe } from './product/product-attribute.pipe';
 import { CategoryFilterPipe } from './listing/category-filter.pipe';
 import { HttpClientService } from './shared/services/http-client.service';
+import { KeysPipe } from './product/keys.pipe';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { HttpClientService } from './shared/services/http-client.service';
     SingleRowComponent,
     TwoColumnComponent,
     ProductAttributePipe,
-    CategoryFilterPipe
+    CategoryFilterPipe,
+    KeysPipe
   ],
   entryComponents: [SingleRowComponent, TwoColumnComponent],
   providers: [appRoutingProviders, HttpClientService],

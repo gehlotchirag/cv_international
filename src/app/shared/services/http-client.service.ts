@@ -6,6 +6,7 @@ export class HttpClientService {
   private http: Http;
   private headers = new Headers();
   private BASE_URL = 'https://appapi2.craftsvilla.com/';
+  //private BASE_URL = 'http://52.44.221.18:8000/api/';
 
   constructor(http: Http) {
     this.http = http;
@@ -37,9 +38,10 @@ export class HttpClientService {
   get(url: string, searchObj?: Object) {
     let searchParams = new URLSearchParams();
     if(searchObj){
-      for(let key in searchObj){
+      /*for(let key in searchObj){
         searchParams.set(key, searchObj[key]);
-      }
+      }*/
+        searchParams.set('params', JSON.stringify(searchObj));
     }
     let modifiedURL: string = `${this.BASE_URL}${url}`;
     return this.http.get( modifiedURL, {

@@ -36,9 +36,9 @@
 			float: left;
     		width: 80%;
 			.input-group-addon{
-				background-color: $brand-2;
+				background-color: $brand-color;
 	    		color: white;
-	    		border: 1px solid $brand-2;
+	    		border: 1px solid $brand-color;
 	    		cursor:pointer;
 				@include border-radius(0px 3px 3px 0px);
 			}
@@ -59,6 +59,7 @@
 		.option{
 			position:relative;
 			margin-left: 28px;
+			cursor:pointer;
 		}
 		.icon{
 			width:18px;
@@ -177,6 +178,9 @@
 		}
 		.input-group-addon{
 			@include border-radius(0px);
+			background-color: #981937;
+    		color: white;
+    		border-color: #981937;
 		}
 	}
 	.logo{
@@ -190,6 +194,8 @@
 		}
 		.menu-icon{
 			height: 20px;
+			float:left;
+			padding: 0 3px 0px 0px;
 		}
 	}
 	.menu-btn{

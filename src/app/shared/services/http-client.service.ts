@@ -5,6 +5,7 @@ import { Http, Headers, URLSearchParams } from '@angular/http';
 export class HttpClientService {
   private http: Http;
   private headers = new Headers();
+
   // private BASE_URL = 'https://appapi2.craftsvilla.com/';
   private BASE_URL = 'http://52.44.221.18:8000/api/';
 

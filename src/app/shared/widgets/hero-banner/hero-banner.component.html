@@ -1,0 +1,16 @@
+<div class="slider pull-left bg-white">
+  <div id="carousel-cvi-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li *ngFor="let item of dataItems; let i = index" data-target="#carousel-cvi-generic"
+          [attr.data-slide-to]="i" [class.active]="i == 0"></li>
+      <!-- <li data-target="#carousel-cvi-generic" data-slide-to="0" class="active"></li> -->
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div *ngFor="let item of dataItems; let i = index" class="item" [ngClass]="{ active: i==0 }">
+        <img [src]="item.imageUrl" class="slider-img" alt="">
+      </div>
+    </div>
+  </div>
+</div>

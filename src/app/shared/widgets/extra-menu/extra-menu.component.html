@@ -1,0 +1,9 @@
+<div class="extra-menu pull-left bg-white">
+  <div *ngFor="let item of dataItems; let i = index"
+       class="extra-menu-item pull-left"
+       [ngClass]="{middle: i == 2}">
+    <a [href]="item.dataUrl">
+      <img [src]="item.imageUrl" class="img-responsive">
+    </a>
+  </div>
+</div>

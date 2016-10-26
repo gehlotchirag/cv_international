@@ -8,15 +8,18 @@ import { HttpClientService } from '../shared/services/http-client.service';
 @Injectable()
 export class HomeService {
 
-  private dashboardUrl = '4rohq'// HOME_DASHBOARD_URL;
+  private dashboardUrl = 'homepagedata'// HOME_DASHBOARD_URL;
   private cartContentsUrl = '4y2ik'// CART_CONTENTS_URL;
 
   constructor(private httpClient: HttpClientService){}
 
-  getComponentsData(): Observable<any[]> {
+  getComponentsData() {
     return  this.httpClient
                 .get(this.dashboardUrl)
-                .map((r: Response) => { console.log(r); return r.json() as any[]});
+                .flatMap((r: Response) => {
+                  let payload = JSON.parse(r['_body']);
+                  return payload.d;
+                });
   }
 
  getCartContentsData(): Observable<Product[]> {

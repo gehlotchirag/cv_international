@@ -4,10 +4,20 @@ import { Observable } from 'rxjs/Observable';
 
 import { Product } from '../product/product';
 
+import { MegaMenuComponent } from '../shared/widgets/mega-menu/mega-menu.component';
+import { AnnouncementWidgetComponent } from '../shared/widgets/announcement-widget/announcement-widget.component';
+import { CategoryWidgetComponent } from '../shared/widgets/category-widget/category-widget.component';
+import { ExtraMenuComponent } from '../shared/widgets/extra-menu/extra-menu.component';
+import { HeroBannerComponent } from '../shared/widgets/hero-banner/hero-banner.component';
+import { PortfolioWidgetComponent } from '../shared/widgets/portfolio-widget/portfolio-widget.component';
+import { StorylineWidgetComponent } from '../shared/widgets/storyline-widget/storyline-widget.component';
+import { ProductSliderComponent } from '../shared/widgets/product-slider/product-slider.component';
+import { TestimonialsWidgetComponent } from '../shared/widgets/testimonials-widget/testimonials-widget.component';
+
+import { WidgetFactoryService } from '../shared';
 import { HomeService } from './home.service';
 import { ProductService } from '../product/product.service';
 import { CartDetailsService } from '../shared/services/cart-details.service'
-import { WidgetFactoryService } from '../shared'
 
 @Component({
   selector: 'cvi-home',
@@ -21,8 +31,11 @@ export class HomeComponent implements OnInit {
   @ViewChild('content', { read: ViewContainerRef }) contentContainer: ViewContainerRef;
   cmpRef: ComponentRef<any>;
   private isViewInitialized:boolean = false;
+  private componentsData: any;
+  private heroBannerData: any = {};
+  private extraMenuData: any = {};
 
-  children: Observable<any[]>;
+  children: Observable<any>;
   cartContents: Product[];
 
   constructor(private resolver: ComponentFactoryResolver,
@@ -32,9 +45,9 @@ export class HomeComponent implements OnInit {
   )
   {
     this.children = this.homeService.getComponentsData();
-    if(!this.cartService.isInitialized){
-      this.cartService.fetchCartDetails();
-    }
+    // if(!this.cartService.isInitialized){
+    //   this.cartService.fetchCartDetails();
+    // }
   }
 
   ngOnInit(){
@@ -64,26 +77,40 @@ export class HomeComponent implements OnInit {
       this.cmpRef.destroy();
     }
 
-    this.children.forEach( (component) => this.loadComponent(component));
+    let _componentsData = this.children.publish()
+
+    _componentsData.filter(
+                    (component: any) => component.widget_type == 'HeroBanner'
+                  ).subscribe((data) => this.heroBannerData = data,
+                              (err) => console.error(err))
+
+    _componentsData.filter(
+                (component: any) => component.widget_type == 'OfferMenu'
+              ).subscribe((data) => this.extraMenuData = data,
+                            (err) => console.error(err));
+
+    _componentsData.filter(
+                  (component: any) => !(component.widget_type == 'HeroBanner' || component.widget_type == 'OfferMenu')
+                ).subscribe( (data) => {this.componentsData = data, this.attachComponents(this.componentsData)},
+                              (err) => console.error(err));
+    _componentsData.connect();
+  }
+
+  attachComponents(data: any){
+    this.loadComponent(data);
   }
 
   loadComponent(component: any){
-    if('widgets' in component){
-      for(let widget of component['widgets']){
-        try {
-          let componentType = this.widgetFactoryService.getWidgetBaseClassName(widget.type);
-          let factory = this.resolver
-                      .resolveComponentFactory(componentType);
-          let cmpRef = this.contentContainer.createComponent(factory);
-        }
-        catch(e){
-          console.error(e);
-        }
-      }
+    try {
+      let componentType = this.widgetFactoryService.getWidgetBaseClassName(component.widget_type);
+      let factory = this.resolver
+                  .resolveComponentFactory(componentType);
+      let cmpRef: any = this.contentContainer.createComponent(factory);
+      cmpRef.instance.dataItems = component.data;
+      cmpRef.instance.header = component.title
     }
-    else {
-      return;
+    catch(e){
+      console.error(e, component.widget_type);
     }
   }
-
 }

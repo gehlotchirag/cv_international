@@ -5,8 +5,8 @@ import { Http, Headers, URLSearchParams } from '@angular/http';
 export class HttpClientService {
   private http: Http;
   private headers = new Headers();
-  private BASE_URL = 'https://appapi2.craftsvilla.com/';
-  //private BASE_URL = 'http://52.44.221.18:8000/api/';
+  // private BASE_URL = 'https://appapi2.craftsvilla.com/';
+  private BASE_URL = 'http://52.44.221.18:8000/api/';
 
   constructor(http: Http) {
     this.http = http;
@@ -34,14 +34,14 @@ export class HttpClientService {
     params.set('appid', StaticSettings.API_KEY);
     params.set('cnt', days.toString());
     Format values of key to make a jQuery Traditional Request
-*/
-  get(url: string, searchObj?: Object) {
-    let searchParams = new URLSearchParams();
-    if(searchObj){
+    */
+    get(url: string, searchObj?: Object) {
+      let searchParams = new URLSearchParams();
+      if(searchObj){
       /*for(let key in searchObj){
         searchParams.set(key, searchObj[key]);
       }*/
-        searchParams.set('params', JSON.stringify(searchObj));
+      searchParams.set('params', JSON.stringify(searchObj));
     }
     let modifiedURL: string = `${this.BASE_URL}${url}`;
     return this.http.get( modifiedURL, {
@@ -51,18 +51,18 @@ export class HttpClientService {
 
 /*
     Pass the url, body for request and any optional headers to make the request
-*/
-  post(url: string, body: any, headersObj?: Object) {
-    let tempHeaderObj = new Headers(this.headers);
-    if(headersObj){
-      for(let key in headersObj){
-        tempHeaderObj.append(key, headersObj[key]);
+    */
+    post(url: string, body: any, headersObj?: Object) {
+      let tempHeaderObj = new Headers(this.headers);
+      if(headersObj){
+        for(let key in headersObj){
+          tempHeaderObj.append(key, headersObj[key]);
+        }
       }
+      let modifiedURL: string  = `${this.BASE_URL}${url}`;
+      return this.http.post(modifiedURL, body, {
+        headers: tempHeaderObj
+      })
     }
-    let modifiedURL: string  = `${this.BASE_URL}${url}`;
-    return this.http.post(modifiedURL, body, {
-      headers: tempHeaderObj
-    })
-  }
 
-}
+  }

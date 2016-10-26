@@ -1,375 +1,241 @@
- <style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
-  }
-
-#share-buttons img {
-width: 16px;
-border: 0;
-display: inline;
+<style>
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
 }
 
-  </style>
+#share-buttons img {
+  width: 16px;
+  border: 0;
+  display: inline;
+}
+.product-info-container .sizeActive{
+  border: 2px solid #474646;
+  cursor: pointer;
+  color: #474646;
+}
+.product-page .message-box-red, .product-page .message-box-green {
+  float;left;
+  text-align: center;
+  color: #ffffff;
+  padding:5px 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 95%;
+  max-width: 1230px;
+  margin: 10px auto;
+  height: inherit;"
+}
+.product-page .message-box-red{
+  background-color: #f2dede;
+  color:#a94442;
+}
+.product-page .message-box-green{
+  background-color: #dff0d8;
+  color:#3c763d;
+}
+</style>
 <div class="content product-page">
-  <div class="contain hide-sm">
+<!--   <div class="contain hide-sm">
     <ol class="breadcrumb">
       <li><a href="#">Home</a></li>
       <li><a href="#">Women</a></li>
       <li><a href="#">Lehengas</a></li>
       <li class="active">Black Color Goergette Lehenga</li>
     </ol>
-  </div>
-    <div style="float;left; width:66%; text-align: center;   padding: 5px;   color: #3c763d;   background-color: #dff0d8;   margin:0 17% 20px 17%;   border: 1px solid transparent; border-radius: 4px;"
-    [class.displayNone]="addToBagSuccess">
+  </div> -->
+  <div class="message-box-green"[class.displayNone]="addToBagSuccess">
     Product has been successfully added to your cart.
-    </div>
-    <div style="float;left; width:66%; text-align: center;   padding: 5px;   color: #ffffff;   background-color: #d64848;   margin:0 17% 20px 17%;   border: 1px solid transparent; border-radius: 4px;"
-    [class.displayNone]="addToBagUnSuccess">
+  </div>
+  <div class="message-box-red"  [class.displayNone]="addToBagUnSuccess">
     Unable to add to your cart.
-    </div>
+  </div>
+  <div class="message-box-red"[class.displayNone]="!outOfStockMsgDspl">
+    Product is out of stock.
+  </div>
   <div class="product-container">
     <div class="contain" *ngIf="products" >
       <div class="product-img-container inline pull-left text-center">
 
 
 
-  <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
+        <br>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators" >
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <!--       <li data-target="#myCarousel" data-slide-to="3"></li> -->
+          </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
 
-      <div class="item" *ngFor="let gallaeryImage of galleryImages; let i=index" [class.active]="i == 0">
-        <img src="{{gallaeryImage}}" alt="{{products.productName}}" width="460" height="345">
+            <div class="item" *ngFor="let galleryImage of galleryImages; let i=index" [class.active]="i == 0">
 
-      </div>
+              <img  *ngIf=" galleryImages.length  > 0" src="{{galleryImage}}" alt="{{products.productName}}" width="460" height="345">
+              <img  *ngIf=" galleryImages.length  <= 0" src="https://s3-ap-southeast-1.amazonaws.com/cvshopdesk/images/product.jpg" alt="{{products.productName}}" width="460" height="345">
 
-  <!--     <div class="item">
-        <img src="{{products.imgUrl}}" alt="Chania" width="460" height="345">
-      </div>
-
-      <div class="item">
-        <img src="https://s3-ap-southeast-1.amazonaws.com/cvshopdesk/images/product.jpg" alt="Flower" width="460" height="345">
-       </div> -->
+            </div>
 
 
+          </div>
 
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
-
-
-
-
-    <!--     <div class="side-img left-container hide-sm">
-          <div class="overlay"></div>
-          <div class="left-img"></div>
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-        <img src="images/left-arrow.png" class="arrow left-arrow hide-sm">
-        <img src="http://img1.craftsvilla.com/orig{{products.imgUrl}}" class="img-responsive main-product-img" style="width:500px; height:500px;">
-        <img src="{{products.imgUrl}}" class="img-responsive main-product-img" style="width:500px; height:500px;">
-        <img src="images/right-arrow.png" class="arrow right-arrow hide-sm">
-        <div class="side-img right-container hide-sm">
-          <div class="overlay"></div>
-          <div class="right-img"></div>
-        </div> -->
+
+
       </div>
       <div class="product-info-container inline pull-left mob-contain">
-          <span class="mob-bg-white">
-            <div class="name mob-section-heading"><h1>{{products.productName}}</h1></div>
-              <div class="price mob-section-body">
-                <span class="discounted-price">${{products.discountedPrice}}</span>
-                &nbsp;<span class="actual-price" *ngIf="isRegularPriceMore"><s>${{products.regularPrice}}</s></span>
-                &nbsp;<span class="discount green" *ngIf="isDiscountPercVesible">{{products.discountPercentage}}% off</span>
-                <span class="pull-right details-wishlist-container" (click)="addWish($event)" style="display:none;"><img src="images/wishlist-product.png" class="img-responsive wishlist-details-page inline mob-inline" > Add to Wishlist</span>
+        <span class="mob-bg-white">
+          <div class="name mob-section-heading"><h1>{{products.productName}}</h1></div>
+          <div class="price mob-section-body">
+            <span class="discounted-price"  >${{products.discountedPrice}}</span>
+            &nbsp;<span class="actual-price" *ngIf="isRegularPriceMore"><s>${{products.regularPrice}}</s></span>
+            &nbsp;<span class="discount green"  *ngIf="isDiscountPercVesible">{{products.discountPercentage | number:'2.1-2'}}% off</span>
+            <!-- &nbsp;<span class="discount green"  *ngIf="isDiscountPercVesible">{{products.discountPercentage | currency:'USD':true:'1.2-2'}}% off</span> -->
+            <span class="pull-right details-wishlist-container" (click)="addWish($event)" style="display:none;"><img src="images/wishlist-product.png" class="img-responsive wishlist-details-page inline mob-inline" > Add to Wishlist</span>
+          </div>
+          <span class="add-to-bag-block">
+            <div class="size occupy mob-inline cover">
+              <div class="heading mob-section-heading"  [class.displayNone]="!stitching_enabled">
+                <span class="pull-left">Select Stitch Type</span>
               </div>
-              <span class="add-to-bag-block">
-              <div class="size occupy mob-inline cover">
-                <div class="heading mob-section-heading">
-                  <span class="pull-left">Select Stitch Type</span>
+              <div class="stitching occupy mob-section-body"  >
+                <select (change)="selectStitchingType($event.target.value)" [class.displayNone]="!stitching_enabled">
+                  <option>Select Stitching...</option>
+                  <option id="Readymad" >Readymade</option>
+                  <option id="Unstitched" >Unstitched</option>
+                  <option id="Semi-stitched">Semi-stitched</option>
+                  <option id="Customized Stitch" >Customized Stitch</option>
+                </select>
+                <div [class.displayNone]="!stitching_type_text_show">
+                  <span><strong>Stitching Type : </strong></span> <span>{{stitching_type}}</span></div>
+
                 </div>
-                <div class="stitching occupy mob-section-body">
-                  <select (change)="selectStitchingType($event.target.value)">
-                    <option>Select Stitching...</option>
-                    <option id="Readymad" >Readymade</option>
-                    <option id="Unstitched" >Unstitched</option>
-                    <option id="Semi-stitched">Semi-stitched</option>
-                    <option id="Customized Stitch" >Customized Stitch</option>
-                  </select>
-                </div>
-                <div class [class.displayNone]="showSizeDiv">
-                <div class="heading select-size-header mob-section-heading" id="sizeChartDiv">
-                  <span class="pull-left">Select Size</span>
-                  <span class="pull-right mob-link link" data-toggle="modal" data-target="#sizeChartModal">Size Chart</span>
-                </div>
-                <div class="sizes occupy mob-section-body" >
-                  <span *ngFor="let size of sizes  let i=index  ">
+                <div class [class.displayNone]="showSizeDiv" >
+                  <div class="heading select-size-header mob-section-heading" id="sizeChartDiv">
+                    <span class="pull-left">Select Size</span>
+                    <span class="pull-right mob-link link" data-toggle="modal" data-target="#sizeChartModal">Size Chart</span>
+                  </div>
+                  <div class="sizes occupy mob-section-body" >
+                 <!--  <span *ngFor="let size of sizes  let i=index  ">
                     <span class="size-box" id="{{size}}{{i}}"  (click)="selectProducSize($event)" [class.active]="isClassVisible">{{size}}</span>
-                  </span>
-                </div>
+                  </span> -->
+                  <span *ngFor="let size of sizes , let i = index"
+                  [attr.data-selected]="false"
+                  (click)="selectSize($event, size)"
+                  class="size-box"
+                  [class.active]="selectedSize === size">
+                  {{ size }}
+                </span>
               </div>
-              </div>
-              <div class="stitch"></div>
-              <div class="add-to-bag occupy fixed-bottom-bar product-buy-btns">
-                <button class="btn btn-default add-cart-btn flat-btn purchase" (click)="addToBag($event)">ADD TO BAG</button>
-                <button class="btn btn-brand buy-btn flat-btn purchase">BUY NOW</button>
-              </div>
-            </span>
-            <div class="shipping-cost mob-inline inline">
-              <div class="heading mob-section-heading">Shipping Cost</div>
-              <div class="shipping-cost-value mob-section-body">{{products.shippingCostWorld}}</div>
             </div>
-            <div class="shipping-cost mob-inline inline">
-              <div class="heading mob-section-heading">Delivery Time</div>
-              <div class="shipping-cost-value mob-section-body">{{products.estimatedDeliveryTime}} </div>
-            </div>
-            <div class="sold-by inline hide-sm">
-              <div class="heading mob-section-heading">Sold by</div>
-              <div class="shipping-cost-value">{{vendorDetails.vendorName}} </div>
-            </div>
-            <hr>
-            <div class="description">
-              <div class="heading mob-section-heading">Description</div>
-              <div class="body mob-section-body">
-                {{products.description}}
+          </div>
+          <div class="stitch"></div>
+          <div class="add-to-bag occupy fixed-bottom-bar product-buy-btns">
+            <button class="btn btn-default add-cart-btn flat-btn purchase" (click)="addToBag($event)">ADD TO BAG</button>
+            <button class="btn btn-brand buy-btn flat-btn purchase">BUY NOW</button>
+          </div>
+        </span>
+        <div class="shipping-cost mob-inline inline">
+          <div class="heading mob-section-heading">Shipping Cost</div>
+          <div class="shipping-cost-value mob-section-body">{{products.shippingCostWorld}}</div>
+        </div>
+        <div class="shipping-cost mob-inline inline">
+          <div class="heading mob-section-heading">Delivery Time</div>
+          <div class="shipping-cost-value mob-section-body">{{products.estimatedDeliveryTime}} </div>
+        </div>
+        <div class="sold-by inline hide-sm">
+          <div class="heading mob-section-heading">Sold by</div>
+          <div class="shipping-cost-value">{{vendorDetails.vendorName}} </div>
+        </div>
+        <hr>
+        <div class="description">
+          <div class="heading mob-section-heading">Description</div>
+          <div class="body mob-section-body">
+            {{products.description}}
 
-              </div>
-            </div>
-            <hr>
-            <div class="share-product hide-sm" id="share-buttons"><span class="header">Share on &nbsp;</span>
-                <a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts" target="_blank">
-                    <img src="images/facebook.png" alt="Facebook" />
-                </a>
-                <a href="https://twitter.com/share?url=https://www.craftsvilla.com&amp;text=Simple%20Share%20Buttons&amp;hashtags={{products.productName}}" target="_blank">
-                   <img src="images/twitter.png" alt="Twitter" />
-                </a>
-                <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
-                <img src="images/pinterest.png" alt="Pinterest" />
-                </a>
-    </div>
-          </span>
+          </div>
+        </div>
+        <hr>
+        <div class="share-product hide-sm" id="share-buttons"><span class="header">Share on &nbsp;</span>
+          <a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts" target="_blank">
+            <img src="images/facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://twitter.com/share?url=https://www.craftsvilla.com&amp;text=Simple%20Share%20Buttons&amp;hashtags={{products.productName}}" target="_blank">
+           <img src="images/twitter.png" alt="Twitter" />
+         </a>
+         <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+          <img src="images/pinterest.png" alt="Pinterest" />
+        </a>
       </div>
-    </div>
+    </span>
   </div>
-  <div class="contain mob-contain">
-    <div class="mob-bg-white bg-white occupy">
-      <div class="product-details-container">
-        <div class="mob-section-heading section-heading">PRODUCT DETAILS</div>
-        <table class="table table-striped">
-          <tr *ngFor="let attribute of attributes">
-            <td>{{attribute.key}}</td>
-            <td>{{attribute.value}}</td>
-          </tr>
+</div>
+</div>
+<div class="contain mob-contain">
+  <div class="mob-bg-white bg-white occupy">
+    <div class="product-details-container">
+      <div class="mob-section-heading section-heading">PRODUCT DETAILS</div>
+      <table class="table table-striped">
+        <tr *ngFor="let attribute of attributes">
+          <td>{{attribute.key}}</td>
+          <td>{{attribute.value}}</td>
+        </tr>
 
-        </table>
-      </div>
-<!--       <div class="similar-products hide-sm">
-        <div class="section-heading">SIMILAR PRODUCTS</div>
-        <div class="product-listing" *ngFor="let similarProduct of similarProducts">
-          <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
-          <img src="http://img1.craftsvilla.com/thumb/216x216{{similarProduct.imgUrl}}" class="img-responsive">
-          <div class="product-info">
-            <div class="product-name">{{similarProduct.productName}}</div>
-            <div class="product-price">
-              <span class="discounted-price">${{similarProduct.discountedPrice}}</span>
-              &nbsp;<span class="actual-price"><s>${{similarProduct.regularPrice}}</s></span>
-              &nbsp;<span class="discount">{{similarProduct.discountPercentage}}%</span>
-            </div>
-          </div>
-        </div>
-      </div> -->
+      </table>
     </div>
+
   </div>
-  <!-- <div class="occupy mob-section">
-    <div class="contain bg-white mob-bg-white home-section home-listing">
-      <div class="section-header mob-section-heading">
-        <span class="heading pull-left">Recommendations</span>
-      </div>
-      <div class="section-body text-center page-listing">
-        <img src="images/left-arrow.png" class="pull-left listing-arrow hide-sm">
-        <div class="product-listing">
-          <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
-          <img src="images/product.jpg" class="img-responsive">
-          <div class="product-info">
-            <div class="product-name">Black Zari Work Cotton Saree</div>
-            <div class="product-price">
-              <span class="discounted-price">$80</span>
-              &nbsp;<span class="actual-price"><s>$100</s></span>
-              &nbsp;<span class="discount">20%</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-listing">
-          <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
-          <img src="images/product.jpg" class="img-responsive">
-          <div class="product-info">
-            <div class="product-name">Black Zari Work Cotton Saree</div>
-            <div class="product-price">
-              <span class="discounted-price">$80</span>
-              &nbsp;<span class="actual-price"><s>$100</s></span>
-              &nbsp;<span class="discount">20%</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-listing">
-          <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
-          <img src="images/product.jpg" class="img-responsive">
-          <div class="product-info">
-            <div class="product-name">Black Zari Work Cotton Saree</div>
-            <div class="product-price">
-              <span class="discounted-price">$80</span>
-              &nbsp;<span class="actual-price"><s>$100</s></span>
-              &nbsp;<span class="discount">20%</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-listing">
-          <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
-          <img src="images/product.jpg" class="img-responsive">
-          <div class="product-info">
-            <div class="product-name">Black Zari Work Cotton Saree</div>
-            <div class="product-price">
-              <span class="discounted-price">$80</span>
-              &nbsp;<span class="actual-price"><s>$100</s></span>
-              &nbsp;<span class="discount">20%</span>
-            </div>
-          </div>
-        </div>
-        <img src="images/right-arrow.png" class="pull-right listing-arrow hide-sm">
-      </div>
-    </div>
-  </div> -->
- <!--  <div class="occupy mob-section">
-    <div class="contain bg-white mob-bg-white home-section home-listing">
-      <div class="section-header mob-section-heading">
-        <span class="heading pull-left">Recently Viewed</span>
-      </div>
-      <div class="section-body text-center page-listing">
-        <img src="images/left-arrow.png" class="pull-left listing-arrow hide-sm">
-        <div class="product-listing">
-          <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
-          <img src="images/product.jpg" class="img-responsive">
-          <div class="product-info">
-            <div class="product-name">Black Zari Work Cotton Saree</div>
-            <div class="product-price">
-              <span class="discounted-price">$80</span>
-              &nbsp;<span class="actual-price"><s>$100</s></span>
-              &nbsp;<span class="discount">20%</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-listing">
-          <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
-          <img src="images/product.jpg" class="img-responsive">
-          <div class="product-info">
-            <div class="product-name">Black Zari Work Cotton Saree</div>
-            <div class="product-price">
-              <span class="discounted-price">$80</span>
-              &nbsp;<span class="actual-price"><s>$100</s></span>
-              &nbsp;<span class="discount">20%</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-listing">
-          <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
-          <img src="images/product.jpg" class="img-responsive">
-          <div class="product-info">
-            <div class="product-name">Black Zari Work Cotton Saree</div>
-            <div class="product-price">
-              <span class="discounted-price">$80</span>
-              &nbsp;<span class="actual-price"><s>$100</s></span>
-              &nbsp;<span class="discount">20%</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-listing">
-          <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
-          <img src="images/product.jpg" class="img-responsive">
-          <div class="product-info">
-            <div class="product-name">Black Zari Work Cotton Saree</div>
-            <div class="product-price">
-              <span class="discounted-price">$80</span>
-              &nbsp;<span class="actual-price"><s>$100</s></span>
-              &nbsp;<span class="discount">20%</span>
-            </div>
-          </div>
-        </div>
-        <img src="images/right-arrow.png" class="pull-right listing-arrow hide-sm">
-      </div>
-    </div>
-  </div> -->
+</div>
+
 </div>
 <div class="modal fade" tabindex="-1" role="dialog" id="sizeChartModal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Size Chart</h4>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-        <div class="col-sm-5 text-center">
-          <img src="#">
-          <p>All measurements shown are of the garment</p>
-        </div>
-        <div class="col-sm-7">
-          <p><strong>Dimensions for Women</strong></p>
-          <table class="table table-bordered"  >
-            <thead >
-              <tr class="active">
-                <th *ngFor="let columnName of sizeChartHeaders">{{columnName}}</th>
-            </tr>
-            </thead>
-            <tbody *ngIf="sizeChartData">
-            <tr *ngFor="let temp of sizeChartData[0]; let i=index">
-                <td *ngFor="let j of sizeChartData"> {{ j[i] }}</td>
-            </tr>
-
-   <!--  <tr  *ngFor="let column of columns">
-
-                <td>{{column.values}}</td>
-              </tr> -->
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Size Chart</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-5 text-center">
+            <img src="#">
+            <p>All measurements shown are of the garment</p>
+          </div>
+          <div class="col-sm-7">
+            <p><strong>Dimensions for Women</strong></p>
+            <table class="table table-bordered"  >
+              <thead >
+                <tr class="active">
+                  <th *ngFor="let columnName of sizeChartHeaders">{{columnName}}</th>
+                </tr>
+              </thead>
+              <tbody *ngIf="sizeChartData">
+                <tr *ngFor="let temp of sizeChartData[0]; let i=index">
+                  <td *ngFor="let j of sizeChartData"> {{ j[i] }}</td>
+                </tr>
 
 
-            </tbody>
-          </table>
-        </div>
+
+
+              </tbody>
+            </table>
           </div>
         </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<script
-    type="text/javascript"
-    async defer
-    src="//assets.pinterest.com/js/pinit.js"
-></script>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 

@@ -5,13 +5,21 @@ import { HomeComponent } from './home';
 import { ListingComponent } from './listing';
 import { ProductComponent } from './product';
 
+import { ProductDetailResolve } from './product';
+
 const appRoutes: Routes = [
-  {path: 'listing', component: ListingComponent},
-  {path: 'product', children: [
-      { path: ':id', component: ProductComponent, pathMatch: 'full'}
-    ]
-  },
-  {path: '', component: HomeComponent}
+{path: 'listing', component: ListingComponent},
+{path: 'product', children: [
+{ path: ':id',
+component: ProductComponent,
+pathMatch: 'full',
+resolve: {
+  product: ProductDetailResolve
+}
+}
+]
+},
+{path: '', component: HomeComponent}
 ];
 
 export const appRoutingProviders: any[] = [

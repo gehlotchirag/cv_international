@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { CartDetailsService } from '../../services/cart-details.service';
-import { WishListService } from '../../services/wish-list.service';
+// import { WishListService } from '../../services/wish-list.service';
 
 @Component({
-  selector: 'app-header',
+  selector: 'cvi-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
@@ -15,8 +15,8 @@ export class HeaderComponent implements OnInit {
   private queryInput: string;
 
   constructor(private router: Router,
-              private cartDetailsService: CartDetailsService,
-              private wishListService: WishListService) { }
+              private cartDetailsService: CartDetailsService
+              ) { }
 
   ngOnInit() {
     this.cartDetailsService.fetchCartDetails();
@@ -24,9 +24,7 @@ export class HeaderComponent implements OnInit {
   }
 
   searchItems(){
-    this.router.navigate(['/listing', { queryParams: { query: this.queryInput }}]);
+    this.router.navigate(['/listing'], { queryParams: { query: this.queryInput }});
   }
-
-
 
 }

@@ -6,7 +6,7 @@ import { ProductService } from './product.service';
 import { ProductAttributePipe } from './product-attribute.pipe';
 import { CartDetailsService } from '../shared/services/cart-details.service';
 import { WishListService } from '../shared/services/wish-list.service';
-import { KeysPipe } from './keys.pipe';
+import { ObjectKeysPipe } from '../shared/utils';
 //import {ImageZoomModule} from 'angular2-image-zoom';
 
 @Component({
@@ -14,7 +14,6 @@ import { KeysPipe } from './keys.pipe';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
   providers:[ ProductService , CartDetailsService , WishListService ],
-
 })
 export class ProductComponent implements OnInit {
 

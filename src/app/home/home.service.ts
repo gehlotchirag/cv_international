@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
-import { Product } from '../product/product';
 import { HttpClientService } from '../shared/services/http-client.service';
+import CartInfo from '../shared/interfaces/cart-info';
 
 @Injectable()
 export class HomeService {
 
-  private dashboardUrl = 'homepagedata'// HOME_DASHBOARD_URL;
-  private cartContentsUrl = '4y2ik'// CART_CONTENTS_URL;
+  private dashboardUrl = 'api/homepagedata'// HOME_DASHBOARD_URL;
 
   constructor(private httpClient: HttpClientService){}
 
@@ -22,9 +21,4 @@ export class HomeService {
                 });
   }
 
- getCartContentsData(): Observable<Product[]> {
-   return this.httpClient
-              .get(this.cartContentsUrl)
-              .map((r: Response) => { return r.json() as Product[] });
- }
 }

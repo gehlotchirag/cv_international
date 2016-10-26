@@ -2,34 +2,18 @@ import { Injectable } from '@angular/core';
 import { Http, Response , Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 
-import { Listing } from './listing';
+import Listing from './listing';
 import { HttpClientService } from '../shared/services/http-client.service'
-
+import { isDefined , isEmpty} from '../shared/utils';
 
 @Injectable()
 export class ListingService {
-
-
-
-  private listingsUrl = '1/public/catalog/categoryProductList';
+  private listingsUrl = 'api/products/';
 
   constructor(
       private httpClient: HttpClientService,
       private http: Http
   ){}
-
-
-
-/*  loadCategoryList():  Observable<Listing[]> {
-    this.httpClient.setHeader('x-version-code', '23');
-    // let headers = new Headers({
-    //   'x-version-code': 23,
-    // });
-    // let options = new RequestOptions({ headers: headers });
-    let body = this.categorytList;
-    return this.httpClient.post('1/public/catalog/categoryProductList', this.categorytList, {}).map((res: Response) => res.json());
-      //return this.httpClient.get(this.listingsUrl,  {}).map((res: Response) => res.json() as Listing[]);
-  }*/
 
   loadCategoryList(params:Object):  Observable<Listing[]> {
       return this.httpClient
@@ -39,10 +23,19 @@ export class ListingService {
           console.error(err)
           return Observable.of<Listing[]>([]);
         });
-
   }
 
-
+  getListingList(paramObj: Object): any {
+    let  query = paramObj['query'], params = paramObj['params'], page = paramObj['page'];
+    let searchObj = {
+      query: query ? query : '',
+      params: isDefined(params) && !isEmpty(params) ? params : {},
+      page: page && !isNaN(page) ? page : 1
+    }
+    return this.httpClient
+                .get(this.listingsUrl, searchObj)
+                .toPromise()
+  }
 
 }
 

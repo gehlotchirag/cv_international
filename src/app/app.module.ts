@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { ListingComponent } from './listing';
 import { ProductComponent } from './product';
+import { HeaderComponent } from './shared/widgets/header/header.component';
 import { MegaMenuComponent } from './shared/widgets/mega-menu/mega-menu.component';
 import { MegaMenuLinkComponent } from './shared/widgets/mega-menu/mega-menu-link.component';
 import { AnnouncementWidgetComponent } from './shared/widgets/announcement-widget/announcement-widget.component';
@@ -19,10 +20,18 @@ import { HeroBannerComponent } from './shared/widgets/hero-banner/hero-banner.co
 import { PortfolioWidgetComponent } from './shared/widgets/portfolio-widget/portfolio-widget.component';
 import { StorylineWidgetComponent } from './shared/widgets/storyline-widget/storyline-widget.component';
 import { ProductSliderComponent } from './shared/widgets/product-slider/product-slider.component';
-import { TestimonialsWidgetComponent } from './shared/widgets/testimonials-widget/testimonials-widget.component';import { ProductAttributePipe } from './product/product-attribute.pipe';
+import { TestimonialsWidgetComponent } from './shared/widgets/testimonials-widget/testimonials-widget.component';
+import { ProductCardComponent } from './shared/widgets/product-card/product-card.component';
+import { PaginationComponent } from './shared/widgets/pagination/pagination.component';
+
+import { ProductAttributePipe } from './product/product-attribute.pipe';
 import { CategoryFilterPipe } from './listing/category-filter.pipe';
+import { CartDetailsService } from './shared/services/cart-details.service';
+import { ListingResolveService } from './listing/listing-resolve.service';
+import { ListingService } from './listing/listing.service';
 import { HttpClientService } from './shared/services/http-client.service';
-import { KeysPipe } from './product/keys.pipe';
+import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
+
 
 @NgModule({
   imports: [
@@ -36,6 +45,7 @@ import { KeysPipe } from './product/keys.pipe';
     HomeComponent,
     ListingComponent,
     ProductComponent,
+    HeaderComponent,
     MegaMenuComponent,
     MegaMenuLinkComponent,
     AnnouncementWidgetComponent,
@@ -46,9 +56,11 @@ import { KeysPipe } from './product/keys.pipe';
     StorylineWidgetComponent,
     ProductSliderComponent,
     TestimonialsWidgetComponent,
+    PaginationComponent,
+    ProductCardComponent,
     ProductAttributePipe,
     CategoryFilterPipe,
-    KeysPipe
+    ObjectKeysPipe
   ],
   entryComponents: [
     AnnouncementWidgetComponent,
@@ -60,7 +72,7 @@ import { KeysPipe } from './product/keys.pipe';
     ProductSliderComponent,
     TestimonialsWidgetComponent
   ],
-  providers: [appRoutingProviders, HttpClientService],
+  providers: [appRoutingProviders, HttpClientService, ListingResolveService, ListingService, CartDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

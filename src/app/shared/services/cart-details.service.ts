@@ -3,30 +3,29 @@ import { Observable } from 'rxjs';
 import { Http, Response, Headers } from '@angular/http';
 
 import { HttpClientService } from './http-client.service';
-import { Product } from '../../product/product';
+import ListingProduct from '../interfaces/listing-product';
+import CartInfo from '../interfaces/cart-info';
 
 @Injectable()
 export class CartDetailsService {
-  private cartContentsUrl = '4y2ik';
-  private cartContents: Product[];
+  private cartContentsUrl = 'checkoutService/index/loadQuote';
+  private cartContents: CartInfo;
   private isCartInitialized: boolean  = false;
 
-  constructor(private httpClient: HttpClientService,
-              private http: Http
-  ){}
+  constructor(private httpClient: HttpClientService){}
 
   private updateCartCountView(){
     let cart = document.getElementById('js-cart-count');
-    cart.textContent = String(this.cartContents ? this.cartContents.length : 0);
+    cart.textContent = String(this.cartContents && this.cartContents.total_items ? this.cartContents.total_items : 0);
   }
 
   fetchCartDetails(): void {
     this.httpClient
        .get(this.cartContentsUrl)
-       .map((r: Response) => { return r.json() as Product[] })
-       .pluck('products')
+       .map((r: Response) => { return r.json() })
+       .pluck('d')
        .subscribe(
-         (data: Product[]) => { this.cartContents = data;
+         (data: CartInfo) => { this.cartContents = data;
            this.updateCartCountView();
           },
          (error) => console.error(error),
@@ -99,7 +98,7 @@ export class CartDetailsService {
   }
 
   get cartCount(): number {
-    return this.cartContents.length;
+    return this.cartContents && this.cartContents.total_items ? this.cartContents.total_items: 0;
   }
 
   get isInitialized(): boolean {

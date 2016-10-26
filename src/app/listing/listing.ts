@@ -1,11 +1,12 @@
-export class Listing {
-  constructor(
-    public id: number,
-    public path: string,
-    public depth: number,
-    public numchild: number,
-    public name: string,
-    public description: string,
-    public image: string,
-    public slug: string){}
+import ListingProduct from './listing-product'
+
+interface Listing {
+    current_page: number,
+    total_count: number,
+    total_pages: number,
+    previous_page: number,
+    name: string,
+    results: ListingProduct[]
 }
+
+export default Listing;

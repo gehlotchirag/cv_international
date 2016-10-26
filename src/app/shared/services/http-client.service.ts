@@ -5,7 +5,7 @@ import { Http, Headers, URLSearchParams } from '@angular/http';
 export class HttpClientService {
   private http: Http;
   private headers = new Headers();
-  private BASE_URL = 'http://52.44.221.18:8000/api/';
+  private BASE_URL = 'http://international.craftsvilla.com:8000/';
 
   constructor(http: Http) {
     this.http = http;
@@ -37,10 +37,10 @@ export class HttpClientService {
   get(url: string, searchObj?: Object) {
     let searchParams = new URLSearchParams();
     if(searchObj){
-      /*for(let key in searchObj){
-        searchParams.set(key, searchObj[key]);
-      }*/
-        searchParams.set('params', JSON.stringify(searchObj));
+      for(let key in searchObj){
+        searchParams.set(key, JSON.stringify(searchObj[key]));
+      }
+      // searchParams.set('params', JSON.stringify(searchObj));
     }
     let modifiedURL: string = `${this.BASE_URL}${url}`;
     return this.http.get( modifiedURL, {

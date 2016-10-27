@@ -87,14 +87,14 @@ export class ProductComponent implements OnInit {
               // this.stitching_enabled=data.stitching_enabled;
               this.stitching_type=data.stitching_type;
               this.stitching_enabled=data.stitching_enabled;
-              console.log('productId',this.productId);
+
               if(data.discountPercentage==0){
                   this.isDiscountPercVesible=false;
               }
               if(data.regularPrice==data.discountedPrice) {
                 this.isRegularPriceMore=false;
               }
-              console.log("stiching enabled: ",this.stitching_enabled);
+
               if(this.stitching_enabled == false)
               {
                 this.showSizeDiv=true;
@@ -104,8 +104,7 @@ export class ProductComponent implements OnInit {
                 this.outOfStockMsgDspl=true;
               }
 
-              console.log("stitching type: ", this.stitching_type);
-              console.log("stitching show: ", this.stitching_type_text_show);
+
 
               if(this.stitching_type=="")
               {
@@ -114,7 +113,7 @@ export class ProductComponent implements OnInit {
               else{
                   this.stitching_type_text_show=true;
               }
-              console.log("stitching show: ", this.stitching_type_text_show);
+
 
       },
       (error) => console.error(error)
@@ -124,7 +123,7 @@ export class ProductComponent implements OnInit {
           (data: any) => {
             this.attributes = data
 
-              console.log(this.attributes)
+
           },
           (error: any) => console.error(error),
           () => console.log('completed')
@@ -134,7 +133,7 @@ export class ProductComponent implements OnInit {
               this.sizes = data['Size']  || []
               this.colors = data['Color'] || []
               this.individualQuantity =data['Quantity'] || []
-              console.log("quantity : ",this.individualQuantity.length);
+
 
               if(this.individualQuantity.length>0){
                 this.showSizeDiv=false;
@@ -172,19 +171,17 @@ export class ProductComponent implements OnInit {
 
 
     addWish(event: any): void {
-        console.log('addWish');
+
         this.wishListService.addToWishList(this.customerId,this.productId );
 
     }
 
     addToBag(event: any): void {
-        console.log(this.productId);
-        console.log(this.stitchingType);
-        console.log(this.selectedSize);
+
 
 
           if (typeof this.selectedSize == "undefine"){
-          console.log('red');
+
           this.addToBagUnSuccess=false;
           this.addToBagSuccess=true;
 
@@ -203,10 +200,6 @@ export class ProductComponent implements OnInit {
 
       let index=this.individualQuantity.indexOf(size);
 
-      console.log("index",index);
-
-
-
       this.selectedSize = (this.selectedSize === size) ? undefined : size;
 
     }
@@ -215,7 +208,7 @@ export class ProductComponent implements OnInit {
 
       this.stitchingType = stitchingType;
 
-      console.log(this.stitchingType);
+
       if(this.stitchingType==='Readymade'){
         this.showSizeDiv=false;
       }else if(this.stitchingType==='Unstitched'){

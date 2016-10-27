@@ -16,24 +16,16 @@ export  class ProductService{
 
        //private productDetailUrl= '1/public/catalog/productDetail?productId=4582436';
        // private similarProductsUrl='1/public/catalog/similarProducts?productId=4948258';
-    private productDetailUrl= 'http://52.44.221.18:8000/1/public/catalog/productDetail';
+    private productDetailUrl= '1/public/catalog/productDetail';
 
     constructor(private httpClient: HttpClientService,
                 private http: Http
     ) {}
 
     getProductDetail(productId) {
-
-      // return this.httpClient
-      //     .get(this.productDetailUrl, {})
-      //     .map((r:Response)=> r.json() as Product[]);
-
-      let searchParams = new URLSearchParams();
-      searchParams.set('productId', String(productId))
-
-     return this.http
-      .get(this.productDetailUrl, { search: searchParams })
-      .toPromise()
+      return this.httpClient
+                  .get(this.productDetailUrl, { 'productId': String(productId) })
+                  .toPromise()
       // .map((r:Response)=> r.json() as Product[]);
     }
 

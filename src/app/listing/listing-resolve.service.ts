@@ -20,7 +20,7 @@ export class ListingResolveService implements Resolve<Listing> {
     return this.ls.getListingList({ query, params, page })
                .then(listing => {
                  if(listing){
-                    return listing;
+                    return listing.json();
                  }
                  else {
                    this.router.navigate(['/404']);

@@ -73,9 +73,11 @@
 								</div>
 							</div>
 
-							<div *ngFor="let listingProduct of listing?.results" class="product-listing">
-								<cvi-product-card [product]="listingProduct" [showSizeInfo]="!(!0)"></cvi-product-card>
-							</div>
+							<cvi-product-card *ngFor="let listingProduct of listing?.results"
+																[product]="listingProduct"
+																[showSizeInfo]="!(!0)">
+							</cvi-product-card>
+
 						</div>
 						<cvi-pagination
 						   [totalPages]="listing?.total_pages"

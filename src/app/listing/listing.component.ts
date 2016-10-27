@@ -45,6 +45,15 @@ export class ListingComponent implements OnInit {
     ngOnInit(): void {
       // this.loadCategoryList();
       let query , params, page;
+
+      this.route
+          .data
+          .pluck('listing', 'd')
+          .subscribe( (data : Listing) => {
+              this.listing = data;
+            },
+              (error) => console.error(error))
+
       this.router.events.subscribe(
         (event: Event) => {
           if(event instanceof NavigationStart){
@@ -64,13 +73,6 @@ export class ListingComponent implements OnInit {
         },
         (err) => console.error(err)
       )
-
-      this.route.data.pluck('listing', 'd')
-                .subscribe( (data : Listing) => {
-                    this.listing = data;
-                },
-                (error) => console.error(error)
-              )
     }
 
     getDataTarget(key): string {

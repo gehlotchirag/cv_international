@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Event, NavigationStart, NavigationEnd } from '@angular/router';
+import { Response } from '@angular/http';
 import { Observable }        from 'rxjs/Observable';
 
 import { ListingService } from './listing.service';
@@ -9,24 +10,6 @@ import { ProductCardComponent } from '../shared/widgets/product-card/product-car
 import { PaginationComponent } from "../shared/widgets/pagination/pagination.component";
 
 import Listing from './listing';
-
-/*
-"filters": {
-        "color": [
-          "Red",
-          "Black",
-          "White"
-        ],
-        "codProducts": "COD Available",
-        "price": [
-          {
-            "max": "2000",
-            "min": "1000"
-          }
-        ],
-        "discountedPrice": "Above 50%"
-      }
-*/
 
 @Component({
   selector: 'cvi-listing',
@@ -46,10 +29,42 @@ export class ListingComponent implements OnInit {
 
     constructor(private listingService: ListingService,
                 private router: Router,
-                private route: ActivatedRoute) {}
+                private route: ActivatedRoute) {
+                }
+
+    fetchData(paramObj?: any){
+      this.listingService
+          .getListingList(paramObj)
+          .then( (listing: Response) => {
+            if(listing){
+              this.listing = listing.json().d;
+            }
+          })
+    }
 
     ngOnInit(): void {
       // this.loadCategoryList();
+      let query , params, page;
+      this.router.events.subscribe(
+        (event: Event) => {
+          if(event instanceof NavigationStart){
+            let paramObj = {};
+            if(event.url && event.url.indexOf('listing') != -1){
+              let splitUrl = event.url.split('?').slice(1);
+              for(let qParams of splitUrl){
+                let keyVal = qParams.split('=');
+                paramObj[keyVal[0]] = keyVal[1];
+              }
+              this.fetchData(paramObj);
+            }
+          }
+          else if(event instanceof NavigationEnd && !this.route.data){
+
+          }
+        },
+        (err) => console.error(err)
+      )
+
       this.route.data.pluck('listing', 'd')
                 .subscribe( (data : Listing) => {
                     this.listing = data;

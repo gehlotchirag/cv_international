@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { Product } from './product';
@@ -6,7 +8,9 @@ import { ProductService } from './product.service';
 import { ProductAttributePipe } from './product-attribute.pipe';
 import { CartDetailsService } from '../shared/services/cart-details.service';
 import { WishListService } from '../shared/services/wish-list.service';
+import {NumberDecimalPipe } from './number-decimal.pipe';
 import { ObjectKeysPipe } from '../shared/utils';
+
 //import {ImageZoomModule} from 'angular2-image-zoom';
 
 @Component({
@@ -25,6 +29,7 @@ export class ProductComponent implements OnInit {
     sizeChartData: any[];
     sizes: Observable<Object>;
     colors : Observable<Object>;
+    individualQuantity : string[];
     vendorDetails: Observable<Object>;
     columns: any[];
     vendorName: any;
@@ -42,73 +47,102 @@ export class ProductComponent implements OnInit {
     sizeId:string;
     stitching_enabled:boolean;
     myClass:any;
+    hightlightStatus: Array<boolean> = [];
+    stitching_type:string;
+    outOfStockMsgDspl: boolean;
+    public product: Product;
+    stitching_type_text_show:boolean;
 
 
 
 
   constructor(private productService : ProductService,
               private cartDetailsService: CartDetailsService,
-              private wishListService : WishListService
+              private wishListService : WishListService,
+              private route: ActivatedRoute,
+              private router: Router,
   ) {
     this.sizeChartData = [];
     this.sizeChartHeaders = [];
     this.isClassVisible=false;
     this.isDiscountPercVesible=true;
     this.isRegularPriceMore=true;
-    this.showSizeDiv=false;
+    this.showSizeDiv=true;
     this.addToBagSuccess=true;
     this.addToBagUnSuccess=true;
     this.selectedSize="undefine";
-    this.myClass = {acive:false};
+    this.outOfStockMsgDspl=false;
+    this.stitching_type_text_show=true;
+
 
   }
 
+
   ngOnInit() {
-    let searchObj = {
-      'productId': 4170101
-    }
-    let productDetailStream = this.productService.getProductDetail().publish();
-        productDetailStream.pluck('d').subscribe(
-            (data:any) => {
-              this.products = data
+
+    this.route.data.pluck('product', 'd').subscribe( (data: any) => {
+        this.products = data
               this.productId=data.productId;
               this.galleryImages=data.galleryImages;
+              // this.stitching_enabled=data.stitching_enabled;
+              this.stitching_type=data.stitching_type;
               this.stitching_enabled=data.stitching_enabled;
-              console.log('productId',this.productId);
+
               if(data.discountPercentage==0){
                   this.isDiscountPercVesible=false;
               }
-              if( (data.regularPrice==data.discountedPrice) || (data.regularPrice>data.discountedPrice)){
+              if(data.regularPrice==data.discountedPrice) {
                 this.isRegularPriceMore=false;
               }
-              console.log("stiching enabled: ",this.stitching_enabled);
-              if(this.stitching_enabled===false)
+
+              if(this.stitching_enabled == false)
               {
                 this.showSizeDiv=true;
               }
+              if(data.isInStock <= 0)
+              {
+                this.outOfStockMsgDspl=true;
+              }
 
-            },
-            (error: any) => console.error(error),
-            () => console.log('completed')
-        );
-        productDetailStream.pluck('d', 'productAttributes').subscribe(
+
+
+              if(this.stitching_type=="")
+              {
+                this.stitching_type_text_show=false;
+              }
+              else{
+                  this.stitching_type_text_show=true;
+              }
+
+
+      },
+      (error) => console.error(error)
+      )
+
+     this.route.data.pluck('product','d', 'productAttributes').subscribe(
           (data: any) => {
             this.attributes = data
 
-              console.log(this.attributes)
+
           },
           (error: any) => console.error(error),
           () => console.log('completed')
         )
-      productDetailStream.pluck('d', 'variants').subscribe(
+      this.route.data.pluck('product','d', 'variants').subscribe(
           (data: any) => {
               this.sizes = data['Size']  || []
               this.colors = data['Color'] || []
+              this.individualQuantity =data['Quantity'] || []
+
+
+              if(this.individualQuantity.length>0){
+                this.showSizeDiv=false;
+              }
           },
           (error: any) => console.error(error),
           () => console.log('completed')
       )
-      productDetailStream.pluck('d', 'chartList').subscribe(
+      this.route.data.pluck('product','d', 'chartList').subscribe(
             (data:any) => {
               this.columns = data['columns']
               for(let i=0; i < this.columns.length; i++){
@@ -119,84 +153,54 @@ export class ProductComponent implements OnInit {
             (error: any) => console.error(error),
             () => console.log('completed')
         )
-      productDetailStream.pluck('d', 'vendorDetails').subscribe(
+      this.route.data.pluck('product','d', 'vendorDetails').subscribe(
             (data:any) => {
               this.vendorDetails = data
             },
             (error: any) => console.error(error),
             () => console.log('completed')
         )
-     productDetailStream.connect()
 
 
-     /* let similarProductsStream=this.productService.getSimilarProducts('417012').publish();
 
-        similarProductsStream.pluck('d','products').subscribe(
-            (data:any)=>{
-                this.similarProducts=data
-                console.log(this.similarProducts)
-            },
-            (error:any)=>console.error(error),
-            ()=>console.log(' similar completed')
-        );
-
-      similarProductsStream.connect()*/
   }
 
 
 
-  // clicked(event: any): void {
-  //   let productId =  "3576388";
-  //   let qty = 1;
-  //     let customerId="9867";
-  //   this.cartDetailsService.addToCart(productId, qty);
-  //   this.wishListService.addToWishList(customerId, productId);
-  // }
+
+
 
     addWish(event: any): void {
-        console.log('addWish');
+
         this.wishListService.addToWishList(this.customerId,this.productId );
 
     }
 
     addToBag(event: any): void {
-        console.log(this.productId);
-        console.log(this.stitchingType);
-        console.log(this.selectedSize);
 
-        if((this.stitchingType === 'Readymade' && typeof this.selectedSize != "undefine") )
-        {
-            console.log('green');
-          this.addToBagSuccess=false;
-          this.addToBagUnSuccess=true;
-        this.cartDetailsService.addToCart(this.customerId,this.productId,1)
-        }
-        else if (typeof this.selectedSize == "undefine"){
-          console.log('red');
+
+
+          if (typeof this.selectedSize == "undefine"){
+
           this.addToBagUnSuccess=false;
           this.addToBagSuccess=true;
 
         }
+        else{
+          this.addToBagSuccess=false;
+          this.addToBagUnSuccess=true;
+        this.cartDetailsService.addToCart(this.customerId,this.productId,1)
+        }
+
 
     }
 
-    selectProducSize(event:any): void{
 
-     console.log(event);
-     var idAttr = event.srcElement.attributes.id;
+    selectSize(event:any, size: any): void{
 
+      let index=this.individualQuantity.indexOf(size);
 
-    this.sizeId =event.target.getAttribute("id");
-        this.selectedSize = idAttr.nodeValue;
-    console.log(this.selectedSize);
-
-    if(this.sizeId== this.selectedSize){
-      // console.log(this.isClassVisible);
-      //  this.isClassVisible=!this.isClassVisible;
-      //  console.log(this.isClassVisible);
-       this.myClass.active = !this.myClass.active;
-
-  }
+      this.selectedSize = (this.selectedSize === size) ? undefined : size;
 
     }
 
@@ -204,7 +208,7 @@ export class ProductComponent implements OnInit {
 
       this.stitchingType = stitchingType;
 
-      console.log(this.stitchingType);
+
       if(this.stitchingType==='Readymade'){
         this.showSizeDiv=false;
       }else if(this.stitchingType==='Unstitched'){
@@ -222,6 +226,8 @@ export class ProductComponent implements OnInit {
       }
 
     }
+
+
 
   static reduceAttributes(prevItem, nextItem){
   	nextItem.forEach(function(item){

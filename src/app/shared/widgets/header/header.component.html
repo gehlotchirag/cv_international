@@ -28,7 +28,7 @@
                  [(ngModel)]="queryInput"
                  aria-describedby="basic-addon2">
           <span class="input-group-addon"
-                (click)="searchItems"
+                (click)="searchItems()"
                 id="basic-addon2">
                 <span class="glyphicon glyphicon-search"></span>
           </span>
@@ -40,11 +40,11 @@
         </div>
         <div class="cart option inline pull-right">
           <img src="images/bag_icon.png" class="img-responsive icon">
-          <span class="notification-circle">{{ cart?.length }}</span>
+          <span id="js-cart-count" class="notification-circle"></span>
         </div>
-        <div class="wishlist option inline pull-right hide-sm">
+        <div class="wishlist option inline pull-right hide-sm hide">
           <img src="images/wishlist_icon.png" class="img-responsive icon">
-          <span class="notification-circle">{{ wishlist?.length }}</span>
+          <span id="js-wishlist-count" class="notification-circle"></span>
         </div>
       </div>
     </div>

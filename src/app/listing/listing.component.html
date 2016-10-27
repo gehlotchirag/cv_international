@@ -1,66 +1,48 @@
-
-	<!--<div  *ngFor='let filter of filters'>-->
-				<!--<div>{{filter.name}}</div>-->
-				<!--<div *ngFor="let data of filter.filtersData">-->
-					<!--<div>{{data}}</div>-->
-				<!--</div>-->
-	<!--</div>-->
-
 <div class="content">
 	<!--Listing Page-->
 	<span class="page-listing">
 			<div class="contain">
-				<ol class="breadcrumb hide-sm">
-				  <li><a href="#">Home</a></li>
-				  <li><a href="#">Women</a></li>
-				  <li class="active">Lehengas</li>
-				</ol>
-				<div class="listing-container" *ngIf="productList">
+				<!-- <ol class="breadcrumb hide-sm">
+				  <li><a [routerLink]="['']">Home</a></li>
+				  <li><a [routerLink]="['']">Category</a></li>
+				  <li class="active">{{ listing.name  }}</li>
+				</ol> -->
+				<div class="listing-container">
 					<div class="filter bg-white inline pull-left" style="display:none;">
 						<div class="header">
 							<strong class="pull-left">Filter by</strong>
-							<button type="button" class="close pull-right hide-lg" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<button type="button" class="close pull-right hide-lg" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
 						</div>
-						<div class="price filter-section"  *ngFor='let filter of filters'>
-							<div class="head">
-								<span>{{filter.name}}</span>
+						<div class="price filter-section"  *ngFor='let key of filters|keys'>
+							<div class="head" data-toggle="collapse" [attr.data-target]="getDataTarget(key)" aria-expanded="false" [attr.aria-controls]="getAriaControl(key)">
+								<span>{{ key.toUpperCase() }}</span>
 								<span class="glyphicon glyphicon glyphicon-menu-down pull-right hide-lg"></span>
 							</div>
-							<div class="filter-section-options" >
-								<input type="text" class="form-control input-box search-filter" name="Search" placeholder="Search"  [value]="sliderValue"
-                                       (input)="sliderValue = $event.target.value" />
-
-
+							<input type="text" class="form-control input-box search-filter"
+										 name="Search" placeholder="Search"  [value]="sliderValue"
+                     (input)="sliderValue = $event.target.value" />
+							<div *ngIf="key != 'color' " class="filter-section-options collapse" [attr.id]="getAriaControl(key)">
+								<div class="filter-section-option" *ngFor="let data of filters[key]">
+									<input type="checkbox" aria-label="...">
+									<span class="option-text">{{data}}</span>
+								</div>
 							</div>
-							<div class="filter-section-options" *ngFor="let data of filter.filtersData" >
-                                <!--<div class="filter-section-options" *ngFor="let data of filter.filtersData  | categoryFilter : 'brown' " >-->
-
-								<div class="filter-section-option"><input type="checkbox" aria-label="..."> <span class="option-text">{{data}}</span></div>
-
-							</div>
-						</div>
-						<div class="price filter-section">
-							<div class="head">
-								<span>COLOR</span>
-								<span class="glyphicon glyphicon glyphicon-menu-down pull-right hide-lg"></span>
-							</div>
-							<div class="filter-section-options">
-								<div class="color-box-filter"></div>
-								<div class="color-box-filter"></div>
-								<div class="color-box-filter"></div>
-								<div class="color-box-filter"></div>
-								<div class="color-box-filter"></div>
+							<div *ngIf="key == 'color'" class="filter-section-options collapse" [attr.id]="getAriaControl(key)">
+								<div class="color-box-filter"
+										 *ngFor="let data of filters[key]"
+										 [style.background-color]="data"></div>
 							</div>
 						</div>
-
 						<div class="apply-filters hide-lg">
-							<button class="btn btn-default flat-btn filter-btn">CLEAR ALL</button>
-							<button class="btn btn-green flat-btn filter-btn">APPLY</button>
+							<button class="btn btn-default flat-btn filter-btn" (click)="clearAllFilters()">CLEAR ALL</button>
+							<button class="btn btn-green flat-btn filter-btn" (click)="applyFilters()">APPLY</button>
 						</div>
 					</div>
 					<div class="listing bg-white inline">
 						<div class="header mob-section-heading">
-							<span class="pull-left"><strong>Lehengas</strong></span>
+							<span class="pull-left"><strong>{{ listing?.name }}</strong></span>
 							<!--span class="pull-right sort hide-sm">
 								<div class="sort-header">Sort by</div>
 								<div class="sort-select">Popularity <span class="caret"></span></div>
@@ -68,42 +50,38 @@
 							<div class="dropdown pull-right sort hide-sm text-left">
 							  	<button class="text-left btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 							    	<div class="sort-header text-left">Sort by</div>
-									<div class="sort-select text-left">Popularity <span class="caret"></span></div>
+										<div class="sort-select text-left">{{ selectedSort.name }} <span class="caret"></span></div>
 							  	</button>
-							  	<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							    	<li><a href="#">Popularity</a></li>
-							    	<li><a href="#">Latest</a></li>
-							    	<li><a href="#">Price: High to Low</a></li>
-							    	<li><a href="#">Price: Low to High</a></li>
+							  	<ul class="dropdown-menu" (click)="setSort($event)" aria-labelledby="dropdownMenu1">
+							    	<li><a href="#" data-key="relevance" data-value="Popular">Popularity</a></li>
+							    	<li><a href="#" data-key="newestSort" data-value="Newest First">Latest</a></li>
+							    	<li><a href="#" data-key="priceOrder" data-value="High to Low">Price: High to Low</a></li>
+							    	<li><a href="#" data-key="priceOrder" data-value="Low to High">Price: Low to High</a></li>
 							  	</ul>
 							</div>
-							<div class="listing-page-count pull-left">Showing <span>{{productList.pageId}}</span>-<span>{{productList.pageCount}}</span> of <span>{{productList.totalProducts}}</span></div>
+							<div class="listing-page-count pull-left">
+								Showing <span>{{ getStartListingCount() }}</span>-<span>{{ getEndListingCount() }}</span> of <span>{{ listing?.total_count }}</span></div>
 						</div>
 						<div class="products">
-							<div *ngFor="let listing of listings" class="product-listing">
-								<div class="product-wishlist">
-									<!--<img src="http://img1.craftsvilla.com/orig{{listing.imgUrl}}" class="img-responsive">-->
-									<img src="images/wishlist-product.png" class="img-responsive">
-									<div class="wishlisted-count">101</div>
-								</div>
-								<!--<img src="images/product.jpg" class="img-responsive">-->
-								<img src="http://img1.craftsvilla.com/orig{{listing.imgUrl}}" class="img-responsive" style="height:301px;">
-								<div class="product-info">
-									<div class="product-name">{{listing.productName}}</div>
-									<div class="product-price">
-										<span class="discounted-price">${{listing.discountedPrice}}</span>
-										&nbsp;<span class="actual-price"><s>${{listing.regularPrice}}</s></span>
-										&nbsp;<span class="discount">{{listing.discountPercentage}}%</span>
-									</div>
-									<div class="product-hover-info">
-										SIZES: S,M,L
-									</div>
+
+							<div class="applied-filters hide-sm">
+								<div *ngFor="let appliedFilter of appliedFilters" class="applied-filter">
+									{{ appliedFilter.name }}
+									<button  (click)="removeFilter(appliedFilter, $event)" type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
 								</div>
 							</div>
 
+							<div *ngFor="let listingProduct of listing?.results" class="product-listing">
+								<cvi-product-card [product]="listingProduct" [showSizeInfo]="!(!0)"></cvi-product-card>
+							</div>
 						</div>
-						<!--<nav aria-label="..." class="text-center inline listing-pagination"> <ul class="pagination"> <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li> <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li> <li><a href="#">2</a></li> <li><a href="#">3</a></li> <li><a href="#">4</a></li> <li><a href="#">5</a></li> <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li> </ul> </nav>-->
-
+						<cvi-pagination
+						   [totalPages]="listing?.total_pages"
+						   [currentPage]="listing?.current_page"
+						   [maxSize]="5">
+						 </cvi-pagination>
 					</div>
 				</div>
 			</div>
@@ -112,7 +90,7 @@
 					<span class="glyphicon glyphicon-sort sort-filter-icon"></span>
 					<div class="sort-filter-text">
 						<div class="sort-filter-header">Sort</div>
-						<div class="sort-filter-status">Popularity</div>
+						<div class="sort-filter-status">{{ selectedSort }}</div>
 					</div>
 				</div>
 				<span class="separator"></span>
@@ -120,9 +98,26 @@
 					<span class="glyphicon glyphicon-filter sort-filter-icon"></span>
 					<div class="sort-filter-text">
 						<div class="sort-filter-header">Filter</div>
-						<div class="sort-filter-status">Category, size</div>
+						<div class="sort-filter-status">{{ getAppliedFiltersString() }}</div>
 					</div>
 				</div>
 			</div>
 		</span>
+</div>
+<div class="modal fade hide-lg" tabindex="-1" role="dialog" id="sortModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-body text-center">
+				<ul (click)="setSort($event)">
+					<li><a href="#" data-key="relevance" data-value="Popular">Popularity</a></li>
+					<hr>
+					<li><a href="#" data-key="newestSort" data-value="Newest First">Latest</a></li>
+					<hr>
+					<li><a href="#" data-key="priceOrder" data-value="High to Low">Price: High to Low</a></li>
+					<hr>
+					<li><a href="#" data-key="priceOrder" data-value="Low to High">Price: Low to High</a></li>
+				</ul>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
 </div>

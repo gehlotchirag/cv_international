@@ -6,18 +6,27 @@ import { ListingComponent } from './listing';
 import { ListingResolveService } from './listing/listing-resolve.service';
 import { ProductComponent } from './product';
 
+import { ProductDetailResolve } from './product';
+
 const appRoutes: Routes = [
-  { path: 'listing',
+
+{ path: 'listing',
     component: ListingComponent,
     resolve: {
       listing: ListingResolveService
     }
   },
-  {path: 'product', children: [
-      { path: ':id', component: ProductComponent, pathMatch: 'full'}
-    ]
-  },
-  {path: '', component: HomeComponent}
+{path: 'product', children: [
+{ path: ':id',
+component: ProductComponent,
+pathMatch: 'full',
+resolve: {
+  product: ProductDetailResolve
+}
+}
+]
+},
+{path: '', component: HomeComponent}
 ];
 
 export const appRoutingProviders: any[] = [

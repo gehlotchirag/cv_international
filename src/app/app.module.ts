@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing,
-         appRoutingProviders }  from './app.routing';
-import './rxjs-extensions'
+  appRoutingProviders }  from './app.routing';
+  import './rxjs-extensions'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
@@ -30,17 +30,20 @@ import { CartDetailsService } from './shared/services/cart-details.service';
 import { ListingResolveService } from './listing/listing-resolve.service';
 import { ListingService } from './listing/listing.service';
 import { HttpClientService } from './shared/services/http-client.service';
+import { ProductService, ProductDetailResolve } from './product';
 import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
 
 
-@NgModule({
-  imports: [
+
+
+  @NgModule({
+    imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     routing
-  ],
-  declarations: [
+    ],
+    declarations: [
     AppComponent,
     HomeComponent,
     ListingComponent,
@@ -72,7 +75,10 @@ import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
     ProductSliderComponent,
     TestimonialsWidgetComponent
   ],
-  providers: [appRoutingProviders, HttpClientService, ListingResolveService, ListingService, CartDetailsService],
+
+  providers: [appRoutingProviders, HttpClientService, ProductDetailResolve, ProductService,  ListingResolveService, ListingService, CartDetailsService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

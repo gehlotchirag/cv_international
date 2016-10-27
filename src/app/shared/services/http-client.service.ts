@@ -5,7 +5,13 @@ import { Http, Headers, URLSearchParams } from '@angular/http';
 export class HttpClientService {
   private http: Http;
   private headers = new Headers();
+<<<<<<< HEAD
+
+  // private BASE_URL = 'https://appapi2.craftsvilla.com/';
+  private BASE_URL = 'http://52.44.221.18:8000/api/';
+=======
   private BASE_URL = 'http://international.craftsvilla.com:8000/';
+>>>>>>> 7a8161f9c6b88167e44e34d73c39bbcd393fa53e
 
   constructor(http: Http) {
     this.http = http;
@@ -33,6 +39,16 @@ export class HttpClientService {
     params.set('appid', StaticSettings.API_KEY);
     params.set('cnt', days.toString());
     Format values of key to make a jQuery Traditional Request
+<<<<<<< HEAD
+    */
+    get(url: string, searchObj?: Object) {
+      let searchParams = new URLSearchParams();
+      if(searchObj){
+      /*for(let key in searchObj){
+        searchParams.set(key, searchObj[key]);
+      }*/
+      searchParams.set('params', JSON.stringify(searchObj));
+=======
 */
   get(url: string, searchObj?: Object) {
     let searchParams = new URLSearchParams();
@@ -41,6 +57,7 @@ export class HttpClientService {
         searchParams.set(key, JSON.stringify(searchObj[key]));
       }
       // searchParams.set('params', JSON.stringify(searchObj));
+>>>>>>> 7a8161f9c6b88167e44e34d73c39bbcd393fa53e
     }
     let modifiedURL: string = `${this.BASE_URL}${url}`;
     return this.http.get( modifiedURL, {
@@ -50,18 +67,18 @@ export class HttpClientService {
 
 /*
     Pass the url, body for request and any optional headers to make the request
-*/
-  post(url: string, body: any, headersObj?: Object) {
-    let tempHeaderObj = new Headers(this.headers);
-    if(headersObj){
-      for(let key in headersObj){
-        tempHeaderObj.append(key, headersObj[key]);
+    */
+    post(url: string, body: any, headersObj?: Object) {
+      let tempHeaderObj = new Headers(this.headers);
+      if(headersObj){
+        for(let key in headersObj){
+          tempHeaderObj.append(key, headersObj[key]);
+        }
       }
+      let modifiedURL: string  = `${this.BASE_URL}${url}`;
+      return this.http.post(modifiedURL, body, {
+        headers: tempHeaderObj
+      })
     }
-    let modifiedURL: string  = `${this.BASE_URL}${url}`;
-    return this.http.post(modifiedURL, body, {
-      headers: tempHeaderObj
-    })
-  }
 
-}
+  }

@@ -32,13 +32,12 @@ import { ListingService } from './listing/listing.service';
 import { HttpClientService } from './shared/services/http-client.service';
 import { ProductService, ProductDetailResolve } from './product';
 import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
-
-
-
+import {ImageZoomModule} from 'angular2-image-zoom';
 
   @NgModule({
     imports: [
     BrowserModule,
+    ImageZoomModule,
     FormsModule,
     HttpModule,
     routing

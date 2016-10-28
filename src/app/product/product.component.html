@@ -56,46 +56,14 @@
   </div>
   <div class="product-container">
     <div class="contain" *ngIf="products" >
-      <div class="product-img-container inline pull-left text-center">
 
+      <div class="product-thumbnails inline pull-left hide-sm"   >
+          <img  src="{{galleryImage}}"  class="img-responsive"  on-mouseover="showImage($event, galleryImage)" *ngFor="let galleryImage of galleryImages">
 
-
-        <br>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators" >
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <!--       <li data-target="#myCarousel" data-slide-to="3"></li> -->
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-
-            <div class="item" *ngFor="let galleryImage of galleryImages; let i=index" [class.active]="i == 0">
-
-              <img  *ngIf=" galleryImages.length  > 0" src="{{galleryImage}}" alt="{{products.productName}}" width="460" height="345">
-              <img  *ngIf=" galleryImages.length  <= 0" src="https://s3-ap-southeast-1.amazonaws.com/cvshopdesk/images/product.jpg" alt="{{products.productName}}" width="460" height="345">
-
-            </div>
-
-
-          </div>
-
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
         </div>
-
-
-      </div>
+        <div class="product-img-container inline pull-left text-center">
+          <img [imageZoom]="imageUrl" [lensWidth]="600" [lensHeight]="700" [lensStyle]="'LENS'" src="{{imageUrl}}" class="img-responsive">
+        </div>
       <div class="product-info-container inline pull-left mob-contain">
         <span class="mob-bg-white">
           <div class="name mob-section-heading"><h1>{{products.productName}}</h1></div>

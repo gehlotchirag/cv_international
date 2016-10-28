@@ -1475,7 +1475,9 @@
 
   .product-img-container {
     padding-top: 20px;
-    width: 60%;
+    /* width: 60%;*/
+    width: 53%;
+    margin-right: 2%;
     position: relative; }
     .product-img-container .main-product-img {
       margin: auto; }

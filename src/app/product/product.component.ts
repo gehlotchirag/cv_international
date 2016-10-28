@@ -52,6 +52,7 @@ export class ProductComponent implements OnInit {
     outOfStockMsgDspl: boolean;
     public product: Product;
     stitching_type_text_show:boolean;
+    imageUrl: any;
 
 
 
@@ -87,6 +88,7 @@ export class ProductComponent implements OnInit {
               // this.stitching_enabled=data.stitching_enabled;
               this.stitching_type=data.stitching_type;
               this.stitching_enabled=data.stitching_enabled;
+              this.imageUrl=data.imgUrl;
 
               if(data.discountPercentage==0){
                   this.isDiscountPercVesible=false;
@@ -99,6 +101,8 @@ export class ProductComponent implements OnInit {
               {
                 this.showSizeDiv=true;
               }
+
+
               if(data.isInStock <= 0)
               {
                 this.outOfStockMsgDspl=true;
@@ -108,6 +112,9 @@ export class ProductComponent implements OnInit {
 
               if(this.stitching_type=="")
               {
+                this.stitching_type_text_show=false;
+              }
+              else if(this.stitching_enabled == true){
                 this.stitching_type_text_show=false;
               }
               else{
@@ -203,6 +210,16 @@ export class ProductComponent implements OnInit {
       this.selectedSize = (this.selectedSize === size) ? undefined : size;
 
     }
+
+
+    showImage(event:any, galleryImage: any): void{
+
+      let imageUrl=galleryImage;
+
+      this.imageUrl=imageUrl;
+
+    }
+
 
     selectStitchingType(stitchingType):void{
 

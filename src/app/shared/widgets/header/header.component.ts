@@ -24,7 +24,13 @@ export class HeaderComponent implements OnInit {
   }
 
   searchItems(){
-    this.router.navigate(['/listing'], { queryParams: { query: this.queryInput }});
+    if(this.queryInput && this.queryInput != ''){
+      this.router.navigate(['/listing'], { queryParams: { query: this.queryInput }, replaceUrl: true});
+    }
+    else {
+      this.router.navigate(['/listing']);
+    }
+
   }
 
 }

@@ -1,27 +1,13 @@
 @charset "UTF-8";
 
-/*swiper css*/
 
-.swiper-button-next, .swiper-button-prev {
-  position: absolute;
-  top: 0;
-  width: 33%;
-  height: 100%;
-  margin-top: 0;
-  z-index: 10;
-  background-color: rgba(255,255,255,0.6);
-  cursor: pointer;
-  -moz-background-size: 27px 44px;
-  -webkit-background-size: 27px 44px;
-  background-size: 27px 44px;
-  background-position: 0;
-  background-repeat: no-repeat;
-}
 
 .product-page .product-img-container img {
-      width: 220px;
-      height: 500px;
-      margin: auto; }
+  margin: auto;
+  border: 1px solid #e2e2e2;
+  margin-left: 10px;
+  cursor: crosshair;
+}
 
 .displayNone{display: none;}
 
@@ -46,27 +32,9 @@
 .swiper-button-disabled{
   display: none;
 }
-.swiper-button-prev.gallery-prev-btn {
-    left: 0;
-    background-position: 100%;
+.responsive-img-container{
+  display: none;
 }
-.swiper-button-next.gallery-next-btn {
-    right: 0;
-}
-/*.swiper-slide.swiper-slide-active {
-    opacity: 1;
-}
-.swiper-slide {
-    opacity: 0.5;
-}
-*/.swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 220px;
-    height: 500px;
-}
-
-
 
 @media only screen and (min-width: 1050px) {
   .bag-container {
@@ -1459,6 +1427,12 @@
   width: 350px; }
 
 @media only screen and (min-width: 1050px) {
+  .product-container .contain{
+    width: 100%;
+    max-width: none;
+    margin: auto;
+    height: inherit;
+  }
   .product-page .section-heading {
     text-align: left;
     height: 40px;
@@ -1485,22 +1459,14 @@
     cursor: pointer; }
 
   .product-container {
-    /*background-color: white;
-    float: left;
-    width: 65.5%;.
-*/    /*border-top: 1px solid #e2e2e2;*/
-    /*margin-bottom: 20px;*/
-   /* -webkit-box-shadow: 1px 1px 4px #e2e2e2;
-    -moz-box-shadow: 1px 1px 4px #e2e2e2;
-    box-shadow: 1px 1px 4px #e2e2e2;
-    margin:0 17.2% 20px 17.2%*/
     background-color: white;
     float: left;
-    width: 95%;
+    width: 100%;
     -webkit-box-shadow: 1px 1px 4px #e2e2e2;
     -moz-box-shadow: 1px 1px 4px #e2e2e2;
     box-shadow: 1px 1px 4px #e2e2e2;
-    margin: 32px;
+    margin: 32px 0;
+    padding: 15px 25px 15px 15px;
   }
     .product-container .share-product {
       font-size: 18px; }
@@ -1511,7 +1477,7 @@
 
   .product-thumbnails {
     width: 5%;
-    padding-top: 20px; }
+    padding-top: 15px; }
     .product-thumbnails img {
       border: 1px solid #e2e2e2;
       margin-bottom: 10px; }
@@ -1528,8 +1494,9 @@
     border: 1px dashed #474646; }
 
   .product-img-container {
-    padding-top: 20px;
-    width: 60%;
+    padding-top: 15px;
+    width: 45%;
+    margin-right: 2%;
     position: relative; }
     .product-img-container .main-product-img {
       margin: auto; }
@@ -1563,8 +1530,7 @@
       right: 22%; }
 
   .product-info-container {
-    width: 40%;
-    padding: 2%;
+    width: 48%;
     padding-top: 0;
     padding-right: 0; }
     .product-info-container .heading {
@@ -1632,7 +1598,7 @@
       .product-info-container .add-to-bag .buy-btn {
         margin-right: 0; }
     .product-info-container .shipping-cost {
-      margin-right: 7%;
+      margin-right: 5%;
       width: 30%;
     }
 
@@ -1644,6 +1610,9 @@
   .recommendation-box .product-listing {
     width: 17.5%; } }
 @media only screen and (max-width: 1050px) {
+  .responsive-img-container{
+    display: block;
+  }
   .product-page .shipping-cost {
     width: 50%;
     float: left;
@@ -1707,17 +1676,10 @@
     width: 100%;
     margin-bottom: 5px; }
     .product-page .product-img-container img {
-      width: 300px;
-      height: 500px;
+      width: 500px;
       margin: auto; }
   .product-page .add-to-bag {
     margin-left: -2%; 
-  }
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 500px;
   }
   .zoomed-image{
     display: none !important;
@@ -1825,12 +1787,6 @@
 .btn-move-to-bag {
   margin-top: 10px;
   width: 70%; }
-
-@media only screen and (max-width: 550px){
-  .swiper-button-next, .swiper-button-prev{
-    width: 16%;
-  }
-}
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)

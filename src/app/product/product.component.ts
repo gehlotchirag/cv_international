@@ -11,8 +11,6 @@ import { WishListService } from '../shared/services/wish-list.service';
 import {NumberDecimalPipe } from './number-decimal.pipe';
 import { ObjectKeysPipe } from '../shared/utils';
 
-//import {ImageZoomModule} from 'angular2-image-zoom';
-
 @Component({
   selector: 'cvi-product',
   templateUrl: './product.component.html',
@@ -58,23 +56,12 @@ export class ProductComponent implements OnInit {
     imagePointerY: any;
 
     config: Object = {
-            slidesPerView: 'auto',
-            centeredSlides: true,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
+            slidesPerView: 1,
+            pagination: '.swiper-pagination',
             spaceBetween: 30,
             speed: 600,
-            breakpoints: {
-              500: {
-                slidesPerView: 1,
-                spaceBetween: 30
-              },
-              2048: {
-                slidesPerView: 'auto'
-              }
-            }
         };
-
+    imageUrl: any;
 
   constructor(private productService : ProductService,
               private cartDetailsService: CartDetailsService,
@@ -137,6 +124,7 @@ export class ProductComponent implements OnInit {
               // this.stitching_enabled=data.stitching_enabled;
               this.stitching_type=data.stitching_type;
               this.stitching_enabled=data.stitching_enabled;
+              this.imageUrl=data.imgUrl;
 
               if(data.discountPercentage==0){
                   this.isDiscountPercVesible=false;
@@ -149,6 +137,8 @@ export class ProductComponent implements OnInit {
               {
                 this.showSizeDiv=true;
               }
+
+
               if(data.isInStock <= 0)
               {
                 this.outOfStockMsgDspl=true;
@@ -158,6 +148,9 @@ export class ProductComponent implements OnInit {
 
               if(this.stitching_type=="")
               {
+                this.stitching_type_text_show=false;
+              }
+              else if(this.stitching_enabled == true){
                 this.stitching_type_text_show=false;
               }
               else{
@@ -253,6 +246,16 @@ export class ProductComponent implements OnInit {
       this.selectedSize = (this.selectedSize === size) ? undefined : size;
 
     }
+
+
+    showImage(event:any, galleryImage: any): void{
+
+      let imageUrl=galleryImage;
+
+      this.imageUrl=imageUrl;
+
+    }
+
 
     selectStitchingType(stitchingType):void{
 

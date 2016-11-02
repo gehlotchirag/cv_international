@@ -73,9 +73,11 @@
 								</div>
 							</div>
 
-							<div *ngFor="let listingProduct of listing?.results" class="product-listing">
-								<cvi-product-card [product]="listingProduct" [showSizeInfo]="!(!0)"></cvi-product-card>
-							</div>
+							<cvi-product-card *ngFor="let listingProduct of listing?.results"
+																[product]="listingProduct"
+																[showSizeInfo]="!(!0)">
+							</cvi-product-card>
+
 						</div>
 						<cvi-pagination
 						   [totalPages]="listing?.total_pages"
@@ -109,13 +111,13 @@
 		<div class="modal-content">
 			<div class="modal-body text-center">
 				<ul (click)="setSort($event)">
-					<li><a href="#" data-key="relevance" data-value="Popular">Popularity</a></li>
+					<li><a href data-key="relevance" data-value="Popular">Popularity</a></li>
 					<hr>
-					<li><a href="#" data-key="newestSort" data-value="Newest First">Latest</a></li>
+					<li><a href data-key="newestSort" data-value="Newest First">Latest</a></li>
 					<hr>
-					<li><a href="#" data-key="priceOrder" data-value="High to Low">Price: High to Low</a></li>
+					<li><a href data-key="priceOrder" data-value="High to Low">Price: High to Low</a></li>
 					<hr>
-					<li><a href="#" data-key="priceOrder" data-value="Low to High">Price: Low to High</a></li>
+					<li><a href data-key="priceOrder" data-value="Low to High">Price: Low to High</a></li>
 				</ul>
 			</div>
 		</div><!-- /.modal-content -->

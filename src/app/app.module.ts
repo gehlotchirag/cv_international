@@ -32,15 +32,15 @@ import { ListingService } from './listing/listing.service';
 import { HttpClientService } from './shared/services/http-client.service';
 import { ProductService, ProductDetailResolve } from './product';
 import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
-import {ImageZoomModule} from 'angular2-image-zoom';
+import { SwiperModule } from 'angular2-useful-swiper/lib/swiper.module';
 
   @NgModule({
     imports: [
     BrowserModule,
-    ImageZoomModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    SwiperModule,
     ],
     declarations: [
     AppComponent,
@@ -62,7 +62,7 @@ import {ImageZoomModule} from 'angular2-image-zoom';
     ProductCardComponent,
     ProductAttributePipe,
     CategoryFilterPipe,
-    ObjectKeysPipe
+    ObjectKeysPipe,
   ],
   entryComponents: [
     AnnouncementWidgetComponent,

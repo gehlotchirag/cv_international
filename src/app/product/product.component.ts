@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer } from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -10,8 +10,6 @@ import { CartDetailsService } from '../shared/services/cart-details.service';
 import { WishListService } from '../shared/services/wish-list.service';
 import {NumberDecimalPipe } from './number-decimal.pipe';
 import { ObjectKeysPipe } from '../shared/utils';
-
-//import {ImageZoomModule} from 'angular2-image-zoom';
 
 @Component({
   selector: 'cvi-product',
@@ -52,16 +50,26 @@ export class ProductComponent implements OnInit {
     outOfStockMsgDspl: boolean;
     public product: Product;
     stitching_type_text_show:boolean;
+    zoomedImage: any;
+    galleryImage: any;
+    imagePointerX: any;
+    imagePointerY: any;
+
+    config: Object = {
+            slidesPerView: 1,
+            pagination: '.swiper-pagination',
+            spaceBetween: 30,
+            speed: 600,
+        };
     imageUrl: any;
-
-
-
 
   constructor(private productService : ProductService,
               private cartDetailsService: CartDetailsService,
               private wishListService : WishListService,
               private route: ActivatedRoute,
               private router: Router,
+              private elementRef: ElementRef,
+              private renderer: Renderer,
   ) {
     this.sizeChartData = [];
     this.sizeChartHeaders = [];
@@ -78,6 +86,34 @@ export class ProductComponent implements OnInit {
 
   }
 
+  onImageHover(imageSrc){
+    this.galleryImage = this.elementRef.nativeElement.querySelector('.productImage');
+    this.zoomedImage = this.elementRef.nativeElement.querySelector('.zoomed-image');
+    this.renderer.setElementStyle(this.zoomedImage, 'display', 'block');
+    this.renderer.setElementStyle(this.zoomedImage, 'background-image', 'url('+ imageSrc +')');
+    this.adjustZoomedImage(event);
+  }
+
+  onImageHoverMove(){
+    this.adjustZoomedImage(event);
+  }
+
+  onHoverOut(){
+    this.renderer.setElementStyle(this.zoomedImage, 'display', 'none');
+  }
+
+  adjustZoomedImage(event){
+    this.imagePointerX = event.offsetX;
+    this.imagePointerY = event.offsetY;
+    let imageWidth = event.target.offsetWidth;
+    let imageHeight = event.target.offsetHeight;
+    let backgroungPosX = (this.imagePointerX/imageWidth) * 100;
+    let backgroungPosY = (this.imagePointerY/imageHeight) * 100;
+
+    this.renderer.setElementStyle(this.zoomedImage, 'background-position-x', '' + backgroungPosX + '%');
+    this.renderer.setElementStyle(this.zoomedImage, 'background-position-y', '' + backgroungPosY + '%');
+
+  }
 
   ngOnInit() {
 

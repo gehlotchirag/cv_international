@@ -9,6 +9,7 @@ import { isDefined , isEmpty} from '../shared/utils';
 @Injectable()
 export class ListingService {
   private listingsUrl = 'api/products/';
+  private filtersUrl = 'api/category/1/filters';
 
   constructor(
       private httpClient: HttpClientService,
@@ -26,7 +27,12 @@ export class ListingService {
   }
 
   getListingList(paramObj: Object): any {
-    let  query = paramObj['query'], params = paramObj['params'], page = paramObj['page'];
+    let  query, params, page;
+    if(paramObj){
+      query = paramObj['query'];
+      params = paramObj['params'];
+      page = paramObj['page'];
+    }
     let searchObj = {
       query: query ? query : '',
       params: isDefined(params) && !isEmpty(params) ? params : {},
@@ -37,9 +43,11 @@ export class ListingService {
                 .toPromise()
   }
 
+  getFilterList() {
+
+    return this.httpClient
+               .get(this.filtersUrl)
+               .toPromise();
+  }
+
 }
-
-
-// post(url: string, body: any, headersObj?: Object)
-// get(url: string, searchObj?: Object) {
-// setHeader

@@ -1204,9 +1204,11 @@
       background-color: #e2e2e2;
       font-size: 12px;
       padding: 5px;
-      line-height: 22px;
+      line-height: 16px;
       min-width: 100px;
-      margin-right: 5px; } }
+      margin-right: 5px;
+      margin-top: 2px;
+      } }
 @media only screen and (max-width: 1050px) {
   .page-listing .product-listing {
     width: 50%;
@@ -1366,7 +1368,41 @@
   height: 35px;
   background-color: #e2e2e2;
   margin: 0px 5px 5px 0px;
-  display: inline-block; }
+  display: inline-block;
+  cursor: pointer;
+}
+
+.sub-menu-color > li {
+  width: 35px;
+  height: 35px;
+  background-color: #e2e2e2;
+  margin: 0px 5px 5px 0px;
+  display: inline-block;
+  cursor: pointer;
+}
+.sub-menu-color > li label {
+  display: block;
+  height: 100% !important;
+  width: 100% !important;
+  text-align: center;
+  cursor: pointer;
+  margin: 0;
+  border-radius: 2px;
+  border: inherit !important;
+}
+.sub-menu-color > li label input[type=checkbox] {
+  display: none;
+}
+.sub-menu-color > li label input[type=checkbox]:checked + label {
+  background-image: url(http://lstatic1.craftsvilla.com/skin/frontend/default/craftsvilla2015/img/check_new.png) !important;
+  background-repeat: no-repeat;
+  background-position: center center !important;
+  width: 35px !important;
+  height: 35px !important;
+}
+.sub-menu-color span {
+  display: none;
+}
 
 .search-filter {
   margin-top: 10px;
@@ -1377,6 +1413,7 @@
   border-color: #e2e2e2 !important; }
 
 .pagination > li > a, .pagination > li > span {
+  cursor: pointer;
   color: #333333 !important; }
 
 .pagination > li:first-child > a, .pagination > li:first-child > span {
@@ -6849,7 +6886,11 @@ button.close {
   cursor: pointer;
   background: transparent;
   border: 0;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 16px;
+}
 
 .modal-open {
   overflow: hidden; }
@@ -7601,3 +7642,7 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+
+.sort-listing-content {
+  list-style: none;
+}

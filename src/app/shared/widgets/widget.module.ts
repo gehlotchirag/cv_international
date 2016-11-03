@@ -20,12 +20,52 @@ import { ObjectKeysPipe } from '../utils';
 
   @NgModule({
     imports: [ BrowserModule, RouterModule, CommonModule ],
-    declarations: [ MegaMenuComponent, MegaMenuLinkComponent, AnnouncementWidgetComponent, CategoryWidgetComponent, ExtraMenuComponent, HeroBannerComponent, PortfolioWidgetComponent, StorylineWidgetComponent, ProductSliderComponent, TestimonialsWidgetComponent, PaginationComponent, ProductCardComponent, ObjectKeysPipe ], 
-    
-    exports: [ MegaMenuComponent, MegaMenuLinkComponent, AnnouncementWidgetComponent, CategoryWidgetComponent, ExtraMenuComponent, HeroBannerComponent, PortfolioWidgetComponent, StorylineWidgetComponent, ProductSliderComponent, TestimonialsWidgetComponent, PaginationComponent, ProductCardComponent, ObjectKeysPipe ],
+    declarations: [
+      MegaMenuComponent,
+      MegaMenuLinkComponent,
+      AnnouncementWidgetComponent,
+      CategoryWidgetComponent,
+      ExtraMenuComponent,
+      HeroBannerComponent,
+      PortfolioWidgetComponent,
+      StorylineWidgetComponent,
+      ProductSliderComponent,
+      TestimonialsWidgetComponent,
+      PaginationComponent,
+      ProductCardComponent,
+      ObjectKeysPipe
+    ],
 
-    entryComponents: [ MegaMenuComponent, MegaMenuLinkComponent, AnnouncementWidgetComponent, CategoryWidgetComponent, ExtraMenuComponent, HeroBannerComponent, PortfolioWidgetComponent, StorylineWidgetComponent, ProductSliderComponent, TestimonialsWidgetComponent, PaginationComponent, ProductCardComponent ]
+    exports: [
+      MegaMenuComponent,
+      MegaMenuLinkComponent,
+      AnnouncementWidgetComponent,
+      CategoryWidgetComponent,
+      ExtraMenuComponent,
+      HeroBannerComponent,
+      PortfolioWidgetComponent,
+      StorylineWidgetComponent,
+      ProductSliderComponent,
+      TestimonialsWidgetComponent,
+      PaginationComponent,
+      ProductCardComponent,
+      ObjectKeysPipe
+    ],
+
+    entryComponents: [
+      MegaMenuComponent,
+      MegaMenuLinkComponent,
+      AnnouncementWidgetComponent,
+      CategoryWidgetComponent,
+      ExtraMenuComponent,
+      HeroBannerComponent,
+      PortfolioWidgetComponent,
+      StorylineWidgetComponent,
+      ProductSliderComponent,
+      TestimonialsWidgetComponent,
+      PaginationComponent,
+      ProductCardComponent
+    ]
 
 })
 export class WidgetModule { }
-

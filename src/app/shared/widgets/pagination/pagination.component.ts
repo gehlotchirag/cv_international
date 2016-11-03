@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import Page from './page';
 
 import { isDefined } from '../../utils'
@@ -13,18 +13,23 @@ import { isDefined } from '../../utils'
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.css']
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent implements OnInit, OnChanges {
 
   @Input() totalPages: number;
   @Input() currentPage: number;
   @Input() maxSize: number;
 
-  private pages: Page[];
+  @Output() pageChange = new EventEmitter();
 
+  private pages: Page[];
 
   constructor() { }
 
   ngOnInit() {
+    this.pages = this.getPages(this.currentPage);
+  }
+
+  ngOnChanges(){
     this.pages = this.getPages(this.currentPage);
   }
 
@@ -104,8 +109,12 @@ export class PaginationComponent implements OnInit {
   }
 
   selectPage(page, event): void {
-    this.currentPage = page.value;
+    if(page < 1 ||  page > this.totalPages){
+      return;
+    }
+    this.currentPage = page;
     this.pages = this.getPages(this.currentPage);
+    this.pageChange.emit(page);
   }
 
 }

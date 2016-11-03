@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewContainerRef, ViewChild, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { ComponentFactory } from '@angular/core';
+
 import { Observable } from 'rxjs/Observable';
+
 import { Product } from '../product/product';
+
 import { WidgetFactoryService } from '../shared/widgets/widget-factory.service';
 import { HomeService } from './home.service';
 import { ProductService } from '../product/product.service';

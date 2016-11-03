@@ -26,15 +26,15 @@ import { PaginationComponent } from './shared/widgets/pagination/pagination.comp
 
 import { ProductAttributePipe } from './product/product-attribute.pipe';
 import { CategoryFilterPipe } from './listing/category-filter.pipe';
+import { ListingCheckComponent } from './listing/listing-check.component';
 import { CartDetailsService } from './shared/services/cart-details.service';
 import { ListingResolveService } from './listing/listing-resolve.service';
+import { FilterResolveService } from './listing/filter-resolve.service';
 import { ListingService } from './listing/listing.service';
 import { HttpClientService } from './shared/services/http-client.service';
 import { ProductService, ProductDetailResolve } from './product';
 import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
-
-
-
+import { LiveFilterPipe } from './listing/live-filter.pipe';
 
   @NgModule({
     imports: [
@@ -63,7 +63,9 @@ import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
     ProductCardComponent,
     ProductAttributePipe,
     CategoryFilterPipe,
-    ObjectKeysPipe
+    ObjectKeysPipe,
+    LiveFilterPipe,
+    ListingCheckComponent
   ],
   entryComponents: [
     AnnouncementWidgetComponent,
@@ -76,9 +78,11 @@ import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
     TestimonialsWidgetComponent
   ],
 
-  providers: [appRoutingProviders, HttpClientService, ProductDetailResolve, ProductService,  ListingResolveService, ListingService, CartDetailsService],
+  providers: [appRoutingProviders, HttpClientService,
+    ProductDetailResolve, ProductService,
+    ListingResolveService, ListingService,
+    FilterResolveService, CartDetailsService],
 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

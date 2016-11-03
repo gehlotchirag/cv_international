@@ -69,7 +69,7 @@
 			    background-color: #e2e2e2;
 			    font-size: 12px;
 			    padding: 5px;
-			    line-height: 22px;
+			    line-height: 16px;
 			    min-width: 100px;
 			    margin-right:5px;
 			}
@@ -266,12 +266,51 @@
 	    }
 	}
 }
+
+.sub-menu-color {
+	> li {
+		width: 35px;
+		height: 35px;
+		background-color: #e2e2e2;
+		margin:0px 5px 5px 0px;
+		display: inline-block;
+		cursor: pointer;
+
+		label {
+			display: block;
+			height: 100%!important;
+			width: 100%!important;
+			text-align: center;
+			cursor: pointer;
+			margin: 0;
+			border-radius: 2px;
+			border: inherit!important;
+
+			input[type=checkbox] {
+	    	display: none;
+
+				&:checked+label {
+					background-image: url(http://lstatic1.craftsvilla.com/skin/frontend/default/craftsvilla2015/img/check_new.png)!important;
+					background-repeat: no-repeat;
+    			background-position: center center!important;
+    			width: 35px!important;
+    			height: 35px!important;
+				}
+			}
+		}
+	}
+	span {
+		display: none;
+	}
+}
+
 .color-box-filter{
 	width: 35px;
 	height: 35px;
 	background-color: #e2e2e2;
 	margin:0px 5px 5px 0px;
 	display: inline-block;
+	cursor: pointer;
 }
 .search-filter{
 	margin-top:10px;
@@ -295,4 +334,8 @@
 }
 .listing-pagination{
 	width: 100%;
+}
+
+.sort-listing-content {
+	list-style: none;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+// import {ImageZoomModule} from 'angular2-image-zoom';
 
 import { HttpClientService } from '../../services/http-client.service';
 import HomeWidget from '../home-widget';

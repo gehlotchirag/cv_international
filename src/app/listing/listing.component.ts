@@ -4,11 +4,6 @@ import { Response } from '@angular/http';
 import { Observable }        from 'rxjs/Observable';
 
 import { ListingService } from './listing.service';
-import { CategoryFilterPipe } from './category-filter.pipe';
-import { ObjectKeysPipe } from '../shared/utils';
-import { ProductCardComponent } from '../shared/widgets/product-card/product-card.component';
-import { PaginationComponent } from "../shared/widgets/pagination/pagination.component";
-
 import Listing from './listing';
 
 @Component({

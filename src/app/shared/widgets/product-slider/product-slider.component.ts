@@ -6,7 +6,8 @@ import ListingProduct from '../../interfaces/listing-product';
 @Component({
   selector: 'cvi-product-slider',
   templateUrl: './product-slider.component.html',
-  styleUrls: ['./product-slider.component.css']
+  styleUrls: ['./product-slider.component.css'],
+  providers: [ HttpClientService ]
 })
 export class ProductSliderComponent implements OnInit {
   public dataItems: ListingProduct[];

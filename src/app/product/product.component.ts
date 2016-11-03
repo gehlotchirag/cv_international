@@ -1,15 +1,12 @@
 import { Component, OnInit, ElementRef, Renderer } from '@angular/core';
-
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { Product } from './product';
+
 import { ProductService } from './product.service';
-import { ProductAttributePipe } from './product-attribute.pipe';
 import { CartDetailsService } from '../shared/services/cart-details.service';
 import { WishListService } from '../shared/services/wish-list.service';
-import {NumberDecimalPipe } from './number-decimal.pipe';
-import { ObjectKeysPipe } from '../shared/utils';
 
 @Component({
   selector: 'cvi-product',

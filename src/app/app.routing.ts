@@ -1,33 +1,7 @@
 import {ModuleWithProviders} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home';
-import { ListingComponent } from './listing';
-import { ListingResolveService } from './listing/listing-resolve.service';
-import { ProductComponent } from './product';
-
-import { ProductDetailResolve } from './product';
-
-const appRoutes: Routes = [
-
-{ path: 'listing',
-    component: ListingComponent,
-    resolve: {
-      listing: ListingResolveService
-    }
-  },
-{path: 'product', children: [
-{ path: ':id',
-component: ProductComponent,
-pathMatch: 'full',
-resolve: {
-  product: ProductDetailResolve
-}
-}
-]
-},
-{path: '', component: HomeComponent}
-];
+const appRoutes: Routes = [ ];
 
 export const appRoutingProviders: any[] = [
 

@@ -6,7 +6,8 @@ import  HomeWidget  from '../home-widget';
 @Component({
   selector: 'cvi-extra-menu',
   templateUrl: './extra-menu.component.html',
-  styleUrls: ['./extra-menu.component.css']
+  styleUrls: ['./extra-menu.component.css'],
+  providers: [ HttpClientService ]
 })
 export class ExtraMenuComponent implements OnInit {
   @Input()

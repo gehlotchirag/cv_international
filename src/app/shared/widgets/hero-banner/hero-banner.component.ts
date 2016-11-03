@@ -6,7 +6,8 @@ import HomeWidget from '../home-widget';
 @Component({
   selector: 'cvi-hero-banner',
   templateUrl: './hero-banner.component.html',
-  styleUrls: ['./hero-banner.component.css']
+  styleUrls: ['./hero-banner.component.css'],
+  providers: [ HttpClientService ]
 })
 export class HeroBannerComponent implements OnInit {
   @Input()

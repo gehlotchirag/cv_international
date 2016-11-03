@@ -7,7 +7,8 @@ import { CartDetailsService } from '../../services/cart-details.service';
 @Component({
   selector: 'cvi-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  providers:[ CartDetailsService ],
 })
 export class HeaderComponent implements OnInit {
   private cart: any; // Change type to CartInterface

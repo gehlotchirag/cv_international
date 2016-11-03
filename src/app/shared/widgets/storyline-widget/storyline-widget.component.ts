@@ -6,7 +6,8 @@ import HomeWidget from '../home-widget';
 @Component({
   selector: 'cvi-storyline-widget',
   templateUrl: './storyline-widget.component.html',
-  styleUrls: ['./storyline-widget.component.css']
+  styleUrls: ['./storyline-widget.component.css'],
+  providers: [ HttpClientService ]
 })
 export class StorylineWidgetComponent extends HomeWidget implements OnInit {
 

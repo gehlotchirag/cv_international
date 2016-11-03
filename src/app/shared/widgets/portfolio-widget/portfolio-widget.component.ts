@@ -6,7 +6,8 @@ import HomeWidget from '../home-widget';
 @Component({
   selector: 'app-portfolio-widget',
   templateUrl: './portfolio-widget.component.html',
-  styleUrls: ['./portfolio-widget.component.css']
+  styleUrls: ['./portfolio-widget.component.css'],
+  providers: [ HttpClientService ]
 })
 export class PortfolioWidgetComponent extends HomeWidget implements OnInit {
 

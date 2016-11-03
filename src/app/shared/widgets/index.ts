@@ -1,5 +1,6 @@
 export * from './home-widget'
 
+export * from './widget.module';
 export * from './announcement-widget/announcement-widget.component';
 export * from './category-widget/category-widget.component';
 export * from './extra-menu/extra-menu.component';

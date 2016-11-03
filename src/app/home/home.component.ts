@@ -1,20 +1,8 @@
 import { Component, OnInit, ViewContainerRef, ViewChild, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { ComponentFactory } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-
 import { Product } from '../product/product';
-
-import { MegaMenuComponent } from '../shared/widgets/mega-menu/mega-menu.component';
-import { AnnouncementWidgetComponent } from '../shared/widgets/announcement-widget/announcement-widget.component';
-import { CategoryWidgetComponent } from '../shared/widgets/category-widget/category-widget.component';
-import { ExtraMenuComponent } from '../shared/widgets/extra-menu/extra-menu.component';
-import { HeroBannerComponent } from '../shared/widgets/hero-banner/hero-banner.component';
-import { PortfolioWidgetComponent } from '../shared/widgets/portfolio-widget/portfolio-widget.component';
-import { StorylineWidgetComponent } from '../shared/widgets/storyline-widget/storyline-widget.component';
-import { ProductSliderComponent } from '../shared/widgets/product-slider/product-slider.component';
-import { TestimonialsWidgetComponent } from '../shared/widgets/testimonials-widget/testimonials-widget.component';
-
-import { WidgetFactoryService } from '../shared';
+import { WidgetFactoryService } from '../shared/widgets/widget-factory.service';
 import { HomeService } from './home.service';
 import { ProductService } from '../product/product.service';
 import { CartDetailsService } from '../shared/services/cart-details.service'

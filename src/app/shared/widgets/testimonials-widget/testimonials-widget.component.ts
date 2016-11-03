@@ -6,7 +6,8 @@ import TestimonialItem from '../../interfaces/testimonial-item';
 @Component({
   selector: 'cvi-testimonials-widget',
   templateUrl: './testimonials-widget.component.html',
-  styleUrls: ['./testimonials-widget.component.css']
+  styleUrls: ['./testimonials-widget.component.css'],
+  providers: [ HttpClientService ]
 })
 export class TestimonialsWidgetComponent implements OnInit {
   public dataItems: TestimonialItem[];

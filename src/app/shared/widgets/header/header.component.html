@@ -18,9 +18,14 @@
     <div class="contain mob-contain">
       <div class="logo inline mob-inline pull-left"><img src="images/menu_icon.png" class="hide-lg menu-icon navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
         <a href="index.html"><img src="images/logo.png" class="logo-img"></a>
+        <div *ngIf="showMegaMenu" style="display: inline-block;">
+          <button class="btn btn-default" type="button" (mouseover)="showMegaMenu($event)" (mouseout)="hideMegaMenu($event)">
+        	   <span class="glyphicon glyphicon-menu-hamburger"></span>
+             <span class="caret"></span>
+           </button>
+         </div>
       </div>
       <div class="search inline pull-left">
-
         <div class="input-group">
           <input type="text"
                  class="form-control main-search-input"

@@ -2,9 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { SwiperModule } from 'angular2-useful-swiper/lib/swiper.module';
+
 import { routing,
   appRoutingProviders }  from './app.routing';
-  import './rxjs-extensions'
+
+import './rxjs-extensions'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
@@ -26,15 +29,19 @@ import { PaginationComponent } from './shared/widgets/pagination/pagination.comp
 
 import { ProductAttributePipe } from './product/product-attribute.pipe';
 import { CategoryFilterPipe } from './listing/category-filter.pipe';
+import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
+import { LiveFilterPipe } from './listing/live-filter.pipe';
+
+import { RoutingHelperDirective } from './shared/directives/routing-helper.directive';
+
 import { CartDetailsService } from './shared/services/cart-details.service';
 import { ListingResolveService } from './listing/listing-resolve.service';
 import { FilterResolveService } from './listing/filter-resolve.service';
 import { ListingService } from './listing/listing.service';
 import { HttpClientService } from './shared/services/http-client.service';
 import { ProductService, ProductDetailResolve } from './product';
-import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
-import { LiveFilterPipe } from './listing/live-filter.pipe';
-import { SwiperModule } from 'angular2-useful-swiper/lib/swiper.module';
+import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
+
 
   @NgModule({
     imports: [
@@ -45,6 +52,7 @@ import { SwiperModule } from 'angular2-useful-swiper/lib/swiper.module';
     SwiperModule,
     ],
     declarations: [
+    RoutingHelperDirective,
     AppComponent,
     HomeComponent,
     ListingComponent,
@@ -81,7 +89,9 @@ import { SwiperModule } from 'angular2-useful-swiper/lib/swiper.module';
   providers: [appRoutingProviders, HttpClientService,
     ProductDetailResolve, ProductService,
     ListingResolveService, ListingService,
-    FilterResolveService, CartDetailsService],
+    FilterResolveService, CartDetailsService,
+    RouterHeaderBindingService
+  ],
 
   bootstrap: [AppComponent]
 })

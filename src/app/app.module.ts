@@ -34,13 +34,15 @@ import { HttpClientService } from './shared/services/http-client.service';
 import { ProductService, ProductDetailResolve } from './product';
 import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
 import { LiveFilterPipe } from './listing/live-filter.pipe';
+import { SwiperModule } from 'angular2-useful-swiper/lib/swiper.module';
 
   @NgModule({
     imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    SwiperModule,
     ],
     declarations: [
     AppComponent,

@@ -56,45 +56,24 @@
   </div>
   <div class="product-container">
     <div class="contain" *ngIf="products" >
-      <div class="product-img-container inline pull-left text-center">
 
-
-
-        <br>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators" >
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <!--       <li data-target="#myCarousel" data-slide-to="3"></li> -->
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-
-            <div class="item" *ngFor="let galleryImage of galleryImages; let i=index" [class.active]="i == 0">
-
-              <img  *ngIf=" galleryImages.length  > 0" src="{{galleryImage}}" alt="{{products.productName}}" width="460" height="345">
-              <img  *ngIf=" galleryImages.length  <= 0" src="https://s3-ap-southeast-1.amazonaws.com/cvshopdesk/images/product.jpg" alt="{{products.productName}}" width="460" height="345">
-
+      <div class="product-thumbnails inline pull-left hide-sm">
+        <img  src="{{galleryImage}}"  class="img-responsive"  on-mouseover="showImage($event, galleryImage)" *ngFor="let galleryImage of galleryImages">
+      </div>
+      <div class="product-img-container inline pull-left text-center hide-sm">
+        <img (mouseover)="onImageHover(imageUrl)" (mousemove) = "onImageHoverMove()" (mouseout) = "onHoverOut()" src="{{imageUrl}}" class="img-responsive">
+        <div class="zoomed-image"></div>
+      </div>
+      <div class="product-img-container pull-left text-center responsive-img-container">
+        <swiper [config]="config">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let galleryImage of galleryImages;">
+              <img class="productImage  img-responsive" *ngIf=" galleryImages.length  > 0" src="{{galleryImage}}" alt="{{products.productName}}" >
+              <img class="productImage img-responsive" *ngIf=" galleryImages.length  <= 0" src="https://s3-ap-southeast-1.amazonaws.com/cvshopdesk/images/product.jpg" alt="{{products.productName}}" >
             </div>
-
-
           </div>
-
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-
-
+          <div class="swiper-pagination"></div>
+        </swiper>
       </div>
       <div class="product-info-container inline pull-left mob-contain">
         <span class="mob-bg-white">
@@ -106,9 +85,29 @@
             <!-- &nbsp;<span class="discount green"  *ngIf="isDiscountPercVesible">{{products.discountPercentage | currency:'USD':true:'1.2-2'}}% off</span> -->
             <span class="pull-right details-wishlist-container" (click)="addWish($event)" style="display:none;"><img src="images/wishlist-product.png" class="img-responsive wishlist-details-page inline mob-inline" > Add to Wishlist</span>
           </div>
+          <hr>
+          <div class="description">
+            <div class="heading mob-section-heading">Description</div>
+            <div class="body mob-section-body">
+              {{products.description}}
+            </div>
+          </div>
+          <hr>
+          <div class="shipping-cost mob-inline inline">
+            <div class="heading mob-section-heading">Shipping Cost</div>
+            <div class="shipping-cost-value mob-section-body">{{products.shippingCostWorld}}</div>
+          </div>
+          <div class="shipping-cost mob-inline inline">
+            <div class="heading mob-section-heading">Delivery Time</div>
+            <div class="shipping-cost-value mob-section-body">{{products.estimatedDeliveryTime}} </div>
+          </div>
+          <div class="sold-by inline hide-sm">
+            <div class="heading mob-section-heading">Sold by</div>
+            <div class="shipping-cost-value">{{vendorDetails.vendorName}} </div>
+          </div>
           <span class="add-to-bag-block">
             <div class="size occupy mob-inline cover">
-              <div class="heading mob-section-heading"  [class.displayNone]="!stitching_enabled">
+             <!--  <div class="heading mob-section-heading"  [class.displayNone]="!stitching_enabled">
                 <span class="pull-left">Select Stitch Type</span>
               </div>
 
@@ -123,7 +122,7 @@
                 <div [class.displayNone]="!stitching_type_text_show">
                   <span><strong>Stitching Type : </strong></span> <span>{{stitching_type}}</span></div>
 
-                </div>
+                </div> -->
                 <div class [class.displayNone]="showSizeDiv" >
                   <div class="heading select-size-header mob-section-heading" id="sizeChartDiv">
                     <span class="pull-left">Select Size</span>
@@ -149,27 +148,6 @@
             <button class="btn btn-brand buy-btn flat-btn purchase">BUY NOW</button>
           </div>
         </span>
-        <div class="shipping-cost mob-inline inline">
-          <div class="heading mob-section-heading">Shipping Cost</div>
-          <div class="shipping-cost-value mob-section-body">{{products.shippingCostWorld}}</div>
-        </div>
-        <div class="shipping-cost mob-inline inline">
-          <div class="heading mob-section-heading">Delivery Time</div>
-          <div class="shipping-cost-value mob-section-body">{{products.estimatedDeliveryTime}} </div>
-        </div>
-        <div class="sold-by inline hide-sm">
-          <div class="heading mob-section-heading">Sold by</div>
-          <div class="shipping-cost-value">{{vendorDetails.vendorName}} </div>
-        </div>
-        <hr>
-        <div class="description">
-          <div class="heading mob-section-heading">Description</div>
-          <div class="body mob-section-body">
-            {{products.description}}
-
-          </div>
-        </div>
-        <hr>
         <div class="share-product hide-sm" id="share-buttons"><span class="header">Share on &nbsp;</span>
           <a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts" target="_blank">
             <img src="images/facebook.png" alt="Facebook" />

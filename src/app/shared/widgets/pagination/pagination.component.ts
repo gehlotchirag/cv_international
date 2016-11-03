@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 import { isDefined } from '../../utils'
 
@@ -18,7 +18,7 @@ interface Page {
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.css']
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent implements OnInit, OnChanges {
 
   @Input() totalPages: number;
   @Input() currentPage: number;
@@ -31,6 +31,10 @@ export class PaginationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.pages = this.getPages(this.currentPage);
+  }
+
+  ngOnChanges(){
     this.pages = this.getPages(this.currentPage);
   }
 

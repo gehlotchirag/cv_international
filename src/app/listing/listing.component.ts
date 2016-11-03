@@ -10,7 +10,6 @@ import { CategoryFilterPipe } from './category-filter.pipe';
 import { ObjectKeysPipe } from '../shared/utils';
 import { ProductCardComponent } from '../shared/widgets/product-card/product-card.component';
 import { PaginationComponent } from "../shared/widgets/pagination/pagination.component";
-import { ListingCheckComponent } from './listing-check.component'
 import Listing from './listing';
 
 @Component({
@@ -40,8 +39,6 @@ export class ListingComponent implements OnInit {
       'id': 'clear all'
     };
 
-    @ViewChildren(ListingCheckComponent) filterCheck: ListingCheckComponent;
-
     constructor(private listingService: ListingService,
                 private router: Router,
                 private route: ActivatedRoute,
@@ -49,16 +46,6 @@ export class ListingComponent implements OnInit {
                 private location: Location
               ) {
                 }
-
-    fetchData(paramObj?: any){
-      this.listingService
-          .getListingList(paramObj)
-          .then( (listing: Response) => {
-            if(listing){
-              this.listing = listing.json().d;
-            }
-          })
-    }
 
     ngOnInit(): void {
       // this.loadCategoryList();
@@ -90,22 +77,42 @@ export class ListingComponent implements OnInit {
       this.router.events.subscribe(
         (event: Event) => {
           if(event instanceof NavigationStart){
-            let paramObj = {};
+            this.paramObj = {};
             if(event.url && event.url.indexOf('listing') != -1){
               let splitUrl = event.url.split('?').slice(1);
               for(let qParams of splitUrl){
                 let keyVal = qParams.split('=');
-                paramObj[keyVal[0]] = keyVal[1];
+                this.paramObj[keyVal[0]] = keyVal[1];
               }
-              this.fetchData(paramObj);
+              this.fetchData(this.paramObj);
             }
-          }
-          else if(event instanceof NavigationEnd && !this.route.data){
-
           }
         },
         (err) => console.error(err)
       )
+    }
+
+    fetchData(paramObj?: any){
+      this.listingService
+          .getListingList(paramObj)
+          .then( (listing: Response) => {
+            if(listing){
+              this.listing = listing.json().d;
+              this.changeListingUrl(paramObj);
+            }
+          })
+    }
+
+    private changeListingUrl(paramObj?: any): void{
+      if(paramObj){
+        let params = paramObj['params'] ? JSON.stringify(paramObj['params']) : JSON.stringify({});
+        let page = paramObj['page'] ? paramObj['page'] : 1;
+        let query = paramObj['query'] ? paramObj['query'] : '';
+        this.location.go('/listing', `query=${query}&params=${params}&page=${page}`);
+      }
+      else {
+        this.location.go('/listing');
+      }
     }
 
     getDataTarget(key): string {
@@ -138,8 +145,10 @@ export class ListingComponent implements OnInit {
           else if(filter != 'color') break;
         }
       }
-      this.fetchData();
-      this.location.go('/listing');
+      if(this.paramObj['params'] && this.paramObj['params']['filters']){
+        delete this.paramObj['params']['filters'];
+      }
+      this.fetchData(this.paramObj);
     }
 
     filterClick(event, data): void {
@@ -152,6 +161,26 @@ export class ListingComponent implements OnInit {
           if(this.appliedFilters.length == 1){
             this.appliedFilters= [this.clearAllBlock,...this.appliedFilters];
           }
+          let filterKey = data.key;
+          if(!this.paramObj['params']){
+            this.paramObj['params'] = {
+              'filters': {
+                [filterKey]: [data.value]
+              }
+            }
+          }
+          else if(!this.paramObj['params']['filters']){
+            this.paramObj['params']['filters'] = {
+              [filterKey]: [data.value]
+            }
+          }
+          else if(!this.paramObj['params']['filters'][filterKey]){
+            this.paramObj['params']['filters'][filterKey] = [data.value]
+          }
+          else{
+            this.paramObj['params']['filters'][filterKey].push(data.value);
+          }
+          this.fetchData(this.paramObj);
       }
       else {
         this.removeFilterBlock(data, event);
@@ -178,6 +207,15 @@ export class ListingComponent implements OnInit {
       if(appliedFilter.key != 'color'){
           this.sortFilterData(appliedFilter.key);
       }
+      let filteredKey = appliedFilter.key;
+      if(this.paramObj['params']['filters'][filteredKey].length == 1){
+        delete this.paramObj['params']['filters'][filteredKey];
+      }
+      else{
+        let foundIndex = this.paramObj['params']['filters'][filteredKey].indexOf(appliedFilter.value);
+        this.paramObj['params']['filters'][filteredKey].splice(foundIndex, foundIndex+1);
+      }
+      this.fetchData(this.paramObj);
     }
 
     private markFilterEntryCheck(data: any, checked: boolean): void {
@@ -236,7 +274,7 @@ export class ListingComponent implements OnInit {
         this.paramObj['params'] = {};
       }
       this.paramObj['params']['sort'] = { [key]: value };
-
+      this.fetchData(this.paramObj);
     }
 
     toggleMobileFiltersShow(show: boolean) {
@@ -245,7 +283,7 @@ export class ListingComponent implements OnInit {
 
     onPageChange(page) : void{
       this.paramObj['page'] = page;
-      console.log(this.paramObj);
+      this.fetchData(this.paramObj);
     }
 
 }

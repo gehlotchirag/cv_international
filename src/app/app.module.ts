@@ -26,7 +26,6 @@ import { PaginationComponent } from './shared/widgets/pagination/pagination.comp
 
 import { ProductAttributePipe } from './product/product-attribute.pipe';
 import { CategoryFilterPipe } from './listing/category-filter.pipe';
-import { ListingCheckComponent } from './listing/listing-check.component';
 import { CartDetailsService } from './shared/services/cart-details.service';
 import { ListingResolveService } from './listing/listing-resolve.service';
 import { FilterResolveService } from './listing/filter-resolve.service';
@@ -64,8 +63,7 @@ import { LiveFilterPipe } from './listing/live-filter.pipe';
     ProductAttributePipe,
     CategoryFilterPipe,
     ObjectKeysPipe,
-    LiveFilterPipe,
-    ListingCheckComponent
+    LiveFilterPipe
   ],
   entryComponents: [
     AnnouncementWidgetComponent,

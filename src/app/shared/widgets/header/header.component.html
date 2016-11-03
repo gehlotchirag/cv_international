@@ -26,6 +26,7 @@
                  class="form-control main-search-input"
                  placeholder="Search for Lehengas, Anarkalis.."
                  [(ngModel)]="queryInput"
+                 (keyup.enter)="searchItems()"
                  aria-describedby="basic-addon2">
           <span class="input-group-addon"
                 (click)="searchItems()"

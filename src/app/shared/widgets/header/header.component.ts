@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { CartDetailsService } from '../../services/cart-details.service';
@@ -10,6 +10,9 @@ import { CartDetailsService } from '../../services/cart-details.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  @Output() onSearchItems = new EventEmitter();
+
   private cart: any; // Change type to CartInterface
   private wishlist: any; // Change type to WishlistInterface
   private queryInput: string;

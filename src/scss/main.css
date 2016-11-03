@@ -7,6 +7,8 @@
   border: 1px solid #e2e2e2;
   margin-left: 10px;
   cursor: crosshair;
+  width: 500px;
+  height: 500px;
 }
 
 .displayNone{display: none;}
@@ -1677,7 +1679,11 @@
     margin-bottom: 5px; }
     .product-page .product-img-container img {
       width: 500px;
-      margin: auto; }
+      height: auto;
+      margin: auto;
+      border: none;
+      cursor: default; 
+    }
   .product-page .add-to-bag {
     margin-left: -2%; 
   }

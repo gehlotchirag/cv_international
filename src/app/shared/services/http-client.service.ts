@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, URLSearchParams } from '@angular/http';
+import { Http, Headers, URLSearchParams, Response } from '@angular/http';
+import { Observable } from "rxjs/Observable";
+
 
 @Injectable()
 export class HttpClientService {

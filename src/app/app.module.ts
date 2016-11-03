@@ -32,7 +32,8 @@ import { ListingService } from './listing/listing.service';
 import { HttpClientService } from './shared/services/http-client.service';
 import { ProductService, ProductDetailResolve } from './product';
 import { ObjectKeysPipe } from './shared/utils/object-keys.pipe';
-import { SwiperModule } from 'angular2-useful-swiper/lib/swiper.module';
+import {NumberDecimalPipe } from './product/number-decimal.pipe';
+import { SwiperModule } from './swiper_module/swiper.module';
 
   @NgModule({
     imports: [
@@ -40,7 +41,7 @@ import { SwiperModule } from 'angular2-useful-swiper/lib/swiper.module';
     FormsModule,
     HttpModule,
     routing,
-    SwiperModule,
+    SwiperModule
     ],
     declarations: [
     AppComponent,
@@ -63,6 +64,7 @@ import { SwiperModule } from 'angular2-useful-swiper/lib/swiper.module';
     ProductAttributePipe,
     CategoryFilterPipe,
     ObjectKeysPipe,
+    NumberDecimalPipe
   ],
   entryComponents: [
     AnnouncementWidgetComponent,

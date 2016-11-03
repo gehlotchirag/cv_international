@@ -1,12 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import Page from './page';
 
 import { isDefined } from '../../utils'
-
-interface Page {
-  number: number,
-  text: string,
-  active: boolean
-}
 
 // <cvi-pagination
 //   [totalPages]="totalPages"

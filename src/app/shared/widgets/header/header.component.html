@@ -1,16 +1,25 @@
+<div class= "buyer-popup-overlay" *ngIf="showProtectionPopup">
+  <div class="buyer-protection-popup">
+    <div class="close-buyer-popup pull-right" (click) = "showProtectionPopup = false">X</div>
+    <tabs>
+      <tab [tabTitle]="'Tab 1'">Tab 1 Content</tab>
+      <tab tabTitle="Tab 2">Tab 2 Content</tab>
+    </tabs>
+  </div>
+</div>
 <div class="header cover">
   <div class="top-menu hide-sm">
     <div class="contain">
       <span class="pull-left">India's Largest Ethnic Destination. Now Shipping Globally.</span>
       <span class="pull-right">
-        <span class="top-menu-item buyer-protection"><a href=""><img src="images/shield_icon.png"> 100% Buyer Protection</a></span>
-      <span class="top-menu-item"><a href="">Customer Care</a></span>
-      <span class="top-menu-item"><a href="">Track Order</a></span>
-      <span class="top-menu-item">
+        <span class="top-menu-item buyer-protection" (click) = "showProtectionPopup = true"><img src="images/shield_icon.png"> 100% Buyer Protection</span>
+        <span class="top-menu-item"><a href="">Customer Care</a></span>
+        <span class="top-menu-item"><a href="">Track Order</a></span>
+        <span class="top-menu-item">
           <div class="dropdown inline">
             <img src="images/usa-flag.gif" class="flag"> USD
           </div>
-    </span>
+        </span>
       </span>
     </div>
   </div>

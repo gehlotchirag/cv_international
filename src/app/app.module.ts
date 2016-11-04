@@ -10,12 +10,15 @@ import { ListingModule } from './listing';
 import { ProductModule } from './product';
 
 import { HeaderComponent } from './shared/widgets/header/header.component';
+
+import {Tabs} from './shared/widgets/tabs-widget/tabs.component';
+import {Tab} from './shared/widgets/tabs-widget/tab.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
     imports: [ BrowserModule, FormsModule, HttpModule, routing, HomeModule, ListingModule, ProductModule ],
     
-    declarations: [ AppComponent, HeaderComponent ],
+    declarations: [ AppComponent, HeaderComponent, Tabs, Tab ],
 
     providers: [ appRoutingProviders ],
 

@@ -4,7 +4,8 @@ import { Router, Resolve,
 
 import { Observable } from 'rxjs';
 
-import Listing from './listing'
+import Listing from './listing';
+
 import { ListingService } from './listing.service';
 
 @Injectable()

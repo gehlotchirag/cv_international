@@ -1,15 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { WidgetModule } from '../shared'
-import { HomeComponent } from './home.component';
+import { BrowserModule } from '@angular/platform-browser';
+
+
 import { homeRouting }  from './home.routing';
 
+import { HomeComponent } from './home.component';
 
-  @NgModule({
-    imports: [ BrowserModule,WidgetModule, homeRouting ],
-    declarations: [ HomeComponent ],
+import { WidgetModule } from '../shared/widgets';
+
+
+@NgModule({
+    imports: [ 
+	    WidgetModule, 
+	    homeRouting,
+	    BrowserModule 
+    ],
+    declarations: [ 
+    	HomeComponent 
+    ],
     providers: [ ],
-
 })
-export class HomeModule { }
 
+export class HomeModule { }

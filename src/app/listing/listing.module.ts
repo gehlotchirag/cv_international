@@ -1,19 +1,35 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { WidgetModule } from '../shared'
-import { ListingComponent } from './listing.component';
-import { CategoryFilterPipe } from './category-filter.pipe';
-import { listRouting }  from './listing.routing';
-import { ListingResolveService } from './listing-resolve.service';
-import { ListingService } from './listing.service';
-import { HttpClientService } from '../shared/services/http-client.service'
+import { BrowserModule } from '@angular/platform-browser';
 
+import { WidgetModule } from '../shared/widgets';
+
+import { ListingComponent } from './listing.component';
+
+import { CategoryFilterPipe } from './category-filter.pipe';
+import { LiveFilterPipe } from './live-filter.pipe';
+
+import { listRouting }  from './listing.routing';
+
+import { ListingResolveService } from './listing-resolve.service';
+import { FilterResolveService } from './filter-resolve.service';
+import { ListingService } from './listing.service';
 
   @NgModule({
-    imports: [ BrowserModule,WidgetModule, listRouting ],
-    declarations: [ ListingComponent, CategoryFilterPipe ],
-    providers: [ ListingResolveService, ListingService, HttpClientService ],
+    imports: [
+      listRouting,
+      WidgetModule,
+      BrowserModule
+    ],
+    declarations: [
+      ListingComponent,
+      CategoryFilterPipe,
+      LiveFilterPipe
+    ],
+    providers: [
+      ListingResolveService,
+      FilterResolveService,
+      ListingService
+    ],
 
 })
 export class ListingModule { }
-

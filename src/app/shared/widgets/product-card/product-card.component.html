@@ -7,8 +7,8 @@
 	<div class="product-info">
 		<div class="product-name">{{ product.name }}</div>
 		<div class="product-price">
-			<span class="discounted-price">{{ product.discountedPrice }}</span> &nbsp;
-			<span class="actual-price"><s>{{ product.regularPrice }}</s></span> &nbsp;
+			<span class="discounted-price">{{ product.discountedPrice | currency:'USD':true }}</span> &nbsp;
+			<span class="actual-price"><s>{{ product.regularPrice | currency:'USD': true }}</s></span> &nbsp;
 			<span class="discount">{{ product.discountPercentage }}</span>
 		</div>
 		<div class="product-hover-info" *ngIf="showSizeInfo">

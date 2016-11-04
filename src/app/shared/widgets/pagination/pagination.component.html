@@ -1,19 +1,13 @@
 <nav aria-label="cvi-pagination" class="text-center inline listing-pagination">
   <ul class="pagination">
     <li [ngClass]="{disabled: noPrevious()}" class="pagination-prev">
-      <a href (click)="selectPage(page - 1, $event)" [attr.disabled]="noPrevious()">
-    Previous
-  </a>
+      <a (click)="selectPage(currentPage - 1, $event)" [attr.disabled]="noPrevious()">&lt;&lt;</a>
     </li>
     <li *ngFor="let page of pages" [ngClass]="{active: page.active}" class="pagination-page">
-      <a href (click)="selectPage(page.number, $event)">
-    {{page.text}}
-  </a>
+      <a (click)="selectPage(page.number, $event)">{{page.text}}</a>
     </li>
     <li [ngClass]="{disabled: noNext()}" class="pagination-next">
-      <a href ng-click="selectPage(page + 1, $event)" [attr.disabled]="noNext()">
-    Next
-  </a>
+      <a (click)="selectPage(currentPage + 1, $event)" [attr.disabled]="noNext()">&gt;&gt;</a>
     </li>
   </ul>
 </nav>

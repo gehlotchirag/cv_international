@@ -10,3 +10,19 @@
   padding: 3px;
   display: inline-block;
 }
+
+cvi-hero-banner.home-carousel .carousel-indicators{
+    width: 100%;
+    left: 0;
+    margin: 0;
+    text-align: right;
+    padding: 0 20px 0px 0px;
+}
+cvi-hero-banner.home-carousel .carousel-indicators li{
+  background-color: #000;
+  opacity: 0.2;
+}
+cvi-hero-banner.home-carousel .carousel-indicators .active{
+  opacity: 1;
+  background: #007aff;
+}

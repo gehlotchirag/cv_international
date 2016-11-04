@@ -1,6 +1,20 @@
 @charset "UTF-8";
 
 
+/** Tabs Widget Css */
+ul.nav.nav-tabs.tabs-widget {
+    border-bottom: none;
+}
+li.active {
+    border-bottom: 2px solid #d9d9d9;
+}
+ul.nav.nav-tabs.tabs-widget li {
+    width: 50%;
+}
+ul.nav.nav-tabs.tabs-widget li a {
+    background: none;
+    border: none;
+}
 
 .product-page .product-img-container img {
   margin: auto;

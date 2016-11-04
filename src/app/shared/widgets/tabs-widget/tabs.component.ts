@@ -1,10 +1,10 @@
-import { Component, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import { Component, ContentChildren, QueryList, AfterContentInit, Input } from '@angular/core';
 import { Tab } from './tab.component';
 
 @Component({
   selector: 'tabs',
   template:`
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs" [ngClass] = widgetClass>
       <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
         <a href="#">{{tab.title}}</a>
       </li>
@@ -13,6 +13,7 @@ import { Tab } from './tab.component';
   `
 })
 export class Tabs implements AfterContentInit {
+  @Input('class') widgetClass: string;
   
   @ContentChildren(Tab) tabs: QueryList<Tab>;
   

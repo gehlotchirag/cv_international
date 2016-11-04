@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   private wishlist: any; // Change type to WishlistInterface
   private queryInput: string;
   private showProtectionPopup:boolean = false;
+  private tabsWidgetClass = "tabs-widget";
 
   constructor(private router: Router,
               private cartDetailsService: CartDetailsService

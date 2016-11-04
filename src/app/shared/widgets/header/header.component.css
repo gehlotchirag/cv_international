@@ -26,4 +26,11 @@
 }
 .close-buyer-popup{
 	cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 0.7;
+}
+.close-buyer-popup:hover{
+	opacity: 1;
 }

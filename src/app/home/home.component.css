@@ -19,10 +19,20 @@ cvi-hero-banner.home-carousel .carousel-indicators{
     padding: 0 20px 0px 0px;
 }
 cvi-hero-banner.home-carousel .carousel-indicators li{
-  background-color: #000;
-  opacity: 0.2;
+  background-color: #c0c0c0;
+  border: none;
+  margin: 2px;
+  width: 8px;
+  height: 8px;
 }
 cvi-hero-banner.home-carousel .carousel-indicators .active{
-  opacity: 1;
-  background: #007aff;
+  background: #333333;
+  margin: 1px;
+  width: 10px;
+  height: 10px;
+}
+@media only screen and (max-width: 1050px){
+  cvi-hero-banner.home-carousel .slider{
+    width: 100%;
+  }  
 }

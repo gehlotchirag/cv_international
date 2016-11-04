@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { WidgetModule } from '../shared/widgets';
 
 import { ListingComponent } from './listing.component';
 
@@ -13,7 +16,9 @@ import { ListingService } from './listing.service';
 
   @NgModule({
     imports: [
-      listRouting
+      listRouting,
+      WidgetModule,
+      BrowserModule
     ],
     declarations: [
       ListingComponent,

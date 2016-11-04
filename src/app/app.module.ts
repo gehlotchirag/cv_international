@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { routing, appRoutingProviders }  from './app.routing';
 import './rxjs-extensions';
 
-import { WidgetModule } from './shared/widgets';
 import { HomeModule } from './home';
 import { ListingModule } from './listing';
 import { ProductModule } from './product';
@@ -21,9 +20,9 @@ import { RouterHeaderBindingService } from './shared/services/router-header-bind
 @NgModule({
     imports: [
       BrowserModule,
-      // FormsModule,
       HttpModule,
       routing,
+      FormsModule,
       HomeModule,
       ListingModule,
       ProductModule

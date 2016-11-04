@@ -1,4 +1,8 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { WidgetModule } from '../shared/widgets';
+
 
 import { SwiperModule } from '../swiper_module/swiper.module';
 
@@ -15,7 +19,9 @@ import { ProductService } from './product.service';
   @NgModule({
     imports: [      
       SwiperModule,
-      productRouting
+      productRouting,
+      WidgetModule,
+      BrowserModule
     ],
     declarations: [
       ProductComponent,

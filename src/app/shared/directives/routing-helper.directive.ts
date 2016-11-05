@@ -1,13 +1,15 @@
 import { Component, Directive, Attribute, ElementRef, ViewContainerRef, Output, EventEmitter,
          ComponentFactoryResolver, Injector, ResolvedReflectiveProvider, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Data, RouterOutlet, RouterOutletMap } from '@angular/router';
+import { Response } from '@angular/http';
 
 import { RouterHeaderBindingService } from '../services/router-header-binding.service';
+
+import { HttpClientService } from '../services/http-client.service';
 
 @Directive({
   selector: 'routing-helper'
 })
-
 export class RoutingHelperDirective extends RouterOutlet {
 
   private parentRouter: Router;

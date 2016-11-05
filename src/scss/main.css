@@ -968,6 +968,12 @@ ul.nav.nav-tabs.tabs-widget li a {
       width: 18%;
       height: 400px;
       font-size: 13px; }
+      .menu-slider-container .menu.overlay-menu {
+        position: absolute;
+  	    left: 30px;
+  	    width: 18%;
+  	    z-index: 200;
+      }
       .menu-slider-container .menu .menu-list li {
         height: 36px;
         line-height: 36px;
@@ -1117,7 +1123,7 @@ ul.nav.nav-tabs.tabs-widget li a {
     width: 14.2%; }
 
   .home-listing .product-listing {
-    width: 17.5%; } 
+    width: 17.5%; }
     .slider-img {
       width: 100% !important; }
   }
@@ -1710,8 +1716,12 @@ ul.nav.nav-tabs.tabs-widget li a {
       height: auto;
       margin: auto;
       border: none;
-      cursor: default; 
+      cursor: default;
     }
+
+  .product-page .add-to-bag {
+    margin-left: -2%;
+  }
   .zoomed-image{
     display: none !important;
   }

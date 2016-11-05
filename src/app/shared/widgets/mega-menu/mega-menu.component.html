@@ -1,4 +1,4 @@
-<div class="menu pull-left bg-white hide-sm">
+<div class="menu pull-left bg-white hide-sm" [class.overlay-menu]="isNonHomePage" id="mega-menu">
   <ul class="list-unstyled menu-list"
     (mouseleave)="onMouseLeave()"
     (selectedCategory)="getSelectedCategory($event)">

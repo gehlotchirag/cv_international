@@ -1,9 +1,11 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Response } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 
-import { HeaderComponent } from './shared/widgets/header/header.component';
+// import { HeaderComponent } from './shared/widgets/header/header.component';
 
 import { RoutingHelperDirective } from './shared/directives/routing-helper.directive';
+import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
 
 import { HttpClientService } from './shared/services/http-client.service';
 
@@ -17,11 +19,10 @@ export class AppComponent {
 
   private hasMegaMenu: boolean = false;
 
-  constructor(){}
+  constructor(private httpClient: HttpClientService){}
 
   private receiveMegaMenu(shouldShow) {
     this.hasMegaMenu = shouldShow;
   }
-
 
 }

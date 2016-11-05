@@ -15,9 +15,10 @@ import {Tabs} from './shared/widgets/tabs-widget/tabs.component';
 import {Tab} from './shared/widgets/tabs-widget/tab.component';
 import { AppComponent } from './app.component';
 
+import { HttpClientService } from './shared/services/http-client.service';
+
 import { RoutingHelperDirective } from './shared/directives/routing-helper.directive';
 
-import { HttpClientService } from './shared/services/http-client.service';
 import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
 
 @NgModule({

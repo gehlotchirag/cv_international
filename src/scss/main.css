@@ -957,7 +957,8 @@ ul.nav.nav-tabs.tabs-widget li a {
         text-overflow: ellipsis; }
       .menu-sub-cat ul .sub-cat-list-header {
         font-weight: bold;
-        border-bottom: 1px solid #e2e2e2;
+        padding-left: 0 !important;
+        border-bottom: 1px solid #e2e2e2 !important;
         margin-bottom: 8px; }
 
   .menu-slider-container {
@@ -981,12 +982,20 @@ ul.nav.nav-tabs.tabs-widget li a {
         padding-left: 10%;
         border-top: 1px solid #fff;
         border-bottom: 1px solid #fff; }
-        .menu-slider-container .menu .menu-list li:hover {
-          border-top: 1px solid #e2e2e2;
+        .menu-slider-container .menu .menu-list li:hover, .menu-slider-container .menu .menu-list li:hover a {
+/*          border-top: 1px solid #e2e2e2;
           border-bottom: 1px solid #e2e2e2;
-          width: 100.5%;
+*/        width: 100.5%;
           position: relative;
-          z-index: 100; }
+          z-index: 100; 
+          color: #c74444 !important;
+        }
+        .menu-slider-container .menu .menu-list li:hover.header{
+          color: #fff !important;
+        }
+        .menu-slider-container .menu .menu-list li:hover.sub-cat-list-header{
+          color: #000 !important;
+        }
       .menu-slider-container .menu .menu-list .header {
         background-color: #981937;
         color: white;
@@ -1133,11 +1142,15 @@ ul.nav.nav-tabs.tabs-widget li a {
 
   .box {
     background-color: #f5f5f5;
-    height: 100px;
     width: 47%;
     margin-left: 2%;
     margin-bottom: 2%;
     float: left; }
+
+  .box-2{
+    width: 100%;
+    margin-left: 0;
+  }
 
   .box-3 {
     width: 100%;

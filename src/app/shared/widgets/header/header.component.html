@@ -1,9 +1,11 @@
 <div class="header cover">
-  <div class="top-menu hide-sm">
+  <div class="top-menu hide-sm" (mouseover)="displayMegaMenu(false)">
     <div class="contain">
       <span class="pull-left">India's Largest Ethnic Destination. Now Shipping Globally.</span>
       <span class="pull-right">
-        <span class="top-menu-item buyer-protection"><a href=""><img src="images/shield_icon.png"> 100% Buyer Protection</a></span>
+        <span class="top-menu-item buyer-protection">
+          <a href=""><img src="images/shield_icon.png"> 100% Buyer Protection</a>
+        </span>
       <span class="top-menu-item"><a href="">Customer Care</a></span>
       <span class="top-menu-item"><a href="">Track Order</a></span>
       <span class="top-menu-item">
@@ -16,16 +18,17 @@
   </div>
   <div class="mid-menu">
     <div class="contain mob-contain">
-      <div class="logo inline mob-inline pull-left"><img src="images/menu_icon.png" class="hide-lg menu-icon navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+      <div class="logo inline mob-inline pull-left js-header-menu-show">
+        <img src="images/menu_icon.png" class="hide-lg menu-icon navbar-toggle"
+             data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
         <a href="index.html"><img src="images/logo.png" class="logo-img"></a>
-        <div *ngIf="showMegaMenu" style="display: inline-block;">
-          <button class="btn btn-default" type="button" (mouseover)="showMegaMenu($event)" (mouseout)="hideMegaMenu($event)">
+        <div *ngIf="showMegaMenuCaret" class="hide-sm mega-menu-hamburger"
+              (mouseover)="displayMegaMenu(true, $event)"
+              (mouseleave)="displayMegaMenu(false, $event)">
         	   <span class="glyphicon glyphicon-menu-hamburger"></span>
-             <span class="caret"></span>
-           </button>
          </div>
       </div>
-      <div class="search inline pull-left">
+      <div class="search inline pull-left" (mouseover)="displayMegaMenu(false)">
         <div class="input-group">
           <input type="text"
                  class="form-control main-search-input"
@@ -40,9 +43,10 @@
           </span>
         </div>
       </div>
-      <div class="options inline pull-right">
+      <div class="options inline pull-right" (mouseover)="displayMegaMenu(false)">
         <div class="profile option inline pull-right" data-toggle="modal" data-target="#loginModal">
-          <img src="images/profile_icon.png" class="img-responsive pull-left icon"> &nbsp;<span class="hide-sm">Sign in</span>
+          <img src="images/profile_icon.png"
+               class="img-responsive pull-left icon"> &nbsp;<span class="hide-sm">Sign in</span>
         </div>
         <div class="cart option inline pull-right">
           <img src="images/bag_icon.png" class="img-responsive icon">
@@ -55,4 +59,8 @@
       </div>
     </div>
   </div>
+</div>
+<div class="menu-slider-container occupy" [ngStyle]="{'display': showBottomMenu}">
+  <div class="menu-overlay-div" (mouseover)="displayMegaMenu(false)"></div>
+  <div #headerContent class="contain js-header-menu-show"></div>
 </div>

@@ -55,6 +55,12 @@
 	}
 	.menu-slider-container{
 		margin-top: 20px;
+		.menu.overlay-menu {
+			position: absolute;
+	    left: 30px;
+	    width: 18%;
+	    z-index: 200;
+		}
 		.menu{
 			position:relative;
 			background-color: white;

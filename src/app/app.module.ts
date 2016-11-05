@@ -12,9 +12,10 @@ import { ProductModule } from './product';
 import { HeaderComponent } from './shared/widgets/header/header.component';
 import { AppComponent } from './app.component';
 
+import { HttpClientService } from './shared/services/http-client.service';
+
 import { RoutingHelperDirective } from './shared/directives/routing-helper.directive';
 
-import { HttpClientService } from './shared/services/http-client.service';
 import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
 
 @NgModule({

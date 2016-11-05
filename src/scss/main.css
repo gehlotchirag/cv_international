@@ -1,6 +1,24 @@
 @charset "UTF-8";
 
 
+/** Tabs Widget Css */
+ul.nav.nav-tabs.tabs-widget {
+    border-bottom: none;
+}
+ul.nav.nav-tabs.tabs-widget li.active{
+  cursor: default;
+}
+ul.nav.nav-tabs.tabs-widget li.active,ul.nav.nav-tabs.tabs-widget li:hover {
+    border-bottom: 2px solid #d9d9d9;
+}
+ul.nav.nav-tabs.tabs-widget li {
+    width: 50%;
+    cursor: pointer;
+}
+ul.nav.nav-tabs.tabs-widget li a {
+    background: none;
+    border: none;
+}
 
 .product-page .product-img-container img {
   margin: auto;
@@ -9,6 +27,11 @@
   cursor: crosshair;
   width: 500px;
   height: 500px;
+}
+.product-details-block{
+    float: none;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .displayNone{display: none;}
@@ -428,6 +451,7 @@
     height: 50px;
     position: fixed;
     bottom: 0;
+    left: 0;
     background-color: #fff;
     border-top: 1px solid #bababa;
     width: 100%;
@@ -594,10 +618,11 @@
     .footer .footer-txt {
       color: #6b6b6b;
       font-size: 12px; }
-    .footer .social-footer .fa {
-      font-size: 24px;
-      width: 20%;
-      cursor: pointer; }
+    .footer .social-footer a img {
+        width: 20px;
+        border: 0;
+        height: 20px;
+    }
     .footer .footer-row-2 {
       margin-top: 20px; } }
 @media only screen and (max-width: 1050px) {
@@ -646,7 +671,7 @@
     margin-top: -2px; }
 
   .logo {
-    width: 20%; }
+    width: 25%; }
 
   .search {
     width: 60%;
@@ -654,7 +679,7 @@
     margin-top: 23px; }
     .search .input-group {
       float: left;
-      width: 80%; }
+      width: 100%; }
       .search .input-group .input-group-addon {
         background-color: #981937;
         color: white;
@@ -676,7 +701,7 @@
       display: none; }
 
   .options {
-    width: 20%;
+    width: 15%;
     line-height: 20px;
     margin-top: 30px;
     text-align: right; }
@@ -1098,10 +1123,13 @@
     width: 14.2%; }
 
   .home-listing .product-listing {
-    width: 17.5%; } }
+    width: 17.5%; }
+    .slider-img {
+      width: 100% !important; }
+  }
 @media only screen and (max-width: 1050px) {
   .slider-img {
-    width: 100%; }
+    width: 100% !important; }
 
   .box {
     background-color: #f5f5f5;
@@ -1125,11 +1153,11 @@
     margin-top: 2%;
     width: 100%; }
     .extra-menu .middle {
-      margin-bottom: 2%;
-      margin-top: 2%; }
+      margin-bottom: 0;
+      margin-top: 0; }
     .extra-menu .extra-menu-item {
-      width: 96%;
-      margin-left: 2%;
+      width: 32.8%;
+      margin-left: 1px;
       background-color: white; }
 
   .hide-tab {
@@ -1210,11 +1238,9 @@
       background-color: #e2e2e2;
       font-size: 12px;
       padding: 5px;
-      line-height: 16px;
+      line-height: 22px;
       min-width: 100px;
-      margin-right: 5px;
-      margin-top: 2px;
-      } }
+      margin-right: 5px; } }
 @media only screen and (max-width: 1050px) {
   .page-listing .product-listing {
     width: 50%;
@@ -1374,9 +1400,8 @@
   height: 35px;
   background-color: #e2e2e2;
   margin: 0px 5px 5px 0px;
-  display: inline-block;
-  cursor: pointer;
-}
+  display: inline-block; }
+
 
 .sub-menu-color > li {
   width: 35px;
@@ -1413,6 +1438,7 @@
   display: none;
 }
 
+
 .search-filter {
   margin-top: 10px;
   margin-bottom: 10px; }
@@ -1422,7 +1448,6 @@
   border-color: #e2e2e2 !important; }
 
 .pagination > li > a, .pagination > li > span {
-  cursor: pointer;
   color: #333333 !important; }
 
 .pagination > li:first-child > a, .pagination > li:first-child > span {
@@ -1508,12 +1533,12 @@
 
   .product-container {
     background-color: white;
-    float: left;
     width: 100%;
+    max-width: 1400px;
     -webkit-box-shadow: 1px 1px 4px #e2e2e2;
     -moz-box-shadow: 1px 1px 4px #e2e2e2;
     box-shadow: 1px 1px 4px #e2e2e2;
-    margin: 32px 0;
+    margin: 32px auto;
     padding: 15px 25px 15px 15px;
   }
     .product-container .share-product {
@@ -1730,6 +1755,7 @@
       border: none;
       cursor: default;
     }
+
   .product-page .add-to-bag {
     margin-left: -2%;
   }
@@ -6895,11 +6921,7 @@ button.close {
   cursor: pointer;
   background: transparent;
   border: 0;
-  -webkit-appearance: none;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 16px;
-}
+  -webkit-appearance: none; }
 
 .modal-open {
   overflow: hidden; }
@@ -7651,7 +7673,3 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-
-.sort-listing-content {
-  list-style: none;
-}

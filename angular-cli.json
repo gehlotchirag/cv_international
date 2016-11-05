@@ -7,14 +7,14 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": "images",
+      "assets": ["images", "scss/main.css"],
       "index": "index.html",
       "main": "main.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "mobile": false,
-      "styles": ["scss/main.css", "scss/swiper.min.css"],
+      "styles": ["scss/swiper.min.css"],
       "scripts": ["js/jquery-3-1.min.js", "js/bootstrap.min.js", "js/swiper.min.js", "js/temp.js"],
       "environments": {
         "source": "environments/environment.ts",

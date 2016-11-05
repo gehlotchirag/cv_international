@@ -10,6 +10,9 @@ import { ListingModule } from './listing';
 import { ProductModule } from './product';
 
 import { HeaderComponent } from './shared/widgets/header/header.component';
+
+import {Tabs} from './shared/widgets/tabs-widget/tabs.component';
+import {Tab} from './shared/widgets/tabs-widget/tab.component';
 import { AppComponent } from './app.component';
 
 import { HttpClientService } from './shared/services/http-client.service';
@@ -31,6 +34,8 @@ import { RouterHeaderBindingService } from './shared/services/router-header-bind
     declarations: [
       AppComponent,
       HeaderComponent,
+      Tabs, 
+      Tab,
       RoutingHelperDirective
     ],
     providers: [

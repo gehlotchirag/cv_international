@@ -56,7 +56,6 @@
   </div>
   <div class="product-container">
     <div class="contain" *ngIf="products" >
-
       <div class="product-thumbnails inline pull-left hide-sm">
         <img  src="{{galleryImage}}"  class="img-responsive"  on-mouseover="showImage($event, galleryImage)" *ngFor="let galleryImage of galleryImages">
       </div>
@@ -75,9 +74,11 @@
           <div class="swiper-pagination"></div>
         </swiper>
       </div>
-      <div class="product-info-container inline pull-left mob-contain">
+      <div class="product-info-container inline">
         <span class="mob-bg-white">
-          <div class="name mob-section-heading"><h1>{{products.productName}}</h1></div>
+          <div class="name mob-section-heading">
+            <h1>{{products.productName}}</h1>
+          </div>
           <div class="price mob-section-body">
             <span class="discounted-price"  >${{products.discountedPrice}}</span>
             &nbsp;<span class="actual-price" *ngIf="isRegularPriceMore"><s>${{products.regularPrice}}</s></span>
@@ -123,62 +124,65 @@
                   <span><strong>Stitching Type : </strong></span> <span>{{stitching_type}}</span></div>
 
                 </div> -->
-                <div class [class.displayNone]="showSizeDiv" >
-                  <div class="heading select-size-header mob-section-heading" id="sizeChartDiv">
-                    <span class="pull-left">Select Size</span>
-                    <span class="pull-right mob-link link" data-toggle="modal" data-target="#sizeChartModal">Size Chart</span>
-                  </div>
-                  <div class="sizes occupy mob-section-body" >
+              <div class [class.displayNone]="showSizeDiv" >
+                <div class="heading select-size-header mob-section-heading" id="sizeChartDiv">
+                  <span class="pull-left">Select Size</span>
+                  <span class="pull-right mob-link link" data-toggle="modal" data-target="#sizeChartModal">Size Chart</span>
+                </div>
+                <div class="sizes occupy mob-section-body" >
                  <!--  <span *ngFor="let size of sizes  let i=index  ">
                     <span class="size-box" id="{{size}}{{i}}"  (click)="selectProducSize($event)" [class.active]="isClassVisible">{{size}}</span>
                   </span> -->
                   <span *ngFor="let size of sizes , let i = index"
-                  [attr.data-selected]="false"
-                  (click)="selectSize($event, size)"
-                  class="size-box"
-                  [class.active]="selectedSize === size">
-                  {{ size }}
-                </span>
+                    [attr.data-selected]="false"
+                    (click)="selectSize($event, size)"
+                    class="size-box"
+                    [class.active]="selectedSize === size">
+                    {{ size }}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="stitch"></div>
-          <div class="add-to-bag occupy fixed-bottom-bar product-buy-btns">
-            <button class="btn btn-default add-cart-btn flat-btn purchase" (click)="addToBag($event)">ADD TO BAG</button>
-            <button class="btn btn-brand buy-btn flat-btn purchase">BUY NOW</button>
+            <div class="stitch"></div>
+            <div class="add-to-bag occupy fixed-bottom-bar product-buy-btns">
+              <button class="btn btn-default add-cart-btn flat-btn purchase" (click)="addToBag($event)">ADD TO BAG</button>
+              <button class="btn btn-brand buy-btn flat-btn purchase">BUY NOW</button>
+            </div>
+          </span>
+          <div class="share-product hide-sm" id="share-buttons">
+            <span class="header">Share on &nbsp;</span>
+            <a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts" target="_blank">
+              <img src="images/facebook.png" alt="Facebook" />
+            </a>
+            <a href="https://twitter.com/share?url=https://www.craftsvilla.com&amp;text=Simple%20Share%20Buttons&amp;hashtags={{products.productName}}" target="_blank">
+              <img src="images/twitter.png" alt="Twitter" />
+            </a>
+            <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+              <img src="images/pinterest.png" alt="Pinterest" />
+            </a>
           </div>
         </span>
-        <div class="share-product hide-sm" id="share-buttons"><span class="header">Share on &nbsp;</span>
-          <a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts" target="_blank">
-            <img src="images/facebook.png" alt="Facebook" />
-          </a>
-          <a href="https://twitter.com/share?url=https://www.craftsvilla.com&amp;text=Simple%20Share%20Buttons&amp;hashtags={{products.productName}}" target="_blank">
-           <img src="images/twitter.png" alt="Twitter" />
-         </a>
-         <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
-          <img src="images/pinterest.png" alt="Pinterest" />
-        </a>
       </div>
-    </span>
-  </div>
-</div>
-</div>
-<div class="contain mob-contain">
-  <div class="mob-bg-white bg-white occupy">
-    <div class="product-details-container">
-      <div class="mob-section-heading section-heading">PRODUCT DETAILS</div>
-      <table class="table table-striped">
-        <tr *ngFor="let attribute of attributes">
-          <td>{{attribute.key}}</td>
-          <td>{{attribute.value}}</td>
-        </tr>
-
-      </table>
+      <div class="clearfix"></div>
     </div>
-
   </div>
-</div>
+  <div class="clearfix"></div>
+  <div class="product-details-block">
+    <div class="mob-bg-white bg-white occupy">
+      <div class="product-details-container">
+        <div class="mob-section-heading section-heading">PRODUCT DETAILS</div>
+        <table class="table table-striped">
+          <tr *ngFor="let attribute of attributes">
+            <td>{{attribute.key}}</td>
+            <td>{{attribute.value}}</td>
+          </tr>
 
+        </table>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="clearfix"></div>
 </div>
 <div class="modal fade" tabindex="-1" role="dialog" id="sizeChartModal">
   <div class="modal-dialog" role="document">

@@ -10,7 +10,7 @@
     <div class="section-body mob-section-body">
       <div *ngFor="let item of dataItems; let i = index;"
             class="box"
-            [ngClass]="{'box-1 hide-sm': i == first, 'box-2 last hide-sm': i==1, 'last': i == last}">
+            [ngClass]="{'box-1 hide-sm': i == 0, 'box-2 last': i==1, 'last': i == dataItems.length - 1}">
         <a [href]="item.dataUrl">
           <img [src]="item.imageUrl" class="img-responsive">
         </a>

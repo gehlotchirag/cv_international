@@ -64,7 +64,7 @@
         <div class="zoomed-image"></div>
       </div>
       <div class="product-img-container pull-left text-center responsive-img-container">
-        <swiper [config]="config">
+        <swiper [config]="config" *ngIf="galleryImages.length > 0">
           <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let galleryImage of galleryImages;">
               <img class="productImage  img-responsive" *ngIf=" galleryImages.length  > 0" src="{{galleryImage}}" alt="{{products.productName}}" >
@@ -73,6 +73,10 @@
           </div>
           <div class="swiper-pagination"></div>
         </swiper>
+        <div class="product-img-container text-center" *ngIf="!galleryImages.length > 0">
+          <img (mouseover)="onImageHover(imageUrl)" (mousemove) = "onImageHoverMove()" (mouseout) = "onHoverOut()" src="{{imageUrl}}" class="img-responsive">
+          <div class="zoomed-image"></div>
+        </div>
       </div>
       <div class="product-info-container inline">
         <span class="mob-bg-white">

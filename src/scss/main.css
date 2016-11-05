@@ -1203,7 +1203,7 @@
       border-radius: 0px; }
   .listing-container .applied-filters {
     width: 100%;
-    background-color: #f5f5f5;
+    background-color: #f4f1eb;
     padding: 6px; }
     .listing-container .applied-filters .applied-filter {
       display: inline-block;
@@ -1381,10 +1381,13 @@
 .sub-menu-color > li {
   width: 35px;
   height: 35px;
-  background-color: #e2e2e2;
+  /* background-color: #e2e2e2; */
   margin: 0px 5px 5px 0px;
   display: inline-block;
   cursor: pointer;
+  border: 1px solid #f4f4f4;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .sub-menu-color > li label {
   display: block;
@@ -1393,8 +1396,8 @@
   text-align: center;
   cursor: pointer;
   margin: 0;
-  border-radius: 2px;
-  border: inherit !important;
+  /*border-radius: 2px;
+  border: inherit !important;*/
 }
 .sub-menu-color > li label input[type=checkbox] {
   display: none;

@@ -23,6 +23,7 @@
              data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
         <a href="index.html"><img src="images/logo.png" class="logo-img"></a>
         <div *ngIf="showMegaMenuCaret" class="hide-sm mega-menu-hamburger"
+              [class.hovered]="showBottomMenu == 'block'"
               (mouseover)="displayMegaMenu(true, $event)"
               (mouseleave)="displayMegaMenu(false, $event)">
         	   <span class="glyphicon glyphicon-menu-hamburger"></span>

@@ -87,3 +87,20 @@
 .menu-slider-container {
   margin-top: 0px;
 }
+.homepage-logo{
+  width: 19%;
+}
+
+.homepage-search{
+  width: 65%;
+}
+
+@media only screen and (max-width: 1050px) {
+  .homepage-logo{
+    width: 50%;
+  }
+  .homepage-search{
+    width: 100%;
+  }
+
+}

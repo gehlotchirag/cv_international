@@ -11,4 +11,6 @@ body {
 }
 .error-actions .btn { 
 	margin-right:10px; 
+    background-color: #e34141;
+    border: none;
 }

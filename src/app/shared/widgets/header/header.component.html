@@ -61,10 +61,10 @@
   </div>
   <div class="mid-menu">
     <div class="contain mob-contain">
-      <div class="logo inline mob-inline pull-left js-header-menu-show">
+      <div class="logo inline mob-inline pull-left js-header-menu-show" [ngClass] = "{'homepage-logo' : !showMegaMenuCaret}" >
         <img src="images/menu_icon.png" class="hide-lg menu-icon navbar-toggle"
              data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
-        <a href="index.html"><img src="images/logo.png" class="logo-img"></a>
+        <a href="/"><img src="images/logo.png" class="logo-img"></a>
         <div *ngIf="showMegaMenuCaret" class="hide-sm mega-menu-hamburger"
               [class.hovered]="showBottomMenu == 'block'"
               (mouseover)="displayMegaMenu(true, $event)"
@@ -72,7 +72,7 @@
         	   <span class="glyphicon glyphicon-menu-hamburger"></span>
          </div>
       </div>
-      <div class="search inline pull-left" (mouseover)="displayMegaMenu(false)">
+      <div class="search inline pull-left" [ngClass] = "{'homepage-search' : !showMegaMenuCaret}" (mouseover)="displayMegaMenu(false)">
         <div class="input-group">
           <input type="text"
                  class="form-control main-search-input"
@@ -100,10 +100,10 @@
             <span id="js-cart-count" class="notification-circle"></span>
           </div>
         </a>
-        <div class="wishlist option inline pull-right hide-sm hide">
+        <!-- <div class="wishlist option inline pull-right hide-sm hide">
           <img src="images/wishlist_icon.png" class="img-responsive icon">
           <span id="js-wishlist-count" class="notification-circle"></span>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

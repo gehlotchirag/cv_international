@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef, ViewChild, ComponentRef, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ViewChild, ComponentRef, ComponentFactoryResolver,ViewEncapsulation } from '@angular/core';
 import { ComponentFactory } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
@@ -15,7 +15,8 @@ import { CartDetailsService } from '../shared/services/cart-details.service'
   providers: [HomeService, WidgetFactoryService, CartDetailsService, ProductService],
   // providers: [HomeService],
   templateUrl: './home.component.html', //'./home-dynamic.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class HomeComponent implements OnInit {

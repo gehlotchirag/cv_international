@@ -10,3 +10,29 @@
   padding: 3px;
   display: inline-block;
 }
+
+cvi-hero-banner.home-carousel .carousel-indicators{
+    width: 100%;
+    left: 0;
+    margin: 0;
+    text-align: right;
+    padding: 0 20px 0px 0px;
+}
+cvi-hero-banner.home-carousel .carousel-indicators li{
+  background-color: #c0c0c0;
+  border: none;
+  margin: 2px;
+  width: 8px;
+  height: 8px;
+}
+cvi-hero-banner.home-carousel .carousel-indicators .active{
+  background: #333333;
+  margin: 1px;
+  width: 10px;
+  height: 10px;
+}
+@media only screen and (max-width: 1050px){
+  cvi-hero-banner.home-carousel .slider{
+    width: 100%;
+  }  
+}

@@ -7,15 +7,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CartDetailsService } from '../../services/cart-details.service';
 import { MegaMenuComponent } from '../mega-menu/mega-menu.component';
 import { RouterHeaderBindingService } from '../../services/router-header-binding.service';
-// import { WishListService } from '../../services/wish-list.service';
 
 @Component({
   selector: 'cvi-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   providers:[ CartDetailsService ],
-  entryComponents: [ MegaMenuComponent ],
-  // encapsulation: ViewEncapsulation.None
+  entryComponents: [ MegaMenuComponent ]
 })
 export class HeaderComponent implements OnInit , OnChanges, DoCheck {
 
@@ -31,6 +29,8 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   private cart: any; // Change type to CartInterface
   private wishlist: any; // Change type to WishlistInterface
   private queryInput: string;
+  private showProtectionPopup:boolean = false;
+  private tabsWidgetClass = "tabs-widget";
   private showBottomMenu: string = 'none';
   private isMegaMenuInitialized: boolean = false;
 

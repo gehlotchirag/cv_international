@@ -990,7 +990,7 @@ ul.nav.nav-tabs.tabs-widget li a {
           border-bottom: 1px solid #e2e2e2;
 */        width: 100.5%;
           position: relative;
-          z-index: 100; 
+          z-index: 100;
           color: #c74444 !important;
         }
         .menu-slider-container .menu .menu-list li:hover.header{
@@ -1304,7 +1304,12 @@ ul.nav.nav-tabs.tabs-widget li a {
       vertical-align: top;
       margin-left: 5px; }
       .page-listing .sort-filter .sort-filter-text .sort-filter-status {
-        font-size: 12px; }
+        font-size: 12px; 
+        width: 150px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     .page-listing .sort-filter .sort-filter-icon {
       font-size: 20px;
       margin-top: 15px; }

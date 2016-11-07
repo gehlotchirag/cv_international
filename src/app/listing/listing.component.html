@@ -8,10 +8,10 @@
 				  <li class="active">{{ listing.name  }}</li>
 				</ol> -->
 				<div class="listing-container">
-					<div class="filter bg-white inline pull-left" style="display:none;">
+					<div class="filter bg-white inline pull-left" [style.display]="showMobileFilters ? 'block': 'none' ">
 						<div class="header">
 							<strong class="pull-left">Filter by</strong>
-							<button type="button" class="close pull-right hide-lg" aria-label="Close">
+							<button type="button" class="close pull-right hide-lg" aria-label="Close" (click)="showMobileFilters = false ">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
@@ -20,7 +20,7 @@
 								<span>{{ key['key'].toUpperCase() }}</span>
 								<span class="glyphicon glyphicon glyphicon-menu-down pull-right hide-lg"></span>
 							</div>
-							<input *ngIf="key.key != 'color' " type="text" class="form-control input-box search-filter"
+							<input *ngIf="key.key != 'color' && !showMobileFilters " type="text" class="form-control input-box search-filter"
 										 name="Search" placeholder="Search"  [value]="getFilterString(key.key)"
                      (input)="filterString(key.key, $event.target.value)" />
 							<div *ngIf="key.key != 'color' " class="filter-section-options collapse" [attr.id]="getAriaControl(key)">

@@ -22,9 +22,9 @@
                 <div class="product-info">
                   <div class="product-name">{{ product.productName }}</div>
                   <div class="product-price">
-                    <span class="discounted-price">${{ product.discountedPrice }}</span>
-                    &nbsp;<span class="actual-price"><s>${{ product.regularPrice }}</s></span>
-                    &nbsp;<span class="discount">{{ product.discountPercentage }}%</span>
+                    <span class="discounted-price">${{ product.discountedPrice  }}</span>
+                    &nbsp;<span class="actual-price"><s>${{ product.regularPrice  }}</s></span>
+                    &nbsp;<span class="discount">{{ product.discountPercentage | number:'2.0-2' }}%</span>
                   </div>
                 </div>
               </div>

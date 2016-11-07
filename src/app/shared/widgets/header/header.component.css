@@ -3,7 +3,7 @@
 	top: 0;
 	width: 100%;
 	z-index: 101;
-	background-color: #f4f1eb; 
+	background-color: #f4f1eb;
 }
 
 .buyer-popup-overlay{
@@ -60,11 +60,11 @@
   border-bottom-right-radius: 0px;*/
 }
 
-.mega-menu-hamburger:hover {
+.mega-menu-hamburger.hovered {
   background-color: #a5002f;
 }
 
-.mega-menu-hamburger:hover span {
+.mega-menu-hamburger.hovered span {
   color: #fff;
 }
 
@@ -78,7 +78,7 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  top: 110px;
+  top: 0;
   left: 0;
   z-index: 56;
   background-color: rgba(0,0,0,0.5);

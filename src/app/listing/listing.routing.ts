@@ -9,11 +9,26 @@ import { FilterResolveService } from './filter-resolve.service';
 const listingRoutes: Routes = [
 	{
 		path: 'listing',
-	    component: ListingComponent,
-	    resolve: {
-	      listing: ListingResolveService,
-        filters: FilterResolveService
-	    }
+    children: [
+      { path: ':id',
+        component: ListingComponent,
+        resolve: {
+	         listing: ListingResolveService,
+           filters: FilterResolveService
+	       }
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        component: ListingComponent,
+        resolve: {
+	         listing: ListingResolveService,
+           filters: FilterResolveService
+	       }
+      }
+    ]
+
+
   	},
 ];
 

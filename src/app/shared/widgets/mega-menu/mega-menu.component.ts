@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, ViewEncapsulation, OnChanges }
 import { Response } from '@angular/http';
 
 import { HttpClientService } from '../../services/http-client.service';
+import { RouterHeaderBindingService } from '../../services/router-header-binding.service';
 
 import { MegaMenuLinkComponent } from './mega-menu-link.component';
 
@@ -13,7 +14,7 @@ import { MegaMenuLinkComponent } from './mega-menu-link.component';
   encapsulation: ViewEncapsulation.None
 })
 export class MegaMenuComponent implements OnInit {
-  private menuCategoriesData: any;
+  public menuCategoriesData: any;
   private activeCategoryData: any;
 
   public isNonHomePage: boolean = false;
@@ -30,6 +31,7 @@ export class MegaMenuComponent implements OnInit {
         .subscribe(
            (data) => {
              this.menuCategoriesData = data['d'];
+             RouterHeaderBindingService.setMegaMenuData(data['d']);
            },
            (error) => { console.error(error)}
         );

@@ -33,6 +33,7 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   private tabsWidgetClass = "tabs-widget";
   private showBottomMenu: string = 'none';
   private isMegaMenuInitialized: boolean = false;
+  private menuCategoriesData: any;
 
   @Input() showMegaMenuCaret: boolean;
 
@@ -46,7 +47,16 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   };
 
   ngOnChanges() {
-    RouterHeaderBindingService.getMegaMenuStatus().subscribe((data) =>  this.showMegaMenuCaret = data);
+    RouterHeaderBindingService.getMegaMenuStatus().subscribe(
+      (data) =>
+       this.showMegaMenuCaret = data
+     );
+    RouterHeaderBindingService.getMegaMenuData().subscribe(
+      (data) =>  {
+        console.log(data);
+        this.menuCategoriesData = data;
+      }
+    );
   }
 
   searchItems(){
@@ -59,12 +69,14 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   }
 
   ngDoCheck(){
-    if(!this.isMegaMenuInitialized){
-      let factory = this.resolver
-                  .resolveComponentFactory(MegaMenuComponent);
-      let cmpRef: any = this.contentContainer.createComponent(factory);
-      cmpRef.instance.isNonHomePage = true;
-      this.isMegaMenuInitialized = true;
+    if(!this.isMegaMenuInitialized && this.router.navigated){
+      if(this.router.routerState.snapshot.url !== '/'){
+        let factory = this.resolver
+                    .resolveComponentFactory(MegaMenuComponent);
+        let cmpRef: any = this.contentContainer.createComponent(factory);
+        cmpRef.instance.isNonHomePage = true;
+        this.isMegaMenuInitialized = true;
+      }
     }
   }
 

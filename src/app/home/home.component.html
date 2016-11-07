@@ -3,7 +3,7 @@
     <div class="contain">
       <cvi-mega-menu></cvi-mega-menu>
       <cvi-hero-banner [header]="heroBannerData.title" [dataItems]="heroBannerData.data" class="home-carousel" ></cvi-hero-banner>
-      <cvi-extra-menu [header]="extraMenuData.title" [dataItems]="extraMenuData.data" ></cvi-extra-menu>
+      <cvi-extra-menu [header]="extraMenuData.title" [dataItems]="extraMenuData.data?.slice(0,3)" ></cvi-extra-menu>
     </div>
   </div>
 	<div class="occupy mob-section text-center mob-bg-white trust-section hide-lg">

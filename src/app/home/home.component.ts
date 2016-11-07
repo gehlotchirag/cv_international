@@ -78,8 +78,9 @@ export class HomeComponent implements OnInit {
 
     _componentsData.filter(
                 (component: any) => component.widget_type == 'OfferMenu'
-              ).subscribe((data) => this.extraMenuData = data,
-                            (err) => console.error(err));
+              ).subscribe((data) =>
+                          this.extraMenuData = data,
+                          (err) => console.error(err));
 
     _componentsData.filter(
                   (component: any) => !(component.widget_type == 'HeroBanner' || component.widget_type == 'OfferMenu')

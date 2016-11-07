@@ -16,10 +16,12 @@ import { TestimonialsWidgetComponent } from './testimonials-widget/testimonials-
 import { ProductCardComponent } from './product-card/product-card.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { ObjectKeysPipe } from '../utils';
+import { SwiperModule } from '../../swiper_module/swiper.module';
+
 
 
   @NgModule({
-    imports: [ BrowserModule, RouterModule, CommonModule ],
+    imports: [ BrowserModule, RouterModule, CommonModule, SwiperModule ],
     declarations: [
       MegaMenuComponent,
       MegaMenuLinkComponent,

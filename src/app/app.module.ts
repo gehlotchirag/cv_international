@@ -8,6 +8,7 @@ import './rxjs-extensions';
 import { HomeModule } from './home';
 import { ListingModule } from './listing';
 import { ProductModule } from './product';
+import { NotFoundComponent } from './not_found_404';
 
 import { HeaderComponent } from './shared/widgets/header/header.component';
 
@@ -34,6 +35,7 @@ import { RouterHeaderBindingService } from './shared/services/router-header-bind
     declarations: [
       AppComponent,
       HeaderComponent,
+      NotFoundComponent,
       Tabs, 
       Tab,
       RoutingHelperDirective

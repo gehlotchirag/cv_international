@@ -9,7 +9,9 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div *ngFor="let item of dataItems; let i = index" class="item" [ngClass]="{ active: i==0 }">
-        <img [src]="item.imageUrl" class="slider-img" alt="">
+        <a routerLink = "{{item.dataUrl}}">
+          <img [src]="item.imageUrl" class="slider-img" alt="">
+        </a>
       </div>
     </div>
   </div>

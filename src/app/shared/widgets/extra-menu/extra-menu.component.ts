@@ -14,6 +14,14 @@ export class ExtraMenuComponent implements OnInit {
   dataItems: any;
   @Input()
   header: string;
+  config: Object = {
+    slidesPerView: 'auto',
+    spaceBetween: 0,
+    speed: 600,
+    freeMode: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+  };
 
   constructor(public httpClient: HttpClientService){
     // super(httpClient);

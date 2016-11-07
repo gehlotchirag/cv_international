@@ -1,4 +1,4 @@
-<div class="extra-menu pull-left bg-white">
+<div class="extra-menu pull-left bg-white extra-menu-web">
   <div *ngFor="let item of dataItems; let i = index"
        class="extra-menu-item pull-left"
        [ngClass]="{middle: i == 2}">
@@ -6,4 +6,15 @@
       <img [src]="item.imageUrl" class="img-responsive">
     </a>
   </div>
+</div>
+<div class="extra-menu responsive-swiper bg-white">
+	<swiper [config]="config" class="extra-menu-swiper">
+     	<div class="swiper-wrapper">
+            <div class="swiper-slide extra-menu-item" *ngFor="let item of dataItems; let i = index" [ngClass]="{middle: i == 2}">
+            	<a [href]="item.dataUrl">
+					<img [src]="item.imageUrl" class="img-responsive">
+				</a>
+            </div>
+        </div>
+    </swiper>
 </div>

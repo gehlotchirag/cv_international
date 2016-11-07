@@ -15,7 +15,7 @@
           <div class="carousel-inner">
             <div class="item" *ngFor="let productArray of productDblArray; let i = index"
                   [class.active]="i == 0">
-              <div class="product-listing col-md-3"
+              <div class="product-listing col-sm-3 col-xs-6"
                 *ngFor="let product of productArray">
                 <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
                 <img [src]="product.imgUrl" class="img-responsive">

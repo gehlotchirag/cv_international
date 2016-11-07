@@ -6,6 +6,8 @@ import { RouterHeaderBindingService } from '../../services/router-header-binding
 
 import { MegaMenuLinkComponent } from './mega-menu-link.component';
 
+import { getRouterLink } from '../../utils/';
+
 @Component({
   selector: 'cvi-mega-menu',
   templateUrl: './mega-menu.component.html',
@@ -16,6 +18,8 @@ import { MegaMenuLinkComponent } from './mega-menu-link.component';
 export class MegaMenuComponent implements OnInit {
   public menuCategoriesData: any;
   private activeCategoryData: any;
+
+  private getRouterLink = getRouterLink;
 
   public isNonHomePage: boolean = false;
 

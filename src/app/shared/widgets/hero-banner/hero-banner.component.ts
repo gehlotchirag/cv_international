@@ -4,6 +4,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClientService } from '../../services/http-client.service';
 import HomeWidget from '../home-widget';
 
+import { getRouterLink } from '../../utils/'
+
 @Component({
   selector: 'cvi-hero-banner',
   templateUrl: './hero-banner.component.html',
@@ -15,6 +17,8 @@ export class HeroBannerComponent implements OnInit {
   header: string;
   @Input()
   dataItems: any;
+
+  private getRouterLink = getRouterLink;
 
   constructor(public httpClient: HttpClientService){
     // super(httpClient);

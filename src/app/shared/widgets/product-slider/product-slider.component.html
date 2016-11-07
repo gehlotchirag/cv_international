@@ -17,16 +17,18 @@
                   [class.active]="i == 0">
               <div class="product-listing col-sm-3 col-xs-6"
                 *ngFor="let product of productArray">
-                <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>
-                <img [src]="product.imgUrl" class="img-responsive">
-                <div class="product-info">
-                  <div class="product-name">{{ product.productName }}</div>
-                  <div class="product-price">
-                    <span class="discounted-price">${{ product.discountedPrice  }}</span>
-                    &nbsp;<span class="actual-price"><s>${{ product.regularPrice  }}</s></span>
-                    &nbsp;<span class="discount">{{ product.discountPercentage | number:'2.0-2' }}%</span>
+                <!-- <span class="glyphicon glyphicon-heart-empty product-wishlist"></span> -->
+                <a routerLink="/product/{{product.productId}}">
+                  <img [src]="product.imgUrl" class="img-responsive">
+                  <div class="product-info">
+                    <div class="product-name">{{ product.productName }}</div>
+                    <div class="product-price">
+                      <span class="discounted-price">${{ product.discountedPrice  }}</span>
+                      &nbsp;<span class="actual-price"><s>${{ product.regularPrice  }}</s></span>
+                      &nbsp;<span class="discount">{{ product.discountPercentage | number:'2.0-2' }}%</span>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div><!--.item-->
           </div><!--.carousel-inner-->

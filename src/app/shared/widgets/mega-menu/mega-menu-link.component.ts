@@ -1,16 +1,24 @@
 import { Component, ElementRef, HostListener, Input, Renderer} from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 
+import { getRouterLink } from '../../utils/'
+
 @Component({
   selector: 'cv-menu-link',
   template: `
   <li (mouseover)="onMouseEnter()">
-    {{ categoryData.name }}
+    <a
+      [routerLink]="getRouterLink(categoryData.href)['rl']"
+      [queryParams]="getRouterLink(categoryData.href)['qp']">
+      {{ categoryData.name }}
+    </a>
   </li>
   `
 
 })
 export class MegaMenuLinkComponent {
+
+  private getRouterLink = getRouterLink;
 
   constructor( private el: ElementRef){}
 

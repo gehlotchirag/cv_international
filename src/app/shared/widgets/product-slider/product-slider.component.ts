@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClientService } from '../../services/http-client.service';
 import ListingProduct from '../../interfaces/listing-product';
 
+import { getRouterLink } from '../../utils/'
+
 @Component({
   selector: 'cvi-product-slider',
   templateUrl: './product-slider.component.html',
@@ -13,6 +15,8 @@ export class ProductSliderComponent implements OnInit {
   public dataItems: ListingProduct[];
   public header: string;
   private productDblArray: ListingProduct[][] = [];
+
+  private getRouterLink = getRouterLink;
 
   constructor(public httpClient: HttpClientService){
 

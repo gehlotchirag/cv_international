@@ -15,7 +15,9 @@
       <ul class="sub-cat-list" *ngFor="let subCategory of activeCategoryData.data">
         <li class="sub-cat-list-item sub-cat-list-header">{{ subCategory.name }}</li>
         <li class="sub-cat-list-item" *ngFor="let subSubCategory of subCategory.data">
-          <a [routerLink]="[ subSubCategory.href ]">
+          <a
+            [routerLink]="getRouterLink(subSubCategory.href)['rl']"
+            [queryParams]="getRouterLink(subSubCategory.href)['qp']">
             {{ subSubCategory.name }}
           </a>
         </li>

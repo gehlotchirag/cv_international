@@ -24,7 +24,7 @@ export class ListingResolveService implements Resolve<Listing> {
           "categoryId": [id]
         }
       }
-      else {
+      else if(typeof params != 'string'){
         params['categoryId'] = [id];
       }
     }

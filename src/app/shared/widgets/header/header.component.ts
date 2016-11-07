@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   private showBottomMenu: string = 'none';
   private isMegaMenuInitialized: boolean = false;
   private menuCategoriesData: any;
+  private mobileSelectedCategory: any;
 
   @Input() showMegaMenuCaret: boolean;
 

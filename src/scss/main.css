@@ -1304,7 +1304,7 @@ ul.nav.nav-tabs.tabs-widget li a {
       vertical-align: top;
       margin-left: 5px; }
       .page-listing .sort-filter .sort-filter-text .sort-filter-status {
-        font-size: 12px; 
+        font-size: 12px;
         width: 150px;
         overflow: hidden;
         white-space: nowrap;
@@ -7366,7 +7366,7 @@ button.close {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 15%;
+  width: 3%;
   opacity: 0.5;
   filter: alpha(opacity=50);
   font-size: 20px;

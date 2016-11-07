@@ -8,7 +8,7 @@ import { FilterResolveService } from './filter-resolve.service';
 
 const listingRoutes: Routes = [
 	{
-		path: 'listing',
+		path: 'category',
     children: [
       { path: ':id',
         component: ListingComponent,

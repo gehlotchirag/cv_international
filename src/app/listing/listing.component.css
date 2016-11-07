@@ -1,0 +1,10 @@
+.listing-container .filter {
+  z-index: 102;
+  overflow-y: scroll;
+}
+
+.sort-listing-content {
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}

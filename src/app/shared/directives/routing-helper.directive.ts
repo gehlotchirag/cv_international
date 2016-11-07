@@ -33,18 +33,14 @@ export class RoutingHelperDirective extends RouterOutlet {
            outletMap: RouterOutletMap,
            ): void {
 
-     activatedRoute.url.subscribe(
-       (data) => {
-         if(data && data[0] && data[0].path != ''){
-           RouterHeaderBindingService.setMegaMenuStatus(true);
-         }
-         else{
-           RouterHeaderBindingService.setMegaMenuStatus(false);
-         }
-         super.activate(activatedRoute, loadedResolver, loadedInjector, providers, outletMap);
-       },
-       (error) => console.error(error)
-     )
+    let _urlArr = activatedRoute.pathFromRoot;
+    if(_urlArr.length > 2){
+      RouterHeaderBindingService.setMegaMenuStatus(true);
+    }
+    else {
+      RouterHeaderBindingService.setMegaMenuStatus(false);
+    }
+    super.activate(activatedRoute, loadedResolver, loadedInjector, providers, outletMap);
   }
 
 }

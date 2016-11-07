@@ -130,6 +130,11 @@ export class ListingComponent implements OnInit {
       }
     }
 
+    applyFilters(): void {
+      this.showMobileFilters = false;
+      this.fetchData(this.paramObj);
+    }
+
     clearAllFilters(): void {
       this.appliedFilters = [];
       for(let filter in this.filters){
@@ -145,6 +150,7 @@ export class ListingComponent implements OnInit {
         delete this.paramObj['params']['filters'];
       }
       this.fetchData(this.paramObj);
+      this.showMobileFilters = false;
     }
 
     filterClick(event, data): void {
@@ -176,7 +182,9 @@ export class ListingComponent implements OnInit {
           else{
             this.paramObj['params']['filters'][filterKey].push(data.value);
           }
-          this.fetchData(this.paramObj);
+          if(!this.showMobileFilters){
+            this.fetchData(this.paramObj);
+          }
       }
       else {
         this.removeFilterBlock(data, event);
@@ -229,7 +237,15 @@ export class ListingComponent implements OnInit {
     }
 
     getAppliedFiltersString(): string {
-      return Object.keys(this.appliedFilters).map((key) => String(this.appliedFilters[key])).join(' , ');
+      let keyArray = [];
+      this.appliedFilters
+          .filter((filter) => filter.id != 'clear all')
+          .forEach((filter) => {
+            if(keyArray.indexOf(filter.key) == -1){
+              keyArray.push(filter.key);
+            }
+          });
+      return keyArray.map((entry) => (entry.charAt(0).toUpperCase() + entry.slice(1))).join(' , ');
     }
 
     getStartListingCount(): number {
@@ -280,6 +296,14 @@ export class ListingComponent implements OnInit {
     onPageChange(page) : void{
       this.paramObj['page'] = page;
       this.fetchData(this.paramObj);
+    }
+
+    hideFilter() : void {
+      document.getElementById("filter").style.display = 'none';
+    }
+
+    showFilter() : void {
+      document.getElementById("filter").style.display = 'block';
     }
 
 }

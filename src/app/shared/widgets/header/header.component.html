@@ -1,3 +1,27 @@
+<div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
+  <a class="navmenu-brand" href="#">Categories</a>
+  <ul class="nav navmenu-nav" *ngFor="let menuCategoryData of menuCategoriesData">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        {{ menuCategoryData.name }}
+        <b class="caret"></b>
+      </a>
+      <ul *ngFor="let subCategory of menuCategoryData.data" class="dropdown-menu navmenu-nav">
+        <li class="inner-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="inner-dropdown">
+            {{ subCategory.name }}
+            <b class="caret"></b>
+          </a>
+          <ul class="navmenu-nav dropdown-menu">
+            <li *ngFor="let subSubCategory of subCategory.data">
+              <a href="#"> {{ subSubCategory.name }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
 <div class= "buyer-popup-overlay" *ngIf="showProtectionPopup">
   <div class="buyer-protection-popup">
     <div class="close-buyer-popup pull-right" (click) = "showProtectionPopup = false">X</div>
@@ -108,7 +132,7 @@
     </div>
   </div>
 </div>
-<div class="menu-slider-container occupy" [ngStyle]="{'display': showBottomMenu}">
+<div class="menu-slider-container occupy fixed" [ngStyle]="{'display': showBottomMenu}">
   <div class="menu-overlay-div" (mouseover)="displayMegaMenu(false)"></div>
-  <div #headerContent class="contain js-header-menu-show"></div>
+  <div #headerContent></div>
 </div>

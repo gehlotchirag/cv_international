@@ -34,7 +34,7 @@ export class RoutingHelperDirective extends RouterOutlet {
            ): void {
 
     let _urlArr = activatedRoute.pathFromRoot;
-    if(_urlArr.length > 2){
+    if(_urlArr.length >= 2){
       RouterHeaderBindingService.setMegaMenuStatus(true);
     }
     else {

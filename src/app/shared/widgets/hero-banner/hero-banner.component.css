@@ -1,0 +1,25 @@
+.hero-banner .carousel-indicators{
+    width: 100%;
+    left: 0;
+    margin: 0;
+    text-align: right;
+    padding: 0 20px 0px 0px;
+}
+.hero-banner .carousel-indicators li{
+  background-color: #c0c0c0;
+  border: none;
+  margin: 2px;
+  width: 8px;
+  height: 8px;
+}
+.hero-banner .carousel-indicators .active{
+  background: #333333;
+  margin: 1px;
+  width: 10px;
+  height: 10px;
+}
+@media only screen and (max-width: 1050px){
+  .hero-banner.slider{
+    width: 100%;
+  }  
+}

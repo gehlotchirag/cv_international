@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewEncapsulation, OnChanges } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
 import { Response } from '@angular/http';
 
 import { HttpClientService } from '../../services/http-client.service';
@@ -13,7 +13,6 @@ import { getRouterLink } from '../../utils/';
   templateUrl: './mega-menu.component.html',
   styleUrls: ['./mega-menu.component.css'],
   exportAs: 'cvi-mega-menu',
-  encapsulation: ViewEncapsulation.None
 })
 export class MegaMenuComponent implements OnInit {
   public menuCategoriesData: any;

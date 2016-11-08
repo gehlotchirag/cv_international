@@ -168,20 +168,20 @@ export class ListingComponent implements OnInit {
           if(!this.paramObj['params']){
             this.paramObj['params'] = {
               'filters': {
-                [filterKey]: [data.value]
+                [filterKey]: [data.value.charAt(0).toUpperCase() + data.value.slice(1)]
               }
             }
           }
           else if(!this.paramObj['params']['filters']){
             this.paramObj['params']['filters'] = {
-              [filterKey]: [data.value]
+              [filterKey]: [data.value.charAt(0).toUpperCase() + data.value.slice(1)]
             }
           }
           else if(!this.paramObj['params']['filters'][filterKey]){
-            this.paramObj['params']['filters'][filterKey] = [data.value]
+            this.paramObj['params']['filters'][filterKey] = [data.value.charAt(0).toUpperCase() + data.value.slice(1)]
           }
           else{
-            this.paramObj['params']['filters'][filterKey].push(data.value);
+            this.paramObj['params']['filters'][filterKey].push(data.value.charAt(0).toUpperCase() + data.value.slice(1));
           }
           if(!this.showMobileFilters){
             this.fetchData(this.paramObj);

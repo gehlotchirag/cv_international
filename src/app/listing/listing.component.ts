@@ -102,10 +102,10 @@ export class ListingComponent implements OnInit {
 
     private changeListingUrl(paramObj?: any): void{
       if(paramObj){
-        let params = paramObj['params'] ? JSON.stringify(paramObj['params']) : JSON.stringify({});
+        let params = paramObj['params'] ? paramObj['params'] : {};
         let page = paramObj['page'] ? paramObj['page'] : 1;
         let query = paramObj['query'] ? paramObj['query'] : '';
-        this.location.go('/category', `query=${query}&params=${params}&page=${page}`);
+        this.location.go('/category', `query=${query}&params=${encodeURIComponent(params)}&page=${page}`);
       }
       else {
         this.location.go('/category');

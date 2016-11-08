@@ -3,6 +3,8 @@ import { Component, Directive, Attribute, ElementRef, ViewContainerRef, Output, 
 import { ActivatedRoute, Router, Data, RouterOutlet, RouterOutletMap } from '@angular/router';
 import { Response } from '@angular/http';
 
+import { HomeComponent } from '../../home/home.component'
+
 import { RouterHeaderBindingService } from '../services/router-header-binding.service';
 
 import { HttpClientService } from '../services/http-client.service';
@@ -37,6 +39,9 @@ export class RoutingHelperDirective extends RouterOutlet {
     if(_urlArr.length >= 2){
       RouterHeaderBindingService.setMegaMenuStatus(true);
     }
+    // else if(_urlArr.length == 2){
+    //   RouterHeaderBindingService.setMegaMenuStatus(false);
+    // }
     else {
       RouterHeaderBindingService.setMegaMenuStatus(false);
     }

@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit, Renderer, ViewChild, ViewChildren} from '@angular/core';
+import { Component, OnInit, Renderer, ViewChild, ViewChildren, DoCheck, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, Event, NavigationStart, NavigationEnd } from '@angular/router';
 import { Response } from '@angular/http';
 import { Observable }        from 'rxjs/Observable';
@@ -14,11 +14,12 @@ import Listing from './listing';
   styleUrls: ['./listing.component.css'],
   providers: [ListingService],
 })
-export class ListingComponent implements OnInit {
+export class ListingComponent implements OnInit, DoCheck {
 
     private listing: Listing;
     private filters: any = {};
     private filterStringObj: any = {};
+    private receivedFilters: EventEmitter<any> = new EventEmitter<any>();
     private appliedFilters: any = [];
     private showMobileFilters: boolean = false;
     private paramObj: any = {};
@@ -27,6 +28,8 @@ export class ListingComponent implements OnInit {
       'value': 'Popular',
       'name': 'Popularity'
     }
+
+    private currentUrl: string = "";
 
     private clearAllBlock: any = {
       'name': 'clear all',
@@ -47,11 +50,21 @@ export class ListingComponent implements OnInit {
       // this.loadCategoryList();
       let query , params, page;
 
-      this.route.data.pluck('listing', 'd')
-          .subscribe( (data : Listing) => {
-              this.listing = data;
-            },
-          (error) => console.error(error))
+      this.receivedFilters.subscribe((data: any) => {
+          for(let key in data){
+            let appliedValues = data[key];
+            let allValues = this.filters[key];
+            for(let obj of allValues){
+              if(appliedValues.indexOf(obj.name) != -1){
+                this.appliedFilters.push(obj);
+                this.markFilterEntryCheck(obj, true);
+              }
+            }
+          }
+          if(this.appliedFilters.length == 1){
+            this.appliedFilters= [this.clearAllBlock,...this.appliedFilters];
+          }
+      })
 
       this.route.data.pluck('filters').subscribe((data: any) => {
           Object.keys(data).forEach( (key) => {
@@ -69,24 +82,38 @@ export class ListingComponent implements OnInit {
           });
       },
       (error) =>  console.error(error))
+    }
 
-      this.router.events.subscribe(
-        (event: Event) => {
-          if(event instanceof NavigationStart){
-            this.paramObj = {};
-            if(event.url && event.url.indexOf('category') != -1){
-              let decodedUrl = decodeURIComponent(event.url);
-              let splitUrl = decodedUrl.split('?').slice(1);
-              for(let qParams of splitUrl){
-                let keyVal = qParams.split('=');
-                this.paramObj[keyVal[0]] = keyVal[1];
-              }
-              this.fetchData(this.paramObj);
+    ngDoCheck(){
+      let currentUrl = this.router.routerState.snapshot.url;
+      let rlString = "";
+      let qpObj = {};
+      if(this.currentUrl != currentUrl){
+        let rlQpArr = currentUrl.split("?");
+        let qpString = "";
+        rlString = rlQpArr[0];
+        if(rlQpArr.length > 1){
+          qpString = decodeURIComponent(rlQpArr[1]);
+          let qpEntries = qpString.split("&");
+          for(let entry of qpEntries){
+            let keyVal = entry.split("=");
+            if(!qpObj[keyVal[0]]){
+              qpObj[keyVal[0]] = keyVal[1];
+            }
+            else{
+              qpObj[keyVal[0]] = [...qpObj[keyVal[0]], keyVal[1]];
             }
           }
-        },
-        (err) => console.error(err)
-      )
+          console.log(qpObj);
+        }
+        this.currentUrl = currentUrl;
+        this.paramObj = qpObj;
+        let filters = this.paramObj['params'] ? JSON.parse(this.paramObj['params'])['filters'] : {};
+        if(filters){
+          this.receivedFilters.emit(filters);
+        }
+        this.fetchData(this.paramObj);
+      }
     }
 
     fetchData(paramObj?: any){
@@ -105,10 +132,10 @@ export class ListingComponent implements OnInit {
         let params = paramObj['params'] ? paramObj['params'] : {};
         let page = paramObj['page'] ? paramObj['page'] : 1;
         let query = paramObj['query'] ? paramObj['query'] : '';
-        this.location.go('/category', `query=${query}&params=${encodeURIComponent(params)}&page=${page}`);
+        // this.location.go('/category', `query=${query}&params=${encodeURIComponent(params)}&page=${page}`);
       }
       else {
-        this.location.go('/category');
+        // this.location.go('/category');
       }
     }
 
@@ -147,8 +174,10 @@ export class ListingComponent implements OnInit {
           else if(filter != 'color') break;
         }
       }
-      if(this.paramObj['params'] && this.paramObj['params']['filters']){
-        delete this.paramObj['params']['filters'];
+      if(this.paramObj['params']){
+        let params = JSON.parse(this.paramObj['params']);
+        delete params['filters']
+        this.paramObj['params'] = JSON.stringify(params);
       }
       this.fetchData(this.paramObj);
       this.showMobileFilters = false;
@@ -166,22 +195,26 @@ export class ListingComponent implements OnInit {
           }
           let filterKey = data.key;
           if(!this.paramObj['params']){
-            this.paramObj['params'] = {
+            this.paramObj['params'] = JSON.stringify({
               'filters': {
                 [filterKey]: [data.value.charAt(0).toUpperCase() + data.value.slice(1)]
               }
+            });
+          }
+          else if(this.paramObj['params']){
+            let params = JSON.parse(this.paramObj['params']);
+            if(!params['filters']){
+              params['filters'] = {
+                [filterKey]: [data.value.charAt(0).toUpperCase() + data.value.slice(1)]
+              }
             }
-          }
-          else if(!this.paramObj['params']['filters']){
-            this.paramObj['params']['filters'] = {
-              [filterKey]: [data.value.charAt(0).toUpperCase() + data.value.slice(1)]
+            else if(!params['filters'][filterKey]){
+              params['filters'][filterKey] = [data.value.charAt(0).toUpperCase() + data.value.slice(1)];
             }
-          }
-          else if(!this.paramObj['params']['filters'][filterKey]){
-            this.paramObj['params']['filters'][filterKey] = [data.value.charAt(0).toUpperCase() + data.value.slice(1)]
-          }
-          else{
-            this.paramObj['params']['filters'][filterKey].push(data.value.charAt(0).toUpperCase() + data.value.slice(1));
+            else{
+              params['filters'][filterKey].push(data.value.charAt(0).toUpperCase() + data.value.slice(1));
+            }
+            this.paramObj['params'] = JSON.stringify(params);
           }
           if(!this.showMobileFilters){
             this.fetchData(this.paramObj);
@@ -213,13 +246,15 @@ export class ListingComponent implements OnInit {
           this.sortFilterData(appliedFilter.key);
       }
       let filteredKey = appliedFilter.key;
-      if(this.paramObj['params']['filters'][filteredKey].length == 1){
-        delete this.paramObj['params']['filters'][filteredKey];
+      let params = JSON.parse(this.paramObj['params'])
+      if(params['filters'][filteredKey].length == 1){
+        delete params['filters'][filteredKey];
       }
       else{
-        let foundIndex = this.paramObj['params']['filters'][filteredKey].indexOf(appliedFilter.value);
-        this.paramObj['params']['filters'][filteredKey].splice(foundIndex, foundIndex+1);
+        let foundIndex = params['filters'][filteredKey].indexOf(appliedFilter.value);
+        params['filters'][filteredKey].splice(foundIndex, foundIndex+1);
       }
+      this.paramObj['params'] = JSON.stringify(params);
       this.fetchData(this.paramObj);
     }
 
@@ -283,10 +318,12 @@ export class ListingComponent implements OnInit {
         'value': value,
         'name': event.target.innerText
       }
-      if(!this.paramObj['params']){
-        this.paramObj['params'] = {};
-      }
-      this.paramObj['params']['sort'] = { [key]: value };
+      // if(!this.paramObj['params']){
+      //   this.paramObj['params'] = JSO{};
+      // }
+      let params = this.paramObj['params'] ? JSON.parse(this.paramObj['params']) : {};
+      params['sort'] = { [key]: value };
+      this.paramObj['params'] = JSON.stringify(params);
       this.fetchData(this.paramObj);
     }
 

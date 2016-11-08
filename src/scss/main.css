@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-
+svg:not(:root) {
+    overflow: hidden;
+}
 /** Tabs Widget Css */
 ul.nav.nav-tabs.tabs-widget {
     border-bottom: none;

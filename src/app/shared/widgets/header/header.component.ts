@@ -8,6 +8,8 @@ import { CartDetailsService } from '../../services/cart-details.service';
 import { MegaMenuComponent } from '../mega-menu/mega-menu.component';
 import { RouterHeaderBindingService } from '../../services/router-header-binding.service';
 
+import { getRouterLink } from '../../utils';
+
 @Component({
   selector: 'cvi-header',
   templateUrl: './header.component.html',
@@ -36,6 +38,8 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   private menuCategoriesData: any;
   private mobileSelectedCategory: any;
 
+  private getRouterLink = getRouterLink;
+
   @Input() showMegaMenuCaret: boolean;
 
   constructor(private router: Router,
@@ -54,7 +58,6 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
      );
     RouterHeaderBindingService.getMegaMenuData().subscribe(
       (data) =>  {
-        console.log(data);
         this.menuCategoriesData = data;
       }
     );
@@ -62,10 +65,10 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
 
   searchItems(){
     if(this.queryInput && this.queryInput != ''){
-      this.router.navigate(['/listing'], { queryParams: { query: this.queryInput }, replaceUrl: true});
+      this.router.navigate(['/category'], { queryParams: { query: this.queryInput }});
     }
     else {
-      this.router.navigate(['/listing']);
+      this.router.navigate(['/category']);
     }
   }
 
@@ -102,5 +105,24 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
       }
     }
   }
+
+  private resetNavView(event) {
+    event.stopPropagation();
+    event.preventDefault();
+    this.mobileSelectedCategory = null;
+  }
+
+  private routeNavigateTo(href) {
+    let routingParams = this.getRouterLink(href);
+    let routingArray = routingParams['rl'].map((link) => `/${link}`);
+    let queryParam = routingParams['qp'];
+    if(routingArray.length  > 1){
+      if(routingArray[0] == '/'){
+        routingArray.splice(0,1);
+      }
+    }
+    this.router.navigate(routingArray, { queryParams: queryParam, replaceUrl: true});
+  }
+
 
 }

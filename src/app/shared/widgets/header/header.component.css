@@ -78,7 +78,7 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  top: 0;
+  top: 110px;
   left: 0;
   z-index: 56;
   background-color: rgba(0,0,0,0.5);
@@ -86,6 +86,10 @@
 
 .menu-slider-container {
   margin-top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 23300;
+  position: fixed;
 }
 .homepage-logo{
   width: 19%;
@@ -102,5 +106,91 @@
   .homepage-search{
     width: 100%;
   }
+}
 
+.navmenu-default {
+  background-color: #f3f4f6;
+}
+
+.navmenu-default .navmenu-brand:hover {
+  background: #44494c;
+  color: #f1f2f4;
+}
+
+.navmenu-brand {
+  text-align: left;
+  background: #44494c;
+  color: #f1f2f4;
+  font-size: 20px;
+  padding: 12px;
+  display: block;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.selected-menu-title {
+  background: #687072;
+  color: #f1f2f4;
+  border-bottom: 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 12px;
+  display: block;
+  text-transform: capitalize;
+  margin: 0px;
+  text-decoration: none;
+}
+
+.navmenu-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  background: #000;
+  top: 0;
+  left: 0;
+}
+
+.mobile-nav {
+  padding: 15px;
+  display: block;
+  color: #000;
+  border-bottom: 1px solid #adaeaf;
+  position: relative;
+}
+
+.mobile-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ico-arrow {
+  position: absolute;
+  right: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.ico-arrow-back {
+  position: absolute;
+  left: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-level-3 {
+  margin-left: 30px;
+  padding-left: 0;
+  color: #555;
+  border-bottom: 1px dotted #adaeaf;
+}
+
+.navmenu-default .navmenu-nav>.open>a, .navmenu-default .navmenu-nav>.open>a:hover {
+  background-color: #f3f4f6;
+  color: inherit;
+}
+
+.navmenu-default .navmenu-nav.dropdown-menu {
+  background-color: #f3f4f6;
 }

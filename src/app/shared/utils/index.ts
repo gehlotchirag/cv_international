@@ -12,7 +12,10 @@ export function isEmpty(obj) {
 }
 
 export function getRouterLink(value: string): any {
-  if(!value) return [''];
+  if(!value) return {
+    'rl': [''],
+    'qp': {}
+  }
   if(typeof value == 'string'){
     let tempArr = [];
     let jsonObj = {};

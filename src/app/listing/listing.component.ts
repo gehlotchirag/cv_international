@@ -74,8 +74,9 @@ export class ListingComponent implements OnInit {
         (event: Event) => {
           if(event instanceof NavigationStart){
             this.paramObj = {};
-            if(event.url && event.url.indexOf('listing') != -1){
-              let splitUrl = event.url.split('?').slice(1);
+            if(event.url && event.url.indexOf('category') != -1){
+              let decodedUrl = decodeURIComponent(event.url);
+              let splitUrl = decodedUrl.split('?').slice(1);
               for(let qParams of splitUrl){
                 let keyVal = qParams.split('=');
                 this.paramObj[keyVal[0]] = keyVal[1];
@@ -104,10 +105,10 @@ export class ListingComponent implements OnInit {
         let params = paramObj['params'] ? JSON.stringify(paramObj['params']) : JSON.stringify({});
         let page = paramObj['page'] ? paramObj['page'] : 1;
         let query = paramObj['query'] ? paramObj['query'] : '';
-        this.location.go('/listing', `query=${query}&params=${params}&page=${page}`);
+        this.location.go('/category', `query=${query}&params=${params}&page=${page}`);
       }
       else {
-        this.location.go('/listing');
+        this.location.go('/category');
       }
     }
 

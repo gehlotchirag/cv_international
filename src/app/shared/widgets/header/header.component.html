@@ -1,35 +1,52 @@
-<div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
-  <a  *ngIf="!mobileSelectedCategory"
-      class="navmenu-brand">Categories</a>
+<div class="navmenu navmenu-default navmenu-fixed-left offcanvas"
+     id="mobile-nav">
+  <!-- <div class="navmenu-overlay"></div> -->
+  <a  class="navmenu-brand">Categories
+    <span (click)="mobileSelectedCategory = null"
+          class="ico-arrow" data-toggle="offcanvas" data-target="#mobile-nav">
+      <i class="glyphicon glyphicon-remove"></i>
+    </span>
+  </a>
   <a  *ngIf="mobileSelectedCategory"
-      class="navmenu-brand">
+      class="selected-menu-title">
       <span
-        (click)=" mobileSelectedCategory = null"
-        class="glyphicon glyphicon-arrow-left"></span>
+        class="ico-arrow-back"
+        (click)="resetNavView($event)">
+        <i class="glyphicon glyphicon-arrow-left"></i>
+      </span>
       {{ mobileSelectedCategory.name }}
   </a>
   <div *ngIf="!mobileSelectedCategory" >
-    <ul class="nav navmenu-nav" *ngFor="let menuCategoryData of menuCategoriesData">
-      <li class="dropdown">
+    <!-- <ul class="nav navmenu-nav" *ngFor="let menuCategoryData of menuCategoriesData"> -->
+      <li class="dropdown nav navmenu-nav mobile-nav" *ngFor="let menuCategoryData of menuCategoriesData">
         <a (click)=" mobileSelectedCategory =  menuCategoryData"
            class="dropdown-toggle" data-toggle="dropdown">
            {{ menuCategoryData.name }}
-          <b class="caret"></b>
+          <span class="ico-arrow">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+          </span>
         </a>
       </li>
-    </ul>
+    <!-- </ul> -->
   </div>
   <div *ngIf="mobileSelectedCategory">
     <ul *ngFor="let subCategory of mobileSelectedCategory.data"
         class="nav navmenu-nav">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <li class="dropdown mobile-nav">
+        <a class="dropdown-toggle" data-toggle="dropdown">
           {{ subCategory.name }}
-          <b class="caret"></b>
+          <span class="ico-arrow">
+            <i class="glyphicon glyphicon-plus"></i>
+          </span>
         </a>
         <ul class="navmenu-nav dropdown-menu">
-          <li *ngFor="let subSubCategory of subCategory.data">
-            <a>{{ subSubCategory.name }}</a>
+          <li class="nav-level-3 mobile-nav"
+            *ngFor="let subSubCategory of subCategory.data">
+            <a
+              data-toggle="offcanvas" data-target="#mobile-nav"
+              (click)="routeNavigateTo(subSubCategory.href)">
+              {{ subSubCategory.name }}
+            </a>
           </li>
         </ul>
       </li>
@@ -102,7 +119,7 @@
       <div class="logo inline mob-inline pull-left js-header-menu-show" [ngClass] = "{'homepage-logo' : !showMegaMenuCaret}" >
         <img src="images/menu_icon.png" class="hide-lg menu-icon navbar-toggle"
              data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
-        <a href="/"><img src="images/logo.png" class="logo-img"></a>
+        <a (click)="routeNavigateTo('')"><img src="images/logo.png" class="logo-img"></a>
         <div *ngIf="showMegaMenuCaret" class="hide-sm mega-menu-hamburger"
               [class.hovered]="showBottomMenu == 'block'"
               (mouseover)="displayMegaMenu(true, $event)"

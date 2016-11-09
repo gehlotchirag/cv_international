@@ -35,8 +35,8 @@ export class RoutingHelperDirective extends RouterOutlet {
            outletMap: RouterOutletMap,
            ): void {
 
-    let _urlArr = activatedRoute.pathFromRoot;
-    if(_urlArr.length >= 2){
+    let _urlArr = activatedRoute.snapshot.url;
+    if(_urlArr.length > 0){
       RouterHeaderBindingService.setMegaMenuStatus(true);
     }
     // else if(_urlArr.length == 2){

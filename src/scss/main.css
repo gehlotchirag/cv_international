@@ -837,6 +837,9 @@ ul.nav.nav-tabs.tabs-widget li a {
 
   .menu-btn {
     font-size: 18px; }
+  .header-navbar-toggle{
+    display: block !important;
+  }
 
   .options {
     position: absolute;
@@ -985,9 +988,12 @@ ul.nav.nav-tabs.tabs-widget li a {
         height: 36px;
         line-height: 36px;
         cursor: pointer;
-        padding-left: 10%;
         border-top: 1px solid #fff;
         border-bottom: 1px solid #fff; }
+      .menu-slider-container .menu .menu-list li a{
+        display: block;
+        padding-left: 10%;
+      }
         .menu-slider-container .menu .menu-list li:hover, .menu-slider-container .menu .menu-list li:hover a {
 /*          border-top: 1px solid #e2e2e2;
           border-bottom: 1px solid #e2e2e2;
@@ -1007,6 +1013,7 @@ ul.nav.nav-tabs.tabs-widget li a {
         color: white;
         letter-spacing: 3px;
         height: 44px;
+        padding-left: 10%;
         line-height: 46px;
         margin-bottom: 14px;
         font-size: 0.9vw; }

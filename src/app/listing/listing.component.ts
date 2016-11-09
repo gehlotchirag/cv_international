@@ -104,7 +104,6 @@ export class ListingComponent implements OnInit, DoCheck {
               qpObj[keyVal[0]] = [...qpObj[keyVal[0]], keyVal[1]];
             }
           }
-          console.log(qpObj);
         }
         this.currentUrl = currentUrl;
         this.paramObj = qpObj;

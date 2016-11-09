@@ -20,7 +20,7 @@
 								<span>{{ key['key'].toUpperCase() }}</span>
 								<span class="glyphicon glyphicon glyphicon-menu-down pull-right hide-lg"></span>
 							</div>
-							<input *ngIf="key.key != 'color' && !showMobileFilters " type="text" class="form-control input-box search-filter"
+							<input *ngIf="key.key == 'fabric' && !showMobileFilters " type="text" class="form-control input-box search-filter"
 										 name="Search" placeholder="Search"  [value]="getFilterString(key.key)"
                      (input)="filterString(key.key, $event.target.value)" />
 							<div *ngIf="key.key != 'color' " class="filter-section-options collapse" [attr.id]="getAriaControl(key)">

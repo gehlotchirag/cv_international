@@ -121,13 +121,21 @@
 		<div class="modal-content">
 			<div class="modal-body text-center">
 				<ul class="sort-listing-content">
-					<li><a (click)="setSort($event, 'relevance', 'Popular')">Popularity</a></li>
+					<li data-target="#sortModal" data-toggle="modal">
+						<a (click)="setSort($event, 'relevance', 'Popular')">Popularity</a>
+					</li>
 					<hr>
-					<li><a (click)="setSort($event, 'newestSort', 'Newest')">Latest</a></li>
+					<li data-target="#sortModal" data-toggle="modal">
+						<a (click)="setSort($event, 'newestSort', 'Newest')">Latest</a>
+					</li>
 					<hr>
-					<li><a (click)="setSort($event, 'priceOrder', 'High to Low')">Price: High to Low</a></li>
+					<li data-target="#sortModal" data-toggle="modal">
+						<a (click)="setSort($event, 'priceOrder', 'High to Low')">Price: High to Low</a>
+					</li>
 					<hr>
-					<li><a (click)="setSort($event, 'priceOrder', 'Low to High')">Price: Low to High</a></li>
+					<li data-target="#sortModal" data-toggle="modal">
+						<a (click)="setSort($event, 'priceOrder', 'Low to High')">Price: Low to High</a>
+					</li>
 				</ul>
 			</div>
 		</div><!-- /.modal-content -->

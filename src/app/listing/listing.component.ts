@@ -24,9 +24,9 @@ export class ListingComponent implements OnInit, DoCheck {
     private showMobileFilters: boolean = false;
     private paramObj: any = {};
     private selectedSort: any = {
-      'key': 'relevance',
-      'value': 'Popular',
-      'name': 'Popularity'
+      'key': '',
+      'value': '',
+      'name': ''
     }
 
     private currentUrl: string = "";

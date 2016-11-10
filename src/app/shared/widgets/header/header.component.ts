@@ -26,11 +26,17 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   @HostListener('window:scroll', ['$event'])
   hideMegaMenuOnScroll(event) {
     this.showBottomMenu = 'none';
+    if (document.body.scrollTop > 20) {
+      this.showTopMenu = false;
+    }else{
+      this.showTopMenu = true;
+    }
   }
 
   private cart: any; // Change type to CartInterface
   private wishlist: any; // Change type to WishlistInterface
   private queryInput: string;
+  private showTopMenu:boolean = true;
   private showProtectionPopup:boolean = false;
   private tabsWidgetClass = "tabs-widget";
   private showBottomMenu: string = 'none';
@@ -74,13 +80,11 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
 
   ngDoCheck(){
     if(!this.isMegaMenuInitialized && this.router.navigated){
-      if(this.router.routerState.snapshot.url !== '/'){
-        let factory = this.resolver
-                    .resolveComponentFactory(MegaMenuComponent);
-        let cmpRef: any = this.contentContainer.createComponent(factory);
-        cmpRef.instance.isNonHomePage = true;
-        this.isMegaMenuInitialized = true;
-      }
+      let factory = this.resolver
+                  .resolveComponentFactory(MegaMenuComponent);
+      let cmpRef: any = this.contentContainer.createComponent(factory);
+      cmpRef.instance.isNonHomePage = true;
+      this.isMegaMenuInitialized = true;
     }
   }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Response } from '@angular/http';
 import { Router, NavigationEnd } from '@angular/router';
 
@@ -14,6 +14,19 @@ import { HttpClientService } from './shared/services/http-client.service';
   providers: [ HttpClientService, Window ]
 })
 export class AppComponent {
+
+	@HostListener('window:scroll', ['$event'])
+  showMegaMenu(event) {
+    let _url = this.router.url;
+    if (_url === '/') {
+    	let mega_menu_height = 450;
+	  	if(document.body.scrollTop > mega_menu_height){
+	  		this.hasMegaMenu = true;
+	  	}else{
+	  		this.hasMegaMenu = false;
+	  	}
+    };
+  }
 
   private hasMegaMenu: boolean = false;
 

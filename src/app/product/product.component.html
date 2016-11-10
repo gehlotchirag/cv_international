@@ -91,13 +91,16 @@
             <span class="pull-right details-wishlist-container" (click)="addWish($event)" style="display:none;"><img src="images/wishlist-product.png" class="img-responsive wishlist-details-page inline mob-inline" > Add to Wishlist</span>
           </div>
           <hr>
-          <div class="description">
+          <div class="description" *ngIf="getDescription(products.description)">
             <div class="heading mob-section-heading">Description</div>
-            <div class="body mob-section-body">
-              {{products.description}}
-            </div>
+            <ul>
+              <li class="body mob-section-body desc-list" *ngFor="let descObjKey of descObjKeys()">
+                <span class="desc-key">{{descObjKey}}</span>
+                <span class="desc-value">: {{renderedDescription[descObjKey]}}</span> 
+              </li>
+            </ul>
           </div>
-          <hr>
+          <hr *ngIf="getDescription(products.description)">
           <div class="shipping-cost mob-inline inline">
             <div class="heading mob-section-heading">Shipping Cost</div>
             <div class="shipping-cost-value mob-section-body">{{products.shippingCostWorld}}</div>

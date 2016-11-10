@@ -16,57 +16,58 @@ import { WishListService } from '../shared/services/wish-list.service';
 })
 export class ProductComponent implements OnInit {
 
-  products: Observable<Product[]>;
-  similarProducts: Observable<Product[]>;
-  vendorDetail: any;
-  attributes: Observable<Object>;
-  sizeChartHeaders: string[];
-  sizeChartData: any[];
-  sizes: Observable<Object>;
-  colors: Observable<Object>;
-  individualQuantity: string[];
-  vendorDetails: Observable<Object>;
-  columns: any[];
-  vendorName: any;
-  productId: any;
-  customerId = "1696318";
-  selectedSize: string;
-  isClassVisible: boolean;
-  isDiscountPercVesible: boolean;
-  isRegularPriceMore: boolean;
-  showSizeDiv: boolean;
-  stitchingType: string;
-  addToBagSuccess: boolean;
-  addToBagUnSuccess: boolean;
-  galleryImages: string[];
-  sizeId: string;
-  stitching_enabled: boolean;
-  myClass: any;
-  hightlightStatus: Array<boolean> = [];
-  stitching_type: string;
-  outOfStockMsgDspl: boolean;
-  public product: Product;
-  stitching_type_text_show: boolean;
-  zoomedImage: any;
-  galleryImage: any;
-  imagePointerX: any;
-  imagePointerY: any;
+    products: Observable<Product[]>;
+    similarProducts: Observable<Product[]>;
+    vendorDetail :any;
+    attributes: Observable<Object>;
+    sizeChartHeaders: string[];
+    sizeChartData: any[];
+    sizes: Observable<Object>;
+    colors : Observable<Object>;
+    individualQuantity : string[];
+    vendorDetails: Observable<Object>;
+    columns: any[];
+    vendorName: any;
+    productId:any;
+    customerId="1696318";
+    selectedSize:string;
+    isClassVisible:boolean;
+    isDiscountPercVesible:boolean;
+    isRegularPriceMore:boolean;
+    showSizeDiv:boolean;
+    stitchingType:string;
+    addToBagSuccess:boolean;
+    addToBagUnSuccess:boolean;
+    galleryImages:string[];
+    sizeId:string;
+    stitching_enabled:boolean;
+    myClass:any;
+    hightlightStatus: Array<boolean> = [];
+    stitching_type:string;
+    outOfStockMsgDspl: boolean;
+    public product: Product;
+    stitching_type_text_show:boolean;
+    zoomedImage: any;
+    galleryImage: any;
+    imagePointerX: any;
+    imagePointerY: any;
+    private renderedDescription:Object = {};
 
-  config: Object = {
-    slidesPerView: 1,
-    pagination: '.swiper-pagination',
-    spaceBetween: 30,
-    speed: 600,
-  };
-  imageUrl: any;
+    config: Object = {
+            slidesPerView: 1,
+            pagination: '.swiper-pagination',
+            spaceBetween: 30,
+            speed: 600,
+        };
+    imageUrl: any;
 
-  constructor(private productService: ProductService,
-    private cartDetailsService: CartDetailsService,
-    private wishListService: WishListService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private elementRef: ElementRef,
-    private renderer: Renderer,
+  constructor(private productService : ProductService,
+              private cartDetailsService: CartDetailsService,
+              private wishListService : WishListService,
+              private route: ActivatedRoute,
+              private router: Router,
+              private elementRef: ElementRef,
+              private renderer: Renderer,
   ) {
     this.sizeChartData = [];
     this.sizeChartHeaders = [];
@@ -109,6 +110,25 @@ export class ProductComponent implements OnInit {
     this.renderer.setElementStyle(this.zoomedImage, 'background-position-y', '' + backgroungPosY + '%');
 
   }
+
+  getDescription(description){
+    /* if(description){
+      let _descArr = description.split(',')
+      let _descObj = {};
+      for (var i = 0; i < _descArr.length; i++) {
+          var split = _descArr[i].split(':');
+          _descObj[split[0].trim()] = split[1].trim();
+      }
+      this.renderedDescription = _descObj;
+      return true;
+    } */
+    return false;
+  }
+
+  descObjKeys() : Array<string> {
+    return Object.keys(this.renderedDescription);
+  }
+
 
   ngOnInit() {
     this.route

@@ -258,6 +258,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
 
   private emptyAndUncheckFilters(): void {
     this.appliedFilters = [];
+    this.tempMobileFilters = [];
     for (let filter in this.filters) {
       for (let i in this.filters[filter]) {
         if (this.filters[filter][i].checked) {

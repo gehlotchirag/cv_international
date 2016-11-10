@@ -67,26 +67,19 @@ export class CartDetailsService {
 
   }
 
-  addToCart(customerId: string, productId: string, qty: number){
-    let body = {customerId, productId, qty}
-    let addToCartUrl = '1/personal/cart/addToMyCart'
-    let headers = {
-      // 'content-type': 'application/json',
-      'x-version-code': '23',
-      'x-session': '12_57f20d48968117.11775943',
-      'Authorization':'1696318_cb935a2694710b6a2b6eb56f3765104c_web'
-    };
-    this.httpClient
-        .post(addToCartUrl, body, headers)
-        .subscribe(
-          (data: any) =>  {
-            console.log('posted product to cart')
-            // this.cartContents = data['d']['products'];
-            // this.updateCartCountView();
-          },
-          (error) => console.error(error),
-          () => console.log('completed')
-        )
+  addToCart(productId: string, qty: number){
+    let body = {productId, qty}
+    let addToCartUrl = 'checkoutService/index/addToQuote';
+    let cartStream =  this.httpClient
+                          .post(addToCartUrl, body)
+                          .publish();
+    cartStream.pluck('d')
+              .subscribe(
+                (data) => {},
+                (error) => console.error(error),
+                () => {}
+              );
+    return cartStream;
   }
 
   removeFromCart(productIds: string[]){

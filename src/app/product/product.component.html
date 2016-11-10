@@ -45,13 +45,13 @@
       <li class="active">Black Color Goergette Lehenga</li>
     </ol>
   </div> -->
-  <div class="message-box-green"[class.displayNone]="addToBagSuccess">
+  <div class="message-box-green" *ngIf="addToBagSuccess">
     Product has been successfully added to your cart.
   </div>
-  <div class="message-box-red"  [class.displayNone]="addToBagUnSuccess">
+  <div class="message-box-red"  *ngIf="addToBagUnSuccess">
     Unable to add to your cart.
   </div>
-  <div class="message-box-red"[class.displayNone]="!outOfStockMsgDspl">
+  <div class="message-box-red" *ngIf="outOfStockMsgDspl">
     Product is out of stock.
   </div>
   <div class="product-container">
@@ -225,4 +225,3 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-

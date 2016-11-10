@@ -57,7 +57,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
         let allValues = this.filters[key];
         if (allValues) {
           for (let obj of allValues) {
-            if (appliedValues[0].toLowerCase().indexOf(obj.name.toLowerCase()) != -1) {
+            if (appliedValues[0].toLowerCase() == obj.name.toLowerCase()) {
               this.appliedFilters.push(obj);
               this.markFilterEntryCheck(obj, true);
             }

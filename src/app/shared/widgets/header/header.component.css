@@ -3,7 +3,6 @@
 	top: 0;
 	width: 100%;
 	z-index: 101;
-	background-color: #f4f1eb;
 }
 
 .buyer-popup-overlay{
@@ -78,14 +77,12 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  top: 110px;
-  left: 0;
-  z-index: 56;
   background-color: rgba(0,0,0,0.5);
 }
 
 .menu-slider-container {
   margin-top: 0px;
+  top: 110px;
   width: 100%;
   height: 100%;
   z-index: 23300;
@@ -98,7 +95,9 @@
 .homepage-search{
   width: 65%;
 }
-
+.change-slider-top{
+  top: 80px;
+}
 @media only screen and (max-width: 1050px) {
   .homepage-logo{
     width: 50%;

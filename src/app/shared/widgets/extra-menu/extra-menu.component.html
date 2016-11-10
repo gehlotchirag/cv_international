@@ -10,13 +10,13 @@
 <div class="extra-menu responsive-swiper bg-white">
 	<swiper [config]="config" class="extra-menu-swiper">
      	<div class="swiper-wrapper extra-menu-wrapper">
-            <div class="swiper-slide extra-menu-item"
-            *ngFor="let item of dataItems; let i = index"
-            [ngClass]="{middle: i == 2}">
-            	<a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
-					<img [src]="item.imageUrl" class="img-responsive">
-				</a>
-            </div>
+        <div class="swiper-slide extra-menu-item" *ngFor="let item of dataItems; let i = index" [ngClass]="{middle: i == 2}">
+        	<a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
+            <img [src]="item.imageUrl" class="img-responsive">
+		      </a>
         </div>
-    </swiper>
+      </div>
+<!--       <div class="swiper-button-next extra-menu-next"></div>
+      <div class="swiper-button-prev extra-menu-prev"></div>
+ -->    </swiper>
 </div>

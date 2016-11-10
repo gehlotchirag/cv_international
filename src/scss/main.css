@@ -429,14 +429,13 @@ ul.nav.nav-tabs.tabs-widget li a {
     -webkit-box-shadow: 1px 1px 4px #e2e2e2;
     -moz-box-shadow: 1px 1px 4px #e2e2e2;
     box-shadow: 1px 1px 4px #e2e2e2;
-    display: inline-block;
+    /*display: inline-block;*/
     width: 100%;
-    margin: 5px 7px; }
+    margin: 10px auto; }
 
   .mob-section {
-    display: inline-block;
-    /*margin: 2%;*/
-    width: 98%; }
+    margin: 0 auto;
+    width: 93%; }
 
   .mob-section-heading {
     font-weight: bold;
@@ -852,7 +851,8 @@ ul.nav.nav-tabs.tabs-widget li a {
       margin-right: 15px; }
     .options .option {
       position: relative;
-      width: 20px; }
+      width: 20px;
+      height: 20px; }
 
   .header {
     margin-bottom: 0px; }
@@ -1178,11 +1178,13 @@ ul.nav.nav-tabs.tabs-widget li a {
     display: none; }
 
   .trust-section {
-    padding: 2%; }
+    padding: 2%;
+    display: block; }
 
   .extra-menu {
-    margin: 5px 0px;
-    width: 100%; }
+    margin: 10px 2%;
+    width: 96%;
+    float: none !important; }
     .extra-menu .middle {
       margin-bottom: 0;
       margin-top: 0; }

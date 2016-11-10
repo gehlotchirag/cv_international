@@ -18,7 +18,7 @@ export class ExtraMenuComponent implements OnInit {
   header: string;
   config: Object = {
     slidesPerView: 'auto',
-    spaceBetween: 0,
+    spaceBetween: 10,
     speed: 600,
     freeMode: true,
     nextButton: '.swiper-button-next',

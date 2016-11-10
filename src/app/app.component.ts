@@ -1,6 +1,6 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, HostListener, ElementRef, Renderer } from '@angular/core';
 import { Response } from '@angular/http';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 // import { HeaderComponent } from './shared/widgets/header/header.component';
 
@@ -17,9 +17,27 @@ import { HttpClientService } from './shared/services/http-client.service';
 })
 export class AppComponent {
 
+	@HostListener('window:scroll', ['$event'])
+  showMegaMenu(event) {
+    let _url = this.router.url;
+    if (_url === '/') {
+    	let mega_menu_height = 450;
+	  	if(document.body.scrollTop > mega_menu_height){
+	  		this.hasMegaMenu = true;
+	  	}else{
+	  		this.hasMegaMenu = false;
+	  	}
+    };
+  }
+
   private hasMegaMenu: boolean = false;
 
-  constructor(private httpClient: HttpClientService){}
+  constructor(
+  	private httpClient: HttpClientService,
+  	private elementRef: ElementRef,
+  	private router: Router,
+  	private renderer: Renderer
+  ){}
 
   private receiveMegaMenu(shouldShow) {
     this.hasMegaMenu = shouldShow;

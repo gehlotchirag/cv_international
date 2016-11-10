@@ -22,6 +22,8 @@ export class MegaMenuComponent implements OnInit {
 
   public isNonHomePage: boolean = false;
 
+  private previousElement: any;
+
   @Output() selectedCategory: EventEmitter<any> = new EventEmitter();
 
   constructor(private httpClient: HttpClientService) { }
@@ -46,6 +48,10 @@ export class MegaMenuComponent implements OnInit {
 
   onMouseLeave(){
     this.activeCategoryData = null;
+  }
+
+  setPreviousElement(previousElem){
+    this.previousElement = previousElem;
   }
 
 }

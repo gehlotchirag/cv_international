@@ -10,3 +10,17 @@
     background-color: #fff;
     background-repeat: no-repeat;
 }
+.desc-list{
+    margin: 10px 0;
+    font-size: 16px;
+    color: #949494;
+}
+.desc-key{
+    font-weight: bolder;
+}
+.desc-key, .desc-value{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #333333;
+    letter-spacing: 1px;
+}

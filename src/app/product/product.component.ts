@@ -51,6 +51,7 @@ export class ProductComponent implements OnInit {
     galleryImage: any;
     imagePointerX: any;
     imagePointerY: any;
+    private renderedDescription:Object = {};
 
     config: Object = {
             slidesPerView: 1,
@@ -109,6 +110,27 @@ export class ProductComponent implements OnInit {
     this.renderer.setElementStyle(this.zoomedImage, 'background-position-y', '' + backgroungPosY + '%');
 
   }
+
+  getDescription(description){
+    return false;
+    if(description){
+      let _descArr = description.split(',')
+      let _descObj = {};
+      for (var i = 0; i < _descArr.length; i++) {
+          var split = _descArr[i].split(':');
+          _descObj[split[0].trim()] = split[1].trim();
+      }
+      this.renderedDescription = _descObj;
+      return true;
+    }
+    return false;
+    
+  }
+
+  descObjKeys() : Array<string> {
+    return Object.keys(this.renderedDescription);
+  }
+
 
   ngOnInit() {
     this.route

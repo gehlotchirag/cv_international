@@ -9,7 +9,10 @@
     <cv-menu-link
         *ngFor="let menuCategoryData of menuCategoriesData"
         [categoryData]="menuCategoryData"
-        (selectedCategory)="getSelectedCategory($event)">
+        [categorySelected]="activeCategoryData"
+        [prevElem]="previousElement"
+        (selectedCategory)="getSelectedCategory($event)"
+        (previousElement) = "setPreviousElement($event)">
     </cv-menu-link>
     <div class="menu-sub-cat" *ngIf="activeCategoryData">
       <ul class="sub-cat-list" *ngFor="let subCategory of activeCategoryData.data">

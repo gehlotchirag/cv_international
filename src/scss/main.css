@@ -1277,12 +1277,21 @@ ul.nav.nav-tabs.tabs-widget li a {
     padding: 6px; }
     .listing-container .applied-filters .applied-filter {
       display: inline-block;
-      background-color: #e2e2e2;
+      background-color: #981937;
       font-size: 12px;
       padding: 5px;
       line-height: 22px;
       min-width: 100px;
-      margin-right: 5px; } }
+      margin-right: 5px;
+      margin-top: 2px;
+      color: #fff;
+       }
+   .listing-container .applied-filters .applied-filter.clear-all {
+     float: right;
+     background-color: #fff;
+     color: #000;
+     font-weight: bold;
+      } }
 @media only screen and (max-width: 1050px) {
   .page-listing .product-listing {
     background-color: white;
@@ -1314,7 +1323,8 @@ ul.nav.nav-tabs.tabs-widget li a {
       text-align: left;
       padding-top: 5px;
       vertical-align: top;
-      margin-left: 5px; }
+      margin-left: 5px;
+      width: 100px; }
       .page-listing .sort-filter .sort-filter-text .sort-filter-status {
         font-size: 12px;
         width: 150px;
@@ -1447,8 +1457,8 @@ ul.nav.nav-tabs.tabs-widget li a {
 
 
 .sub-menu-color > li {
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   /* background-color: #e2e2e2; */
   margin: 0px 5px 5px 0px;
   display: inline-block;
@@ -1474,8 +1484,8 @@ ul.nav.nav-tabs.tabs-widget li a {
   background-image: url(http://lstatic1.craftsvilla.com/skin/frontend/default/craftsvilla2015/img/check_new.png) !important;
   background-repeat: no-repeat;
   background-position: center center !important;
-  width: 35px !important;
-  height: 35px !important;
+  width: 25px !important;
+  height: 25px !important;
 }
 .sub-menu-color span {
   display: none;

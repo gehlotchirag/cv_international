@@ -11,15 +11,15 @@ const listingRoutes: Routes = [
 		path: 'category',
     component: ListingComponent,
     resolve: {
-       listing: ListingResolveService,
+      //  listing: ListingResolveService,
        filters: FilterResolveService
     }
   },
-  { 
+  {
     path: 'category/:id',
     component: ListingComponent,
     resolve: {
-       listing: ListingResolveService,
+      //  listing: ListingResolveService,
        filters: FilterResolveService
     }
 	},

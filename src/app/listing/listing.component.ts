@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit, Renderer, ViewChild, ViewChildren, DoCheck, EventEmitter } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Renderer, ViewChild, ViewChildren, DoCheck, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, Event, NavigationStart, NavigationEnd } from '@angular/router';
 import { Response } from '@angular/http';
 import { Observable }        from 'rxjs/Observable';
@@ -14,7 +14,7 @@ import Listing from './listing';
   styleUrls: ['./listing.component.css'],
   providers: [ListingService],
 })
-export class ListingComponent implements OnInit, DoCheck {
+export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
 
     private listing: Listing;
     private filters: any = {};
@@ -24,9 +24,9 @@ export class ListingComponent implements OnInit, DoCheck {
     private showMobileFilters: boolean = false;
     private paramObj: any = {};
     private selectedSort: any = {
-      'key': '',
-      'value': '',
-      'name': ''
+      'key': 'relevance',
+      'value': 'Popular',
+      'name': 'Popularity'
     }
 
     private currentUrl: string = "";
@@ -54,10 +54,13 @@ export class ListingComponent implements OnInit, DoCheck {
           for(let key in data){
             let appliedValues = data[key];
             let allValues = this.filters[key];
-            for(let obj of allValues){
-              if(appliedValues[0].toLowerCase().indexOf(obj.name.toLowerCase()) != -1){
-                this.appliedFilters.push(obj);
-                this.markFilterEntryCheck(obj, true);
+            if(allValues){
+              for(let obj of allValues){
+                if(appliedValues[0].toLowerCase().indexOf(obj.name.toLowerCase()) != -1){
+                  this.appliedFilters.push(obj);
+                  this.markFilterEntryCheck(obj, true);
+                }
+                this.sortFilterData(key);
               }
             }
           }
@@ -84,11 +87,26 @@ export class ListingComponent implements OnInit, DoCheck {
       (error) =>  console.error(error))
     }
 
+    ngAfterViewInit(){
+    }
+
     ngDoCheck(){
       let currentUrl = this.router.routerState.snapshot.url;
+      let categoryId = "";
       let rlString = "";
       let qpObj = {};
       if(this.currentUrl != currentUrl){
+        this.emptyAndUncheckFilters()
+        let urlPathEntries;
+        let useUrl = currentUrl;
+        let queryStringIndex = currentUrl.indexOf('?');
+        if(queryStringIndex != -1){
+          useUrl = currentUrl.substr(0, queryStringIndex);
+        }
+        urlPathEntries = (useUrl.split('/')).filter( (item) => item !== "");
+        if(urlPathEntries && urlPathEntries.length >= 2){
+          categoryId = urlPathEntries[urlPathEntries.length - 1];
+        }
         let rlQpArr = currentUrl.split("?");
         let qpString = "";
         rlString = rlQpArr[0];
@@ -105,12 +123,24 @@ export class ListingComponent implements OnInit, DoCheck {
             }
           }
         }
-        this.currentUrl = currentUrl;
+        if(!qpObj['params'] || (qpObj['params'] && ! (JSON.parse(qpObj['params'])['categoryId'])) ){
+          let tempJSON = qpObj['params'] ? JSON.parse(qpObj['params']) : {};
+          if(categoryId){
+            tempJSON['categoryId'] = [categoryId];
+          }
+          qpObj['params'] = JSON.stringify(tempJSON);
+        }
+        if(qpObj['params'] && !JSON.parse(qpObj['params'])['sort']){
+          let tempJSON = JSON.parse(qpObj['params']);
+          tempJSON['sort'] = {"relevance":"Popular"};
+          qpObj['params'] = JSON.stringify(tempJSON);
+        }
         this.paramObj = qpObj;
         let filters = this.paramObj['params'] ? JSON.parse(this.paramObj['params'])['filters'] : {};
         if(filters){
           this.receivedFilters.emit(filters);
         }
+        this.currentUrl = currentUrl;
         this.fetchData(this.paramObj);
       }
     }
@@ -162,7 +192,7 @@ export class ListingComponent implements OnInit, DoCheck {
       this.fetchData(this.paramObj);
     }
 
-    clearAllFilters(): void {
+    private emptyAndUncheckFilters(): void {
       this.appliedFilters = [];
       for(let filter in this.filters){
         for(let i in this.filters[filter]){
@@ -173,6 +203,10 @@ export class ListingComponent implements OnInit, DoCheck {
           else if(filter != 'color') break;
         }
       }
+    }
+
+    clearAllFilters(): void {
+      this.emptyAndUncheckFilters();
       if(this.paramObj['params']){
         let params = JSON.parse(this.paramObj['params']);
         delete params['filters']
@@ -254,7 +288,9 @@ export class ListingComponent implements OnInit, DoCheck {
         params['filters'][filteredKey].splice(foundIndex, foundIndex+1);
       }
       this.paramObj['params'] = JSON.stringify(params);
-      this.fetchData(this.paramObj);
+      if(!this.showMobileFilters){
+        this.fetchData(this.paramObj);
+      }
     }
 
     private markFilterEntryCheck(data: any, checked: boolean): void {

@@ -11,7 +11,7 @@
 					<div class="filter bg-white inline pull-left" [style.display]="showMobileFilters ? 'block': 'none' ">
 						<div class="header">
 							<strong class="pull-left">Filter by</strong>
-							<button type="button" class="close pull-right hide-lg" aria-label="Close" (click)="showMobileFilters = false ">
+							<button type="button" class="close pull-right hide-lg" aria-label="Close" (click)="hideMobileFilters()">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
@@ -20,7 +20,7 @@
 								<span>{{ key['key'].toUpperCase() }}</span>
 								<span class="glyphicon glyphicon glyphicon-menu-down pull-right hide-lg"></span>
 							</div>
-							<input *ngIf="key.key != 'color' && !showMobileFilters " type="text" class="form-control input-box search-filter"
+							<input *ngIf="key.key == 'fabric' && !showMobileFilters " type="text" class="form-control input-box search-filter"
 										 name="Search" placeholder="Search"  [value]="getFilterString(key.key)"
                      (input)="filterString(key.key, $event.target.value)" />
 							<div *ngIf="key.key != 'color' " class="filter-section-options collapse" [attr.id]="getAriaControl(key)">
@@ -33,11 +33,11 @@
 							</div>
 							<div *ngIf="key.key == 'color'" class="filter-section-options sub-menu-color collapse" [attr.id]="getAriaControl(key)">
 								<li *ngFor="let data of filters[key.key]">
-                    <label>
+                    <label title="{{data.name.toUpperCase()}}" data-toggle="tooltip">
                       <input type="checkbox" [attr.checked]="data.checked ? true : null"
 														 [attr.id]="data.id" (click)="filterClick($event, data)"
 														 value="{{data.name.toLowerCase()}}">
-                      <label [attr.for]="data.id" title="{{data.name.toUpperCase()}}" [style.background-color]="data.name">&nbsp;</label>
+                      <label [attr.for]="data.id" [style.background-color]="data.name">&nbsp;</label>
                       <span>{{ data.name }}</span>
                     </label>
 	              </li>
@@ -72,8 +72,8 @@
 						</div>
 						<div class="products">
 
-							<div class="applied-filters hide-sm">
-								<div *ngFor="let appliedFilter of appliedFilters" class="applied-filter">
+							<div class="applied-filters hide-sm clearfix">
+								<div *ngFor="let appliedFilter of appliedFilters; let i = index" class="applied-filter" [ngClass]="{ 'clear-all' : i=== 0}">
 									{{ appliedFilter.name.toUpperCase() }}
 									<button  (click)="removeFilterBlock(appliedFilter, $event)" type="button" class="close" data-dismiss="alert" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
@@ -121,13 +121,21 @@
 		<div class="modal-content">
 			<div class="modal-body text-center">
 				<ul class="sort-listing-content">
-					<li><a (click)="setSort($event, 'relevance', 'Popular')">Popularity</a></li>
+					<li data-target="#sortModal" data-toggle="modal">
+						<a (click)="setSort($event, 'relevance', 'Popular')">Popularity</a>
+					</li>
 					<hr>
-					<li><a (click)="setSort($event, 'newestSort', 'Newest')">Latest</a></li>
+					<li data-target="#sortModal" data-toggle="modal">
+						<a (click)="setSort($event, 'newestSort', 'Newest')">Latest</a>
+					</li>
 					<hr>
-					<li><a (click)="setSort($event, 'priceOrder', 'High to Low')">Price: High to Low</a></li>
+					<li data-target="#sortModal" data-toggle="modal">
+						<a (click)="setSort($event, 'priceOrder', 'High to Low')">Price: High to Low</a>
+					</li>
 					<hr>
-					<li><a (click)="setSort($event, 'priceOrder', 'Low to High')">Price: Low to High</a></li>
+					<li data-target="#sortModal" data-toggle="modal">
+						<a (click)="setSort($event, 'priceOrder', 'Low to High')">Price: Low to High</a>
+					</li>
 				</ul>
 			</div>
 		</div><!-- /.modal-content -->

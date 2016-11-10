@@ -66,12 +66,20 @@
 			padding: 6px;
 			.applied-filter{
 				display: inline-block;
-			    background-color: #e2e2e2;
-			    font-size: 12px;
-			    padding: 5px;
-			    line-height: 16px;
-			    min-width: 100px;
-			    margin-right:5px;
+	      background-color: #981937;
+	      font-size: 12px;
+	      padding: 5px;
+	      line-height: 22px;
+	      min-width: 100px;
+	      margin-right: 5px;
+	      margin-top: 2px;
+	      color: #fff;
+			}
+			.applied-filter.clear-all {
+				float: right;
+    		background-color: #fff;
+    		color: #000;
+    		font-weight: bold;
 			}
 		}
 	}
@@ -109,10 +117,12 @@
 				display:inline-block;
 			}
 			.sort-filter-text{
-				display:inline-block;
-				text-align: left;
-			    padding-top: 5px;
-			    vertical-align: top;
+				display: inline-block;
+		    text-align: left;
+		    padding-top: 5px;
+		    vertical-align: top;
+		    margin-left: 5px;
+		    width: 100px;
 				.sort-filter-status{
 					font-size: 12px;
     			width: 150px;
@@ -120,7 +130,6 @@
     			white-space: nowrap;
     			text-overflow: ellipsis;
 				}
-				margin-left: 5px;
 			}
 			.sort-filter-icon{
 				font-size: $sort-filter-icon-size;

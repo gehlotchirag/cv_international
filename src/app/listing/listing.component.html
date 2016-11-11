@@ -61,10 +61,9 @@
 										<div class="sort-select text-left">{{ selectedSort.name }} <span class="caret"></span></div>
 							  	</button>
 							  	<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							    	<li><a (click)="setSort($event, 'relevance', 'Popular')">Popularity</a></li>
-							    	<li><a (click)="setSort($event, 'newestSort', 'Newest')">Latest</a></li>
-							    	<li><a (click)="setSort($event, 'priceOrder', 'High to Low')">Price: High to Low</a></li>
-							    	<li><a (click)="setSort($event, 'priceOrder', 'Low to High')">Price: Low to High</a></li>
+							    	<li *ngFor="let sortObj of sortEntries">
+											<a (click)="setSort($event, sortObj.key, sortObj.value)">{{ sortObj.name }}</a>
+										</li>
 							  	</ul>
 							</div>
 							<div class="listing-page-count pull-left">
@@ -75,7 +74,7 @@
 							<div class="applied-filters hide-sm clearfix">
 								<div *ngFor="let appliedFilter of appliedFilters" class="applied-filter" [ngClass]="{ 'clear-all' : appliedFilter.id === clearAllBlock.id }">
 									{{ appliedFilter.name.toUpperCase() }}
-									<button  (click)="removeFilterBlock(appliedFilter, $event)" type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<button  (click)="filterBlockClick($event, appliedFilter)" type="button" class="close" data-dismiss="alert" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
@@ -121,21 +120,12 @@
 		<div class="modal-content">
 			<div class="modal-body text-center">
 				<ul class="sort-listing-content">
-					<li data-target="#sortModal" data-toggle="modal">
-						<a (click)="setSort($event, 'relevance', 'Popular')">Popularity</a>
-					</li>
-					<hr>
-					<li data-target="#sortModal" data-toggle="modal">
-						<a (click)="setSort($event, 'newestSort', 'Newest')">Latest</a>
-					</li>
-					<hr>
-					<li data-target="#sortModal" data-toggle="modal">
-						<a (click)="setSort($event, 'priceOrder', 'High to Low')">Price: High to Low</a>
-					</li>
-					<hr>
-					<li data-target="#sortModal" data-toggle="modal">
-						<a (click)="setSort($event, 'priceOrder', 'Low to High')">Price: Low to High</a>
-					</li>
+					<div *ngFor="let sortObj of sortEntries; let i = index;">
+						<li data-target="#sortModal" data-toggle="modal">
+							<a (click)="setSort($event, sortObj.key, sortObj.value)">{{ sortObj.name }}</a>
+						</li>
+						<hr *ngIf="i != last">
+					</div>
 				</ul>
 			</div>
 		</div><!-- /.modal-content -->

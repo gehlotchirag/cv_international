@@ -24,6 +24,28 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   private tempMobileFilters: any = [];
   private showMobileFilters: boolean = false;
   private paramObj: any = {};
+  private sortEntries: any = [
+    {
+      'key': 'relevance',
+      'value': 'Popular',
+      'name': 'Popularity'
+    },
+    {
+      'key': 'newestSort',
+      'value': 'Newest',
+      'name': 'Latest'
+    },
+    {
+      'key': 'priceOrder',
+      'value': 'High to Low',
+      'name': 'Price: High to Low'
+    },
+    {
+      'key': 'priceOrder',
+      'value': 'Low to High',
+      'name': 'Price: Low to High'
+    }
+  ]
   private selectedSort: any = {
     'key': 'relevance',
     'value': 'Popular',
@@ -134,9 +156,14 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
         }
         qpObj['params'] = JSON.stringify(tempJSON);
       }
-      if (qpObj['params'] && !JSON.parse(qpObj['params'])['sort']) {
+      if(qpObj['params'] && JSON.parse(qpObj['params'])['sort']) {
+        let tempJSON = JSON.parse(qpObj['params']);
+        this.selectedSort = this.getSortObject(tempJSON['sort']);
+      }
+      else if (qpObj['params'] && !JSON.parse(qpObj['params'])['sort']) {
         let tempJSON = JSON.parse(qpObj['params']);
         tempJSON['sort'] = { "relevance": "Popular" };
+        this.selectedSort = this.sortEntries[0];
         qpObj['params'] = JSON.stringify(tempJSON);
       }
       this.paramObj = qpObj;
@@ -147,6 +174,15 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       this.currentUrl = currentUrl;
       this.fetchData(this.paramObj);
     }
+  }
+
+  getSortObject(sortObj){
+    for(let data of this.sortEntries){
+      if(sortObj[data.key] != undefined && sortObj[data.key] != null){
+        return data;
+      }
+    }
+    return this.sortEntries[0];
   }
 
   fetchData(paramObj?: any) {
@@ -317,6 +353,17 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     }
   }
 
+  private filterBlockClick(event, appliedFilter){
+    if(appliedFilter.name == this.clearAllBlock.name){
+      this.clearAllFilters();
+      return;
+    }
+    else {
+      this.removeFilterBlock(appliedFilter, event);
+      this.changeListingUrl(this.paramObj);
+    }
+  }
+
   private handleFilterClickDesktop(event, data) {
     if (event.target.checked) {
       this.appliedFilters.push(data);
@@ -385,22 +432,20 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   }
 
   removeFilterBlock(appliedFilter, event): void {
-    if (appliedFilter.name == 'clear all' || this.appliedFilters.length == 2) {
+    if (this.appliedFilters.length == 2) {
       this.clearAllFilters();
       return;
     }
     let tempFilters = [];
     for (let filter of this.appliedFilters) {
       if (filter.name == appliedFilter.name) {
-        let id = filter.id;
-        (<HTMLInputElement>document.getElementById(id)).checked = false;
+        this.markFilterEntryCheck(filter, false);
       }
       else {
         tempFilters.push(filter);
       }
     }
-    this.appliedFilters = tempFilters;
-    this.markFilterEntryCheck(appliedFilter, false);
+    this.appliedFilters = tempFilters.slice();
     if (appliedFilter.key != 'color') {
       this.sortFilterData(appliedFilter.key);
     }
@@ -410,8 +455,16 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       delete params['filters'][filteredKey];
     }
     else {
-      let foundIndex = params['filters'][filteredKey].indexOf(appliedFilter.value);
-      params['filters'][filteredKey].splice(foundIndex, foundIndex + 1);
+      let foundIndex: number = -1;
+      for(let pos =0; pos< params['filters'][filteredKey].length; pos++){
+        if(params['filters'][filteredKey][pos].toLowerCase() == appliedFilter.value.toLowerCase()){
+          foundIndex = pos;
+        }
+      }
+      if(foundIndex != -1){
+        params['filters'][filteredKey] = [...params['filters'][filteredKey].slice(0, foundIndex),...params['filters'][filteredKey].slice(foundIndex+1)];
+      }
+      // params['filters'][filteredKey].splice(foundIndex, foundIndex + 1);
     }
     this.paramObj['params'] = JSON.stringify(params);
     this.paramObj['page'] = 1;

@@ -22,6 +22,14 @@ export class ProductSliderComponent implements OnInit {
 
   }
 
+  getSliderId(){
+    return `Carousel${this.header.replace(" ",'')}`;
+  }
+
+  getIdTarget(){
+    return `#Carousel${this.header.replace(" ",'')}`;
+  }
+
   ngOnInit() {
     let count = 0, tempArr = [];
     for(let i=0; i < this.dataItems.length; i++){

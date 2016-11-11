@@ -8,3 +8,14 @@
   padding-left: 0px;
   margin-bottom: 0px;
 }
+
+.close {
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  opacity: 1;
+}
+
+.clear-all .close {
+  color: black;
+}

@@ -10,6 +10,8 @@ import { HomeService } from './home.service';
 import { ProductService } from '../product/product.service';
 import { CartDetailsService } from '../shared/services/cart-details.service'
 
+declare var _satellite: any;
+
 @Component({
   selector: 'cvi-home',
   providers: [HomeService, WidgetFactoryService, CartDetailsService, ProductService],
@@ -25,6 +27,9 @@ export class HomeComponent implements OnInit {
   private componentsData: any;
   private heroBannerData: any = {};
   private extraMenuData: any = {};
+  public digitalData: any = {
+    page: null
+  };
 
   children: Observable<any>;
   cartContents: Product[];
@@ -47,6 +52,25 @@ export class HomeComponent implements OnInit {
   ngAfterViewInit() {
     this.isViewInitialized = true;
     this.updateComponent();
+
+   /** if (typeof _satellite != "undefined") {
+      this.digitalData.page = {
+        pageInfo: {
+          pageName: "Home Page",
+        },
+        category: {
+          pageType: "home",
+          primaryCategory: "home",
+        },
+        device: {
+          deviceType: "Web"
+        }
+      }
+      
+    
+      _satellite.track("page-load");
+    } */
+
   }
 
   ngOnDestroy() {

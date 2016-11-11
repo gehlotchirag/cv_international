@@ -45,13 +45,13 @@
       <li class="active">Black Color Goergette Lehenga</li>
     </ol>
   </div> -->
-  <div class="message-box-green" *ngIf="addToBagSuccess">
+  <div class="message-box-green" *ngIf="addToBagSuccess && !addToBagUnSuccess && !outOfStockMsgDspl">
     Product has been successfully added to your cart.
   </div>
-  <div class="message-box-red"  *ngIf="addToBagUnSuccess">
-    Unable to add to your cart.
+  <div class="message-box-red"  *ngIf="addToBagUnSuccess && !addToBagSuccess && !outOfStockMsgDspl">
+    Please Select Size.
   </div>
-  <div class="message-box-red" *ngIf="outOfStockMsgDspl">
+  <div class="message-box-red" *ngIf="!addToBagUnSuccess && !addToBagSuccess &&outOfStockMsgDspl">
     Product is out of stock.
   </div>
   <div class="product-container">
@@ -93,12 +93,13 @@
           <hr>
           <div class="description" *ngIf="getDescription(products.description)">
             <div class="heading mob-section-heading">Description</div>
-            <ul>
+            <ul *ngIf="renderedDescription">
               <li class="body mob-section-body desc-list" *ngFor="let descObjKey of descObjKeys()">
                 <span class="desc-key">{{descObjKey}}</span>
                 <span class="desc-value">: {{renderedDescription[descObjKey]}}</span> 
               </li>
             </ul>
+            <p *ngIf="!renderedDescription">{{products.description}}</p>
           </div>
           <hr *ngIf="getDescription(products.description)">
           <div class="shipping-cost mob-inline inline">
@@ -152,8 +153,32 @@
             </div>
             <div class="stitch"></div>
             <div class="add-to-bag occupy fixed-bottom-bar product-buy-btns">
-              <button class="btn btn-default add-cart-btn flat-btn purchase" (click)="addToBag($event)">ADD TO BAG</button>
-              <button class="btn btn-brand buy-btn flat-btn purchase">BUY NOW</button>
+              <button class="btn btn-default add-cart-btn flat-btn purchase" (click)="addToBag($event)">ADD TO CART</button>
+              <button class="btn btn-brand buy-btn flat-btn purchase">
+                <p *ngIf="!showBuyLoader" (click)="buyNow($event)">BUY NOW</p>
+                <div class="cv-loader" *ngIf = "showBuyLoader">
+                    <svg width="35px" height="35px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-facebook">
+                        <rect x="0" y="0" width="100" height="100" fill="transparent" class="bk"></rect>
+                        <g transform="translate(20 50)">
+                          <rect x="-10" y="-30" width="20" height="60" fill="#981937" opacity="0.6" transform="scale(1.55427 1.55427)">
+                            <animateTransform attributeName="transform" type="scale" from="2" to="1" begin="0s" repeatCount="indefinite" dur="1s" calcMode="spline" keySplines="0.1 0.9 0.4 1" keyTimes="0;1" values="2;1">
+                            </animateTransform>
+                          </rect>
+                        </g>
+                        <g transform="translate(50 50)">
+                          <rect x="-10" y="-30" width="20" height="60" fill="#981937" opacity="0.8" transform="scale(1.00003 1.00003)">
+                            <animateTransform attributeName="transform" type="scale" from="2" to="1" begin="0.1s" repeatCount="indefinite" dur="1s" calcMode="spline" keySplines="0.1 0.9 0.4 1" keyTimes="0;1" values="2;1">
+                            </animateTransform>
+                          </rect>
+                        </g>
+                        <g transform="translate(80 50)"><rect x="-10" y="-30" width="20" height="60" fill="#981937" opacity="0.9" transform="scale(1.00149 1.00149)">
+                          <animateTransform attributeName="transform" type="scale" from="2" to="1" begin="0.2s" repeatCount="indefinite" dur="1s" calcMode="spline" keySplines="0.1 0.9 0.4 1" keyTimes="0;1" values="2;1">
+                          </animateTransform>
+                        </rect>
+                      </g>
+                    </svg>
+                </div>
+              </button>
             </div>
           </span>
           <div class="share-product hide-sm" id="share-buttons">

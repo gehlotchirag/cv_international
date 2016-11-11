@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef, Renderer } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Response } from '@angular/http';
+
 
 import { Product } from './product';
 
@@ -51,6 +53,7 @@ export class ProductComponent implements OnInit {
     galleryImage: any;
     imagePointerX: any;
     imagePointerY: any;
+    showBuyLoader: boolean = false;
     private renderedDescription:Object = {};
 
     config: Object = {
@@ -112,16 +115,20 @@ export class ProductComponent implements OnInit {
   }
 
   getDescription(description){
-    /* if(description){
-      let _descArr = description.split(',')
+    if(description){
+      let _descArr = description.split(',').filter(Boolean)
       let _descObj = {};
-      for (var i = 0; i < _descArr.length; i++) {
+      try{
+        for (var i = 0; i < _descArr.length; i++) {
           var split = _descArr[i].split(':');
           _descObj[split[0].trim()] = split[1].trim();
+        }
+        this.renderedDescription = _descObj;
+      }catch(err){
+        this.renderedDescription = null;
       }
-      this.renderedDescription = _descObj;
       return true;
-    } */
+    }
     return false;
   }
 
@@ -224,24 +231,39 @@ export class ProductComponent implements OnInit {
   }
 
   addToBag(event: any): void {
-    if (typeof this.selectedSize == "undefine") {
-      this.addToBagUnSuccess = false;
-      this.addToBagSuccess = true;
+    if (!this.showSizeDiv && this.selectedSize == "undefine") {
+      this.addToBagUnSuccess = true;
     }
     else {
-      this.cartDetailsService
-          .addToCart(this.productId, 1)
-          .pluck('d')
-          .subscribe(
-            (data) => {
-              console.log(data);
-            },
-            (error) => console.error(error),
-            () => {console.log('completed')}
-          );
+      let cartStream = this.cartDetailsService
+                           .addToCart(this.productId, 1)
+      cartStream.map((r: Response) => { return r.json() }).pluck('d')
+                .subscribe(
+                  (data) => {
+                    this.addToBagSuccess = true;
+                    this.addToBagUnSuccess = false;
+                  },
+                  (error) => console.error(error),
+                  () => {console.log('completed')}
+                );
+      cartStream.connect();
     }
   }
 
+  buyNow(event: any){
+    this.showBuyLoader = true;
+    let cartStream = this.cartDetailsService
+                           .addToCart(this.productId, 1)
+    cartStream.map((r: Response) => { return r.json() }).pluck('d')
+              .subscribe(
+                (data) => {
+                  window.location.href = 'https://secure2.craftsvilla.com/buy/cart';
+                },
+                (error) => console.error(error),
+                () => {console.log('completed')}
+              );
+    cartStream.connect();
+  }
 
   selectSize(event: any, size: any): void {
     let index = this.individualQuantity.indexOf(size);

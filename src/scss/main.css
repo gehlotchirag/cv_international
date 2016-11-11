@@ -1722,7 +1722,11 @@ ul.nav.nav-tabs.tabs-widget li a {
         margin-right: 2%;
         float: left; }
       .product-info-container .add-to-bag .buy-btn {
-        margin-right: 0; }
+        margin-right: 0;
+        padding: 0; }
+      .product-info-container .add-to-bag .buy-btn p{
+        margin: 0;
+      }  
     .product-info-container .shipping-cost {
       margin-right: 5%;
       width: 30%;

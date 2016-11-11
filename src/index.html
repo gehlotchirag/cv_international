@@ -2,7 +2,10 @@
 <html>
 
 <head>
-  <base href="/us/">
+  <script type="text/javascript">
+   var basehref = (window.location.host === 'www.craftsvilla.com') ? '/us/' : '/';
+   document.write("<base href='" + basehref + "' />");
+ </script>
   <title>Online Shopping for Ethnic Wear - Craftsvilla</title>
   <!-- Jquery Inclusion -->
   <!-- Latest compiled and minified JavaScript Bootstrap -->

@@ -65,7 +65,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
           }
         }
       }
-      if (this.appliedFilters.length == 1) {
+      if (this.appliedFilters.length != 0 && this.noClearInAppliedFilters()) {
         this.appliedFilters = [this.clearAllBlock, ...this.appliedFilters];
       }
       this.tempMobileFilters = this.appliedFilters.slice();
@@ -93,7 +93,9 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   }
 
   ngDoCheck() {
-    let currentUrl = this.router.routerState.snapshot.url;
+    let hostName = window.location.host;
+    let href = window.location.href;
+    let currentUrl =  href.slice(href.indexOf(hostName) + hostName.length);// this.router.routerState.snapshot.url;
     let categoryId = "";
     let rlString = "";
     let qpObj = {};
@@ -153,21 +155,42 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       .then((listing: Response) => {
         if (listing) {
           this.listing = listing.json().d;
-          this.changeListingUrl(paramObj);
         }
       })
   }
 
+  private noClearInAppliedFilters(): boolean {
+    let foundClear : boolean = true;
+    for(let item of this.appliedFilters){
+      if(item.id === this.clearAllBlock.id){
+        foundClear = false;
+        break;
+      }
+    }
+    return foundClear;
+  }
+
   private changeListingUrl(paramObj?: any): void {
+    let pushStateString = '';
     if (paramObj) {
       let params = paramObj['params'] ? paramObj['params'] : {};
       let page = paramObj['page'] ? paramObj['page'] : 1;
       let query = paramObj['query'] ? paramObj['query'] : '';
-      // this.location.go('/category', `query=${query}&params=${encodeURIComponent(params)}&page=${page}`);
+      let categoryIdArr = JSON.parse(params)['categoryId'];
+      categoryIdArr = categoryIdArr ?  categoryIdArr : [];
+      if(!categoryIdArr || categoryIdArr.length > 1){
+        pushStateString = `/category?query=${query}&params=${encodeURIComponent(params)}&page=${page}`
+      }
+      else {
+        let categoryId = categoryIdArr[0];
+        pushStateString = `/category/${categoryId}?query=${query}&params=${encodeURIComponent(params)}&page=${page}`
+      }
     }
     else {
-      // this.location.go('/category');
+      pushStateString = '/category'
     }
+    this.currentUrl = `${pushStateString}`;
+    window.history.pushState(null, "Craftsvilla Listing", pushStateString);
   }
 
   getDataTarget(key): string {
@@ -254,6 +277,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       }
     }
     this.fetchData(this.paramObj);
+    this.changeListingUrl(this.paramObj);
   }
 
   private emptyAndUncheckFilters(): void {
@@ -277,7 +301,9 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       delete params['filters']
       this.paramObj['params'] = JSON.stringify(params);
     }
+    this.paramObj['page'] = 1;
     this.fetchData(this.paramObj);
+    this.changeListingUrl(this.paramObj);
     this.showMobileFilters = false;
   }
 
@@ -323,11 +349,13 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
         }
         this.paramObj['params'] = JSON.stringify(params);
       }
+      this.paramObj['page'] = 1;
       this.fetchData(this.paramObj);
     }
     else {
       this.removeFilterBlock(data, event);
     }
+    this.changeListingUrl(this.paramObj);
   }
 
   private handleFilterClickMobile(event, data) {
@@ -340,7 +368,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     else {
       let tempFilters = [];
       for (let filter of this.tempMobileFilters) {
-        if (filter.name == data.name) {
+        if (filter.name.toLowerCase() == data.name.toLowerCase()) {
           let id = filter.id;
           (<HTMLInputElement>document.getElementById(id)).checked = false;
         }
@@ -386,6 +414,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       params['filters'][filteredKey].splice(foundIndex, foundIndex + 1);
     }
     this.paramObj['params'] = JSON.stringify(params);
+    this.paramObj['page'] = 1;
     if (!this.showMobileFilters) {
       this.fetchData(this.paramObj);
     }
@@ -393,8 +422,12 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
 
   private markFilterEntryCheck(data: any, checked: boolean): void {
     for (let i in this.filters[data.key]) {
-      if (this.filters[data.key][i]['name'] == data.name) {
+      if (this.filters[data.key][i]['name'].toLowerCase() == data.name.toLowerCase()) {
         this.filters[data.key][i]['checked'] = checked;
+        let node = <HTMLInputElement>document.getElementById(this.filters[data.key][i].id)
+        if(node){
+          node.checked = checked;
+        }
       }
     }
   }
@@ -418,17 +451,23 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   }
 
   getStartListingCount(): number {
-    if (this.listing && this.listing.current_page) {
-      return (this.listing.current_page - 1) * 10 + 1;
+    if(this.listing && this.listing.current_page && this.listing.results){
+      return (this.listing.current_page - 1) * 12 + 1 ;
     }
-    return 1
+    else {
+      return 0;
+    }
   }
 
   getEndListingCount(): number {
     if (this.listing && this.listing.current_page) {
-      return this.listing.current_page * 10;
+      let resultsCount = this.listing.results ? this.listing.results.length : 0;
+      let computedCount = (this.listing.current_page - 1)*12 + resultsCount;
+      let estimatedCount = this.listing.current_page*12;
+      let endCount = computedCount < estimatedCount ? computedCount : estimatedCount;
+      return endCount;
     }
-    return 10;
+    return 0;
   }
 
   getFilterString(key: string): string {
@@ -455,6 +494,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     params['sort'] = { [key]: value };
     this.paramObj['params'] = JSON.stringify(params);
     this.fetchData(this.paramObj);
+    this.changeListingUrl(this.paramObj);
   }
 
   toggleMobileFiltersShow(show: boolean) {
@@ -463,6 +503,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
 
   onPageChange(page): void {
     this.paramObj['page'] = page;
+    window.scrollTo(0,0);
     this.fetchData(this.paramObj);
   }
 

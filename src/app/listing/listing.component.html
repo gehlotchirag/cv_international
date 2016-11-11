@@ -73,7 +73,7 @@
 						<div class="products">
 
 							<div class="applied-filters hide-sm clearfix">
-								<div *ngFor="let appliedFilter of appliedFilters; let i = index" class="applied-filter" [ngClass]="{ 'clear-all' : i=== 0}">
+								<div *ngFor="let appliedFilter of appliedFilters" class="applied-filter" [ngClass]="{ 'clear-all' : appliedFilter.id === clearAllBlock.id }">
 									{{ appliedFilter.name.toUpperCase() }}
 									<button  (click)="removeFilterBlock(appliedFilter, $event)" type="button" class="close" data-dismiss="alert" aria-label="Close">
 										<span aria-hidden="true">&times;</span>

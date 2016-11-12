@@ -7,12 +7,16 @@ import { Observable }        from 'rxjs/Observable';
 import { LiveFilterPipe } from './live-filter.pipe';
 import { ListingService } from './listing.service';
 import Listing from './listing';
+import { CommonSharedService } from '../shared/services/common-shared.service';
+
+declare var _satellite: any;
+
 
 @Component({
   selector: 'cvi-listing',
   templateUrl: './listing.component.html',
   styleUrls: ['./listing.component.css'],
-  providers: [ListingService],
+  providers: [ ListingService, CommonSharedService ],
 })
 export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
 
@@ -60,14 +64,17 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     'value': 'clear all',
     'id': 'clear all'
   };
+  public digitalData: any = {
+    page: null
+  };
 
   constructor(private listingService: ListingService,
     private router: Router,
     private route: ActivatedRoute,
     private renderer: Renderer,
-    private location: Location
-  ) {
-  }
+    private location: Location,
+    private commonService: CommonSharedService
+  ) {}
 
   ngOnInit(): void {
     // this.loadCategoryList();
@@ -112,6 +119,23 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    if (typeof _satellite != "undefined") {
+      this.digitalData.page = {
+        pageInfo: {
+          pageName: "Listing Page",
+        },
+        category: {
+          pageType: "Listing",
+          pageFilter: this.appliedFilters
+        },
+        device: {
+          deviceType: this.commonService.deviceType()
+        }
+      }
+      
+      console.log(this.digitalData);
+      _satellite.track("page-load");
+    }
   }
 
   ngDoCheck() {

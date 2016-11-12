@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Response } from '@angular/http';
@@ -9,14 +9,17 @@ import { Product } from './product';
 import { ProductService } from './product.service';
 import { CartDetailsService } from '../shared/services/cart-details.service';
 import { WishListService } from '../shared/services/wish-list.service';
+import { CommonSharedService } from '../shared/services/common-shared.service';
+
+declare var _satellite: any;
 
 @Component({
   selector: 'cvi-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
-  providers: [ProductService, CartDetailsService, WishListService],
+  providers: [ProductService, CartDetailsService, WishListService, CommonSharedService],
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, AfterViewInit {
 
     products: Observable<Product[]>;
     similarProducts: Observable<Product[]>;
@@ -55,7 +58,7 @@ export class ProductComponent implements OnInit {
     imagePointerY: any;
     showBuyLoader: boolean = false;
     private renderedDescription:Object = {};
-
+    private productName: String;
     config: Object = {
             slidesPerView: 1,
             pagination: '.swiper-pagination',
@@ -63,6 +66,9 @@ export class ProductComponent implements OnInit {
             speed: 600,
         };
     imageUrl: any;
+    public digitalData: any = {
+      page: null
+    };
 
   constructor(private productService : ProductService,
               private cartDetailsService: CartDetailsService,
@@ -71,6 +77,7 @@ export class ProductComponent implements OnInit {
               private router: Router,
               private elementRef: ElementRef,
               private renderer: Renderer,
+              private commonService: CommonSharedService
   ) {
     this.sizeChartData = [];
     this.sizeChartHeaders = [];
@@ -142,7 +149,8 @@ export class ProductComponent implements OnInit {
       .data
       .pluck('product', 'd')
       .subscribe((data: any) => {
-        this.products = data
+        this.products = data;
+        this.productName = data.productName;
         this.productId = data.productId;
         this.galleryImages = data.galleryImages;
         // this.stitching_enabled=data.stitching_enabled;
@@ -225,6 +233,28 @@ export class ProductComponent implements OnInit {
       () => console.log('completed')
     );
   }
+
+  ngAfterViewInit() {
+    if (typeof _satellite != "undefined") {
+      this.digitalData.page = {
+        pageInfo: {
+          pageName: "Product Page",
+        },
+        category: {
+          pageType: "Product",
+          productName: this.productName,
+          productId: this.productId
+        },
+        device: {
+          deviceType: this.commonService.deviceType()
+        }
+      }
+      
+      console.log(this.digitalData);
+      _satellite.track("page-load");
+    }
+  }
+
 
   addWish(event: any): void {
     this.wishListService.addToWishList(this.customerId, this.productId);

@@ -52,8 +52,10 @@ export class HttpClientService {
         }
     }
     let modifiedURL: string = `${this.BASE_URL}${url}`;
+
     return this.http.get( modifiedURL, {
-      search: searchParams
+      search: searchParams,
+      withCredentials: true
     })
   }
 

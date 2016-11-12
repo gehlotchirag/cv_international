@@ -8,13 +8,14 @@ import { Product } from '../product/product';
 import { WidgetFactoryService } from '../shared/widgets/widget-factory.service';
 import { HomeService } from './home.service';
 import { ProductService } from '../product/product.service';
-import { CartDetailsService } from '../shared/services/cart-details.service'
+import { CartDetailsService } from '../shared/services/cart-details.service';
+import { CommonSharedService } from '../shared/services/common-shared.service';
 
 declare var _satellite: any;
 
 @Component({
   selector: 'cvi-home',
-  providers: [HomeService, WidgetFactoryService, CartDetailsService, ProductService],
+  providers: [HomeService, WidgetFactoryService, CartDetailsService, ProductService, CommonSharedService],
   // providers: [HomeService],
   templateUrl: './home.component.html', //'./home-dynamic.component.html',
   styleUrls: ['./home.component.css']
@@ -37,7 +38,8 @@ export class HomeComponent implements OnInit {
   constructor(private resolver: ComponentFactoryResolver,
               private homeService: HomeService,
               private widgetFactoryService: WidgetFactoryService,
-              private cartService: CartDetailsService
+              private cartService: CartDetailsService,
+              private commonService: CommonSharedService
   )
   {
     this.children = this.homeService.getComponentsData();
@@ -53,7 +55,7 @@ export class HomeComponent implements OnInit {
     this.isViewInitialized = true;
     this.updateComponent();
 
-   /** if (typeof _satellite != "undefined") {
+    if (typeof _satellite != "undefined") {
       this.digitalData.page = {
         pageInfo: {
           pageName: "Home Page",
@@ -63,13 +65,13 @@ export class HomeComponent implements OnInit {
           primaryCategory: "home",
         },
         device: {
-          deviceType: "Web"
+          deviceType: this.commonService.deviceType()
         }
       }
       
-    
+      console.log(this.digitalData);
       _satellite.track("page-load");
-    } */
+    }
 
   }
 

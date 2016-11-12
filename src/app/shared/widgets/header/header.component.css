@@ -1,3 +1,10 @@
+.header-phone {
+	font-size: 17px;
+	line-height: 23px;
+	vertical-align: middle;
+	color: #981937;
+}
+
 .cvi-header-fixed{
 	position: fixed;
 	top: 0;

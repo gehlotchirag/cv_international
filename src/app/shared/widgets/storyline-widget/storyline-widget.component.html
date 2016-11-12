@@ -10,7 +10,7 @@
     <div class="section-body">
       <div *ngFor="let item of dataItems; let i= index" class="box"
             [ngClass]="{'last': i == last}">
-            <a [routerLink]="getRouterLink(item.dataUrl)['rl']">
+            <a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
               <img [src]="item.imageUrl" class="img-responsive">
             </a>
       </div>

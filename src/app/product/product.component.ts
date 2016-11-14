@@ -128,6 +128,9 @@ export class ProductComponent implements OnInit, AfterViewInit {
       try{
         for (var i = 0; i < _descArr.length; i++) {
           var split = _descArr[i].split(':');
+          if(!split[1]){
+            continue;
+          }
           _descObj[split[0].trim()] = split[1].trim();
         }
         this.renderedDescription = _descObj;

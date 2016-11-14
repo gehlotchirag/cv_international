@@ -5,6 +5,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { InMediaComponent } from './in-media/in-media.component';
 import { OrderTrackingComponent } from './order-tracking/order-tracking.component';
+import { ContactUsComponent } from './contact-us/contactus.component';
+
 
 const staticsRoutes: Routes = [
 	{
@@ -22,6 +24,10 @@ const staticsRoutes: Routes = [
   {
     path: 'craftsvilla_in_media',
     component: InMediaComponent
+  },
+  {
+    path: 'contactus',
+    component: ContactUsComponent
   }
 ];
 

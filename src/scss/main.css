@@ -1896,7 +1896,9 @@ ul.nav.nav-tabs.tabs-widget li a {
     margin: 0 2% 2% 2%; } }
 .static-page-content {
   padding: 15px; }
-
+.static-page-heading{
+  padding-top: 1px;
+}
 .thanks-body {
   margin-top: 20px; }
   .thanks-body .page-header {

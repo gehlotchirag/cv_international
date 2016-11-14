@@ -44,8 +44,9 @@ export class MegaMenuLinkComponent implements OnChanges {
   }
 
   ngOnChanges(){
-    if(this.categorySelected === null){
+    if(this.categorySelected === null && this.prevElem){
       this.renderer.setElementAttribute(this.prevElem, 'style', 'color: #333333 !important; background: transparent');
+      this.prevElem = null;
     }
   }
   

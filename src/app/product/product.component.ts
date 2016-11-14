@@ -287,7 +287,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     cartStream.map((r: Response) => { return r.json() }).pluck('d')
               .subscribe(
                 (data) => {
-                  window.location.href = 'https://secure2.craftsvilla.com/buy/cart';
+                  window.location.href = 'https://securestaticintl.craftsvilla.com/buy/cart';
                 },
                 (error) => console.error(error),
                 () => {console.log('completed')}

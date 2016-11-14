@@ -3,7 +3,7 @@
 	    <div class="page-heading text-center static-page-heading">
     		<h1>Contact Us</h1>
 	    </div>
-	    <div class="page-content bg-white static-page-content clearfix" *ngIf="!formSubmitError || !formSubmitSuccess">
+	    <div class="page-content bg-white static-page-content clearfix" *ngIf="showContactForm">
 	  		<div class="contact-form col-sm-6 text-center">
   				<form>
 			    	<div class="form-group text-left">
@@ -22,7 +22,7 @@
 				</form>
   			</div>
 		</div>
-		<div class="contact-form col-sm-6 form-submit-msg" *ngIf="formSubmitError || formSubmitSuccess">
+		<div class="contact-form col-sm-6 form-submit-msg" *ngIf="!showContactForm">
 	    	<div class="alert alert-success top-space" *ngIf="formSubmitSuccess">Form submitted successfully.</div>
 	    	<div class="alert alert-danger top-space" *ngIf="formSubmitError"><b>ERROR!  </b>Please try again.</div>
 	    </div>

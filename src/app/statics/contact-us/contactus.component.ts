@@ -15,7 +15,9 @@ export class ContactUsComponent implements OnInit {
 		mail_subject: null,
 		message: null
 	}
+	private formSubmitSuccess = true;
 	private btnDisabled: boolean = false;
+	private showContactForm:boolean = true;
 	constructor(
 		private contactService: ContactusFormService
 	) { }
@@ -26,12 +28,12 @@ export class ContactUsComponent implements OnInit {
 	sendContactQuery(){
 		if(this.fieldsCheck()){
 			this.btnDisabled = true;
-			console.log(this.user);
-			let contactResopnse = this.contactService.submitContactForm(this.user);
-			if(contactResopnse){
-				this.btnDisabled = false;
-			}
+			this.contactService.submitContactForm(this.user);
+			this.showContactForm = false;
+			document.body.scrollTop = 0;
 		}
+		return false;
+
 	}
 
 	fieldsCheck(){

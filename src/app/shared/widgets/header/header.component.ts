@@ -143,7 +143,7 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
            }
        }
     }
-    window.location.href = "http://www.craftsvillla.com";
+    window.location.href = "http://www.craftsvilla.com";
   }
 
 }

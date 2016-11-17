@@ -109,12 +109,15 @@
           <i class="glyphicon glyphicon-phone header-phone"></i>1-800-245-1549
         </a>
       </span>
-      <span class="top-menu-item"><a href="">Track Order</a></span>
+      <span class="top-menu-item"><a routerLink="order_tracking">Track Order</a></span>
       <span class="top-menu-item">
-          <div class="dropdown inline">
-            <img src="images/usa-flag.gif" class="flag"> USD
-          </div>
-        </span>
+        <div class="dropdown inline">
+          <img src="images/usa-flag.gif" class="flag"> USD
+        </div>
+      </span>
+      <span class="top-menu-item" (click)="clearCookieAndDomestic($event)">
+        Visit Craftsvilla India
+      </span>
       </span>
     </div>
   </div>

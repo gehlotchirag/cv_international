@@ -10,6 +10,7 @@ import Listing from './listing';
 import { CommonSharedService } from '../shared/services/common-shared.service';
 
 declare var _satellite: any;
+declare var digitalData: any;
 
 
 @Component({
@@ -64,9 +65,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     'value': 'clear all',
     'id': 'clear all'
   };
-  public digitalData: any = {
-    page: null
-  };
+
 
   constructor(private listingService: ListingService,
     private router: Router,
@@ -120,9 +119,12 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
 
   ngAfterViewInit() {
     if (typeof _satellite != "undefined") {
-      this.digitalData.page = {
+      digitalData.page = {
         pageInfo: {
           pageName: "Listing Page",
+        },
+        currencycode: {
+          currencyCode: "USD"
         },
         category: {
           pageType: "Listing",
@@ -132,8 +134,6 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
           deviceType: this.commonService.deviceType()
         }
       }
-
-      console.log(this.digitalData);
       _satellite.track("page-load");
     }
   }

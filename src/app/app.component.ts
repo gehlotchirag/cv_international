@@ -11,7 +11,7 @@ import { HttpClientService } from './shared/services/http-client.service';
   selector: 'cvi-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ HttpClientService, Window ]
+  providers: [ HttpClientService ]
 })
 export class AppComponent {
 

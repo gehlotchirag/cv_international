@@ -1,0 +1,30 @@
+<div class="content wishlist-page">
+	<div class="contain">
+	    <div class="page-heading text-center static-page-heading">
+    		<h1>Contact Us</h1>
+	    </div>
+	    <div class="page-content bg-white static-page-content clearfix" *ngIf="showContactForm">
+	  		<div class="contact-form col-sm-6 text-center">
+  				<form>
+			    	<div class="form-group text-left">
+			      		<label for="email">Email:</label>
+			      		<input class="form-control" id="email" name="user-email" placeholder="Your Email" type="email" required="true" [(ngModel)]="user.email">
+		    		</div>
+				    <div class="form-group text-left">
+				    	<label for="pwd">Subject</label>
+						<input class="form-control" name="msg-subject" placeholder="Subject" required="true" [(ngModel)]="user.mail_subject">
+				    </div>
+				    <div class="form-group text-left">
+				    	<label for="pwd">Your Message</label>
+				    	<textarea class="form-control" name="user-message" placeholder="Your Message" required="true" [(ngModel)]="user.message" rows="4" cols="50">{{user.message}}</textarea>
+				    </div>
+				    <button type="submit" (click)="sendContactQuery()" class="btn btn-success form-submit-btn" [ngClass]="{'disabled' : btnDisabled}">Submit</button>
+				</form>
+  			</div>
+		</div>
+		<div class="contact-form col-sm-6 form-submit-msg" *ngIf="!showContactForm">
+	    	<div class="alert alert-success top-space" *ngIf="formSubmitSuccess">Form submitted successfully.</div>
+	    	<div class="alert alert-danger top-space" *ngIf="formSubmitError"><b>ERROR!  </b>Please try again.</div>
+	    </div>
+	</div>
+</div>

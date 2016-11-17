@@ -1,0 +1,19 @@
+.contact-form{
+	float: none !important;
+	margin: 0 auto;
+}
+.form-submit-btn{
+	background-color: #981937;
+	border: 2px solid #981937;
+}
+.form-submit-btn:hover{
+    background-color: #FFF;
+    color: #981937;
+}
+.form-submit-btn.disabled{
+	pointer-events: none;
+	cursor: default;
+}
+.form-submit-msg{
+	margin-top: 15px;
+}

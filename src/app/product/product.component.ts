@@ -55,8 +55,10 @@ export class ProductComponent implements OnInit, AfterViewInit {
     stitching_type_text_show:boolean;
     zoomedImage: any;
     galleryImage: any;
+    zoomedImageTag: any;
     imagePointerX: any;
     imagePointerY: any;
+    imageLens: any;
     showBuyLoader: boolean = false;
     private renderedDescription:Object = {};
     private productName: String;
@@ -90,15 +92,23 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.stitching_type_text_show = true;
   }
 
-  onImageHover(imageSrc) {
-    this.galleryImage = this.elementRef.nativeElement.querySelector('.productImage');
+  onImageHover(imageSrc, event) {
+    this.galleryImage = this.elementRef.nativeElement.querySelector('.img-lens-container img');
+    this.zoomedImageTag = new Image(); // or document.createElement('img')
+    let width, height;
+    this.zoomedImageTag.onload = function() {
+      width = this.width;
+      height = this.height;
+    };
+    this.zoomedImageTag.src = imageSrc;
     this.zoomedImage = this.elementRef.nativeElement.querySelector('.zoomed-image');
+    this.imageLens = this.elementRef.nativeElement.querySelector('.img-lens-container .image-lens');
     this.renderer.setElementStyle(this.zoomedImage, 'display', 'block');
     this.renderer.setElementStyle(this.zoomedImage, 'background-image', 'url(' + imageSrc + ')');
     this.adjustZoomedImage(event);
   }
 
-  onImageHoverMove() {
+  onImageHoverMove(event) {
     this.adjustZoomedImage(event);
   }
 
@@ -106,14 +116,20 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.renderer.setElementStyle(this.zoomedImage, 'display', 'none');
   }
 
-  adjustZoomedImage(event) {
+  adjustZoomedImage(event) { 
     this.imagePointerX = event.offsetX;
     this.imagePointerY = event.offsetY;
     let imageWidth = event.target.offsetWidth;
     let imageHeight = event.target.offsetHeight;
-    let backgroungPosX = (this.imagePointerX / imageWidth) * 100;
-    let backgroungPosY = (this.imagePointerY / imageHeight) * 100;
-
+    let bigImageHeight = this.zoomedImageTag.height;
+    let bigImageWidth = this.zoomedImageTag.width;
+    let bigImageContainerWidth = this.zoomedImage.offsetWidth;
+    let bigImageContainerHeight = this.zoomedImage.offsetHeight;
+    let lensWidth = this.galleryImage.offsetWidth * (bigImageContainerWidth / bigImageWidth);
+    let lensHeight = this.galleryImage.offsetHeight * (bigImageContainerHeight / bigImageHeight);
+    let backgroungPosX = ((this.imagePointerX / imageWidth) * 100) / 2;
+    let backgroungPosY = ((this.imagePointerY / imageHeight) * 100) / 2;
+    this.renderer.setElementAttribute(this.imageLens, 'style', 'width: ' + lensWidth + 'px; height: ' + lensHeight + 'px; left: ' + backgroungPosX + '%; top: ' + backgroungPosY + '%');
     this.renderer.setElementStyle(this.zoomedImage, 'background-position-x', '' + backgroungPosX + '%');
     this.renderer.setElementStyle(this.zoomedImage, 'background-position-y', '' + backgroungPosY + '%');
 

@@ -60,7 +60,10 @@
         <img  src="{{galleryImage}}"  class="img-responsive"  on-mouseover="showImage($event, galleryImage)" *ngFor="let galleryImage of galleryImages">
       </div>
       <div class="product-img-container inline pull-left text-center hide-sm">
-        <img (mouseover)="onImageHover(products.bigUrl)" (mousemove) = "onImageHoverMove()" (mouseout) = "onHoverOut()" src="{{imageUrl}}" class="img-responsive">
+        <div class="img-lens-container" (mouseover)="onImageHover(products.bigUrl, $event)" (mousemove) = "onImageHoverMove($event)" (mouseout) = "onHoverOut()">
+          <img src="{{imageUrl}}" class="img-responsive">
+          <div class="image-lens"></div>
+        </div>
         <div class="zoomed-image"></div>
       </div>
       <div class="product-img-container pull-left text-center responsive-img-container">

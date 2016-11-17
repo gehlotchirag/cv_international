@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { EVENT_MANAGER_PLUGINS } from '@angular/platform-browser/src/dom/events/event_manager';
+import { MultiEventPlugin } from './multi-event.plugin';
 import { routing, appRoutingProviders }  from './app.routing';
 import './rxjs-extensions';
 
@@ -47,7 +49,8 @@ import { RouterHeaderBindingService } from './shared/services/router-header-bind
     providers: [
       HttpClientService,
       appRoutingProviders,
-      RouterHeaderBindingService
+      RouterHeaderBindingService,
+      { provide: EVENT_MANAGER_PLUGINS, useClass: MultiEventPlugin, multi: true }
     ],
     bootstrap: [ AppComponent ]
 })

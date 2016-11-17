@@ -1,0 +1,15 @@
+<div class="slider-cnt">
+  <!-- <div class="info">
+    <div class="val">{{ itemCount }} items</div>
+  </div> -->
+  <div class="slider">
+    <div (click)="rangeClick($event)" class="range"></div>
+    <div (click)="rangeSelectedClick($event)" class="range selected" style="left: 0px; width: 100%;"></div>
+    <div (mousedown)="handleFromMouseDown($event)" [attr.data-from]="min" class="from"></div>
+    <div (mousedown)="handleToMouseDown($event)"  [attr.data-to]="max" class="to"></div>
+  </div>
+  <div class="slider-label">
+    <div class="min">{{ minPrice }}</div>
+    <div class="max">{{ maxPrice }}</div>
+  </div>
+</div>

@@ -15,7 +15,7 @@ declare var _satellite: any;
 
 @Component({
   selector: 'cvi-home',
-  providers: [HomeService, WidgetFactoryService, CartDetailsService, ProductService, CommonSharedService],
+  providers: [ HomeService, WidgetFactoryService, CartDetailsService, ProductService, CommonSharedService ],
   // providers: [HomeService],
   templateUrl: './home.component.html', //'./home-dynamic.component.html',
   styleUrls: ['./home.component.css']
@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
           deviceType: this.commonService.deviceType()
         }
       }
-      
+
       console.log(this.digitalData);
       _satellite.track("page-load");
     }

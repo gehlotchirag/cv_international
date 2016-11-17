@@ -4,7 +4,10 @@
 		<div class="wishlisted-count">{{ product.wishlist?.length }}</div>
 	</div> -->
 	<a routerLink="/product/{{product.productId}}">
-		<img [src]="product.imgUrl" class="img-responsive">
+		<img [attr.src]="placeholderLink"
+         [attr.data-lazy-src]="product.imgUrl"
+         [attr.data-productId]="product.productId"
+         class="js-image-lazy">
 		<div class="product-info">
 			<div class="product-name">{{ product.title }}</div>
 			<div class="product-price">
@@ -17,4 +20,10 @@
 			</div>
 		</div>
 	</a>
+  <div (click)="showZoomedImage($event)" class="product-zoom">
+    <span class="image-zoom">
+      <i class="glyphicon glyphicon-zoom-in"></i>
+    </span>
+  </div>
+  <!-- <div class="image-overlay"></div> -->
 </div>

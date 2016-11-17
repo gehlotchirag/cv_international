@@ -17,6 +17,9 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { ObjectKeysPipe } from '../utils';
 import { SwiperModule } from '../../swiper_module/swiper.module';
+import { LoaderComponent } from './loader/loader.component';
+import { OverlayComponent } from './overlay/overlay.component';
+import { RangeSliderComponent } from './range-slider/range-slider.component';
 
 
 
@@ -35,7 +38,10 @@ import { SwiperModule } from '../../swiper_module/swiper.module';
       TestimonialsWidgetComponent,
       PaginationComponent,
       ProductCardComponent,
-      ObjectKeysPipe
+      ObjectKeysPipe,
+      LoaderComponent,
+      OverlayComponent,
+      RangeSliderComponent
     ],
 
     exports: [
@@ -51,7 +57,9 @@ import { SwiperModule } from '../../swiper_module/swiper.module';
       TestimonialsWidgetComponent,
       PaginationComponent,
       ProductCardComponent,
-      ObjectKeysPipe
+      LoaderComponent,
+      RangeSliderComponent,
+      ObjectKeysPipe,
     ],
 
     entryComponents: [
@@ -66,7 +74,8 @@ import { SwiperModule } from '../../swiper_module/swiper.module';
       ProductSliderComponent,
       TestimonialsWidgetComponent,
       PaginationComponent,
-      ProductCardComponent
+      ProductCardComponent,
+      LoaderComponent
     ]
 
 })

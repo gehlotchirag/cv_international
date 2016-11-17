@@ -1,0 +1,14 @@
+<aside id="cv-overlay" class="cv-overlay" [class.show]="modalOptions.show" [ngClass]="'overlay-' + modalOptions.type">
+	<div class="modal-header">
+		<span class="modal-logo">{{ modalOptions.header }}</span>
+	</div>
+	<span class="modal-close" (click)="closeOverlay($event)">Close</span>
+	<div class="modal-inner">
+		<figure *ngIf="modalOptions.type == 'image'" class="has-caption" style="height: 100%;">
+			<img [attr.src]="modalOptions.data?.image" [attr.alt]="modalOptions.data?.content">
+			<figcaption class="caption">
+				<span class="caption-text">{{ modalOptions.data?.content }}</span>
+			</figcaption>
+		</figure>
+	</div>
+</aside>

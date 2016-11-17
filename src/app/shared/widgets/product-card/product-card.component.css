@@ -1,0 +1,48 @@
+.image-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.28);
+  /* opacity: 0.1; */
+  height: 100%;
+  display: none;
+}
+
+.product-zoom {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  background-color: rgba(244,241,235,0.5);
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  border: 1px solid #981937;
+  border-radius: 20px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: opacity 100ms ease-out;
+  -webkit-transition: opacity 100ms ease-out;
+  otransition: opacity 100ms ease-out;
+  transition: opacity 100ms ease-out;
+  line-height: 24px;
+  font-size: 21px;
+  opacity: 0;
+  display: none;
+}
+
+.image-zoom {
+  font-size: 21px;
+  line-height: 2;
+  color: #981937;
+  background-color: transparent;
+}
+
+@media (min-width: 1050px){
+    .product-listing .product-zoom {
+      display: block;
+    }
+    .product-listing:hover .product-zoom {
+      opacity: 1;
+    }
+}

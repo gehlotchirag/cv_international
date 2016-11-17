@@ -1,16 +1,20 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, AfterViewInit, Renderer, ViewChild, ViewChildren, DoCheck, EventEmitter } from '@angular/core';
+import { HostListener, ContentChildren, QueryList } from '@angular/core';
 import { Router, ActivatedRoute, Event, NavigationStart, NavigationEnd } from '@angular/router';
 import { Response } from '@angular/http';
 import { Observable }        from 'rxjs/Observable';
 
+import { ProductCardComponent } from '../shared/widgets/product-card/product-card.component';
+
 import { LiveFilterPipe } from './live-filter.pipe';
 import { ListingService } from './listing.service';
-import Listing from './listing';
 import { CommonSharedService } from '../shared/services/common-shared.service';
 
-declare var _satellite: any;
+import Listing from './listing';
+import ListingProduct from './listing-product'
 
+declare var _satellite: any;
 
 @Component({
   selector: 'cvi-listing',
@@ -28,6 +32,11 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   private tempMobileFilters: any = [];
   private showMobileFilters: boolean = false;
   private paramObj: any = {};
+  private zoomedProduct: ListingProduct = null;
+  private rangeInfoData = {
+    'rangeMin': 0,
+    'rangeMax': 500
+  }
   private sortEntries: any = [
     {
       'key': 'relevance',
@@ -79,7 +88,6 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   ngOnInit(): void {
     // this.loadCategoryList();
     let query, params, page;
-
     this.receivedFilters.subscribe((data: any) => {
       for (let key in data) {
         let appliedValues = data[key];
@@ -201,6 +209,41 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       this.currentUrl = currentUrl;
       this.fetchData(this.paramObj);
     }
+    try{
+      let placeholderImage = this.renderer.selectRootElement('.js-image-lazy');
+      if(placeholderImage){
+        if(this.elementInViewport(placeholderImage)){
+          this.loadImage(placeholderImage);
+        };
+      }
+    }
+    catch(err){}
+  }
+
+  elementInViewport(element: any){
+    var rect = element.getBoundingClientRect();
+    return rect.top >= 0 && rect.left >= 0 && rect.top <= (window.innerHeight || document.documentElement.clientHeight);
+  }
+
+  loadImage(image: any){
+    let img = new Image;
+    let source = image.getAttribute("data-lazy-src");
+    img.onload = function() {
+      if(image.parentElement){
+        image.parentElement.replaceChild(img, image);
+        img.classList.add('img-responsive');
+        img.classList.add('fadein')
+      }
+      else {
+        image.src = source;
+        image.classList.add('img-responsive');
+        image.classList.add('fadein')
+      }
+    }
+    if(null != source){
+      img.src = source;
+    }
+    image.removeAttribute("data-src")
   }
 
   getSortObject(sortObj){
@@ -294,7 +337,6 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       this.tempMobileFilters = this.appliedFilters.slice();
     }
   }
-
 
   private tempAndAppliedFiltersMismatch() {
     if (!this.tempMobileFilters && !this.appliedFilters) {
@@ -550,6 +592,14 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     return 0;
   }
 
+  displayZoomImage(product: ListingProduct) : void{
+    this.zoomedProduct = product;
+  }
+
+  closeZoomedOverlay(event: any): void {
+    this.zoomedProduct = null;
+  }
+
   getFilterString(key: string): string {
     if (this.filterStringObj[key]) {
       return this.filterStringObj[key];
@@ -585,6 +635,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     this.paramObj['page'] = page;
     window.scrollTo(0,0);
     this.fetchData(this.paramObj);
+    this.changeListingUrl(this.paramObj);
   }
 
   hideFilter(): void {

@@ -15,6 +15,9 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
+						<div class="price filter-section">
+							<cvi-range-slider [infoData]="rangeInfoData"></cvi-range-slider>
+						</div>
 						<div class="price filter-section"  *ngFor='let key of filters|keys'>
 							<div class="head" data-toggle="collapse" [attr.data-target]="getDataTarget(key)" aria-expanded="false" [attr.aria-controls]="getAriaControl(key)">
 								<span>{{ key['key'].toUpperCase() }}</span>
@@ -28,7 +31,13 @@
 										<input type="checkbox" [attr.checked]="data.checked ? true : null"
 													 [attr.id]="data.id" (click)="filterClick($event, data)"
 													 aria-label="data.name">
-										<span class="option-text">{{ data.name.toUpperCase() }}</span>
+										<label [attr.for]="data.id" class="option-text">
+											<svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+    										<line [attr.x1]="'10%'" [attr.y1]="'55%'" [attr.x2]="'45%'" [attr.y2]="'90%'" stroke="#981937" stroke-width="4" fill="#918937" stroke-dasharray="270" stroke-dashoffset="270"></line>
+  											<line [attr.x1]="'35%'" [attr.y1]="'90%'" [attr.x2]="'90%'" [attr.y2]="'5%'" stroke="#981937" stroke-width="4" fill="#918937" stroke-dasharray="270" stroke-dashoffset="270"></line>
+											</svg>
+											{{ data.name.toUpperCase() }}
+										</label>
 								</div>
 							</div>
 							<div *ngIf="key.key == 'color'" class="filter-section-options sub-menu-color collapse" [attr.id]="getAriaControl(key)">
@@ -80,9 +89,12 @@
 								</div>
 							</div>
 
+							<cvi-loader *ngIf="(!listing || !listing.results)"></cvi-loader>
+
 							<cvi-product-card *ngFor="let listingProduct of listing?.results"
 																[product]="listingProduct"
-																[showSizeInfo]="!(!0)">
+																[showSizeInfo]="!(!0)"
+																(zoomImageHandler)="displayZoomImage(product)">
 							</cvi-product-card>
 							<div class="clearfix"></div>
 
@@ -115,6 +127,8 @@
 			</div>
 		</span>
 </div>
+
+
 <div class="modal fade hide-lg" tabindex="-1" role="dialog" id="sortModal">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">

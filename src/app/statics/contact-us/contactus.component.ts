@@ -31,9 +31,8 @@ export class ContactUsComponent implements OnInit {
 			this.contactService.submitContactForm(this.user);
 			this.showContactForm = false;
 			document.body.scrollTop = 0;
+			return false;
 		}
-		return false;
-
 	}
 
 	fieldsCheck(){

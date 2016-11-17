@@ -650,6 +650,7 @@ ul.nav.nav-tabs.tabs-widget li a {
     line-height: 30px; } }
 @media only screen and (min-width: 1050px) {
   .top-menu {
+    background-color: #f4f1eb;
     height: 30px;
     line-height: 30px;
     border-bottom: 1px solid #e2e2e2;

@@ -134,7 +134,6 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
           deviceType: this.commonService.deviceType()
         }
       }
-      
       _satellite.track("page-load");
     }
   }
@@ -153,6 +152,9 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       let queryStringIndex = currentUrl.indexOf('?');
       if (queryStringIndex != -1) {
         useUrl = currentUrl.substr(0, queryStringIndex);
+      }
+      if(useUrl.indexOf('/us/') == 0){
+        useUrl = useUrl.slice(3);
       }
       urlPathEntries = (useUrl.split('/')).filter((item) => item !== "");
       if (urlPathEntries && urlPathEntries.length >= 2) {

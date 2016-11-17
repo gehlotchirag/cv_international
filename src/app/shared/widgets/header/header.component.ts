@@ -128,5 +128,22 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
     this.router.navigate(routingArray, { queryParams: queryParam, replaceUrl: true});
   }
 
+  private clearCookieAndDomestic(event){
+    var nameEQ = "internationalIP=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+       var c = ca[i];
+       while (c.charAt(0)==' ') c = c.substring(1,c.length);
+       if (c.indexOf(nameEQ) == 0) {
+           var cookieKeyValArr = c.split("=");
+           if(cookieKeyValArr.length > 1){
+               if(cookieKeyValArr[1] == "true"){
+                   document.cookie = 'internationalIP' +"=" + 'true' + ";" + ";domain=.craftsvilla.com;path=/" +  ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
+               }
+           }
+       }
+    }
+    window.location.href = "http://www.craftsvilla.com";
+  }
 
 }

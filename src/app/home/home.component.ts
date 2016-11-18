@@ -12,6 +12,7 @@ import { CartDetailsService } from '../shared/services/cart-details.service';
 import { CommonSharedService } from '../shared/services/common-shared.service';
 
 declare var _satellite: any;
+declare var digitalData: any;
 
 @Component({
   selector: 'cvi-home',
@@ -28,9 +29,6 @@ export class HomeComponent implements OnInit {
   private componentsData: any;
   private heroBannerData: any = {};
   private extraMenuData: any = {};
-  public digitalData: any = {
-    page: null
-  };
 
   children: Observable<any>;
   cartContents: Product[];
@@ -54,11 +52,13 @@ export class HomeComponent implements OnInit {
   ngAfterViewInit() {
     this.isViewInitialized = true;
     this.updateComponent();
-
     if (typeof _satellite != "undefined") {
-      this.digitalData.page = {
+      digitalData.page = {
         pageInfo: {
           pageName: "Home Page",
+        },
+        currencycode: {
+          currencyCode: "USD"
         },
         category: {
           pageType: "home",
@@ -68,8 +68,6 @@ export class HomeComponent implements OnInit {
           deviceType: this.commonService.deviceType()
         }
       }
-
-      console.log(this.digitalData);
       _satellite.track("page-load");
     }
 

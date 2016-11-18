@@ -25,6 +25,7 @@ import { HttpClientService } from './shared/services/http-client.service';
 import { RoutingHelperDirective } from './shared/directives/routing-helper.directive';
 
 import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
+import { DataHoldingService } from './shared/services/data-holding.service';
 
 @NgModule({
     imports: [
@@ -50,7 +51,8 @@ import { RouterHeaderBindingService } from './shared/services/router-header-bind
       HttpClientService,
       appRoutingProviders,
       RouterHeaderBindingService,
-      { provide: EVENT_MANAGER_PLUGINS, useClass: MultiEventPlugin, multi: true }
+      { provide: EVENT_MANAGER_PLUGINS, useClass: MultiEventPlugin, multi: true },
+      DataHoldingService
     ],
     bootstrap: [ AppComponent ]
 })

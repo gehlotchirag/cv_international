@@ -12,6 +12,7 @@ import { WishListService } from '../shared/services/wish-list.service';
 import { CommonSharedService } from '../shared/services/common-shared.service';
 
 declare var _satellite: any;
+declare var digitalData: any;
 
 @Component({
   selector: 'cvi-product',
@@ -66,9 +67,6 @@ export class ProductComponent implements OnInit, AfterViewInit {
             speed: 600,
         };
     imageUrl: any;
-    public digitalData: any = {
-      page: null
-    };
 
   constructor(private productService : ProductService,
               private cartDetailsService: CartDetailsService,
@@ -92,7 +90,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.stitching_type_text_show = true;
   }
 
-  onImageHover(imageSrc) {
+  onImageHover(imageSrc, event) {
     this.galleryImage = this.elementRef.nativeElement.querySelector('.productImage');
     this.zoomedImage = this.elementRef.nativeElement.querySelector('.zoomed-image');
     this.renderer.setElementStyle(this.zoomedImage, 'display', 'block');
@@ -100,7 +98,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.adjustZoomedImage(event);
   }
 
-  onImageHoverMove() {
+  onImageHoverMove(event) {
     this.adjustZoomedImage(event);
   }
 
@@ -116,9 +114,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     let backgroungPosX = (this.imagePointerX / imageWidth) * 100;
     let backgroungPosY = (this.imagePointerY / imageHeight) * 100;
 
-    this.renderer.setElementStyle(this.zoomedImage, 'background-position-x', '' + backgroungPosX + '%');
-    this.renderer.setElementStyle(this.zoomedImage, 'background-position-y', '' + backgroungPosY + '%');
-
+    this.renderer.setElementStyle(this.zoomedImage, 'background-position', '' + backgroungPosX + '% ' + backgroungPosY + '%');
   }
 
   getDescription(description){
@@ -128,6 +124,9 @@ export class ProductComponent implements OnInit, AfterViewInit {
       try{
         for (var i = 0; i < _descArr.length; i++) {
           var split = _descArr[i].split(':');
+          if(!split[1]){
+            continue;
+          }
           _descObj[split[0].trim()] = split[1].trim();
         }
         this.renderedDescription = _descObj;
@@ -236,9 +235,12 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     if (typeof _satellite != "undefined") {
-      this.digitalData.page = {
+      digitalData.page = {
         pageInfo: {
           pageName: "Product Page",
+        },
+        currencycode: {
+          currencyCode: "USD"
         },
         category: {
           pageType: "Product",
@@ -250,7 +252,6 @@ export class ProductComponent implements OnInit, AfterViewInit {
         }
       }
       
-      console.log(this.digitalData);
       _satellite.track("page-load");
     }
   }
@@ -280,7 +281,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     }
   }
 
-  buyNow(event: any){
+  buyNow(event: any): void {
     this.showBuyLoader = true;
     let cartStream = this.cartDetailsService
                            .addToCart(this.productId, 1)

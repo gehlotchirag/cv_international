@@ -3,6 +3,7 @@ import { Response } from '@angular/http';
 
 import { HttpClientService } from '../../services/http-client.service';
 import { RouterHeaderBindingService } from '../../services/router-header-binding.service';
+import { DataHoldingService } from '../../services/data-holding.service';
 
 import { MegaMenuLinkComponent } from './mega-menu-link.component';
 
@@ -30,16 +31,23 @@ export class MegaMenuComponent implements OnInit {
 
   ngOnInit() {
     let megaMenuUrl = 'api/megamenu/';
-    this.httpClient
-        .get(megaMenuUrl)
-        .map((res: Response) => res.json())
-        .subscribe(
-           (data) => {
-             this.menuCategoriesData = data['d'];
-             RouterHeaderBindingService.setMegaMenuData(data['d']);
-           },
-           (error) => { console.error(error)}
-        );
+    let menuCategoriesData = DataHoldingService.getItem("megamenu");
+    if(!menuCategoriesData){
+      this.httpClient
+          .get(megaMenuUrl)
+          .map((res: Response) => res.json())
+          .subscribe(
+             (data) => {
+               this.menuCategoriesData = data['d'];
+               DataHoldingService.setItem("megamenu", this.menuCategoriesData);
+               RouterHeaderBindingService.setMegaMenuData(data['d']);
+             },
+             (error) => { console.error(error)}
+          );
+    }
+    else {
+      this.menuCategoriesData = menuCategoriesData;
+    }
   }
 
   getSelectedCategory(categoryData){

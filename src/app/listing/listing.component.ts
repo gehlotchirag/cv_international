@@ -15,6 +15,7 @@ import Listing from './listing';
 import ListingProduct from './listing-product'
 
 declare var _satellite: any;
+declare var digitalData: any;
 
 @Component({
   selector: 'cvi-listing',
@@ -73,9 +74,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     'value': 'clear all',
     'id': 'clear all'
   };
-  public digitalData: any = {
-    page: null
-  };
+
 
   constructor(private listingService: ListingService,
     private router: Router,
@@ -128,9 +127,12 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
 
   ngAfterViewInit() {
     if (typeof _satellite != "undefined") {
-      this.digitalData.page = {
+      digitalData.page = {
         pageInfo: {
           pageName: "Listing Page",
+        },
+        currencycode: {
+          currencyCode: "USD"
         },
         category: {
           pageType: "Listing",
@@ -140,8 +142,6 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
           deviceType: this.commonService.deviceType()
         }
       }
-
-      console.log(this.digitalData);
       _satellite.track("page-load");
     }
   }

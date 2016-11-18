@@ -60,7 +60,7 @@
         <img  src="{{galleryImage}}"  class="img-responsive"  on-mouseover="showImage($event, galleryImage)" *ngFor="let galleryImage of galleryImages">
       </div>
       <div class="product-img-container inline pull-left text-center hide-sm">
-        <img (mouseover)="onImageHover(imageUrl)" (mousemove) = "onImageHoverMove()" (mouseout) = "onHoverOut()" src="{{imageUrl}}" class="img-responsive">
+        <img (mouseover)="onImageHover(products.bigUrl, $event)" (mousemove) = "onImageHoverMove($event)" (mouseout) = "onHoverOut()" src="{{imageUrl}}" class="img-responsive">
         <div class="zoomed-image"></div>
       </div>
       <div class="product-img-container pull-left text-center responsive-img-container">
@@ -73,10 +73,6 @@
           </div>
           <div class="swiper-pagination"></div>
         </swiper>
-        <div class="product-img-container text-center" *ngIf="!galleryImages.length > 0">
-          <img (mouseover)="onImageHover(imageUrl)" (mousemove) = "onImageHoverMove()" (mouseout) = "onHoverOut()" src="{{imageUrl}}" class="img-responsive">
-          <div class="zoomed-image"></div>
-        </div>
       </div>
       <div class="product-info-container inline">
         <span class="mob-bg-white">
@@ -154,9 +150,9 @@
             <div class="stitch"></div>
             <div class="add-to-bag occupy fixed-bottom-bar product-buy-btns">
               <button class="btn btn-default add-cart-btn flat-btn purchase" (click)="addToBag($event)">ADD TO CART</button>
-              <button class="btn btn-brand buy-btn flat-btn purchase">
-                <p *ngIf="!showBuyLoader" (click)="buyNow($event)">BUY NOW</p>
-                <div class="cv-loader" *ngIf = "showBuyLoader">
+              <button *ngIf="!showBuyLoader" (click)="buyNow($event)" class="btn btn-brand buy-btn flat-btn purchase">BUY NOW</button>
+              <button *ngIf="showBuyLoader" class="btn btn-brand buy-btn flat-btn purchase">
+                  <div class="cv-loader" *ngIf = "showBuyLoader">
                     <svg width="35px" height="35px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-facebook">
                         <rect x="0" y="0" width="100" height="100" fill="transparent" class="bk"></rect>
                         <g transform="translate(20 50)">

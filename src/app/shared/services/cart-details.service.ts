@@ -73,7 +73,9 @@ export class CartDetailsService {
     let cartStream =  this.httpClient
                           .post(addToCartUrl, body)
                           .publish();
-    cartStream.map((r: Response) => { return r.json() }).pluck('d')
+    cartStream.map((r: Response) => { 
+        return r.json();
+     }).pluck('d')
               .subscribe(
                 (data: CartInfo) => { 
                   this.cartContents = data;

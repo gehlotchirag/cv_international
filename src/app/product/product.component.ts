@@ -90,7 +90,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.stitching_type_text_show = true;
   }
 
-  onImageHover(imageSrc) {
+  onImageHover(imageSrc, event) {
     this.galleryImage = this.elementRef.nativeElement.querySelector('.productImage');
     this.zoomedImage = this.elementRef.nativeElement.querySelector('.zoomed-image');
     this.renderer.setElementStyle(this.zoomedImage, 'display', 'block');
@@ -98,7 +98,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.adjustZoomedImage(event);
   }
 
-  onImageHoverMove() {
+  onImageHoverMove(event) {
     this.adjustZoomedImage(event);
   }
 
@@ -114,9 +114,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     let backgroungPosX = (this.imagePointerX / imageWidth) * 100;
     let backgroungPosY = (this.imagePointerY / imageHeight) * 100;
 
-    this.renderer.setElementStyle(this.zoomedImage, 'background-position-x', '' + backgroungPosX + '%');
-    this.renderer.setElementStyle(this.zoomedImage, 'background-position-y', '' + backgroungPosY + '%');
-
+    this.renderer.setElementStyle(this.zoomedImage, 'background-position', '' + backgroungPosX + '% ' + backgroungPosY + '%');
   }
 
   getDescription(description){
@@ -283,7 +281,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     }
   }
 
-  buyNow(event: any){
+  buyNow(event: any): void {
     this.showBuyLoader = true;
     let cartStream = this.cartDetailsService
                            .addToCart(this.productId, 1)

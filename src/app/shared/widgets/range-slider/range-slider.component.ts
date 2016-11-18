@@ -1,12 +1,12 @@
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import { Input, Renderer, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnChanges, EventEmitter } from '@angular/core';
+import { Input, Output, Renderer, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'cvi-range-slider',
   templateUrl: './range-slider.component.html',
   styleUrls: ['./range-slider.component.css']
 })
-export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy  {
+export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges  {
 
   private elems: { [ids: string]: HTMLElement} = {};
   private elem: HTMLElement;
@@ -28,6 +28,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy  {
   private maxPrice: number = 500
 
   @Input() infoData: any;
+  @Output() rangeChange: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private renderer: Renderer,
               private elementRef: ElementRef) { }
@@ -35,9 +36,29 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy  {
   ngOnInit() {
     this.n = this.infoData = this.infoData || {};
     this.elem = this.elementRef.nativeElement;
-    this.min = this.t.min || this.n.rangeMin || 0;
-    this.max = this.t.max || this.n.rangeMax || 100;
+    this.min =  this.n.rangeMin || 0;
+    this.max =  this.n.rangeMax || 100;
+    this._from = this.n.priceMin || this.min;
+    this._to = this.n.priceMax || this.max;
     // this.minPrice = this.t.minPrice || this.n.priceMin ||
+  }
+
+  ngOnChanges() {
+    try{
+      this.n = this.infoData = this.infoData || {};
+      this._from = this.n.priceMin || this.min;
+      this._to = this.n.priceMax || this.max;
+      this.elems['min'].innerText = "$" + String(this._from);
+      this.elems['from'].style.left = (this._from - this.min) / ((this.max - this.min) / this.elems['range'].offsetWidth) + "px";
+      // this.from(this._from);
+      this.elems['max'].innerText =  "$" + String(this._to);
+      // this.to(this._to);
+      this.elems['to'].style.left = (this._to - this.min) / ((this.max - this.min) / this.elems['range'].offsetWidth) + "px";
+      this.update();
+    }
+    catch(err){
+      
+    }
   }
 
   ngAfterViewInit() {
@@ -53,9 +74,13 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy  {
         this.reset();
       }
 
-      this.elems['min'].innerText = String(this.min);
-      this.elems['max'].innerText = String(this.max);
-
+      this.elems['min'].innerText = "$" + String(this._from);
+      this.elems['from'].style.left = (this._from - this.min) / ((this.max - this.min) / this.elems['range'].offsetWidth) + "px";
+      // this.from(this._from);
+      this.elems['max'].innerText =  "$" + String(this._to);
+      // this.to(this._to);
+      this.elems['to'].style.left = (this._to - this.min) / ((this.max - this.min) / this.elems['range'].offsetWidth) + "px";
+      this.update();
     }
     catch(err){}
   }
@@ -70,6 +95,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy  {
     else if(event.offsetX >= this.elems['to'].offsetLeft){
       this.to(r)
     }
+    this.emitUpdate();
   }
 
   rangeSelectedClick(event: any){
@@ -82,9 +108,10 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy  {
     else{
       this.to(r);
     }
+    this.emitUpdate();
   }
 
-  from(pos: number){
+  from(pos?: number){
     if (pos === undefined)
       return this._from;
     this._from = pos;
@@ -92,18 +119,20 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy  {
     this.update();
   }
 
-  to(pos: number){
+  to(pos?: number){
     if(pos === undefined)
       return this._to;
-      this._to = pos;
-      this.elems['to'].style.left = (pos - this.min) / ((this.max - this.min) / this.elems['range'].offsetWidth) + "px";
-      this.update();
+    this._to = pos;
+    this.elems['to'].style.left = (pos - this.min) / ((this.max - this.min) / this.elems['range'].offsetWidth) + "px";
+    this.update();
   }
 
   update(){
     let elems = this.elems;
     elems['selected'].style.left = elems['from'].offsetLeft + "px";
     elems['selected'].style.width = (elems['to'].offsetLeft - elems['from'].offsetLeft) + "px";
+    elems['min'].innerText = "$"+String(this.from());
+    elems['max'].innerText = "$"+String(this.to());
   }
 
   reset() {
@@ -135,18 +164,15 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy  {
         // el.style.top = elemPos.top + 'px';
         this.handleFromMove();
       });
-    // }
-    // for(let eventObj of this.endEvents){
+
       this.renderer.listen(el, 'mouseup', (event) => {
         this.listenFromMoveFunc();
-      });
-      this.renderer.listen(el, 'mouseout', (event) => {
-        this.listenFromMoveFunc();
+        this.emitUpdate();
       });
       this.renderer.listen(el, 'mouseleave', (event) => {
         this.listenFromMoveFunc();
+        this.emitUpdate();
       });
-    // }
   }
 
   handleToMouseDown(e: any){
@@ -174,12 +200,11 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy  {
     // for(let eventObj of this.endEvents){
       this.renderer.listen(el, 'mouseup', (event) => {
         this.listenToMoveFunc();
-      })
-      this.renderer.listen(el, 'mousout', (event) => {
-        this.listenToMoveFunc();
+        this.emitUpdate();
       })
       this.renderer.listen(el, 'mouseleave', (event) => {
         this.listenToMoveFunc();
+        this.emitUpdate();
       })
     // }
   }
@@ -198,15 +223,18 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy  {
     let toElem = this.elems['to'];
     let rangeElem = this.elems['range'];
     let r = toElem.offsetLeft * ((this.max - this.min) / rangeElem.offsetWidth) + this.min;
-    r = Math.ceil(r / 100) * 100;
-    r = r >= 100 ? r - 1 : r;
+    r = Math.ceil(r / 100 * 100);
+    // r = r >= 100 ? r - 1 : r;
     this._to = r;
     this.update();
   }
 
-
-  ngOnDestroy() {
-
+  private emitUpdate(){
+    let changeObj = {
+      'min': String(this._from),
+      'max': String(this._to)
+    }
+    this.rangeChange.emit(changeObj);
   }
 
 }

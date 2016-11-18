@@ -34,6 +34,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   private showMobileFilters: boolean = false;
   private paramObj: any = {};
   private zoomedProduct: ListingProduct = null;
+  private placeholderImages: HTMLCollectionOf<Element>;
   private rangeInfoData = {
     'rangeMin': 0,
     'rangeMax': 500
@@ -83,6 +84,20 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     private location: Location,
     private commonService: CommonSharedService
   ) {}
+
+  @HostListener('window:scroll', ['$event'])
+  lazyLoadImages(event) {
+    try{
+      this.placeholderImages = document.getElementsByClassName('js-image-lazy');
+      for(var i=0; i< this.placeholderImages.length; i++){
+        let placeholderImage = this.placeholderImages[i]
+        if(this.elementInViewport(placeholderImage)){
+          this.loadImage(placeholderImage);
+        };
+      }
+    }
+    catch(err){}
+  }
 
   ngOnInit(): void {
     // this.loadCategoryList();
@@ -144,6 +159,16 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       }
       _satellite.track("page-load");
     }
+    try{
+      this.placeholderImages = document.getElementsByClassName('js-image-lazy');
+      for(var i=0; i< this.placeholderImages.length; i++){
+        let placeholderImage = this.placeholderImages[i]
+        if(this.elementInViewport(placeholderImage)){
+          this.loadImage(placeholderImage);
+        };
+      }
+    }
+    catch(err){}
   }
 
   ngDoCheck() {
@@ -205,19 +230,14 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       let filters = this.paramObj['params'] ? JSON.parse(this.paramObj['params'])['filters'] : {};
       if (filters) {
         this.receivedFilters.emit(filters);
+        if(filters['price']){
+          this.rangeInfoData['priceMin'] = filters['price'][0]['min'];
+          this.rangeInfoData['priceMax'] = filters['price'][0]['max'];
+        }
       }
       this.currentUrl = currentUrl;
       this.fetchData(this.paramObj);
     }
-    try{
-      let placeholderImage = this.renderer.selectRootElement('.js-image-lazy');
-      if(placeholderImage){
-        if(this.elementInViewport(placeholderImage)){
-          this.loadImage(placeholderImage);
-        };
-      }
-    }
-    catch(err){}
   }
 
   elementInViewport(element: any){
@@ -442,29 +462,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       if (this.appliedFilters.length == 1) {
         this.appliedFilters = [this.clearAllBlock, ...this.appliedFilters];
       }
-      let filterKey = data.key;
-      if (!this.paramObj['params']) {
-        this.paramObj['params'] = JSON.stringify({
-          'filters': {
-            [filterKey]: [data.value.charAt(0).toUpperCase() + data.value.slice(1)]
-          }
-        });
-      }
-      else if (this.paramObj['params']) {
-        let params = JSON.parse(this.paramObj['params']);
-        if (!params['filters']) {
-          params['filters'] = {
-            [filterKey]: [data.value.charAt(0).toUpperCase() + data.value.slice(1)]
-          }
-        }
-        else if (!params['filters'][filterKey]) {
-          params['filters'][filterKey] = [data.value.charAt(0).toUpperCase() + data.value.slice(1)];
-        }
-        else {
-          params['filters'][filterKey].push(data.value.charAt(0).toUpperCase() + data.value.slice(1));
-        }
-        this.paramObj['params'] = JSON.stringify(params);
-      }
+      this.formParamFilter(data.key, data);
       this.paramObj['page'] = 1;
       this.fetchData(this.paramObj);
     }
@@ -497,6 +495,69 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       if (data.key != 'color') {
         this.sortFilterData(data.key);
       }
+    }
+  }
+
+  /*
+  "price": [{
+                 "min": "1000",
+                 "max": "2000"
+             }],
+  */
+  private priceRangeChange(minMaxObj: any){
+    let dataType = "price";
+    let {min, max} = minMaxObj;
+    let dataObj = {
+      "min": min,
+      "max": max
+    }
+    if(!this.paramObj['params']){
+      this.paramObj['params'] = JSON.stringify({
+        'filters': {
+          'price': [dataObj]
+        }
+      })
+    }
+    else if(this.paramObj['params']){
+      let params = JSON.parse(this.paramObj['params']);
+      if(!params['filters']){
+        params['filters'] = {
+          "price": [dataObj]
+        }
+      }
+      else {
+        params['filters']['price'] = [dataObj];
+      }
+      this.paramObj['params'] = JSON.stringify(params);
+    }
+    this.paramObj['page'] = 1;
+    this.fetchData(this.paramObj);
+    this.changeListingUrl(this.paramObj);
+  }
+
+  private formParamFilter(dataType, data) {
+    let filterKey = data.key;
+    if (!this.paramObj['params']) {
+      this.paramObj['params'] = JSON.stringify({
+        'filters': {
+          [filterKey]: [data.value.charAt(0).toUpperCase() + data.value.slice(1)]
+        }
+      });
+    }
+    else if (this.paramObj['params']) {
+      let params = JSON.parse(this.paramObj['params']);
+      if (!params['filters']) {
+        params['filters'] = {
+          [filterKey]: [data.value.charAt(0).toUpperCase() + data.value.slice(1)]
+        }
+      }
+      else if (!params['filters'][filterKey]) {
+        params['filters'][filterKey] = [data.value.charAt(0).toUpperCase() + data.value.slice(1)];
+      }
+      else {
+        params['filters'][filterKey].push(data.value.charAt(0).toUpperCase() + data.value.slice(1));
+      }
+      this.paramObj['params'] = JSON.stringify(params);
     }
   }
 

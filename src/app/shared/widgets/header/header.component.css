@@ -159,7 +159,6 @@
 }
 
 .mobile-nav {
-  padding: 15px;
   display: block;
   color: #000;
   border-bottom: 1px solid #adaeaf;
@@ -169,6 +168,9 @@
 .mobile-nav a {
   color: inherit;
   text-decoration: none;
+  padding: 15px;
+  display: block;
+  cursor: pointer;
 }
 
 .ico-arrow {

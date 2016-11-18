@@ -16,7 +16,7 @@
 							</button>
 						</div>
 						<div class="price filter-section">
-							<cvi-range-slider [infoData]="rangeInfoData"></cvi-range-slider>
+							<cvi-range-slider [infoData]="rangeInfoData" (rangeChange)="priceRangeChange($event)"></cvi-range-slider>
 						</div>
 						<div class="price filter-section"  *ngFor='let key of filters|keys'>
 							<div class="head" data-toggle="collapse" [attr.data-target]="getDataTarget(key)" aria-expanded="false" [attr.aria-controls]="getAriaControl(key)">

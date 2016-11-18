@@ -129,7 +129,7 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   }
 
   private clearCookieAndDomestic(event){
-    var nameEQ = "internationalIP=";
+    var nameEQ = "showInternational=";
     var ca = document.cookie.split(';');
     for(var i=0;i < ca.length;i++) {
        var c = ca[i];
@@ -138,7 +138,7 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
            var cookieKeyValArr = c.split("=");
            if(cookieKeyValArr.length > 1){
                if(cookieKeyValArr[1] == "true"){
-                   document.cookie = 'internationalIP' +"=" + 'true' + ";" + ";domain=.craftsvilla.com;path=/" +  ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
+                   document.cookie = 'showInternational' +"=" + 'true' + ";" + ";domain=.craftsvilla.com;path=/" +  ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
                }
            }
        }

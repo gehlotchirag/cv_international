@@ -50,4 +50,9 @@ export class ListingService {
                .toPromise();
   }
 
+  getPremiumFilters(): any{
+    this.filtersUrl = 'api/premium/filters';
+    this.getFilterList();
+  }
+
 }

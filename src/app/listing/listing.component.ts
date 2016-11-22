@@ -121,13 +121,13 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     if (typeof _satellite != "undefined") {
       digitalData.page = {
         pageInfo: {
-          pageName: "Listing Page",
+          pageName: this.router.url.indexOf("/premium") > -1 ? "Premium Page" : "Listing Page",
         },
         currencycode: {
           currencyCode: "USD"
         },
         category: {
-          pageType: "Listing",
+          pageType: this.router.url.indexOf("/premium") > -1 ? "Premium" : "Listing",
           pageFilter: this.appliedFilters
         },
         device: {
@@ -239,6 +239,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   private changeListingUrl(paramObj?: any): void {
     let pushStateString = '';
     let urlPath = this.router.url.indexOf("/premium") > -1 ? "/premium" : "/category";   
+    let initUrlPath = this.router.url.indexOf("/us/") > -1 ? "/us" : "";
     if (paramObj) {
       let params = paramObj['params'] ? paramObj['params'] : {};
       let page = paramObj['page'] ? paramObj['page'] : 1;
@@ -246,26 +247,30 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       let categoryIdArr = JSON.parse(params)['categoryId'];
       categoryIdArr = categoryIdArr ?  categoryIdArr : [];
       if(!categoryIdArr || categoryIdArr.length > 1){
-        pushStateString = `` + urlPath + `?query=${query}&params=${encodeURIComponent(params)}&page=${page}`;
+        pushStateString = `` + initUrlPath + urlPath + `?query=${query}&params=${encodeURIComponent(params)}&page=${page}`;
       }
       else {
         let categoryId = categoryIdArr[0];
-        pushStateString = `` + urlPath + `/${categoryId}?query=${query}&params=${encodeURIComponent(params)}&page=${page}`;
+        pushStateString = `` + initUrlPath + urlPath + `/${categoryId}?query=${query}&params=${encodeURIComponent(params)}&page=${page}`;
       }
 
       if(urlPath === "/premium"){
-        pushStateString = `` + urlPath + `?query=${query}&params=${encodeURIComponent(params)}&page=${page}&premium=1`;
+        pushStateString = `` + initUrlPath + urlPath + `?query=${query}&params=${encodeURIComponent(params)}&page=${page}&premium=1`;
       }
     }
     else {
       if(urlPath === "/premium"){
-        pushStateString = '' + urlPath + '?premium=1';
+        pushStateString = '' + initUrlPath + urlPath + '?premium=1';
       }else{
-        pushStateString = '' + urlPath + '';
+        pushStateString = '' + initUrlPath + urlPath + '';
       }
     }
     this.currentUrl = `${pushStateString}`;
-    window.history.pushState(null, "Craftsvilla Listing", pushStateString);
+    if(urlPath === "/premium"){
+      window.history.pushState(null, "Craftsvilla Premium", pushStateString);
+    }else{
+      window.history.pushState(null, "Craftsvilla Listing", pushStateString);
+    }
   }
 
   getDataTarget(key): string {

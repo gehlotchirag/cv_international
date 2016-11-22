@@ -1352,7 +1352,7 @@ ul.nav.nav-tabs.tabs-widget li a {
     background-color: white;
     height: 100%;
     z-index: 100;
-    display: none; }
+    visibility: hidden; }
     .listing-container .filter .header {
       height: 50px;
       line-height: 50px;

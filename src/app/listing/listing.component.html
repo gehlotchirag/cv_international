@@ -8,7 +8,7 @@
 				  <li class="active">{{ listing.name  }}</li>
 				</ol> -->
 				<div class="listing-container">
-					<div class="filter bg-white inline pull-left" [style.display]="showMobileFilters ? 'block': 'none' ">
+					<div class="filter bg-white inline pull-left clearfix" [style.visibility]="showMobileFilters || !isMobile ? 'visible': 'hidden' ">
 						<div class="header">
 							<strong class="pull-left">Filter by</strong>
 							<button type="button" class="close pull-right hide-lg" aria-label="Close" (click)="hideMobileFilters()">
@@ -16,7 +16,7 @@
 							</button>
 						</div>
 						<div class="price filter-section">
-							<cvi-range-slider [infoData]="rangeInfoData" (rangeChange)="priceRangeChange($event)"></cvi-range-slider>
+							<cvi-range-slider [infoData]="rangeInfoData" [changeTriggerCount]="rangeTriggerCount" (rangeChange)="priceRangeChange($event)"></cvi-range-slider>
 						</div>
 						<div class="price filter-section"  *ngFor='let key of filters|keys'>
 							<div class="head" data-toggle="collapse" [attr.data-target]="getDataTarget(key)" aria-expanded="false" [attr.aria-controls]="getAriaControl(key)">

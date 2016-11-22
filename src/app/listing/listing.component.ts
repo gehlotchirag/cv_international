@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit, AfterViewInit, Renderer, ViewChild, ViewChildren, DoCheck, EventEmitter } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, Renderer, ViewChild, ViewChildren, DoCheck, EventEmitter } from '@angular/core';
 import { HostListener, ContentChildren, QueryList } from '@angular/core';
 import { Router, ActivatedRoute, Event, NavigationStart, NavigationEnd } from '@angular/router';
 import { Response } from '@angular/http';
@@ -16,6 +16,7 @@ import ListingProduct from './listing-product'
 
 declare var _satellite: any;
 declare var digitalData: any;
+declare var _isMobile: any;
 
 @Component({
   selector: 'cvi-listing',
@@ -23,7 +24,7 @@ declare var digitalData: any;
   styleUrls: ['./listing.component.css'],
   providers: [ ListingService, CommonSharedService ],
 })
-export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
+export class ListingComponent implements OnInit, DoCheck, AfterViewInit, OnDestroy {
 
   private listing: Listing;
   private filters: any = {};
@@ -39,6 +40,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     'rangeMin': 0,
     'rangeMax': 500
   }
+  private rangeTriggerCount: number = 0;
   private sortEntries: any = [
     {
       'key': 'relevance',
@@ -66,16 +68,15 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     'value': 'Popular',
     'name': 'Popularity'
   }
-
+  private tempPriceObj: any = {};
   private currentUrl: string = "";
-
+  private isMobile: boolean = _isMobile;
   private clearAllBlock: any = {
     'name': 'clear all',
     'key': 'clear all',
     'value': 'clear all',
     'id': 'clear all'
   };
-
 
   constructor(private listingService: ListingService,
     private router: Router,
@@ -86,7 +87,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   ) {}
 
   @HostListener('window:scroll', ['$event'])
-  lazyLoadImages(event) {
+  lazyLoadImages(event?: any) {
     try{
       this.placeholderImages = document.getElementsByClassName('js-image-lazy');
       for(var i=0; i< this.placeholderImages.length; i++){
@@ -159,16 +160,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       }
       _satellite.track("page-load");
     }
-    try{
-      this.placeholderImages = document.getElementsByClassName('js-image-lazy');
-      for(var i=0; i< this.placeholderImages.length; i++){
-        let placeholderImage = this.placeholderImages[i]
-        if(this.elementInViewport(placeholderImage)){
-          this.loadImage(placeholderImage);
-        };
-      }
-    }
-    catch(err){}
+    this.lazyLoadImages();
   }
 
   ngDoCheck() {
@@ -231,8 +223,14 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       if (filters) {
         this.receivedFilters.emit(filters);
         if(filters['price']){
-          this.rangeInfoData['priceMin'] = filters['price'][0]['min'];
-          this.rangeInfoData['priceMax'] = filters['price'][0]['max'];
+          let min = parseInt(filters['price'][0]['min']);
+          let max = parseInt(filters['price'][0]['max']);
+          this.rangeInfoData['priceMin'] = min;
+          this.rangeInfoData['priceMax'] = max;
+          this.tempPriceObj = {
+            'min': min,
+            'max': max
+          }
         }
       }
       this.currentUrl = currentUrl;
@@ -240,9 +238,14 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     }
   }
 
+  ngOnDestroy() {
+    this.receivedFilters.unsubscribe();
+  }
+
   elementInViewport(element: any){
     var rect = element.getBoundingClientRect();
-    return rect.top >= 0 && rect.left >= 0 && rect.top <= (window.innerHeight || document.documentElement.clientHeight);
+    let height = window.innerHeight || document.documentElement.clientHeight;
+    return rect.top >= 0 && rect.left >= 0 && ( rect.top <= height + 100 || rect.top <= height - 100 );
   }
 
   loadImage(image: any){
@@ -355,6 +358,9 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
         .filter((key) => key != 'color')
         .forEach((key) => this.sortFilterData(key));
       this.tempMobileFilters = this.appliedFilters.slice();
+      this.rangeInfoData['priceMin'] = this.rangeInfoData['priceMin'];
+      this.rangeInfoData['priceMax'] = this.rangeInfoData['priceMax'];
+      this.rangeTriggerCount++;
     }
   }
 
@@ -370,7 +376,11 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     let mappedTempFiltersString = this.tempMobileFilters.map((item) => item.id).sort().join(' ');
     let mappedAppliedFiltersString = this.appliedFilters.map((item) => item.id).sort().join(' ');
     if (mappedTempFiltersString === mappedAppliedFiltersString) {
-      return false;
+      let priceMinSame = this.tempPriceObj['min'] == this.rangeInfoData['priceMin'];
+      let priceMaxSame = this.tempPriceObj['max'] == this.rangeInfoData['priceMax'];
+      if(priceMinSame && priceMaxSame){
+        return false;
+      }
     }
     return true;
   }
@@ -392,15 +402,26 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
           tempJSON['filters'][filterKey].push(data.value.charAt(0).toUpperCase() + data.value.slice(1));
         }
       }
+      tempJSON['filter']['price'] = [{
+        "min": this.tempPriceObj['min'],
+        "max": this.tempPriceObj['max']
+      }]
       this.paramObj['params'] = JSON.stringify(tempJSON);
     }
     else {
       if (paramString && JSON.parse(paramString)['filters']) {
         let tempJSON = JSON.parse(paramString);
         delete tempJSON['filters'];
+        if(this.tempPriceObj){
+            tempJSON['filters']['price'] = [{
+              'min': this.tempPriceObj['min'],
+              'max': this.tempPriceObj['max']
+            }]
+        }
         this.paramObj['params'] = JSON.stringify(tempJSON);
       }
     }
+    this.tempPriceObj = {};
     this.fetchData(this.paramObj);
     this.changeListingUrl(this.paramObj);
   }
@@ -427,6 +448,9 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       this.paramObj['params'] = JSON.stringify(params);
     }
     this.paramObj['page'] = 1;
+    this.rangeInfoData['priceMin'] = this.rangeInfoData['rangeMin'];
+    this.rangeInfoData['priceMax'] = this.rangeInfoData['rangeMax'];
+    this.tempPriceObj = {};
     this.fetchData(this.paramObj);
     this.changeListingUrl(this.paramObj);
     this.showMobileFilters = false;
@@ -505,34 +529,42 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
              }],
   */
   private priceRangeChange(minMaxObj: any){
-    let dataType = "price";
-    let {min, max} = minMaxObj;
-    let dataObj = {
-      "min": min,
-      "max": max
-    }
-    if(!this.paramObj['params']){
-      this.paramObj['params'] = JSON.stringify({
-        'filters': {
-          'price': [dataObj]
-        }
-      })
-    }
-    else if(this.paramObj['params']){
-      let params = JSON.parse(this.paramObj['params']);
-      if(!params['filters']){
-        params['filters'] = {
-          "price": [dataObj]
-        }
+    if(!_isMobile){
+      let dataType = "price";
+      let {min, max} = minMaxObj;
+      let dataObj = {
+        "min": min,
+        "max": max
       }
-      else {
-        params['filters']['price'] = [dataObj];
+      if(!this.paramObj['params']){
+        this.paramObj['params'] = JSON.stringify({
+          'filters': {
+            'price': [dataObj]
+          }
+        })
       }
-      this.paramObj['params'] = JSON.stringify(params);
+      else if(this.paramObj['params']){
+        let params = JSON.parse(this.paramObj['params']);
+        if(!params['filters']){
+          params['filters'] = {
+            "price": [dataObj]
+          }
+        }
+        else {
+          params['filters']['price'] = [dataObj];
+        }
+        this.paramObj['params'] = JSON.stringify(params);
+      }
+      this.paramObj['page'] = 1;
+      this.fetchData(this.paramObj);
+      this.changeListingUrl(this.paramObj);
     }
-    this.paramObj['page'] = 1;
-    this.fetchData(this.paramObj);
-    this.changeListingUrl(this.paramObj);
+    else{
+      this.tempPriceObj = {
+        'min': minMaxObj['min'],
+        'max': minMaxObj['max']
+      }
+    }
   }
 
   private formParamFilter(dataType, data) {
@@ -690,6 +722,9 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
 
   toggleMobileFiltersShow(show: boolean) {
     this.showMobileFilters = show;
+    if(this.rangeTriggerCount == 0){
+      this.rangeTriggerCount++;
+    }
   }
 
   onPageChange(page): void {

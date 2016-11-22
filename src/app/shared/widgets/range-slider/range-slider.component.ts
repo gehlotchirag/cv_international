@@ -1,88 +1,63 @@
 import { Component, OnInit, AfterViewInit, OnChanges, EventEmitter } from '@angular/core';
-import { Input, Output, Renderer, ElementRef } from '@angular/core';
+import { Input, Output, Renderer } from '@angular/core';
+
+declare var _isMobile: any;
 
 @Component({
   selector: 'cvi-range-slider',
   templateUrl: './range-slider.component.html',
   styleUrls: ['./range-slider.component.css']
 })
-export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges  {
+export class RangeSliderComponent implements OnChanges  {
 
   private elems: { [ids: string]: HTMLElement} = {};
-  private elem: HTMLElement;
   private _from: number;
   private _to: number;
   private min: number;
   private max: number;
-  private t: any = {};
   private n: any = {};
+  private pointerPrefix : string = _isMobile ? 'touch': 'mouse';
 
-  private moveEvents: string[] = ['mousemove', 'touchmove', 'pointermove'];
-  private endEvents: any[] = [{key: 'mouseup', target: 'mousemove'}, {key: 'touchend', target: 'touchstart'},{key: 'pointerup', target: 'pointerdown'}];
-  // private listenFromMoveFunc: { [ID: string]: Function } = {};
   private listenFromMoveFunc: Function;
-  // private listenToMoveFunc: { [ID: string]: Function } = {};
   private listenToMoveFunc: Function;
 
-  private minPrice: number = 0;
-  private maxPrice: number = 500
-
   @Input() infoData: any;
+  @Input() changeTriggerCount: any;
   @Output() rangeChange: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private renderer: Renderer,
-              private elementRef: ElementRef) { }
-
-  ngOnInit() {
-    this.n = this.infoData = this.infoData || {};
-    this.elem = this.elementRef.nativeElement;
-    this.min =  this.n.rangeMin || 0;
-    this.max =  this.n.rangeMax || 100;
-    this._from = this.n.priceMin || this.min;
-    this._to = this.n.priceMax || this.max;
-    // this.minPrice = this.t.minPrice || this.n.priceMin ||
-  }
+  constructor(private renderer: Renderer) { }
 
   ngOnChanges() {
+    this.rangeUpdate();
+  }
+
+  ngAfterViewInit(){
+    this.rangeUpdate();
+  }
+
+  rangeUpdate(){
     try{
       this.n = this.infoData = this.infoData || {};
+      this.min =  this.n.rangeMin || 0;
+      this.max =  this.n.rangeMax || 100;
       this._from = this.n.priceMin || this.min;
       this._to = this.n.priceMax || this.max;
+      if(!this.elems['from']) this.elems['from'] = this.renderer.selectRootElement('.slider .from');
+      if(!this.elems['to']) this.elems['to'] = this.renderer.selectRootElement('.slider .to');
+      if(!this.elems['range']) this.elems['range'] = this.renderer.selectRootElement('.slider .range');
+      if(!this.elems['selected']) this.elems['selected'] = this.renderer.selectRootElement('.slider .range.selected');
+      if(!this.elems['min']) this.elems['min'] = this.renderer.selectRootElement('.slider-label .min');
+      if(!this.elems['max']) this.elems['max'] = this.renderer.selectRootElement('.slider-label .max');
+
       this.elems['min'].innerText = "$" + String(this._from);
       this.elems['from'].style.left = (this._from - this.min) / ((this.max - this.min) / this.elems['range'].offsetWidth) + "px";
-      // this.from(this._from);
       this.elems['max'].innerText =  "$" + String(this._to);
-      // this.to(this._to);
       this.elems['to'].style.left = (this._to - this.min) / ((this.max - this.min) / this.elems['range'].offsetWidth) + "px";
       this.update();
     }
     catch(err){
-      
+      console.error(err);
     }
-  }
-
-  ngAfterViewInit() {
-    try {
-      this.elems['from'] = this.renderer.selectRootElement('.slider .from');
-      this.elems['to'] = this.renderer.selectRootElement('.slider .to');
-      this.elems['range'] = this.renderer.selectRootElement('.slider .range');
-      this.elems['selected'] = this.renderer.selectRootElement('.slider .range.selected');
-      this.elems['min'] = this.renderer.selectRootElement('.slider-label .min');
-      this.elems['max'] = this.renderer.selectRootElement('.slider-label .max');
-
-      if(!this.infoData){
-        this.reset();
-      }
-
-      this.elems['min'].innerText = "$" + String(this._from);
-      this.elems['from'].style.left = (this._from - this.min) / ((this.max - this.min) / this.elems['range'].offsetWidth) + "px";
-      // this.from(this._from);
-      this.elems['max'].innerText =  "$" + String(this._to);
-      // this.to(this._to);
-      this.elems['to'].style.left = (this._to - this.min) / ((this.max - this.min) / this.elems['range'].offsetWidth) + "px";
-      this.update();
-    }
-    catch(err){}
   }
 
   rangeClick(event: any){
@@ -143,70 +118,71 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges  {
     this.update()
   }
 
-  handleFromMouseDown(e: any){
+  handleFromDown(e: any){
     let el = this.elems['from'];
     let offsetLeft = el.offsetLeft;
     let offsetTop = el.offsetTop;
     let pageX = e.pageX;
     let pageY = e.pageY;
-    // for(let eventType of this.moveEvents){
-      this.listenFromMoveFunc = this.renderer.listen(el, 'mousemove' , (event) => {
-        let posObj = {
-          left: offsetLeft + (event.pageX - pageX),
-          top: offsetTop + (event.pageY - pageY)
-        }
-        let elemPos = ((pos) => {
-          return {
-            left: Math.min(Math.max(0, pos.left), this.elems['to'].offsetLeft - this.elems['to'].offsetWidth / 2)
-          }
-        })(posObj);
-        el.style.left = elemPos.left + 'px';
-        // el.style.top = elemPos.top + 'px';
-        this.handleFromMove();
-      });
 
-      this.renderer.listen(el, 'mouseup', (event) => {
-        this.listenFromMoveFunc();
-        this.emitUpdate();
-      });
-      this.renderer.listen(el, 'mouseleave', (event) => {
-        this.listenFromMoveFunc();
-        this.emitUpdate();
-      });
+    this.listenFromMoveFunc = this.renderer.listen(el, `${this.pointerPrefix}move` , (event) => {
+      let posObj = {
+        left: offsetLeft + (event.pageX - pageX),
+        top: offsetTop + (event.pageY - pageY)
+      }
+      let elemPos = ((pos) => {
+        return {
+          left: Math.min(Math.max(0, pos.left), this.elems['to'].offsetLeft - this.elems['to'].offsetWidth / 2)
+        }
+      })(posObj);
+      el.style.left = elemPos.left + 'px';
+      this.handleFromMove();
+    });
+
+    let endEvent = _isMobile ? 'touchend': 'mouseup'
+
+    this.renderer.listen(el, endEvent, (event) => {
+      this.listenFromMoveFunc();
+      this.emitUpdate();
+    });
+
+    this.renderer.listen(el, `${this.pointerPrefix}leave`, (event) => {
+      this.listenFromMoveFunc();
+      this.emitUpdate();
+    });
   }
 
-  handleToMouseDown(e: any){
+  handleToDown(e: any){
     let el = this.elems['to'];
     let offsetLeft = el.offsetLeft;
     let offsetTop = el.offsetTop;
     let pageX = e.pageX;
     let pageY = e.pageY;
-    // for( let eventType of this.moveEvents){
-      this.listenToMoveFunc = this.renderer.listen(el, 'mousemove', (event) => {
-        let posObj = {
-          left: offsetLeft + (event.pageX - pageX),
-          top: offsetTop + (event.pageY - pageY)
+
+    this.listenToMoveFunc = this.renderer.listen(el, `${this.pointerPrefix}move`, (event) => {
+      let posObj = {
+        left: offsetLeft + (event.pageX - pageX),
+        top: offsetTop + (event.pageY - pageY)
+      }
+      let elemPos = ((pos) => {
+        return {
+          left: Math.max(Math.min(this.elems['range'].offsetWidth, pos.left), this.elems['from'].offsetLeft + this.elems['from'].offsetWidth / 2)
         }
-        let elemPos = ((pos) => {
-          return {
-            left: Math.max(Math.min(this.elems['range'].offsetWidth, pos.left), this.elems['from'].offsetLeft + this.elems['from'].offsetWidth / 2)
-          }
-        })(posObj);
-        el.style.left = elemPos.left + 'px';
-        // el.style.top = elemPos.top + 'px';
-        this.handleToMove();
-      });
-    // }
-    // for(let eventObj of this.endEvents){
-      this.renderer.listen(el, 'mouseup', (event) => {
-        this.listenToMoveFunc();
-        this.emitUpdate();
-      })
-      this.renderer.listen(el, 'mouseleave', (event) => {
-        this.listenToMoveFunc();
-        this.emitUpdate();
-      })
-    // }
+      })(posObj);
+      el.style.left = elemPos.left + 'px';
+      this.handleToMove();
+    });
+
+    let endEvent = _isMobile ? 'touchend': 'mouseup';
+
+    this.renderer.listen(el, endEvent, (event) => {
+      this.listenToMoveFunc();
+      this.emitUpdate();
+    });
+    this.renderer.listen(el, `${this.pointerPrefix}leave`, (event) => {
+      this.listenToMoveFunc();
+      this.emitUpdate();
+    });
   }
 
   handleFromMove(){

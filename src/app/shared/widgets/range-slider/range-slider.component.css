@@ -50,13 +50,13 @@
     border: solid 2px rgb(152, 25, 55);
 }
 
-.slider-cnt .slider .from {
+/*.slider-cnt .slider .from {
     left: 0;
-}
+}*/
 
-.slider-cnt .slider .to {
+/*.slider-cnt .slider .to {
     left: 100%;
-}
+}*/
 
 .slider-cnt .slider .from:after, .slider-cnt .slider .to:after {
     content: ' ';

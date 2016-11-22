@@ -27,24 +27,38 @@ export class ListingService {
   }
 
   getListingList(paramObj: Object): any {
-    let  query, params, page;
+    let  query, params, page, premium;
     if(paramObj){
       query = paramObj['query'];
       params = paramObj['params'];
       page = paramObj['page'];
+      premium = paramObj['premium']
     }
     let searchObj = {
       query: query ? query : '',
       params: isDefined(params) && !isEmpty(params) ? params : {},
-      page: page && !isNaN(page) ? page : 1
+      page: page && !isNaN(page) ? page : 1,
+      premium
     }
+
+    if(premium === 1){
+      searchObj.premium = premium;
+    }
+   
     return this.httpClient
                 .get(this.listingsUrl, searchObj)
                 .toPromise()
   }
 
   getFilterList() {
+    this.filtersUrl = 'api/category/1/filters';
+    return this.httpClient
+               .get(this.filtersUrl)
+               .toPromise();
+  }
 
+  getPremiumFilters(): any{
+    this.filtersUrl = 'api/premium/filters';
     return this.httpClient
                .get(this.filtersUrl)
                .toPromise();

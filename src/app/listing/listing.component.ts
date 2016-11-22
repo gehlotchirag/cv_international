@@ -213,6 +213,9 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   }
 
   fetchData(paramObj?: any) {
+    if(this.router.url === "/premium"){
+      paramObj.premium = 1;
+    }
     this.listingService
       .getListingList(paramObj)
       .then((listing: Response) => {
@@ -235,6 +238,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
 
   private changeListingUrl(paramObj?: any): void {
     let pushStateString = '';
+    let urlPath = this.router.url.indexOf("/premium") > -1 ? "/premium" : "/category";   
     if (paramObj) {
       let params = paramObj['params'] ? paramObj['params'] : {};
       let page = paramObj['page'] ? paramObj['page'] : 1;
@@ -242,15 +246,23 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       let categoryIdArr = JSON.parse(params)['categoryId'];
       categoryIdArr = categoryIdArr ?  categoryIdArr : [];
       if(!categoryIdArr || categoryIdArr.length > 1){
-        pushStateString = `/category?query=${query}&params=${encodeURIComponent(params)}&page=${page}`
+        pushStateString = `` + urlPath + `?query=${query}&params=${encodeURIComponent(params)}&page=${page}`;
       }
       else {
         let categoryId = categoryIdArr[0];
-        pushStateString = `/category/${categoryId}?query=${query}&params=${encodeURIComponent(params)}&page=${page}`
+        pushStateString = `` + urlPath + `/${categoryId}?query=${query}&params=${encodeURIComponent(params)}&page=${page}`;
+      }
+
+      if(urlPath === "/premium"){
+        pushStateString = `` + urlPath + `?query=${query}&params=${encodeURIComponent(params)}&page=${page}&premium=1`;
       }
     }
     else {
-      pushStateString = '/category'
+      if(urlPath === "/premium"){
+        pushStateString = '' + urlPath + '?premium=1';
+      }else{
+        pushStateString = '' + urlPath + '';
+      }
     }
     this.currentUrl = `${pushStateString}`;
     window.history.pushState(null, "Craftsvilla Listing", pushStateString);

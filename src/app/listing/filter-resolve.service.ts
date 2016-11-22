@@ -15,6 +15,18 @@ export class FilterResolveService implements Resolve<Listing> {
 
   resolve(route: ActivatedRouteSnapshot): Observable<any>|Promise<any>|any {
 
+    if(route.url[0].path === "premium"){
+      return this.ls.getPremiumFilters()
+               .then(filter => {
+                 if(filter){
+                    return filter.json();
+                 }
+                 else {
+                   return {};
+                 }
+               });      
+    }
+
     return this.ls.getFilterList()
                .then(filter => {
                  if(filter){

@@ -16,6 +16,13 @@ const listingRoutes: Routes = [
     }
   },
   {
+    path: 'premium',
+    component: ListingComponent,
+    resolve: {
+      filters: FilterResolveService 
+    }
+  },
+  {
     path: 'category/:id',
     component: ListingComponent,
     resolve: {

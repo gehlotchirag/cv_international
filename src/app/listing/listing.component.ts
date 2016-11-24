@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit, AfterViewInit, Renderer, ViewChild, ViewChildren, DoCheck, EventEmitter } from '@angular/core';
+import { Component, OnInit, Renderer, ViewChild, ViewChildren, DoCheck, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, Event, NavigationStart, NavigationEnd } from '@angular/router';
 import { Response } from '@angular/http';
 import { Observable }        from 'rxjs/Observable';
@@ -19,7 +19,7 @@ declare var digitalData: any;
   styleUrls: ['./listing.component.css'],
   providers: [ ListingService, CommonSharedService ],
 })
-export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
+export class ListingComponent implements OnInit, DoCheck {
 
   private listing: Listing;
   private filters: any = {};
@@ -29,6 +29,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
   private tempMobileFilters: any = [];
   private showMobileFilters: boolean = false;
   private paramObj: any = {};
+  private pageTracking: boolean = true;
   private sortEntries: any = [
     {
       'key': 'relevance',
@@ -117,24 +118,27 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       (error) => console.error(error))
   }
 
-  ngAfterViewInit() {
+  trackPage(listing) {
     if (typeof _satellite != "undefined") {
-      digitalData.page = {
-        pageInfo: {
-          pageName: this.router.url.indexOf("/premium") > -1 ? "Premium Page" : "Listing Page",
+      let categoryName = listing.category_name ? listing.category_name : 'all'
+      digitalData.page={
+        pageInfo:{
+          pageName:this.router.url.indexOf("/premium") > -1 ? "category: premium" : "category:" + categoryName,
+        },
+        category:{
+          pageType:"category",
+          subCategory0: categoryName,
+          subCategory1: "",
+        },
+        device:{
+          deviceType: this.commonService.deviceType()
         },
         currencycode: {
           currencyCode: "USD"
-        },
-        category: {
-          pageType: this.router.url.indexOf("/premium") > -1 ? "Premium" : "Listing",
-          pageFilter: this.appliedFilters
-        },
-        device: {
-          deviceType: this.commonService.deviceType()
         }
-      }
+      } 
       _satellite.track("page-load");
+      this.pageTracking = false;
     }
   }
 
@@ -221,6 +225,9 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       .then((listing: Response) => {
         if (listing) {
           this.listing = listing.json().d;
+          if(this.pageTracking){
+            this.trackPage(listing.json().d);
+          }
         }
       })
   }
@@ -356,6 +363,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
         this.paramObj['params'] = JSON.stringify(tempJSON);
       }
     }
+    this.filterTracking(this.paramObj);
     this.fetchData(this.paramObj);
     this.changeListingUrl(this.paramObj);
   }
@@ -446,6 +454,7 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
     else {
       this.removeFilterBlock(data, event);
     }
+    this.filterTracking(this.paramObj);
     this.changeListingUrl(this.paramObj);
   }
 
@@ -587,12 +596,33 @@ export class ListingComponent implements OnInit, DoCheck, AfterViewInit {
       'value': value,
       'name': event.target.innerText
     }
+    if(typeof _satellite != 'undefined') {
+      digitalData.sortType = {
+        sortType : this.selectedSort.value,
+      }
+      _satellite.track("sorting-used");
+    }
     let params = this.paramObj['params'] ? JSON.parse(this.paramObj['params']) : {};
     params['sort'] = { [key]: value };
     this.paramObj['params'] = JSON.stringify(params);
     this.fetchData(this.paramObj);
     this.changeListingUrl(this.paramObj);
   }
+
+  filterTracking(paramObj){
+    let filterString = "";
+    let obj =  JSON.parse(paramObj['params']).filters
+    Object.keys(obj).forEach(function(key, index) {
+      filterString = "" + filterString + key + ":" + obj[key].toString() + "|";
+    });
+    if(typeof _satellite != 'undefined') {
+      digitalData = {
+        filter: filterString
+      },
+      _satellite.track("filter-used")
+    }
+  }
+
 
   toggleMobileFiltersShow(show: boolean) {
     this.showMobileFilters = show;

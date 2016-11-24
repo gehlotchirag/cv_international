@@ -16,9 +16,9 @@
             <div class="item" *ngFor="let productArray of productDblArray; let i = index"
                   [class.active]="i == 0">
               <div class="product-listing col-sm-3 col-xs-6"
-                *ngFor="let product of productArray">
+                *ngFor="let product of productArray; let i = index">
                 <!-- <span class="glyphicon glyphicon-heart-empty product-wishlist"></span> -->
-                <a routerLink="/product/{{product.productId}}">
+                <a routerLink="/product/{{product.productId}}" (click)="feedClick(product, i+1)">
                   <img [src]="product.imgUrl" class="img-responsive">
                   <div class="product-info">
                     <div class="product-name">{{ product.productName }}</div>

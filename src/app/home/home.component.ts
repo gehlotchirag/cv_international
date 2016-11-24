@@ -52,10 +52,11 @@ export class HomeComponent implements OnInit {
   ngAfterViewInit() {
     this.isViewInitialized = true;
     this.updateComponent();
+
     if (typeof _satellite != "undefined") {
-      digitalData.page = {
-        pageInfo: {
-          pageName: "Home Page",
+       digitalData.page={
+        pageInfo:{
+          pageName:"home page",
         },
         currencycode: {
           currencyCode: "USD"
@@ -67,8 +68,7 @@ export class HomeComponent implements OnInit {
         device: {
           deviceType: this.commonService.deviceType()
         }
-      }
-      
+      }      
       _satellite.track("page-load");
     }
 

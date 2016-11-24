@@ -33,7 +33,6 @@ export class ProductComponent implements OnInit, AfterViewInit {
     individualQuantity : string[];
     vendorDetails: Observable<Object>;
     columns: any[];
-    vendorName: any;
     productId:any;
     customerId="1696318";
     selectedSize:string;
@@ -57,6 +56,11 @@ export class ProductComponent implements OnInit, AfterViewInit {
     galleryImage: any;
     imagePointerX: any;
     imagePointerY: any;
+    vendorId: any;
+    vendorName: any;
+    productPrice: any; 
+    offerPrice: any;
+    shippingCostWorld: any; 
     showBuyLoader: boolean = false;
     private renderedDescription:Object = {};
     private productName: String;
@@ -151,6 +155,11 @@ export class ProductComponent implements OnInit, AfterViewInit {
         this.products = data;
         this.productName = data.productName;
         this.productId = data.productId;
+        this.vendorId = data.vendorDetails.vendorId;
+        this.vendorName = data.vendorDetails.vendorName;
+        this.productPrice = data.regularPrice;
+        this.offerPrice = data.discountedPrice;
+        this.shippingCostWorld = data.shippingCostWorld;
         this.galleryImages = data.galleryImages;
         // this.stitching_enabled=data.stitching_enabled;
         this.stitching_type = data.stitching_type;
@@ -235,23 +244,54 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     if (typeof _satellite != "undefined") {
-      digitalData.page = {
-        pageInfo: {
-          pageName: "Product Page",
+      digitalData.page={
+        pageInfo:{
+          pageName:"pdp: :" + this.productId,
         },
-        currencycode: {
-          currencyCode: "USD"
+        category:{
+          pageType:"pdp",
+          primaryCategory: "",
         },
-        category: {
-          pageType: "Product",
-          productName: this.productName,
-          productId: this.productId
-        },
-        device: {
+        device:{
           deviceType: this.commonService.deviceType()
+        },
+        currencycode:{
+          currencyCode : 'USD',
         }
-      }
-      
+      };
+
+      digitalData.product=[{
+        productInfo: {
+          productID: this.productId,
+          subCategory0: "",
+          subCategory1: "",  
+        }
+      }];
+
+      digitalData.vendor_product = {
+        vendorInfo: {
+          vendorId: this.vendorId,
+          vendorName: this.vendorName,
+          vendorRating: '',
+          vendorUrl: '',
+        },
+        productInfo: {
+          productId: this.productId,
+          currency: 'USD',
+          productPrice:{
+            mrp: this.productPrice,
+            offer: this.offerPrice,
+          },
+          shippingPrice:{
+            india: '',
+            international: this.shippingCostWorld,
+          }
+        },
+
+      };
+
+      digitalData.events = "prodView";
+    
       _satellite.track("page-load");
     }
   }
@@ -262,6 +302,20 @@ export class ProductComponent implements OnInit, AfterViewInit {
   }
 
   addToBag(event: any): void {
+    if (typeof _satellite != "undefined") {
+      digitalData.cart = {
+        item: [{
+          productInfo: {
+              productID: this.productId
+          }
+        }]
+      },
+      digitalData.addtocartsrc = {
+        src: "add to cart"
+      },
+      _satellite.track("cart-add")
+    }
+
     if (!this.showSizeDiv && this.selectedSize == "undefine") {
       this.addToBagUnSuccess = true;
     }
@@ -283,6 +337,16 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   buyNow(event: any): void {
     this.showBuyLoader = true;
+    if (typeof _satellite != "undefined") {
+      digitalData.cartsrc = {
+        cartsrc: "buy now"
+      },
+      digitalData.addtocartsrc = {
+        src: "buy now"
+      },
+      _satellite.track("cart-add"),
+      _satellite.track("cartsrc")
+    }
     let cartStream = this.cartDetailsService
                            .addToCart(this.productId, 1)
     cartStream.map((r: Response) => { return r.json() }).pluck('d')

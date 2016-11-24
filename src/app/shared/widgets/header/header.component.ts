@@ -10,6 +10,9 @@ import { RouterHeaderBindingService } from '../../services/router-header-binding
 
 import { getRouterLink } from '../../utils';
 
+declare var _satellite: any;
+declare var digitalData: any;
+
 @Component({
   selector: 'cvi-header',
   templateUrl: './header.component.html',
@@ -69,7 +72,24 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
     );
   }
 
+  topCartTracker(){
+    if(typeof _satellite != 'undefined') {
+      digitalData.cartsrc ={
+              cartsrc:"top nav",
+          }
+          _satellite.track('cartsrc');
+    }
+  }
+
   searchItems(){
+    if(typeof _satellite != 'undefined') {
+      digitalData.page={
+        search:{
+          searchTerm:this.queryInput,
+        }  
+      }
+      _satellite.track("search-click");
+    }
     if(this.queryInput && this.queryInput != ''){
       this.router.navigate(['/category'], { queryParams: { query: this.queryInput }});
     }

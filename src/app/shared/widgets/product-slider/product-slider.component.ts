@@ -5,6 +5,9 @@ import ListingProduct from '../../interfaces/listing-product';
 
 import { getRouterLink } from '../../utils/'
 
+declare var _satellite: any;
+declare var digitalData: any;
+
 @Component({
   selector: 'cvi-product-slider',
   templateUrl: './product-slider.component.html',
@@ -20,6 +23,15 @@ export class ProductSliderComponent implements OnInit {
 
   constructor(public httpClient: HttpClientService){
 
+  }
+
+  feedClick(product, position){
+    if(typeof _satellite != 'undefined') {
+      digitalData.prodclick = {
+        source:"homepage_ _"+ this.header +"_"+ product.productId+"_"+ position +""
+      }
+      _satellite.track('prodclick');
+    }
   }
 
   getSliderId(){

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, ConnectableObservable } from 'rxjs';
 import { Http, Response, Headers } from '@angular/http';
 
 import { HttpClientService } from './http-client.service';
@@ -67,7 +67,7 @@ export class CartDetailsService {
 
   }
 
-  addToCart(productId: string, qty: number){
+  addToCart(productId: string, qty: number): ConnectableObservable<Response>{
     let body = {productId, qty}
     let addToCartUrl = 'checkoutService/index/addToQuote';
     let cartStream =  this.httpClient

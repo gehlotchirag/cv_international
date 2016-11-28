@@ -1,0 +1,20 @@
+<div class="product-listing col-sm-4 col-xs-6">
+	<!-- <div class="product-wishlist" *ngIf="showWishlist">
+		<img src="../../../../images//wishlist-product.png" class="img-responsive">
+		<div class="wishlisted-count">{{ product.wishlist?.length }}</div>
+	</div> -->
+	<a routerLink="/product/{{product.productId}}">
+		<img [src]="product.imgUrl" class="img-responsive">
+		<div class="product-info">
+			<div class="product-name">{{ product.title }}</div>
+			<div class="product-price">
+				<span class="discounted-price">{{ product.discountedPrice | currency:'USD':true }}</span> &nbsp;
+				<span class="actual-price"><s>{{ product.regularPrice | currency:'USD': true }}</s></span> &nbsp;
+				<span class="discount">{{ product.discountPercentage | number:'3.1-5'}}</span>
+			</div>
+			<div class="product-hover-info" *ngIf="showSizeInfo">
+				SIZES: {{ getProductSizeString(product) }}
+			</div>
+		</div>
+	</a>
+</div>

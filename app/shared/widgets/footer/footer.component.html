@@ -1,0 +1,80 @@
+<div class="footer">
+  <div class="container">
+    <span>
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="list-head" data-toggle="collapse" data-target="#collapseOurCompany" aria-expanded="false" aria-controls="collapseOurCompany"><strong>OUR COMPANY</strong> <span class="pull-right glyphicon glyphicon-menu-down hide-lg"></span></p>
+    <ul class="footer-list-group" id="collapseOurCompany">
+      <li><a routerLink="about_us">About us</a></li>
+      <li><a routerLink="craftsvilla_in_media">Craftsvilla in Media</a></li>
+    </ul>
+  </div>
+  <div class="col-sm-3 hide-sm">
+    <p class="list-head"><strong>TOP CATEGORIES</strong> <span class="pull-right glyphicon glyphicon-menu-down hide-lg"></span></p>
+    <ul class="footer-list-group">
+      <li><a 
+        [routerLink]="getRouterLink(categoryLinks.saree)['rl']"
+        [queryParams]="getRouterLink(categoryLinks.saree)['qp']">
+        Sarees</a></li>
+      <li><a 
+        [routerLink]="getRouterLink(categoryLinks.lehenga)['rl']"
+        [queryParams]="getRouterLink(categoryLinks.lehenga)['qp']">
+        Lehenga</a></li>
+      <li><a 
+        [routerLink]="getRouterLink(categoryLinks.suits)['rl']"
+        [queryParams]="getRouterLink(categoryLinks.suits)['qp']">
+        Salwar Suits</a></li>
+      <!-- <li><a routerLink="">Jewellery</a></li>
+      <li><a routerLink="">Accessories</a></li>
+      <li><a routerLink="">Clothing</a></li> -->
+    </ul>
+  </div>
+  <div class="col-sm-3">
+    <p class="list-head" data-toggle="collapse" data-target="#collapseUsefulInfo" aria-expanded="false" aria-controls="collapseUsefulInfo"><strong>USEFUL INFO</strong> <span class="pull-right glyphicon glyphicon-menu-down hide-lg"></span></p>
+    <ul class="footer-list-group" id="collapseUsefulInfo">
+      <li><a routerLink="faqs">FAQs</a></li>
+      <!-- <li><a routerLink="">Sitemap</a></li> -->
+      <li><a routerLink="contactus">Contact us</a></li>
+    </ul>
+  </div>
+  <div class="col-sm-3">
+    <p class="list-head" data-toggle="collapse" data-target="#collapsePolicies" aria-expanded="false" aria-controls="collapsePolicies"><strong>POLICIES &amp; INFO</strong> <span class="pull-right glyphicon glyphicon-menu-down hide-lg"></span></p>
+    <ul class="footer-list-group" id="collapsePolicies">
+      <li><a routerLink="contactus">Terms &amp; Conditions</a></li>
+      <li><a routerLink="contactus">Shipping &amp; Refund</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row hide-sm footer-row-2">
+  <div class="col-sm-3">
+    <p class="list-head"><strong>SELL ON CRAFTSVILLA</strong></p>
+    <p class="footer-txt">Reach out to us on <a href="mailto:international.sellers@craftsvilla.com">international.sellers@craftsvilla.com</a></p>
+  </div>
+  <div class="col-sm-3">
+    <p class="list-head"><strong>SUPPORT</strong></p>
+    <p class="footer-txt">For help, send an email to <a href="mailto:hello@craftsvilla.com">hello@craftsvilla.com</a></p>
+  </div>
+  <div class="col-sm-3 social-footer">
+    <p class="list-head"><strong>STAY CONNECTED</strong></p>
+    <p>
+      <a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts" target="_blank">
+        <img src="../../../../images//facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://twitter.com/share?url=https://www.craftsvilla.com&amp;text=Simple%20Share%20Buttons" target="_blank">
+        <img src="../../../../images//twitter.png" alt="Twitter" />
+      </a>
+      <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+        <img src="../../../../images//pinterest.png" alt="Pinterest" />
+      </a>
+    </p>
+  </div>
+  <div class="col-sm-3">
+    <p class="list-head"><strong>PAYMENT OPTIONS</strong></p>
+    <p><img src="../../../../images//payment-method.png" class="img-responsive"></p>
+  </div>
+</div>
+<hr>
+</span>
+<div class="footer-txt text-center">Copyright © 2013-2016. Craftsvilla Handicrafts Pvt. Ltd.</div>
+</div>
+</div>

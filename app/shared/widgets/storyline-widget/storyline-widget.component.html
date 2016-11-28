@@ -1,0 +1,19 @@
+<div class="occupy mob-section">
+  <div class="contain bg-white mob-bg-white home-section clearfix">
+    <div class="section-header mob-section-heading">
+      <span class="heading pull-left">
+        <img src="../../../../images//ethnic-1.png">
+        {{ header }}
+      </span>
+      <!-- <button class="btn btn-brand btn-xs view-more pull-right">View more</button> -->
+    </div>
+    <div class="section-body">
+      <div *ngFor="let item of dataItems; let i= index" class="box"
+            [ngClass]="{'last': i == last}">
+            <a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
+              <img [src]="item.imageUrl" class="img-responsive">
+            </a>
+      </div>
+    </div>
+  </div>
+</div>

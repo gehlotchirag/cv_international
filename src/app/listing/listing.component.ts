@@ -246,7 +246,7 @@ export class ListingComponent implements OnInit, DoCheck {
   private changeListingUrl(paramObj?: any): void {
     let pushStateString = '';
     let urlPath = this.router.url.indexOf("/premium") > -1 ? "/premium" : "/category";   
-    let initUrlPath = this.router.url.indexOf("/us/") > -1 ? "/us" : "";
+    let initUrlPath = location.pathname.indexOf("/us/") > -1 ? "/us" : "";
     if (paramObj) {
       let params = paramObj['params'] ? paramObj['params'] : {};
       let page = paramObj['page'] ? paramObj['page'] : 1;

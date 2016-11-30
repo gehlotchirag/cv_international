@@ -14,7 +14,7 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "mobile": false,
-      "styles": ["scss/swiper.min.css"],
+      "styles": ["scss/main.css", "scss/swiper.min.css", "scss/jasny-bootstrap.min.css"],
       "scripts": ["js/jquery-3-1.min.js", "js/bootstrap.min.js", "js/swiper.min.js", "js/temp.js", "js/jasny-bootstrap.min.js"],
       "environments": {
         "source": "environments/environment.ts",

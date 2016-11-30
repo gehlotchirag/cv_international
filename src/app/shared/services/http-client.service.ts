@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, URLSearchParams, Response, RequestOptions } from '@angular/http';
 import { Observable } from "rxjs/Observable";
+import { environment } from '../../../environments/environment';
 
 
 @Injectable()
@@ -8,7 +9,7 @@ export class HttpClientService {
   private http: Http;
   private headers = new Headers();
 
-  private BASE_URL = 'http://international.craftsvilla.com:8000/';
+  private BASE_URL = environment.api;
 
   constructor(http: Http) {
     this.http = http;

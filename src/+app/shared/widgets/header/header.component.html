@@ -1,0 +1,175 @@
+<div class="navmenu navmenu-default navmenu-fixed-left offcanvas"
+     id="mobile-nav">
+  <!-- <div class="navmenu-overlay"></div> -->
+  <a  class="navmenu-brand">Categories
+    <span (click)="mobileSelectedCategory = null"
+          class="ico-arrow" data-toggle="offcanvas" data-target="#mobile-nav">
+      <i class="glyphicon glyphicon-remove"></i>
+    </span>
+  </a>
+  <a  *ngIf="mobileSelectedCategory"
+      class="selected-menu-title">
+      <span
+        class="ico-arrow-back"
+        (click)="resetNavView($event)">
+        <i class="glyphicon glyphicon-arrow-left"></i>
+      </span>
+      {{ mobileSelectedCategory.name }}
+  </a>
+  <div *ngIf="!mobileSelectedCategory" >
+    <!-- <ul class="nav navmenu-nav" *ngFor="let menuCategoryData of menuCategoriesData"> -->
+      <li class="dropdown nav navmenu-nav mobile-nav" *ngFor="let menuCategoryData of menuCategoriesData">
+        <a (click)=" mobileSelectedCategory =  menuCategoryData"
+           class="dropdown-toggle" data-toggle="dropdown">
+           {{ menuCategoryData.name }}
+          <span class="ico-arrow">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+          </span>
+        </a>
+      </li>
+    <!-- </ul> -->
+  </div>
+  <div *ngIf="mobileSelectedCategory">
+    <ul *ngFor="let subCategory of mobileSelectedCategory.data"
+        class="nav navmenu-nav">
+      <li class="dropdown mobile-nav">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+          {{ subCategory.name }}
+          <span class="ico-arrow">
+            <i class="glyphicon glyphicon-plus"></i>
+          </span>
+        </a>
+        <ul class="navmenu-nav dropdown-menu">
+          <li class="nav-level-3 mobile-nav"
+            *ngFor="let subSubCategory of subCategory.data">
+            <a
+              data-toggle="offcanvas" data-target="#mobile-nav"
+              (click)="routeNavigateTo(subSubCategory.href)">
+              {{ subSubCategory.name }}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class= "buyer-popup-overlay" *ngIf="showProtectionPopup">
+  <div class="buyer-protection-popup">
+    <div class="close-buyer-popup pull-right" (click) = "showProtectionPopup = false">X</div>
+    <tabs [class]= "tabsWidgetClass">
+      <tab [tabTitle]="'Easy Refunds and Returns'">
+        <b>Easy Return:</b>
+        <p>
+          We have a 100% Buyer protection policy wherein you can return the product for any reason whatsoever.
+          You can ship it back to us within 7 days and get a full refund
+        </p>
+        <b>Return Process:</b>
+        <p>
+          Just email us your complaint with order number within 7 days of receipt of the product.
+          You can also login to your account and raise a dispute from there.
+          We will pickup up the product from your doorstep if the pincode is serviceable.
+          In case we can’t pickup, our team will reply to you with an email, containing instructions and return shipping address to which you need to send back the product within 10 days.
+        </p>
+        <b>Refund:</b>
+        <p>
+          If you wish, we can offer you a redeemable voucher worth the refund amount for future purchases.
+          Else we can also refund the entire amount back to your bank account without any deductions along.
+        </p>
+      </tab>
+      <tab tabTitle="100% Secure Payments">
+        <b>Payment Modes:</b>
+        <p>
+          Net Banking, Debit cards/ Credit Cards (Visa, MasterCard, American Express, Diners Club cards accepted)
+        </p>
+        <p>International Credit Cards</p>
+        <b>Payment Details:</b>
+        <p>
+          Immediately after you make a purchase, an invoice with your payment details and a unique payment ID will be sent to you.
+          In case of any issues, our customer care would be happy to help you.
+        </p>
+        <b>Payment Security:</b>
+        <p>
+          You pay through our secured Payment Gateway and all data is transferred through high level encryption technology.
+          We guarantee your payments are 100% safe with us and the details are never shared with anyone during the payment process.
+        </p>
+      </tab>
+    </tabs>
+  </div>
+</div>
+<div class="header cover cvi-header-fixed">
+  <div class="top-menu hide-sm" (mouseover)="displayMegaMenu(false)" *ngIf="showTopMenu">
+    <div class="contain">
+      <span class="pull-left">India's Largest Ethnic Destination. Now Shipping Globally.</span>
+      <span class="pull-right">
+        <span class="top-menu-item buyer-protection" (click) = "showProtectionPopup = true">
+          <a><img src="images/shield_icon.png"> 100% Buyer Protection</a>
+        </span>
+      <span class="top-menu-item">
+        <a href="tel:+18002451549">
+          <i class="glyphicon glyphicon-phone header-phone"></i>1-800-245-1549
+        </a>
+      </span>
+      <span class="top-menu-item"><a routerLink="order_tracking">Track Order</a></span>
+      <span class="top-menu-item">
+        <div class="dropdown inline">
+          <img src="images/usa-flag.gif" class="flag"> USD
+        </div>
+      </span>
+      <span class="top-menu-item" style="cursor: pointer;" (click)="clearCookieAndDomestic($event)">
+        Visit Craftsvilla India
+      </span>
+      </span>
+    </div>
+  </div>
+  <div class="mid-menu">
+    <div class="contain mob-contain">
+      <div class="logo inline mob-inline pull-left js-header-menu-show" [ngClass] = "{'homepage-logo' : !showMegaMenuCaret}" >
+        <img src="images/menu_icon.png" class="hide-lg menu-icon header-navbar-toggle navbar-toggle"
+             data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+        <a (click)="routeNavigateTo('')"><img src="images/logo.png" class="logo-img"></a>
+        <div *ngIf="showMegaMenuCaret" class="hide-sm mega-menu-hamburger"
+              [class.hovered]="showBottomMenu == 'block'"
+              (mouseover)="displayMegaMenu(true, $event)"
+              (mouseleave)="displayMegaMenu(false, $event)">
+        	   <span class="glyphicon glyphicon-menu-hamburger"></span>
+         </div>
+      </div>
+      <div class="search inline pull-left" [ngClass] = "{'homepage-search' : !showMegaMenuCaret}" (mouseover)="displayMegaMenu(false)">
+        <div class="input-group">
+          <input type="text"
+                 class="form-control main-search-input"
+                 placeholder="Search for Lehengas, Anarkalis.."
+                 [(ngModel)]="queryInput"
+                 (keyup.enter)="searchItems()"
+                 aria-describedby="basic-addon2">
+          <span class="input-group-addon"
+                (click)="searchItems()"
+                id="basic-addon2">
+                <span class="glyphicon glyphicon-search"></span>
+          </span>
+        </div>
+      </div>
+      <div class="options inline pull-right" (mouseover)="displayMegaMenu(false)">
+        <div style="display: none !important;" class="profile option inline pull-right" data-toggle="modal" data-target="#loginModal">
+          <a href="https://secure.craftsvilla.com/buy/login">
+            <img src="images/profile_icon.png" class="img-responsive pull-left icon"> <span class="hide-sm">Sign in</span>
+          </a>
+        </div>
+        <div class="cart option inline pull-right">
+          <a href="https://securestaticintl.craftsvilla.com/buy/cart" (click)="topCartTracker()">
+            <img src="images/bag_icon.png" class="img-responsive icon">
+            <span id="js-cart-count" class="notification-circle"></span>
+          </a>
+        </div>
+        <!-- <div class="wishlist option inline pull-right hide-sm hide">
+          <img src="images/wishlist_icon.png" class="img-responsive icon">
+          <span id="js-wishlist-count" class="notification-circle"></span>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="menu-slider-container occupy fixed" [ngStyle]="{'display': showBottomMenu}" [ngClass] = "{'change-slider-top' : !showTopMenu}">
+  <div class="menu-overlay-div" (mouseover)="displayMegaMenu(false)"></div>
+  <div #headerContent></div>
+</div>

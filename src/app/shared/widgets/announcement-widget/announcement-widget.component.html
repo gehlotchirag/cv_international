@@ -9,7 +9,8 @@
     <div class="section-body mob-section-body">
       <div *ngFor="let item of dataItems" class="box box-3">
         <a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
-          <img [src]="item.imageUrl" class="img-responsive">
+          <img [src]="item.imageUrl" class="img-responsive annoucement-web-image">
+          <img [src]="item.mobile_imageUrl" class="img-responsive annoucement-mobile-image">
         </a>
       </div>
     </div>

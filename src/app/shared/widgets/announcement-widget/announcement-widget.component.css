@@ -1,1 +1,14 @@
+.annoucement-mobile-image{
+	display: none;
+}
 
+@media only screen and (max-width: 480px){
+	.annoucement-mobile-image{
+		display: block;
+		width: 100%;
+	}
+	.annoucement-web-image{
+		display: none;
+	}
+
+}

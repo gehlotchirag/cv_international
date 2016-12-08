@@ -68,6 +68,10 @@
       </div>
       <div class="zoomed-image"></div>
       <div class="product-img-container pull-left text-center responsive-img-container">
+        <div class="product-stitch-type">
+          <p *ngIf="products.stitching_type !== 'Null'">{{products.stitching_type}}</p>
+          <p *ngIf="products.stitching_type === 'Null'">Unstiched</p>
+        </div>
         <swiper [config]="config" *ngIf="galleryImages.length > 0">
           <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let galleryImage of galleryImages;">

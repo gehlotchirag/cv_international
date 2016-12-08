@@ -32,6 +32,7 @@
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     padding: 3px 60px;
+    z-index: 2;
 }
 .product-stitch-type p{
     margin: 0;

@@ -25,7 +25,7 @@ ul.nav.nav-tabs.tabs-widget li a {
 .product-page .product-img-container img {
   margin: auto;
   border: 1px solid #e2e2e2;
-  margin-left: 10px;
+  margin-left: 0px;
   cursor: crosshair;
   width: 500px;
   height: 500px;
@@ -1563,6 +1563,7 @@ ul.nav.nav-tabs.tabs-widget li a {
   .product-container .contain{
     width: 100%;
     max-width: none;
+    position: relative;
     margin: auto;
     height: inherit;
   }
@@ -1625,10 +1626,13 @@ ul.nav.nav-tabs.tabs-widget li a {
     border: 1px dashed #474646; }
 
   .product-img-container {
-    padding-top: 15px;
+    padding-top: 0;
+    margin-top: 15px;
+    margin-left: 10px;
     width: 45%;
-    margin-right: 2%;
-    position: relative; }
+    margin-right: 1%;
+    position: relative;
+    overflow: hidden; }
     .product-img-container .main-product-img {
       margin: auto; }
     .product-img-container .side-img {

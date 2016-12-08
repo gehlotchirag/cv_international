@@ -70,7 +70,7 @@ export class HomeComponent implements OnInit {
         }
       }      
 
-      // _satellite.track("page-load");
+      _satellite.track("page-load");
     }
 
   }

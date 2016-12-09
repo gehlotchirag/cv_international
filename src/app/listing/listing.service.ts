@@ -9,7 +9,7 @@ import { isDefined , isEmpty} from '../shared/utils';
 @Injectable()
 export class ListingService {
   private listingsUrl = 'api/products/';
-  private filtersUrl = 'api/category/1/filters';
+  private filtersUrl = 'api/filters';
 
   constructor(
       private httpClient: HttpClientService,
@@ -50,10 +50,10 @@ export class ListingService {
                 .toPromise()
   }
 
-  getFilterList() {
-    this.filtersUrl = 'api/category/1/filters';
+  getFilterList(paramObj: Object): any {
+    this.filtersUrl = 'api/filters';
     return this.httpClient
-               .get(this.filtersUrl)
+               .get(this.filtersUrl, paramObj)
                .toPromise();
   }
 

@@ -46,6 +46,7 @@ export class MegaMenuComponent implements OnInit {
           );
     }
     else {
+      RouterHeaderBindingService.setMegaMenuData(menuCategoriesData);
       this.menuCategoriesData = menuCategoriesData;
     }
   }

@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnChanges, ElementRef, Renderer } from '@angular/core';
 import { Response } from '@angular/http';
-
+import { Router } from '@angular/router';
 import { HttpClientService } from '../../services/http-client.service';
 import { RouterHeaderBindingService } from '../../services/router-header-binding.service';
 import { DataHoldingService } from '../../services/data-holding.service';
@@ -27,7 +27,12 @@ export class MegaMenuComponent implements OnInit {
 
   @Output() selectedCategory: EventEmitter<any> = new EventEmitter();
 
-  constructor(private httpClient: HttpClientService) { }
+  constructor(
+    private httpClient: HttpClientService,
+    private el: ElementRef, 
+    private router: Router,
+    private renderer: Renderer
+  ) { }
 
   ngOnInit() {
     let megaMenuUrl = 'api/megamenu/';
@@ -63,4 +68,11 @@ export class MegaMenuComponent implements OnInit {
     this.previousElement = previousElem;
   }
 
+  hideMegaMenu($event){
+    let _url = this.router.url;
+    if(_url !== '/'){
+      this.el.nativeElement.parentElement.style.display = 'none';
+      this.el.nativeElement.parentElement.parentElement.querySelector('.mega-menu-hamburger').classList.remove('hovered');
+    }
+  }
 }

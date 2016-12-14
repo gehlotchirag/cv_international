@@ -3,6 +3,11 @@
 svg:not(:root) {
     overflow: hidden;
 }
+
+
+.dropdown-backdrop {
+  display: none !important; }
+
 /** Tabs Widget Css */
 ul.nav.nav-tabs.tabs-widget {
     border-bottom: none;

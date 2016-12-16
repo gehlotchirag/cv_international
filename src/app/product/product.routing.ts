@@ -6,17 +6,20 @@ import { ProductDetailResolve } from './product-detail-resolve.service';
 
 const productRoutes: Routes = [
 	{
-		path: 'product', 
-		children: [
-			{ 
-				path: ':id',
-				component: ProductComponent,
-				pathMatch: 'full',
-				resolve: {
-				  product: ProductDetailResolve
-				}
-			}
-		]
+		path: 'product/:id', 
+		component: ProductComponent,
+		pathMatch: 'full',
+		resolve: {
+		  product: ProductDetailResolve
+		}
+	},
+	{
+		path: 'shop/:slug/:id', 
+		component: ProductComponent,
+		pathMatch: 'full',
+		resolve: {
+		  product: ProductDetailResolve
+		}
 	},
 ];
 

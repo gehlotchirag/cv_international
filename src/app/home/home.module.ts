@@ -7,6 +7,8 @@ import { homeRouting }  from './home.routing';
 import { HomeComponent } from './home.component';
 
 import { WidgetModule } from '../shared/widgets';
+import { HomeMetaService } from './home-meta.service';
+import { MetaService } from '../shared/services/meta.service';
 
 
 @NgModule({
@@ -18,7 +20,7 @@ import { WidgetModule } from '../shared/widgets';
     declarations: [ 
     	HomeComponent 
     ],
-    providers: [ ],
+    providers: [ HomeMetaService, MetaService ],
 })
 
 export class HomeModule { }

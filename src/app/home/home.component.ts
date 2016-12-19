@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewContainerRef, ViewChild, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { ComponentFactory } from '@angular/core';
 
+import { ActivatedRoute } from '@angular/router';
+
+
 import { Observable } from 'rxjs/Observable';
 
 import { Product } from '../product/product';
@@ -9,6 +12,7 @@ import { WidgetFactoryService } from '../shared/widgets/widget-factory.service';
 import { HomeService } from './home.service';
 import { ProductService } from '../product/product.service';
 import { CartDetailsService } from '../shared/services/cart-details.service';
+import { MetaAddService } from '../shared/services/meta-tags.service';
 import { CommonSharedService } from '../shared/services/common-shared.service';
 
 declare var _satellite: any;
@@ -16,7 +20,7 @@ declare var digitalData: any;
 
 @Component({
   selector: 'cvi-home',
-  providers: [HomeService, WidgetFactoryService, CartDetailsService, ProductService, CommonSharedService],
+  providers: [HomeService, WidgetFactoryService, CartDetailsService, ProductService, CommonSharedService, MetaAddService],
   // providers: [HomeService],
   templateUrl: './home.component.html', //'./home-dynamic.component.html',
   styleUrls: ['./home.component.css']
@@ -37,7 +41,9 @@ export class HomeComponent implements OnInit {
               private homeService: HomeService,
               private widgetFactoryService: WidgetFactoryService,
               private cartService: CartDetailsService,
-              private commonService: CommonSharedService
+              private commonService: CommonSharedService,
+              private ms: MetaAddService,
+              private route: ActivatedRoute
   )
   {
     this.children = this.homeService.getComponentsData();
@@ -47,6 +53,16 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(){
+    this.route.data.pluck('metaTags').subscribe((data: any) => {
+      Object.keys(data).forEach((key) => {
+        var tagValue = data[key];
+        if(key === 'title'){
+          this.ms.setTitle(tagValue);
+        }else{
+          this.ms.setTag(key, tagValue);
+        }
+      });
+    })
   }
 
   ngAfterViewInit() {

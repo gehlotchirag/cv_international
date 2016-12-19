@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { WidgetModule } from '../shared/widgets';
 
 import { ListingComponent } from './listing.component';
+import { CategoryComponent } from './category.component';
+import { SubCategoryComponent } from './sub-category.component';
+import { FilteredCategoryComponent } from './filtered-category.component';
 
 import { CategoryFilterPipe } from './category-filter.pipe';
 import { LiveFilterPipe } from './live-filter.pipe';
@@ -22,6 +25,9 @@ import { ListingService } from './listing.service';
     ],
     declarations: [
       ListingComponent,
+      CategoryComponent,
+      SubCategoryComponent,
+      FilteredCategoryComponent,
       CategoryFilterPipe,
       LiveFilterPipe
     ],

@@ -53,13 +53,13 @@ export var commonConfig = {
 
 // Client.
 export var clientPlugins = [
-  // new CopyWebpackPlugin([
-  //   { from: './src/fonts', to: 'fonts' },
-  //   { from: './src/scss', to: 'scss' },
-  //   { from: './src/images', to: 'images' },
-  //   { from: './src/index.html' },
-  //   { from: './src/js', to: 'js' },
-  // ])
+  new CopyWebpackPlugin([
+    // { from: './src/fonts', to: 'fonts' },
+    { from: './src/scss/main.css', to: 'scss' },
+    // { from: './src/images', to: 'images' },
+    // { from: './src/index.html' },
+    // { from: './src/js', to: 'js' },
+  ])
 ];
 export var clientConfig = {
   target: 'web',

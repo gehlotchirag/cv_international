@@ -1,15 +1,15 @@
 <div class="product-listing col-sm-4 col-xs-6">
 	<!-- <div class="product-wishlist" *ngIf="showWishlist">
-		<img src="images/wishlist-product.png" class="img-responsive">
+		<img src="http://securestaging2.craftsvilla.com:8001/images/wishlist-product.png" class="img-responsive">
 		<div class="wishlisted-count">{{ product.wishlist?.length }}</div>
 	</div> -->
-	<a routerLink="/product/{{product.productId}}">
+	<a routerLink="/shop/{{product.slug}}/{{product.productId}}">
 		<img [src]="product.imgUrl" class="img-responsive">
 		<div class="product-info">
 			<div class="product-name">{{ product.title }}</div>
 			<div class="product-price">
-				<span class="discounted-price">{{ product.discountedPrice | currency:'USD':true }}</span> 
-				<span class="actual-price"><s>{{ product.regularPrice | currency:'USD': true }}</s></span> 
+				<span class="discounted-price">{{ product.discountedPrice | currency:'USD':true:'1.0-0' }}</span> 
+				<span class="actual-price"><s>{{ product.regularPrice | currency:'USD': true:'1.0-0' }}</s></span> 
 				<span class="discount">{{ product.discountPercentage | number:'3.1-5'}}</span>
 			</div>
 			<div class="product-hover-info" *ngIf="showSizeInfo">

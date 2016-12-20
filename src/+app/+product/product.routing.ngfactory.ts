@@ -17,20 +17,30 @@ class ProductRoutingModuleInjector extends import0.NgModuleInjector<import1.Prod
   _ProductRoutingModule_1:import1.ProductRoutingModule;
   __ROUTES_2:any[];
   constructor(parent:import3.Injector) {
-    super(parent,[import4.ProductComponentNgFactory],([] as any[]));
+    super(parent,[
+      import4.ProductComponentNgFactory,
+      import4.ProductComponentNgFactory
+    ]
+    ,([] as any[]));
   }
   get _ROUTES_2():any[] {
-        if ((this.__ROUTES_2 == (null as any))) { (this.__ROUTES_2 = [[{
-          path: 'product',
-            children: [{
-              path: ':id',
-              component: import5.ProductComponent,
-              pathMatch: 'full',
-              resolve: {product: import6.ProductDetailResolve}
-            }
-          ]
+      if ((this.__ROUTES_2 == (null as any))) { (this.__ROUTES_2 = [[
+        {
+          path: 'product/:id',
+          component: import5.ProductComponent,
+          pathMatch: 'full',
+          resolve: {product: import6.ProductDetailResolve}
         }
-    ]]); }
+        ,
+        {
+          path: 'shop/:slug/:id',
+          component: import5.ProductComponent,
+          pathMatch: 'full',
+          resolve: {product: import6.ProductDetailResolve}
+        }
+
+      ]
+    ]); }
     return this.__ROUTES_2;
   }
   createInternal():import1.ProductRoutingModule {

@@ -85,13 +85,14 @@ class _View_NotFoundComponent0 extends import1.AppView<import0.NotFoundComponent
   _el_14:any;
   _text_15:any;
   _el_16:any;
-  _el_17:any;
-  _text_18:any;
+  _text_17:any;
+  _el_18:any;
   _text_19:any;
   _text_20:any;
   _text_21:any;
   _text_22:any;
   _text_23:any;
+  _text_24:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import3.AppElement) {
     super(_View_NotFoundComponent0,renderType_NotFoundComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -114,13 +115,14 @@ class _View_NotFoundComponent0 extends import1.AppView<import0.NotFoundComponent
     this._el_14 = import4.createRenderElement(this.renderer,this._el_6,'div',new import4.InlineArray2(2,'class','error-actions'),(null as any));
     this._text_15 = this.renderer.createText(this._el_14,'\n                    ',(null as any));
     this._el_16 = import4.createRenderElement(this.renderer,this._el_14,'a',new import4.InlineArray4(4,'class','btn btn-primary btn-lg','href','/'),(null as any));
-    this._el_17 = import4.createRenderElement(this.renderer,this._el_16,'span',new import4.InlineArray2(2,'class','glyphicon glyphicon-home'),(null as any));
-    this._text_18 = this.renderer.createText(this._el_16,'\n                        Take Me Home ',(null as any));
-    this._text_19 = this.renderer.createText(this._el_14,'\n                ',(null as any));
-    this._text_20 = this.renderer.createText(this._el_6,'\n            ',(null as any));
-    this._text_21 = this.renderer.createText(this._el_4,'\n        ',(null as any));
-    this._text_22 = this.renderer.createText(this._el_2,'\n    ',(null as any));
-    this._text_23 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_17 = this.renderer.createText(this._el_16,'\n                        ',(null as any));
+    this._el_18 = import4.createRenderElement(this.renderer,this._el_16,'img',new import4.InlineArray4(4,'class','home-ico','src','http://securestaging2.craftsvilla.com:8001/images/home_icon.svg'),(null as any));
+    this._text_19 = this.renderer.createText(this._el_16,'\n                        Take Me Home ',(null as any));
+    this._text_20 = this.renderer.createText(this._el_14,'\n                ',(null as any));
+    this._text_21 = this.renderer.createText(this._el_6,'\n            ',(null as any));
+    this._text_22 = this.renderer.createText(this._el_4,'\n        ',(null as any));
+    this._text_23 = this.renderer.createText(this._el_2,'\n    ',(null as any));
+    this._text_24 = this.renderer.createText(this._el_0,'\n',(null as any));
     this.init(([] as any[]),[
       this._el_0,
       this._text_1,
@@ -139,13 +141,14 @@ class _View_NotFoundComponent0 extends import1.AppView<import0.NotFoundComponent
       this._el_14,
       this._text_15,
       this._el_16,
-      this._el_17,
-      this._text_18,
+      this._text_17,
+      this._el_18,
       this._text_19,
       this._text_20,
       this._text_21,
       this._text_22,
-      this._text_23
+      this._text_23,
+      this._text_24
     ]
     ,([] as any[]),([] as any[]));
     return (null as any);

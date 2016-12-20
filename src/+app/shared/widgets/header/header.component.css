@@ -119,14 +119,14 @@
 }
 
 .navmenu-default .navmenu-brand:hover {
-  background: #44494c;
-  color: #f1f2f4;
+  background: #981937;
+  color: #fff;
 }
 
 .navmenu-brand {
   text-align: left;
-  background: #44494c;
-  color: #f1f2f4;
+  background: #981937;
+  color: #fff;
   font-size: 20px;
   padding: 12px;
   display: block;
@@ -135,13 +135,13 @@
 }
 
 .selected-menu-title {
-  background: #687072;
-  color: #f1f2f4;
+  background: #e34141;
+  color: #fff;
   border-bottom: 0;
   text-align: center;
-  font-weight: bold;
   font-size: 20px;
   padding: 12px;
+  letter-spacing: 2px;
   display: block;
   text-transform: capitalize;
   margin: 0px;
@@ -195,10 +195,40 @@
 }
 
 .navmenu-default .navmenu-nav>.open>a, .navmenu-default .navmenu-nav>.open>a:hover {
-  background-color: #f3f4f6;
+  background-color: #f3f3f3;
   color: inherit;
 }
 
 .navmenu-default .navmenu-nav.dropdown-menu {
-  background-color: #f3f4f6;
+  background-color: #fff;
+}
+a.navmenu-brand .ico-arrow {
+    right: 5px;
+    top: 7px;
+}
+img.top-menu-phone {
+  width: 18px;
+}
+img.main-search-icon, img.mega-menu-hamburger-icon {
+  width: 20px;
+}
+img.mobile-nav-close-icon {
+  width: 30px;
+  position: relative;
+  background: #fff;
+  cursor: pointer;
+}
+img.arrow-left-ico {
+  width: 20px;
+  transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+img.arrow-back-ico {
+  width: 30px;
+}
+img.plus-ico {
+  width: 25px;
 }

@@ -3,7 +3,7 @@
     (mouseleave)="onMouseLeave()"
     (selectedCategory)="getSelectedCategory($event)">
     <li class="header">
-      <span class="glyphicon glyphicon-th-list"></span>
+      <img src="http://securestaging2.craftsvilla.com:8001/images/menu_filled.svg" class="mega-menu-list-ico">
       <strong>SHOP BY CATEGORY</strong>
     </li>
     <cv-menu-link
@@ -20,7 +20,7 @@
         <li class="sub-cat-list-item" *ngFor="let subSubCategory of subCategory.data">
           <a
             [routerLink]="getRouterLink(subSubCategory.href)['rl']"
-            [queryParams]="getRouterLink(subSubCategory.href)['qp']">
+            [queryParams]="getRouterLink(subSubCategory.href)['qp']"  (click)="hideMegaMenu($event)">
             {{ subSubCategory.name }}
           </a>
         </li>

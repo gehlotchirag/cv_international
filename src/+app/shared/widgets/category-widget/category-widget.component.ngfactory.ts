@@ -125,7 +125,7 @@ class _View_CategoryWidgetComponent0 extends import1.AppView<import0.CategoryWid
     this._text_5 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._el_6 = import5.createRenderElement(this.renderer,this._el_4,'span',new import5.InlineArray2(2,'class','heading pull-left'),(null as any));
     this._text_7 = this.renderer.createText(this._el_6,'\n        ',(null as any));
-    this._el_8 = import5.createRenderElement(this.renderer,this._el_6,'img',new import5.InlineArray2(2,'src','images/ethnic-1.png'),(null as any));
+    this._el_8 = import5.createRenderElement(this.renderer,this._el_6,'img',new import5.InlineArray2(2,'src','http://securestaging2.craftsvilla.com:8001/images/ethnic-1.png'),(null as any));
     this._text_9 = this.renderer.createText(this._el_6,'',(null as any));
     this._text_10 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._text_11 = this.renderer.createText(this._el_4,'\n    ',(null as any));

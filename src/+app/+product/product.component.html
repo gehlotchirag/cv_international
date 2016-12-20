@@ -37,6 +37,14 @@
 }
 </style>
 <div class="content product-page">
+<!--   <div class="contain hide-sm">
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Women</a></li>
+      <li><a href="#">Lehengas</a></li>
+      <li class="active">Black Color Goergette Lehenga</li>
+    </ol>
+  </div> -->
   <div class="message-box-green" *ngIf="addToBagSuccess && !addToBagUnSuccess && !outOfStockMsgDspl">
     Product has been successfully added to your cart.
   </div>
@@ -53,9 +61,17 @@
       </div>
       <div class="product-img-container inline pull-left text-center hide-sm">
         <img (mouseover)="onImageHover(products.bigUrl, $event)" (mousemove) = "onImageHoverMove($event)" (mouseout) = "onHoverOut()" src="{{imageUrl}}" class="img-responsive">
-        <div class="zoomed-image"></div>
+        <div class="product-stitch-type">
+          <p *ngIf="products.stitching_type !== 'Null'">{{products.stitching_type}}</p>
+          <p *ngIf="products.stitching_type === 'Null'">Unstiched</p>
+        </div>
       </div>
+      <div class="zoomed-image"></div>
       <div class="product-img-container pull-left text-center responsive-img-container">
+        <div class="product-stitch-type">
+          <p *ngIf="products.stitching_type !== 'Null'">{{products.stitching_type}}</p>
+          <p *ngIf="products.stitching_type === 'Null'">Unstiched</p>
+        </div>
         <swiper [config]="config" *ngIf="galleryImages.length > 0">
           <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let galleryImage of galleryImages;">
@@ -73,10 +89,10 @@
           </div>
           <div class="price mob-section-body">
             <span class="discounted-price"  >${{products.discountedPrice}}</span>
-            <span class="actual-price" *ngIf="isRegularPriceMore"><s>${{products.regularPrice}}</s></span>
-            <span class="discount green"  *ngIf="isDiscountPercVesible">{{products.discountPercentage | number:'2.1-2'}}% off</span>
-            <!-- <span class="discount green"  *ngIf="isDiscountPercVesible">{{products.discountPercentage | currency:'USD':true:'1.2-2'}}% off</span> -->
-            <span class="pull-right details-wishlist-container" (click)="addWish($event)" style="display:none;"><img src="images/wishlist-product.png" class="img-responsive wishlist-details-page inline mob-inline" > Add to Wishlist</span>
+            &nbsp;<span class="actual-price" *ngIf="isRegularPriceMore"><s>${{products.regularPrice}}</s></span>
+            &nbsp;<span class="discount green"  *ngIf="isDiscountPercVesible">{{products.discountPercentage | number:'2.1-2'}}% off</span>
+            <!-- &nbsp;<span class="discount green"  *ngIf="isDiscountPercVesible">{{products.discountPercentage | currency:'USD':true:'1.2-2'}}% off</span> -->
+            <span class="pull-right details-wishlist-container" (click)="addWish($event)" style="display:none;"><img src="http://securestaging2.craftsvilla.com:8001/images/wishlist-product.png" class="img-responsive wishlist-details-page inline mob-inline" > Add to Wishlist</span>
           </div>
           <hr>
           <div class="description" *ngIf="getDescription(products.description)">
@@ -170,15 +186,15 @@
             </div>
           </span>
           <div class="share-product hide-sm" id="share-buttons">
-            <span class="header">Share on </span>
+            <span class="header">Share on &nbsp;</span>
             <a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts" target="_blank">
-              <img src="images/facebook.png" alt="Facebook" />
+              <img src="http://securestaging2.craftsvilla.com:8001/images/facebook.png" alt="Facebook" />
             </a>
             <a href="https://twitter.com/share?url=https://www.craftsvilla.com&amp;text=Simple%20Share%20Buttons&amp;hashtags={{products.productName}}" target="_blank">
-              <img src="images/twitter.png" alt="Twitter" />
+              <img src="http://securestaging2.craftsvilla.com:8001/images/twitter.png" alt="Twitter" />
             </a>
             <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
-              <img src="images/pinterest.png" alt="Pinterest" />
+              <img src="http://securestaging2.craftsvilla.com:8001/images/pinterest.png" alt="Pinterest" />
             </a>
           </div>
         </span>
@@ -208,13 +224,12 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Size Chart</h4>
       </div>
       <div class="modal-body">
         <div class="row">
           <div class="col-sm-5 text-center">
-            <img src="#">
             <p>All measurements shown are of the garment</p>
           </div>
           <div class="col-sm-7">
@@ -229,10 +244,6 @@
                 <tr *ngFor="let temp of sizeChartData[0]; let i=index">
                   <td *ngFor="let j of sizeChartData"> {{ j[i] }}</td>
                 </tr>
-
-
-
-
               </tbody>
             </table>
           </div>

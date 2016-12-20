@@ -89,163 +89,167 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
   _text_13:any;
   _el_14:any;
   _text_15:any;
-  _el_16:any;
-  _text_17:any;
-  _el_18:any;
+  _text_16:any;
+  _el_17:any;
+  _text_18:any;
   _el_19:any;
-  _RouterLinkWithHref_19_3:import11.Wrapper_RouterLinkWithHref;
-  _text_20:any;
+  _el_20:any;
+  _RouterLinkWithHref_20_3:import11.Wrapper_RouterLinkWithHref;
   _text_21:any;
-  _el_22:any;
+  _text_22:any;
   _el_23:any;
-  _RouterLinkWithHref_23_3:import11.Wrapper_RouterLinkWithHref;
-  _text_24:any;
+  _el_24:any;
+  _RouterLinkWithHref_24_3:import11.Wrapper_RouterLinkWithHref;
   _text_25:any;
   _text_26:any;
   _text_27:any;
-  _el_28:any;
-  _text_29:any;
-  _el_30:any;
+  _text_28:any;
+  _el_29:any;
+  _text_30:any;
   _el_31:any;
-  _text_32:any;
+  _el_32:any;
   _text_33:any;
-  _el_34:any;
-  _text_35:any;
-  _el_36:any;
+  _text_34:any;
+  _el_35:any;
+  _text_36:any;
   _text_37:any;
   _el_38:any;
-  _el_39:any;
-  _RouterLinkWithHref_39_3:import11.Wrapper_RouterLinkWithHref;
-  _text_40:any;
-  _text_41:any;
-  _el_42:any;
-  _el_43:any;
-  _RouterLinkWithHref_43_3:import11.Wrapper_RouterLinkWithHref;
-  _text_44:any;
-  _text_45:any;
-  _el_46:any;
-  _el_47:any;
-  _RouterLinkWithHref_47_3:import11.Wrapper_RouterLinkWithHref;
-  _text_48:any;
-  _text_49:any;
+  _text_39:any;
+  _el_40:any;
+  _el_41:any;
+  _RouterLinkWithHref_41_3:import11.Wrapper_RouterLinkWithHref;
+  _text_42:any;
+  _text_43:any;
+  _el_44:any;
+  _el_45:any;
+  _RouterLinkWithHref_45_3:import11.Wrapper_RouterLinkWithHref;
+  _text_46:any;
+  _text_47:any;
+  _el_48:any;
+  _el_49:any;
+  _RouterLinkWithHref_49_3:import11.Wrapper_RouterLinkWithHref;
   _text_50:any;
   _text_51:any;
-  _el_52:any;
+  _text_52:any;
   _text_53:any;
   _el_54:any;
-  _el_55:any;
-  _text_56:any;
-  _text_57:any;
-  _el_58:any;
+  _text_55:any;
+  _el_56:any;
+  _el_57:any;
+  _text_58:any;
   _text_59:any;
   _el_60:any;
   _text_61:any;
-  _el_62:any;
+  _text_62:any;
   _el_63:any;
-  _RouterLinkWithHref_63_3:import11.Wrapper_RouterLinkWithHref;
   _text_64:any;
-  _text_65:any;
-  _text_66:any;
-  _el_67:any;
-  _el_68:any;
-  _RouterLinkWithHref_68_3:import11.Wrapper_RouterLinkWithHref;
+  _el_65:any;
+  _el_66:any;
+  _RouterLinkWithHref_66_3:import11.Wrapper_RouterLinkWithHref;
+  _text_67:any;
+  _text_68:any;
   _text_69:any;
-  _text_70:any;
-  _text_71:any;
+  _el_70:any;
+  _el_71:any;
+  _RouterLinkWithHref_71_3:import11.Wrapper_RouterLinkWithHref;
   _text_72:any;
-  _el_73:any;
+  _text_73:any;
   _text_74:any;
-  _el_75:any;
+  _text_75:any;
   _el_76:any;
   _text_77:any;
-  _text_78:any;
+  _el_78:any;
   _el_79:any;
   _text_80:any;
-  _el_81:any;
-  _text_82:any;
-  _el_83:any;
-  _el_84:any;
-  _RouterLinkWithHref_84_3:import11.Wrapper_RouterLinkWithHref;
-  _text_85:any;
+  _text_81:any;
+  _el_82:any;
+  _text_83:any;
+  _text_84:any;
+  _el_85:any;
   _text_86:any;
   _el_87:any;
   _el_88:any;
   _RouterLinkWithHref_88_3:import11.Wrapper_RouterLinkWithHref;
   _text_89:any;
   _text_90:any;
-  _text_91:any;
-  _text_92:any;
+  _el_91:any;
+  _el_92:any;
+  _RouterLinkWithHref_92_3:import11.Wrapper_RouterLinkWithHref;
   _text_93:any;
-  _el_94:any;
+  _text_94:any;
   _text_95:any;
-  _el_96:any;
+  _text_96:any;
   _text_97:any;
   _el_98:any;
-  _el_99:any;
-  _text_100:any;
+  _text_99:any;
+  _el_100:any;
   _text_101:any;
   _el_102:any;
-  _text_103:any;
-  _el_104:any;
+  _el_103:any;
+  _text_104:any;
   _text_105:any;
-  _text_106:any;
+  _el_106:any;
   _text_107:any;
   _el_108:any;
   _text_109:any;
-  _el_110:any;
-  _el_111:any;
-  _text_112:any;
+  _text_110:any;
+  _text_111:any;
+  _el_112:any;
   _text_113:any;
   _el_114:any;
-  _text_115:any;
-  _el_116:any;
+  _el_115:any;
+  _text_116:any;
   _text_117:any;
-  _text_118:any;
+  _el_118:any;
   _text_119:any;
   _el_120:any;
   _text_121:any;
-  _el_122:any;
-  _el_123:any;
-  _text_124:any;
+  _text_122:any;
+  _text_123:any;
+  _el_124:any;
   _text_125:any;
   _el_126:any;
-  _text_127:any;
-  _el_128:any;
+  _el_127:any;
+  _text_128:any;
   _text_129:any;
   _el_130:any;
   _text_131:any;
-  _text_132:any;
-  _el_133:any;
-  _text_134:any;
-  _el_135:any;
+  _el_132:any;
+  _text_133:any;
+  _el_134:any;
+  _text_135:any;
   _text_136:any;
-  _text_137:any;
-  _el_138:any;
-  _text_139:any;
-  _el_140:any;
+  _el_137:any;
+  _text_138:any;
+  _el_139:any;
+  _text_140:any;
   _text_141:any;
-  _text_142:any;
+  _el_142:any;
   _text_143:any;
-  _text_144:any;
-  _el_145:any;
+  _el_144:any;
+  _text_145:any;
   _text_146:any;
-  _el_147:any;
-  _el_148:any;
-  _text_149:any;
+  _text_147:any;
+  _text_148:any;
+  _el_149:any;
   _text_150:any;
   _el_151:any;
   _el_152:any;
   _text_153:any;
   _text_154:any;
-  _text_155:any;
+  _el_155:any;
   _el_156:any;
   _text_157:any;
   _text_158:any;
-  _el_159:any;
-  _text_160:any;
+  _text_159:any;
+  _el_160:any;
   _text_161:any;
   _text_162:any;
-  _text_163:any;
+  _el_163:any;
+  _text_164:any;
+  _text_165:any;
+  _text_166:any;
+  _text_167:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import3.AppElement) {
     super(_View_FooterComponent0,renderType_FooterComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -264,175 +268,179 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
     this._el_10 = import4.createRenderElement(this.renderer,this._el_8,'p',new import4.InlineArray16(10,'aria-controls','collapseOurCompany','aria-expanded','false','class','list-head','data-target','#collapseOurCompany','data-toggle','collapse'),(null as any));
     this._el_11 = import4.createRenderElement(this.renderer,this._el_10,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_12 = this.renderer.createText(this._el_11,'OUR COMPANY',(null as any));
-    this._text_13 = this.renderer.createText(this._el_10,' ',(null as any));
-    this._el_14 = import4.createRenderElement(this.renderer,this._el_10,'span',new import4.InlineArray2(2,'class','pull-right glyphicon glyphicon-menu-down hide-lg'),(null as any));
-    this._text_15 = this.renderer.createText(this._el_8,'\n    ',(null as any));
-    this._el_16 = import4.createRenderElement(this.renderer,this._el_8,'ul',new import4.InlineArray4(4,'class','footer-list-group','id','collapseOurCompany'),(null as any));
-    this._text_17 = this.renderer.createText(this._el_16,'\n      ',(null as any));
-    this._el_18 = import4.createRenderElement(this.renderer,this._el_16,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_19 = import4.createRenderElement(this.renderer,this._el_18,'a',new import4.InlineArray2(2,'routerLink','about_us'),(null as any));
-    this._RouterLinkWithHref_19_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
-    this._text_20 = this.renderer.createText(this._el_19,'About us',(null as any));
-    this._text_21 = this.renderer.createText(this._el_16,'\n      ',(null as any));
-    this._el_22 = import4.createRenderElement(this.renderer,this._el_16,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_23 = import4.createRenderElement(this.renderer,this._el_22,'a',new import4.InlineArray2(2,'routerLink','craftsvilla_in_media'),(null as any));
-    this._RouterLinkWithHref_23_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
-    this._text_24 = this.renderer.createText(this._el_23,'Craftsvilla in Media',(null as any));
-    this._text_25 = this.renderer.createText(this._el_16,'\n    ',(null as any));
-    this._text_26 = this.renderer.createText(this._el_8,'\n  ',(null as any));
-    this._text_27 = this.renderer.createText(this._el_6,'\n  ',(null as any));
-    this._el_28 = import4.createRenderElement(this.renderer,this._el_6,'div',new import4.InlineArray2(2,'class','col-sm-3 hide-sm'),(null as any));
-    this._text_29 = this.renderer.createText(this._el_28,'\n    ',(null as any));
-    this._el_30 = import4.createRenderElement(this.renderer,this._el_28,'p',new import4.InlineArray2(2,'class','list-head'),(null as any));
-    this._el_31 = import4.createRenderElement(this.renderer,this._el_30,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_32 = this.renderer.createText(this._el_31,'TOP CATEGORIES',(null as any));
-    this._text_33 = this.renderer.createText(this._el_30,' ',(null as any));
-    this._el_34 = import4.createRenderElement(this.renderer,this._el_30,'span',new import4.InlineArray2(2,'class','pull-right glyphicon glyphicon-menu-down hide-lg'),(null as any));
-    this._text_35 = this.renderer.createText(this._el_28,'\n    ',(null as any));
-    this._el_36 = import4.createRenderElement(this.renderer,this._el_28,'ul',new import4.InlineArray2(2,'class','footer-list-group'),(null as any));
-    this._text_37 = this.renderer.createText(this._el_36,'\n      ',(null as any));
-    this._el_38 = import4.createRenderElement(this.renderer,this._el_36,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_39 = import4.createRenderElement(this.renderer,this._el_38,'a',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._RouterLinkWithHref_39_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
-    this._text_40 = this.renderer.createText(this._el_39,'\n        Sarees',(null as any));
-    this._text_41 = this.renderer.createText(this._el_36,'\n      ',(null as any));
-    this._el_42 = import4.createRenderElement(this.renderer,this._el_36,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_43 = import4.createRenderElement(this.renderer,this._el_42,'a',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._RouterLinkWithHref_43_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
-    this._text_44 = this.renderer.createText(this._el_43,'\n        Lehenga',(null as any));
-    this._text_45 = this.renderer.createText(this._el_36,'\n      ',(null as any));
-    this._el_46 = import4.createRenderElement(this.renderer,this._el_36,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_47 = import4.createRenderElement(this.renderer,this._el_46,'a',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._RouterLinkWithHref_47_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
-    this._text_48 = this.renderer.createText(this._el_47,'\n        Salwar Suits',(null as any));
-    this._text_49 = this.renderer.createText(this._el_36,'\n    ',(null as any));
-    this._text_50 = this.renderer.createText(this._el_28,'\n  ',(null as any));
-    this._text_51 = this.renderer.createText(this._el_6,'\n  ',(null as any));
-    this._el_52 = import4.createRenderElement(this.renderer,this._el_6,'div',new import4.InlineArray2(2,'class','col-sm-3'),(null as any));
-    this._text_53 = this.renderer.createText(this._el_52,'\n    ',(null as any));
-    this._el_54 = import4.createRenderElement(this.renderer,this._el_52,'p',new import4.InlineArray16(10,'aria-controls','collapseUsefulInfo','aria-expanded','false','class','list-head','data-target','#collapseUsefulInfo','data-toggle','collapse'),(null as any));
-    this._el_55 = import4.createRenderElement(this.renderer,this._el_54,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_56 = this.renderer.createText(this._el_55,'USEFUL INFO',(null as any));
-    this._text_57 = this.renderer.createText(this._el_54,' ',(null as any));
-    this._el_58 = import4.createRenderElement(this.renderer,this._el_54,'span',new import4.InlineArray2(2,'class','pull-right glyphicon glyphicon-menu-down hide-lg'),(null as any));
-    this._text_59 = this.renderer.createText(this._el_52,'\n    ',(null as any));
-    this._el_60 = import4.createRenderElement(this.renderer,this._el_52,'ul',new import4.InlineArray4(4,'class','footer-list-group','id','collapseUsefulInfo'),(null as any));
-    this._text_61 = this.renderer.createText(this._el_60,'\n      ',(null as any));
-    this._el_62 = import4.createRenderElement(this.renderer,this._el_60,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_63 = import4.createRenderElement(this.renderer,this._el_62,'a',new import4.InlineArray2(2,'routerLink','faqs'),(null as any));
-    this._RouterLinkWithHref_63_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
-    this._text_64 = this.renderer.createText(this._el_63,'FAQs',(null as any));
-    this._text_65 = this.renderer.createText(this._el_60,'\n      ',(null as any));
-    this._text_66 = this.renderer.createText(this._el_60,'\n      ',(null as any));
-    this._el_67 = import4.createRenderElement(this.renderer,this._el_60,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_68 = import4.createRenderElement(this.renderer,this._el_67,'a',new import4.InlineArray2(2,'routerLink','contactus'),(null as any));
-    this._RouterLinkWithHref_68_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
-    this._text_69 = this.renderer.createText(this._el_68,'Contact us',(null as any));
-    this._text_70 = this.renderer.createText(this._el_60,'\n    ',(null as any));
-    this._text_71 = this.renderer.createText(this._el_52,'\n  ',(null as any));
-    this._text_72 = this.renderer.createText(this._el_6,'\n  ',(null as any));
-    this._el_73 = import4.createRenderElement(this.renderer,this._el_6,'div',new import4.InlineArray2(2,'class','col-sm-3'),(null as any));
-    this._text_74 = this.renderer.createText(this._el_73,'\n    ',(null as any));
-    this._el_75 = import4.createRenderElement(this.renderer,this._el_73,'p',new import4.InlineArray16(10,'aria-controls','collapsePolicies','aria-expanded','false','class','list-head','data-target','#collapsePolicies','data-toggle','collapse'),(null as any));
-    this._el_76 = import4.createRenderElement(this.renderer,this._el_75,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_77 = this.renderer.createText(this._el_76,'POLICIES & INFO',(null as any));
-    this._text_78 = this.renderer.createText(this._el_75,' ',(null as any));
-    this._el_79 = import4.createRenderElement(this.renderer,this._el_75,'span',new import4.InlineArray2(2,'class','pull-right glyphicon glyphicon-menu-down hide-lg'),(null as any));
-    this._text_80 = this.renderer.createText(this._el_73,'\n    ',(null as any));
-    this._el_81 = import4.createRenderElement(this.renderer,this._el_73,'ul',new import4.InlineArray4(4,'class','footer-list-group','id','collapsePolicies'),(null as any));
-    this._text_82 = this.renderer.createText(this._el_81,'\n      ',(null as any));
-    this._el_83 = import4.createRenderElement(this.renderer,this._el_81,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_84 = import4.createRenderElement(this.renderer,this._el_83,'a',new import4.InlineArray2(2,'routerLink','contactus'),(null as any));
-    this._RouterLinkWithHref_84_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
-    this._text_85 = this.renderer.createText(this._el_84,'Terms & Conditions',(null as any));
-    this._text_86 = this.renderer.createText(this._el_81,'\n      ',(null as any));
-    this._el_87 = import4.createRenderElement(this.renderer,this._el_81,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_13 = this.renderer.createText(this._el_10,' \n            ',(null as any));
+    this._el_14 = import4.createRenderElement(this.renderer,this._el_10,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://securestaging2.craftsvilla.com:8001/images/left-arrow.svg'),(null as any));
+    this._text_15 = this.renderer.createText(this._el_10,'\n          ',(null as any));
+    this._text_16 = this.renderer.createText(this._el_8,'\n    ',(null as any));
+    this._el_17 = import4.createRenderElement(this.renderer,this._el_8,'ul',new import4.InlineArray4(4,'class','footer-list-group','id','collapseOurCompany'),(null as any));
+    this._text_18 = this.renderer.createText(this._el_17,'\n      ',(null as any));
+    this._el_19 = import4.createRenderElement(this.renderer,this._el_17,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_20 = import4.createRenderElement(this.renderer,this._el_19,'a',new import4.InlineArray2(2,'routerLink','about_us'),(null as any));
+    this._RouterLinkWithHref_20_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
+    this._text_21 = this.renderer.createText(this._el_20,'About us',(null as any));
+    this._text_22 = this.renderer.createText(this._el_17,'\n      ',(null as any));
+    this._el_23 = import4.createRenderElement(this.renderer,this._el_17,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_24 = import4.createRenderElement(this.renderer,this._el_23,'a',new import4.InlineArray2(2,'routerLink','craftsvilla_in_media'),(null as any));
+    this._RouterLinkWithHref_24_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
+    this._text_25 = this.renderer.createText(this._el_24,'Craftsvilla in Media',(null as any));
+    this._text_26 = this.renderer.createText(this._el_17,'\n    ',(null as any));
+    this._text_27 = this.renderer.createText(this._el_8,'\n  ',(null as any));
+    this._text_28 = this.renderer.createText(this._el_6,'\n  ',(null as any));
+    this._el_29 = import4.createRenderElement(this.renderer,this._el_6,'div',new import4.InlineArray2(2,'class','col-sm-3 hide-sm'),(null as any));
+    this._text_30 = this.renderer.createText(this._el_29,'\n    ',(null as any));
+    this._el_31 = import4.createRenderElement(this.renderer,this._el_29,'p',new import4.InlineArray2(2,'class','list-head'),(null as any));
+    this._el_32 = import4.createRenderElement(this.renderer,this._el_31,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_33 = this.renderer.createText(this._el_32,'TOP CATEGORIES',(null as any));
+    this._text_34 = this.renderer.createText(this._el_31,' \n      ',(null as any));
+    this._el_35 = import4.createRenderElement(this.renderer,this._el_31,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://securestaging2.craftsvilla.com:8001/images/left-arrow.svg'),(null as any));
+    this._text_36 = this.renderer.createText(this._el_31,'\n    ',(null as any));
+    this._text_37 = this.renderer.createText(this._el_29,'\n    ',(null as any));
+    this._el_38 = import4.createRenderElement(this.renderer,this._el_29,'ul',new import4.InlineArray2(2,'class','footer-list-group'),(null as any));
+    this._text_39 = this.renderer.createText(this._el_38,'\n      ',(null as any));
+    this._el_40 = import4.createRenderElement(this.renderer,this._el_38,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_41 = import4.createRenderElement(this.renderer,this._el_40,'a',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._RouterLinkWithHref_41_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
+    this._text_42 = this.renderer.createText(this._el_41,'\n        Sarees',(null as any));
+    this._text_43 = this.renderer.createText(this._el_38,'\n      ',(null as any));
+    this._el_44 = import4.createRenderElement(this.renderer,this._el_38,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_45 = import4.createRenderElement(this.renderer,this._el_44,'a',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._RouterLinkWithHref_45_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
+    this._text_46 = this.renderer.createText(this._el_45,'\n        Lehenga',(null as any));
+    this._text_47 = this.renderer.createText(this._el_38,'\n      ',(null as any));
+    this._el_48 = import4.createRenderElement(this.renderer,this._el_38,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_49 = import4.createRenderElement(this.renderer,this._el_48,'a',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._RouterLinkWithHref_49_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
+    this._text_50 = this.renderer.createText(this._el_49,'\n        Salwar Suits',(null as any));
+    this._text_51 = this.renderer.createText(this._el_38,'\n    ',(null as any));
+    this._text_52 = this.renderer.createText(this._el_29,'\n  ',(null as any));
+    this._text_53 = this.renderer.createText(this._el_6,'\n  ',(null as any));
+    this._el_54 = import4.createRenderElement(this.renderer,this._el_6,'div',new import4.InlineArray2(2,'class','col-sm-3'),(null as any));
+    this._text_55 = this.renderer.createText(this._el_54,'\n    ',(null as any));
+    this._el_56 = import4.createRenderElement(this.renderer,this._el_54,'p',new import4.InlineArray16(10,'aria-controls','collapseUsefulInfo','aria-expanded','false','class','list-head','data-target','#collapseUsefulInfo','data-toggle','collapse'),(null as any));
+    this._el_57 = import4.createRenderElement(this.renderer,this._el_56,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_58 = this.renderer.createText(this._el_57,'USEFUL INFO',(null as any));
+    this._text_59 = this.renderer.createText(this._el_56,' \n      ',(null as any));
+    this._el_60 = import4.createRenderElement(this.renderer,this._el_56,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://securestaging2.craftsvilla.com:8001/images/left-arrow.svg'),(null as any));
+    this._text_61 = this.renderer.createText(this._el_56,'\n    ',(null as any));
+    this._text_62 = this.renderer.createText(this._el_54,'\n    ',(null as any));
+    this._el_63 = import4.createRenderElement(this.renderer,this._el_54,'ul',new import4.InlineArray4(4,'class','footer-list-group','id','collapseUsefulInfo'),(null as any));
+    this._text_64 = this.renderer.createText(this._el_63,'\n      ',(null as any));
+    this._el_65 = import4.createRenderElement(this.renderer,this._el_63,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_66 = import4.createRenderElement(this.renderer,this._el_65,'a',new import4.InlineArray2(2,'routerLink','faqs'),(null as any));
+    this._RouterLinkWithHref_66_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
+    this._text_67 = this.renderer.createText(this._el_66,'FAQs',(null as any));
+    this._text_68 = this.renderer.createText(this._el_63,'\n      ',(null as any));
+    this._text_69 = this.renderer.createText(this._el_63,'\n      ',(null as any));
+    this._el_70 = import4.createRenderElement(this.renderer,this._el_63,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_71 = import4.createRenderElement(this.renderer,this._el_70,'a',new import4.InlineArray2(2,'routerLink','contactus'),(null as any));
+    this._RouterLinkWithHref_71_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
+    this._text_72 = this.renderer.createText(this._el_71,'Contact us',(null as any));
+    this._text_73 = this.renderer.createText(this._el_63,'\n    ',(null as any));
+    this._text_74 = this.renderer.createText(this._el_54,'\n  ',(null as any));
+    this._text_75 = this.renderer.createText(this._el_6,'\n  ',(null as any));
+    this._el_76 = import4.createRenderElement(this.renderer,this._el_6,'div',new import4.InlineArray2(2,'class','col-sm-3'),(null as any));
+    this._text_77 = this.renderer.createText(this._el_76,'\n    ',(null as any));
+    this._el_78 = import4.createRenderElement(this.renderer,this._el_76,'p',new import4.InlineArray16(10,'aria-controls','collapsePolicies','aria-expanded','false','class','list-head','data-target','#collapsePolicies','data-toggle','collapse'),(null as any));
+    this._el_79 = import4.createRenderElement(this.renderer,this._el_78,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_80 = this.renderer.createText(this._el_79,'POLICIES & INFO',(null as any));
+    this._text_81 = this.renderer.createText(this._el_78,' \n      ',(null as any));
+    this._el_82 = import4.createRenderElement(this.renderer,this._el_78,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://securestaging2.craftsvilla.com:8001/images/left-arrow.svg'),(null as any));
+    this._text_83 = this.renderer.createText(this._el_78,'\n    ',(null as any));
+    this._text_84 = this.renderer.createText(this._el_76,'\n    ',(null as any));
+    this._el_85 = import4.createRenderElement(this.renderer,this._el_76,'ul',new import4.InlineArray4(4,'class','footer-list-group','id','collapsePolicies'),(null as any));
+    this._text_86 = this.renderer.createText(this._el_85,'\n      ',(null as any));
+    this._el_87 = import4.createRenderElement(this.renderer,this._el_85,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._el_88 = import4.createRenderElement(this.renderer,this._el_87,'a',new import4.InlineArray2(2,'routerLink','contactus'),(null as any));
     this._RouterLinkWithHref_88_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
-    this._text_89 = this.renderer.createText(this._el_88,'Shipping & Refund',(null as any));
-    this._text_90 = this.renderer.createText(this._el_81,'\n    ',(null as any));
-    this._text_91 = this.renderer.createText(this._el_73,'\n  ',(null as any));
-    this._text_92 = this.renderer.createText(this._el_6,'\n',(null as any));
-    this._text_93 = this.renderer.createText(this._el_4,'\n',(null as any));
-    this._el_94 = import4.createRenderElement(this.renderer,this._el_4,'div',new import4.InlineArray2(2,'class','row hide-sm footer-row-2'),(null as any));
-    this._text_95 = this.renderer.createText(this._el_94,'\n  ',(null as any));
-    this._el_96 = import4.createRenderElement(this.renderer,this._el_94,'div',new import4.InlineArray2(2,'class','col-sm-3'),(null as any));
-    this._text_97 = this.renderer.createText(this._el_96,'\n    ',(null as any));
-    this._el_98 = import4.createRenderElement(this.renderer,this._el_96,'p',new import4.InlineArray2(2,'class','list-head'),(null as any));
-    this._el_99 = import4.createRenderElement(this.renderer,this._el_98,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_100 = this.renderer.createText(this._el_99,'SELL ON CRAFTSVILLA',(null as any));
-    this._text_101 = this.renderer.createText(this._el_96,'\n    ',(null as any));
-    this._el_102 = import4.createRenderElement(this.renderer,this._el_96,'p',new import4.InlineArray2(2,'class','footer-txt'),(null as any));
-    this._text_103 = this.renderer.createText(this._el_102,'Reach out to us on ',(null as any));
-    this._el_104 = import4.createRenderElement(this.renderer,this._el_102,'a',new import4.InlineArray2(2,'href','mailto:international.sellers@craftsvilla.com'),(null as any));
-    this._text_105 = this.renderer.createText(this._el_104,'international.sellers@craftsvilla.com',(null as any));
-    this._text_106 = this.renderer.createText(this._el_96,'\n  ',(null as any));
-    this._text_107 = this.renderer.createText(this._el_94,'\n  ',(null as any));
-    this._el_108 = import4.createRenderElement(this.renderer,this._el_94,'div',new import4.InlineArray2(2,'class','col-sm-3'),(null as any));
-    this._text_109 = this.renderer.createText(this._el_108,'\n    ',(null as any));
-    this._el_110 = import4.createRenderElement(this.renderer,this._el_108,'p',new import4.InlineArray2(2,'class','list-head'),(null as any));
-    this._el_111 = import4.createRenderElement(this.renderer,this._el_110,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_112 = this.renderer.createText(this._el_111,'SUPPORT',(null as any));
-    this._text_113 = this.renderer.createText(this._el_108,'\n    ',(null as any));
-    this._el_114 = import4.createRenderElement(this.renderer,this._el_108,'p',new import4.InlineArray2(2,'class','footer-txt'),(null as any));
-    this._text_115 = this.renderer.createText(this._el_114,'For help, send an email to ',(null as any));
-    this._el_116 = import4.createRenderElement(this.renderer,this._el_114,'a',new import4.InlineArray2(2,'href','mailto:hello@craftsvilla.com'),(null as any));
-    this._text_117 = this.renderer.createText(this._el_116,'hello@craftsvilla.com',(null as any));
-    this._text_118 = this.renderer.createText(this._el_108,'\n  ',(null as any));
-    this._text_119 = this.renderer.createText(this._el_94,'\n  ',(null as any));
-    this._el_120 = import4.createRenderElement(this.renderer,this._el_94,'div',new import4.InlineArray2(2,'class','col-sm-3 social-footer'),(null as any));
-    this._text_121 = this.renderer.createText(this._el_120,'\n    ',(null as any));
-    this._el_122 = import4.createRenderElement(this.renderer,this._el_120,'p',new import4.InlineArray2(2,'class','list-head'),(null as any));
-    this._el_123 = import4.createRenderElement(this.renderer,this._el_122,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_124 = this.renderer.createText(this._el_123,'STAY CONNECTED',(null as any));
-    this._text_125 = this.renderer.createText(this._el_120,'\n    ',(null as any));
-    this._el_126 = import4.createRenderElement(this.renderer,this._el_120,'p',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_127 = this.renderer.createText(this._el_126,'\n      ',(null as any));
-    this._el_128 = import4.createRenderElement(this.renderer,this._el_126,'a',new import4.InlineArray4(4,'href','http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts','target','_blank'),(null as any));
-    this._text_129 = this.renderer.createText(this._el_128,'\n        ',(null as any));
-    this._el_130 = import4.createRenderElement(this.renderer,this._el_128,'img',new import4.InlineArray4(4,'alt','Facebook','src','images/facebook.png'),(null as any));
-    this._text_131 = this.renderer.createText(this._el_128,'\n      ',(null as any));
-    this._text_132 = this.renderer.createText(this._el_126,'\n      ',(null as any));
-    this._el_133 = import4.createRenderElement(this.renderer,this._el_126,'a',new import4.InlineArray4(4,'href','https://twitter.com/share?url=https://www.craftsvilla.com&text=Simple%20Share%20Buttons','target','_blank'),(null as any));
-    this._text_134 = this.renderer.createText(this._el_133,'\n        ',(null as any));
-    this._el_135 = import4.createRenderElement(this.renderer,this._el_133,'img',new import4.InlineArray4(4,'alt','Twitter','src','images/twitter.png'),(null as any));
-    this._text_136 = this.renderer.createText(this._el_133,'\n      ',(null as any));
-    this._text_137 = this.renderer.createText(this._el_126,'\n      ',(null as any));
-    this._el_138 = import4.createRenderElement(this.renderer,this._el_126,'a',new import4.InlineArray2(2,'href','javascript:void((function()%7Bvar%20e=document.createElement(\'script\');e.setAttribute(\'type\',\'text/javascript\');e.setAttribute(\'charset\',\'UTF-8\');e.setAttribute(\'src\',\'http://assets.pinterest.com/js/pinmarklet.js?r=\'+Math.random()*99999999);document.body.appendChild(e)%7D)());'),(null as any));
-    this._text_139 = this.renderer.createText(this._el_138,'\n        ',(null as any));
-    this._el_140 = import4.createRenderElement(this.renderer,this._el_138,'img',new import4.InlineArray4(4,'alt','Pinterest','src','images/pinterest.png'),(null as any));
-    this._text_141 = this.renderer.createText(this._el_138,'\n      ',(null as any));
-    this._text_142 = this.renderer.createText(this._el_126,'\n    ',(null as any));
-    this._text_143 = this.renderer.createText(this._el_120,'\n  ',(null as any));
-    this._text_144 = this.renderer.createText(this._el_94,'\n  ',(null as any));
-    this._el_145 = import4.createRenderElement(this.renderer,this._el_94,'div',new import4.InlineArray2(2,'class','col-sm-3'),(null as any));
-    this._text_146 = this.renderer.createText(this._el_145,'\n    ',(null as any));
-    this._el_147 = import4.createRenderElement(this.renderer,this._el_145,'p',new import4.InlineArray2(2,'class','list-head'),(null as any));
-    this._el_148 = import4.createRenderElement(this.renderer,this._el_147,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_149 = this.renderer.createText(this._el_148,'PAYMENT OPTIONS',(null as any));
-    this._text_150 = this.renderer.createText(this._el_145,'\n    ',(null as any));
-    this._el_151 = import4.createRenderElement(this.renderer,this._el_145,'p',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_152 = import4.createRenderElement(this.renderer,this._el_151,'img',new import4.InlineArray4(4,'class','img-responsive','src','images/payment-method.png'),(null as any));
-    this._text_153 = this.renderer.createText(this._el_145,'\n  ',(null as any));
-    this._text_154 = this.renderer.createText(this._el_94,'\n',(null as any));
-    this._text_155 = this.renderer.createText(this._el_4,'\n',(null as any));
-    this._el_156 = import4.createRenderElement(this.renderer,this._el_4,'hr',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_157 = this.renderer.createText(this._el_4,'\n',(null as any));
-    this._text_158 = this.renderer.createText(this._el_2,'\n',(null as any));
-    this._el_159 = import4.createRenderElement(this.renderer,this._el_2,'div',new import4.InlineArray2(2,'class','footer-txt text-center'),(null as any));
-    this._text_160 = this.renderer.createText(this._el_159,'Copyright © 2013-2016. Craftsvilla Handicrafts Pvt. Ltd.',(null as any));
-    this._text_161 = this.renderer.createText(this._el_2,'\n',(null as any));
-    this._text_162 = this.renderer.createText(this._el_0,'\n',(null as any));
-    this._text_163 = this.renderer.createText(parentRenderNode,'\n',(null as any));
-    var disposable_0:Function = this.renderer.listen(this._el_19,'click',this.eventHandler(this._handle_click_19_0.bind(this)));
-    var disposable_1:Function = this.renderer.listen(this._el_23,'click',this.eventHandler(this._handle_click_23_0.bind(this)));
-    var disposable_2:Function = this.renderer.listen(this._el_39,'click',this.eventHandler(this._handle_click_39_0.bind(this)));
-    var disposable_3:Function = this.renderer.listen(this._el_43,'click',this.eventHandler(this._handle_click_43_0.bind(this)));
-    var disposable_4:Function = this.renderer.listen(this._el_47,'click',this.eventHandler(this._handle_click_47_0.bind(this)));
-    var disposable_5:Function = this.renderer.listen(this._el_63,'click',this.eventHandler(this._handle_click_63_0.bind(this)));
-    var disposable_6:Function = this.renderer.listen(this._el_68,'click',this.eventHandler(this._handle_click_68_0.bind(this)));
-    var disposable_7:Function = this.renderer.listen(this._el_84,'click',this.eventHandler(this._handle_click_84_0.bind(this)));
-    var disposable_8:Function = this.renderer.listen(this._el_88,'click',this.eventHandler(this._handle_click_88_0.bind(this)));
+    this._text_89 = this.renderer.createText(this._el_88,'Terms & Conditions',(null as any));
+    this._text_90 = this.renderer.createText(this._el_85,'\n      ',(null as any));
+    this._el_91 = import4.createRenderElement(this.renderer,this._el_85,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_92 = import4.createRenderElement(this.renderer,this._el_91,'a',new import4.InlineArray2(2,'routerLink','contactus'),(null as any));
+    this._RouterLinkWithHref_92_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import13.ActivatedRoute),this.parentInjector.get(import14.LocationStrategy));
+    this._text_93 = this.renderer.createText(this._el_92,'Shipping & Refund',(null as any));
+    this._text_94 = this.renderer.createText(this._el_85,'\n    ',(null as any));
+    this._text_95 = this.renderer.createText(this._el_76,'\n  ',(null as any));
+    this._text_96 = this.renderer.createText(this._el_6,'\n',(null as any));
+    this._text_97 = this.renderer.createText(this._el_4,'\n',(null as any));
+    this._el_98 = import4.createRenderElement(this.renderer,this._el_4,'div',new import4.InlineArray2(2,'class','row hide-sm footer-row-2'),(null as any));
+    this._text_99 = this.renderer.createText(this._el_98,'\n  ',(null as any));
+    this._el_100 = import4.createRenderElement(this.renderer,this._el_98,'div',new import4.InlineArray2(2,'class','col-sm-3'),(null as any));
+    this._text_101 = this.renderer.createText(this._el_100,'\n    ',(null as any));
+    this._el_102 = import4.createRenderElement(this.renderer,this._el_100,'p',new import4.InlineArray2(2,'class','list-head'),(null as any));
+    this._el_103 = import4.createRenderElement(this.renderer,this._el_102,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_104 = this.renderer.createText(this._el_103,'SELL ON CRAFTSVILLA',(null as any));
+    this._text_105 = this.renderer.createText(this._el_100,'\n    ',(null as any));
+    this._el_106 = import4.createRenderElement(this.renderer,this._el_100,'p',new import4.InlineArray2(2,'class','footer-txt'),(null as any));
+    this._text_107 = this.renderer.createText(this._el_106,'Reach out to us on ',(null as any));
+    this._el_108 = import4.createRenderElement(this.renderer,this._el_106,'a',new import4.InlineArray2(2,'href','mailto:international.sellers@craftsvilla.com'),(null as any));
+    this._text_109 = this.renderer.createText(this._el_108,'international.sellers@craftsvilla.com',(null as any));
+    this._text_110 = this.renderer.createText(this._el_100,'\n  ',(null as any));
+    this._text_111 = this.renderer.createText(this._el_98,'\n  ',(null as any));
+    this._el_112 = import4.createRenderElement(this.renderer,this._el_98,'div',new import4.InlineArray2(2,'class','col-sm-3'),(null as any));
+    this._text_113 = this.renderer.createText(this._el_112,'\n    ',(null as any));
+    this._el_114 = import4.createRenderElement(this.renderer,this._el_112,'p',new import4.InlineArray2(2,'class','list-head'),(null as any));
+    this._el_115 = import4.createRenderElement(this.renderer,this._el_114,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_116 = this.renderer.createText(this._el_115,'SUPPORT',(null as any));
+    this._text_117 = this.renderer.createText(this._el_112,'\n    ',(null as any));
+    this._el_118 = import4.createRenderElement(this.renderer,this._el_112,'p',new import4.InlineArray2(2,'class','footer-txt'),(null as any));
+    this._text_119 = this.renderer.createText(this._el_118,'For help, send an email to ',(null as any));
+    this._el_120 = import4.createRenderElement(this.renderer,this._el_118,'a',new import4.InlineArray2(2,'href','mailto:hello@craftsvilla.com'),(null as any));
+    this._text_121 = this.renderer.createText(this._el_120,'hello@craftsvilla.com',(null as any));
+    this._text_122 = this.renderer.createText(this._el_112,'\n  ',(null as any));
+    this._text_123 = this.renderer.createText(this._el_98,'\n  ',(null as any));
+    this._el_124 = import4.createRenderElement(this.renderer,this._el_98,'div',new import4.InlineArray2(2,'class','col-sm-3 social-footer'),(null as any));
+    this._text_125 = this.renderer.createText(this._el_124,'\n    ',(null as any));
+    this._el_126 = import4.createRenderElement(this.renderer,this._el_124,'p',new import4.InlineArray2(2,'class','list-head'),(null as any));
+    this._el_127 = import4.createRenderElement(this.renderer,this._el_126,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_128 = this.renderer.createText(this._el_127,'STAY CONNECTED',(null as any));
+    this._text_129 = this.renderer.createText(this._el_124,'\n    ',(null as any));
+    this._el_130 = import4.createRenderElement(this.renderer,this._el_124,'p',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_131 = this.renderer.createText(this._el_130,'\n      ',(null as any));
+    this._el_132 = import4.createRenderElement(this.renderer,this._el_130,'a',new import4.InlineArray4(4,'href','http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts','target','_blank'),(null as any));
+    this._text_133 = this.renderer.createText(this._el_132,'\n        ',(null as any));
+    this._el_134 = import4.createRenderElement(this.renderer,this._el_132,'img',new import4.InlineArray4(4,'alt','Facebook','src','http://securestaging2.craftsvilla.com:8001/images/facebook.png'),(null as any));
+    this._text_135 = this.renderer.createText(this._el_132,'\n      ',(null as any));
+    this._text_136 = this.renderer.createText(this._el_130,'\n      ',(null as any));
+    this._el_137 = import4.createRenderElement(this.renderer,this._el_130,'a',new import4.InlineArray4(4,'href','https://twitter.com/share?url=https://www.craftsvilla.com&text=Simple%20Share%20Buttons','target','_blank'),(null as any));
+    this._text_138 = this.renderer.createText(this._el_137,'\n        ',(null as any));
+    this._el_139 = import4.createRenderElement(this.renderer,this._el_137,'img',new import4.InlineArray4(4,'alt','Twitter','src','http://securestaging2.craftsvilla.com:8001/images/twitter.png'),(null as any));
+    this._text_140 = this.renderer.createText(this._el_137,'\n      ',(null as any));
+    this._text_141 = this.renderer.createText(this._el_130,'\n      ',(null as any));
+    this._el_142 = import4.createRenderElement(this.renderer,this._el_130,'a',new import4.InlineArray2(2,'href','javascript:void((function()%7Bvar%20e=document.createElement(\'script\');e.setAttribute(\'type\',\'text/javascript\');e.setAttribute(\'charset\',\'UTF-8\');e.setAttribute(\'src\',\'http://assets.pinterest.com/js/pinmarklet.js?r=\'+Math.random()*99999999);document.body.appendChild(e)%7D)());'),(null as any));
+    this._text_143 = this.renderer.createText(this._el_142,'\n        ',(null as any));
+    this._el_144 = import4.createRenderElement(this.renderer,this._el_142,'img',new import4.InlineArray4(4,'alt','Pinterest','src','http://securestaging2.craftsvilla.com:8001/images/pinterest.png'),(null as any));
+    this._text_145 = this.renderer.createText(this._el_142,'\n      ',(null as any));
+    this._text_146 = this.renderer.createText(this._el_130,'\n    ',(null as any));
+    this._text_147 = this.renderer.createText(this._el_124,'\n  ',(null as any));
+    this._text_148 = this.renderer.createText(this._el_98,'\n  ',(null as any));
+    this._el_149 = import4.createRenderElement(this.renderer,this._el_98,'div',new import4.InlineArray2(2,'class','col-sm-3'),(null as any));
+    this._text_150 = this.renderer.createText(this._el_149,'\n    ',(null as any));
+    this._el_151 = import4.createRenderElement(this.renderer,this._el_149,'p',new import4.InlineArray2(2,'class','list-head'),(null as any));
+    this._el_152 = import4.createRenderElement(this.renderer,this._el_151,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_153 = this.renderer.createText(this._el_152,'PAYMENT OPTIONS',(null as any));
+    this._text_154 = this.renderer.createText(this._el_149,'\n    ',(null as any));
+    this._el_155 = import4.createRenderElement(this.renderer,this._el_149,'p',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_156 = import4.createRenderElement(this.renderer,this._el_155,'img',new import4.InlineArray4(4,'class','img-responsive','src','http://securestaging2.craftsvilla.com:8001/images/payment-method.png'),(null as any));
+    this._text_157 = this.renderer.createText(this._el_149,'\n  ',(null as any));
+    this._text_158 = this.renderer.createText(this._el_98,'\n',(null as any));
+    this._text_159 = this.renderer.createText(this._el_4,'\n',(null as any));
+    this._el_160 = import4.createRenderElement(this.renderer,this._el_4,'hr',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_161 = this.renderer.createText(this._el_4,'\n',(null as any));
+    this._text_162 = this.renderer.createText(this._el_2,'\n',(null as any));
+    this._el_163 = import4.createRenderElement(this.renderer,this._el_2,'div',new import4.InlineArray2(2,'class','footer-txt text-center'),(null as any));
+    this._text_164 = this.renderer.createText(this._el_163,'Copyright © 2013-2016. Craftsvilla Handicrafts Pvt. Ltd.',(null as any));
+    this._text_165 = this.renderer.createText(this._el_2,'\n',(null as any));
+    this._text_166 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_167 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    var disposable_0:Function = this.renderer.listen(this._el_20,'click',this.eventHandler(this._handle_click_20_0.bind(this)));
+    var disposable_1:Function = this.renderer.listen(this._el_24,'click',this.eventHandler(this._handle_click_24_0.bind(this)));
+    var disposable_2:Function = this.renderer.listen(this._el_41,'click',this.eventHandler(this._handle_click_41_0.bind(this)));
+    var disposable_3:Function = this.renderer.listen(this._el_45,'click',this.eventHandler(this._handle_click_45_0.bind(this)));
+    var disposable_4:Function = this.renderer.listen(this._el_49,'click',this.eventHandler(this._handle_click_49_0.bind(this)));
+    var disposable_5:Function = this.renderer.listen(this._el_66,'click',this.eventHandler(this._handle_click_66_0.bind(this)));
+    var disposable_6:Function = this.renderer.listen(this._el_71,'click',this.eventHandler(this._handle_click_71_0.bind(this)));
+    var disposable_7:Function = this.renderer.listen(this._el_88,'click',this.eventHandler(this._handle_click_88_0.bind(this)));
+    var disposable_8:Function = this.renderer.listen(this._el_92,'click',this.eventHandler(this._handle_click_92_0.bind(this)));
     this.init(([] as any[]),[
       this._el_0,
       this._text_1,
@@ -450,154 +458,158 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
       this._text_13,
       this._el_14,
       this._text_15,
-      this._el_16,
-      this._text_17,
-      this._el_18,
+      this._text_16,
+      this._el_17,
+      this._text_18,
       this._el_19,
-      this._text_20,
+      this._el_20,
       this._text_21,
-      this._el_22,
+      this._text_22,
       this._el_23,
-      this._text_24,
+      this._el_24,
       this._text_25,
       this._text_26,
       this._text_27,
-      this._el_28,
-      this._text_29,
-      this._el_30,
+      this._text_28,
+      this._el_29,
+      this._text_30,
       this._el_31,
-      this._text_32,
+      this._el_32,
       this._text_33,
-      this._el_34,
-      this._text_35,
-      this._el_36,
+      this._text_34,
+      this._el_35,
+      this._text_36,
       this._text_37,
       this._el_38,
-      this._el_39,
-      this._text_40,
-      this._text_41,
-      this._el_42,
-      this._el_43,
-      this._text_44,
-      this._text_45,
-      this._el_46,
-      this._el_47,
-      this._text_48,
-      this._text_49,
+      this._text_39,
+      this._el_40,
+      this._el_41,
+      this._text_42,
+      this._text_43,
+      this._el_44,
+      this._el_45,
+      this._text_46,
+      this._text_47,
+      this._el_48,
+      this._el_49,
       this._text_50,
       this._text_51,
-      this._el_52,
+      this._text_52,
       this._text_53,
       this._el_54,
-      this._el_55,
-      this._text_56,
-      this._text_57,
-      this._el_58,
+      this._text_55,
+      this._el_56,
+      this._el_57,
+      this._text_58,
       this._text_59,
       this._el_60,
       this._text_61,
-      this._el_62,
+      this._text_62,
       this._el_63,
       this._text_64,
-      this._text_65,
-      this._text_66,
-      this._el_67,
-      this._el_68,
+      this._el_65,
+      this._el_66,
+      this._text_67,
+      this._text_68,
       this._text_69,
-      this._text_70,
-      this._text_71,
+      this._el_70,
+      this._el_71,
       this._text_72,
-      this._el_73,
+      this._text_73,
       this._text_74,
-      this._el_75,
+      this._text_75,
       this._el_76,
       this._text_77,
-      this._text_78,
+      this._el_78,
       this._el_79,
       this._text_80,
-      this._el_81,
-      this._text_82,
-      this._el_83,
-      this._el_84,
-      this._text_85,
+      this._text_81,
+      this._el_82,
+      this._text_83,
+      this._text_84,
+      this._el_85,
       this._text_86,
       this._el_87,
       this._el_88,
       this._text_89,
       this._text_90,
-      this._text_91,
-      this._text_92,
+      this._el_91,
+      this._el_92,
       this._text_93,
-      this._el_94,
+      this._text_94,
       this._text_95,
-      this._el_96,
+      this._text_96,
       this._text_97,
       this._el_98,
-      this._el_99,
-      this._text_100,
+      this._text_99,
+      this._el_100,
       this._text_101,
       this._el_102,
-      this._text_103,
-      this._el_104,
+      this._el_103,
+      this._text_104,
       this._text_105,
-      this._text_106,
+      this._el_106,
       this._text_107,
       this._el_108,
       this._text_109,
-      this._el_110,
-      this._el_111,
-      this._text_112,
+      this._text_110,
+      this._text_111,
+      this._el_112,
       this._text_113,
       this._el_114,
-      this._text_115,
-      this._el_116,
+      this._el_115,
+      this._text_116,
       this._text_117,
-      this._text_118,
+      this._el_118,
       this._text_119,
       this._el_120,
       this._text_121,
-      this._el_122,
-      this._el_123,
-      this._text_124,
+      this._text_122,
+      this._text_123,
+      this._el_124,
       this._text_125,
       this._el_126,
-      this._text_127,
-      this._el_128,
+      this._el_127,
+      this._text_128,
       this._text_129,
       this._el_130,
       this._text_131,
-      this._text_132,
-      this._el_133,
-      this._text_134,
-      this._el_135,
+      this._el_132,
+      this._text_133,
+      this._el_134,
+      this._text_135,
       this._text_136,
-      this._text_137,
-      this._el_138,
-      this._text_139,
-      this._el_140,
+      this._el_137,
+      this._text_138,
+      this._el_139,
+      this._text_140,
       this._text_141,
-      this._text_142,
+      this._el_142,
       this._text_143,
-      this._text_144,
-      this._el_145,
+      this._el_144,
+      this._text_145,
       this._text_146,
-      this._el_147,
-      this._el_148,
-      this._text_149,
+      this._text_147,
+      this._text_148,
+      this._el_149,
       this._text_150,
       this._el_151,
       this._el_152,
       this._text_153,
       this._text_154,
-      this._text_155,
+      this._el_155,
       this._el_156,
       this._text_157,
       this._text_158,
-      this._el_159,
-      this._text_160,
+      this._text_159,
+      this._el_160,
       this._text_161,
       this._text_162,
-      this._text_163
+      this._el_163,
+      this._text_164,
+      this._text_165,
+      this._text_166,
+      this._text_167
     ]
     ,[
       disposable_0,
@@ -614,118 +626,118 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import15.RouterLinkWithHref) && ((19 <= requestNodeIndex) && (requestNodeIndex <= 20)))) { return this._RouterLinkWithHref_19_3.context; }
-    if (((token === import15.RouterLinkWithHref) && ((23 <= requestNodeIndex) && (requestNodeIndex <= 24)))) { return this._RouterLinkWithHref_23_3.context; }
-    if (((token === import15.RouterLinkWithHref) && ((39 <= requestNodeIndex) && (requestNodeIndex <= 40)))) { return this._RouterLinkWithHref_39_3.context; }
-    if (((token === import15.RouterLinkWithHref) && ((43 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._RouterLinkWithHref_43_3.context; }
-    if (((token === import15.RouterLinkWithHref) && ((47 <= requestNodeIndex) && (requestNodeIndex <= 48)))) { return this._RouterLinkWithHref_47_3.context; }
-    if (((token === import15.RouterLinkWithHref) && ((63 <= requestNodeIndex) && (requestNodeIndex <= 64)))) { return this._RouterLinkWithHref_63_3.context; }
-    if (((token === import15.RouterLinkWithHref) && ((68 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._RouterLinkWithHref_68_3.context; }
-    if (((token === import15.RouterLinkWithHref) && ((84 <= requestNodeIndex) && (requestNodeIndex <= 85)))) { return this._RouterLinkWithHref_84_3.context; }
+    if (((token === import15.RouterLinkWithHref) && ((20 <= requestNodeIndex) && (requestNodeIndex <= 21)))) { return this._RouterLinkWithHref_20_3.context; }
+    if (((token === import15.RouterLinkWithHref) && ((24 <= requestNodeIndex) && (requestNodeIndex <= 25)))) { return this._RouterLinkWithHref_24_3.context; }
+    if (((token === import15.RouterLinkWithHref) && ((41 <= requestNodeIndex) && (requestNodeIndex <= 42)))) { return this._RouterLinkWithHref_41_3.context; }
+    if (((token === import15.RouterLinkWithHref) && ((45 <= requestNodeIndex) && (requestNodeIndex <= 46)))) { return this._RouterLinkWithHref_45_3.context; }
+    if (((token === import15.RouterLinkWithHref) && ((49 <= requestNodeIndex) && (requestNodeIndex <= 50)))) { return this._RouterLinkWithHref_49_3.context; }
+    if (((token === import15.RouterLinkWithHref) && ((66 <= requestNodeIndex) && (requestNodeIndex <= 67)))) { return this._RouterLinkWithHref_66_3.context; }
+    if (((token === import15.RouterLinkWithHref) && ((71 <= requestNodeIndex) && (requestNodeIndex <= 72)))) { return this._RouterLinkWithHref_71_3.context; }
     if (((token === import15.RouterLinkWithHref) && ((88 <= requestNodeIndex) && (requestNodeIndex <= 89)))) { return this._RouterLinkWithHref_88_3.context; }
+    if (((token === import15.RouterLinkWithHref) && ((92 <= requestNodeIndex) && (requestNodeIndex <= 93)))) { return this._RouterLinkWithHref_92_3.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_19_0_0:any = 'about_us';
-    this._RouterLinkWithHref_19_3.check_routerLink(currVal_19_0_0,throwOnChange,false);
-    this._RouterLinkWithHref_19_3.detectChangesInInputProps(this,this._el_19,throwOnChange);
-    const currVal_23_0_0:any = 'craftsvilla_in_media';
-    this._RouterLinkWithHref_23_3.check_routerLink(currVal_23_0_0,throwOnChange,false);
-    this._RouterLinkWithHref_23_3.detectChangesInInputProps(this,this._el_23,throwOnChange);
-    const currVal_39_0_0:any = this.context.getRouterLink(this.context.categoryLinks.saree)['qp'];
-    this._RouterLinkWithHref_39_3.check_queryParams(currVal_39_0_0,throwOnChange,false);
-    const currVal_39_0_1:any = this.context.getRouterLink(this.context.categoryLinks.saree)['rl'];
-    this._RouterLinkWithHref_39_3.check_routerLink(currVal_39_0_1,throwOnChange,false);
-    this._RouterLinkWithHref_39_3.detectChangesInInputProps(this,this._el_39,throwOnChange);
-    const currVal_43_0_0:any = this.context.getRouterLink(this.context.categoryLinks.lehenga)['qp'];
-    this._RouterLinkWithHref_43_3.check_queryParams(currVal_43_0_0,throwOnChange,false);
-    const currVal_43_0_1:any = this.context.getRouterLink(this.context.categoryLinks.lehenga)['rl'];
-    this._RouterLinkWithHref_43_3.check_routerLink(currVal_43_0_1,throwOnChange,false);
-    this._RouterLinkWithHref_43_3.detectChangesInInputProps(this,this._el_43,throwOnChange);
-    const currVal_47_0_0:any = this.context.getRouterLink(this.context.categoryLinks.suits)['qp'];
-    this._RouterLinkWithHref_47_3.check_queryParams(currVal_47_0_0,throwOnChange,false);
-    const currVal_47_0_1:any = this.context.getRouterLink(this.context.categoryLinks.suits)['rl'];
-    this._RouterLinkWithHref_47_3.check_routerLink(currVal_47_0_1,throwOnChange,false);
-    this._RouterLinkWithHref_47_3.detectChangesInInputProps(this,this._el_47,throwOnChange);
-    const currVal_63_0_0:any = 'faqs';
-    this._RouterLinkWithHref_63_3.check_routerLink(currVal_63_0_0,throwOnChange,false);
-    this._RouterLinkWithHref_63_3.detectChangesInInputProps(this,this._el_63,throwOnChange);
-    const currVal_68_0_0:any = 'contactus';
-    this._RouterLinkWithHref_68_3.check_routerLink(currVal_68_0_0,throwOnChange,false);
-    this._RouterLinkWithHref_68_3.detectChangesInInputProps(this,this._el_68,throwOnChange);
-    const currVal_84_0_0:any = 'contactus';
-    this._RouterLinkWithHref_84_3.check_routerLink(currVal_84_0_0,throwOnChange,false);
-    this._RouterLinkWithHref_84_3.detectChangesInInputProps(this,this._el_84,throwOnChange);
+    const currVal_20_0_0:any = 'about_us';
+    this._RouterLinkWithHref_20_3.check_routerLink(currVal_20_0_0,throwOnChange,false);
+    this._RouterLinkWithHref_20_3.detectChangesInInputProps(this,this._el_20,throwOnChange);
+    const currVal_24_0_0:any = 'craftsvilla_in_media';
+    this._RouterLinkWithHref_24_3.check_routerLink(currVal_24_0_0,throwOnChange,false);
+    this._RouterLinkWithHref_24_3.detectChangesInInputProps(this,this._el_24,throwOnChange);
+    const currVal_41_0_0:any = this.context.getRouterLink(this.context.categoryLinks.saree)['qp'];
+    this._RouterLinkWithHref_41_3.check_queryParams(currVal_41_0_0,throwOnChange,false);
+    const currVal_41_0_1:any = this.context.getRouterLink(this.context.categoryLinks.saree)['rl'];
+    this._RouterLinkWithHref_41_3.check_routerLink(currVal_41_0_1,throwOnChange,false);
+    this._RouterLinkWithHref_41_3.detectChangesInInputProps(this,this._el_41,throwOnChange);
+    const currVal_45_0_0:any = this.context.getRouterLink(this.context.categoryLinks.lehenga)['qp'];
+    this._RouterLinkWithHref_45_3.check_queryParams(currVal_45_0_0,throwOnChange,false);
+    const currVal_45_0_1:any = this.context.getRouterLink(this.context.categoryLinks.lehenga)['rl'];
+    this._RouterLinkWithHref_45_3.check_routerLink(currVal_45_0_1,throwOnChange,false);
+    this._RouterLinkWithHref_45_3.detectChangesInInputProps(this,this._el_45,throwOnChange);
+    const currVal_49_0_0:any = this.context.getRouterLink(this.context.categoryLinks.suits)['qp'];
+    this._RouterLinkWithHref_49_3.check_queryParams(currVal_49_0_0,throwOnChange,false);
+    const currVal_49_0_1:any = this.context.getRouterLink(this.context.categoryLinks.suits)['rl'];
+    this._RouterLinkWithHref_49_3.check_routerLink(currVal_49_0_1,throwOnChange,false);
+    this._RouterLinkWithHref_49_3.detectChangesInInputProps(this,this._el_49,throwOnChange);
+    const currVal_66_0_0:any = 'faqs';
+    this._RouterLinkWithHref_66_3.check_routerLink(currVal_66_0_0,throwOnChange,false);
+    this._RouterLinkWithHref_66_3.detectChangesInInputProps(this,this._el_66,throwOnChange);
+    const currVal_71_0_0:any = 'contactus';
+    this._RouterLinkWithHref_71_3.check_routerLink(currVal_71_0_0,throwOnChange,false);
+    this._RouterLinkWithHref_71_3.detectChangesInInputProps(this,this._el_71,throwOnChange);
     const currVal_88_0_0:any = 'contactus';
     this._RouterLinkWithHref_88_3.check_routerLink(currVal_88_0_0,throwOnChange,false);
     this._RouterLinkWithHref_88_3.detectChangesInInputProps(this,this._el_88,throwOnChange);
+    const currVal_92_0_0:any = 'contactus';
+    this._RouterLinkWithHref_92_3.check_routerLink(currVal_92_0_0,throwOnChange,false);
+    this._RouterLinkWithHref_92_3.detectChangesInInputProps(this,this._el_92,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
-    this._RouterLinkWithHref_19_3.detectChangesInHostProps(this,this._el_19,throwOnChange);
-    this._RouterLinkWithHref_23_3.detectChangesInHostProps(this,this._el_23,throwOnChange);
-    this._RouterLinkWithHref_39_3.detectChangesInHostProps(this,this._el_39,throwOnChange);
-    this._RouterLinkWithHref_43_3.detectChangesInHostProps(this,this._el_43,throwOnChange);
-    this._RouterLinkWithHref_47_3.detectChangesInHostProps(this,this._el_47,throwOnChange);
-    this._RouterLinkWithHref_63_3.detectChangesInHostProps(this,this._el_63,throwOnChange);
-    this._RouterLinkWithHref_68_3.detectChangesInHostProps(this,this._el_68,throwOnChange);
-    this._RouterLinkWithHref_84_3.detectChangesInHostProps(this,this._el_84,throwOnChange);
+    this._RouterLinkWithHref_20_3.detectChangesInHostProps(this,this._el_20,throwOnChange);
+    this._RouterLinkWithHref_24_3.detectChangesInHostProps(this,this._el_24,throwOnChange);
+    this._RouterLinkWithHref_41_3.detectChangesInHostProps(this,this._el_41,throwOnChange);
+    this._RouterLinkWithHref_45_3.detectChangesInHostProps(this,this._el_45,throwOnChange);
+    this._RouterLinkWithHref_49_3.detectChangesInHostProps(this,this._el_49,throwOnChange);
+    this._RouterLinkWithHref_66_3.detectChangesInHostProps(this,this._el_66,throwOnChange);
+    this._RouterLinkWithHref_71_3.detectChangesInHostProps(this,this._el_71,throwOnChange);
     this._RouterLinkWithHref_88_3.detectChangesInHostProps(this,this._el_88,throwOnChange);
+    this._RouterLinkWithHref_92_3.detectChangesInHostProps(this,this._el_92,throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
   destroyInternal():void {
-    this._RouterLinkWithHref_19_3.context.ngOnDestroy();
-    this._RouterLinkWithHref_23_3.context.ngOnDestroy();
-    this._RouterLinkWithHref_39_3.context.ngOnDestroy();
-    this._RouterLinkWithHref_43_3.context.ngOnDestroy();
-    this._RouterLinkWithHref_47_3.context.ngOnDestroy();
-    this._RouterLinkWithHref_63_3.context.ngOnDestroy();
-    this._RouterLinkWithHref_68_3.context.ngOnDestroy();
-    this._RouterLinkWithHref_84_3.context.ngOnDestroy();
+    this._RouterLinkWithHref_20_3.context.ngOnDestroy();
+    this._RouterLinkWithHref_24_3.context.ngOnDestroy();
+    this._RouterLinkWithHref_41_3.context.ngOnDestroy();
+    this._RouterLinkWithHref_45_3.context.ngOnDestroy();
+    this._RouterLinkWithHref_49_3.context.ngOnDestroy();
+    this._RouterLinkWithHref_66_3.context.ngOnDestroy();
+    this._RouterLinkWithHref_71_3.context.ngOnDestroy();
     this._RouterLinkWithHref_88_3.context.ngOnDestroy();
+    this._RouterLinkWithHref_92_3.context.ngOnDestroy();
   }
-  private _handle_click_19_0($event:any):boolean {
+  private _handle_click_20_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_19_0:any = ((<any>this._RouterLinkWithHref_19_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
-    return (true && pd_19_0);
+    const pd_20_0:any = ((<any>this._RouterLinkWithHref_20_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_20_0);
   }
-  private _handle_click_23_0($event:any):boolean {
+  private _handle_click_24_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_23_0:any = ((<any>this._RouterLinkWithHref_23_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
-    return (true && pd_23_0);
+    const pd_24_0:any = ((<any>this._RouterLinkWithHref_24_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_24_0);
   }
-  private _handle_click_39_0($event:any):boolean {
+  private _handle_click_41_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_39_0:any = ((<any>this._RouterLinkWithHref_39_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
-    return (true && pd_39_0);
+    const pd_41_0:any = ((<any>this._RouterLinkWithHref_41_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_41_0);
   }
-  private _handle_click_43_0($event:any):boolean {
+  private _handle_click_45_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_43_0:any = ((<any>this._RouterLinkWithHref_43_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
-    return (true && pd_43_0);
+    const pd_45_0:any = ((<any>this._RouterLinkWithHref_45_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_45_0);
   }
-  private _handle_click_47_0($event:any):boolean {
+  private _handle_click_49_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_47_0:any = ((<any>this._RouterLinkWithHref_47_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
-    return (true && pd_47_0);
+    const pd_49_0:any = ((<any>this._RouterLinkWithHref_49_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_49_0);
   }
-  private _handle_click_63_0($event:any):boolean {
+  private _handle_click_66_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_63_0:any = ((<any>this._RouterLinkWithHref_63_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
-    return (true && pd_63_0);
+    const pd_66_0:any = ((<any>this._RouterLinkWithHref_66_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_66_0);
   }
-  private _handle_click_68_0($event:any):boolean {
+  private _handle_click_71_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_68_0:any = ((<any>this._RouterLinkWithHref_68_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
-    return (true && pd_68_0);
-  }
-  private _handle_click_84_0($event:any):boolean {
-    this.markPathToRootAsCheckOnce();
-    const pd_84_0:any = ((<any>this._RouterLinkWithHref_84_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
-    return (true && pd_84_0);
+    const pd_71_0:any = ((<any>this._RouterLinkWithHref_71_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_71_0);
   }
   private _handle_click_88_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_88_0:any = ((<any>this._RouterLinkWithHref_88_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
     return (true && pd_88_0);
+  }
+  private _handle_click_92_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_92_0:any = ((<any>this._RouterLinkWithHref_92_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_92_0);
   }
 }
 export function viewFactory_FooterComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import3.AppElement):import1.AppView<import0.FooterComponent> {

@@ -13,7 +13,7 @@
 						<div class="price filter-section"  *ngFor='let key of filters|keys'>
 							<div class="head" data-toggle="collapse" [attr.data-target]="getDataTarget(key)" aria-expanded="false" [attr.aria-controls]="getAriaControl(key)">
 								<span>{{ key['key'].toUpperCase() }}</span>
-								<span class="glyphicon glyphicon glyphicon-menu-down pull-right hide-lg"></span>
+								<img src="http://securestaging2.craftsvilla.com:8001/images/left-arrow.svg" class="pull-right hide-lg right-filter-ico img-responsive">
 							</div>
 							<input *ngIf="key.key == 'fabric' && !showMobileFilters " type="text" class="form-control input-box search-filter"
 										 name="Search" placeholder="Search"  [value]="getFilterString(key.key)"
@@ -93,7 +93,7 @@
 			</div>
 			<div class="sort-filter hide-lg">
 				<div class="sort" data-toggle="modal" data-target="#sortModal">
-					<span class="glyphicon glyphicon-sort sort-filter-icon"></span>
+					<img src="http://securestaging2.craftsvilla.com:8001/images/sort.svg" class="sort-ico">
 					<div class="sort-filter-text">
 						<div class="sort-filter-header">Sort</div>
 						<div class="sort-filter-status">{{ selectedSort.name }}</div>
@@ -101,7 +101,7 @@
 				</div>
 				<span class="separator"></span>
 				<div class="filter" (click)="toggleMobileFiltersShow(true)">
-					<span class="glyphicon glyphicon-filter sort-filter-icon"></span>
+					<img src="http://securestaging2.craftsvilla.com:8001/images/filter.svg" class="filter-ico">
 					<div class="sort-filter-text">
 						<div class="sort-filter-header">Filter</div>
 						<div class="sort-filter-status">{{ getAppliedFiltersString() }}</div>

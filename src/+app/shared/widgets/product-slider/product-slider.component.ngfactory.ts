@@ -158,7 +158,7 @@ class _View_ProductSliderComponent0 extends import1.AppView<import0.ProductSlide
     this._el_4 = import5.createRenderElement(this.renderer,this._el_2,'div',new import5.InlineArray2(2,'class','section-header mob-section-heading'),(null as any));
     this._text_5 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._el_6 = import5.createRenderElement(this.renderer,this._el_4,'span',new import5.InlineArray2(2,'class','heading pull-left'),(null as any));
-    this._el_7 = import5.createRenderElement(this.renderer,this._el_6,'img',new import5.InlineArray2(2,'src','images/ethnic-1.png'),(null as any));
+    this._el_7 = import5.createRenderElement(this.renderer,this._el_6,'img',new import5.InlineArray2(2,'src','http://securestaging2.craftsvilla.com:8001/images/ethnic-1.png'),(null as any));
     this._text_8 = this.renderer.createText(this._el_6,'',(null as any));
     this._text_9 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._el_10 = import5.createRenderElement(this.renderer,this._el_4,'button',new import5.InlineArray2(2,'class','btn btn-brand btn-xs view-more pull-right'),(null as any));
@@ -190,12 +190,12 @@ class _View_ProductSliderComponent0 extends import1.AppView<import0.ProductSlide
     this._text_30 = this.renderer.createText(this._el_18,'\n          ',(null as any));
     this._el_31 = import5.createRenderElement(this.renderer,this._el_18,'a',new import5.InlineArray4(4,'class','left carousel-control product-slider-prev','data-slide','prev'),(null as any));
     this._text_32 = this.renderer.createText(this._el_31,'\n            ',(null as any));
-    this._el_33 = import5.createRenderElement(this.renderer,this._el_31,'img',new import5.InlineArray4(4,'class','pull-left listing-arrow hide-sm','src','images/left-arrow.png'),(null as any));
+    this._el_33 = import5.createRenderElement(this.renderer,this._el_31,'img',new import5.InlineArray4(4,'class','pull-left listing-arrow hide-sm','src','http://securestaging2.craftsvilla.com:8001/images/left-arrow.png'),(null as any));
     this._text_34 = this.renderer.createText(this._el_31,'\n          ',(null as any));
     this._text_35 = this.renderer.createText(this._el_18,'\n          ',(null as any));
     this._el_36 = import5.createRenderElement(this.renderer,this._el_18,'a',new import5.InlineArray4(4,'class','right carousel-control product-slider-next','data-slide','next'),(null as any));
     this._text_37 = this.renderer.createText(this._el_36,'\n            ',(null as any));
-    this._el_38 = import5.createRenderElement(this.renderer,this._el_36,'img',new import5.InlineArray4(4,'class','pull-right listing-arrow hide-sm','src','images/right-arrow.png'),(null as any));
+    this._el_38 = import5.createRenderElement(this.renderer,this._el_36,'img',new import5.InlineArray4(4,'class','pull-right listing-arrow hide-sm','src','http://securestaging2.craftsvilla.com:8001/images/right-arrow.png'),(null as any));
     this._text_39 = this.renderer.createText(this._el_36,'\n          ',(null as any));
     this._text_40 = this.renderer.createText(this._el_18,'\n        ',(null as any));
     this._text_41 = this.renderer.createText(this._el_16,'\n      ',(null as any));

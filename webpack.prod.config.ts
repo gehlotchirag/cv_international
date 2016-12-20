@@ -161,7 +161,7 @@ export const serverPlugins = [
   }),
 ];
 export const serverConfig = {
-  entry: './src/server.aot',
+  entry: './src/server.aot.prod',
   output: {
     filename: 'index.js',
     chunkFilename: '[id].bundle.js',

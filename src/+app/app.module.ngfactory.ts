@@ -55,18 +55,20 @@ import * as import47 from './statics/faqs/faqs.component.ngfactory';
 import * as import48 from './statics/order-tracking/order-tracking.component.ngfactory';
 import * as import49 from './statics/in-media/in-media.component.ngfactory';
 import * as import50 from './statics/contact-us/contactus.component.ngfactory';
-import * as import51 from '@angular/core/src/i18n/tokens';
-import * as import52 from './+home/home.component';
-import * as import53 from './+product/product.component';
-import * as import54 from './+listing/listing.component';
-import * as import55 from './statics/about-us/about-us.component';
-import * as import56 from './statics/faqs/faqs.component';
-import * as import57 from './statics/order-tracking/order-tracking.component';
-import * as import58 from './statics/in-media/in-media.component';
-import * as import59 from './statics/contact-us/contactus.component';
-import * as import60 from '@angular/http/src/http';
-import * as import61 from '@angular/router/src/router';
-import * as import62 from '@angular/router/src/router_config_loader';
+import * as import51 from './+not_found/not-found.component.ngfactory';
+import * as import52 from '@angular/core/src/i18n/tokens';
+import * as import53 from './+home/home.component';
+import * as import54 from './+product/product.component';
+import * as import55 from './+listing/listing.component';
+import * as import56 from './statics/about-us/about-us.component';
+import * as import57 from './statics/faqs/faqs.component';
+import * as import58 from './statics/order-tracking/order-tracking.component';
+import * as import59 from './statics/in-media/in-media.component';
+import * as import60 from './statics/contact-us/contactus.component';
+import * as import61 from './+not_found/not-found.component';
+import * as import62 from '@angular/http/src/http';
+import * as import63 from '@angular/router/src/router';
+import * as import64 from '@angular/router/src/router_config_loader';
 class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
   _CommonModule_0:import2.CommonModule;
   _RouterModule_1:import3.RouterModule;
@@ -115,6 +117,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
       import42.PaginationComponentNgFactory,
       import43.ProductCardComponentNgFactory,
       import44.ProductComponentNgFactory,
+      import44.ProductComponentNgFactory,
       import45.ListingComponentNgFactory,
       import45.ListingComponentNgFactory,
       import45.ListingComponentNgFactory,
@@ -122,12 +125,13 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
       import47.FaqsComponentNgFactory,
       import48.OrderTrackingComponentNgFactory,
       import49.InMediaComponentNgFactory,
-      import50.ContactUsComponentNgFactory
+      import50.ContactUsComponentNgFactory,
+      import51.NotFoundComponentNgFactory
     ]
     ,([] as any[]));
   }
   get _NgLocalization_18():import18.NgLocaleLocalization {
-    if ((this.__NgLocalization_18 == (null as any))) { (this.__NgLocalization_18 = new import18.NgLocaleLocalization(this.parent.get(import51.LOCALE_ID))); }
+    if ((this.__NgLocalization_18 == (null as any))) { (this.__NgLocalization_18 = new import18.NgLocaleLocalization(this.parent.get(import52.LOCALE_ID))); }
     return this.__NgLocalization_18;
   }
   get _RadioControlRegistry_19():import19.RadioControlRegistry {
@@ -142,36 +146,42 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
     if ((this.__ROUTES_21 == (null as any))) { (this.__ROUTES_21 = [
         [{
           path: '',
-          component: import52.HomeComponent
-        }
-      ],
-        [{
-          path: 'product',
-            children: [{
-              path: ':id',
-              component: import53.ProductComponent,
-              pathMatch: 'full',
-              resolve: {product: import23.ProductDetailResolve}
-            }
-          ]
+          component: import53.HomeComponent
         }
       ],
       [
         {
+          path: 'product/:id',
+          component: import54.ProductComponent,
+          pathMatch: 'full',
+          resolve: {product: import23.ProductDetailResolve}
+        }
+        ,
+        {
+          path: 'shop/:slug/:id',
+          component: import54.ProductComponent,
+          pathMatch: 'full',
+          resolve: {product: import23.ProductDetailResolve}
+        }
+
+      ]
+      ,
+      [
+        {
           path: 'category',
-          component: import54.ListingComponent,
+          component: import55.ListingComponent,
           resolve: {filters: import26.FilterResolveService}
         }
         ,
         {
           path: 'premium',
-          component: import54.ListingComponent,
+          component: import55.ListingComponent,
           resolve: {filters: import26.FilterResolveService}
         }
         ,
         {
           path: 'category/:id',
-          component: import54.ListingComponent,
+          component: import55.ListingComponent,
           resolve: {filters: import26.FilterResolveService}
         }
 
@@ -180,38 +190,50 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
       [
         {
           path: 'about_us',
-          component: import55.AboutUsComponent
+          component: import56.AboutUsComponent
         }
         ,
         {
           path: 'faqs',
-          component: import56.FaqsComponent
+          component: import57.FaqsComponent
         }
         ,
         {
           path: 'order_tracking',
-          component: import57.OrderTrackingComponent
+          component: import58.OrderTrackingComponent
         }
         ,
         {
           path: 'craftsvilla_in_media',
-          component: import58.InMediaComponent
+          component: import59.InMediaComponent
         }
         ,
         {
           path: 'contactus',
-          component: import59.ContactUsComponent
+          component: import60.ContactUsComponent
         }
 
       ]
       ,
-      ([] as any[])
+      [
+        {
+          path: '404',
+          component: import61.NotFoundComponent
+        }
+        ,
+        {
+          path: '**',
+          redirectTo: '404'
+        }
+
+      ]
+
     ]
     ); }
     return this.__ROUTES_21;
   }
   get _HttpClientService_22():import21.HttpClientService {
-    if ((this.__HttpClientService_22 == (null as any))) { (this.__HttpClientService_22 = new import21.HttpClientService(this.parent.get(import60.Http))); }
+    if ((this.__HttpClientService_22 == (null as any))) { (this.__HttpClientService_22 = new import21.HttpClientService(this.parent.get(import62.Http))); }
     return this.__HttpClientService_22;
   }
   get _ProductService_23():import22.ProductService {
@@ -219,7 +241,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
     return this.__ProductService_23;
   }
   get _ProductDetailResolve_24():import23.ProductDetailResolve {
-    if ((this.__ProductDetailResolve_24 == (null as any))) { (this.__ProductDetailResolve_24 = new import23.ProductDetailResolve(this._ProductService_23,this.parent.get(import61.Router))); }
+    if ((this.__ProductDetailResolve_24 == (null as any))) { (this.__ProductDetailResolve_24 = new import23.ProductDetailResolve(this._ProductService_23,this.parent.get(import63.Router))); }
     return this.__ProductDetailResolve_24;
   }
   get _ListingService_25():import24.ListingService {
@@ -227,11 +249,11 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
     return this.__ListingService_25;
   }
   get _ListingResolveService_26():import25.ListingResolveService {
-    if ((this.__ListingResolveService_26 == (null as any))) { (this.__ListingResolveService_26 = new import25.ListingResolveService(this._ListingService_25,this.parent.get(import61.Router))); }
+    if ((this.__ListingResolveService_26 == (null as any))) { (this.__ListingResolveService_26 = new import25.ListingResolveService(this._ListingService_25,this.parent.get(import63.Router))); }
     return this.__ListingResolveService_26;
   }
   get _FilterResolveService_27():import26.FilterResolveService {
-    if ((this.__FilterResolveService_27 == (null as any))) { (this.__FilterResolveService_27 = new import26.FilterResolveService(this._ListingService_25,this.parent.get(import61.Router))); }
+    if ((this.__FilterResolveService_27 == (null as any))) { (this.__FilterResolveService_27 = new import26.FilterResolveService(this._ListingService_25,this.parent.get(import63.Router))); }
     return this.__FilterResolveService_27;
   }
   get _RouterHeaderBindingService_28():import27.RouterHeaderBindingService {
@@ -289,7 +311,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
     if ((token === import18.NgLocalization)) { return this._NgLocalization_18; }
     if ((token === import19.RadioControlRegistry)) { return this._RadioControlRegistry_19; }
     if ((token === import20.FormBuilder)) { return this._FormBuilder_20; }
-    if ((token === import62.ROUTES)) { return this._ROUTES_21; }
+    if ((token === import64.ROUTES)) { return this._ROUTES_21; }
     if ((token === import21.HttpClientService)) { return this._HttpClientService_22; }
     if ((token === import22.ProductService)) { return this._ProductService_23; }
     if ((token === import23.ProductDetailResolve)) { return this._ProductDetailResolve_24; }

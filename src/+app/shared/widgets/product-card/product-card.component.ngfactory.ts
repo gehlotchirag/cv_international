@@ -187,8 +187,8 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
     this._text_29 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_3,'click',this.eventHandler(this._handle_click_3_0.bind(this)));
     this._pipe_currency_0 = new import13.CurrencyPipe(this.parentInjector.get(import18.LOCALE_ID));
-    this._pipe_currency_0_0 = import2.pureProxy3(this._pipe_currency_0.transform.bind(this._pipe_currency_0));
-    this._pipe_currency_0_1 = import2.pureProxy3(this._pipe_currency_0.transform.bind(this._pipe_currency_0));
+    this._pipe_currency_0_0 = import2.pureProxy4(this._pipe_currency_0.transform.bind(this._pipe_currency_0));
+    this._pipe_currency_0_1 = import2.pureProxy4(this._pipe_currency_0.transform.bind(this._pipe_currency_0));
     this._pipe_number_1 = new import13.DecimalPipe(this.parentInjector.get(import18.LOCALE_ID));
     this._pipe_number_1_0 = import2.pureProxy2(this._pipe_number_1.transform.bind(this._pipe_number_1));
     this.init(([] as any[]),[
@@ -234,7 +234,7 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
   }
   detectChangesInternal(throwOnChange:boolean):void {
     const valUnwrapper:any = new import1.ValueUnwrapper();
-    const currVal_3_0_0:any = import2.interpolate(1,'/product/',this.context.product.productId,'');
+    const currVal_3_0_0:any = import2.interpolate(2,'/shop/',this.context.product.slug,'/',this.context.product.productId,'');
     this._RouterLinkWithHref_3_3.check_routerLink(currVal_3_0_0,throwOnChange,false);
     this._RouterLinkWithHref_3_3.detectChangesInInputProps(this,this._el_3,throwOnChange);
     const currVal_25_0_0:any = this.context.showSizeInfo;
@@ -253,13 +253,13 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
       this._expr_35 = currVal_35;
     }
     valUnwrapper.reset();
-    const currVal_36:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_currency_0_0,this._pipe_currency_0.transform)(this.context.product.discountedPrice,'USD',true)),'');
+    const currVal_36:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_currency_0_0,this._pipe_currency_0.transform)(this.context.product.discountedPrice,'USD',true,'1.0-0')),'');
     if ((valUnwrapper.hasWrappedValue || import2.checkBinding(throwOnChange,this._expr_36,currVal_36))) {
       this.renderer.setText(this._text_15,currVal_36);
       this._expr_36 = currVal_36;
     }
     valUnwrapper.reset();
-    const currVal_39:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_currency_0_1,this._pipe_currency_0.transform)(this.context.product.regularPrice,'USD',true)),'');
+    const currVal_39:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_currency_0_1,this._pipe_currency_0.transform)(this.context.product.regularPrice,'USD',true,'1.0-0')),'');
     if ((valUnwrapper.hasWrappedValue || import2.checkBinding(throwOnChange,this._expr_39,currVal_39))) {
       this.renderer.setText(this._text_19,currVal_39);
       this._expr_39 = currVal_39;

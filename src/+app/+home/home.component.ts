@@ -36,13 +36,13 @@ export class HomeComponent implements OnInit {
               private homeService: HomeService,
               private widgetFactoryService: WidgetFactoryService,
               private cartService: CartDetailsService,
-              private commonService: CommonSharedService
+              private commonService: CommonSharedService,
   )
   {
     this.children = this.homeService.getComponentsData();
-    if(!this.cartService.isInitialized){
-      this.cartService.fetchCartDetails();
-    }
+    // if(!this.cartService.isInitialized){
+    //   this.cartService.fetchCartDetails();
+    // }
   }
 
   ngOnInit(){
@@ -70,7 +70,6 @@ export class HomeComponent implements OnInit {
       }      
       _satellite.track("page-load");
     }
-
   }
 
   ngOnDestroy() {

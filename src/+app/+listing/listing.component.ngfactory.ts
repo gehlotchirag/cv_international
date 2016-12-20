@@ -397,7 +397,7 @@ class _View_ListingComponent0 extends import1.AppView<import0.ListingComponent> 
     this._text_93 = this.renderer.createText(this._el_92,'\n				',(null as any));
     this._el_94 = import6.createRenderElement(this.renderer,this._el_92,'div',new import6.InlineArray8(6,'class','sort','data-target','#sortModal','data-toggle','modal'),(null as any));
     this._text_95 = this.renderer.createText(this._el_94,'\n					',(null as any));
-    this._el_96 = import6.createRenderElement(this.renderer,this._el_94,'span',new import6.InlineArray2(2,'class','glyphicon glyphicon-sort sort-filter-icon'),(null as any));
+    this._el_96 = import6.createRenderElement(this.renderer,this._el_94,'img',new import6.InlineArray4(4,'class','sort-ico','src','http://securestaging2.craftsvilla.com:8001/images/sort.svg'),(null as any));
     this._text_97 = this.renderer.createText(this._el_94,'\n					',(null as any));
     this._el_98 = import6.createRenderElement(this.renderer,this._el_94,'div',new import6.InlineArray2(2,'class','sort-filter-text'),(null as any));
     this._text_99 = this.renderer.createText(this._el_98,'\n						',(null as any));
@@ -413,7 +413,7 @@ class _View_ListingComponent0 extends import1.AppView<import0.ListingComponent> 
     this._text_109 = this.renderer.createText(this._el_92,'\n				',(null as any));
     this._el_110 = import6.createRenderElement(this.renderer,this._el_92,'div',new import6.InlineArray2(2,'class','filter'),(null as any));
     this._text_111 = this.renderer.createText(this._el_110,'\n					',(null as any));
-    this._el_112 = import6.createRenderElement(this.renderer,this._el_110,'span',new import6.InlineArray2(2,'class','glyphicon glyphicon-filter sort-filter-icon'),(null as any));
+    this._el_112 = import6.createRenderElement(this.renderer,this._el_110,'img',new import6.InlineArray4(4,'class','filter-ico','src','http://securestaging2.craftsvilla.com:8001/images/filter.svg'),(null as any));
     this._text_113 = this.renderer.createText(this._el_110,'\n					',(null as any));
     this._el_114 = import6.createRenderElement(this.renderer,this._el_110,'div',new import6.InlineArray2(2,'class','sort-filter-text'),(null as any));
     this._text_115 = this.renderer.createText(this._el_114,'\n						',(null as any));
@@ -769,7 +769,7 @@ class _View_ListingComponent1 extends import1.AppView<any> {
     this._el_4 = import6.createRenderElement(this.renderer,this._el_2,'span',import6.EMPTY_INLINE_ARRAY,(null as any));
     this._text_5 = this.renderer.createText(this._el_4,'',(null as any));
     this._text_6 = this.renderer.createText(this._el_2,'\n								',(null as any));
-    this._el_7 = import6.createRenderElement(this.renderer,this._el_2,'span',new import6.InlineArray2(2,'class','glyphicon glyphicon glyphicon-menu-down pull-right hide-lg'),(null as any));
+    this._el_7 = import6.createRenderElement(this.renderer,this._el_2,'img',new import6.InlineArray4(4,'class','pull-right hide-lg right-filter-ico img-responsive','src','http://securestaging2.craftsvilla.com:8001/images/left-arrow.svg'),(null as any));
     this._text_8 = this.renderer.createText(this._el_2,'\n							',(null as any));
     this._text_9 = this.renderer.createText(this._el_0,'\n							',(null as any));
     this._anchor_10 = this.renderer.createTemplateAnchor(this._el_0,(null as any));

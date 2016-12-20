@@ -2,8 +2,6 @@ import { Component, HostListener } from '@angular/core';
 import { Response } from '@angular/http';
 import { Router, NavigationEnd } from '@angular/router';
 
-import { RoutingHelperDirective } from './shared/directive/routing-helper.directive';
-
 import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
 // import { MetaService } from './shared/services/meta-tags.service';
 
@@ -19,7 +17,7 @@ import { HttpClientService } from './shared/services/http-client.service';
   selector: 'cvi-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ HttpClientService ]
+  providers: [ HttpClientService, RouterHeaderBindingService ]
 })
 export class AppComponent {
 
@@ -42,8 +40,14 @@ export class AppComponent {
 
   constructor(private router: Router,
               private httpClient: HttpClientService){
-
       this.router.events.subscribe((val) => {
+        let _currentUrl = val.url;
+        if(_currentUrl === '/'){
+          RouterHeaderBindingService.setMegaMenuStatus(false);
+        }
+        else {
+          RouterHeaderBindingService.setMegaMenuStatus(true);
+        }
         if(val instanceof NavigationEnd && typeof window !== 'undefined'){
           window.scrollTo(0,0);
         }

@@ -13,4 +13,8 @@ body {
 	margin-right:10px; 
     background-color: #e34141;
     border: none;
+    color: #fff !important;
+}
+img.home-ico {
+    width: 20px;
 }

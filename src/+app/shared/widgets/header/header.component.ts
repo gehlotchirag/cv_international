@@ -62,12 +62,13 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
 
   ngOnChanges(changes: SimpleChanges) {
     RouterHeaderBindingService.getMegaMenuStatus().subscribe(
-      (data) =>
-       this.showMegaMenuCaret = data
+      (data) =>{
+        setTimeout(_ => this.showMegaMenuCaret = data);
+      }
      );
     RouterHeaderBindingService.getMegaMenuData().subscribe(
       (data) =>  {
-        this.menuCategoriesData = data;
+        setTimeout(_ => this.menuCategoriesData = data);
       }
     );
   }

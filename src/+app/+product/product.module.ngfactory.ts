@@ -47,6 +47,7 @@ class ProductModuleInjector extends import0.NgModuleInjector<import1.ProductModu
   constructor(parent:import10.Injector) {
     super(parent,[
       import11.ProductComponentNgFactory,
+      import11.ProductComponentNgFactory,
       import12.MegaMenuComponentNgFactory,
       import13.MegaMenuLinkComponentNgFactory,
       import14.AnnouncementWidgetComponentNgFactory,
@@ -67,17 +68,23 @@ class ProductModuleInjector extends import0.NgModuleInjector<import1.ProductModu
     return this.__NgLocalization_6;
   }
   get _ROUTES_7():any[] {
-        if ((this.__ROUTES_7 == (null as any))) { (this.__ROUTES_7 = [[{
-          path: 'product',
-            children: [{
-              path: ':id',
-              component: import25.ProductComponent,
-              pathMatch: 'full',
-              resolve: {product: import9.ProductDetailResolve}
-            }
-          ]
+      if ((this.__ROUTES_7 == (null as any))) { (this.__ROUTES_7 = [[
+        {
+          path: 'product/:id',
+          component: import25.ProductComponent,
+          pathMatch: 'full',
+          resolve: {product: import9.ProductDetailResolve}
         }
-    ]]); }
+        ,
+        {
+          path: 'shop/:slug/:id',
+          component: import25.ProductComponent,
+          pathMatch: 'full',
+          resolve: {product: import9.ProductDetailResolve}
+        }
+
+      ]
+    ]); }
     return this.__ROUTES_7;
   }
   get _ProductService_8():import8.ProductService {

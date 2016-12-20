@@ -13,29 +13,29 @@ import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from '../../services/http-client.service';
-import * as import9 from '@angular/core/src/metadata/view';
-import * as import10 from '@angular/core/src/linker/component_factory';
-import * as import11 from './mega-menu.component.css.shim';
-import * as import12 from '../../../../../node_modules/@angular/common/src/directives/ng_for.ngfactory';
-import * as import13 from '../../../../../node_modules/@angular/common/src/directives/ng_if.ngfactory';
-import * as import14 from '@angular/core/src/linker/template_ref';
-import * as import15 from '@angular/core/src/change_detection/differs/iterable_differs';
-import * as import16 from '@angular/common/src/directives/ng_for';
-import * as import17 from '@angular/common/src/directives/ng_if';
-import * as import18 from './mega-menu-link.component.ngfactory';
-import * as import19 from '@angular/core/src/linker/element_ref';
-import * as import20 from './mega-menu-link.component';
-import * as import21 from '../../../../../node_modules/@angular/router/src/directives/router_link.ngfactory';
-import * as import22 from '@angular/router/src/router';
+import * as import9 from '@angular/core/src/linker/element_ref';
+import * as import10 from '@angular/router/src/router';
+import * as import11 from '@angular/core/src/metadata/view';
+import * as import12 from '@angular/core/src/linker/component_factory';
+import * as import13 from './mega-menu.component.css.shim';
+import * as import14 from '../../../../../node_modules/@angular/common/src/directives/ng_for.ngfactory';
+import * as import15 from '../../../../../node_modules/@angular/common/src/directives/ng_if.ngfactory';
+import * as import16 from '@angular/core/src/linker/template_ref';
+import * as import17 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import18 from '@angular/common/src/directives/ng_for';
+import * as import19 from '@angular/common/src/directives/ng_if';
+import * as import20 from './mega-menu-link.component.ngfactory';
+import * as import21 from './mega-menu-link.component';
+import * as import22 from '../../../../../node_modules/@angular/router/src/directives/router_link.ngfactory';
 import * as import23 from '@angular/router/src/router_state';
 import * as import24 from '@angular/common/src/location/location_strategy';
 import * as import25 from '@angular/router/src/directives/router_link';
 export class Wrapper_MegaMenuComponent {
   context:import0.MegaMenuComponent;
   changed:boolean;
-  constructor(p0:any) {
+  constructor(p0:any,p1:any,p2:any,p3:any) {
     this.changed = false;
-    this.context = new import0.MegaMenuComponent(p0);
+    this.context = new import0.MegaMenuComponent(p0,p1,p2,p3);
   }
   detectChangesInInputProps(view:import1.AppView<any>,el:any,throwOnChange:boolean):boolean {
     var changed:any = this.changed;
@@ -58,7 +58,7 @@ class _View_MegaMenuComponent_Host0 extends import1.AppView<any> {
     this._el_0 = import4.selectOrCreateRenderHostElement(this.renderer,'cvi-mega-menu',import4.EMPTY_INLINE_ARRAY,rootSelector,(null as any));
     this._appEl_0 = new import3.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_MegaMenuComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._MegaMenuComponent_0_4 = new Wrapper_MegaMenuComponent(this.parentInjector.get(import8.HttpClientService));
+    this._MegaMenuComponent_0_4 = new Wrapper_MegaMenuComponent(this.parentInjector.get(import8.HttpClientService),new import9.ElementRef(this._el_0),this.parentInjector.get(import10.Router),this.renderer);
     this._appEl_0.initComponent(this._MegaMenuComponent_0_4.context,([] as any[]),compView_0);
     compView_0.create(this._MegaMenuComponent_0_4.context,this.projectableNodes,(null as any));
     this.init(([] as any[]).concat([this._el_0]),[this._el_0],([] as any[]),([] as any[]));
@@ -76,11 +76,11 @@ class _View_MegaMenuComponent_Host0 extends import1.AppView<any> {
   }
 }
 function viewFactory_MegaMenuComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import3.AppElement):import1.AppView<any> {
-  if ((renderType_MegaMenuComponent_Host === (null as any))) { (renderType_MegaMenuComponent_Host = viewUtils.createRenderComponentType('',0,import9.ViewEncapsulation.None,([] as any[]),{})); }
+  if ((renderType_MegaMenuComponent_Host === (null as any))) { (renderType_MegaMenuComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,([] as any[]),{})); }
   return new _View_MegaMenuComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const MegaMenuComponentNgFactory:import10.ComponentFactory<import0.MegaMenuComponent> = new import10.ComponentFactory<import0.MegaMenuComponent>('cvi-mega-menu',viewFactory_MegaMenuComponent_Host0,import0.MegaMenuComponent);
-const styles_MegaMenuComponent:any[] = [import11.styles];
+export const MegaMenuComponentNgFactory:import12.ComponentFactory<import0.MegaMenuComponent> = new import12.ComponentFactory<import0.MegaMenuComponent>('cvi-mega-menu',viewFactory_MegaMenuComponent_Host0,import0.MegaMenuComponent);
+const styles_MegaMenuComponent:any[] = [import13.styles];
 var renderType_MegaMenuComponent:import2.RenderComponentType = (null as any);
 class _View_MegaMenuComponent0 extends import1.AppView<import0.MegaMenuComponent> {
   _el_0:any;
@@ -98,12 +98,12 @@ class _View_MegaMenuComponent0 extends import1.AppView<import0.MegaMenuComponent
   _anchor_12:any;
   /*private*/ _appEl_12:import3.AppElement;
   _TemplateRef_12_5:any;
-  _NgFor_12_6:import12.Wrapper_NgFor;
+  _NgFor_12_6:import14.Wrapper_NgFor;
   _text_13:any;
   _anchor_14:any;
   /*private*/ _appEl_14:import3.AppElement;
   _TemplateRef_14_5:any;
-  _NgIf_14_6:import13.Wrapper_NgIf;
+  _NgIf_14_6:import15.Wrapper_NgIf;
   _text_15:any;
   _text_16:any;
   _text_17:any;
@@ -120,7 +120,7 @@ class _View_MegaMenuComponent0 extends import1.AppView<import0.MegaMenuComponent
     this._text_3 = this.renderer.createText(this._el_2,'\n    ',(null as any));
     this._el_4 = import4.createRenderElement(this.renderer,this._el_2,'li',new import4.InlineArray2(2,'class','header'),(null as any));
     this._text_5 = this.renderer.createText(this._el_4,'\n      ',(null as any));
-    this._el_6 = import4.createRenderElement(this.renderer,this._el_4,'span',new import4.InlineArray2(2,'class','glyphicon glyphicon-th-list'),(null as any));
+    this._el_6 = import4.createRenderElement(this.renderer,this._el_4,'img',new import4.InlineArray4(4,'class','mega-menu-list-ico','src','http://securestaging2.craftsvilla.com:8001/images/menu_filled.svg'),(null as any));
     this._text_7 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._el_8 = import4.createRenderElement(this.renderer,this._el_4,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_9 = this.renderer.createText(this._el_8,'SHOP BY CATEGORY',(null as any));
@@ -128,13 +128,13 @@ class _View_MegaMenuComponent0 extends import1.AppView<import0.MegaMenuComponent
     this._text_11 = this.renderer.createText(this._el_2,'\n    ',(null as any));
     this._anchor_12 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
     this._appEl_12 = new import3.AppElement(12,2,this,this._anchor_12);
-    this._TemplateRef_12_5 = new import14.TemplateRef_(this._appEl_12,viewFactory_MegaMenuComponent1);
-    this._NgFor_12_6 = new import12.Wrapper_NgFor(this._appEl_12.vcRef,this._TemplateRef_12_5,this.parentInjector.get(import15.IterableDiffers),this.ref);
+    this._TemplateRef_12_5 = new import16.TemplateRef_(this._appEl_12,viewFactory_MegaMenuComponent1);
+    this._NgFor_12_6 = new import14.Wrapper_NgFor(this._appEl_12.vcRef,this._TemplateRef_12_5,this.parentInjector.get(import17.IterableDiffers),this.ref);
     this._text_13 = this.renderer.createText(this._el_2,'\n    ',(null as any));
     this._anchor_14 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
     this._appEl_14 = new import3.AppElement(14,2,this,this._anchor_14);
-    this._TemplateRef_14_5 = new import14.TemplateRef_(this._appEl_14,viewFactory_MegaMenuComponent2);
-    this._NgIf_14_6 = new import13.Wrapper_NgIf(this._appEl_14.vcRef,this._TemplateRef_14_5);
+    this._TemplateRef_14_5 = new import16.TemplateRef_(this._appEl_14,viewFactory_MegaMenuComponent2);
+    this._NgIf_14_6 = new import15.Wrapper_NgIf(this._appEl_14.vcRef,this._TemplateRef_14_5);
     this._text_15 = this.renderer.createText(this._el_2,'\n  ',(null as any));
     this._text_16 = this.renderer.createText(this._el_0,'\n',(null as any));
     this._text_17 = this.renderer.createText(parentRenderNode,'\n',(null as any));
@@ -168,10 +168,10 @@ class _View_MegaMenuComponent0 extends import1.AppView<import0.MegaMenuComponent
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import14.TemplateRef) && (12 === requestNodeIndex))) { return this._TemplateRef_12_5; }
-    if (((token === import16.NgFor) && (12 === requestNodeIndex))) { return this._NgFor_12_6.context; }
-    if (((token === import14.TemplateRef) && (14 === requestNodeIndex))) { return this._TemplateRef_14_5; }
-    if (((token === import17.NgIf) && (14 === requestNodeIndex))) { return this._NgIf_14_6.context; }
+    if (((token === import16.TemplateRef) && (12 === requestNodeIndex))) { return this._TemplateRef_12_5; }
+    if (((token === import18.NgFor) && (12 === requestNodeIndex))) { return this._NgFor_12_6.context; }
+    if (((token === import16.TemplateRef) && (14 === requestNodeIndex))) { return this._TemplateRef_14_5; }
+    if (((token === import19.NgIf) && (14 === requestNodeIndex))) { return this._NgIf_14_6.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -201,13 +201,13 @@ class _View_MegaMenuComponent0 extends import1.AppView<import0.MegaMenuComponent
   }
 }
 export function viewFactory_MegaMenuComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import3.AppElement):import1.AppView<import0.MegaMenuComponent> {
-  if ((renderType_MegaMenuComponent === (null as any))) { (renderType_MegaMenuComponent = viewUtils.createRenderComponentType('',0,import9.ViewEncapsulation.Emulated,styles_MegaMenuComponent,{})); }
+  if ((renderType_MegaMenuComponent === (null as any))) { (renderType_MegaMenuComponent = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.Emulated,styles_MegaMenuComponent,{})); }
   return new _View_MegaMenuComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_MegaMenuComponent1 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import3.AppElement;
-  _MegaMenuLinkComponent_0_4:import18.Wrapper_MegaMenuLinkComponent;
+  _MegaMenuLinkComponent_0_4:import20.Wrapper_MegaMenuLinkComponent;
   _text_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import3.AppElement) {
     super(_View_MegaMenuComponent1,renderType_MegaMenuComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
@@ -215,8 +215,8 @@ class _View_MegaMenuComponent1 extends import1.AppView<any> {
   createInternal(rootSelector:string):import3.AppElement {
     this._el_0 = import4.createRenderElement(this.renderer,(null as any),'cv-menu-link',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._appEl_0 = new import3.AppElement(0,(null as any),this,this._el_0);
-    var compView_0:any = import18.viewFactory_MegaMenuLinkComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._MegaMenuLinkComponent_0_4 = new import18.Wrapper_MegaMenuLinkComponent(new import19.ElementRef(this._el_0),this.renderer);
+    var compView_0:any = import20.viewFactory_MegaMenuLinkComponent0(this.viewUtils,this.injector(0),this._appEl_0);
+    this._MegaMenuLinkComponent_0_4 = new import20.Wrapper_MegaMenuLinkComponent(new import9.ElementRef(this._el_0),this.renderer);
     this._appEl_0.initComponent(this._MegaMenuLinkComponent_0_4.context,([] as any[]),compView_0);
     this._text_1 = this.renderer.createText((null as any),'\n    ',(null as any));
     compView_0.create(this._MegaMenuLinkComponent_0_4.context,([] as any[]),(null as any));
@@ -240,7 +240,7 @@ class _View_MegaMenuComponent1 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import20.MegaMenuLinkComponent) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 1)))) { return this._MegaMenuLinkComponent_0_4.context; }
+    if (((token === import21.MegaMenuLinkComponent) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 1)))) { return this._MegaMenuLinkComponent_0_4.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -275,7 +275,7 @@ class _View_MegaMenuComponent2 extends import1.AppView<any> {
   _anchor_2:any;
   /*private*/ _appEl_2:import3.AppElement;
   _TemplateRef_2_5:any;
-  _NgFor_2_6:import12.Wrapper_NgFor;
+  _NgFor_2_6:import14.Wrapper_NgFor;
   _text_3:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import3.AppElement) {
     super(_View_MegaMenuComponent2,renderType_MegaMenuComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
@@ -285,8 +285,8 @@ class _View_MegaMenuComponent2 extends import1.AppView<any> {
     this._text_1 = this.renderer.createText(this._el_0,'\n      ',(null as any));
     this._anchor_2 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
     this._appEl_2 = new import3.AppElement(2,0,this,this._anchor_2);
-    this._TemplateRef_2_5 = new import14.TemplateRef_(this._appEl_2,viewFactory_MegaMenuComponent3);
-    this._NgFor_2_6 = new import12.Wrapper_NgFor(this._appEl_2.vcRef,this._TemplateRef_2_5,this.parent.parentInjector.get(import15.IterableDiffers),this.parent.ref);
+    this._TemplateRef_2_5 = new import16.TemplateRef_(this._appEl_2,viewFactory_MegaMenuComponent3);
+    this._NgFor_2_6 = new import14.Wrapper_NgFor(this._appEl_2.vcRef,this._TemplateRef_2_5,this.parent.parentInjector.get(import17.IterableDiffers),this.parent.ref);
     this._text_3 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this.init(([] as any[]).concat([this._el_0]),[
       this._el_0,
@@ -298,8 +298,8 @@ class _View_MegaMenuComponent2 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import14.TemplateRef) && (2 === requestNodeIndex))) { return this._TemplateRef_2_5; }
-    if (((token === import16.NgFor) && (2 === requestNodeIndex))) { return this._NgFor_2_6.context; }
+    if (((token === import16.TemplateRef) && (2 === requestNodeIndex))) { return this._TemplateRef_2_5; }
+    if (((token === import18.NgFor) && (2 === requestNodeIndex))) { return this._NgFor_2_6.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -322,7 +322,7 @@ class _View_MegaMenuComponent3 extends import1.AppView<any> {
   _anchor_5:any;
   /*private*/ _appEl_5:import3.AppElement;
   _TemplateRef_5_5:any;
-  _NgFor_5_6:import12.Wrapper_NgFor;
+  _NgFor_5_6:import14.Wrapper_NgFor;
   _text_6:any;
   /*private*/ _expr_10:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import3.AppElement) {
@@ -337,8 +337,8 @@ class _View_MegaMenuComponent3 extends import1.AppView<any> {
     this._text_4 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     this._anchor_5 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
     this._appEl_5 = new import3.AppElement(5,0,this,this._anchor_5);
-    this._TemplateRef_5_5 = new import14.TemplateRef_(this._appEl_5,viewFactory_MegaMenuComponent4);
-    this._NgFor_5_6 = new import12.Wrapper_NgFor(this._appEl_5.vcRef,this._TemplateRef_5_5,this.parent.parent.parentInjector.get(import15.IterableDiffers),this.parent.parent.ref);
+    this._TemplateRef_5_5 = new import16.TemplateRef_(this._appEl_5,viewFactory_MegaMenuComponent4);
+    this._NgFor_5_6 = new import14.Wrapper_NgFor(this._appEl_5.vcRef,this._TemplateRef_5_5,this.parent.parent.parentInjector.get(import17.IterableDiffers),this.parent.parent.ref);
     this._text_6 = this.renderer.createText(this._el_0,'\n      ',(null as any));
     this.init(([] as any[]).concat([this._el_0]),[
       this._el_0,
@@ -353,8 +353,8 @@ class _View_MegaMenuComponent3 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import14.TemplateRef) && (5 === requestNodeIndex))) { return this._TemplateRef_5_5; }
-    if (((token === import16.NgFor) && (5 === requestNodeIndex))) { return this._NgFor_5_6.context; }
+    if (((token === import16.TemplateRef) && (5 === requestNodeIndex))) { return this._TemplateRef_5_5; }
+    if (((token === import18.NgFor) && (5 === requestNodeIndex))) { return this._NgFor_5_6.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -377,7 +377,7 @@ class _View_MegaMenuComponent4 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
-  _RouterLinkWithHref_2_3:import21.Wrapper_RouterLinkWithHref;
+  _RouterLinkWithHref_2_3:import22.Wrapper_RouterLinkWithHref;
   _text_3:any;
   _text_4:any;
   /*private*/ _expr_6:any;
@@ -389,7 +389,7 @@ class _View_MegaMenuComponent4 extends import1.AppView<any> {
     this._el_0 = import4.createRenderElement(this.renderer,(null as any),'li',new import4.InlineArray2(2,'class','sub-cat-list-item'),(null as any));
     this._text_1 = this.renderer.createText(this._el_0,'\n          ',(null as any));
     this._el_2 = import4.createRenderElement(this.renderer,this._el_0,'a',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._RouterLinkWithHref_2_3 = new import21.Wrapper_RouterLinkWithHref(this.parent.parent.parent.parentInjector.get(import22.Router),this.parent.parent.parent.parentInjector.get(import23.ActivatedRoute),this.parent.parent.parent.parentInjector.get(import24.LocationStrategy));
+    this._RouterLinkWithHref_2_3 = new import22.Wrapper_RouterLinkWithHref(this.parent.parent.parent.parentInjector.get(import10.Router),this.parent.parent.parent.parentInjector.get(import23.ActivatedRoute),this.parent.parent.parent.parentInjector.get(import24.LocationStrategy));
     this._text_3 = this.renderer.createText(this._el_2,'',(null as any));
     this._text_4 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
@@ -427,8 +427,9 @@ class _View_MegaMenuComponent4 extends import1.AppView<any> {
   }
   private _handle_click_2_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_2_0:any = ((<any>this._RouterLinkWithHref_2_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
-    return (true && pd_2_0);
+    const pd_2_0:any = ((<any>this.parent.parent.parent.context.hideMegaMenu($event)) !== false);
+    const pd_2_1:any = ((<any>this._RouterLinkWithHref_2_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return ((true && pd_2_0) && pd_2_1);
   }
 }
 function viewFactory_MegaMenuComponent4(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import3.AppElement):import1.AppView<any> {

@@ -23,8 +23,6 @@ import { FooterComponent } from './shared/widgets/footer/footer.component';
 import {Tabs} from './shared/widgets/tabs-widget/tabs.component';
 import {Tab} from './shared/widgets/tabs-widget/tab.component';
 
-import { RoutingHelperDirective } from './shared/directive/routing-helper.directive';
-
 import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
 import { DataHoldingService } from './shared/services/data-holding.service';
 
@@ -36,8 +34,7 @@ import { DataHoldingService } from './shared/services/data-holding.service';
 		FooterComponent,
 		NotFoundComponent,
 		Tabs,
-		Tab,
-		RoutingHelperDirective 
+		Tab 
 	],
 	imports: [
 		SharedModule,

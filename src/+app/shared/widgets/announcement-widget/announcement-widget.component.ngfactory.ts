@@ -119,7 +119,7 @@ class _View_AnnouncementWidgetComponent0 extends import1.AppView<import0.Announc
     this._el_4 = import5.createRenderElement(this.renderer,this._el_2,'div',new import5.InlineArray2(2,'class','section-header mob-section-heading'),(null as any));
     this._text_5 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._el_6 = import5.createRenderElement(this.renderer,this._el_4,'span',new import5.InlineArray2(2,'class','heading pull-left'),(null as any));
-    this._el_7 = import5.createRenderElement(this.renderer,this._el_6,'img',new import5.InlineArray2(2,'src','images/ethnic-1.png'),(null as any));
+    this._el_7 = import5.createRenderElement(this.renderer,this._el_6,'img',new import5.InlineArray2(2,'src','http://securestaging2.craftsvilla.com:8001/images/ethnic-1.png'),(null as any));
     this._text_8 = this.renderer.createText(this._el_6,'',(null as any));
     this._text_9 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._text_10 = this.renderer.createText(this._el_4,'\n    ',(null as any));
@@ -188,11 +188,15 @@ class _View_AnnouncementWidgetComponent1 extends import1.AppView<any> {
   _text_3:any;
   _el_4:any;
   _text_5:any;
-  _text_6:any;
-  /*private*/ _expr_8:any;
+  _el_6:any;
+  _text_7:any;
+  _text_8:any;
+  /*private*/ _expr_10:any;
+  /*private*/ _expr_11:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import3.AppElement) {
     super(_View_AnnouncementWidgetComponent1,renderType_AnnouncementWidgetComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
-    this._expr_8 = import8.UNINITIALIZED;
+    this._expr_10 = import8.UNINITIALIZED;
+    this._expr_11 = import8.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import3.AppElement {
     this._el_0 = import5.createRenderElement(this.renderer,(null as any),'div',new import5.InlineArray2(2,'class','box box-3'),(null as any));
@@ -200,9 +204,11 @@ class _View_AnnouncementWidgetComponent1 extends import1.AppView<any> {
     this._el_2 = import5.createRenderElement(this.renderer,this._el_0,'a',import5.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_2_3 = new import17.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import18.Router),this.parent.parentInjector.get(import19.ActivatedRoute),this.parent.parentInjector.get(import20.LocationStrategy));
     this._text_3 = this.renderer.createText(this._el_2,'\n          ',(null as any));
-    this._el_4 = import5.createRenderElement(this.renderer,this._el_2,'img',new import5.InlineArray2(2,'class','img-responsive'),(null as any));
-    this._text_5 = this.renderer.createText(this._el_2,'\n        ',(null as any));
-    this._text_6 = this.renderer.createText(this._el_0,'\n      ',(null as any));
+    this._el_4 = import5.createRenderElement(this.renderer,this._el_2,'img',new import5.InlineArray2(2,'class','img-responsive annoucement-web-image'),(null as any));
+    this._text_5 = this.renderer.createText(this._el_2,'\n          ',(null as any));
+    this._el_6 = import5.createRenderElement(this.renderer,this._el_2,'img',new import5.InlineArray2(2,'class','img-responsive annoucement-mobile-image'),(null as any));
+    this._text_7 = this.renderer.createText(this._el_2,'\n        ',(null as any));
+    this._text_8 = this.renderer.createText(this._el_0,'\n      ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
     this.init(([] as any[]).concat([this._el_0]),[
       this._el_0,
@@ -211,13 +217,15 @@ class _View_AnnouncementWidgetComponent1 extends import1.AppView<any> {
       this._text_3,
       this._el_4,
       this._text_5,
-      this._text_6
+      this._el_6,
+      this._text_7,
+      this._text_8
     ]
     ,[disposable_0],([] as any[]));
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import21.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 5)))) { return this._RouterLinkWithHref_2_3.context; }
+    if (((token === import21.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 7)))) { return this._RouterLinkWithHref_2_3.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -228,10 +236,15 @@ class _View_AnnouncementWidgetComponent1 extends import1.AppView<any> {
     this._RouterLinkWithHref_2_3.detectChangesInInputProps(this,this._el_2,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
     this._RouterLinkWithHref_2_3.detectChangesInHostProps(this,this._el_2,throwOnChange);
-    const currVal_8:any = this.context.$implicit.imageUrl;
-    if (import5.checkBinding(throwOnChange,this._expr_8,currVal_8)) {
-      this.renderer.setElementProperty(this._el_4,'src',this.viewUtils.sanitizer.sanitize(import22.SecurityContext.URL,currVal_8));
-      this._expr_8 = currVal_8;
+    const currVal_10:any = this.context.$implicit.imageUrl;
+    if (import5.checkBinding(throwOnChange,this._expr_10,currVal_10)) {
+      this.renderer.setElementProperty(this._el_4,'src',this.viewUtils.sanitizer.sanitize(import22.SecurityContext.URL,currVal_10));
+      this._expr_10 = currVal_10;
+    }
+    const currVal_11:any = this.context.$implicit.mobile_imageUrl;
+    if (import5.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
+      this.renderer.setElementProperty(this._el_6,'src',this.viewUtils.sanitizer.sanitize(import22.SecurityContext.URL,currVal_11));
+      this._expr_11 = currVal_11;
     }
     this.detectViewChildrenChanges(throwOnChange);
   }

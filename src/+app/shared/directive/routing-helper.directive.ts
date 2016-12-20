@@ -36,6 +36,7 @@ export class RoutingHelperDirective extends RouterOutlet {
            ): void {
 
     let _urlArr = activatedRoute.snapshot.url;
+    console.log(_urlArr, "urlArr");
     if(_urlArr.length > 0){
       RouterHeaderBindingService.setMegaMenuStatus(true);
     }

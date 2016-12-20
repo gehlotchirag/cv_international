@@ -218,7 +218,7 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
     this._text_13 = this.renderer.createText(this._el_0,'\n	',(null as any));
     this._el_14 = import9.createRenderElement(this.renderer,this._el_0,'div',new import9.InlineArray2(2,'class','occupy mob-section text-center mob-bg-white trust-section hide-lg'),(null as any));
     this._text_15 = this.renderer.createText(this._el_14,'\n		',(null as any));
-    this._el_16 = import9.createRenderElement(this.renderer,this._el_14,'img',new import9.InlineArray2(2,'src','http://securestaging2.craftsvilla.com:8001/images/shield_icon.png'),(null as any));
+    this._el_16 = import9.createRenderElement(this.renderer,this._el_14,'img',new import9.InlineArray2(2,'src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/shield_icon.png'),(null as any));
     this._text_17 = this.renderer.createText(this._el_14,'\n		',(null as any));
     this._el_18 = import9.createRenderElement(this.renderer,this._el_14,'span',import9.EMPTY_INLINE_ARRAY,(null as any));
     this._el_19 = import9.createRenderElement(this.renderer,this._el_18,'strong',import9.EMPTY_INLINE_ARRAY,(null as any));
@@ -238,7 +238,7 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
     this._el_32 = import9.createRenderElement(this.renderer,this._el_30,'div',new import9.InlineArray2(2,'class','section-header mob-section-heading'),(null as any));
     this._text_33 = this.renderer.createText(this._el_32,'\n				',(null as any));
     this._el_34 = import9.createRenderElement(this.renderer,this._el_32,'span',new import9.InlineArray2(2,'class','heading pull-left'),(null as any));
-    this._el_35 = import9.createRenderElement(this.renderer,this._el_34,'img',new import9.InlineArray2(2,'src','http://securestaging2.craftsvilla.com:8001/images/ethnic-1.png'),(null as any));
+    this._el_35 = import9.createRenderElement(this.renderer,this._el_34,'img',new import9.InlineArray2(2,'src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/ethnic-1.png'),(null as any));
     this._text_36 = this.renderer.createText(this._el_34,' Craftsvilla - An Ethnic Destination',(null as any));
     this._text_37 = this.renderer.createText(this._el_32,'\n			',(null as any));
     this._text_38 = this.renderer.createText(this._el_30,'\n			',(null as any));

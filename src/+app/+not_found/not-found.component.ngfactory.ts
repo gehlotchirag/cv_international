@@ -116,7 +116,7 @@ class _View_NotFoundComponent0 extends import1.AppView<import0.NotFoundComponent
     this._text_15 = this.renderer.createText(this._el_14,'\n                    ',(null as any));
     this._el_16 = import4.createRenderElement(this.renderer,this._el_14,'a',new import4.InlineArray4(4,'class','btn btn-primary btn-lg','href','/'),(null as any));
     this._text_17 = this.renderer.createText(this._el_16,'\n                        ',(null as any));
-    this._el_18 = import4.createRenderElement(this.renderer,this._el_16,'img',new import4.InlineArray4(4,'class','home-ico','src','http://securestaging2.craftsvilla.com:8001/images/home_icon.svg'),(null as any));
+    this._el_18 = import4.createRenderElement(this.renderer,this._el_16,'img',new import4.InlineArray4(4,'class','home-ico','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/home_icon.svg'),(null as any));
     this._text_19 = this.renderer.createText(this._el_16,'\n                        Take Me Home ',(null as any));
     this._text_20 = this.renderer.createText(this._el_14,'\n                ',(null as any));
     this._text_21 = this.renderer.createText(this._el_6,'\n            ',(null as any));

@@ -119,7 +119,7 @@ class _View_AnnouncementWidgetComponent0 extends import1.AppView<import0.Announc
     this._el_4 = import5.createRenderElement(this.renderer,this._el_2,'div',new import5.InlineArray2(2,'class','section-header mob-section-heading'),(null as any));
     this._text_5 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._el_6 = import5.createRenderElement(this.renderer,this._el_4,'span',new import5.InlineArray2(2,'class','heading pull-left'),(null as any));
-    this._el_7 = import5.createRenderElement(this.renderer,this._el_6,'img',new import5.InlineArray2(2,'src','http://securestaging2.craftsvilla.com:8001/images/ethnic-1.png'),(null as any));
+    this._el_7 = import5.createRenderElement(this.renderer,this._el_6,'img',new import5.InlineArray2(2,'src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/ethnic-1.png'),(null as any));
     this._text_8 = this.renderer.createText(this._el_6,'',(null as any));
     this._text_9 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._text_10 = this.renderer.createText(this._el_4,'\n    ',(null as any));

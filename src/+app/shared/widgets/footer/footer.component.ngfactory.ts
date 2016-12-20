@@ -269,7 +269,7 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
     this._el_11 = import4.createRenderElement(this.renderer,this._el_10,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_12 = this.renderer.createText(this._el_11,'OUR COMPANY',(null as any));
     this._text_13 = this.renderer.createText(this._el_10,' \n            ',(null as any));
-    this._el_14 = import4.createRenderElement(this.renderer,this._el_10,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://securestaging2.craftsvilla.com:8001/images/left-arrow.svg'),(null as any));
+    this._el_14 = import4.createRenderElement(this.renderer,this._el_10,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/left-arrow.svg'),(null as any));
     this._text_15 = this.renderer.createText(this._el_10,'\n          ',(null as any));
     this._text_16 = this.renderer.createText(this._el_8,'\n    ',(null as any));
     this._el_17 = import4.createRenderElement(this.renderer,this._el_8,'ul',new import4.InlineArray4(4,'class','footer-list-group','id','collapseOurCompany'),(null as any));
@@ -292,7 +292,7 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
     this._el_32 = import4.createRenderElement(this.renderer,this._el_31,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_33 = this.renderer.createText(this._el_32,'TOP CATEGORIES',(null as any));
     this._text_34 = this.renderer.createText(this._el_31,' \n      ',(null as any));
-    this._el_35 = import4.createRenderElement(this.renderer,this._el_31,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://securestaging2.craftsvilla.com:8001/images/left-arrow.svg'),(null as any));
+    this._el_35 = import4.createRenderElement(this.renderer,this._el_31,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/left-arrow.svg'),(null as any));
     this._text_36 = this.renderer.createText(this._el_31,'\n    ',(null as any));
     this._text_37 = this.renderer.createText(this._el_29,'\n    ',(null as any));
     this._el_38 = import4.createRenderElement(this.renderer,this._el_29,'ul',new import4.InlineArray2(2,'class','footer-list-group'),(null as any));
@@ -320,7 +320,7 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
     this._el_57 = import4.createRenderElement(this.renderer,this._el_56,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_58 = this.renderer.createText(this._el_57,'USEFUL INFO',(null as any));
     this._text_59 = this.renderer.createText(this._el_56,' \n      ',(null as any));
-    this._el_60 = import4.createRenderElement(this.renderer,this._el_56,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://securestaging2.craftsvilla.com:8001/images/left-arrow.svg'),(null as any));
+    this._el_60 = import4.createRenderElement(this.renderer,this._el_56,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/left-arrow.svg'),(null as any));
     this._text_61 = this.renderer.createText(this._el_56,'\n    ',(null as any));
     this._text_62 = this.renderer.createText(this._el_54,'\n    ',(null as any));
     this._el_63 = import4.createRenderElement(this.renderer,this._el_54,'ul',new import4.InlineArray4(4,'class','footer-list-group','id','collapseUsefulInfo'),(null as any));
@@ -344,7 +344,7 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
     this._el_79 = import4.createRenderElement(this.renderer,this._el_78,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_80 = this.renderer.createText(this._el_79,'POLICIES & INFO',(null as any));
     this._text_81 = this.renderer.createText(this._el_78,' \n      ',(null as any));
-    this._el_82 = import4.createRenderElement(this.renderer,this._el_78,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://securestaging2.craftsvilla.com:8001/images/left-arrow.svg'),(null as any));
+    this._el_82 = import4.createRenderElement(this.renderer,this._el_78,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/left-arrow.svg'),(null as any));
     this._text_83 = this.renderer.createText(this._el_78,'\n    ',(null as any));
     this._text_84 = this.renderer.createText(this._el_76,'\n    ',(null as any));
     this._el_85 = import4.createRenderElement(this.renderer,this._el_76,'ul',new import4.InlineArray4(4,'class','footer-list-group','id','collapsePolicies'),(null as any));
@@ -398,17 +398,17 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
     this._text_131 = this.renderer.createText(this._el_130,'\n      ',(null as any));
     this._el_132 = import4.createRenderElement(this.renderer,this._el_130,'a',new import4.InlineArray4(4,'href','http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts','target','_blank'),(null as any));
     this._text_133 = this.renderer.createText(this._el_132,'\n        ',(null as any));
-    this._el_134 = import4.createRenderElement(this.renderer,this._el_132,'img',new import4.InlineArray4(4,'alt','Facebook','src','http://securestaging2.craftsvilla.com:8001/images/facebook.png'),(null as any));
+    this._el_134 = import4.createRenderElement(this.renderer,this._el_132,'img',new import4.InlineArray4(4,'alt','Facebook','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/facebook.png'),(null as any));
     this._text_135 = this.renderer.createText(this._el_132,'\n      ',(null as any));
     this._text_136 = this.renderer.createText(this._el_130,'\n      ',(null as any));
     this._el_137 = import4.createRenderElement(this.renderer,this._el_130,'a',new import4.InlineArray4(4,'href','https://twitter.com/share?url=https://www.craftsvilla.com&text=Simple%20Share%20Buttons','target','_blank'),(null as any));
     this._text_138 = this.renderer.createText(this._el_137,'\n        ',(null as any));
-    this._el_139 = import4.createRenderElement(this.renderer,this._el_137,'img',new import4.InlineArray4(4,'alt','Twitter','src','http://securestaging2.craftsvilla.com:8001/images/twitter.png'),(null as any));
+    this._el_139 = import4.createRenderElement(this.renderer,this._el_137,'img',new import4.InlineArray4(4,'alt','Twitter','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/twitter.png'),(null as any));
     this._text_140 = this.renderer.createText(this._el_137,'\n      ',(null as any));
     this._text_141 = this.renderer.createText(this._el_130,'\n      ',(null as any));
     this._el_142 = import4.createRenderElement(this.renderer,this._el_130,'a',new import4.InlineArray2(2,'href','javascript:void((function()%7Bvar%20e=document.createElement(\'script\');e.setAttribute(\'type\',\'text/javascript\');e.setAttribute(\'charset\',\'UTF-8\');e.setAttribute(\'src\',\'http://assets.pinterest.com/js/pinmarklet.js?r=\'+Math.random()*99999999);document.body.appendChild(e)%7D)());'),(null as any));
     this._text_143 = this.renderer.createText(this._el_142,'\n        ',(null as any));
-    this._el_144 = import4.createRenderElement(this.renderer,this._el_142,'img',new import4.InlineArray4(4,'alt','Pinterest','src','http://securestaging2.craftsvilla.com:8001/images/pinterest.png'),(null as any));
+    this._el_144 = import4.createRenderElement(this.renderer,this._el_142,'img',new import4.InlineArray4(4,'alt','Pinterest','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/pinterest.png'),(null as any));
     this._text_145 = this.renderer.createText(this._el_142,'\n      ',(null as any));
     this._text_146 = this.renderer.createText(this._el_130,'\n    ',(null as any));
     this._text_147 = this.renderer.createText(this._el_124,'\n  ',(null as any));
@@ -420,7 +420,7 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
     this._text_153 = this.renderer.createText(this._el_152,'PAYMENT OPTIONS',(null as any));
     this._text_154 = this.renderer.createText(this._el_149,'\n    ',(null as any));
     this._el_155 = import4.createRenderElement(this.renderer,this._el_149,'p',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_156 = import4.createRenderElement(this.renderer,this._el_155,'img',new import4.InlineArray4(4,'class','img-responsive','src','http://securestaging2.craftsvilla.com:8001/images/payment-method.png'),(null as any));
+    this._el_156 = import4.createRenderElement(this.renderer,this._el_155,'img',new import4.InlineArray4(4,'class','img-responsive','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/payment-method.png'),(null as any));
     this._text_157 = this.renderer.createText(this._el_149,'\n  ',(null as any));
     this._text_158 = this.renderer.createText(this._el_98,'\n',(null as any));
     this._text_159 = this.renderer.createText(this._el_4,'\n',(null as any));

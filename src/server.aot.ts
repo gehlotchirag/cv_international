@@ -114,7 +114,7 @@ app.use('/api', createTodoApi());
 
 function ngApp(req, res) {
   res.render('index', {
-    template: 'http://securestaging2.craftsvilla.com:8001/dist/client/',
+    // template: 'http://securestaging2.craftsvilla.com:8001/dist/client/',
     req,
     res,
     // time: true, // use this to determine what part of your app is slow only in development

@@ -120,7 +120,7 @@ class _View_MegaMenuComponent0 extends import1.AppView<import0.MegaMenuComponent
     this._text_3 = this.renderer.createText(this._el_2,'\n    ',(null as any));
     this._el_4 = import4.createRenderElement(this.renderer,this._el_2,'li',new import4.InlineArray2(2,'class','header'),(null as any));
     this._text_5 = this.renderer.createText(this._el_4,'\n      ',(null as any));
-    this._el_6 = import4.createRenderElement(this.renderer,this._el_4,'img',new import4.InlineArray4(4,'class','mega-menu-list-ico','src','http://securestaging2.craftsvilla.com:8001/images/menu_filled.svg'),(null as any));
+    this._el_6 = import4.createRenderElement(this.renderer,this._el_4,'img',new import4.InlineArray4(4,'class','mega-menu-list-ico','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/menu_filled.svg'),(null as any));
     this._text_7 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._el_8 = import4.createRenderElement(this.renderer,this._el_4,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_9 = this.renderer.createText(this._el_8,'SHOP BY CATEGORY',(null as any));

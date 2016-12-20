@@ -277,7 +277,7 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._text_4 = this.renderer.createText(this._el_3,'Categories\n    ',(null as any));
     this._el_5 = import2.createRenderElement(this.renderer,this._el_3,'span',new import2.InlineArray8(6,'class','ico-arrow','data-target','#mobile-nav','data-toggle','offcanvas'),(null as any));
     this._text_6 = this.renderer.createText(this._el_5,'\n      ',(null as any));
-    this._el_7 = import2.createRenderElement(this.renderer,this._el_5,'img',new import2.InlineArray4(4,'class','mobile-nav-close-icon','src','http://securestaging2.craftsvilla.com:8001/images/multiply.svg'),(null as any));
+    this._el_7 = import2.createRenderElement(this.renderer,this._el_5,'img',new import2.InlineArray4(4,'class','mobile-nav-close-icon','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/multiply.svg'),(null as any));
     this._text_8 = this.renderer.createText(this._el_5,'\n    ',(null as any));
     this._text_9 = this.renderer.createText(this._el_3,'\n  ',(null as any));
     this._text_10 = this.renderer.createText(this._el_0,'\n  ',(null as any));
@@ -316,10 +316,10 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._el_28 = import2.createRenderElement(this.renderer,this._el_26,'div',new import2.InlineArray2(2,'class','logo inline mob-inline pull-left js-header-menu-show'),(null as any));
     this._NgClass_28_3 = new import18.Wrapper_NgClass(this.parentInjector.get(import24.IterableDiffers),this.parentInjector.get(import25.KeyValueDiffers),new import26.ElementRef(this._el_28),this.renderer);
     this._text_29 = this.renderer.createText(this._el_28,'\n        ',(null as any));
-    this._el_30 = import2.createRenderElement(this.renderer,this._el_28,'img',new import2.InlineArray16(10,'class','hide-lg menu-icon header-navbar-toggle navbar-toggle','data-canvas','body','data-target','.navmenu','data-toggle','offcanvas','src','http://securestaging2.craftsvilla.com:8001/images/menu_icon.png'),(null as any));
+    this._el_30 = import2.createRenderElement(this.renderer,this._el_28,'img',new import2.InlineArray16(10,'class','hide-lg menu-icon header-navbar-toggle navbar-toggle','data-canvas','body','data-target','.navmenu','data-toggle','offcanvas','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/menu_white.svg'),(null as any));
     this._text_31 = this.renderer.createText(this._el_28,'\n        ',(null as any));
     this._el_32 = import2.createRenderElement(this.renderer,this._el_28,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_33 = import2.createRenderElement(this.renderer,this._el_32,'img',new import2.InlineArray4(4,'class','logo-img','src','http://securestaging2.craftsvilla.com:8001/images/logo.png'),(null as any));
+    this._el_33 = import2.createRenderElement(this.renderer,this._el_32,'img',new import2.InlineArray4(4,'class','logo-img','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/logo.png'),(null as any));
     this._text_34 = this.renderer.createText(this._el_28,'\n        ',(null as any));
     this._anchor_35 = this.renderer.createTemplateAnchor(this._el_28,(null as any));
     this._appEl_35 = new import5.AppElement(35,28,this,this._anchor_35);
@@ -341,7 +341,7 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._text_43 = this.renderer.createText(this._el_40,'\n          ',(null as any));
     this._el_44 = import2.createRenderElement(this.renderer,this._el_40,'span',new import2.InlineArray4(4,'class','input-group-addon','id','basic-addon2'),(null as any));
     this._text_45 = this.renderer.createText(this._el_44,'\n                ',(null as any));
-    this._el_46 = import2.createRenderElement(this.renderer,this._el_44,'img',new import2.InlineArray4(4,'class','main-search-icon','src','http://securestaging2.craftsvilla.com:8001/images/search_icon.svg'),(null as any));
+    this._el_46 = import2.createRenderElement(this.renderer,this._el_44,'img',new import2.InlineArray4(4,'class','main-search-icon','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/search_icon.svg'),(null as any));
     this._text_47 = this.renderer.createText(this._el_44,'\n          ',(null as any));
     this._text_48 = this.renderer.createText(this._el_40,'\n        ',(null as any));
     this._text_49 = this.renderer.createText(this._el_38,'\n      ',(null as any));
@@ -352,7 +352,7 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._text_54 = this.renderer.createText(this._el_53,'\n          ',(null as any));
     this._el_55 = import2.createRenderElement(this.renderer,this._el_53,'a',new import2.InlineArray2(2,'href','https://secure.craftsvilla.com/buy/login'),(null as any));
     this._text_56 = this.renderer.createText(this._el_55,'\n            ',(null as any));
-    this._el_57 = import2.createRenderElement(this.renderer,this._el_55,'img',new import2.InlineArray4(4,'class','img-responsive pull-left icon','src','http://securestaging2.craftsvilla.com:8001/images/profile_icon.png'),(null as any));
+    this._el_57 = import2.createRenderElement(this.renderer,this._el_55,'img',new import2.InlineArray4(4,'class','img-responsive pull-left icon','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/profile_icon.png'),(null as any));
     this._text_58 = this.renderer.createText(this._el_55,' ',(null as any));
     this._el_59 = import2.createRenderElement(this.renderer,this._el_55,'span',new import2.InlineArray2(2,'class','hide-sm'),(null as any));
     this._text_60 = this.renderer.createText(this._el_59,'Sign in',(null as any));
@@ -363,7 +363,7 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._text_65 = this.renderer.createText(this._el_64,'\n          ',(null as any));
     this._el_66 = import2.createRenderElement(this.renderer,this._el_64,'a',new import2.InlineArray2(2,'href','https://securestaticintl.craftsvilla.com/buy/cart'),(null as any));
     this._text_67 = this.renderer.createText(this._el_66,'\n            ',(null as any));
-    this._el_68 = import2.createRenderElement(this.renderer,this._el_66,'img',new import2.InlineArray4(4,'class','img-responsive icon','src','http://securestaging2.craftsvilla.com:8001/images/bag_icon.png'),(null as any));
+    this._el_68 = import2.createRenderElement(this.renderer,this._el_66,'img',new import2.InlineArray4(4,'class','img-responsive icon','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/bag_icon.png'),(null as any));
     this._text_69 = this.renderer.createText(this._el_66,'\n            ',(null as any));
     this._el_70 = import2.createRenderElement(this.renderer,this._el_66,'span',new import2.InlineArray4(4,'class','notification-circle','id','js-cart-count'),(null as any));
     this._text_71 = this.renderer.createText(this._el_66,'\n          ',(null as any));
@@ -659,7 +659,7 @@ class _View_HeaderComponent1 extends import3.AppView<any> {
     this._text_1 = this.renderer.createText(this._el_0,'\n      ',(null as any));
     this._el_2 = import2.createRenderElement(this.renderer,this._el_0,'span',new import2.InlineArray2(2,'class','ico-arrow-back'),(null as any));
     this._text_3 = this.renderer.createText(this._el_2,'\n        ',(null as any));
-    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'class','arrow-back-ico','src','http://securestaging2.craftsvilla.com:8001/images/back_arrow.svg'),(null as any));
+    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'class','arrow-back-ico','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/back_arrow.svg'),(null as any));
     this._text_5 = this.renderer.createText(this._el_2,'\n      ',(null as any));
     this._text_6 = this.renderer.createText(this._el_0,'',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
@@ -766,7 +766,7 @@ class _View_HeaderComponent3 extends import3.AppView<any> {
     this._text_3 = this.renderer.createText(this._el_2,'',(null as any));
     this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'span',new import2.InlineArray2(2,'class','ico-arrow'),(null as any));
     this._text_5 = this.renderer.createText(this._el_4,'\n            ',(null as any));
-    this._el_6 = import2.createRenderElement(this.renderer,this._el_4,'img',new import2.InlineArray4(4,'class','arrow-left-ico','src','http://securestaging2.craftsvilla.com:8001/images/left-arrow.svg'),(null as any));
+    this._el_6 = import2.createRenderElement(this.renderer,this._el_4,'img',new import2.InlineArray4(4,'class','arrow-left-ico','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/left-arrow.svg'),(null as any));
     this._text_7 = this.renderer.createText(this._el_4,'\n          ',(null as any));
     this._text_8 = this.renderer.createText(this._el_2,'\n        ',(null as any));
     this._text_9 = this.renderer.createText(this._el_0,'\n      ',(null as any));
@@ -884,7 +884,7 @@ class _View_HeaderComponent5 extends import3.AppView<any> {
     this._text_5 = this.renderer.createText(this._el_4,'',(null as any));
     this._el_6 = import2.createRenderElement(this.renderer,this._el_4,'span',new import2.InlineArray2(2,'class','ico-arrow'),(null as any));
     this._text_7 = this.renderer.createText(this._el_6,'\n            ',(null as any));
-    this._el_8 = import2.createRenderElement(this.renderer,this._el_6,'img',new import2.InlineArray4(4,'class','plus-ico','src','http://securestaging2.craftsvilla.com:8001/images/plus.svg'),(null as any));
+    this._el_8 = import2.createRenderElement(this.renderer,this._el_6,'img',new import2.InlineArray4(4,'class','plus-ico','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/plus.svg'),(null as any));
     this._text_9 = this.renderer.createText(this._el_6,'\n          ',(null as any));
     this._text_10 = this.renderer.createText(this._el_4,'\n        ',(null as any));
     this._text_11 = this.renderer.createText(this._el_2,'\n        ',(null as any));
@@ -1330,7 +1330,7 @@ class _View_HeaderComponent8 extends import3.AppView<any> {
     this._el_9 = import2.createRenderElement(this.renderer,this._el_7,'span',new import2.InlineArray2(2,'class','top-menu-item buyer-protection'),(null as any));
     this._text_10 = this.renderer.createText(this._el_9,'\n          ',(null as any));
     this._el_11 = import2.createRenderElement(this.renderer,this._el_9,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_12 = import2.createRenderElement(this.renderer,this._el_11,'img',new import2.InlineArray2(2,'src','http://securestaging2.craftsvilla.com:8001/images/shield_icon.png'),(null as any));
+    this._el_12 = import2.createRenderElement(this.renderer,this._el_11,'img',new import2.InlineArray2(2,'src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/shield_icon.png'),(null as any));
     this._text_13 = this.renderer.createText(this._el_11,' 100% Buyer Protection',(null as any));
     this._text_14 = this.renderer.createText(this._el_9,'\n        ',(null as any));
     this._text_15 = this.renderer.createText(this._el_7,'\n      ',(null as any));
@@ -1338,7 +1338,7 @@ class _View_HeaderComponent8 extends import3.AppView<any> {
     this._text_17 = this.renderer.createText(this._el_16,'\n        ',(null as any));
     this._el_18 = import2.createRenderElement(this.renderer,this._el_16,'a',new import2.InlineArray2(2,'href','tel:+18002451549'),(null as any));
     this._text_19 = this.renderer.createText(this._el_18,'\n          ',(null as any));
-    this._el_20 = import2.createRenderElement(this.renderer,this._el_18,'img',new import2.InlineArray4(4,'class','top-menu-phone','src','http://securestaging2.craftsvilla.com:8001/images/phone-call.svg'),(null as any));
+    this._el_20 = import2.createRenderElement(this.renderer,this._el_18,'img',new import2.InlineArray4(4,'class','top-menu-phone','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/phone-call.svg'),(null as any));
     this._text_21 = this.renderer.createText(this._el_18,'\n          1-800-245-1549\n        ',(null as any));
     this._text_22 = this.renderer.createText(this._el_16,'\n      ',(null as any));
     this._text_23 = this.renderer.createText(this._el_7,'\n      ',(null as any));
@@ -1351,7 +1351,7 @@ class _View_HeaderComponent8 extends import3.AppView<any> {
     this._text_29 = this.renderer.createText(this._el_28,'\n        ',(null as any));
     this._el_30 = import2.createRenderElement(this.renderer,this._el_28,'div',new import2.InlineArray2(2,'class','dropdown inline'),(null as any));
     this._text_31 = this.renderer.createText(this._el_30,'\n          ',(null as any));
-    this._el_32 = import2.createRenderElement(this.renderer,this._el_30,'img',new import2.InlineArray4(4,'class','flag','src','http://securestaging2.craftsvilla.com:8001/images/usa-flag.gif'),(null as any));
+    this._el_32 = import2.createRenderElement(this.renderer,this._el_30,'img',new import2.InlineArray4(4,'class','flag','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/usa-flag.gif'),(null as any));
     this._text_33 = this.renderer.createText(this._el_30,' USD\n        ',(null as any));
     this._text_34 = this.renderer.createText(this._el_28,'\n      ',(null as any));
     this._text_35 = this.renderer.createText(this._el_7,'\n      ',(null as any));
@@ -1545,7 +1545,7 @@ class _View_HeaderComponent10 extends import3.AppView<any> {
     super(_View_HeaderComponent10,renderType_HeaderComponent,import8.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import5.AppElement {
-    this._el_0 = import2.createRenderElement(this.renderer,(null as any),'img',new import2.InlineArray4(4,'class','mega-menu-hamburger-icon','src','http://securestaging2.craftsvilla.com:8001/images/menu_white.svg'),(null as any));
+    this._el_0 = import2.createRenderElement(this.renderer,(null as any),'img',new import2.InlineArray4(4,'class','mega-menu-hamburger-icon','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/menu_white.svg'),(null as any));
     this.init(([] as any[]).concat([this._el_0]),[this._el_0],([] as any[]),([] as any[]));
     return (null as any);
   }
@@ -1559,7 +1559,7 @@ class _View_HeaderComponent11 extends import3.AppView<any> {
     super(_View_HeaderComponent11,renderType_HeaderComponent,import8.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import5.AppElement {
-    this._el_0 = import2.createRenderElement(this.renderer,(null as any),'img',new import2.InlineArray4(4,'class','mega-menu-hamburger-icon','src','http://securestaging2.craftsvilla.com:8001/images/menu_filled.svg'),(null as any));
+    this._el_0 = import2.createRenderElement(this.renderer,(null as any),'img',new import2.InlineArray4(4,'class','mega-menu-hamburger-icon','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/menu_filled.svg'),(null as any));
     this.init(([] as any[]).concat([this._el_0]),[this._el_0],([] as any[]),([] as any[]));
     return (null as any);
   }

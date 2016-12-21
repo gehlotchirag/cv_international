@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+body{
+  background-color: #f4f1eb !important;
+}
 svg:not(:root) {
     overflow: hidden;
 }
@@ -1081,6 +1084,7 @@ ul.nav.nav-tabs.tabs-widget li a {
       font-weight: bold;
       letter-spacing: 1px; }
     .section-header .view-more {
+      display: none !important;
       -webkit-border-radius: 0px;
       -moz-border-radius: 0px;
       -ms-border-radius: 0px;

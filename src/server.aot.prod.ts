@@ -113,7 +113,7 @@ app.get('/data.json', serverApi);
 app.use('/api', createTodoApi());
 
 function ngApp(req, res) {
-  res.render('index', {
+  res.render('indexProd', {
     // template: 'http://securestaging2.craftsvilla.com:8001/dist/client/',
     req,
     res,
@@ -138,5 +138,5 @@ app.get('*', ngApp);
 
 // Server
 let server = app.listen(app.get('port'), () => {
-  console.log(`Listening on: http://localhost:${server.address().port}`);
+  console.log(`Listening on: http://0.0.0.0:${server.address().port}`);
 });

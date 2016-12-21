@@ -113,7 +113,7 @@ app.get('/data.json', serverApi);
 app.use('/api', createTodoApi());
 
 function ngApp(req, res) {
-  res.render('index', {
+  res.render('indexStage', {
     // template: 'http://securestaging2.craftsvilla.com:8001/dist/client/',
     req,
     res,

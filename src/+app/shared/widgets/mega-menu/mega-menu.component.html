@@ -1,0 +1,30 @@
+<div class="menu pull-left bg-white hide-sm" [class.overlay-menu]="isNonHomePage" id="mega-menu">
+  <ul class="list-unstyled menu-list"
+    (mouseleave)="onMouseLeave()"
+    (selectedCategory)="getSelectedCategory($event)">
+    <li class="header">
+      <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/menu_filled.svg" class="mega-menu-list-ico">
+      <strong>SHOP BY CATEGORY</strong>
+    </li>
+    <cv-menu-link
+        *ngFor="let menuCategoryData of menuCategoriesData"
+        [categoryData]="menuCategoryData"
+        [categorySelected]="activeCategoryData"
+        [prevElem]="previousElement"
+        (selectedCategory)="getSelectedCategory($event)"
+        (previousElement) = "setPreviousElement($event)">
+    </cv-menu-link>
+    <div class="menu-sub-cat" *ngIf="activeCategoryData && this.activeCategoryData.data.length > 0">
+      <ul class="sub-cat-list" *ngFor="let subCategory of activeCategoryData.data">
+        <li class="sub-cat-list-item sub-cat-list-header">{{ subCategory.name }}</li>
+        <li class="sub-cat-list-item" *ngFor="let subSubCategory of subCategory.data">
+          <a
+            [routerLink]="getRouterLink(subSubCategory.href)['rl']"
+            [queryParams]="getRouterLink(subSubCategory.href)['qp']" (click)="hideMegaMenu($event)">
+            {{ subSubCategory.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ul>
+</div>

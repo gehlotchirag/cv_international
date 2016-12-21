@@ -1,0 +1,18 @@
+<div class="occupy mob-section">
+  <div class="contain bg-white mob-bg-white home-section clearfix">
+    <div class="section-header mob-section-heading">
+      <span class="heading pull-left"><img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/ethnic-1.png">
+        {{ header }}
+      </span>
+      <!-- <button class="btn btn-brand btn-xs view-more pull-right">View more</button> -->
+    </div>
+    <div class="section-body mob-section-body">
+      <div *ngFor="let item of dataItems" class="box box-3">
+        <a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
+          <img [src]="item.imageUrl" class="img-responsive annoucement-web-image">
+          <img [src]="item.mobile_imageUrl" class="img-responsive annoucement-mobile-image">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

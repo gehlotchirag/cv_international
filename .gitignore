@@ -4,6 +4,9 @@
 /dist
 /tmp
 
+**/*.ngfactory.ts 
+**/*.css.shim.ts
+
 # dependencies
 /node_modules
 /bower_components

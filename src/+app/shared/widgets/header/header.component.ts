@@ -1,7 +1,6 @@
 import { Component, OnInit, OnChanges, DoCheck, EventEmitter, Output, Input, SimpleChanges } from '@angular/core';
 import { ViewContainerRef, ViewChild, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { ViewEncapsulation, HostListener } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs';
 
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -45,8 +44,9 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   private tabsWidgetClass = "tabs-widget";
   public showBottomMenu: string = 'none';
   private isMegaMenuInitialized: boolean = false;
-  private menuCategoriesData: Subject<any>;
-  private mobileSelectedCategory: any;
+  private menuCategoriesData: any;
+  public mobileSelectedCategory: any;
+
   private getRouterLink = getRouterLink;
 
   @Input() showMegaMenuCaret: boolean;

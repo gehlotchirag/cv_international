@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, OnChanges, ElementRef, Renderer } from '@angular/core';
 import { Response } from '@angular/http';
+
 import { Router } from '@angular/router';
 import { HttpClientService } from '../../services/http-client.service';
 import { RouterHeaderBindingService } from '../../services/router-header-binding.service';
@@ -32,7 +33,7 @@ export class MegaMenuComponent implements OnInit {
     private el: ElementRef, 
     private router: Router,
     private renderer: Renderer
-  ) { }
+   ) { }
 
   ngOnInit() {
     let megaMenuUrl = 'api/megamenu/';

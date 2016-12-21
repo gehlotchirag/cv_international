@@ -20,7 +20,7 @@
         <li class="sub-cat-list-item" *ngFor="let subSubCategory of subCategory.data">
           <a
             [routerLink]="getRouterLink(subSubCategory.href)['rl']"
-            [queryParams]="getRouterLink(subSubCategory.href)['qp']" (click)="hideMegaMenu($event)">
+            [queryParams]="getRouterLink(subSubCategory.href)['qp']"  (click)="hideMegaMenu($event)">
             {{ subSubCategory.name }}
           </a>
         </li>

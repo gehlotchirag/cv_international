@@ -68,7 +68,6 @@ export class HomeComponent implements OnInit {
           deviceType: this.commonService.deviceType()
         }
       }      
-
       _satellite.track("page-load");
     }
   }

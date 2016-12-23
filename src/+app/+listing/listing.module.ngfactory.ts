@@ -51,6 +51,8 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
       import12.ListingComponentNgFactory,
       import12.ListingComponentNgFactory,
       import12.ListingComponentNgFactory,
+      import12.ListingComponentNgFactory,
+      import12.ListingComponentNgFactory,
       import13.MegaMenuComponentNgFactory,
       import14.MegaMenuLinkComponentNgFactory,
       import15.AnnouncementWidgetComponentNgFactory,
@@ -82,6 +84,18 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
         ,
         {
           path: 'category/:id',
+          component: import25.ListingComponent,
+          resolve: {filters: import10.FilterResolveService}
+        }
+        ,
+        {
+          path: ':category',
+          component: import25.ListingComponent,
+          resolve: {filters: import10.FilterResolveService}
+        }
+        ,
+        {
+          path: ':category/:sub-category',
           component: import25.ListingComponent,
           resolve: {filters: import10.FilterResolveService}
         }

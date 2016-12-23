@@ -121,6 +121,8 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
       import45.ListingComponentNgFactory,
       import45.ListingComponentNgFactory,
       import45.ListingComponentNgFactory,
+      import45.ListingComponentNgFactory,
+      import45.ListingComponentNgFactory,
       import46.AboutUsComponentNgFactory,
       import47.FaqsComponentNgFactory,
       import48.OrderTrackingComponentNgFactory,
@@ -181,6 +183,18 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
         ,
         {
           path: 'category/:id',
+          component: import55.ListingComponent,
+          resolve: {filters: import26.FilterResolveService}
+        }
+        ,
+        {
+          path: ':category',
+          component: import55.ListingComponent,
+          resolve: {filters: import26.FilterResolveService}
+        }
+        ,
+        {
+          path: ':category/:sub-category',
           component: import55.ListingComponent,
           resolve: {filters: import26.FilterResolveService}
         }

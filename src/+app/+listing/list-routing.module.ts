@@ -9,7 +9,9 @@ import { FilterResolveService } from './filter-resolve.service';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'category', component: ListingComponent, 
+      { 
+        path: 'category', 
+        component: ListingComponent, 
         resolve: {
           filters: FilterResolveService
         }
@@ -26,6 +28,20 @@ import { FilterResolveService } from './filter-resolve.service';
         component: ListingComponent,
         resolve: {
            filters: FilterResolveService
+        }
+      },
+      { 
+        path: ':category', 
+        component: ListingComponent, 
+        resolve: {
+          filters: FilterResolveService
+        }
+      },
+      { 
+        path: ':category/:sub-category', 
+        component: ListingComponent, 
+        resolve: {
+          filters: FilterResolveService
         }
       },
     ])

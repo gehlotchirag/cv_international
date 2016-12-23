@@ -20,6 +20,8 @@ class ListRoutingModuleInjector extends import0.NgModuleInjector<import1.ListRou
     super(parent,[
       import4.ListingComponentNgFactory,
       import4.ListingComponentNgFactory,
+      import4.ListingComponentNgFactory,
+      import4.ListingComponentNgFactory,
       import4.ListingComponentNgFactory
     ]
     ,([] as any[]));
@@ -40,6 +42,18 @@ class ListRoutingModuleInjector extends import0.NgModuleInjector<import1.ListRou
         ,
         {
           path: 'category/:id',
+          component: import5.ListingComponent,
+          resolve: {filters: import6.FilterResolveService}
+        }
+        ,
+        {
+          path: ':category',
+          component: import5.ListingComponent,
+          resolve: {filters: import6.FilterResolveService}
+        }
+        ,
+        {
+          path: ':category/:sub-category',
           component: import5.ListingComponent,
           resolve: {filters: import6.FilterResolveService}
         }

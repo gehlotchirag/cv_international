@@ -762,7 +762,7 @@
       "node_modules/rxjs/util/toSubscriber.js": 758,
       "node_modules/zone.js/dist/long-stack-trace-zone.js": 759,
       "node_modules/zone.js/dist/zone.js": 760,
-      "ignored /Users/craftsvilla/Public/Ubaid_Workspace/prerender/cv_international/node_modules/es6-promise/dist vertx": 761,
+      "ignored /Users/craftsvilla/Public/Ubaid_Workspace/cv_international/node_modules/es6-promise/dist vertx": 761,
       "node_modules/awesome-typescript-loader/dist/entry.js!node_modules/angular2-template-loader/index.js!src/client.aot.ts": 762
     },
     "usedIds": {

@@ -9,7 +9,7 @@ import { DomAdapter, getDOM } from '@angular/platform-browser/src/dom/dom_adapte
 
 declare var _satellite: any;
 declare var digitalData: any;
-
+declare var categoriesMap: any;
 
 @Component({
   selector: 'cvi-listing',
@@ -158,8 +158,14 @@ export class ListingComponent implements OnInit, DoCheck {
         useUrl = useUrl.slice(3);
       }
       urlPathEntries = (useUrl.split('/')).filter((item) => item !== "");
-      if (urlPathEntries && urlPathEntries.length >= 2) {
-        categoryId = urlPathEntries[urlPathEntries.length - 1];
+      if (urlPathEntries) {
+        let category = urlPathEntries[urlPathEntries.length - 1];
+        categoryId = categoriesMap[category] ? categoriesMap[category].id : "";
+      }
+      if(!categoryId && (useUrl.indexOf('/category') > -1)){
+        if(urlPathEntries && urlPathEntries.length >= 2){
+          categoryId = urlPathEntries[urlPathEntries.length - 1];
+        }
       }
       let rlQpArr = currentUrl.split("?");
       let qpString = "";
@@ -199,8 +205,13 @@ export class ListingComponent implements OnInit, DoCheck {
       if (filters) {
         this.receivedFilters.emit(filters);
       }
-      this.currentUrl = currentUrl;
-      this.fetchData(this.paramObj);
+      if(categoryId || (currentUrl.indexOf('/premium') > -1) ||  (currentUrl.indexOf('/category') > -1)){
+        this.currentUrl = currentUrl;
+        this.fetchData(this.paramObj);  
+      }else{
+        this.router.navigate(['/404']);
+      }
+      
     }
   }
 
@@ -242,36 +253,45 @@ export class ListingComponent implements OnInit, DoCheck {
 
   private changeListingUrl(paramObj?: any): void {
     let pushStateString = '';
-    let urlPath = this.router.url.indexOf("/premium") > -1 ? "/premium" : "/category";   
-    let initUrlPath = location.pathname.indexOf("/us/") > -1 ? "/us" : "";
+    let isPremiumUrl = this.router.url.indexOf("/premium") > -1;
+    let urlPath = this.router.url.split('?')[0];
+    // let initUrlPath = location.pathname.indexOf("/us/") > -1 ? "/us" : "";
     if (paramObj) {
       let params = paramObj['params'] ? paramObj['params'] : {};
+      params = JSON.parse(this.paramObj['params']);
+      delete params['categoryId'];
+      params = JSON.stringify(params);
       let page = paramObj['page'] ? paramObj['page'] : 1;
       let query = paramObj['query'] ? paramObj['query'] : '';
-      let categoryIdArr = JSON.parse(params)['categoryId'];
-      categoryIdArr = categoryIdArr ?  categoryIdArr : [];
-      if(!categoryIdArr || categoryIdArr.length > 1 || categoryIdArr.length === 0){
-        pushStateString = `` + initUrlPath + urlPath + `?query=${query}&params=${encodeURIComponent(params)}&page=${page}`;
-      }
-      else {
-        let categoryId = categoryIdArr[0];
-        pushStateString = `` + initUrlPath + urlPath + `/${categoryId}?query=${query}&params=${encodeURIComponent(params)}&page=${page}`;
-      }
+      // let categoryIdArr = JSON.parse(params)['categoryId'];
+      // categoryIdArr = categoryIdArr ?  categoryIdArr : [];
+      // if(!categoryIdArr || categoryIdArr.length > 1 || categoryIdArr.length === 0){
+        if(isPremiumUrl) {
+          pushStateString = `` + urlPath + `?query=${query}&params=${encodeURIComponent(params)}&page=${page}&premium=1`;
+        }else{
+          pushStateString = `` + urlPath + `?query=${query}&params=${encodeURIComponent(params)}&page=${page}`;
+        }
+        
+      // }
+      // else {
+      //   let categoryId = categoryIdArr[0];
+      //   pushStateString = `` + initUrlPath + urlPath + `/${categoryId}?query=${query}&params=${encodeURIComponent(params)}&page=${page}`;
+      // }
 
-      if(urlPath === "/premium"){
-        pushStateString = `` + initUrlPath + urlPath + `?query=${query}&params=${encodeURIComponent(params)}&page=${page}&premium=1`;
-      }
+      // if(urlPath === "/premium"){
+      //   pushStateString = `` + initUrlPath + urlPath + `?query=${query}&params=${encodeURIComponent(params)}&page=${page}&premium=1`;
+      // }
     }
     else {
-      if(urlPath === "/premium"){
-        pushStateString = '' + initUrlPath + urlPath + '?premium=1';
+      if(isPremiumUrl){
+        pushStateString = '' + urlPath + '?premium=1';
       }else{
-        pushStateString = '' + initUrlPath + urlPath + '';
+        pushStateString = '' + urlPath + '';
       }
     }
     this.currentUrl = `${pushStateString}`;
     if(typeof window !== 'undefined') {
-      if(urlPath === "/premium"){
+      if(isPremiumUrl){
         window.history.pushState(null, "Craftsvilla Premium", pushStateString);
       }else{
         window.history.pushState(null, "Craftsvilla Listing", pushStateString);
@@ -632,6 +652,7 @@ export class ListingComponent implements OnInit, DoCheck {
     if(typeof window !== 'undefined') {
       window.scrollTo(0,0);
     }
+    this.changeListingUrl(this.paramObj);
     this.fetchData(this.paramObj);
   }
 

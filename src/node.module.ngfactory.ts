@@ -242,6 +242,8 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
       import71.ListingComponentNgFactory,
       import71.ListingComponentNgFactory,
       import71.ListingComponentNgFactory,
+      import71.ListingComponentNgFactory,
+      import71.ListingComponentNgFactory,
       import72.AboutUsComponentNgFactory,
       import73.FaqsComponentNgFactory,
       import74.OrderTrackingComponentNgFactory,
@@ -448,6 +450,18 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
         ,
         {
           path: 'category/:id',
+          component: import83.ListingComponent,
+          resolve: {filters: import48.FilterResolveService}
+        }
+        ,
+        {
+          path: ':category',
+          component: import83.ListingComponent,
+          resolve: {filters: import48.FilterResolveService}
+        }
+        ,
+        {
+          path: ':category/:sub-category',
           component: import83.ListingComponent,
           resolve: {filters: import48.FilterResolveService}
         }

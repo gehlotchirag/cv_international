@@ -128,13 +128,7 @@ function ngApp(req, res) {
 /**
  * use universal for specific routes
  */
-app.get('/', ngApp);
-routes.forEach(route => {
-  app.get(`/${route}`, ngApp);
-  app.get(`/${route}/*`, ngApp);
-});
-
-app.get('*', ngApp); 
+app.get('*', ngApp);
 
 // Server
 let server = app.listen(app.get('port'), () => {

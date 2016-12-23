@@ -18,6 +18,7 @@ const { gzipSync } = require('zlib');
 const accepts = require('accepts');
 const { compressSync } = require('iltorb');
 const interceptor = require('express-interceptor');
+const request = require('request');
 
 // Angular 2
 import { enableProdMode } from '@angular/core';
@@ -113,6 +114,20 @@ app.get('/data.json', serverApi);
 app.use('/api', createTodoApi());
 
 function ngApp(req, res) {
+  let options = {}
+  request.get('http://international.craftsvilla.com:8000/front_end/home/0', options,function(err,response,body){
+    if(err) {
+      renderStaticHtml(req, res);
+    }
+    if(response.statusCode === 200 ){
+      renderDynamicHtml(req, res);
+    }else{
+      renderStaticHtml(req, res); 
+    }
+  });
+}
+
+function renderStaticHtml(req, res) {
   res.render('indexStage', {
     // template: 'http://securestaging2.craftsvilla.com:8001/dist/client/',
     req,
@@ -123,6 +138,27 @@ function ngApp(req, res) {
     requestUrl: req.originalUrl,
     originUrl: `http://0.0.0.0:${ app.get('port') }`
   });
+}
+
+function renderDynamicHtml(req, res) {
+  app.set('views', path.join(__dirname, '/static/home'));
+  res.render('index', {
+    req,
+    res,
+    // time: true, // use this to determine what part of your app is slow only in development
+    preboot: false,
+    baseUrl: '/',
+    requestUrl: req.originalUrl,
+    originUrl: `http://0.0.0.0:${ app.get('port') }`
+  }, function(err, html) {
+    if(err) {
+      console.log(err, "err");
+      renderStaticHtml(req, res);     
+    } else {
+      res.send(html);
+    }
+  });
+  // body...
 }
 
 /**

@@ -48,7 +48,7 @@ app.engine('.html', createEngine({
     // stateless providers only since it's shared
   ]
 }));
-app.set('port', process.env.PORT || 8000);
+app.set('port', process.env.PORT || 8001);
 app.set('views', __dirname);
 app.set('view engine', 'html');
 app.set('json spaces', 2);
@@ -128,7 +128,7 @@ function ngApp(req, res) {
 }
 
 function renderStaticHtml(req, res) {
-  res.render('indexStage', {
+  res.render('indexProd', {
     // template: 'http://securestaging2.craftsvilla.com:8001/dist/client/',
     req,
     res,
@@ -136,7 +136,7 @@ function renderStaticHtml(req, res) {
     preboot: false,
     baseUrl: '/',
     requestUrl: req.originalUrl,
-    originUrl: `http://0.0.0.0:${ app.get('port') }`
+    originUrl: `http://localhost:${ app.get('port') }`
   });
 }
 
@@ -149,7 +149,7 @@ function renderDynamicHtml(req, res) {
     preboot: false,
     baseUrl: '/',
     requestUrl: req.originalUrl,
-    originUrl: `http://0.0.0.0:${ app.get('port') }`
+    originUrl: `http://localhost:${ app.get('port') }`
   }, function(err, html) {
     if(err) {
       console.log(err, "err");
@@ -168,5 +168,5 @@ app.get('*', ngApp);
 
 // Server
 let server = app.listen(app.get('port'), () => {
-  console.log(`Listening on: http://0.0.0.0:${server.address().port}`);
+  console.log(`Listening on: http://localhost:${server.address().port}`);
 });

@@ -128,13 +128,14 @@ function ngApp(req, res) {
 }
 
 function renderStaticHtml(req, res) {
+  app.set('views', __dirname);
   res.render('indexProd', {
     // template: 'http://securestaging2.craftsvilla.com:8001/dist/client/',
     req,
     res,
     // time: true, // use this to determine what part of your app is slow only in development
     preboot: false,
-    baseUrl: '/',
+    baseUrl: '/us/',
     requestUrl: req.originalUrl,
     originUrl: `http://localhost:${ app.get('port') }`
   });
@@ -147,7 +148,7 @@ function renderDynamicHtml(req, res) {
     res,
     // time: true, // use this to determine what part of your app is slow only in development
     preboot: false,
-    baseUrl: '/',
+    baseUrl: '/us/',
     requestUrl: req.originalUrl,
     originUrl: `http://localhost:${ app.get('port') }`
   }, function(err, html) {

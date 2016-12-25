@@ -128,6 +128,7 @@ function ngApp(req, res) {
 }
 
 function renderStaticHtml(req, res) {
+  app.set('views', __dirname);
   res.render('indexStage', {
     // template: 'http://securestaging2.craftsvilla.com:8001/dist/client/',
     req,

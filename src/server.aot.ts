@@ -153,7 +153,6 @@ function renderDynamicHtml(req, res) {
     originUrl: `http://localhost:${ app.get('port') }`
   }, function(err, html) {
     if(err) {
-      console.log(err, "err");
       renderStaticHtml(req, res);     
     } else {
       res.send(html);
@@ -165,6 +164,11 @@ function renderDynamicHtml(req, res) {
 /**
  * use universal for specific routes
  */
+app.get('/', ngApp); 
+routes.forEach(route => {
+  app.get(`/${route}`, ngApp);
+  app.get(`/${route}/*`, ngApp);
+});
 app.get('*', ngApp);
 
 // Server

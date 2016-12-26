@@ -13,5 +13,12 @@ export const routes: string[] = [
   'product',
   'category',
   'premium',
-  '404'
+  '404',
+  'shop',
+  'about_us',
+  'faqs',
+  'order_tracking',
+  'craftsvilla_in_media',
+  'contactus',
+  // 'online-shopping'
 ];

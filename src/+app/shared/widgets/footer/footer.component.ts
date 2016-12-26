@@ -11,13 +11,16 @@ import { getRouterLink } from '../../utils/index';
 export class FooterComponent implements OnInit {
   
     public getRouterLink = getRouterLink;
-    public categoryLinks = {
-    	saree: 'category/2?params={"categoryId":[2],"sort":{"relevance":"Popular"}}',
-    	lehenga: 'category/9?params={"categoryId":[9],"sort":{"relevance":"Popular"}}',
-    	suits: 'category/5?params={"categoryId":[5],"sort":{"relevance":"Popular"}}'
-    }
-	constructor() { }
+    public categories = [
+      {name: 'Saree', url: '/womens-clothings/sarees'},
+      {name: 'Salwar Suits', url: '/womens-clothings/salwar-suits'},
+      {name: 'Lehengas', url: '/womens-clothings/lehengas'},
+      {name: 'Blouses', url: '/womens-clothings/blouses'},
+      {name: 'Kurtis', url: '/womens-clothings/kurtis-tunics'}
+    ]
+	  
+    constructor() { }
 
-	ngOnInit() {}
+	  ngOnInit() {}
 
 }

@@ -84,6 +84,10 @@ function ngApp(req, res) {
 /**
  * use universal for specific routes
  */
+routes.forEach(route => {
+  app.get(`/${route}`, ngApp);
+  app.get(`/${route}/*`, ngApp);
+});
 app.get('*', ngApp);
 
 

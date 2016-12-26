@@ -15,31 +15,35 @@ import * as import7 from '@angular/forms/src/directives';
 import * as import8 from '@angular/forms/src/form_providers';
 import * as import9 from '@angular/common/src/localization';
 import * as import10 from '@angular/forms/src/directives/radio_control_value_accessor';
-import * as import11 from '@angular/core/src/di/injector';
-import * as import12 from './about-us/about-us.component.ngfactory';
-import * as import13 from './faqs/faqs.component.ngfactory';
-import * as import14 from './order-tracking/order-tracking.component.ngfactory';
-import * as import15 from './in-media/in-media.component.ngfactory';
-import * as import16 from './contact-us/contactus.component.ngfactory';
-import * as import17 from '../shared/widgets/mega-menu/mega-menu.component.ngfactory';
-import * as import18 from '../shared/widgets/mega-menu/mega-menu-link.component.ngfactory';
-import * as import19 from '../shared/widgets/announcement-widget/announcement-widget.component.ngfactory';
-import * as import20 from '../shared/widgets/category-widget/category-widget.component.ngfactory';
-import * as import21 from '../shared/widgets/extra-menu/extra-menu.component.ngfactory';
-import * as import22 from '../shared/widgets/hero-banner/hero-banner.component.ngfactory';
-import * as import23 from '../shared/widgets/portfolio-widget/portfolio-widget.component.ngfactory';
-import * as import24 from '../shared/widgets/storyline-widget/storyline-widget.component.ngfactory';
-import * as import25 from '../shared/widgets/product-slider/product-slider.component.ngfactory';
-import * as import26 from '../shared/widgets/testimonials-widget/testimonials-widget.component.ngfactory';
-import * as import27 from '../shared/widgets/pagination/pagination.component.ngfactory';
-import * as import28 from '../shared/widgets/product-card/product-card.component.ngfactory';
-import * as import29 from './about-us/about-us.component';
-import * as import30 from './faqs/faqs.component';
-import * as import31 from './order-tracking/order-tracking.component';
-import * as import32 from './in-media/in-media.component';
-import * as import33 from './contact-us/contactus.component';
-import * as import34 from '@angular/core/src/i18n/tokens';
-import * as import35 from '@angular/router/src/router_config_loader';
+import * as import11 from './sitemap/sitemap.service';
+import * as import12 from './sitemap/sitemap-resolve.service';
+import * as import13 from '@angular/core/src/di/injector';
+import * as import14 from './about-us/about-us.component.ngfactory';
+import * as import15 from './faqs/faqs.component.ngfactory';
+import * as import16 from './order-tracking/order-tracking.component.ngfactory';
+import * as import17 from './in-media/in-media.component.ngfactory';
+import * as import18 from './contact-us/contactus.component.ngfactory';
+import * as import19 from '../shared/widgets/mega-menu/mega-menu.component.ngfactory';
+import * as import20 from '../shared/widgets/mega-menu/mega-menu-link.component.ngfactory';
+import * as import21 from '../shared/widgets/announcement-widget/announcement-widget.component.ngfactory';
+import * as import22 from '../shared/widgets/category-widget/category-widget.component.ngfactory';
+import * as import23 from '../shared/widgets/extra-menu/extra-menu.component.ngfactory';
+import * as import24 from '../shared/widgets/hero-banner/hero-banner.component.ngfactory';
+import * as import25 from '../shared/widgets/portfolio-widget/portfolio-widget.component.ngfactory';
+import * as import26 from '../shared/widgets/storyline-widget/storyline-widget.component.ngfactory';
+import * as import27 from '../shared/widgets/product-slider/product-slider.component.ngfactory';
+import * as import28 from '../shared/widgets/testimonials-widget/testimonials-widget.component.ngfactory';
+import * as import29 from '../shared/widgets/pagination/pagination.component.ngfactory';
+import * as import30 from '../shared/widgets/product-card/product-card.component.ngfactory';
+import * as import31 from './about-us/about-us.component';
+import * as import32 from './faqs/faqs.component';
+import * as import33 from './order-tracking/order-tracking.component';
+import * as import34 from './in-media/in-media.component';
+import * as import35 from './contact-us/contactus.component';
+import * as import36 from '@angular/core/src/i18n/tokens';
+import * as import37 from '../shared/services/http-client.service';
+import * as import38 from '@angular/router/src/router';
+import * as import39 from '@angular/router/src/router_config_loader';
 class StaticsModuleInjector extends import0.NgModuleInjector<import1.StaticsModule> {
   _RouterModule_0:import2.RouterModule;
   _StaticsRoutingModule_1:import3.StaticsRoutingModule;
@@ -52,25 +56,27 @@ class StaticsModuleInjector extends import0.NgModuleInjector<import1.StaticsModu
   __ROUTES_8:any[];
   __NgLocalization_9:import9.NgLocaleLocalization;
   __RadioControlRegistry_10:import10.RadioControlRegistry;
-  constructor(parent:import11.Injector) {
+  __SitemapService_11:import11.SitemapService;
+  __SitemapResolveService_12:import12.SitemapResolveService;
+  constructor(parent:import13.Injector) {
     super(parent,[
-      import12.AboutUsComponentNgFactory,
-      import13.FaqsComponentNgFactory,
-      import14.OrderTrackingComponentNgFactory,
-      import15.InMediaComponentNgFactory,
-      import16.ContactUsComponentNgFactory,
-      import17.MegaMenuComponentNgFactory,
-      import18.MegaMenuLinkComponentNgFactory,
-      import19.AnnouncementWidgetComponentNgFactory,
-      import20.CategoryWidgetComponentNgFactory,
-      import21.ExtraMenuComponentNgFactory,
-      import22.HeroBannerComponentNgFactory,
-      import23.PortfolioWidgetComponentNgFactory,
-      import24.StorylineWidgetComponentNgFactory,
-      import25.ProductSliderComponentNgFactory,
-      import26.TestimonialsWidgetComponentNgFactory,
-      import27.PaginationComponentNgFactory,
-      import28.ProductCardComponentNgFactory
+      import14.AboutUsComponentNgFactory,
+      import15.FaqsComponentNgFactory,
+      import16.OrderTrackingComponentNgFactory,
+      import17.InMediaComponentNgFactory,
+      import18.ContactUsComponentNgFactory,
+      import19.MegaMenuComponentNgFactory,
+      import20.MegaMenuLinkComponentNgFactory,
+      import21.AnnouncementWidgetComponentNgFactory,
+      import22.CategoryWidgetComponentNgFactory,
+      import23.ExtraMenuComponentNgFactory,
+      import24.HeroBannerComponentNgFactory,
+      import25.PortfolioWidgetComponentNgFactory,
+      import26.StorylineWidgetComponentNgFactory,
+      import27.ProductSliderComponentNgFactory,
+      import28.TestimonialsWidgetComponentNgFactory,
+      import29.PaginationComponentNgFactory,
+      import30.ProductCardComponentNgFactory
     ]
     ,([] as any[]));
   }
@@ -78,27 +84,27 @@ class StaticsModuleInjector extends import0.NgModuleInjector<import1.StaticsModu
       if ((this.__ROUTES_8 == (null as any))) { (this.__ROUTES_8 = [[
         {
           path: 'about_us',
-          component: import29.AboutUsComponent
+          component: import31.AboutUsComponent
         }
         ,
         {
           path: 'faqs',
-          component: import30.FaqsComponent
+          component: import32.FaqsComponent
         }
         ,
         {
           path: 'order_tracking',
-          component: import31.OrderTrackingComponent
+          component: import33.OrderTrackingComponent
         }
         ,
         {
           path: 'craftsvilla_in_media',
-          component: import32.InMediaComponent
+          component: import34.InMediaComponent
         }
         ,
         {
           path: 'contactus',
-          component: import33.ContactUsComponent
+          component: import35.ContactUsComponent
         }
 
       ]
@@ -106,12 +112,20 @@ class StaticsModuleInjector extends import0.NgModuleInjector<import1.StaticsModu
     return this.__ROUTES_8;
   }
   get _NgLocalization_9():import9.NgLocaleLocalization {
-    if ((this.__NgLocalization_9 == (null as any))) { (this.__NgLocalization_9 = new import9.NgLocaleLocalization(this.parent.get(import34.LOCALE_ID))); }
+    if ((this.__NgLocalization_9 == (null as any))) { (this.__NgLocalization_9 = new import9.NgLocaleLocalization(this.parent.get(import36.LOCALE_ID))); }
     return this.__NgLocalization_9;
   }
   get _RadioControlRegistry_10():import10.RadioControlRegistry {
     if ((this.__RadioControlRegistry_10 == (null as any))) { (this.__RadioControlRegistry_10 = new import10.RadioControlRegistry()); }
     return this.__RadioControlRegistry_10;
+  }
+  get _SitemapService_11():import11.SitemapService {
+    if ((this.__SitemapService_11 == (null as any))) { (this.__SitemapService_11 = new import11.SitemapService(this.parent.get(import37.HttpClientService))); }
+    return this.__SitemapService_11;
+  }
+  get _SitemapResolveService_12():import12.SitemapResolveService {
+    if ((this.__SitemapResolveService_12 == (null as any))) { (this.__SitemapResolveService_12 = new import12.SitemapResolveService(this._SitemapService_11,this.parent.get(import38.Router))); }
+    return this.__SitemapResolveService_12;
   }
   createInternal():import1.StaticsModule {
     this._RouterModule_0 = new import2.RouterModule(this.parent.get(import2.ROUTER_FORROOT_GUARD,(null as any)));
@@ -133,9 +147,11 @@ class StaticsModuleInjector extends import0.NgModuleInjector<import1.StaticsModu
     if ((token === import7.InternalFormsSharedModule)) { return this._InternalFormsSharedModule_5; }
     if ((token === import8.FormsModule)) { return this._FormsModule_6; }
     if ((token === import1.StaticsModule)) { return this._StaticsModule_7; }
-    if ((token === import35.ROUTES)) { return this._ROUTES_8; }
+    if ((token === import39.ROUTES)) { return this._ROUTES_8; }
     if ((token === import9.NgLocalization)) { return this._NgLocalization_9; }
     if ((token === import10.RadioControlRegistry)) { return this._RadioControlRegistry_10; }
+    if ((token === import11.SitemapService)) { return this._SitemapService_11; }
+    if ((token === import12.SitemapResolveService)) { return this._SitemapResolveService_12; }
     return notFoundResult;
   }
   destroyInternal():void {

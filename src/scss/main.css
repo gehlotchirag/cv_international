@@ -653,7 +653,8 @@ ul.nav.nav-tabs.tabs-widget li a {
     display: none; }
     .footer-list-group li {
       height: 30px;
-      line-height: 30px; }
+      line-height: 30px;
+      padding: 0; }
       .footer-list-group li a {
         color: #6b6b6b; }
 

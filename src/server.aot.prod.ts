@@ -19,6 +19,7 @@ const accepts = require('accepts');
 const { compressSync } = require('iltorb');
 const interceptor = require('express-interceptor');
 const request = require('request');
+let view_dir = '';
 
 // Angular 2
 import { enableProdMode } from '@angular/core';
@@ -115,34 +116,36 @@ app.use('/api', createTodoApi());
 
 function ngApp(req, res) {
   let options = {}
-  request.get('http://international.craftsvilla.com:8000/front_end/home/0', options,function(err,response,body){
+  let base_url = 'http://international.craftsvilla.com:8000/api/front_end';
+  let org_url = req.originalUrl.split('?')[0];
+  let url = '';
+  if(org_url === '/us/') {
+    url = base_url + '/home';
+    view_dir = path.join(__dirname, '/static/home');
+  }else if(org_url.indexOf('/shop/') > -1) {
+    let url_arr = (org_url.split('/')).filter((item) => item !== "");
+    url = base_url + '/shop/' + url_arr[url_arr.length - 1];
+    view_dir = path.join(__dirname, '/static/shop/', url_arr[url_arr.length - 1]);
+  }else{
+    let url_arr = org_url.split('/us/');
+    let temp_url = ((url_arr[url_arr.length - 1]).split('/')).filter((item) => item !== "").join('/');
+    url = base_url + '/' + temp_url;
+    view_dir = path.join(__dirname, '/static/', temp_url);
+  }
+  request.get(url, options,function(err,response,body){
     if(err) {
-      renderStaticHtml(req, res);
+      res.redirect('/us/');
     }
     if(response.statusCode === 200 ){
       renderDynamicHtml(req, res);
     }else{
-      renderStaticHtml(req, res); 
+      res.redirect('/us/');
     }
   });
 }
 
-function renderStaticHtml(req, res) {
-  app.set('views', __dirname);
-  res.render('indexProd', {
-    // template: 'http://securestaging2.craftsvilla.com:8001/dist/client/',
-    req,
-    res,
-    // time: true, // use this to determine what part of your app is slow only in development
-    preboot: false,
-    baseUrl: '/us/',
-    requestUrl: req.originalUrl,
-    originUrl: `http://localhost:${ app.get('port') }`
-  });
-}
-
 function renderDynamicHtml(req, res) {
-  app.set('views', path.join(__dirname, '/static/home'));
+  app.set('views', view_dir);
   res.render('index', {
     req,
     res,
@@ -153,15 +156,13 @@ function renderDynamicHtml(req, res) {
     originUrl: `http://localhost:${ app.get('port') }`
   }, function(err, html) {
     if(err) {
-      console.log(err, "err");
-      renderStaticHtml(req, res);     
+      res.redirect('/us/');
     } else {
       res.send(html);
     }
   });
   // body...
 }
-
 /**
  * use universal for specific routes
  */

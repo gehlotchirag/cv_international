@@ -1,4 +1,6 @@
 import { Component, OnInit, DoCheck, EventEmitter } from '@angular/core';
+import { PlatformLocation } from '@angular/common';
+
 import { Router, ActivatedRoute } from '@angular/router';
 import { Response } from '@angular/http';
 import { LiveFilterPipe } from './live-filter.pipe';
@@ -70,7 +72,8 @@ export class ListingComponent implements OnInit, DoCheck {
   constructor(private listingService: ListingService,
     private router: Router,
     private route: ActivatedRoute,
-    private commonService: CommonSharedService
+    private commonService: CommonSharedService,
+    private location: PlatformLocation
   ) {}
 
   ngOnInit(): void {
@@ -209,7 +212,7 @@ export class ListingComponent implements OnInit, DoCheck {
         this.currentUrl = currentUrl;
         this.fetchData(this.paramObj);  
       }else{
-        this.router.navigate(['/404']);
+        this.router.navigate(['/']);
       }
       
     }
@@ -254,7 +257,7 @@ export class ListingComponent implements OnInit, DoCheck {
   private changeListingUrl(paramObj?: any): void {
     let pushStateString = '';
     let isPremiumUrl = this.router.url.indexOf("/premium") > -1;
-    let urlPath = this.router.url.split('?')[0];
+    let urlPath = this.location.pathname;
     // let initUrlPath = location.pathname.indexOf("/us/") > -1 ? "/us" : "";
     if (paramObj) {
       let params = paramObj['params'] ? paramObj['params'] : {};

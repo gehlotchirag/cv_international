@@ -11,23 +11,14 @@
       <li><a routerLink="craftsvilla_in_media">Craftsvilla in Media</a></li>
     </ul>
   </div>
-  <div class="col-sm-3 hide-sm">
-    <p class="list-head"><strong>TOP CATEGORIES</strong> 
+  <div class="col-sm-3">
+    <p class="list-head" data-toggle="collapse" data-target="#collapseTopCategories" aria-expanded="false" aria-controls="collapseTopCategories"><strong>TOP CATEGORIES</strong> 
       <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/left-arrow.svg" class="footer-down-icon hide-lg">
     </p>
-    <ul class="footer-list-group">
-      <li><a 
-        [routerLink]="getRouterLink(categoryLinks.saree)['rl']"
-        [queryParams]="getRouterLink(categoryLinks.saree)['qp']">
-        Sarees</a></li>
-      <li><a 
-        [routerLink]="getRouterLink(categoryLinks.lehenga)['rl']"
-        [queryParams]="getRouterLink(categoryLinks.lehenga)['qp']">
-        Lehenga</a></li>
-      <li><a 
-        [routerLink]="getRouterLink(categoryLinks.suits)['rl']"
-        [queryParams]="getRouterLink(categoryLinks.suits)['qp']">
-        Salwar Suits</a></li>
+    <ul class="footer-list-group clearfix" id="collapseTopCategories">
+      <li *ngFor="let category of categories" class="col-md-6">
+        <a routerLink="{{category.url}}">{{category.name}}</a>
+      </li>
     </ul>
   </div>
   <div class="col-sm-3">

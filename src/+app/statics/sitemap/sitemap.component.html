@@ -1,0 +1,26 @@
+<!-- <div *ngIf="!selectedCategory">
+	<div *ngFor="let category of sitemap" (click)="selectCategory(category)">
+		{{category.name}}
+	</div>	
+</div>
+<div *ngIf="selectedCategory">
+	<div *ngFor="let subcategory of selectedCategory">
+		<h1>{{subacategory.name}}</h1>
+		<div *ngFor="let filter of subacategory.data">
+			<a
+	            [routerLink]="getRouterLink(filter.href)['rl']"
+	            [queryParams]="getRouterLink(filter.href)['qp']">
+	            {{ filter.name }}
+	          </a>
+		</div>
+	</div>
+	
+</div>
+
+ -->
+<div class="container sitemap-block">
+  <h4>Womens Fashion</h4>
+	<div class="category-list clearfix pull-left">
+		<a *ngFor="let category of sitemap" routerLink="{{category.url}}">{{category.name}}</a>
+  	</div>
+</div>

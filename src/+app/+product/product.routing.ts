@@ -16,6 +16,14 @@ import { ProductDetailResolve } from './product-detail-resolve.service';
 				}
 			},
 			{
+				path: 'shop/:id', 
+				component: ProductComponent,
+				pathMatch: 'full',
+				resolve: {
+				  product: ProductDetailResolve
+				}
+			},
+			{
 				path: 'shop/:slug/:id', 
 				component: ProductComponent,
 				pathMatch: 'full',

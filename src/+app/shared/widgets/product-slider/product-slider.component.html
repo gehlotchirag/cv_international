@@ -7,10 +7,10 @@
     <div class="section-body text-center page-listing">
       <div class="col-md-12">
         <div [attr.id]="getSliderId()" class="carousel slide">
-          <ol class="carousel-indicators">
+          <!-- <ol class="carousel-indicators">
             <li *ngFor="let product of dataItems; let i = index"
                 [attr.data-target]="getIdTarget()" [attr.data-slide-to]="i" [class.active]="i == 0"></li>
-          </ol>
+          </ol> -->
           <!-- Carousel items -->
           <div class="carousel-inner">
             <div class="item" *ngFor="let productArray of productDblArray; let i = index"

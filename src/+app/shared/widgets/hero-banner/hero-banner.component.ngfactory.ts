@@ -23,14 +23,16 @@ import * as import15 from '@angular/core/src/change_detection/differs/iterable_d
 import * as import16 from '@angular/common/src/directives/ng_for';
 import * as import17 from '../../../../../node_modules/@angular/common/src/directives/ng_class.ngfactory';
 import * as import18 from '../../../../../node_modules/@angular/router/src/directives/router_link.ngfactory';
-import * as import19 from '@angular/core/src/change_detection/differs/keyvalue_differs';
-import * as import20 from '@angular/core/src/linker/element_ref';
-import * as import21 from '@angular/router/src/router';
-import * as import22 from '@angular/router/src/router_state';
-import * as import23 from '@angular/common/src/location/location_strategy';
-import * as import24 from '@angular/router/src/directives/router_link';
-import * as import25 from '@angular/common/src/directives/ng_class';
-import * as import26 from '@angular/core/src/security';
+import * as import19 from '../../lazyload-image/lazyload-image.directive.ngfactory';
+import * as import20 from '@angular/core/src/change_detection/differs/keyvalue_differs';
+import * as import21 from '@angular/core/src/linker/element_ref';
+import * as import22 from '@angular/router/src/router';
+import * as import23 from '@angular/router/src/router_state';
+import * as import24 from '@angular/common/src/location/location_strategy';
+import * as import25 from '../../lazyload-image/lazyload-image.directive';
+import * as import26 from '@angular/router/src/directives/router_link';
+import * as import27 from '@angular/common/src/directives/ng_class';
+import * as import28 from '@angular/core/src/security';
 export class Wrapper_HeroBannerComponent {
   context:import0.HeroBannerComponent;
   changed:boolean;
@@ -246,25 +248,27 @@ class _View_HeroBannerComponent2 extends import3.AppView<any> {
   _RouterLinkWithHref_2_3:import18.Wrapper_RouterLinkWithHref;
   _text_3:any;
   _el_4:any;
+  _LazyLoadImageDirective_4_3:import19.Wrapper_LazyLoadImageDirective;
   _text_5:any;
   _text_6:any;
-  _map_9:any;
-  /*private*/ _expr_10:any;
+  _map_10:any;
+  /*private*/ _expr_11:any;
   constructor(viewUtils:import2.ViewUtils,parentInjector:import7.Injector,declarationEl:import5.AppElement) {
     super(_View_HeroBannerComponent2,renderType_HeroBannerComponent,import8.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
-    this._map_9 = import2.pureProxy1((p0:any):{[key: string]:any} => {
+    this._map_10 = import2.pureProxy1((p0:any):{[key: string]:any} => {
       return {active: p0};
     });
-    this._expr_10 = import1.UNINITIALIZED;
+    this._expr_11 = import1.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import5.AppElement {
     this._el_0 = import2.createRenderElement(this.renderer,(null as any),'div',new import2.InlineArray2(2,'class','item'),(null as any));
-    this._NgClass_0_3 = new import17.Wrapper_NgClass(this.parent.parentInjector.get(import15.IterableDiffers),this.parent.parentInjector.get(import19.KeyValueDiffers),new import20.ElementRef(this._el_0),this.renderer);
+    this._NgClass_0_3 = new import17.Wrapper_NgClass(this.parent.parentInjector.get(import15.IterableDiffers),this.parent.parentInjector.get(import20.KeyValueDiffers),new import21.ElementRef(this._el_0),this.renderer);
     this._text_1 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     this._el_2 = import2.createRenderElement(this.renderer,this._el_0,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._RouterLinkWithHref_2_3 = new import18.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import21.Router),this.parent.parentInjector.get(import22.ActivatedRoute),this.parent.parentInjector.get(import23.LocationStrategy));
+    this._RouterLinkWithHref_2_3 = new import18.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import22.Router),this.parent.parentInjector.get(import23.ActivatedRoute),this.parent.parentInjector.get(import24.LocationStrategy));
     this._text_3 = this.renderer.createText(this._el_2,'\n          ',(null as any));
-    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','','class','slider-img'),(null as any));
+    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray8(6,'alt','','class','slider-img loading','lazyLoad',''),(null as any));
+    this._LazyLoadImageDirective_4_3 = new import19.Wrapper_LazyLoadImageDirective(new import21.ElementRef(this._el_4),this.renderer);
     this._text_5 = this.renderer.createText(this._el_2,'\n        ',(null as any));
     this._text_6 = this.renderer.createText(this._el_0,'\n      ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
@@ -281,14 +285,15 @@ class _View_HeroBannerComponent2 extends import3.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import24.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 5)))) { return this._RouterLinkWithHref_2_3.context; }
-    if (((token === import25.NgClass) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 6)))) { return this._NgClass_0_3.context; }
+    if (((token === import25.LazyLoadImageDirective) && (4 === requestNodeIndex))) { return this._LazyLoadImageDirective_4_3.context; }
+    if (((token === import26.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 5)))) { return this._RouterLinkWithHref_2_3.context; }
+    if (((token === import27.NgClass) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 6)))) { return this._NgClass_0_3.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
     const currVal_0_0_0:any = 'item';
     this._NgClass_0_3.check_klass(currVal_0_0_0,throwOnChange,false);
-    const currVal_0_0_1:any = this._map_9((this.context.index == 0));
+    const currVal_0_0_1:any = this._map_10((this.context.index == 0));
     this._NgClass_0_3.check_ngClass(currVal_0_0_1,throwOnChange,false);
     this._NgClass_0_3.detectChangesInInputProps(this,this._el_0,throwOnChange);
     const currVal_2_0_0:any = this.parent.context.getRouterLink(this.context.$implicit.dataUrl)['qp'];
@@ -296,14 +301,16 @@ class _View_HeroBannerComponent2 extends import3.AppView<any> {
     const currVal_2_0_1:any = this.parent.context.getRouterLink(this.context.$implicit.dataUrl)['rl'];
     this._RouterLinkWithHref_2_3.check_routerLink(currVal_2_0_1,throwOnChange,false);
     this._RouterLinkWithHref_2_3.detectChangesInInputProps(this,this._el_2,throwOnChange);
+    this._LazyLoadImageDirective_4_3.detectChangesInInputProps(this,this._el_4,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
     this._NgClass_0_3.detectChangesInHostProps(this,this._el_0,throwOnChange);
     this._RouterLinkWithHref_2_3.detectChangesInHostProps(this,this._el_2,throwOnChange);
-    const currVal_10:any = this.context.$implicit.imageUrl;
-    if (import2.checkBinding(throwOnChange,this._expr_10,currVal_10)) {
-      this.renderer.setElementProperty(this._el_4,'src',this.viewUtils.sanitizer.sanitize(import26.SecurityContext.URL,currVal_10));
-      this._expr_10 = currVal_10;
+    const currVal_11:any = import2.interpolate(1,'',this.context.$implicit.imageUrl,'');
+    if (import2.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
+      this.renderer.setElementProperty(this._el_4,'src',this.viewUtils.sanitizer.sanitize(import28.SecurityContext.URL,currVal_11));
+      this._expr_11 = currVal_11;
     }
+    this._LazyLoadImageDirective_4_3.detectChangesInHostProps(this,this._el_4,throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
   destroyInternal():void {

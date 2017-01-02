@@ -1952,3 +1952,16 @@ ul.nav.nav-tabs.tabs-widget li a {
     width: 50%;
   }
 }
+.loading{
+  filter: blur(15px);
+  -webkit-filter: blur(15px);
+  -ms-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  background-color: #f3f3f3;
+  opacity: 0;
+  min-height: 200px;
+}
+.loaded{
+  min-height: 0;
+}

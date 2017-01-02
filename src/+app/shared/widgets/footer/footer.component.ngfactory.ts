@@ -280,16 +280,16 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
     this._text_26 = this.renderer.createText(this._el_17,'\n    ',(null as any));
     this._text_27 = this.renderer.createText(this._el_8,'\n  ',(null as any));
     this._text_28 = this.renderer.createText(this._el_6,'\n  ',(null as any));
-    this._el_29 = import4.createRenderElement(this.renderer,this._el_6,'div',new import4.InlineArray2(2,'class','col-sm-3 hide-sm'),(null as any));
+    this._el_29 = import4.createRenderElement(this.renderer,this._el_6,'div',new import4.InlineArray2(2,'class','col-sm-3'),(null as any));
     this._text_30 = this.renderer.createText(this._el_29,'\n    ',(null as any));
-    this._el_31 = import4.createRenderElement(this.renderer,this._el_29,'p',new import4.InlineArray2(2,'class','list-head'),(null as any));
+    this._el_31 = import4.createRenderElement(this.renderer,this._el_29,'p',new import4.InlineArray16(10,'aria-controls','collapseTopCategories','aria-expanded','false','class','list-head','data-target','#collapseTopCategories','data-toggle','collapse'),(null as any));
     this._el_32 = import4.createRenderElement(this.renderer,this._el_31,'strong',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_33 = this.renderer.createText(this._el_32,'TOP CATEGORIES',(null as any));
     this._text_34 = this.renderer.createText(this._el_31,' \n      ',(null as any));
     this._el_35 = import4.createRenderElement(this.renderer,this._el_31,'img',new import4.InlineArray4(4,'class','footer-down-icon hide-lg','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/left-arrow.svg'),(null as any));
     this._text_36 = this.renderer.createText(this._el_31,'\n    ',(null as any));
     this._text_37 = this.renderer.createText(this._el_29,'\n    ',(null as any));
-    this._el_38 = import4.createRenderElement(this.renderer,this._el_29,'ul',new import4.InlineArray2(2,'class','footer-list-group'),(null as any));
+    this._el_38 = import4.createRenderElement(this.renderer,this._el_29,'ul',new import4.InlineArray4(4,'class','footer-list-group clearfix','id','collapseTopCategories'),(null as any));
     this._text_39 = this.renderer.createText(this._el_38,'\n      ',(null as any));
     this._anchor_40 = this.renderer.createTemplateAnchor(this._el_38,(null as any));
     this._appEl_40 = new import3.AppElement(40,38,this,this._anchor_40);
@@ -691,7 +691,7 @@ class _View_FooterComponent1 extends import1.AppView<any> {
     this._expr_6 = import7.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import3.AppElement {
-    this._el_0 = import4.createRenderElement(this.renderer,(null as any),'li',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_0 = import4.createRenderElement(this.renderer,(null as any),'li',new import4.InlineArray2(2,'class','col-md-6'),(null as any));
     this._text_1 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     this._el_2 = import4.createRenderElement(this.renderer,this._el_0,'a',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_2_3 = new import11.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import13.Router),this.parent.parentInjector.get(import14.ActivatedRoute),this.parent.parentInjector.get(import15.LocationStrategy));

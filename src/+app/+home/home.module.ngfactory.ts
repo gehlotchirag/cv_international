@@ -13,27 +13,28 @@ import * as import5 from '@angular/forms/src/form_providers';
 import * as import6 from '../shared/shared.module';
 import * as import7 from './home-routing.module';
 import * as import8 from '../+swiper/swiper.module';
-import * as import9 from '../shared/widgets/widgets.module';
-import * as import10 from '@angular/common/src/localization';
-import * as import11 from '@angular/forms/src/directives/radio_control_value_accessor';
-import * as import12 from '@angular/forms/src/form_builder';
-import * as import13 from '@angular/core/src/di/injector';
-import * as import14 from './home.component.ngfactory';
-import * as import15 from '../shared/widgets/mega-menu/mega-menu.component.ngfactory';
-import * as import16 from '../shared/widgets/mega-menu/mega-menu-link.component.ngfactory';
-import * as import17 from '../shared/widgets/announcement-widget/announcement-widget.component.ngfactory';
-import * as import18 from '../shared/widgets/category-widget/category-widget.component.ngfactory';
-import * as import19 from '../shared/widgets/extra-menu/extra-menu.component.ngfactory';
-import * as import20 from '../shared/widgets/hero-banner/hero-banner.component.ngfactory';
-import * as import21 from '../shared/widgets/portfolio-widget/portfolio-widget.component.ngfactory';
-import * as import22 from '../shared/widgets/storyline-widget/storyline-widget.component.ngfactory';
-import * as import23 from '../shared/widgets/product-slider/product-slider.component.ngfactory';
-import * as import24 from '../shared/widgets/testimonials-widget/testimonials-widget.component.ngfactory';
-import * as import25 from '../shared/widgets/pagination/pagination.component.ngfactory';
-import * as import26 from '../shared/widgets/product-card/product-card.component.ngfactory';
-import * as import27 from '@angular/core/src/i18n/tokens';
-import * as import28 from './home.component';
-import * as import29 from '@angular/router/src/router_config_loader';
+import * as import9 from '../shared/lazyload-image/lazyload-image.module';
+import * as import10 from '../shared/widgets/widgets.module';
+import * as import11 from '@angular/common/src/localization';
+import * as import12 from '@angular/forms/src/directives/radio_control_value_accessor';
+import * as import13 from '@angular/forms/src/form_builder';
+import * as import14 from '@angular/core/src/di/injector';
+import * as import15 from './home.component.ngfactory';
+import * as import16 from '../shared/widgets/mega-menu/mega-menu.component.ngfactory';
+import * as import17 from '../shared/widgets/mega-menu/mega-menu-link.component.ngfactory';
+import * as import18 from '../shared/widgets/announcement-widget/announcement-widget.component.ngfactory';
+import * as import19 from '../shared/widgets/category-widget/category-widget.component.ngfactory';
+import * as import20 from '../shared/widgets/extra-menu/extra-menu.component.ngfactory';
+import * as import21 from '../shared/widgets/hero-banner/hero-banner.component.ngfactory';
+import * as import22 from '../shared/widgets/portfolio-widget/portfolio-widget.component.ngfactory';
+import * as import23 from '../shared/widgets/storyline-widget/storyline-widget.component.ngfactory';
+import * as import24 from '../shared/widgets/product-slider/product-slider.component.ngfactory';
+import * as import25 from '../shared/widgets/testimonials-widget/testimonials-widget.component.ngfactory';
+import * as import26 from '../shared/widgets/pagination/pagination.component.ngfactory';
+import * as import27 from '../shared/widgets/product-card/product-card.component.ngfactory';
+import * as import28 from '@angular/core/src/i18n/tokens';
+import * as import29 from './home.component';
+import * as import30 from '@angular/router/src/router_config_loader';
 class HomeModuleInjector extends import0.NgModuleInjector<import1.HomeModule> {
   _CommonModule_0:import2.CommonModule;
   _RouterModule_1:import3.RouterModule;
@@ -43,49 +44,50 @@ class HomeModuleInjector extends import0.NgModuleInjector<import1.HomeModule> {
   _SharedModule_5:import6.SharedModule;
   _HomeRoutingModule_6:import7.HomeRoutingModule;
   _SwiperModule_7:import8.SwiperModule;
-  _WidgetModule_8:import9.WidgetModule;
-  _HomeModule_9:import1.HomeModule;
-  __NgLocalization_10:import10.NgLocaleLocalization;
-  __RadioControlRegistry_11:import11.RadioControlRegistry;
-  __FormBuilder_12:import12.FormBuilder;
-  __ROUTES_13:any[];
-  constructor(parent:import13.Injector) {
+  _LazyLoadImageModule_8:import9.LazyLoadImageModule;
+  _WidgetModule_9:import10.WidgetModule;
+  _HomeModule_10:import1.HomeModule;
+  __NgLocalization_11:import11.NgLocaleLocalization;
+  __RadioControlRegistry_12:import12.RadioControlRegistry;
+  __FormBuilder_13:import13.FormBuilder;
+  __ROUTES_14:any[];
+  constructor(parent:import14.Injector) {
     super(parent,[
-      import14.HomeComponentNgFactory,
-      import15.MegaMenuComponentNgFactory,
-      import16.MegaMenuLinkComponentNgFactory,
-      import17.AnnouncementWidgetComponentNgFactory,
-      import18.CategoryWidgetComponentNgFactory,
-      import19.ExtraMenuComponentNgFactory,
-      import20.HeroBannerComponentNgFactory,
-      import21.PortfolioWidgetComponentNgFactory,
-      import22.StorylineWidgetComponentNgFactory,
-      import23.ProductSliderComponentNgFactory,
-      import24.TestimonialsWidgetComponentNgFactory,
-      import25.PaginationComponentNgFactory,
-      import26.ProductCardComponentNgFactory
+      import15.HomeComponentNgFactory,
+      import16.MegaMenuComponentNgFactory,
+      import17.MegaMenuLinkComponentNgFactory,
+      import18.AnnouncementWidgetComponentNgFactory,
+      import19.CategoryWidgetComponentNgFactory,
+      import20.ExtraMenuComponentNgFactory,
+      import21.HeroBannerComponentNgFactory,
+      import22.PortfolioWidgetComponentNgFactory,
+      import23.StorylineWidgetComponentNgFactory,
+      import24.ProductSliderComponentNgFactory,
+      import25.TestimonialsWidgetComponentNgFactory,
+      import26.PaginationComponentNgFactory,
+      import27.ProductCardComponentNgFactory
     ]
     ,([] as any[]));
   }
-  get _NgLocalization_10():import10.NgLocaleLocalization {
-    if ((this.__NgLocalization_10 == (null as any))) { (this.__NgLocalization_10 = new import10.NgLocaleLocalization(this.parent.get(import27.LOCALE_ID))); }
-    return this.__NgLocalization_10;
+  get _NgLocalization_11():import11.NgLocaleLocalization {
+    if ((this.__NgLocalization_11 == (null as any))) { (this.__NgLocalization_11 = new import11.NgLocaleLocalization(this.parent.get(import28.LOCALE_ID))); }
+    return this.__NgLocalization_11;
   }
-  get _RadioControlRegistry_11():import11.RadioControlRegistry {
-    if ((this.__RadioControlRegistry_11 == (null as any))) { (this.__RadioControlRegistry_11 = new import11.RadioControlRegistry()); }
-    return this.__RadioControlRegistry_11;
+  get _RadioControlRegistry_12():import12.RadioControlRegistry {
+    if ((this.__RadioControlRegistry_12 == (null as any))) { (this.__RadioControlRegistry_12 = new import12.RadioControlRegistry()); }
+    return this.__RadioControlRegistry_12;
   }
-  get _FormBuilder_12():import12.FormBuilder {
-    if ((this.__FormBuilder_12 == (null as any))) { (this.__FormBuilder_12 = new import12.FormBuilder()); }
-    return this.__FormBuilder_12;
+  get _FormBuilder_13():import13.FormBuilder {
+    if ((this.__FormBuilder_13 == (null as any))) { (this.__FormBuilder_13 = new import13.FormBuilder()); }
+    return this.__FormBuilder_13;
   }
-  get _ROUTES_13():any[] {
-        if ((this.__ROUTES_13 == (null as any))) { (this.__ROUTES_13 = [[{
+  get _ROUTES_14():any[] {
+        if ((this.__ROUTES_14 == (null as any))) { (this.__ROUTES_14 = [[{
           path: '',
-          component: import28.HomeComponent
+          component: import29.HomeComponent
         }
     ]]); }
-    return this.__ROUTES_13;
+    return this.__ROUTES_14;
   }
   createInternal():import1.HomeModule {
     this._CommonModule_0 = new import2.CommonModule();
@@ -96,9 +98,10 @@ class HomeModuleInjector extends import0.NgModuleInjector<import1.HomeModule> {
     this._SharedModule_5 = new import6.SharedModule();
     this._HomeRoutingModule_6 = new import7.HomeRoutingModule();
     this._SwiperModule_7 = new import8.SwiperModule();
-    this._WidgetModule_8 = new import9.WidgetModule();
-    this._HomeModule_9 = new import1.HomeModule();
-    return this._HomeModule_9;
+    this._LazyLoadImageModule_8 = new import9.LazyLoadImageModule();
+    this._WidgetModule_9 = new import10.WidgetModule();
+    this._HomeModule_10 = new import1.HomeModule();
+    return this._HomeModule_10;
   }
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.CommonModule)) { return this._CommonModule_0; }
@@ -109,12 +112,13 @@ class HomeModuleInjector extends import0.NgModuleInjector<import1.HomeModule> {
     if ((token === import6.SharedModule)) { return this._SharedModule_5; }
     if ((token === import7.HomeRoutingModule)) { return this._HomeRoutingModule_6; }
     if ((token === import8.SwiperModule)) { return this._SwiperModule_7; }
-    if ((token === import9.WidgetModule)) { return this._WidgetModule_8; }
-    if ((token === import1.HomeModule)) { return this._HomeModule_9; }
-    if ((token === import10.NgLocalization)) { return this._NgLocalization_10; }
-    if ((token === import11.RadioControlRegistry)) { return this._RadioControlRegistry_11; }
-    if ((token === import12.FormBuilder)) { return this._FormBuilder_12; }
-    if ((token === import29.ROUTES)) { return this._ROUTES_13; }
+    if ((token === import9.LazyLoadImageModule)) { return this._LazyLoadImageModule_8; }
+    if ((token === import10.WidgetModule)) { return this._WidgetModule_9; }
+    if ((token === import1.HomeModule)) { return this._HomeModule_10; }
+    if ((token === import11.NgLocalization)) { return this._NgLocalization_11; }
+    if ((token === import12.RadioControlRegistry)) { return this._RadioControlRegistry_12; }
+    if ((token === import13.FormBuilder)) { return this._FormBuilder_13; }
+    if ((token === import30.ROUTES)) { return this._ROUTES_14; }
     return notFoundResult;
   }
   destroyInternal():void {

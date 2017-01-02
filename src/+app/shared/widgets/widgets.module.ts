@@ -16,11 +16,18 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { ObjectKeysPipe } from '../utils';
 import { SwiperModule } from '../../+swiper/swiper.module';
+import { LazyLoadImageModule } from '../lazyload-image/lazyload-image.module';
+
 
 
 
   @NgModule({
-    imports: [ RouterModule, CommonModule, SwiperModule ],
+    imports: [ 
+      RouterModule, 
+      CommonModule, 
+      SwiperModule,
+      LazyLoadImageModule 
+    ],
     declarations: [
       MegaMenuComponent,
       MegaMenuLinkComponent,

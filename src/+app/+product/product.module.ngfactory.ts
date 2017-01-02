@@ -10,111 +10,123 @@ import * as import2 from '@angular/common/src/common_module';
 import * as import3 from '../+swiper/swiper.module';
 import * as import4 from '@angular/router/src/router_module';
 import * as import5 from './product.routing';
-import * as import6 from '../shared/widgets/widgets.module';
-import * as import7 from '@angular/common/src/localization';
-import * as import8 from './product.service';
-import * as import9 from './product-detail-resolve.service';
-import * as import10 from '@angular/core/src/di/injector';
-import * as import11 from './product.component.ngfactory';
-import * as import12 from '../shared/widgets/mega-menu/mega-menu.component.ngfactory';
-import * as import13 from '../shared/widgets/mega-menu/mega-menu-link.component.ngfactory';
-import * as import14 from '../shared/widgets/announcement-widget/announcement-widget.component.ngfactory';
-import * as import15 from '../shared/widgets/category-widget/category-widget.component.ngfactory';
-import * as import16 from '../shared/widgets/extra-menu/extra-menu.component.ngfactory';
-import * as import17 from '../shared/widgets/hero-banner/hero-banner.component.ngfactory';
-import * as import18 from '../shared/widgets/portfolio-widget/portfolio-widget.component.ngfactory';
-import * as import19 from '../shared/widgets/storyline-widget/storyline-widget.component.ngfactory';
-import * as import20 from '../shared/widgets/product-slider/product-slider.component.ngfactory';
-import * as import21 from '../shared/widgets/testimonials-widget/testimonials-widget.component.ngfactory';
-import * as import22 from '../shared/widgets/pagination/pagination.component.ngfactory';
-import * as import23 from '../shared/widgets/product-card/product-card.component.ngfactory';
-import * as import24 from '@angular/core/src/i18n/tokens';
-import * as import25 from './product.component';
-import * as import26 from '../shared/services/http-client.service';
-import * as import27 from '@angular/router/src/router';
-import * as import28 from '@angular/router/src/router_config_loader';
+import * as import6 from '../shared/lazyload-image/lazyload-image.module';
+import * as import7 from '../shared/widgets/widgets.module';
+import * as import8 from '@angular/common/src/localization';
+import * as import9 from './product.service';
+import * as import10 from './product-detail-resolve.service';
+import * as import11 from '@angular/core/src/di/injector';
+import * as import12 from './product.component.ngfactory';
+import * as import13 from '../shared/widgets/mega-menu/mega-menu.component.ngfactory';
+import * as import14 from '../shared/widgets/mega-menu/mega-menu-link.component.ngfactory';
+import * as import15 from '../shared/widgets/announcement-widget/announcement-widget.component.ngfactory';
+import * as import16 from '../shared/widgets/category-widget/category-widget.component.ngfactory';
+import * as import17 from '../shared/widgets/extra-menu/extra-menu.component.ngfactory';
+import * as import18 from '../shared/widgets/hero-banner/hero-banner.component.ngfactory';
+import * as import19 from '../shared/widgets/portfolio-widget/portfolio-widget.component.ngfactory';
+import * as import20 from '../shared/widgets/storyline-widget/storyline-widget.component.ngfactory';
+import * as import21 from '../shared/widgets/product-slider/product-slider.component.ngfactory';
+import * as import22 from '../shared/widgets/testimonials-widget/testimonials-widget.component.ngfactory';
+import * as import23 from '../shared/widgets/pagination/pagination.component.ngfactory';
+import * as import24 from '../shared/widgets/product-card/product-card.component.ngfactory';
+import * as import25 from '@angular/core/src/i18n/tokens';
+import * as import26 from './product.component';
+import * as import27 from '../shared/services/http-client.service';
+import * as import28 from '@angular/router/src/router';
+import * as import29 from '@angular/router/src/router_config_loader';
 class ProductModuleInjector extends import0.NgModuleInjector<import1.ProductModule> {
   _CommonModule_0:import2.CommonModule;
   _SwiperModule_1:import3.SwiperModule;
   _RouterModule_2:import4.RouterModule;
   _ProductRoutingModule_3:import5.ProductRoutingModule;
-  _WidgetModule_4:import6.WidgetModule;
-  _ProductModule_5:import1.ProductModule;
-  __NgLocalization_6:import7.NgLocaleLocalization;
-  __ROUTES_7:any[];
-  __ProductService_8:import8.ProductService;
-  __ProductDetailResolve_9:import9.ProductDetailResolve;
-  constructor(parent:import10.Injector) {
+  _LazyLoadImageModule_4:import6.LazyLoadImageModule;
+  _WidgetModule_5:import7.WidgetModule;
+  _ProductModule_6:import1.ProductModule;
+  __NgLocalization_7:import8.NgLocaleLocalization;
+  __ROUTES_8:any[];
+  __ProductService_9:import9.ProductService;
+  __ProductDetailResolve_10:import10.ProductDetailResolve;
+  constructor(parent:import11.Injector) {
     super(parent,[
-      import11.ProductComponentNgFactory,
-      import11.ProductComponentNgFactory,
-      import12.MegaMenuComponentNgFactory,
-      import13.MegaMenuLinkComponentNgFactory,
-      import14.AnnouncementWidgetComponentNgFactory,
-      import15.CategoryWidgetComponentNgFactory,
-      import16.ExtraMenuComponentNgFactory,
-      import17.HeroBannerComponentNgFactory,
-      import18.PortfolioWidgetComponentNgFactory,
-      import19.StorylineWidgetComponentNgFactory,
-      import20.ProductSliderComponentNgFactory,
-      import21.TestimonialsWidgetComponentNgFactory,
-      import22.PaginationComponentNgFactory,
-      import23.ProductCardComponentNgFactory
+      import12.ProductComponentNgFactory,
+      import12.ProductComponentNgFactory,
+      import12.ProductComponentNgFactory,
+      import13.MegaMenuComponentNgFactory,
+      import14.MegaMenuLinkComponentNgFactory,
+      import15.AnnouncementWidgetComponentNgFactory,
+      import16.CategoryWidgetComponentNgFactory,
+      import17.ExtraMenuComponentNgFactory,
+      import18.HeroBannerComponentNgFactory,
+      import19.PortfolioWidgetComponentNgFactory,
+      import20.StorylineWidgetComponentNgFactory,
+      import21.ProductSliderComponentNgFactory,
+      import22.TestimonialsWidgetComponentNgFactory,
+      import23.PaginationComponentNgFactory,
+      import24.ProductCardComponentNgFactory
     ]
     ,([] as any[]));
   }
-  get _NgLocalization_6():import7.NgLocaleLocalization {
-    if ((this.__NgLocalization_6 == (null as any))) { (this.__NgLocalization_6 = new import7.NgLocaleLocalization(this.parent.get(import24.LOCALE_ID))); }
-    return this.__NgLocalization_6;
+  get _NgLocalization_7():import8.NgLocaleLocalization {
+    if ((this.__NgLocalization_7 == (null as any))) { (this.__NgLocalization_7 = new import8.NgLocaleLocalization(this.parent.get(import25.LOCALE_ID))); }
+    return this.__NgLocalization_7;
   }
-  get _ROUTES_7():any[] {
-      if ((this.__ROUTES_7 == (null as any))) { (this.__ROUTES_7 = [[
+  get _ROUTES_8():any[] {
+      if ((this.__ROUTES_8 == (null as any))) { (this.__ROUTES_8 = [[
         {
           path: 'product/:id',
-          component: import25.ProductComponent,
+          component: import26.ProductComponent,
           pathMatch: 'full',
-          resolve: {product: import9.ProductDetailResolve}
+          resolve: {product: import10.ProductDetailResolve}
+        }
+        ,
+        {
+          path: 'shop/:id',
+          component: import26.ProductComponent,
+          pathMatch: 'full',
+          resolve: {product: import10.ProductDetailResolve}
         }
         ,
         {
           path: 'shop/:slug/:id',
-          component: import25.ProductComponent,
+          component: import26.ProductComponent,
           pathMatch: 'full',
-          resolve: {product: import9.ProductDetailResolve}
+          resolve: {product: import10.ProductDetailResolve}
         }
 
       ]
     ]); }
-    return this.__ROUTES_7;
+    return this.__ROUTES_8;
   }
-  get _ProductService_8():import8.ProductService {
-    if ((this.__ProductService_8 == (null as any))) { (this.__ProductService_8 = new import8.ProductService(this.parent.get(import26.HttpClientService))); }
-    return this.__ProductService_8;
+  get _ProductService_9():import9.ProductService {
+    if ((this.__ProductService_9 == (null as any))) { (this.__ProductService_9 = new import9.ProductService(this.parent.get(import27.HttpClientService))); }
+    return this.__ProductService_9;
   }
-  get _ProductDetailResolve_9():import9.ProductDetailResolve {
-    if ((this.__ProductDetailResolve_9 == (null as any))) { (this.__ProductDetailResolve_9 = new import9.ProductDetailResolve(this._ProductService_8,this.parent.get(import27.Router))); }
-    return this.__ProductDetailResolve_9;
+  get _ProductDetailResolve_10():import10.ProductDetailResolve {
+    if ((this.__ProductDetailResolve_10 == (null as any))) { (this.__ProductDetailResolve_10 = new import10.ProductDetailResolve(this._ProductService_9,this.parent.get(import28.Router))); }
+    return this.__ProductDetailResolve_10;
   }
   createInternal():import1.ProductModule {
     this._CommonModule_0 = new import2.CommonModule();
     this._SwiperModule_1 = new import3.SwiperModule();
     this._RouterModule_2 = new import4.RouterModule(this.parent.get(import4.ROUTER_FORROOT_GUARD,(null as any)));
     this._ProductRoutingModule_3 = new import5.ProductRoutingModule();
-    this._WidgetModule_4 = new import6.WidgetModule();
-    this._ProductModule_5 = new import1.ProductModule();
-    return this._ProductModule_5;
+    this._LazyLoadImageModule_4 = new import6.LazyLoadImageModule();
+    this._WidgetModule_5 = new import7.WidgetModule();
+    this._ProductModule_6 = new import1.ProductModule();
+    return this._ProductModule_6;
   }
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.CommonModule)) { return this._CommonModule_0; }
     if ((token === import3.SwiperModule)) { return this._SwiperModule_1; }
     if ((token === import4.RouterModule)) { return this._RouterModule_2; }
     if ((token === import5.ProductRoutingModule)) { return this._ProductRoutingModule_3; }
-    if ((token === import6.WidgetModule)) { return this._WidgetModule_4; }
-    if ((token === import1.ProductModule)) { return this._ProductModule_5; }
-    if ((token === import7.NgLocalization)) { return this._NgLocalization_6; }
-    if ((token === import28.ROUTES)) { return this._ROUTES_7; }
-    if ((token === import8.ProductService)) { return this._ProductService_8; }
-    if ((token === import9.ProductDetailResolve)) { return this._ProductDetailResolve_9; }
+    if ((token === import6.LazyLoadImageModule)) { return this._LazyLoadImageModule_4; }
+    if ((token === import7.WidgetModule)) { return this._WidgetModule_5; }
+    if ((token === import1.ProductModule)) { return this._ProductModule_6; }
+    if ((token === import8.NgLocalization)) { return this._NgLocalization_7; }
+    if ((token === import29.ROUTES)) { return this._ROUTES_8; }
+    if ((token === import9.ProductService)) { return this._ProductService_9; }
+    if ((token === import10.ProductDetailResolve)) { return this._ProductDetailResolve_10; }
     return notFoundResult;
   }
   destroyInternal():void {

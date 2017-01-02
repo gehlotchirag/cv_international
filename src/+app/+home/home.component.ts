@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
   cmpRef: ComponentRef<any>;
   private isViewInitialized:boolean = false;
   private componentsData: any;
+  public annoucementWidgetData: any = {};
   public heroBannerData: any = {};
   public extraMenuData: any = {};
 
@@ -99,13 +100,18 @@ export class HomeComponent implements OnInit {
                               (err) => console.error(err))
 
     _componentsData.filter(
+                    (component: any) => component.widget_type == 'AnnouncementWidget'
+                  ).subscribe((data) => this.annoucementWidgetData = data,
+                              (err) => console.error(err))
+
+    _componentsData.filter(
                 (component: any) => component.widget_type == 'OfferMenu'
               ).subscribe((data) =>
                           this.extraMenuData = data,
                           (err) => console.error(err));
 
     _componentsData.filter(
-                  (component: any) => !(component.widget_type == 'HeroBanner' || component.widget_type == 'OfferMenu')
+                  (component: any) => !(component.widget_type == 'HeroBanner' || component.widget_type == 'OfferMenu' || component.widget_type == 'AnnouncementWidget')
                 ).subscribe( (data) => {this.componentsData = data, this.attachComponents(this.componentsData)},
                               (err) => console.error(err));
     _componentsData.connect();

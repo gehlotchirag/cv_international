@@ -19,6 +19,7 @@ class ProductRoutingModuleInjector extends import0.NgModuleInjector<import1.Prod
   constructor(parent:import3.Injector) {
     super(parent,[
       import4.ProductComponentNgFactory,
+      import4.ProductComponentNgFactory,
       import4.ProductComponentNgFactory
     ]
     ,([] as any[]));
@@ -27,6 +28,13 @@ class ProductRoutingModuleInjector extends import0.NgModuleInjector<import1.Prod
       if ((this.__ROUTES_2 == (null as any))) { (this.__ROUTES_2 = [[
         {
           path: 'product/:id',
+          component: import5.ProductComponent,
+          pathMatch: 'full',
+          resolve: {product: import6.ProductDetailResolve}
+        }
+        ,
+        {
+          path: 'shop/:id',
           component: import5.ProductComponent,
           pathMatch: 'full',
           resolve: {product: import6.ProductDetailResolve}

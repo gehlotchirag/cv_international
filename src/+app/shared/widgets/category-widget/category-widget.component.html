@@ -13,7 +13,7 @@
             [ngClass]="{'box-1 hide-sm': i == 0, 'box-2 last': i==1, 'last': i == dataItems.length - 1}">
         <a [routerLink]="getRouterLink(item.dataUrl)['rl']"
           [queryParams]="getRouterLink(item.dataUrl)['qp']">
-          <img [src]="item.imageUrl" class="img-responsive">
+          <img lazyLoad data-src="{{item.imageUrl}}" class="img-responsive loading" alt="">
         </a>
       </div>
     </div>

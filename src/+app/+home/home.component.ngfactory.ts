@@ -26,12 +26,14 @@ import * as import18 from '@angular/core/src/linker/query_list';
 import * as import19 from '../shared/widgets/mega-menu/mega-menu.component.ngfactory';
 import * as import20 from '../shared/widgets/hero-banner/hero-banner.component.ngfactory';
 import * as import21 from '../shared/widgets/extra-menu/extra-menu.component.ngfactory';
-import * as import22 from '@angular/core/src/linker/element_ref';
-import * as import23 from '@angular/router/src/router';
-import * as import24 from '@angular/http/src/http';
-import * as import25 from '../shared/widgets/mega-menu/mega-menu.component';
-import * as import26 from '../shared/widgets/hero-banner/hero-banner.component';
-import * as import27 from '../shared/widgets/extra-menu/extra-menu.component';
+import * as import22 from '../shared/widgets/announcement-widget/announcement-widget.component.ngfactory';
+import * as import23 from '@angular/core/src/linker/element_ref';
+import * as import24 from '@angular/router/src/router';
+import * as import25 from '@angular/http/src/http';
+import * as import26 from '../shared/widgets/mega-menu/mega-menu.component';
+import * as import27 from '../shared/widgets/hero-banner/hero-banner.component';
+import * as import28 from '../shared/widgets/extra-menu/extra-menu.component';
+import * as import29 from '../shared/widgets/announcement-widget/announcement-widget.component';
 export class Wrapper_HomeComponent {
   context:import0.HomeComponent;
   changed:boolean;
@@ -152,33 +154,38 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
   _text_25:any;
   _el_26:any;
   /*private*/ _appEl_26:import3.AppElement;
+  _HttpClientService_26_4:import13.HttpClientService;
+  _AnnouncementWidgetComponent_26_5:import22.Wrapper_AnnouncementWidgetComponent;
   _text_27:any;
   _el_28:any;
+  /*private*/ _appEl_28:import3.AppElement;
   _text_29:any;
   _el_30:any;
   _text_31:any;
   _el_32:any;
   _text_33:any;
   _el_34:any;
-  _el_35:any;
-  _text_36:any;
-  _text_37:any;
+  _text_35:any;
+  _el_36:any;
+  _el_37:any;
   _text_38:any;
-  _el_39:any;
+  _text_39:any;
   _text_40:any;
   _el_41:any;
   _text_42:any;
   _el_43:any;
   _text_44:any;
-  _text_45:any;
-  _el_46:any;
+  _el_45:any;
+  _text_46:any;
   _text_47:any;
-  _text_48:any;
+  _el_48:any;
   _text_49:any;
   _text_50:any;
   _text_51:any;
   _text_52:any;
   _text_53:any;
+  _text_54:any;
+  _text_55:any;
   constructor(viewUtils:import9.ViewUtils,parentInjector:import10.Injector,declarationEl:import3.AppElement) {
     super(_View_HomeComponent0,renderType_HomeComponent,import11.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import12.ChangeDetectorStatus.CheckAlways);
   }
@@ -194,14 +201,14 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
     this._el_6 = import9.createRenderElement(this.renderer,this._el_4,'cvi-mega-menu',import9.EMPTY_INLINE_ARRAY,(null as any));
     this._appEl_6 = new import3.AppElement(6,4,this,this._el_6);
     var compView_6:any = import19.viewFactory_MegaMenuComponent0(this.viewUtils,this.injector(6),this._appEl_6);
-    this._MegaMenuComponent_6_4 = new import19.Wrapper_MegaMenuComponent(this.parentInjector.get(import13.HttpClientService),new import22.ElementRef(this._el_6),this.parentInjector.get(import23.Router),this.renderer);
+    this._MegaMenuComponent_6_4 = new import19.Wrapper_MegaMenuComponent(this.parentInjector.get(import13.HttpClientService),new import23.ElementRef(this._el_6),this.parentInjector.get(import24.Router),this.renderer);
     this._appEl_6.initComponent(this._MegaMenuComponent_6_4.context,([] as any[]),compView_6);
     compView_6.create(this._MegaMenuComponent_6_4.context,([] as any[]),(null as any));
     this._text_7 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._el_8 = import9.createRenderElement(this.renderer,this._el_4,'cvi-hero-banner',new import9.InlineArray2(2,'class','home-carousel'),(null as any));
     this._appEl_8 = new import3.AppElement(8,4,this,this._el_8);
     var compView_8:any = import20.viewFactory_HeroBannerComponent0(this.viewUtils,this.injector(8),this._appEl_8);
-    this._HttpClientService_8_4 = new import13.HttpClientService(this.parentInjector.get(import24.Http));
+    this._HttpClientService_8_4 = new import13.HttpClientService(this.parentInjector.get(import25.Http));
     this._HeroBannerComponent_8_5 = new import20.Wrapper_HeroBannerComponent(this._HttpClientService_8_4);
     this._appEl_8.initComponent(this._HeroBannerComponent_8_5.context,([] as any[]),compView_8);
     compView_8.create(this._HeroBannerComponent_8_5.context,([] as any[]),(null as any));
@@ -209,7 +216,7 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
     this._el_10 = import9.createRenderElement(this.renderer,this._el_4,'cvi-extra-menu',import9.EMPTY_INLINE_ARRAY,(null as any));
     this._appEl_10 = new import3.AppElement(10,4,this,this._el_10);
     var compView_10:any = import21.viewFactory_ExtraMenuComponent0(this.viewUtils,this.injector(10),this._appEl_10);
-    this._HttpClientService_10_4 = new import13.HttpClientService(this.parentInjector.get(import24.Http));
+    this._HttpClientService_10_4 = new import13.HttpClientService(this.parentInjector.get(import25.Http));
     this._ExtraMenuComponent_10_5 = new import21.Wrapper_ExtraMenuComponent(this._HttpClientService_10_4);
     this._appEl_10.initComponent(this._ExtraMenuComponent_10_5.context,([] as any[]),compView_10);
     compView_10.create(this._ExtraMenuComponent_10_5.context,([] as any[]),(null as any));
@@ -228,36 +235,44 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
     this._text_23 = this.renderer.createText(this._el_22,'Learn more',(null as any));
     this._text_24 = this.renderer.createText(this._el_14,'\n	',(null as any));
     this._text_25 = this.renderer.createText(this._el_0,'\n	',(null as any));
-    this._el_26 = import9.createRenderElement(this.renderer,this._el_0,'div',import9.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_26 = import9.createRenderElement(this.renderer,this._el_0,'cvi-announcement-widget',import9.EMPTY_INLINE_ARRAY,(null as any));
     this._appEl_26 = new import3.AppElement(26,0,this,this._el_26);
+    var compView_26:any = import22.viewFactory_AnnouncementWidgetComponent0(this.viewUtils,this.injector(26),this._appEl_26);
+    this._HttpClientService_26_4 = new import13.HttpClientService(this.parentInjector.get(import25.Http));
+    this._AnnouncementWidgetComponent_26_5 = new import22.Wrapper_AnnouncementWidgetComponent(this._HttpClientService_26_4);
+    this._appEl_26.initComponent(this._AnnouncementWidgetComponent_26_5.context,([] as any[]),compView_26);
+    compView_26.create(this._AnnouncementWidgetComponent_26_5.context,([] as any[]),(null as any));
     this._text_27 = this.renderer.createText(this._el_0,'\n	',(null as any));
-    this._el_28 = import9.createRenderElement(this.renderer,this._el_0,'div',new import9.InlineArray2(2,'class','occupy mob-section'),(null as any));
-    this._text_29 = this.renderer.createText(this._el_28,'\n		',(null as any));
-    this._el_30 = import9.createRenderElement(this.renderer,this._el_28,'div',new import9.InlineArray2(2,'class','contain bg-white mob-bg-white home-section'),(null as any));
-    this._text_31 = this.renderer.createText(this._el_30,'\n			',(null as any));
-    this._el_32 = import9.createRenderElement(this.renderer,this._el_30,'div',new import9.InlineArray2(2,'class','section-header mob-section-heading'),(null as any));
-    this._text_33 = this.renderer.createText(this._el_32,'\n				',(null as any));
-    this._el_34 = import9.createRenderElement(this.renderer,this._el_32,'span',new import9.InlineArray2(2,'class','heading pull-left'),(null as any));
-    this._el_35 = import9.createRenderElement(this.renderer,this._el_34,'img',new import9.InlineArray2(2,'src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/ethnic-1.png'),(null as any));
-    this._text_36 = this.renderer.createText(this._el_34,' Craftsvilla - An Ethnic Destination',(null as any));
-    this._text_37 = this.renderer.createText(this._el_32,'\n			',(null as any));
-    this._text_38 = this.renderer.createText(this._el_30,'\n			',(null as any));
-    this._el_39 = import9.createRenderElement(this.renderer,this._el_30,'div',new import9.InlineArray2(2,'class','section-body mob-section-body'),(null as any));
-    this._text_40 = this.renderer.createText(this._el_39,'\n				',(null as any));
-    this._el_41 = import9.createRenderElement(this.renderer,this._el_39,'div',new import9.InlineArray2(2,'class',''),(null as any));
-    this._text_42 = this.renderer.createText(this._el_41,'\n          ',(null as any));
-    this._el_43 = import9.createRenderElement(this.renderer,this._el_41,'p',import9.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_44 = this.renderer.createText(this._el_43,'\n            Craftsvilla celebrates everything ethnic and is designed to capture the essence of India by connecting local artisans and designers directly to global customers. We believe in catering to the diverse preferences of our customers and ensuring a great online shopping experience. Craftsvilla.com helps customers discover and buy products that are not easily available to them today. We, at Craftsvilla — the largest online ethnic store, take pride in our roots. So, if you are looking for anything Indian that is top quality, yet affordable, Craftsvilla.com is the best online marketplace for you to shop from. We cater to the masses with an enviable collection of ethnic products including Sarees, Lehengas, Salwar Suits, Men’s Kurtas, Kurtis, Jewellery and Accessories.\n          ',(null as any));
-    this._text_45 = this.renderer.createText(this._el_41,'\n          ',(null as any));
-    this._el_46 = import9.createRenderElement(this.renderer,this._el_41,'p',import9.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_47 = this.renderer.createText(this._el_46,'\n            Staying true to our commitment of taking Indian ethnic fashion to every corner of the world, we have launched the Craftsvilla shopping app for those who love to shop on the go! Craftsvilla.com is not just about a memorable shopping experience, it also offers customer-friendly services so that you can enjoy the best deals and awesome discounts on all products. Customer satisfaction is something we swear by and that is why we offer free shipping and CoD facilities on most of our products. We also ensure 100% security on payment gateways. We make online shopping a dream with multiple payment options, timely delivery and a prompt customer care service. We also offer reverse pick-up services and easy refund policies. So, hangout on Craftsvilla.com, your one-stop destination for ethnic shopping in India.\n          ',(null as any));
-    this._text_48 = this.renderer.createText(this._el_41,'\n        ',(null as any));
-    this._text_49 = this.renderer.createText(this._el_39,'\n			',(null as any));
-    this._text_50 = this.renderer.createText(this._el_30,'\n		',(null as any));
-    this._text_51 = this.renderer.createText(this._el_28,'\n	',(null as any));
-    this._text_52 = this.renderer.createText(this._el_0,'\n',(null as any));
-    this._text_53 = this.renderer.createText(parentRenderNode,'\n',(null as any));
-    this._viewQuery_content_0.reset([this._appEl_26.vcRef]);
+    this._el_28 = import9.createRenderElement(this.renderer,this._el_0,'div',import9.EMPTY_INLINE_ARRAY,(null as any));
+    this._appEl_28 = new import3.AppElement(28,0,this,this._el_28);
+    this._text_29 = this.renderer.createText(this._el_0,'\n	',(null as any));
+    this._el_30 = import9.createRenderElement(this.renderer,this._el_0,'div',new import9.InlineArray2(2,'class','occupy mob-section'),(null as any));
+    this._text_31 = this.renderer.createText(this._el_30,'\n		',(null as any));
+    this._el_32 = import9.createRenderElement(this.renderer,this._el_30,'div',new import9.InlineArray2(2,'class','contain bg-white mob-bg-white home-section clearfix'),(null as any));
+    this._text_33 = this.renderer.createText(this._el_32,'\n			',(null as any));
+    this._el_34 = import9.createRenderElement(this.renderer,this._el_32,'div',new import9.InlineArray2(2,'class','section-header mob-section-heading'),(null as any));
+    this._text_35 = this.renderer.createText(this._el_34,'\n				',(null as any));
+    this._el_36 = import9.createRenderElement(this.renderer,this._el_34,'span',new import9.InlineArray2(2,'class','heading pull-left'),(null as any));
+    this._el_37 = import9.createRenderElement(this.renderer,this._el_36,'img',new import9.InlineArray2(2,'src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/ethnic-1.png'),(null as any));
+    this._text_38 = this.renderer.createText(this._el_36,' Craftsvilla - An Ethnic Destination',(null as any));
+    this._text_39 = this.renderer.createText(this._el_34,'\n			',(null as any));
+    this._text_40 = this.renderer.createText(this._el_32,'\n			',(null as any));
+    this._el_41 = import9.createRenderElement(this.renderer,this._el_32,'div',new import9.InlineArray2(2,'class','section-body mob-section-body'),(null as any));
+    this._text_42 = this.renderer.createText(this._el_41,'\n				',(null as any));
+    this._el_43 = import9.createRenderElement(this.renderer,this._el_41,'div',new import9.InlineArray2(2,'class',''),(null as any));
+    this._text_44 = this.renderer.createText(this._el_43,'\n          ',(null as any));
+    this._el_45 = import9.createRenderElement(this.renderer,this._el_43,'p',import9.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_46 = this.renderer.createText(this._el_45,'\n            Craftsvilla celebrates everything ethnic and is designed to capture the essence of India by connecting local artisans and designers directly to global customers. We believe in catering to the diverse preferences of our customers and ensuring a great online shopping experience. Craftsvilla.com helps customers discover and buy products that are not easily available to them today. We, at Craftsvilla — the largest online ethnic store, take pride in our roots. So, if you are looking for anything Indian that is top quality, yet affordable, Craftsvilla.com is the best online marketplace for you to shop from. We cater to the masses with an enviable collection of ethnic products including Sarees, Lehengas, Salwar Suits, Men’s Kurtas, Kurtis, Jewellery and Accessories.\n          ',(null as any));
+    this._text_47 = this.renderer.createText(this._el_43,'\n          ',(null as any));
+    this._el_48 = import9.createRenderElement(this.renderer,this._el_43,'p',import9.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_49 = this.renderer.createText(this._el_48,'\n            Staying true to our commitment of taking Indian ethnic fashion to every corner of the world, we have launched the Craftsvilla shopping app for those who love to shop on the go! Craftsvilla.com is not just about a memorable shopping experience, it also offers customer-friendly services so that you can enjoy the best deals and awesome discounts on all products. Customer satisfaction is something we swear by and that is why we offer free shipping and CoD facilities on most of our products. We also ensure 100% security on payment gateways. We make online shopping a dream with multiple payment options, timely delivery and a prompt customer care service. We also offer reverse pick-up services and easy refund policies. So, hangout on Craftsvilla.com, your one-stop destination for ethnic shopping in India.\n          ',(null as any));
+    this._text_50 = this.renderer.createText(this._el_43,'\n        ',(null as any));
+    this._text_51 = this.renderer.createText(this._el_41,'\n			',(null as any));
+    this._text_52 = this.renderer.createText(this._el_32,'\n		',(null as any));
+    this._text_53 = this.renderer.createText(this._el_30,'\n	',(null as any));
+    this._text_54 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_55 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._viewQuery_content_0.reset([this._appEl_28.vcRef]);
     this.context.contentContainer = this._viewQuery_content_0.first;
     this.init(([] as any[]),[
       this._el_0,
@@ -295,35 +310,39 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
       this._el_32,
       this._text_33,
       this._el_34,
-      this._el_35,
-      this._text_36,
-      this._text_37,
+      this._text_35,
+      this._el_36,
+      this._el_37,
       this._text_38,
-      this._el_39,
+      this._text_39,
       this._text_40,
       this._el_41,
       this._text_42,
       this._el_43,
       this._text_44,
-      this._text_45,
-      this._el_46,
+      this._el_45,
+      this._text_46,
       this._text_47,
-      this._text_48,
+      this._el_48,
       this._text_49,
       this._text_50,
       this._text_51,
       this._text_52,
-      this._text_53
+      this._text_53,
+      this._text_54,
+      this._text_55
     ]
     ,([] as any[]),([] as any[]));
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import25.MegaMenuComponent) && (6 === requestNodeIndex))) { return this._MegaMenuComponent_6_4.context; }
+    if (((token === import26.MegaMenuComponent) && (6 === requestNodeIndex))) { return this._MegaMenuComponent_6_4.context; }
     if (((token === import13.HttpClientService) && (8 === requestNodeIndex))) { return this._HttpClientService_8_4; }
-    if (((token === import26.HeroBannerComponent) && (8 === requestNodeIndex))) { return this._HeroBannerComponent_8_5.context; }
+    if (((token === import27.HeroBannerComponent) && (8 === requestNodeIndex))) { return this._HeroBannerComponent_8_5.context; }
     if (((token === import13.HttpClientService) && (10 === requestNodeIndex))) { return this._HttpClientService_10_4; }
-    if (((token === import27.ExtraMenuComponent) && (10 === requestNodeIndex))) { return this._ExtraMenuComponent_10_5.context; }
+    if (((token === import28.ExtraMenuComponent) && (10 === requestNodeIndex))) { return this._ExtraMenuComponent_10_5.context; }
+    if (((token === import13.HttpClientService) && (26 === requestNodeIndex))) { return this._HttpClientService_26_4; }
+    if (((token === import29.AnnouncementWidgetComponent) && (26 === requestNodeIndex))) { return this._AnnouncementWidgetComponent_26_5.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -338,10 +357,16 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
     const currVal_10_0_1:any = this.context.extraMenuData.title;
     this._ExtraMenuComponent_10_5.check_header(currVal_10_0_1,throwOnChange,false);
     this._ExtraMenuComponent_10_5.detectChangesInInputProps(this,this._el_10,throwOnChange);
+    const currVal_26_0_0:any = this.context.annoucementWidgetData.title;
+    this._AnnouncementWidgetComponent_26_5.check_header(currVal_26_0_0,throwOnChange,false);
+    const currVal_26_0_1:any = this.context.annoucementWidgetData.data;
+    this._AnnouncementWidgetComponent_26_5.check_dataItems(currVal_26_0_1,throwOnChange,false);
+    this._AnnouncementWidgetComponent_26_5.detectChangesInInputProps(this,this._el_26,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
     this._MegaMenuComponent_6_4.detectChangesInHostProps(this,this._el_6,throwOnChange);
     this._HeroBannerComponent_8_5.detectChangesInHostProps(this,this._el_8,throwOnChange);
     this._ExtraMenuComponent_10_5.detectChangesInHostProps(this,this._el_10,throwOnChange);
+    this._AnnouncementWidgetComponent_26_5.detectChangesInHostProps(this,this._el_26,throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
 }

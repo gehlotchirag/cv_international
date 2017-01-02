@@ -10,7 +10,7 @@
     <div class="carousel-inner" role="listbox">
       <div *ngFor="let item of dataItems; let i = index" class="item" [ngClass]="{ active: i==0 }">
         <a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
-          <img [src]="item.imageUrl" class="slider-img" alt="">
+          <img lazyLoad data-src="{{item.imageUrl}}" class="slider-img loading" alt="">
         </a>
       </div>
     </div>

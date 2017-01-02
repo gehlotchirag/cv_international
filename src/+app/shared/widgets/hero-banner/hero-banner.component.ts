@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import {ImageZoomModule} from 'angular2-image-zoom';
 
 import { HttpClientService } from '../../services/http-client.service';
-import HomeWidget from '../home-widget';
 
 import { getRouterLink } from '../../utils/'
 
@@ -13,10 +11,8 @@ import { getRouterLink } from '../../utils/'
   providers: [ HttpClientService ]
 })
 export class HeroBannerComponent implements OnInit {
-  @Input()
-  header: string;
-  @Input()
-  dataItems: any;
+  @Input() header: string;
+  @Input() dataItems: any;
 
   private getRouterLink = getRouterLink;
 

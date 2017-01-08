@@ -5,7 +5,9 @@ interface Listing {
     total_count: number,
     total_pages: number,
     previous_page: number,
-    name: string,
+    next_page: number,
+    category_name: string,
+    name:string,
     results: ListingProduct[]
 }
 

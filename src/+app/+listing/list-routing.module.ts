@@ -1,47 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { ListingComponent } from './listing.component';
+import { CategoryComponent } from './category.component';
 
-import { ListingResolveService } from './listing-resolve.service';
+import { ProductResolveService } from './product-resolve.service';
 import { FilterResolveService } from './filter-resolve.service';
 
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { 
-        path: 'category', 
-        component: ListingComponent, 
-        resolve: {
-          filters: FilterResolveService
-        }
-      },
       {
         path: 'premium',
-        component: ListingComponent,
+        component: CategoryComponent,
         resolve: {
-          filters: FilterResolveService 
-        }
-      },
-      {
-        path: 'category/:id',
-        component: ListingComponent,
-        resolve: {
-           filters: FilterResolveService
+          filters: FilterResolveService,
+          products: ProductResolveService
         }
       },
       { 
         path: ':category', 
-        component: ListingComponent, 
+        component: CategoryComponent, 
         resolve: {
-          filters: FilterResolveService
+          filters: FilterResolveService,
+          products: ProductResolveService
         }
       },
       { 
         path: ':category/:sub-category', 
-        component: ListingComponent, 
+        component: CategoryComponent, 
         resolve: {
-          filters: FilterResolveService
+          filters: FilterResolveService,
+          products: ProductResolveService
         }
       },
     ])

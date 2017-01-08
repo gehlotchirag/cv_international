@@ -8,54 +8,53 @@ import * as import0 from '@angular/core/src/linker/ng_module_factory';
 import * as import1 from './list-routing.module';
 import * as import2 from '@angular/router/src/router_module';
 import * as import3 from '@angular/core/src/di/injector';
-import * as import4 from './listing.component.ngfactory';
-import * as import5 from './listing.component';
+import * as import4 from './category.component.ngfactory';
+import * as import5 from './category.component';
 import * as import6 from './filter-resolve.service';
-import * as import7 from '@angular/router/src/router_config_loader';
+import * as import7 from './product-resolve.service';
+import * as import8 from '@angular/router/src/router_config_loader';
 class ListRoutingModuleInjector extends import0.NgModuleInjector<import1.ListRoutingModule> {
   _RouterModule_0:import2.RouterModule;
   _ListRoutingModule_1:import1.ListRoutingModule;
   __ROUTES_2:any[];
   constructor(parent:import3.Injector) {
     super(parent,[
-      import4.ListingComponentNgFactory,
-      import4.ListingComponentNgFactory,
-      import4.ListingComponentNgFactory,
-      import4.ListingComponentNgFactory,
-      import4.ListingComponentNgFactory
+      import4.CategoryComponentNgFactory,
+      import4.CategoryComponentNgFactory,
+      import4.CategoryComponentNgFactory
     ]
     ,([] as any[]));
   }
   get _ROUTES_2():any[] {
       if ((this.__ROUTES_2 == (null as any))) { (this.__ROUTES_2 = [[
         {
-          path: 'category',
-          component: import5.ListingComponent,
-          resolve: {filters: import6.FilterResolveService}
-        }
-        ,
-        {
           path: 'premium',
-          component: import5.ListingComponent,
-          resolve: {filters: import6.FilterResolveService}
-        }
-        ,
-        {
-          path: 'category/:id',
-          component: import5.ListingComponent,
-          resolve: {filters: import6.FilterResolveService}
+          component: import5.CategoryComponent,
+          resolve: {
+            filters: import6.FilterResolveService,
+            products: import7.ProductResolveService
+          }
+
         }
         ,
         {
           path: ':category',
-          component: import5.ListingComponent,
-          resolve: {filters: import6.FilterResolveService}
+          component: import5.CategoryComponent,
+          resolve: {
+            filters: import6.FilterResolveService,
+            products: import7.ProductResolveService
+          }
+
         }
         ,
         {
           path: ':category/:sub-category',
-          component: import5.ListingComponent,
-          resolve: {filters: import6.FilterResolveService}
+          component: import5.CategoryComponent,
+          resolve: {
+            filters: import6.FilterResolveService,
+            products: import7.ProductResolveService
+          }
+
         }
 
       ]
@@ -70,7 +69,7 @@ class ListRoutingModuleInjector extends import0.NgModuleInjector<import1.ListRou
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.RouterModule)) { return this._RouterModule_0; }
     if ((token === import1.ListRoutingModule)) { return this._ListRoutingModule_1; }
-    if ((token === import7.ROUTES)) { return this._ROUTES_2; }
+    if ((token === import8.ROUTES)) { return this._ROUTES_2; }
     return notFoundResult;
   }
   destroyInternal():void {

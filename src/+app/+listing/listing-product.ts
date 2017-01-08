@@ -5,7 +5,8 @@ interface ListingProduct {
   upc: string,
   imgUrl: string,
   regularPrice: string,
-  discountedPrice: string
+  discountedPrice: string,
+  slug: string
 }
 
 export default ListingProduct

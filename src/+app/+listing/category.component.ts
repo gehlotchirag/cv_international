@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, DoCheck } from '@angular/core';
 import { Response } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
-import { PlatformLocation, Location } from '@angular/common';
+import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
 
 import { ListingService } from './listing.service';
@@ -77,7 +77,6 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
 
   constructor(  private route: ActivatedRoute,
     private router: Router,
-    private platformLocation: PlatformLocation,
     private location: Location,
     private listingService:ListingService
   ){
@@ -92,7 +91,7 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
   }
 
   ngOnInit(){
-    let _urlArr = this.platformLocation.pathname.split('/');
+    let _urlArr = this.router.url.split('?')[0];
     for (var i = 0; i < _urlArr.length; ++i) {
       let breadcrumbObj:Object = {};
       if(i === 0) {
@@ -338,21 +337,21 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
   }
 
   navigateToCategoryUrl(){
-    let _urlArr = this.platformLocation.pathname.split('/');
+    let _urlArr = this.router.url.split('?')[0];
     let category = _urlArr[1];
     let url = '/womens-clothing/' + category;
     this.router.navigate([url.toLowerCase()], { queryParams: this.queryParams });
   }
 
   navigateToFilterUrl(appliedFilter){
-    let _urlArr = this.platformLocation.pathname.split('/');
+    let _urlArr = this.router.url.split('?')[0];
     let category = _urlArr[_urlArr.length - 1];
     let url = '/' + category + '/' + appliedFilter + '-' + category;
     this.router.navigate([url.split(" ").join("-").toLowerCase()], { queryParams: this.queryParams });
   }
 
   getPageUrl(){
-    let _tempUrl = this.platformLocation.pathname;
+    let _tempUrl = this.router.url.split('?')[0];
     let _urlArr = (_tempUrl.split('/')).filter((item) => item !== "");
     return _urlArr.join('/');
   }

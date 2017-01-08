@@ -61,8 +61,8 @@ import * as import53 from './+app/+product/product-detail-resolve.service';
 import * as import54 from './+app/statics/sitemap/sitemap.service';
 import * as import55 from './+app/statics/sitemap/sitemap-resolve.service';
 import * as import56 from './+app/+listing/listing.service';
-import * as import57 from './+app/+listing/listing-resolve.service';
-import * as import58 from './+app/+listing/filter-resolve.service';
+import * as import57 from './+app/+listing/filter-resolve.service';
+import * as import58 from './+app/+listing/product-resolve.service';
 import * as import59 from './+app/shared/services/router-header-binding.service';
 import * as import60 from './+app/shared/services/data-holding.service';
 import * as import61 from './+app/shared/api.service';
@@ -88,7 +88,7 @@ import * as import80 from './+app/statics/faqs/faqs.component.ngfactory';
 import * as import81 from './+app/statics/order-tracking/order-tracking.component.ngfactory';
 import * as import82 from './+app/statics/in-media/in-media.component.ngfactory';
 import * as import83 from './+app/statics/contact-us/contactus.component.ngfactory';
-import * as import84 from './+app/+listing/listing.component.ngfactory';
+import * as import84 from './+app/+listing/category.component.ngfactory';
 import * as import85 from './+app/+not_found/not-found.component.ngfactory';
 import * as import86 from './+app/app.component.ngfactory';
 import * as import87 from '@angular/platform-browser/src/dom/events/dom_events';
@@ -104,7 +104,7 @@ import * as import96 from './+app/statics/faqs/faqs.component';
 import * as import97 from './+app/statics/order-tracking/order-tracking.component';
 import * as import98 from './+app/statics/in-media/in-media.component';
 import * as import99 from './+app/statics/contact-us/contactus.component';
-import * as import100 from './+app/+listing/listing.component';
+import * as import100 from './+app/+listing/category.component';
 import * as import101 from './+app/+not_found/not-found.component';
 import * as import102 from 'angular2-universal/browser/env';
 import * as import103 from '@angular/router/src/router';
@@ -209,8 +209,8 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
   __SitemapService_82:import54.SitemapService;
   __SitemapResolveService_83:import55.SitemapResolveService;
   __ListingService_84:import56.ListingService;
-  __ListingResolveService_85:import57.ListingResolveService;
-  __FilterResolveService_86:import58.FilterResolveService;
+  __FilterResolveService_85:import57.FilterResolveService;
+  __ProductResolveService_86:import58.ProductResolveService;
   __RouterHeaderBindingService_87:import59.RouterHeaderBindingService;
   __DataHoldingService_88:import60.DataHoldingService;
   __ActivatedRoute_89:any;
@@ -246,11 +246,9 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
       import81.OrderTrackingComponentNgFactory,
       import82.InMediaComponentNgFactory,
       import83.ContactUsComponentNgFactory,
-      import84.ListingComponentNgFactory,
-      import84.ListingComponentNgFactory,
-      import84.ListingComponentNgFactory,
-      import84.ListingComponentNgFactory,
-      import84.ListingComponentNgFactory,
+      import84.CategoryComponentNgFactory,
+      import84.CategoryComponentNgFactory,
+      import84.CategoryComponentNgFactory,
       import85.NotFoundComponentNgFactory,
       import86.AppComponentNgFactory
     ]
@@ -462,33 +460,33 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
       ,
       [
         {
-          path: 'category',
-          component: import100.ListingComponent,
-          resolve: {filters: import58.FilterResolveService}
-        }
-        ,
-        {
           path: 'premium',
-          component: import100.ListingComponent,
-          resolve: {filters: import58.FilterResolveService}
-        }
-        ,
-        {
-          path: 'category/:id',
-          component: import100.ListingComponent,
-          resolve: {filters: import58.FilterResolveService}
+          component: import100.CategoryComponent,
+          resolve: {
+            filters: import57.FilterResolveService,
+            products: import58.ProductResolveService
+          }
+
         }
         ,
         {
           path: ':category',
-          component: import100.ListingComponent,
-          resolve: {filters: import58.FilterResolveService}
+          component: import100.CategoryComponent,
+          resolve: {
+            filters: import57.FilterResolveService,
+            products: import58.ProductResolveService
+          }
+
         }
         ,
         {
           path: ':category/:sub-category',
-          component: import100.ListingComponent,
-          resolve: {filters: import58.FilterResolveService}
+          component: import100.CategoryComponent,
+          resolve: {
+            filters: import57.FilterResolveService,
+            products: import58.ProductResolveService
+          }
+
         }
 
       ]
@@ -564,16 +562,16 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
     return this.__SitemapResolveService_83;
   }
   get _ListingService_84():import56.ListingService {
-    if ((this.__ListingService_84 == (null as any))) { (this.__ListingService_84 = new import56.ListingService(this._HttpClientService_79)); }
+    if ((this.__ListingService_84 == (null as any))) { (this.__ListingService_84 = new import56.ListingService(this._HttpClientService_79,this._Router_71)); }
     return this.__ListingService_84;
   }
-  get _ListingResolveService_85():import57.ListingResolveService {
-    if ((this.__ListingResolveService_85 == (null as any))) { (this.__ListingResolveService_85 = new import57.ListingResolveService(this._ListingService_84,this._Router_71)); }
-    return this.__ListingResolveService_85;
+  get _FilterResolveService_85():import57.FilterResolveService {
+    if ((this.__FilterResolveService_85 == (null as any))) { (this.__FilterResolveService_85 = new import57.FilterResolveService(this._ListingService_84,this._Router_71)); }
+    return this.__FilterResolveService_85;
   }
-  get _FilterResolveService_86():import58.FilterResolveService {
-    if ((this.__FilterResolveService_86 == (null as any))) { (this.__FilterResolveService_86 = new import58.FilterResolveService(this._ListingService_84,this._Router_71)); }
-    return this.__FilterResolveService_86;
+  get _ProductResolveService_86():import58.ProductResolveService {
+    if ((this.__ProductResolveService_86 == (null as any))) { (this.__ProductResolveService_86 = new import58.ProductResolveService(this._ListingService_84,this._Router_71)); }
+    return this.__ProductResolveService_86;
   }
   get _RouterHeaderBindingService_87():import59.RouterHeaderBindingService {
     if ((this.__RouterHeaderBindingService_87 == (null as any))) { (this.__RouterHeaderBindingService_87 = new import59.RouterHeaderBindingService()); }
@@ -749,8 +747,8 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
     if ((token === import54.SitemapService)) { return this._SitemapService_82; }
     if ((token === import55.SitemapResolveService)) { return this._SitemapResolveService_83; }
     if ((token === import56.ListingService)) { return this._ListingService_84; }
-    if ((token === import57.ListingResolveService)) { return this._ListingResolveService_85; }
-    if ((token === import58.FilterResolveService)) { return this._FilterResolveService_86; }
+    if ((token === import57.FilterResolveService)) { return this._FilterResolveService_85; }
+    if ((token === import58.ProductResolveService)) { return this._ProductResolveService_86; }
     if ((token === import59.RouterHeaderBindingService)) { return this._RouterHeaderBindingService_87; }
     if ((token === import60.DataHoldingService)) { return this._DataHoldingService_88; }
     if ((token === import118.ActivatedRoute)) { return this._ActivatedRoute_89; }

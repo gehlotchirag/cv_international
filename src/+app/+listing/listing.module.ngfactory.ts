@@ -14,10 +14,10 @@ import * as import6 from '../shared/lazyload-image/lazyload-image.module';
 import * as import7 from '../shared/widgets/widgets.module';
 import * as import8 from '@angular/common/src/localization';
 import * as import9 from './listing.service';
-import * as import10 from './listing-resolve.service';
-import * as import11 from './filter-resolve.service';
+import * as import10 from './filter-resolve.service';
+import * as import11 from './product-resolve.service';
 import * as import12 from '@angular/core/src/di/injector';
-import * as import13 from './listing.component.ngfactory';
+import * as import13 from './category.component.ngfactory';
 import * as import14 from '../shared/widgets/mega-menu/mega-menu.component.ngfactory';
 import * as import15 from '../shared/widgets/mega-menu/mega-menu-link.component.ngfactory';
 import * as import16 from '../shared/widgets/announcement-widget/announcement-widget.component.ngfactory';
@@ -30,7 +30,7 @@ import * as import22 from '../shared/widgets/product-slider/product-slider.compo
 import * as import23 from '../shared/widgets/testimonials-widget/testimonials-widget.component.ngfactory';
 import * as import24 from '../shared/widgets/pagination/pagination.component.ngfactory';
 import * as import25 from '../shared/widgets/product-card/product-card.component.ngfactory';
-import * as import26 from './listing.component';
+import * as import26 from './category.component';
 import * as import27 from '@angular/core/src/i18n/tokens';
 import * as import28 from '../shared/services/http-client.service';
 import * as import29 from '@angular/router/src/router';
@@ -46,15 +46,13 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
   __ROUTES_7:any[];
   __NgLocalization_8:import8.NgLocaleLocalization;
   __ListingService_9:import9.ListingService;
-  __ListingResolveService_10:import10.ListingResolveService;
-  __FilterResolveService_11:import11.FilterResolveService;
+  __FilterResolveService_10:import10.FilterResolveService;
+  __ProductResolveService_11:import11.ProductResolveService;
   constructor(parent:import12.Injector) {
     super(parent,[
-      import13.ListingComponentNgFactory,
-      import13.ListingComponentNgFactory,
-      import13.ListingComponentNgFactory,
-      import13.ListingComponentNgFactory,
-      import13.ListingComponentNgFactory,
+      import13.CategoryComponentNgFactory,
+      import13.CategoryComponentNgFactory,
+      import13.CategoryComponentNgFactory,
       import14.MegaMenuComponentNgFactory,
       import15.MegaMenuLinkComponentNgFactory,
       import16.AnnouncementWidgetComponentNgFactory,
@@ -73,33 +71,33 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
   get _ROUTES_7():any[] {
       if ((this.__ROUTES_7 == (null as any))) { (this.__ROUTES_7 = [[
         {
-          path: 'category',
-          component: import26.ListingComponent,
-          resolve: {filters: import11.FilterResolveService}
-        }
-        ,
-        {
           path: 'premium',
-          component: import26.ListingComponent,
-          resolve: {filters: import11.FilterResolveService}
-        }
-        ,
-        {
-          path: 'category/:id',
-          component: import26.ListingComponent,
-          resolve: {filters: import11.FilterResolveService}
+          component: import26.CategoryComponent,
+          resolve: {
+            filters: import10.FilterResolveService,
+            products: import11.ProductResolveService
+          }
+
         }
         ,
         {
           path: ':category',
-          component: import26.ListingComponent,
-          resolve: {filters: import11.FilterResolveService}
+          component: import26.CategoryComponent,
+          resolve: {
+            filters: import10.FilterResolveService,
+            products: import11.ProductResolveService
+          }
+
         }
         ,
         {
           path: ':category/:sub-category',
-          component: import26.ListingComponent,
-          resolve: {filters: import11.FilterResolveService}
+          component: import26.CategoryComponent,
+          resolve: {
+            filters: import10.FilterResolveService,
+            products: import11.ProductResolveService
+          }
+
         }
 
       ]
@@ -111,16 +109,16 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
     return this.__NgLocalization_8;
   }
   get _ListingService_9():import9.ListingService {
-    if ((this.__ListingService_9 == (null as any))) { (this.__ListingService_9 = new import9.ListingService(this.parent.get(import28.HttpClientService))); }
+    if ((this.__ListingService_9 == (null as any))) { (this.__ListingService_9 = new import9.ListingService(this.parent.get(import28.HttpClientService),this.parent.get(import29.Router))); }
     return this.__ListingService_9;
   }
-  get _ListingResolveService_10():import10.ListingResolveService {
-    if ((this.__ListingResolveService_10 == (null as any))) { (this.__ListingResolveService_10 = new import10.ListingResolveService(this._ListingService_9,this.parent.get(import29.Router))); }
-    return this.__ListingResolveService_10;
+  get _FilterResolveService_10():import10.FilterResolveService {
+    if ((this.__FilterResolveService_10 == (null as any))) { (this.__FilterResolveService_10 = new import10.FilterResolveService(this._ListingService_9,this.parent.get(import29.Router))); }
+    return this.__FilterResolveService_10;
   }
-  get _FilterResolveService_11():import11.FilterResolveService {
-    if ((this.__FilterResolveService_11 == (null as any))) { (this.__FilterResolveService_11 = new import11.FilterResolveService(this._ListingService_9,this.parent.get(import29.Router))); }
-    return this.__FilterResolveService_11;
+  get _ProductResolveService_11():import11.ProductResolveService {
+    if ((this.__ProductResolveService_11 == (null as any))) { (this.__ProductResolveService_11 = new import11.ProductResolveService(this._ListingService_9,this.parent.get(import29.Router))); }
+    return this.__ProductResolveService_11;
   }
   createInternal():import1.ListingModule {
     this._RouterModule_0 = new import2.RouterModule(this.parent.get(import2.ROUTER_FORROOT_GUARD,(null as any)));
@@ -143,8 +141,8 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
     if ((token === import30.ROUTES)) { return this._ROUTES_7; }
     if ((token === import8.NgLocalization)) { return this._NgLocalization_8; }
     if ((token === import9.ListingService)) { return this._ListingService_9; }
-    if ((token === import10.ListingResolveService)) { return this._ListingResolveService_10; }
-    if ((token === import11.FilterResolveService)) { return this._FilterResolveService_11; }
+    if ((token === import10.FilterResolveService)) { return this._FilterResolveService_10; }
+    if ((token === import11.ProductResolveService)) { return this._ProductResolveService_11; }
     return notFoundResult;
   }
   destroyInternal():void {

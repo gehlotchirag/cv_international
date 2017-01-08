@@ -1,33 +1,33 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { WidgetModule } from '../shared/widgets/widgets.module';
 
-import { ListingComponent } from './listing.component';
+import { CategoryComponent } from './category.component';
 
-import { CategoryFilterPipe } from './category-filter.pipe';
-import { LiveFilterPipe } from './live-filter.pipe';
+import { KeyValuesPipe } from './key-value.pipe';
 
 import { ListRoutingModule }  from './list-routing.module';
 
-import { ListingResolveService } from './listing-resolve.service';
+import { ProductResolveService } from './product-resolve.service';
 import { FilterResolveService } from './filter-resolve.service';
 import { ListingService } from './listing.service';
 
   @NgModule({
     imports: [
       ListRoutingModule,
+      RouterModule,
       WidgetModule,
       CommonModule
     ],
     declarations: [
-      ListingComponent,
-      CategoryFilterPipe,
-      LiveFilterPipe
+      CategoryComponent,
+      KeyValuesPipe
     ],
     providers: [
-      ListingResolveService,
       FilterResolveService,
+      ProductResolveService,
       ListingService
     ],
 

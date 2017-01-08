@@ -128,7 +128,7 @@ function ngApp(req, res) {
     view_dir = path.join(__dirname, '/static/shop/', url_arr[url_arr.length - 1]);
   }else{
     let temp_url = (org_url.split('/')).filter((item) => item !== "").join('/');
-    url = base_url + temp_url;
+    url = base_url + '/' + temp_url;
     view_dir = path.join(__dirname, '/static/', temp_url);
   }
   request.get(url, options,function(err,response,body){

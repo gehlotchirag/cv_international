@@ -4,7 +4,7 @@
 		<div class="wishlisted-count">{{ product.wishlist?.length }}</div>
 	</div> -->
 	<a routerLink="/shop/{{product.slug}}/{{product.productId}}">
-		<img lazyLoad data-src="{{product.imgUrl}}" class="img-responsive loading" alt="">
+		<img [lazyLoad]="product.imgUrl" class="img-responsive loading" alt="">
 		<div class="product-info">
 			<div class="product-name">{{ product.title }}</div>
 			<div class="product-price">

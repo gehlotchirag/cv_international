@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, DoCheck } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Response } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -15,7 +15,8 @@ import categoryFilterMap = require('./category-filter-map');
   styleUrls: ['./category.component.css'],
   providers: [ ListingService ],
 })
-export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
+
+export class CategoryComponent implements OnInit, OnDestroy{
   private subscription: Subscription;
   public recievedFilter: Object = {};
   public listingProducts: Listing;
@@ -87,23 +88,12 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
 
     this.route.data.pluck('products', 'd').subscribe((data: any) => {
       this.listingProducts = data;
+      this.setCountPerPage();
     });
   }
 
   ngOnInit(){
-    let _urlArr = this.router.url.split('?')[0];
-    for (var i = 0; i < _urlArr.length; ++i) {
-      let breadcrumbObj:Object = {};
-      if(i === 0) {
-        breadcrumbObj["name"] = "Home";
-        breadcrumbObj["link"] = "/";
-        this.pageBreadcrumbs.push(breadcrumbObj);
-      }else{
-        breadcrumbObj["name"] = _urlArr[i].split('-').join(' ');
-        breadcrumbObj["link"] = "/" + _urlArr[i - 1] + "/" + _urlArr[i];
-        this.pageBreadcrumbs.push(breadcrumbObj);
-      }
-    }
+    this.setBreadcrumbs();
     this.subscription = this.route.queryParams.subscribe(
       (queryParams: any) => {
         let query, params, page, premium;
@@ -128,22 +118,40 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
     this.setUrlFilterSort();
   }
 
-  ngDoCheck(){
-    this.setCountPerPage();
-  }
-
   ngOnDestroy(){
     this.subscription.unsubscribe();
   }
 
+  setBreadcrumbs(){
+    let _urlArr = this.router.url.split('?')[0].split('/');
+    for (var i = 0; i < _urlArr.length; ++i) {
+      let breadcrumbObj:Object = {};
+      if(i === 0) {
+        breadcrumbObj["name"] = "Home";
+        breadcrumbObj["link"] = "/";
+        this.pageBreadcrumbs.push(breadcrumbObj);
+      }else{
+        breadcrumbObj["name"] = _urlArr[i].split('-').join(' ');
+        breadcrumbObj["link"] = "/" + _urlArr[i - 1] + "/" + _urlArr[i];
+        this.pageBreadcrumbs.push(breadcrumbObj);
+      }
+    }
+  }
+
   setCountPerPage(){
-    let perPageCount = this.listingProducts.results.length;
-    let currentPage = this.listingProducts.current_page ? this.listingProducts.current_page : 1;
-    let startCount = (perPageCount * currentPage) - (perPageCount - 1);
-    let endCount = (perPageCount * currentPage);
+    let perPageCount, currentPage, startCount, endCount;
+    perPageCount = this.listingProducts.results.length;
+    if(this.listingProducts.next_page) {
+      currentPage = this.listingProducts.current_page ? this.listingProducts.current_page : 1;
+      startCount = (perPageCount * currentPage) - (perPageCount - 1);
+      endCount = (perPageCount * currentPage);
+    }else{
+      startCount = this.listingProducts.total_count - perPageCount + 1;
+      endCount = this.listingProducts.total_count
+    }
     this.resultCountObj['startCount'] = startCount;
     this.resultCountObj['endCount'] = endCount;
-    this.resultCountObj['totalCount'] = this.listingProducts.total_count;
+    this.resultCountObj['totalCount'] = this.listingProducts.total_count; 
   }
 
   setUrlFilterSort(){
@@ -152,13 +160,15 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
       let self = this;
       if(Object.keys(params['filters']).length !== 0){
         Object.keys(params['filters']).forEach(function(key) {
-          self.filterData[key]["applied"] = params['filters'][key];
-          self.appliedFilter = self.appliedFilter.concat(params['filters'][key]);
-          for (var i = 0; i < self.filterData[key]["applied"].length; ++i) {
-            let tempFilter = self.filterData[key]["applied"][i]
-            self.filterData[key]["available"] = self.filterData[key]["available"].filter(function (element) {
-              return element !== tempFilter 
-            })
+          if(self.filterData[key]) {
+            self.filterData[key]["applied"] = params['filters'][key];
+            self.appliedFilter = self.appliedFilter.concat(params['filters'][key]);
+            for (var i = 0; i < self.filterData[key]["applied"].length; ++i) {
+              let tempFilter = self.filterData[key]["applied"][i]
+              self.filterData[key]["available"] = self.filterData[key]["available"].filter(function (element) {
+                return element !== tempFilter 
+              })
+            }
           }
         });
       }
@@ -202,8 +212,9 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
     let url = this.getPageUrl();
     let isFilterUrl = this.filtersMap[url] ? true : false;
     let isPremiumUrl = url.indexOf('premium') > -1 ? true : false;
-    this.filterData[filters.key]["applied"].push(appliedFilter);
     
+    this.filterData[filters.key]["applied"].push(appliedFilter);
+    this.queryParams['page'] = 1;
     if(this.appliedFilter.length === 0 && !isFilterUrl && !isPremiumUrl) {
       this.navigateToFilterUrl(appliedFilter);
     }else{
@@ -236,6 +247,7 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
       params['filters'][filters.key] = filterArr;
     }
     this.queryParams['params'] = JSON.stringify(params)
+    this.queryParams['page'] = 1;
     if(this.appliedFilter.length === 0 && isFilterUrl && !isPremiumUrl) {
       this.navigateToCategoryUrl();
     }else{
@@ -284,7 +296,7 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
   fetchCategoryData(){
     let url = this.getPageUrl();
 
-    if(this.router.url === "/premium"){
+    if(this.router.url.indexOf("/premium") > -1){
       this.queryParams['premium'] = 1;
     }
     
@@ -303,6 +315,7 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
     let params = this.queryParams['params'] ? JSON.parse(this.queryParams['params']) : {};
     let filterObj = params['filters'] ? params['filters'] : {};
     let self = this;
+    this.queryParams['page'] = 1;
     Object.keys(this.filterData).forEach((key) => {
       if(self.filterData[key]['applied'].length > 0){
         self.filterData[key]['applied'].forEach( function (data) {
@@ -320,7 +333,7 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
     this.appliedFilter = [];
     let url = this.getPageUrl();
     let isFilterUrl = this.filtersMap[url] ? true : false;
-
+    this.queryParams['page'] = 1;
     this.manageFilterData(this.recievedFilter);
     if(this.queryParams['params']) {
       let params = JSON.parse(this.queryParams['params']);
@@ -337,16 +350,22 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
   }
 
   navigateToCategoryUrl(){
-    let _urlArr = this.router.url.split('?')[0];
+    let _urlArr = this.router.url.split('?')[0].split('/');
     let category = _urlArr[1];
     let url = '/womens-clothing/' + category;
+    this.pageBreadcrumbs.pop()
     this.router.navigate([url.toLowerCase()], { queryParams: this.queryParams });
   }
 
   navigateToFilterUrl(appliedFilter){
-    let _urlArr = this.router.url.split('?')[0];
+    let _urlArr = this.router.url.split('?')[0].split('/');
     let category = _urlArr[_urlArr.length - 1];
     let url = '/' + category + '/' + appliedFilter + '-' + category;
+    let breadcrumbObj:Object = {};
+    breadcrumbObj["name"] = appliedFilter + ' ' + category;;
+    breadcrumbObj["link"] = "";
+    this.pageBreadcrumbs.push(breadcrumbObj);
+
     this.router.navigate([url.split(" ").join("-").toLowerCase()], { queryParams: this.queryParams });
   }
 
@@ -354,5 +373,19 @@ export class CategoryComponent implements OnInit, DoCheck, OnDestroy{
     let _tempUrl = this.router.url.split('?')[0];
     let _urlArr = (_tempUrl.split('/')).filter((item) => item !== "");
     return _urlArr.join('/');
+  }
+
+  onPageChange(page) {
+    this.queryParams['page'] = page;
+    if(typeof window !== 'undefined') {
+      window.scrollTo(0,0);
+    }
+    this.fetchCategoryData();
+  }
+
+  breadcrumbClick(index){
+    for (var i = 1; i < index; ++i) {
+      this.pageBreadcrumbs.pop();
+    }
   }
 }

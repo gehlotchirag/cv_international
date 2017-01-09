@@ -36,7 +36,7 @@ export class MegaMenuComponent implements OnInit {
    ) { }
 
   ngOnInit() {
-    let megaMenuUrl = 'api/megamenu/';
+    let megaMenuUrl = 'api/dmegamenu/';
     let menuCategoriesData = DataHoldingService.getItem("megamenu");
     if(!menuCategoriesData){
       this.httpClient

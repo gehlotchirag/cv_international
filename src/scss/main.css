@@ -1908,15 +1908,17 @@ ul.nav.nav-tabs.tabs-widget li a {
   }
 }
 .loading{
-  filter: blur(15px);
-  -webkit-filter: blur(15px);
-  -ms-filter: blur(15px);
-  -moz-filter: blur(15px);
-  -o-filter: blur(15px);
   background-color: #f3f3f3;
+  height: 250px !important;
   opacity: 0;
-  min-height: 200px;
+  transition: opacity 1s;
 }
 .loaded{
-  min-height: 0;
+  animation: fadein .5s;
+  opacity: 1;
+  height: auto !important;
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

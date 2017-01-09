@@ -53,7 +53,7 @@ export class ListingService {
     if(appliedFilterObj) {
       let category = url.split('/')[0];
       let categoryUrl = 'womens-clothing/' + category;
-      categoryId = categoryFilterMap.categoriesMap[categoryUrl] ? categoryFilterMap.categoriesMap[categoryUrl].id : null;
+      categoryId = appliedFilterObj.id;
       let filter = paramsObj.filters ? paramsObj.filters : {};
       filter[appliedFilterObj.type] ? filter[appliedFilterObj.type].push(appliedFilterObj.name) : filter[appliedFilterObj.type] = [appliedFilterObj.name];
       paramsObj.filters = filter;

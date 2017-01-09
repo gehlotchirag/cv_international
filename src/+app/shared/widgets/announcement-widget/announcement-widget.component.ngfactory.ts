@@ -27,9 +27,9 @@ import * as import19 from '@angular/router/src/router';
 import * as import20 from '@angular/router/src/router_state';
 import * as import21 from '@angular/common/src/location/location_strategy';
 import * as import22 from '@angular/core/src/linker/element_ref';
-import * as import23 from '../../lazyload-image/lazyload-image.directive';
-import * as import24 from '@angular/router/src/directives/router_link';
-import * as import25 from '@angular/core/src/security';
+import * as import23 from '@angular/core/src/zone/ng_zone';
+import * as import24 from '../../lazyload-image/lazyload-image.directive';
+import * as import25 from '@angular/router/src/directives/router_link';
 export class Wrapper_AnnouncementWidgetComponent {
   context:import0.AnnouncementWidgetComponent;
   changed:boolean;
@@ -214,12 +214,8 @@ class _View_AnnouncementWidgetComponent1 extends import3.AppView<any> {
   _LazyLoadImageDirective_6_3:import18.Wrapper_LazyLoadImageDirective;
   _text_7:any;
   _text_8:any;
-  /*private*/ _expr_12:any;
-  /*private*/ _expr_13:any;
   constructor(viewUtils:import2.ViewUtils,parentInjector:import7.Injector,declarationEl:import5.AppElement) {
     super(_View_AnnouncementWidgetComponent1,renderType_AnnouncementWidgetComponent,import8.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
-    this._expr_12 = import1.UNINITIALIZED;
-    this._expr_13 = import1.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import5.AppElement {
     this._el_0 = import2.createRenderElement(this.renderer,(null as any),'div',new import2.InlineArray2(2,'class','box box-3'),(null as any));
@@ -227,11 +223,11 @@ class _View_AnnouncementWidgetComponent1 extends import3.AppView<any> {
     this._el_2 = import2.createRenderElement(this.renderer,this._el_0,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_2_3 = new import17.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import19.Router),this.parent.parentInjector.get(import20.ActivatedRoute),this.parent.parentInjector.get(import21.LocationStrategy));
     this._text_3 = this.renderer.createText(this._el_2,'\n          ',(null as any));
-    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray8(6,'alt','','class','img-responsive annoucement-web-image loading','lazyLoad',''),(null as any));
-    this._LazyLoadImageDirective_4_3 = new import18.Wrapper_LazyLoadImageDirective(new import22.ElementRef(this._el_4),this.renderer);
+    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','','class','img-responsive annoucement-web-image loading'),(null as any));
+    this._LazyLoadImageDirective_4_3 = new import18.Wrapper_LazyLoadImageDirective(new import22.ElementRef(this._el_4),this.parent.parentInjector.get(import23.NgZone));
     this._text_5 = this.renderer.createText(this._el_2,'\n          ',(null as any));
-    this._el_6 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray8(6,'alt','','class','img-responsive annoucement-mobile-image loading','lazyLoad',''),(null as any));
-    this._LazyLoadImageDirective_6_3 = new import18.Wrapper_LazyLoadImageDirective(new import22.ElementRef(this._el_6),this.renderer);
+    this._el_6 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','','class','img-responsive annoucement-mobile-image loading'),(null as any));
+    this._LazyLoadImageDirective_6_3 = new import18.Wrapper_LazyLoadImageDirective(new import22.ElementRef(this._el_6),this.parent.parentInjector.get(import23.NgZone));
     this._text_7 = this.renderer.createText(this._el_2,'\n        ',(null as any));
     this._text_8 = this.renderer.createText(this._el_0,'\n      ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
@@ -250,9 +246,9 @@ class _View_AnnouncementWidgetComponent1 extends import3.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import23.LazyLoadImageDirective) && (4 === requestNodeIndex))) { return this._LazyLoadImageDirective_4_3.context; }
-    if (((token === import23.LazyLoadImageDirective) && (6 === requestNodeIndex))) { return this._LazyLoadImageDirective_6_3.context; }
-    if (((token === import24.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 7)))) { return this._RouterLinkWithHref_2_3.context; }
+    if (((token === import24.LazyLoadImageDirective) && (4 === requestNodeIndex))) { return this._LazyLoadImageDirective_4_3.context; }
+    if (((token === import24.LazyLoadImageDirective) && (6 === requestNodeIndex))) { return this._LazyLoadImageDirective_6_3.context; }
+    if (((token === import25.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 7)))) { return this._RouterLinkWithHref_2_3.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -261,25 +257,25 @@ class _View_AnnouncementWidgetComponent1 extends import3.AppView<any> {
     const currVal_2_0_1:any = this.parent.context.getRouterLink(this.context.$implicit.dataUrl)['rl'];
     this._RouterLinkWithHref_2_3.check_routerLink(currVal_2_0_1,throwOnChange,false);
     this._RouterLinkWithHref_2_3.detectChangesInInputProps(this,this._el_2,throwOnChange);
+    const currVal_4_0_0:any = this.context.$implicit.imageUrl;
+    this._LazyLoadImageDirective_4_3.check_lazyImage(currVal_4_0_0,throwOnChange,false);
     this._LazyLoadImageDirective_4_3.detectChangesInInputProps(this,this._el_4,throwOnChange);
+    const currVal_6_0_0:any = this.context.$implicit.mobile_imageUrl;
+    this._LazyLoadImageDirective_6_3.check_lazyImage(currVal_6_0_0,throwOnChange,false);
     this._LazyLoadImageDirective_6_3.detectChangesInInputProps(this,this._el_6,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
+    if (!throwOnChange) {
+      if ((this.numberOfChecks === 0)) { this._LazyLoadImageDirective_4_3.context.ngAfterContentInit(); }
+      if ((this.numberOfChecks === 0)) { this._LazyLoadImageDirective_6_3.context.ngAfterContentInit(); }
+    }
     this._RouterLinkWithHref_2_3.detectChangesInHostProps(this,this._el_2,throwOnChange);
-    const currVal_12:any = import2.interpolate(1,'',this.context.$implicit.imageUrl,'');
-    if (import2.checkBinding(throwOnChange,this._expr_12,currVal_12)) {
-      this.renderer.setElementProperty(this._el_4,'src',this.viewUtils.sanitizer.sanitize(import25.SecurityContext.URL,currVal_12));
-      this._expr_12 = currVal_12;
-    }
     this._LazyLoadImageDirective_4_3.detectChangesInHostProps(this,this._el_4,throwOnChange);
-    const currVal_13:any = import2.interpolate(1,'',this.context.$implicit.mobile_imageUrl,'');
-    if (import2.checkBinding(throwOnChange,this._expr_13,currVal_13)) {
-      this.renderer.setElementProperty(this._el_6,'src',this.viewUtils.sanitizer.sanitize(import25.SecurityContext.URL,currVal_13));
-      this._expr_13 = currVal_13;
-    }
     this._LazyLoadImageDirective_6_3.detectChangesInHostProps(this,this._el_6,throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
   destroyInternal():void {
+    this._LazyLoadImageDirective_4_3.context.ngOnDestroy();
+    this._LazyLoadImageDirective_6_3.context.ngOnDestroy();
     this._RouterLinkWithHref_2_3.context.ngOnDestroy();
   }
   private _handle_click_2_0($event:any):boolean {

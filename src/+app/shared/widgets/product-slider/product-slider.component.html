@@ -19,7 +19,7 @@
                 *ngFor="let product of productArray; let i = index">
                 <!-- <span class="glyphicon glyphicon-heart-empty product-wishlist"></span> -->
                 <a routerLink="/product/{{product.productId}}" (click)="feedClick(product, i+1)">
-                  <img lazyLoad data-src="{{product.imgUrl}}" class="img-responsive loading" alt="">
+                  <img [lazyLoad]="product.imgUrl" class="img-responsive loading" alt="">
                   <div class="product-info">
                     <div class="product-name">{{ product.productName }}</div>
                     <div class="product-price">

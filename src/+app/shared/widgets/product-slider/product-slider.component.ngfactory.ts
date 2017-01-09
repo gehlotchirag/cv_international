@@ -30,8 +30,9 @@ import * as import22 from '@angular/router/src/router';
 import * as import23 from '@angular/router/src/router_state';
 import * as import24 from '@angular/common/src/location/location_strategy';
 import * as import25 from '@angular/core/src/linker/element_ref';
-import * as import26 from '../../lazyload-image/lazyload-image.directive';
-import * as import27 from '@angular/router/src/directives/router_link';
+import * as import26 from '@angular/core/src/zone/ng_zone';
+import * as import27 from '../../lazyload-image/lazyload-image.directive';
+import * as import28 from '@angular/router/src/directives/router_link';
 export class Wrapper_ProductSliderComponent {
   context:import0.ProductSliderComponent;
   changed:boolean;
@@ -362,7 +363,6 @@ class _View_ProductSliderComponent2 extends import1.AppView<any> {
   /*private*/ _expr_30:any;
   /*private*/ _expr_31:any;
   /*private*/ _expr_32:any;
-  /*private*/ _expr_33:any;
   _pipe_number_0_0:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import3.AppElement) {
     super(_View_ProductSliderComponent2,renderType_ProductSliderComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
@@ -370,7 +370,6 @@ class _View_ProductSliderComponent2 extends import1.AppView<any> {
     this._expr_30 = import8.UNINITIALIZED;
     this._expr_31 = import8.UNINITIALIZED;
     this._expr_32 = import8.UNINITIALIZED;
-    this._expr_33 = import8.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import3.AppElement {
     this._el_0 = import5.createRenderElement(this.renderer,(null as any),'div',new import5.InlineArray2(2,'class','product-listing col-sm-3 col-xs-6'),(null as any));
@@ -379,8 +378,8 @@ class _View_ProductSliderComponent2 extends import1.AppView<any> {
     this._el_3 = import5.createRenderElement(this.renderer,this._el_0,'a',import5.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_3_3 = new import20.Wrapper_RouterLinkWithHref(this.parent.parent.parentInjector.get(import22.Router),this.parent.parent.parentInjector.get(import23.ActivatedRoute),this.parent.parent.parentInjector.get(import24.LocationStrategy));
     this._text_4 = this.renderer.createText(this._el_3,'\n                  ',(null as any));
-    this._el_5 = import5.createRenderElement(this.renderer,this._el_3,'img',new import5.InlineArray8(6,'alt','','class','img-responsive loading','lazyLoad',''),(null as any));
-    this._LazyLoadImageDirective_5_3 = new import21.Wrapper_LazyLoadImageDirective(new import25.ElementRef(this._el_5),this.renderer);
+    this._el_5 = import5.createRenderElement(this.renderer,this._el_3,'img',new import5.InlineArray4(4,'alt','','class','img-responsive loading'),(null as any));
+    this._LazyLoadImageDirective_5_3 = new import21.Wrapper_LazyLoadImageDirective(new import25.ElementRef(this._el_5),this.parent.parent.parentInjector.get(import26.NgZone));
     this._text_6 = this.renderer.createText(this._el_3,'\n                  ',(null as any));
     this._el_7 = import5.createRenderElement(this.renderer,this._el_3,'div',new import5.InlineArray2(2,'class','product-info'),(null as any));
     this._text_8 = this.renderer.createText(this._el_7,'\n                    ',(null as any));
@@ -437,8 +436,8 @@ class _View_ProductSliderComponent2 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import26.LazyLoadImageDirective) && (5 === requestNodeIndex))) { return this._LazyLoadImageDirective_5_3.context; }
-    if (((token === import27.RouterLinkWithHref) && ((3 <= requestNodeIndex) && (requestNodeIndex <= 25)))) { return this._RouterLinkWithHref_3_3.context; }
+    if (((token === import27.LazyLoadImageDirective) && (5 === requestNodeIndex))) { return this._LazyLoadImageDirective_5_3.context; }
+    if (((token === import28.RouterLinkWithHref) && ((3 <= requestNodeIndex) && (requestNodeIndex <= 25)))) { return this._RouterLinkWithHref_3_3.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -446,39 +445,38 @@ class _View_ProductSliderComponent2 extends import1.AppView<any> {
     const currVal_3_0_0:any = import5.interpolate(1,'/product/',this.context.$implicit.productId,'');
     this._RouterLinkWithHref_3_3.check_routerLink(currVal_3_0_0,throwOnChange,false);
     this._RouterLinkWithHref_3_3.detectChangesInInputProps(this,this._el_3,throwOnChange);
+    const currVal_5_0_0:any = this.context.$implicit.imgUrl;
+    this._LazyLoadImageDirective_5_3.check_lazyImage(currVal_5_0_0,throwOnChange,false);
     this._LazyLoadImageDirective_5_3.detectChangesInInputProps(this,this._el_5,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
+    if (!throwOnChange) { if ((this.numberOfChecks === 0)) { this._LazyLoadImageDirective_5_3.context.ngAfterContentInit(); } }
     this._RouterLinkWithHref_3_3.detectChangesInHostProps(this,this._el_3,throwOnChange);
-    const currVal_29:any = import5.interpolate(1,'',this.context.$implicit.imgUrl,'');
+    this._LazyLoadImageDirective_5_3.detectChangesInHostProps(this,this._el_5,throwOnChange);
+    const currVal_29:any = import5.interpolate(1,'',this.context.$implicit.productName,'');
     if (import5.checkBinding(throwOnChange,this._expr_29,currVal_29)) {
-      this.renderer.setElementProperty(this._el_5,'src',this.viewUtils.sanitizer.sanitize(import19.SecurityContext.URL,currVal_29));
+      this.renderer.setText(this._text_10,currVal_29);
       this._expr_29 = currVal_29;
     }
-    this._LazyLoadImageDirective_5_3.detectChangesInHostProps(this,this._el_5,throwOnChange);
-    const currVal_30:any = import5.interpolate(1,'',this.context.$implicit.productName,'');
+    const currVal_30:any = import5.interpolate(1,'$',this.context.$implicit.discountedPrice,'');
     if (import5.checkBinding(throwOnChange,this._expr_30,currVal_30)) {
-      this.renderer.setText(this._text_10,currVal_30);
+      this.renderer.setText(this._text_15,currVal_30);
       this._expr_30 = currVal_30;
     }
-    const currVal_31:any = import5.interpolate(1,'$',this.context.$implicit.discountedPrice,'');
+    const currVal_31:any = import5.interpolate(1,'$',this.context.$implicit.regularPrice,'');
     if (import5.checkBinding(throwOnChange,this._expr_31,currVal_31)) {
-      this.renderer.setText(this._text_15,currVal_31);
+      this.renderer.setText(this._text_19,currVal_31);
       this._expr_31 = currVal_31;
     }
-    const currVal_32:any = import5.interpolate(1,'$',this.context.$implicit.regularPrice,'');
-    if (import5.checkBinding(throwOnChange,this._expr_32,currVal_32)) {
-      this.renderer.setText(this._text_19,currVal_32);
-      this._expr_32 = currVal_32;
-    }
     valUnwrapper.reset();
-    const currVal_33:any = import5.interpolate(1,'',valUnwrapper.unwrap(import5.castByValue(this._pipe_number_0_0,(<_View_ProductSliderComponent0>this.parent.parent)._pipe_number_0.transform)(this.context.$implicit.discountPercentage,'2.0-2')),'%');
-    if ((valUnwrapper.hasWrappedValue || import5.checkBinding(throwOnChange,this._expr_33,currVal_33))) {
-      this.renderer.setText(this._text_22,currVal_33);
-      this._expr_33 = currVal_33;
+    const currVal_32:any = import5.interpolate(1,'',valUnwrapper.unwrap(import5.castByValue(this._pipe_number_0_0,(<_View_ProductSliderComponent0>this.parent.parent)._pipe_number_0.transform)(this.context.$implicit.discountPercentage,'2.0-2')),'%');
+    if ((valUnwrapper.hasWrappedValue || import5.checkBinding(throwOnChange,this._expr_32,currVal_32))) {
+      this.renderer.setText(this._text_22,currVal_32);
+      this._expr_32 = currVal_32;
     }
     this.detectViewChildrenChanges(throwOnChange);
   }
   destroyInternal():void {
+    this._LazyLoadImageDirective_5_3.context.ngOnDestroy();
     this._RouterLinkWithHref_3_3.context.ngOnDestroy();
   }
   private _handle_click_3_0($event:any):boolean {

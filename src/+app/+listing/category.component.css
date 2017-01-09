@@ -33,6 +33,7 @@
 }
 .filter-box{
 	cursor: pointer;
+    position: relative;
 }
 .filter-checkbox{
 	background-image: url(http://lstatic1.craftsvilla.com/skin/frontend/default/craftsvilla2015/img/check_new.png) !important;
@@ -290,7 +291,38 @@
     background: #45ae45;
     color: #fff;
 }
-
+.multicolor-filter, .pastelcolor-filter{
+    background-color: transparent;
+    background-image: url('http://assetsintl.craftsvilla.com/cvintlfe/assets/images/mclr.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.pastelcolor-filter{
+    background-image: url('http://assetsintl.craftsvilla.com/cvintlfe/assets/images/pastel.jpg');
+}
+.whitecolor-filter{
+    border: 1px solid;
+}
+.color-tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 22px;
+    left: 50%;
+    text-transform: capitalize;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+.filter-list .filter-box:hover .color-tooltip{
+    visibility: visible;
+}
 @media (max-width: 992px){
 	.filter-section, .products-section{
 		width: 100%;

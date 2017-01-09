@@ -2,20 +2,22 @@
 	<div class="pull-left filter-section visible-lg visible-md">
 		<div class="filters-list" *ngFor="let data of recievedFilter | keyvalue">
 			<p class="filter-type">{{data.key}}</p>
-			<div class="filter-list">
+			<div class="filter-list" [style.height] = "data.key === 'color' ? '145px' : 'auto'">
 				<div class="applied-filter" *ngIf="filterData[data.key].applied.length > 0">
 					<div *ngFor="let appliedfilter of filterData[data.key].applied">
-						<div class="filter-box clearfix" (click)="deselectFilter(data, appliedfilter)" [style.background-color] = "data.key === 'color' ? appliedfilter : 'transparent'" [ngClass]="{'color-filter' : data.key === 'color'}">
+						<div class="filter-box clearfix" (click)="deselectFilter(data, appliedfilter)" [style.background-color] = "data.key === 'color' ? appliedfilter : 'transparent'" [ngClass]="{'color-filter' : data.key === 'color', 'multicolor-filter' : appliedfilter === 'multicolor', 'pastelcolor-filter' : appliedfilter === 'pastel', 'whitecolor-filter' : appliedfilter === 'white'}">
 							<p class="filter-checkbox"></p>
 							<p class="filter-name" [ngClass]="{'hidden' : data.key === 'color'}	">{{appliedfilter}}</p>
+							<div class="color-tooltip" *ngIf="data.key === 'color'">{{appliedfilter}}</div>
 						</div>
 					</div>
 				</div>
 				<div class="available-filter" *ngIf="filterData[data.key].available.length > 0">
 					<div *ngFor="let availablefilter of filterData[data.key].available">
-						<div class="filter-box clearfix" (click)="selectFilter(data, availablefilter)" [style.background-color] = "data.key === 'color' ? availablefilter : 'transparent'" [ngClass]="{'color-filter' : data.key === 'color'}">
+						<div class="filter-box clearfix" (click)="selectFilter(data, availablefilter)" [style.background-color] = "data.key === 'color' ? availablefilter : 'transparent'" [ngClass]="{'color-filter' : data.key === 'color', 'multicolor-filter' : availablefilter === 'multicolor', 'pastelcolor-filter' : availablefilter === 'pastel', 'whitecolor-filter' : availablefilter === 'white'}">
 							<p class="filter-checkbox"></p>
 							<p class="filter-name" [ngClass]="{'hidden' : data.key === 'color'}">{{availablefilter}}</p>
+							<div class="color-tooltip" *ngIf="data.key === 'color'">{{availablefilter}}</div>
 						</div>
 					</div>
 				</div>
@@ -24,8 +26,8 @@
 	</div>
 	<div class="pull-left products-section">
 		<div class="navigation-breadcrumbs clearfix visible-lg visible-md" *ngIf="pageBreadcrumbs.length > 0">
-			<div class="breadcrumb-list pull-left" *ngFor="let breadcrumb of pageBreadcrumbs">
-				<a routerLink="{{breadcrumb.link}}">{{breadcrumb.name}}</a>
+			<div class="breadcrumb-list pull-left" *ngFor="let breadcrumb of pageBreadcrumbs; let i = index">
+				<a routerLink="{{breadcrumb.link}}" (click)="breadcrumbClick(i)">{{breadcrumb.name}}</a>
 			</div>
 		</div>
 		<div class="products-header clearfix">
@@ -50,6 +52,7 @@
 		<div class="products-data clearfix">
 			<cvi-product-card *ngFor="let listingProduct of listingProducts?.results" [product]="listingProduct"></cvi-product-card>
 		</div>
+		<cvi-pagination [totalPages]="listingProducts.total_pages" [currentPage]="listingProducts.current_page" [maxSize]="3" (pageChange)="onPageChange($event)"></cvi-pagination>
 	</div>
 	<div class="responsive-sort-filters-block visible-sm visible-xs">
 		<div class="sort-button col-xs-6" (click)="showMobileSort = true">
@@ -104,7 +107,7 @@
 				<div *ngFor="let appliedfilter of filterData[selectedFilterCategory.key].applied">
 					<div class="filter-box clearfix" (click)="deselectFiltersMobile(selectedFilterCategory, appliedfilter)">
 						<p class="filter-checkbox pull-left"></p>
-						<div class="pull-left" [style.background-color] = "selectedFilterCategory.key === 'color' ? appliedfilter : 'transparent'" [ngClass]="{'color-filter' : selectedFilterCategory.key === 'color'}"></div>
+						<div class="pull-left" [style.background-color] = "selectedFilterCategory.key === 'color' ? appliedfilter : 'transparent'" [ngClass]="{'color-filter' : selectedFilterCategory.key === 'color', 'multicolor-filter' : appliedfilter === 'multicolor', 'pastelcolor-filter' : appliedfilter === 'pastel', 'whitecolor-filter' : appliedfilter === 'white'}"></div>
 						<p class="filter-name pull-left">{{appliedfilter}}</p>
 					</div>
 				</div>
@@ -113,7 +116,7 @@
 				<div *ngFor="let availablefilter of filterData[selectedFilterCategory.key].available">
 					<div class="filter-box clearfix" (click)="selectFiltersMobile(selectedFilterCategory, availablefilter)">
 						<p class="filter-checkbox pull-left"></p>
-						<div class="pull-left" [style.background-color] = "selectedFilterCategory.key === 'color' ? availablefilter : 'transparent'" [ngClass]="{'color-filter' : selectedFilterCategory.key === 'color'}"></div>
+						<div class="pull-left" [style.background-color] = "selectedFilterCategory.key === 'color' ? availablefilter : 'transparent'" [ngClass]="{'color-filter' : selectedFilterCategory.key === 'color', 'multicolor-filter' : availablefilter === 'multicolor', 'pastelcolor-filter' : availablefilter === 'pastel', 'whitecolor-filter' : availablefilter === 'white'}"></div>
 						<p class="filter-name pull-left">{{availablefilter}}</p>
 					</div>
 				</div>

@@ -11,7 +11,7 @@
       <div *ngFor="let item of dataItems; let i= index" class="box"
             [ngClass]="{'last': i == last}">
             <a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
-              <img lazyLoad data-src="{{item.imageUrl}}" class="img-responsive loading" alt="">
+              <img [lazyLoad]="item.imageUrl" class="img-responsive loading" alt="">
             </a>
       </div>
     </div>

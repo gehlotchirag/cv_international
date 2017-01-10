@@ -92,10 +92,10 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
       _satellite.track("search-click");
     }
     if(this.queryInput && this.queryInput != ''){
-      this.router.navigate(['/category'], { queryParams: { query: this.queryInput }});
+      this.router.navigate(['/womens-clothing'], { queryParams: { query: this.queryInput }});
     }
     else {
-      this.router.navigate(['/category']);
+      this.router.navigate(['/womens-clothing']);
     }
   }
 

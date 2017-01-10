@@ -60,7 +60,7 @@ export class ListingService {
     }
     if(categoryId || isPremiumUrl){
 
-      if(categoryId) {
+      if(categoryId && categoryId !== 1) {
         paramsObj.categoryId = [categoryId];
       }
       if(!paramsObj.sort){

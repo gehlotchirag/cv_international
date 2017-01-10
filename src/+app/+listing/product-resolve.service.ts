@@ -21,8 +21,7 @@ export class ProductResolveService implements Resolve<Listing> {
     let listingData = this.ls.getListingList(queryParams, url);
 
     if (listingData){
-      return this.ls.getListingList(queryParams, url)
-        .then(listing => {
+      return listingData.then(listing => {
           if(listing){
             return listing.json();
           }

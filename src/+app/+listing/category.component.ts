@@ -5,15 +5,20 @@ import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
 
 import { ListingService } from './listing.service';
+import { CommonSharedService } from '../shared/services/common-shared.service';
+
 import Listing from './listing';
 
 import categoryFilterMap = require('./category-filter-map');
+
+declare var _satellite: any;
+declare var digitalData: any;
 
 @Component({
   selector: 'cvi-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css'],
-  providers: [ ListingService ],
+  providers: [ ListingService, CommonSharedService ],
 })
 
 export class CategoryComponent implements OnInit, OnDestroy{
@@ -79,6 +84,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
   constructor(  private route: ActivatedRoute,
     private router: Router,
     private location: Location,
+    private commonService: CommonSharedService,
     private listingService:ListingService
   ){
     this.route.data.pluck('filters').subscribe((data: any) => {
@@ -88,6 +94,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
     this.route.data.pluck('products', 'd').subscribe((data: any) => {
       this.listingProducts = data;
+      this.trackPage();
       this.setCountPerPage();
     });
   }
@@ -122,6 +129,29 @@ export class CategoryComponent implements OnInit, OnDestroy{
     this.subscription.unsubscribe();
   }
 
+  trackPage(){
+    if (typeof _satellite != "undefined") {
+      let categoryName = this.listingProducts.category_name ? this.listingProducts.category_name : 'all'
+      digitalData.page={
+        pageInfo:{
+          pageName:this.router.url.indexOf("/premium") > -1 ? "category: premium" : "category:" + categoryName,
+        },
+        category:{
+          pageType:"category",
+          subCategory0: categoryName,
+          subCategory1: "",
+        },
+        device:{
+          deviceType: this.commonService.deviceType()
+        },
+        currencycode: {
+          currencyCode: "USD"
+        }
+      } 
+      _satellite.track("page-load");
+    }
+  }
+
   setBreadcrumbs(){
     let _urlArr = this.router.url.split('?')[0].split('/');
     for (var i = 0; i < _urlArr.length; ++i) {
@@ -130,9 +160,19 @@ export class CategoryComponent implements OnInit, OnDestroy{
         breadcrumbObj["name"] = "Home";
         breadcrumbObj["link"] = "/";
         this.pageBreadcrumbs.push(breadcrumbObj);
-      }else{
+      }else if (i === 1){
+        if(_urlArr[i] !== 'womens-clothing' && _urlArr[i] !== 'premium'){
+          breadcrumbObj["name"] = "Womens Clothing";
+          breadcrumbObj["link"] = "/womens-clothing";
+          this.pageBreadcrumbs.push(breadcrumbObj);
+        }
+        breadcrumbObj = {};
         breadcrumbObj["name"] = _urlArr[i].split('-').join(' ');
-        breadcrumbObj["link"] = "/" + _urlArr[i - 1] + "/" + _urlArr[i];
+        breadcrumbObj["link"] = this.pageBreadcrumbs[i] ? this.pageBreadcrumbs[i]["link"] + "/" + _urlArr[i] : "/" + _urlArr[i];
+        this.pageBreadcrumbs.push(breadcrumbObj);
+      }else {
+        breadcrumbObj["name"] = _urlArr[i].split('-').join(' ');
+        breadcrumbObj["link"] = this.pageBreadcrumbs[i - 1]["link"] + "/" + _urlArr[i];
         this.pageBreadcrumbs.push(breadcrumbObj);
       }
     }
@@ -158,7 +198,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     let params = this.queryParams['params'] ? JSON.parse(this.queryParams['params']) : {};
     if(Object.keys(params).length !== 0) {
       let self = this;
-      if(Object.keys(params['filters']).length !== 0){
+      if(params['filters'] && Object.keys(params['filters']).length !== 0){
         Object.keys(params['filters']).forEach(function(key) {
           if(self.filterData[key]) {
             self.filterData[key]["applied"] = params['filters'][key];
@@ -212,7 +252,8 @@ export class CategoryComponent implements OnInit, OnDestroy{
     let url = this.getPageUrl();
     let isFilterUrl = this.filtersMap[url] ? true : false;
     let isPremiumUrl = url.indexOf('premium') > -1 ? true : false;
-    
+    let filterString = "" + filters.key + ":" + filter;
+
     this.filterData[filters.key]["applied"].push(appliedFilter);
     this.queryParams['page'] = 1;
     if(this.appliedFilter.length === 0 && !isFilterUrl && !isPremiumUrl) {
@@ -223,6 +264,12 @@ export class CategoryComponent implements OnInit, OnDestroy{
       params['filters'] = filterObj;
       this.queryParams['params'] = JSON.stringify(params)
       this.manageFilterData(filters, true);
+      if(typeof _satellite != 'undefined') {
+        digitalData = {
+          filter: filterString
+        },
+        _satellite.track("filter-used")
+      }
       this.fetchCategoryData();
     }
   }
@@ -276,6 +323,12 @@ export class CategoryComponent implements OnInit, OnDestroy{
     let params = this.queryParams['params'] ? JSON.parse(this.queryParams['params']) : {};
     params['sort'] = { [data.key]: data.value };
     this.queryParams['params'] = JSON.stringify(params);
+    if(typeof _satellite != 'undefined') {
+      digitalData.sortType = {
+        sortType : this.selectedSort.value,
+      }
+      _satellite.track("sorting-used");
+    }
     this.fetchCategoryData();
   }
 
@@ -326,7 +379,22 @@ export class CategoryComponent implements OnInit, OnDestroy{
     })    
     params['filters'] = filterObj;
     this.queryParams['params'] = JSON.stringify(params)
+    this.mobileFilterTracking();
     this.fetchCategoryData();
+  }
+
+  mobileFilterTracking(){
+    let obj =  JSON.parse(this.queryParams['params']).filters;
+    let filterString = "";
+    Object.keys(obj).forEach(function(key, index) {
+      filterString = "" + filterString + key + ":" + obj[key].toString() + "|";
+    });
+    if(typeof _satellite != 'undefined') {
+      digitalData = {
+        filter: filterString
+      },
+      _satellite.track("filter-used")
+    }
   }
 
   clearFilters(){

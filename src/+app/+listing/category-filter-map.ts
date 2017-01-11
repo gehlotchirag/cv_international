@@ -566,6 +566,31 @@ export var filtersMap = {
 		"type": "stitching",
 		"id": 2
 	},
+	"sarees/jacquard-sarees": {
+		"name": "Jacquard",
+		"type": "Saree Work",
+		"id": 2
+	},
+	"sarees/printed-sarees": {
+		"name": "Jacquard",
+		"type": "Saree Work",
+		"id": 2
+	},
+	"sarees/embroidered-sarees": {
+		"name": "Jacquard",
+		"type": "Saree Work",
+		"id": 2
+	},
+	"sarees/thread-work-sarees": {
+		"name": "Jacquard",
+		"type": "Saree Work",
+		"id": 2
+	},
+   	"sarees/zari-work-sarees": {
+       	"name": "Jacquard",
+       	"type": "Saree Work",
+       	"id": 2
+   	},
 	"blouses/beige-blouses": {
 		"name": "Beige",
 		"type": "color",

@@ -132,7 +132,6 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
       import52.ContactUsComponentNgFactory,
       import53.CategoryComponentNgFactory,
       import53.CategoryComponentNgFactory,
-      import53.CategoryComponentNgFactory,
       import54.NotFoundComponentNgFactory
     ]
     ,([] as any[]));
@@ -220,7 +219,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
         }
         ,
         {
-          path: ':category',
+          path: ':category/:sub-category',
           component: import63.CategoryComponent,
           resolve: {
             filters: import28.FilterResolveService,
@@ -230,13 +229,8 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
         }
         ,
         {
-          path: ':category/:sub-category',
-          component: import63.CategoryComponent,
-          resolve: {
-            filters: import28.FilterResolveService,
-            products: import29.ProductResolveService
-          }
-
+          path: ':category',
+          redirectTo: '/'
         }
 
       ]

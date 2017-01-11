@@ -248,7 +248,6 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
       import83.ContactUsComponentNgFactory,
       import84.CategoryComponentNgFactory,
       import84.CategoryComponentNgFactory,
-      import84.CategoryComponentNgFactory,
       import85.NotFoundComponentNgFactory,
       import86.AppComponentNgFactory
     ]
@@ -470,7 +469,7 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
         }
         ,
         {
-          path: ':category',
+          path: ':category/:sub-category',
           component: import100.CategoryComponent,
           resolve: {
             filters: import57.FilterResolveService,
@@ -480,13 +479,8 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
         }
         ,
         {
-          path: ':category/:sub-category',
-          component: import100.CategoryComponent,
-          resolve: {
-            filters: import57.FilterResolveService,
-            products: import58.ProductResolveService
-          }
-
+          path: ':category',
+          redirectTo: '/'
         }
 
       ]

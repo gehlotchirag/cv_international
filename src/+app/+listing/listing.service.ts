@@ -29,11 +29,8 @@ export class ListingService {
         });
   }
 
-  getListingList(paramObj: Object, url:string): any {
+  getParamsObj(paramObj){
     let  query, params, page, premium;
-    let categoryId = categoryFilterMap.categoriesMap[url] ? categoryFilterMap.categoriesMap[url].id : null;
-    let appliedFilterObj = this.filtersMap[url.toLowerCase()] ? this.filtersMap[url.toLowerCase()] : null;
-    let isPremiumUrl = url.indexOf('premium') > -1 ? true : false;
     if(paramObj){
       query = paramObj['query'];
       params = paramObj['params'];
@@ -48,11 +45,19 @@ export class ListingService {
       premium
     }
 
+    return searchObj;
+  }
+
+  getListingList(paramObj: Object, url:string): any {
+    
+    let categoryId = categoryFilterMap.categoriesMap[url] ? categoryFilterMap.categoriesMap[url].id : null;
+    let appliedFilterObj = this.filtersMap[url.toLowerCase()] ? this.filtersMap[url.toLowerCase()] : null;
+    let isPremiumUrl = url.indexOf('premium') > -1 ? true : false;
+    let searchObj = this.getParamsObj(paramObj);
+
     let paramsObj = searchObj.params ? JSON.parse(searchObj.params) : {};
 
     if(appliedFilterObj) {
-      let category = url.split('/')[0];
-      let categoryUrl = 'womens-clothing/' + category;
       categoryId = appliedFilterObj.id;
       let filter = paramsObj.filters ? paramsObj.filters : {};
       filter[appliedFilterObj.type] ? filter[appliedFilterObj.type].push(appliedFilterObj.name) : filter[appliedFilterObj.type] = [appliedFilterObj.name];
@@ -82,10 +87,27 @@ export class ListingService {
     }
   }
 
-  getFilterList() {
-    this.filtersUrl = 'api/category/1/filters';
+  getFilterList(paramObj: Object, url:string) {
+    this.filtersUrl = 'api/filters';
+    let categoryId = categoryFilterMap.categoriesMap[url] ? categoryFilterMap.categoriesMap[url].id : null;
+    let appliedFilterObj = this.filtersMap[url.toLowerCase()] ? this.filtersMap[url.toLowerCase()] : null;
+    let searchObj = this.getParamsObj(paramObj);
+    let paramsObj = searchObj.params ? JSON.parse(searchObj.params) : {};
+    
+    if(appliedFilterObj) {
+      categoryId = appliedFilterObj.id;
+      let filter = paramsObj.filters ? paramsObj.filters : {};
+      filter[appliedFilterObj.type] ? filter[appliedFilterObj.type].push(appliedFilterObj.name) : filter[appliedFilterObj.type] = [appliedFilterObj.name];
+      paramsObj.filters = filter;
+    }
+    
+    if(categoryId){
+      paramsObj.categoryId = [categoryId];
+      searchObj.params = JSON.stringify(paramsObj);
+    }
+
     return this.httpClient
-               .get(this.filtersUrl)
+               .get(this.filtersUrl, searchObj)
                .toPromise();
   }
 

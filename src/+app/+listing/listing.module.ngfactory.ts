@@ -52,7 +52,6 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
     super(parent,[
       import13.CategoryComponentNgFactory,
       import13.CategoryComponentNgFactory,
-      import13.CategoryComponentNgFactory,
       import14.MegaMenuComponentNgFactory,
       import15.MegaMenuLinkComponentNgFactory,
       import16.AnnouncementWidgetComponentNgFactory,
@@ -81,7 +80,7 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
         }
         ,
         {
-          path: ':category',
+          path: ':category/:sub-category',
           component: import26.CategoryComponent,
           resolve: {
             filters: import10.FilterResolveService,
@@ -91,13 +90,8 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
         }
         ,
         {
-          path: ':category/:sub-category',
-          component: import26.CategoryComponent,
-          resolve: {
-            filters: import10.FilterResolveService,
-            products: import11.ProductResolveService
-          }
-
+          path: ':category',
+          redirectTo: '/'
         }
 
       ]

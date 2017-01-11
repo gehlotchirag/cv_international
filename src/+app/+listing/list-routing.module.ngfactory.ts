@@ -20,7 +20,6 @@ class ListRoutingModuleInjector extends import0.NgModuleInjector<import1.ListRou
   constructor(parent:import3.Injector) {
     super(parent,[
       import4.CategoryComponentNgFactory,
-      import4.CategoryComponentNgFactory,
       import4.CategoryComponentNgFactory
     ]
     ,([] as any[]));
@@ -38,7 +37,7 @@ class ListRoutingModuleInjector extends import0.NgModuleInjector<import1.ListRou
         }
         ,
         {
-          path: ':category',
+          path: ':category/:sub-category',
           component: import5.CategoryComponent,
           resolve: {
             filters: import6.FilterResolveService,
@@ -48,13 +47,8 @@ class ListRoutingModuleInjector extends import0.NgModuleInjector<import1.ListRou
         }
         ,
         {
-          path: ':category/:sub-category',
-          component: import5.CategoryComponent,
-          resolve: {
-            filters: import6.FilterResolveService,
-            products: import7.ProductResolveService
-          }
-
+          path: ':category',
+          redirectTo: '/'
         }
 
       ]

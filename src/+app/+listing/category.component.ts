@@ -200,12 +200,12 @@ export class CategoryComponent implements OnInit, OnDestroy{
       let self = this;
       if(params['filters'] && Object.keys(params['filters']).length !== 0){
         Object.keys(params['filters']).forEach(function(key) {
-          if(self.filterData[key]) {
-            self.filterData[key]["applied"] = params['filters'][key];
-            self.appliedFilter = self.appliedFilter.concat(params['filters'][key]);
-            for (var i = 0; i < self.filterData[key]["applied"].length; ++i) {
-              let tempFilter = self.filterData[key]["applied"][i]
-              self.filterData[key]["available"] = self.filterData[key]["available"].filter(function (element) {
+          if(self.filterData[key.toLowerCase()]) {
+            self.filterData[key.toLowerCase()]["applied"] = params['filters'][key.toLowerCase()];
+            self.appliedFilter = self.appliedFilter.concat(params['filters'][key.toLowerCase()]);
+            for (var i = 0; i < self.filterData[key.toLowerCase()]["applied"].length; ++i) {
+              let tempFilter = self.filterData[key.toLowerCase()]["applied"][i]
+              self.filterData[key.toLowerCase()]["available"] = self.filterData[key.toLowerCase()]["available"].filter(function (element) {
                 return element !== tempFilter 
               })
             }
@@ -229,18 +229,18 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
   manageFilterData(filters: any, rearrangeFilter?: boolean){
     if(rearrangeFilter) {
-      this.filterData[filters.key]["available"] = filters.value;
-      for (var i = 0; i < this.filterData[filters.key]["applied"].length; ++i) {
-        let tempFilter = this.filterData[filters.key]["applied"][i]
-        this.filterData[filters.key]["available"] = this.filterData[filters.key]["available"].filter(function (element) {
+      this.filterData[filters.key.toLowerCase()]["available"] = filters.value;
+      for (var i = 0; i < this.filterData[filters.key.toLowerCase()]["applied"].length; ++i) {
+        let tempFilter = this.filterData[filters.key.toLowerCase()]["applied"][i]
+        this.filterData[filters.key.toLowerCase()]["available"] = this.filterData[filters.key.toLowerCase()]["available"].filter(function (element) {
           return element !== tempFilter 
         })
       }
     }else{
       Object.keys(filters).forEach((key) => {
-        this.filterData[key] = {};
-        this.filterData[key]["applied"] = [];
-        this.filterData[key]["available"] = filters[key];
+        this.filterData[key.toLowerCase()] = {};
+        this.filterData[key.toLowerCase()]["applied"] = [];
+        this.filterData[key.toLowerCase()]["available"] = filters[key];
       }); 
     }
   }
@@ -254,13 +254,13 @@ export class CategoryComponent implements OnInit, OnDestroy{
     let isPremiumUrl = url.indexOf('premium') > -1 ? true : false;
     let filterString = "" + filters.key + ":" + filter;
 
-    this.filterData[filters.key]["applied"].push(appliedFilter);
+    this.filterData[filters.key.toLowerCase()]["applied"].push(appliedFilter);
     this.queryParams['page'] = 1;
     if(this.appliedFilter.length === 0 && !isFilterUrl && !isPremiumUrl) {
       this.navigateToFilterUrl(appliedFilter);
     }else{
       this.appliedFilter.push(appliedFilter);
-      filterObj[filters.key] ? filterObj[filters.key].push(filter) : filterObj[filters.key] = [filter];
+      filterObj[filters.key.toLowerCase()] ? filterObj[filters.key.toLowerCase()].push(filter) : filterObj[filters.key.toLowerCase()] = [filter];
       params['filters'] = filterObj;
       this.queryParams['params'] = JSON.stringify(params)
       this.manageFilterData(filters, true);
@@ -275,23 +275,23 @@ export class CategoryComponent implements OnInit, OnDestroy{
   }
 
   deselectFilter(filters: any, removedFilter: String){
-    let valueIndex = this.filterData[filters.key]["applied"].indexOf(removedFilter);
+    let valueIndex = this.filterData[filters.key.toLowerCase()]["applied"].indexOf(removedFilter);
     let appliedFilterIndex = this.appliedFilter.indexOf(removedFilter);
     let params = this.queryParams['params'] ? JSON.parse(this.queryParams['params']) : {};
-    let filterArr = params['filters'][filters.key];
+    let filterArr = params['filters'][filters.key.toLowerCase()];
     let filter = removedFilter.charAt(0).toUpperCase() + removedFilter.slice(1);
     let paramFilterIndex = filterArr.indexOf(filter);
     let url = this.getPageUrl();
     let isFilterUrl = this.filtersMap[url] ? true : false;
     let isPremiumUrl = url.indexOf('premium') > -1 ? true : false;
 
-    if (valueIndex > -1) this.filterData[filters.key]["applied"].splice(valueIndex, 1);
+    if (valueIndex > -1) this.filterData[filters.key.toLowerCase()]["applied"].splice(valueIndex, 1);
     if (appliedFilterIndex > -1) this.appliedFilter.splice(appliedFilterIndex, 1);
     filterArr.splice(paramFilterIndex, 1);
     if(filterArr.length === 0) {
-      delete params['filters'][filters.key];
+      delete params['filters'][filters.key.toLowerCase()];
     }else{
-      params['filters'][filters.key] = filterArr;
+      params['filters'][filters.key.toLowerCase()] = filterArr;
     }
     this.queryParams['params'] = JSON.stringify(params)
     this.queryParams['page'] = 1;
@@ -305,15 +305,15 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
 
   selectFiltersMobile(filters: any, appliedFilter: String){
-    this.filterData[filters.key]["applied"].push(appliedFilter);
+    this.filterData[filters.key.toLowerCase()]["applied"].push(appliedFilter);
     this.appliedFilter.push(appliedFilter);
     this.manageFilterData(filters, true);
   }
 
   deselectFiltersMobile(filters: any, removedFilter: String){
-    let valueIndex = this.filterData[filters.key]["applied"].indexOf(removedFilter);
+    let valueIndex = this.filterData[filters.key.toLowerCase()]["applied"].indexOf(removedFilter);
     let appliedFilterIndex = this.appliedFilter.indexOf(removedFilter);
-    if (valueIndex > -1) this.filterData[filters.key]["applied"].splice(valueIndex, 1);
+    if (valueIndex > -1) this.filterData[filters.key.toLowerCase()]["applied"].splice(valueIndex, 1);
     if (appliedFilterIndex > -1) this.appliedFilter.splice(appliedFilterIndex, 1);
     this.manageFilterData(filters, true);
   }
@@ -370,10 +370,10 @@ export class CategoryComponent implements OnInit, OnDestroy{
     let self = this;
     this.queryParams['page'] = 1;
     Object.keys(this.filterData).forEach((key) => {
-      if(self.filterData[key]['applied'].length > 0){
-        self.filterData[key]['applied'].forEach( function (data) {
+      if(self.filterData[key.toLowerCase()]['applied'].length > 0){
+        self.filterData[key.toLowerCase()]['applied'].forEach( function (data) {
           let filter = data.charAt(0).toUpperCase() + data.slice(1);
-          filterObj[key] ? filterObj[key].push(filter) : filterObj[key] = [filter];
+          filterObj[key.toLowerCase()] ? filterObj[key.toLowerCase()].push(filter) : filterObj[key.toLowerCase()] = [filter];
         })
       }
     })    

@@ -1045,12 +1045,12 @@ ul.nav.nav-tabs.tabs-widget li a {
       width: 22%;
       height: 400px; }
       .menu-slider-container .extra-menu .middle {
-        margin-top: 5px;
-        margin-bottom: 5px; }
+        margin-bottom: 0 !important; }
       .menu-slider-container .extra-menu .extra-menu-item {
         height: 130px;
         width: 100%;
-        background-color: white; }
+        background-color: white;
+        margin-bottom: 5px; }
         .menu-slider-container .extra-menu .extra-menu-item .heading {
           font-size: 12px;
           font-weight: bold;
@@ -1071,6 +1071,9 @@ ul.nav.nav-tabs.tabs-widget li a {
           float: left;
           margin-top: 5%;
           width: 45%; }
+        ..menu-slider-container .extra-menu .extra-menu-item img{
+          margin: 0 auto;
+        }
 
   .notification-bar {
     height: 40px;
@@ -1316,9 +1319,17 @@ ul.nav.nav-tabs.tabs-widget li a {
     border-right: 1px solid #e2e2e2;
     padding-top: 2%; }
     .page-listing .product-listing .product-name {
-      width: 100%; }
+      width: 100%;
+      color: #000; }
+    .page-listing .product-listing .product-price {
+      color: #000;
+    }
     .page-listing .product-listing .discounted-price {
-      font-size: 16px; }
+      font-size: 16px; 
+      font-weight: 600; }
+    .page-listing .product-listing .discount {
+      color: green;
+    }
   .page-listing .sort-filter {
     position: fixed;
     bottom: 0;

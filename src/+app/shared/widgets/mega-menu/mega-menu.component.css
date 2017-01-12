@@ -47,10 +47,10 @@ img.mega-menu-list-ico {
 .menu .menu-list .header {
   background-color: #981937;
   color: white;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   height: 44px;
   padding-left: 5%;
-  line-height: 46px;
+  line-height: 42px;
   margin-bottom: 14px;
-  font-size: 0.9vw;
+  font-size: 11px;
 }

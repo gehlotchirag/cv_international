@@ -218,7 +218,7 @@ class _View_AnnouncementWidgetComponent1 extends import3.AppView<any> {
     super(_View_AnnouncementWidgetComponent1,renderType_AnnouncementWidgetComponent,import8.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import5.AppElement {
-    this._el_0 = import2.createRenderElement(this.renderer,(null as any),'div',new import2.InlineArray2(2,'class','box box-3'),(null as any));
+    this._el_0 = import2.createRenderElement(this.renderer,(null as any),'div',new import2.InlineArray2(2,'class','col-sm-6 col-xs-12 annoucement-data'),(null as any));
     this._text_1 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     this._el_2 = import2.createRenderElement(this.renderer,this._el_0,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_2_3 = new import17.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import19.Router),this.parent.parentInjector.get(import20.ActivatedRoute),this.parent.parentInjector.get(import21.LocationStrategy));

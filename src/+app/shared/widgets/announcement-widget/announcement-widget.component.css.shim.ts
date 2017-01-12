@@ -4,4 +4,4 @@
  */
  /* tslint:disable */
 
-export const styles:any[] = ['.annoucement-mobile-image[_ngcontent-%COMP%]{\n	display: none;\n}\n\n@media only screen and (max-width: 480px){\n	.annoucement-mobile-image[_ngcontent-%COMP%]{\n		display: block;\n		width: 100%;\n	}\n	.annoucement-web-image[_ngcontent-%COMP%]{\n		display: none;\n	}\n\n}'];
+export const styles:any[] = ['.annoucement-mobile-image[_ngcontent-%COMP%]{\n	display: none;\n}\n\n@media only screen and (max-width: 480px){\n	.annoucement-mobile-image[_ngcontent-%COMP%]{\n		display: block;\n		width: 100%;\n	}\n	.annoucement-web-image[_ngcontent-%COMP%]{\n		display: none;\n	}\n\n}\n.annoucement-data[_ngcontent-%COMP%]{\n	padding: 5px;\n}'];

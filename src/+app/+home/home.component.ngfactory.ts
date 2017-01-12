@@ -130,8 +130,7 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
   _text_7:any;
   _el_8:any;
   /*private*/ _appEl_8:import3.AppElement;
-  _HttpClientService_8_4:import13.HttpClientService;
-  _HeroBannerComponent_8_5:import20.Wrapper_HeroBannerComponent;
+  _HeroBannerComponent_8_4:import20.Wrapper_HeroBannerComponent;
   _text_9:any;
   _el_10:any;
   /*private*/ _appEl_10:import3.AppElement;
@@ -208,10 +207,9 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
     this._el_8 = import9.createRenderElement(this.renderer,this._el_4,'cvi-hero-banner',new import9.InlineArray2(2,'class','home-carousel'),(null as any));
     this._appEl_8 = new import3.AppElement(8,4,this,this._el_8);
     var compView_8:any = import20.viewFactory_HeroBannerComponent0(this.viewUtils,this.injector(8),this._appEl_8);
-    this._HttpClientService_8_4 = new import13.HttpClientService(this.parentInjector.get(import25.Http));
-    this._HeroBannerComponent_8_5 = new import20.Wrapper_HeroBannerComponent(this._HttpClientService_8_4);
-    this._appEl_8.initComponent(this._HeroBannerComponent_8_5.context,([] as any[]),compView_8);
-    compView_8.create(this._HeroBannerComponent_8_5.context,([] as any[]),(null as any));
+    this._HeroBannerComponent_8_4 = new import20.Wrapper_HeroBannerComponent(this.renderer,new import23.ElementRef(this._el_8));
+    this._appEl_8.initComponent(this._HeroBannerComponent_8_4.context,([] as any[]),compView_8);
+    compView_8.create(this._HeroBannerComponent_8_4.context,([] as any[]),(null as any));
     this._text_9 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._el_10 = import9.createRenderElement(this.renderer,this._el_4,'cvi-extra-menu',import9.EMPTY_INLINE_ARRAY,(null as any));
     this._appEl_10 = new import3.AppElement(10,4,this,this._el_10);
@@ -337,8 +335,7 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
     if (((token === import26.MegaMenuComponent) && (6 === requestNodeIndex))) { return this._MegaMenuComponent_6_4.context; }
-    if (((token === import13.HttpClientService) && (8 === requestNodeIndex))) { return this._HttpClientService_8_4; }
-    if (((token === import27.HeroBannerComponent) && (8 === requestNodeIndex))) { return this._HeroBannerComponent_8_5.context; }
+    if (((token === import27.HeroBannerComponent) && (8 === requestNodeIndex))) { return this._HeroBannerComponent_8_4.context; }
     if (((token === import13.HttpClientService) && (10 === requestNodeIndex))) { return this._HttpClientService_10_4; }
     if (((token === import28.ExtraMenuComponent) && (10 === requestNodeIndex))) { return this._ExtraMenuComponent_10_5.context; }
     if (((token === import13.HttpClientService) && (26 === requestNodeIndex))) { return this._HttpClientService_26_4; }
@@ -348,10 +345,10 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
   detectChangesInternal(throwOnChange:boolean):void {
     this._MegaMenuComponent_6_4.detectChangesInInputProps(this,this._el_6,throwOnChange);
     const currVal_8_0_0:any = this.context.heroBannerData.title;
-    this._HeroBannerComponent_8_5.check_header(currVal_8_0_0,throwOnChange,false);
+    this._HeroBannerComponent_8_4.check_header(currVal_8_0_0,throwOnChange,false);
     const currVal_8_0_1:any = this.context.heroBannerData.data;
-    this._HeroBannerComponent_8_5.check_dataItems(currVal_8_0_1,throwOnChange,false);
-    this._HeroBannerComponent_8_5.detectChangesInInputProps(this,this._el_8,throwOnChange);
+    this._HeroBannerComponent_8_4.check_dataItems(currVal_8_0_1,throwOnChange,false);
+    this._HeroBannerComponent_8_4.detectChangesInInputProps(this,this._el_8,throwOnChange);
     const currVal_10_0_0:any = ((this.context.extraMenuData.data == (null as any))? (null as any): this.context.extraMenuData.data.slice(0,3));
     this._ExtraMenuComponent_10_5.check_dataItems(currVal_10_0_0,throwOnChange,false);
     const currVal_10_0_1:any = this.context.extraMenuData.title;
@@ -364,10 +361,13 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
     this._AnnouncementWidgetComponent_26_5.detectChangesInInputProps(this,this._el_26,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
     this._MegaMenuComponent_6_4.detectChangesInHostProps(this,this._el_6,throwOnChange);
-    this._HeroBannerComponent_8_5.detectChangesInHostProps(this,this._el_8,throwOnChange);
+    this._HeroBannerComponent_8_4.detectChangesInHostProps(this,this._el_8,throwOnChange);
     this._ExtraMenuComponent_10_5.detectChangesInHostProps(this,this._el_10,throwOnChange);
     this._AnnouncementWidgetComponent_26_5.detectChangesInHostProps(this,this._el_26,throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
+  }
+  destroyInternal():void {
+    this._HeroBannerComponent_8_4.context.ngOnDestroy();
   }
 }
 export function viewFactory_HomeComponent0(viewUtils:import9.ViewUtils,parentInjector:import10.Injector,declarationEl:import3.AppElement):import1.AppView<import0.HomeComponent> {

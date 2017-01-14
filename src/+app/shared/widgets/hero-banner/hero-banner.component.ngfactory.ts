@@ -21,12 +21,12 @@ import * as import13 from '../../../../../node_modules/@angular/common/src/direc
 import * as import14 from '@angular/core/src/linker/template_ref';
 import * as import15 from '@angular/core/src/change_detection/differs/iterable_differs';
 import * as import16 from '@angular/common/src/directives/ng_for';
-import * as import17 from '../../../../../node_modules/@angular/router/src/directives/router_link.ngfactory';
-import * as import18 from '@angular/router/src/router';
-import * as import19 from '@angular/router/src/router_state';
-import * as import20 from '@angular/common/src/location/location_strategy';
-import * as import21 from '@angular/router/src/directives/router_link';
-import * as import22 from '@angular/core/src/security';
+import * as import17 from '@angular/core/src/security';
+import * as import18 from '../../../../../node_modules/@angular/router/src/directives/router_link.ngfactory';
+import * as import19 from '@angular/router/src/router';
+import * as import20 from '@angular/router/src/router_state';
+import * as import21 from '@angular/common/src/location/location_strategy';
+import * as import22 from '@angular/router/src/directives/router_link';
 export class Wrapper_HeroBannerComponent {
   context:import0.HeroBannerComponent;
   changed:boolean;
@@ -135,8 +135,10 @@ class _View_HeroBannerComponent0 extends import3.AppView<import0.HeroBannerCompo
   _text_13:any;
   _text_14:any;
   _text_15:any;
+  /*private*/ _expr_24:any;
   constructor(viewUtils:import2.ViewUtils,parentInjector:import6.Injector,declarationEl:import5.AppElement) {
     super(_View_HeroBannerComponent0,renderType_HeroBannerComponent,import7.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
+    this._expr_24 = import1.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import5.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
@@ -204,6 +206,11 @@ class _View_HeroBannerComponent0 extends import3.AppView<import0.HeroBannerCompo
     this._NgFor_12_6.check_ngForOf(currVal_12_0_0,throwOnChange,false);
     this._NgFor_12_6.detectChangesInInputProps(this,this._anchor_12,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
+    const currVal_24:any = this.context.sliderWidth;
+    if (import2.checkBinding(throwOnChange,this._expr_24,currVal_24)) {
+      this.renderer.setElementStyle(this._el_10,'width',((this.viewUtils.sanitizer.sanitize(import17.SecurityContext.STYLE,currVal_24) == (null as any))? (null as any): this.viewUtils.sanitizer.sanitize(import17.SecurityContext.STYLE,currVal_24).toString()));
+      this._expr_24 = currVal_24;
+    }
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
@@ -235,7 +242,7 @@ class _View_HeroBannerComponent1 extends import3.AppView<any> {
   }
   private _handle_click_0_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0_0:any = ((<any>this.parent.context.moveToSlide(this.context.index)) !== false);
+    const pd_0_0:any = ((<any>this.parent.context.swipe(this.parent.context.currentSlideIndex,'swipeleft',this.context.index)) !== false);
     return (true && pd_0_0);
   }
 }
@@ -246,7 +253,7 @@ class _View_HeroBannerComponent2 extends import3.AppView<any> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
-  _RouterLinkWithHref_2_3:import17.Wrapper_RouterLinkWithHref;
+  _RouterLinkWithHref_2_3:import18.Wrapper_RouterLinkWithHref;
   _text_3:any;
   _el_4:any;
   _text_5:any;
@@ -264,7 +271,7 @@ class _View_HeroBannerComponent2 extends import3.AppView<any> {
     this._el_0 = import2.createRenderElement(this.renderer,(null as any),'li',new import2.InlineArray2(2,'class','item'),(null as any));
     this._text_1 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     this._el_2 = import2.createRenderElement(this.renderer,this._el_0,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._RouterLinkWithHref_2_3 = new import17.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import18.Router),this.parent.parentInjector.get(import19.ActivatedRoute),this.parent.parentInjector.get(import20.LocationStrategy));
+    this._RouterLinkWithHref_2_3 = new import18.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import19.Router),this.parent.parentInjector.get(import20.ActivatedRoute),this.parent.parentInjector.get(import21.LocationStrategy));
     this._text_3 = this.renderer.createText(this._el_2,'\n          ',(null as any));
     this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','','class','slider-img'),(null as any));
     this._text_5 = this.renderer.createText(this._el_2,'\n        ',(null as any));
@@ -290,7 +297,7 @@ class _View_HeroBannerComponent2 extends import3.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import21.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 5)))) { return this._RouterLinkWithHref_2_3.context; }
+    if (((token === import22.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 5)))) { return this._RouterLinkWithHref_2_3.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -307,13 +314,13 @@ class _View_HeroBannerComponent2 extends import3.AppView<any> {
     }
     const currVal_9:any = this.parent.context.itemWidth;
     if (import2.checkBinding(throwOnChange,this._expr_9,currVal_9)) {
-      this.renderer.setElementStyle(this._el_0,'width',((this.viewUtils.sanitizer.sanitize(import22.SecurityContext.STYLE,currVal_9) == (null as any))? (null as any): this.viewUtils.sanitizer.sanitize(import22.SecurityContext.STYLE,currVal_9).toString()));
+      this.renderer.setElementStyle(this._el_0,'width',((this.viewUtils.sanitizer.sanitize(import17.SecurityContext.STYLE,currVal_9) == (null as any))? (null as any): this.viewUtils.sanitizer.sanitize(import17.SecurityContext.STYLE,currVal_9).toString()));
       this._expr_9 = currVal_9;
     }
     this._RouterLinkWithHref_2_3.detectChangesInHostProps(this,this._el_2,throwOnChange);
     const currVal_10:any = import2.interpolate(1,'',this.context.$implicit.imageUrl,'');
     if (import2.checkBinding(throwOnChange,this._expr_10,currVal_10)) {
-      this.renderer.setElementProperty(this._el_4,'src',this.viewUtils.sanitizer.sanitize(import22.SecurityContext.URL,currVal_10));
+      this.renderer.setElementProperty(this._el_4,'src',this.viewUtils.sanitizer.sanitize(import17.SecurityContext.URL,currVal_10));
       this._expr_10 = currVal_10;
     }
     this.detectViewChildrenChanges(throwOnChange);

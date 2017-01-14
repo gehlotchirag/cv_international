@@ -918,39 +918,52 @@ function viewFactory_HeaderComponent2(viewUtils:import2.ViewUtils,parentInjector
 }
 class _View_HeaderComponent3 extends import3.AppView<any> {
   _el_0:any;
+  _RouterLinkWithHref_0_3:import26.Wrapper_RouterLinkWithHref;
   _text_1:any;
-  _el_2:any;
-  _text_3:any;
-  _text_4:any;
-  /*private*/ _expr_5:any;
+  /*private*/ _expr_3:any;
   constructor(viewUtils:import2.ViewUtils,parentInjector:import7.Injector,declarationEl:import5.AppElement) {
     super(_View_HeaderComponent3,renderType_HeaderComponent,import8.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
-    this._expr_5 = import1.UNINITIALIZED;
+    this._expr_3 = import1.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import5.AppElement {
-    this._el_0 = import2.createRenderElement(this.renderer,(null as any),'li',new import2.InlineArray2(2,'class','menu-category-header clearfix'),(null as any));
-    this._text_1 = this.renderer.createText(this._el_0,'\n                ',(null as any));
-    this._el_2 = import2.createRenderElement(this.renderer,this._el_0,'p',new import2.InlineArray2(2,'class','pull-left'),(null as any));
-    this._text_3 = this.renderer.createText(this._el_2,'',(null as any));
-    this._text_4 = this.renderer.createText(this._el_0,'\n              ',(null as any));
+    this._el_0 = import2.createRenderElement(this.renderer,(null as any),'a',new import2.InlineArray2(2,'class','menu-category-header pull-left'),(null as any));
+    this._RouterLinkWithHref_0_3 = new import26.Wrapper_RouterLinkWithHref(this.parent.parent.parent.parentInjector.get(import12.Router),this.parent.parent.parent.parentInjector.get(import35.ActivatedRoute),this.parent.parent.parent.parentInjector.get(import36.LocationStrategy));
+    this._text_1 = this.renderer.createText(this._el_0,'',(null as any));
+    var disposable_0:Function = this.renderer.listen(this._el_0,'click',this.eventHandler(this._handle_click_0_0.bind(this)));
     this.init(([] as any[]).concat([this._el_0]),[
       this._el_0,
-      this._text_1,
-      this._el_2,
-      this._text_3,
-      this._text_4
+      this._text_1
     ]
-    ,([] as any[]),([] as any[]));
+    ,[disposable_0],([] as any[]));
     return (null as any);
   }
+  injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
+    if (((token === import39.RouterLinkWithHref) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 1)))) { return this._RouterLinkWithHref_0_3.context; }
+    return notFoundResult;
+  }
   detectChangesInternal(throwOnChange:boolean):void {
+    const currVal_0_0_0:any = this.parent.parent.parent.context.getRouterLink(this.context.$implicit.href)['qp'];
+    this._RouterLinkWithHref_0_3.check_queryParams(currVal_0_0_0,throwOnChange,false);
+    const currVal_0_0_1:any = this.parent.parent.parent.context.getRouterLink(this.context.$implicit.href)['rl'];
+    this._RouterLinkWithHref_0_3.check_routerLink(currVal_0_0_1,throwOnChange,false);
+    this._RouterLinkWithHref_0_3.detectChangesInInputProps(this,this._el_0,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
-    const currVal_5:any = import2.interpolate(1,' ',this.context.$implicit.name,'');
-    if (import2.checkBinding(throwOnChange,this._expr_5,currVal_5)) {
-      this.renderer.setText(this._text_3,currVal_5);
-      this._expr_5 = currVal_5;
+    this._RouterLinkWithHref_0_3.detectChangesInHostProps(this,this._el_0,throwOnChange);
+    const currVal_3:any = import2.interpolate(1,'',this.context.$implicit.name,'');
+    if (import2.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
+      this.renderer.setText(this._text_1,currVal_3);
+      this._expr_3 = currVal_3;
     }
     this.detectViewChildrenChanges(throwOnChange);
+  }
+  destroyInternal():void {
+    this._RouterLinkWithHref_0_3.context.ngOnDestroy();
+  }
+  private _handle_click_0_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0_0:any = ((<any>this.parent.parent.parent.context.toggleMenu()) !== false);
+    const pd_0_1:any = ((<any>this._RouterLinkWithHref_0_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return ((true && pd_0_0) && pd_0_1);
   }
 }
 function viewFactory_HeaderComponent3(viewUtils:import2.ViewUtils,parentInjector:import7.Injector,declarationEl:import5.AppElement):import3.AppView<any> {

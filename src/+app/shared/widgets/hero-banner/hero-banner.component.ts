@@ -21,6 +21,7 @@ export class HeroBannerComponent implements OnChanges, OnInit, OnDestroy{
   public currentSlideIndex = 0;
   public bannerPosX = 0;
   public itemWidth;
+  public sliderWidth;
   public timerActivated = false;
 
   private getRouterLink = getRouterLink;
@@ -60,22 +61,13 @@ export class HeroBannerComponent implements OnChanges, OnInit, OnDestroy{
     let dataLength = this.dataItems.length;
     let width = dataLength * 100;
     let slideWidth = 100 / dataLength;
-    this.heroCarousel.nativeElement.style ? this.heroCarousel.nativeElement.style.width = '' + width + '%' : null;
+    this.sliderWidth = '' + width + '%';
     this.itemWidth = '' + slideWidth + '%';
   }
 
-  moveToSlide(index){
-    if (index > this.currentSlideIndex){
-      this.swipe(index, 'swipeleft')
-    }else {
-      this.swipe(index, 'swiperight')
-    }
-  }
-
-  swipe(currentIndex: number, event) {
+  swipe(currentIndex: number, event, indexClicked?: number) {
     let action = event;
     let element = this.heroCarousel.nativeElement;
-    console.log(element)
     let elementWidth = this.carouselContainer.nativeElement.offsetWidth;
     let posX = 0;
     let nextIndex = 0;
@@ -91,6 +83,8 @@ export class HeroBannerComponent implements OnChanges, OnInit, OnDestroy{
         const isFirst = currentIndex === 0;
         nextIndex = isFirst ? this.dataItems.length - 1 : currentIndex - 1;
     }
+
+    nextIndex = indexClicked ? indexClicked : nextIndex;
 
     posX = -(nextIndex * elementWidth);
 

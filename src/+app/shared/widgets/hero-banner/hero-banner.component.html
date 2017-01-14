@@ -2,9 +2,9 @@
   <div #heroCarouselContainer class="hero-banner-carousel">
     <!-- Indicators -->
     <ol class="hero-carousel-indicator clearfix">
-      <li class="pull-left" *ngFor="let item of dataItems; let i = index" [class.active]="i == currentSlideIndex" (click)="moveToSlide(i)"></li>
+      <li class="pull-left" *ngFor="let item of dataItems; let i = index" [class.active]="i == currentSlideIndex" (click)="swipe(currentSlideIndex, 'swipeleft', i)"></li>
     </ol>
-    <ul #heroCarousel class="hero-carousel-body clearfix">
+    <ul #heroCarousel class="hero-carousel-body clearfix" [style.width]="sliderWidth">
       <li *ngFor="let item of dataItems; let i=index" (swipeleft)="swipe(i, $event.type)" (swiperight)="swipe(i, $event.type)" class="item" [class.active-slide]="i == currentSlideIndex" [style.width]="itemWidth">
         <a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
           <img src="{{item.imageUrl}}" class="slider-img" alt="">

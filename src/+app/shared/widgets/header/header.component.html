@@ -16,9 +16,7 @@
           </li>
           <div [ngClass]="{'sub-category-active': subCategoryData.name === selectedSubCategory}" class="sub-category-list-container">
             <ul class="menu-category menu-sub-category-data">
-              <li class="menu-category-header clearfix" *ngFor="let subCategory of subCategoryData.data">
-                <p class="pull-left"> {{ subCategory.name }}</p>
-              </li>  
+              <a [routerLink]="getRouterLink(subCategory.href)['rl']" [queryParams]="getRouterLink(subCategory.href)['qp']" class="menu-category-header pull-left" *ngFor="let subCategory of subCategoryData.data" (click)="toggleMenu()">{{ subCategory.name }}</a>  
             </ul>    
           </div>
         </ul>

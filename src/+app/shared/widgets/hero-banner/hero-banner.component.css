@@ -33,6 +33,9 @@
   overflow:hidden;
   padding: 0;
 }
+.hero-carousel-body .item{
+  width: 100%;
+}
 .hero-carousel-body > li{
   position:relative;
   float:left;

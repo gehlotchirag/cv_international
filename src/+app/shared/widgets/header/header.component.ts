@@ -164,6 +164,8 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   }
 
   toggleMenu() {
+    this.selectedCategory = null;
+    this.selectedSubCategory = null;  
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }
 

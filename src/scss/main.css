@@ -649,8 +649,7 @@ ul.nav.nav-tabs.tabs-widget li a {
 
   .footer-list-group {
     padding-left: 0;
-    list-style-type: none;
-    display: none; }
+    list-style-type: none; }
     .footer-list-group li {
       height: 30px;
       line-height: 30px;

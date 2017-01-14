@@ -1,58 +1,29 @@
-<div class="navmenu navmenu-default navmenu-fixed-left offcanvas"
-     id="mobile-nav">
-  <!-- <div class="navmenu-overlay"></div> -->
-  <a  class="navmenu-brand">Categories
-    <span (click)="mobileSelectedCategory = null"
-          class="ico-arrow" data-toggle="offcanvas" data-target="#mobile-nav">
-      <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/multiply.svg" class="mobile-nav-close-icon">
-    </span>
-  </a>
-  <a  *ngIf="mobileSelectedCategory"
-      class="selected-menu-title">
-      <span
-        class="ico-arrow-back"
-        (click)="resetNavView($event)">
-        <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/back_arrow.svg" class="arrow-back-ico">
-      </span>
-      {{ mobileSelectedCategory.name }}
-  </a>
-  <div *ngIf="!mobileSelectedCategory" >
-    <!-- <ul class="nav navmenu-nav" *ngFor="let menuCategoryData of menuCategoriesData"> -->
-      <li class="dropdown nav navmenu-nav mobile-nav" *ngFor="let menuCategoryData of menuCategoriesData">
-        <a (click)=" mobileSelectedCategory =  menuCategoryData"
-           class="dropdown-toggle" data-toggle="dropdown">
-           {{ menuCategoryData.name }}
-          <span class="ico-arrow">
-            <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/left-arrow.svg" class="arrow-left-ico">
-          </span>
-        </a>
+<ul class="mobile-nav-container" id="mobile-nav"  [@slideInOut]="menuState">
+  <p (click)="toggleMenu()" class="mobile-nav-header">Categories
+    <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/multiply.svg" class="mobile-nav-close-icon pull-right">
+  </p>
+  <li class="menu-list">
+    <ul class="menu-category" *ngFor="let menuCategoryData of menuCategoriesData">
+      <li class="menu-category-header clearfix" (click)="selectCategory(menuCategoryData, 'category')">
+        <p class="pull-left"> {{ menuCategoryData.name }}</p>
+        <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/left-arrow.svg" class="arrow-left-ico pull-right" [ngClass] = "{'icon-active': selectedCategory === menuCategoryData.name}">
       </li>
-    <!-- </ul> -->
-  </div>
-  <div *ngIf="mobileSelectedCategory">
-    <ul *ngFor="let subCategory of mobileSelectedCategory.data"
-        class="nav navmenu-nav">
-      <li class="dropdown mobile-nav">
-        <a class="dropdown-toggle" data-toggle="dropdown">
-          {{ subCategory.name }}
-          <span class="ico-arrow">
-            <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/plus.svg" class="plus-ico">
-          </span>
-        </a>
-        <ul class="navmenu-nav dropdown-menu">
-          <li class="nav-level-3 mobile-nav"
-            *ngFor="let subSubCategory of subCategory.data">
-            <a
-              data-toggle="offcanvas" data-target="#mobile-nav"
-              (click)="routeNavigateTo(subSubCategory.href)">
-              {{ subSubCategory.name }}
-            </a>
+      <div [ngClass]="{'category-active': menuCategoryData.name === selectedCategory}" class="menu-sub-category-container">
+        <ul class="menu-category menu-sub-category" *ngFor="let subCategoryData of menuCategoryData.data">
+          <li class="menu-category-header clearfix" (click)="selectCategory(subCategoryData, 'sub-category')">
+            <p class="pull-left"> {{ subCategoryData.name }}</p>
+            <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/left-arrow.svg" class="arrow-left-ico pull-right" [ngClass] = "{'icon-active': selectedSubCategory === subCategoryData.name}">
           </li>
+          <div [ngClass]="{'sub-category-active': subCategoryData.name === selectedSubCategory}" class="sub-category-list-container">
+            <ul class="menu-category menu-sub-category-data">
+              <a [routerLink]="getRouterLink(subCategory.href)['rl']" [queryParams]="getRouterLink(subCategory.href)['qp']" class="menu-category-header pull-left" *ngFor="let subCategory of subCategoryData.data" (click)="toggleMenu()">{{ subCategory.name }}</a>  
+            </ul>    
+          </div>
         </ul>
-      </li>
+      </div>    
     </ul>
-  </div>
-</div>
+  </li>
+</ul>
 <div class= "buyer-popup-overlay" *ngIf="showProtectionPopup">
   <div class="buyer-protection-popup">
     <div class="close-buyer-popup pull-right" (click) = "showProtectionPopup = false">X</div>
@@ -125,9 +96,8 @@
   <div class="mid-menu">
     <div class="contain mob-contain">
       <div class="logo inline mob-inline pull-left js-header-menu-show" [ngClass] = "{'homepage-logo' : !showMegaMenuCaret}" >
-        <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/menu_white.svg" class="hide-lg menu-icon header-navbar-toggle navbar-toggle"
-             data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
-        <a (click)="routeNavigateTo('')"><img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/logo.png" class="logo-img"></a>
+        <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/menu_white.svg" class="hide-lg menu-icon header-navbar-toggle navbar-toggle" (click)="toggleMenu()">
+        <a routerLink="/"><img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/logo.png" class="logo-img"></a>
         <div *ngIf="showMegaMenuCaret" class="hide-sm mega-menu-hamburger"
               [class.hovered]="showBottomMenu == 'block'"
               (mouseover)="displayMegaMenu(true, $event)"

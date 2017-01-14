@@ -1,8 +1,8 @@
 import { Component, OnInit, OnChanges, DoCheck, EventEmitter, Output, Input, SimpleChanges } from '@angular/core';
-import { ViewContainerRef, ViewChild, ComponentRef, ComponentFactoryResolver } from '@angular/core';
-import { ViewEncapsulation, HostListener } from '@angular/core';
+import { ViewContainerRef, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { HostListener, trigger, state, style, transition, animate } from '@angular/core';
 
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { CartDetailsService } from '../../services/cart-details.service';
 import { MegaMenuComponent } from '../mega-menu/mega-menu.component';
@@ -18,7 +18,19 @@ declare var digitalData: any;
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   providers:[ CartDetailsService ],
-  entryComponents: [ MegaMenuComponent ]
+  entryComponents: [ MegaMenuComponent ],
+  animations: [
+    trigger('slideInOut', [
+      state('in', style({
+        left: '0px'
+      })),
+      state('out', style({
+        left: '-100%'
+      })),
+      transition('in => out', animate('400ms ease-in-out')),
+      transition('out => in', animate('400ms ease-in-out'))
+    ]),
+  ]
 })
 export class HeaderComponent implements OnInit , OnChanges, DoCheck {
 
@@ -44,9 +56,10 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   private tabsWidgetClass = "tabs-widget";
   public showBottomMenu: string = 'none';
   private isMegaMenuInitialized: boolean = false;
-  private menuCategoriesData: any;
-  public mobileSelectedCategory: any;
-
+  public menuCategoriesData: any;
+  public selectedCategory: any;
+  public selectedSubCategory: any;
+  public menuState:string = 'out';
   private getRouterLink = getRouterLink;
 
   @Input() showMegaMenuCaret: boolean;
@@ -131,22 +144,29 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
     }
   }
 
-  private resetNavView(event) {
-    event.stopPropagation();
-    event.preventDefault();
-    this.mobileSelectedCategory = null;
-  }
-
-  public routeNavigateTo(href) {
-    let routingParams = this.getRouterLink(href);
-    let routingArray = routingParams['rl'].map((link) => `/${link}`);
-    let queryParam = routingParams['qp'];
-    if(routingArray.length  > 1){
-      if(routingArray[0] == '/'){
-        routingArray.splice(0,1);
+  selectCategory(data, type){
+    if(type === 'category'){
+      if(this.selectedCategory == data.name) {
+        this.selectedCategory = null;
+        this.selectedSubCategory = null;  
+      }else{
+        this.selectedCategory = data.name;
+        this.selectedSubCategory = null;
       }
     }
-    this.router.navigate(routingArray, { queryParams: queryParam, replaceUrl: true});
+    if(type === 'sub-category') {
+      if(this.selectedSubCategory === data.name) {
+        this.selectedSubCategory = null;  
+      }else{
+        this.selectedSubCategory = data.name;
+      }
+    }
+  }
+
+  toggleMenu() {
+    this.selectedCategory = null;
+    this.selectedSubCategory = null;  
+    this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }
 
   private clearCookieAndDomestic(event){

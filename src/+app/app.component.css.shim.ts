@@ -4,4 +4,4 @@
  */
  /* tslint:disable */
 
-export const styles:any[] = ['.cvi-outlet-body[_ngcontent-%COMP%]{\n	margin-top: 110px;\n}\n\n@media only screen and (max-width: 1050px){\n	.cvi-outlet-body[_ngcontent-%COMP%]{\n		margin-top: 100px;\n	}\n}'];
+export const styles:any[] = ['.cvi-outlet-body[_ngcontent-%COMP%]{\n	margin-top: 110px;\n	min-height: 1000px;\n}\n\n@media only screen and (max-width: 1050px){\n	.cvi-outlet-body[_ngcontent-%COMP%]{\n		margin-top: 100px;\n	}\n}'];

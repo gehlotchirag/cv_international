@@ -1,8 +1,59 @@
+.section-header, .section-body{
+	position: relative;
+}
 .product-slider-prev{
-	left: -25px !important;
-	width: 25px;
+	left: 0 !important;
 }
 .product-slider-next{
-	right: -25px !important;
-	width: 25px;
+	right: 0 !important;
+    transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+.product-slider-next, .product-slider-prev {
+    width: 35px;
+    height: 35px;
+    background-image: url(http://assetsintl.craftsvilla.com/cvintlfe/assets/images/left-arrow.svg);
+    background-position: 40% 50%;
+    background-size: 20px 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 35%;
+    box-shadow: 0 0px 8px 1px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 3;
+}
+.product-slider-container{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding: 15px 10px;
+}
+.product-slider-wrapper{
+	position: relative;
+}
+.section-body{
+	position: relative;
+	height: 100%;
+}
+.product-slider-slide:hover {
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+.product-slider-slide a, .product-slider-slide a:hover{
+	text-decoration: none;
+	color: #000;
+}
+.product-info .discount {
+    color: green;
+}
+.product-info .discounted-price {
+    font-weight: 700;
+}
+.product-name{
+	min-height: 40px;
 }

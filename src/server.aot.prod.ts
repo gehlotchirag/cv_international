@@ -21,7 +21,7 @@ const { compressSync } = require('iltorb');
 const interceptor = require('express-interceptor');
 const request = require('request');
 let view_dir = '';
-let generateHTML = true;
+let generateReadHTML = true;
 
 // Angular 2
 import { enableProdMode } from '@angular/core';
@@ -186,20 +186,20 @@ function generateHtml(url, options, req, res) {
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
       console.log("HTML Generatation Error. Time: ",formatted, "Url:", url);
-      generateHtml = true;
+      generateReadHTML = true;
       res.redirect('/us/');
     }
-    if((response_body['s'] === 1) && generateHtml){
+    if((response_body['s'] === 1) && generateReadHTML){
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
       console.log("HTML Generated. Time: ",formatted, "Url:", url);
-      generateHtml = false;
+      generateReadHTML = false;
       renderDynamicHtml(req, res, url, options);
     }else{
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
       console.log("HTML Generatation Error. Time: ",formatted, "Url:", url, "Status: ", body);
-      generateHtml = true;
+      generateReadHTML = true;
       res.redirect('/us/');
     }
   });

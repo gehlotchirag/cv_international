@@ -19,6 +19,7 @@ export class ProductSliderComponent implements OnInit, DoCheck {
 
   public dataItems: ListingProduct[];
   public header: string;
+  public viewMoreUrl: string;
   public slidePerView = 5;
   public sliderWidth = '100%';
   public slideWidth = '20%';
@@ -103,7 +104,7 @@ export class ProductSliderComponent implements OnInit, DoCheck {
           {left: '' + posX + 'px'}
         ], 
         {
-          duration: 600,
+          duration: 300,
           delay: 0,
           fill: "forwards"
         } 

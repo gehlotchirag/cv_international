@@ -310,12 +310,12 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
     this._el_63 = import4.createRenderElement(this.renderer,this._el_57,'ul',new import4.InlineArray2(2,'class','footer-list-group'),(null as any));
     this._text_64 = this.renderer.createText(this._el_63,'\n      ',(null as any));
     this._el_65 = import4.createRenderElement(this.renderer,this._el_63,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_66 = import4.createRenderElement(this.renderer,this._el_65,'a',new import4.InlineArray2(2,'routerLink','contactus'),(null as any));
+    this._el_66 = import4.createRenderElement(this.renderer,this._el_65,'a',new import4.InlineArray2(2,'routerLink','terms-and-conditions'),(null as any));
     this._RouterLinkWithHref_66_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import13.Router),this.parentInjector.get(import14.ActivatedRoute),this.parentInjector.get(import15.LocationStrategy));
     this._text_67 = this.renderer.createText(this._el_66,'Terms & Conditions',(null as any));
     this._text_68 = this.renderer.createText(this._el_63,'\n      ',(null as any));
     this._el_69 = import4.createRenderElement(this.renderer,this._el_63,'li',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_70 = import4.createRenderElement(this.renderer,this._el_69,'a',new import4.InlineArray2(2,'routerLink','contactus'),(null as any));
+    this._el_70 = import4.createRenderElement(this.renderer,this._el_69,'a',new import4.InlineArray2(2,'routerLink','shipping-and-refunds'),(null as any));
     this._RouterLinkWithHref_70_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import13.Router),this.parentInjector.get(import14.ActivatedRoute),this.parentInjector.get(import15.LocationStrategy));
     this._text_71 = this.renderer.createText(this._el_70,'Shipping & Refund',(null as any));
     this._text_72 = this.renderer.createText(this._el_63,'\n    ',(null as any));
@@ -584,10 +584,10 @@ class _View_FooterComponent0 extends import1.AppView<import0.FooterComponent> {
     const currVal_52_0_0:any = 'contactus';
     this._RouterLinkWithHref_52_3.check_routerLink(currVal_52_0_0,throwOnChange,false);
     this._RouterLinkWithHref_52_3.detectChangesInInputProps(this,this._el_52,throwOnChange);
-    const currVal_66_0_0:any = 'contactus';
+    const currVal_66_0_0:any = 'terms-and-conditions';
     this._RouterLinkWithHref_66_3.check_routerLink(currVal_66_0_0,throwOnChange,false);
     this._RouterLinkWithHref_66_3.detectChangesInInputProps(this,this._el_66,throwOnChange);
-    const currVal_70_0_0:any = 'contactus';
+    const currVal_70_0_0:any = 'shipping-and-refunds';
     this._RouterLinkWithHref_70_3.check_routerLink(currVal_70_0_0,throwOnChange,false);
     this._RouterLinkWithHref_70_3.detectChangesInInputProps(this,this._el_70,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);

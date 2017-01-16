@@ -61,6 +61,7 @@
     "express": "^4.14.0",
     "js.clone": "0.0.3",
     "methods": "~1.1.2",
+    "moment": "^2.17.1",
     "morgan": "^1.7.0",
     "preboot": "~4.5.2",
     "request": "^2.79.0",

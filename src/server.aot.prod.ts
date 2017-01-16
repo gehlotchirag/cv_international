@@ -21,6 +21,7 @@ const { compressSync } = require('iltorb');
 const interceptor = require('express-interceptor');
 const request = require('request');
 let view_dir = '';
+let generateReadHTML = true;
 
 // Angular 2
 import { enableProdMode } from '@angular/core';
@@ -150,7 +151,7 @@ function ngApp(req, res) {
 function renderDynamicHtml(req, res, url, options) {
   let now = moment();
   let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-  console.log("Render Html. Time: ",formatted, "Url:", req.originalUrl);
+  console.log("Render Html. Time: ",formatted, "Url:", url);
   app.set('views', view_dir);
   res.render('index', {
     req,
@@ -164,38 +165,41 @@ function renderDynamicHtml(req, res, url, options) {
     if(err) {
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Not found. Generate HTML. Time: ",formatted, "Url:", req.originalUrl);
+      console.log("HTML Not found. Generate HTML. Time: ",formatted, "Url:", url);
       generateHtml(url, options, req, res);
     } else {
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Found. Render HTML. Time: ",formatted, "Url:", req.originalUrl);
+      console.log("HTML Found. Render HTML. Time: ",formatted, "Url:", url);
       res.send(html);
     }
   });
-  // body...
 }
 
 function generateHtml(url, options, req, res) {
   let now = moment();
   let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-  console.log("Request to Generate HTML. Time: ",formatted, "Url:", req.originalUrl);
+  console.log("Request to Generate HTML. Time: ",formatted, "Url:", url);
   request.get(url, options,function(err,response,body){
+    let response_body = JSON.parse(body);
     if(err) {
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Generatation Error. Time: ",formatted, "Url:", req.originalUrl);
+      console.log("HTML Generatation Error. Time: ",formatted, "Url:", url);
+      generateReadHTML = true;
       res.redirect('/us/');
     }
-    if(response.statusCode === 200 ){
+    if((response_body['s'] === 1) && generateReadHTML){
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Generated. Time: ",formatted, "Url:", req.originalUrl);
+      console.log("HTML Generated. Time: ",formatted, "Url:", url);
+      generateReadHTML = false;
       renderDynamicHtml(req, res, url, options);
     }else{
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Generatation Error. Time: ",formatted, "Url:", req.originalUrl, "Status Code: ", response.statusCode);
+      console.log("HTML Generatation Error. Time: ",formatted, "Url:", url, "Status: ", body);
+      generateReadHTML = true;
       res.redirect('/us/');
     }
   });

@@ -7,10 +7,6 @@ svg:not(:root) {
     overflow: hidden;
 }
 
-.section-header .view-more {
-  display: none !important;
-}
-
 .dropdown-backdrop {
   display: none !important; 
 }

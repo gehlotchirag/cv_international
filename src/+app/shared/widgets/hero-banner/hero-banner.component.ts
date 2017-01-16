@@ -97,7 +97,7 @@ export class HeroBannerComponent implements OnChanges, OnInit, OnDestroy{
           {left: '' + posX + 'px'}
         ], 
         {
-          duration: 800,
+          duration: 300,
           delay: 0,
           fill: "forwards"
         } 

@@ -13,7 +13,8 @@ import { InMediaComponent } from './in-media/in-media.component';
 import { OrderTrackingComponent } from './order-tracking/order-tracking.component';
 import { ContactUsComponent } from './contact-us/contactus.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
-
+import { TermsConditionComponent } from './terms-and-condition/terms-condition.component';
+import { ShippingRefundComponent } from './shipping-refunds/shipping-refund.component';
 import { SitemapResolveService } from './sitemap/sitemap-resolve.service';
 import { SitemapService } from './sitemap/sitemap.service';
 
@@ -31,7 +32,9 @@ import { SitemapService } from './sitemap/sitemap.service';
     InMediaComponent,
     SitemapComponent,
     OrderTrackingComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    TermsConditionComponent,
+    ShippingRefundComponent
   ],
   providers:[ 
     SitemapService,

@@ -1087,11 +1087,8 @@ ul.nav.nav-tabs.tabs-widget li a {
       font-weight: bold;
       letter-spacing: 1px; }
     .section-header .view-more {
-      -webkit-border-radius: 0px;
-      -moz-border-radius: 0px;
-      -ms-border-radius: 0px;
-      border-radius: 0px;
-      margin-top: 14px; }
+      margin-top: 14px; 
+      color: #fff !important;}
 
   .section-body {
     display: inline-block;

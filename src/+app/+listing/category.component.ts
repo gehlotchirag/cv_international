@@ -96,11 +96,11 @@ export class CategoryComponent implements OnInit, OnDestroy{
       this.listingProducts = data;
       this.trackPage();
       this.setCountPerPage();
+      this.setBreadcrumbs();
     });
   }
 
   ngOnInit(){
-    this.setBreadcrumbs();
     this.subscription = this.route.queryParams.subscribe(
       (queryParams: any) => {
         let query, params, page, premium;
@@ -138,7 +138,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
         },
         category:{
           pageType:"category",
-          subCategory0: categoryName,
+      y0: categoryName,
           subCategory1: "",
         },
         device:{
@@ -153,6 +153,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
   }
 
   setBreadcrumbs(){
+    this.pageBreadcrumbs = [];
     let _urlArr = this.router.url.split('?')[0].split('/');
     for (var i = 0; i < _urlArr.length; ++i) {
       let breadcrumbObj:Object = {};

@@ -6,9 +6,10 @@ import { FaqsComponent } from './faqs/faqs.component';
 import { InMediaComponent } from './in-media/in-media.component';
 import { OrderTrackingComponent } from './order-tracking/order-tracking.component';
 import { ContactUsComponent } from './contact-us/contactus.component';
-
+import { TermsConditionComponent } from './terms-and-condition/terms-condition.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { SitemapResolveService } from './sitemap/sitemap-resolve.service';
+import { ShippingRefundComponent } from './shipping-refunds/shipping-refund.component';
 
 
 @NgModule({
@@ -34,6 +35,14 @@ import { SitemapResolveService } from './sitemap/sitemap-resolve.service';
     		path: 'contactus', 
     		component: ContactUsComponent 
     	},
+      {
+        path: 'terms-and-conditions',
+        component: TermsConditionComponent
+      },
+      {
+        path: 'shipping-and-refunds',
+        component: ShippingRefundComponent
+      }
 	    /* { 
   			path: 'online-shopping',
 	  		component: SitemapComponent, 

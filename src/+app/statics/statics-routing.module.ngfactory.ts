@@ -13,12 +13,16 @@ import * as import5 from './faqs/faqs.component.ngfactory';
 import * as import6 from './order-tracking/order-tracking.component.ngfactory';
 import * as import7 from './in-media/in-media.component.ngfactory';
 import * as import8 from './contact-us/contactus.component.ngfactory';
-import * as import9 from './about-us/about-us.component';
-import * as import10 from './faqs/faqs.component';
-import * as import11 from './order-tracking/order-tracking.component';
-import * as import12 from './in-media/in-media.component';
-import * as import13 from './contact-us/contactus.component';
-import * as import14 from '@angular/router/src/router_config_loader';
+import * as import9 from './terms-and-condition/terms-condition.component.ngfactory';
+import * as import10 from './shipping-refunds/shipping-refund.component.ngfactory';
+import * as import11 from './about-us/about-us.component';
+import * as import12 from './faqs/faqs.component';
+import * as import13 from './order-tracking/order-tracking.component';
+import * as import14 from './in-media/in-media.component';
+import * as import15 from './contact-us/contactus.component';
+import * as import16 from './terms-and-condition/terms-condition.component';
+import * as import17 from './shipping-refunds/shipping-refund.component';
+import * as import18 from '@angular/router/src/router_config_loader';
 class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.StaticsRoutingModule> {
   _RouterModule_0:import2.RouterModule;
   _StaticsRoutingModule_1:import1.StaticsRoutingModule;
@@ -29,7 +33,9 @@ class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.Stat
       import5.FaqsComponentNgFactory,
       import6.OrderTrackingComponentNgFactory,
       import7.InMediaComponentNgFactory,
-      import8.ContactUsComponentNgFactory
+      import8.ContactUsComponentNgFactory,
+      import9.TermsConditionComponentNgFactory,
+      import10.ShippingRefundComponentNgFactory
     ]
     ,([] as any[]));
   }
@@ -37,27 +43,37 @@ class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.Stat
       if ((this.__ROUTES_2 == (null as any))) { (this.__ROUTES_2 = [[
         {
           path: 'about_us',
-          component: import9.AboutUsComponent
+          component: import11.AboutUsComponent
         }
         ,
         {
           path: 'faqs',
-          component: import10.FaqsComponent
+          component: import12.FaqsComponent
         }
         ,
         {
           path: 'order_tracking',
-          component: import11.OrderTrackingComponent
+          component: import13.OrderTrackingComponent
         }
         ,
         {
           path: 'craftsvilla_in_media',
-          component: import12.InMediaComponent
+          component: import14.InMediaComponent
         }
         ,
         {
           path: 'contactus',
-          component: import13.ContactUsComponent
+          component: import15.ContactUsComponent
+        }
+        ,
+        {
+          path: 'terms-and-conditions',
+          component: import16.TermsConditionComponent
+        }
+        ,
+        {
+          path: 'shipping-and-refunds',
+          component: import17.ShippingRefundComponent
         }
 
       ]
@@ -72,7 +88,7 @@ class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.Stat
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.RouterModule)) { return this._RouterModule_0; }
     if ((token === import1.StaticsRoutingModule)) { return this._StaticsRoutingModule_1; }
-    if ((token === import14.ROUTES)) { return this._ROUTES_2; }
+    if ((token === import18.ROUTES)) { return this._ROUTES_2; }
     return notFoundResult;
   }
   destroyInternal():void {

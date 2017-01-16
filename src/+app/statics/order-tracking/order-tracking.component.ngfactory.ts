@@ -160,10 +160,10 @@ class _View_OrderTrackingComponent0 extends import1.AppView<import0.OrderTrackin
   _el_89:any;
   _text_90:any;
   _el_91:any;
-  _text_92:any;
-  _el_93:any;
-  _text_94:any;
-  _el_95:any;
+  _el_92:any;
+  _text_93:any;
+  _el_94:any;
+  _text_95:any;
   _el_96:any;
   _text_97:any;
   _el_98:any;
@@ -192,22 +192,21 @@ class _View_OrderTrackingComponent0 extends import1.AppView<import0.OrderTrackin
   _text_121:any;
   _el_122:any;
   _text_123:any;
-  _el_124:any;
-  _text_125:any;
+  _text_124:any;
+  _el_125:any;
   _el_126:any;
-  _el_127:any;
+  _text_127:any;
   _text_128:any;
   _el_129:any;
   _text_130:any;
   _text_131:any;
   _el_132:any;
-  _el_133:any;
+  _text_133:any;
   _text_134:any;
   _text_135:any;
   _text_136:any;
   _text_137:any;
   _text_138:any;
-  _text_139:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import3.AppElement) {
     super(_View_OrderTrackingComponent0,renderType_OrderTrackingComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -230,14 +229,14 @@ class _View_OrderTrackingComponent0 extends import1.AppView<import0.OrderTrackin
     this._el_14 = import4.createRenderElement(this.renderer,this._el_12,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_15 = this.renderer.createText(this._el_14,'Where is my order?',(null as any));
     this._el_16 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_17 = this.renderer.createText(this._el_12,' You must have received an order confirmation mail on your registered email ID. The email contains your order ID. Please click here and enter your order ID to know the current status of your order.\n        ',(null as any));
+    this._text_17 = this.renderer.createText(this._el_12,' You must have received an order confirmation mail on your registered email ID. The email contains your order ID. "Please click here and enter your order ID to know the current status of your order."\n        ',(null as any));
     this._el_18 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._el_19 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_20 = this.renderer.createText(this._el_12,'\n\n        ',(null as any));
     this._el_21 = import4.createRenderElement(this.renderer,this._el_12,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_22 = this.renderer.createText(this._el_21,'Some shipments in my order have still not been delivered.',(null as any));
     this._el_23 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_24 = this.renderer.createText(this._el_12,' You must have received an order confirmation mail on your registered email ID. The email contains your order ID. Please click here and enter your order ID to know the current\n        status of your order.\n        ',(null as any));
+    this._text_24 = this.renderer.createText(this._el_12,' You must have received an order confirmation mail on your registered email ID. The email contains your order ID. "Please click here and enter your order ID to know the current status of your order."\n        ',(null as any));
     this._el_25 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._el_26 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_27 = this.renderer.createText(this._el_12,'\n\n        ',(null as any));
@@ -251,7 +250,7 @@ class _View_OrderTrackingComponent0 extends import1.AppView<import0.OrderTrackin
     this._el_35 = import4.createRenderElement(this.renderer,this._el_12,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_36 = this.renderer.createText(this._el_35,'Can you deliver my order at a specific time and date?',(null as any));
     this._el_37 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_38 = this.renderer.createText(this._el_12,' Currently, we do not offer the facility of faster delivery. Our delivery partner will attempt delivery of your product on the date mentioned against your order.\n        ',(null as any));
+    this._text_38 = this.renderer.createText(this._el_12,' Currently, we do not offer scheduling facility. Our delivery partner will attempt delivery of your product on the date mentioned against your order.\n        ',(null as any));
     this._el_39 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._el_40 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_41 = this.renderer.createText(this._el_12,'\n\n        ',(null as any));
@@ -298,61 +297,60 @@ class _View_OrderTrackingComponent0 extends import1.AppView<import0.OrderTrackin
     this._el_82 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_83 = this.renderer.createText(this._el_12,'\n\n        ',(null as any));
     this._el_84 = import4.createRenderElement(this.renderer,this._el_12,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_85 = this.renderer.createText(this._el_84,'It\'s been more than 4 days and my return item is still not picked up.',(null as any));
+    this._text_85 = this.renderer.createText(this._el_84,'I self shipped my return item but haven\'t received my refund yet.',(null as any));
     this._el_86 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_87 = this.renderer.createText(this._el_12,' We’re sorry! We have registered your complaint and are looking into it. We will arrange for a pick-up of your item(s) at the earliest. When a customer clicks on this\n        option, send a report internally every 24 hours with the following details: customer name, phone number, email address, tracking number and delivery partner. An internal team will look into these reports and expedite pick-up after following up\n        with the logistic partners.\n        ',(null as any));
+    this._text_87 = this.renderer.createText(this._el_12,' We’re Sorry! Please ensure that you have submitted your bank and courier details against the returned shipment on My Orders. We will initiate the refund within 24 hours\n        after you add the courier details. Post that, your bank may take 5-7 days to credit the refund amount to your account.\n        ',(null as any));
     this._el_88 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._el_89 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_90 = this.renderer.createText(this._el_12,'\n\n        ',(null as any));
-    this._el_91 = import4.createRenderElement(this.renderer,this._el_12,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_92 = this.renderer.createText(this._el_91,'I self shipped my return item but haven\'t received my refund yet.',(null as any));
-    this._el_93 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_94 = this.renderer.createText(this._el_12,' We’re Sorry! Please ensure that you have submitted your bank and courier details against the returned shipment on My Orders. We will initiate the refund within 24 hours\n        after you add the courier details. Post that, your bank may take 5-7 days to credit the refund amount to your account.\n        ',(null as any));
-    this._el_95 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_90 = this.renderer.createText(this._el_12,' In am exceptional case that it is beyond the above, please get in touch with us through email or call and we will resolve your issue at the earliest. Disclaimer: In case you fail to update the bank account details within 10 days, we will\n        issue a Craftsvilla voucher worth the order amount to you.\n        ',(null as any));
+    this._el_91 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_92 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_93 = this.renderer.createText(this._el_12,'\n\n        ',(null as any));
+    this._el_94 = import4.createRenderElement(this.renderer,this._el_12,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_95 = this.renderer.createText(this._el_94,'I haven\'t received my refund yet.',(null as any));
     this._el_96 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_97 = this.renderer.createText(this._el_12,' In am exceptional case that it is beyond the above, please get in touch with us through email or call and we will resolve your issue at the earliest. Disclaimer: In case you fail to update the bank account details within 10 days, we will\n        issue a Craftsvilla voucher worth the order amount to you.\n        ',(null as any));
+    this._text_97 = this.renderer.createText(this._el_12,' You should ideally receive your refund within 7 days of refund processing. In case it is beyond the above, please get in touch with us through email or call and we will resolve your issue.\n        ',(null as any));
     this._el_98 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._el_99 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_100 = this.renderer.createText(this._el_12,'\n\n        ',(null as any));
     this._el_101 = import4.createRenderElement(this.renderer,this._el_12,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_102 = this.renderer.createText(this._el_101,'My return was picked up but I haven\'t received my refund yet.',(null as any));
+    this._text_102 = this.renderer.createText(this._el_101,'My order failed at payment but amount got debited.',(null as any));
     this._el_103 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_104 = this.renderer.createText(this._el_12,' We’re Sorry! Please ensure that you have submitted your bank details against the returned shipment on My Orders. We will initiate the refund within 24 hours after your item\n        has been picked up and bank details are updated. In case it is beyond the above, please get in touch with us through email or call and we will resolve your issue. Disclaimer: In case you fail to update the bank account details within 10 days,\n        we will issue a voucher worth the order amount to you.\n        ',(null as any));
+    this._text_104 = this.renderer.createText(this._el_12,' Don’t worry! If an amount is debited from your account after a payment failure, it will be credited back within 7-10 business days, after we receive a confirmation from the bank.\n        ',(null as any));
     this._el_105 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._el_106 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_107 = this.renderer.createText(this._el_12,'\n\n        ',(null as any));
     this._el_108 = import4.createRenderElement(this.renderer,this._el_12,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_109 = this.renderer.createText(this._el_108,'My order failed at payment but amount got debited.',(null as any));
+    this._text_109 = this.renderer.createText(this._el_108,'My payment was debited multiple times.',(null as any));
     this._el_110 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_111 = this.renderer.createText(this._el_12,' Don’t worry! If an amount is debited from your account after a payment failure, it will be credited back within 7-10 business days, after we receive a confirmation from the bank.\n        ',(null as any));
+    this._text_111 = this.renderer.createText(this._el_12,' Don’t worry! If an amount is debited from your account multiple times, it will be credited back within 7-10 business days, after we receive a confirmation from the bank.\n        ',(null as any));
     this._el_112 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._el_113 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_114 = this.renderer.createText(this._el_12,'\n\n        ',(null as any));
     this._el_115 = import4.createRenderElement(this.renderer,this._el_12,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_116 = this.renderer.createText(this._el_115,'My payment was debited multiple times.',(null as any));
+    this._text_116 = this.renderer.createText(this._el_115,'I am not able to place an order.',(null as any));
     this._el_117 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_118 = this.renderer.createText(this._el_12,' Don’t worry! If an amount is debited from your account multiple times, it will be credited back within 7-10 business days, after we receive a confirmation from the bank.\n        ',(null as any));
+    this._text_118 = this.renderer.createText(this._el_12,' We’re sorry! This could sometimes happen because of intermittent internet connection or bank issues. If your payment still fails, you could write to us or call us at the below mentioned options:\n        ',(null as any));
     this._el_119 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._el_120 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._text_121 = this.renderer.createText(this._el_12,'\n\n        ',(null as any));
     this._el_122 = import4.createRenderElement(this.renderer,this._el_12,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_123 = this.renderer.createText(this._el_122,'I am not able to place an order.',(null as any));
-    this._el_124 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_125 = this.renderer.createText(this._el_12,' We’re sorry! This could sometimes happen because of intermittent internet connection or bank issues. If your payment still fails, you could write to us or call us at the below mentioned options:\n        ',(null as any));
-    this._el_126 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_127 = import4.createRenderElement(this.renderer,this._el_12,'br',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_128 = this.renderer.createText(this._el_12,'\n\n        ',(null as any));
+    this._text_123 = this.renderer.createText(this._el_122,'Email',(null as any));
+    this._text_124 = this.renderer.createText(this._el_12,': ',(null as any));
+    this._el_125 = import4.createRenderElement(this.renderer,this._el_12,'a',new import4.InlineArray2(2,'href','mailto:hellow@craftsvilla.com'),(null as any));
+    this._el_126 = import4.createRenderElement(this.renderer,this._el_125,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_127 = this.renderer.createText(this._el_126,'hello@craftsvilla.com',(null as any));
+    this._text_128 = this.renderer.createText(this._el_12,'\n        ',(null as any));
     this._el_129 = import4.createRenderElement(this.renderer,this._el_12,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_130 = this.renderer.createText(this._el_129,'Email',(null as any));
+    this._text_130 = this.renderer.createText(this._el_129,'Phone',(null as any));
     this._text_131 = this.renderer.createText(this._el_12,': ',(null as any));
-    this._el_132 = import4.createRenderElement(this.renderer,this._el_12,'a',new import4.InlineArray2(2,'href','mailto:hellow@craftsvilla.com'),(null as any));
-    this._el_133 = import4.createRenderElement(this.renderer,this._el_132,'u',import4.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_134 = this.renderer.createText(this._el_133,'hello@craftsvilla.com',(null as any));
-    this._text_135 = this.renderer.createText(this._el_12,'\n      ',(null as any));
-    this._text_136 = this.renderer.createText(this._el_10,'\n    ',(null as any));
-    this._text_137 = this.renderer.createText(this._el_2,'\n  ',(null as any));
-    this._text_138 = this.renderer.createText(this._el_0,'\n',(null as any));
-    this._text_139 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_132 = import4.createRenderElement(this.renderer,this._el_12,'a',new import4.InlineArray2(2,'href','tel:+18002451549'),(null as any));
+    this._text_133 = this.renderer.createText(this._el_132,'1-800-245-1549',(null as any));
+    this._text_134 = this.renderer.createText(this._el_12,'\n      ',(null as any));
+    this._text_135 = this.renderer.createText(this._el_10,'\n    ',(null as any));
+    this._text_136 = this.renderer.createText(this._el_2,'\n  ',(null as any));
+    this._text_137 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_138 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     this.init(([] as any[]),[
       this._el_0,
       this._text_1,
@@ -446,10 +444,10 @@ class _View_OrderTrackingComponent0 extends import1.AppView<import0.OrderTrackin
       this._el_89,
       this._text_90,
       this._el_91,
-      this._text_92,
-      this._el_93,
-      this._text_94,
-      this._el_95,
+      this._el_92,
+      this._text_93,
+      this._el_94,
+      this._text_95,
       this._el_96,
       this._text_97,
       this._el_98,
@@ -478,22 +476,21 @@ class _View_OrderTrackingComponent0 extends import1.AppView<import0.OrderTrackin
       this._text_121,
       this._el_122,
       this._text_123,
-      this._el_124,
-      this._text_125,
+      this._text_124,
+      this._el_125,
       this._el_126,
-      this._el_127,
+      this._text_127,
       this._text_128,
       this._el_129,
       this._text_130,
       this._text_131,
       this._el_132,
-      this._el_133,
+      this._text_133,
       this._text_134,
       this._text_135,
       this._text_136,
       this._text_137,
-      this._text_138,
-      this._text_139
+      this._text_138
     ]
     ,([] as any[]),([] as any[]));
     return (null as any);

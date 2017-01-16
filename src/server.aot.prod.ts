@@ -13,6 +13,7 @@ import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as morgan from 'morgan';
 import * as mcache from 'memory-cache';
+import * as moment from 'moment';
 
 const { gzipSync } = require('zlib');
 const accepts = require('accepts');
@@ -115,10 +116,14 @@ app.get('/data.json', serverApi);
 app.use('/api', createTodoApi());
 
 function ngApp(req, res) {
+  let now = moment();
+  let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+  console.log("User Entry Point. Time: ",formatted, "Url:", req.originalUrl);
   let options = {}
   let base_url = 'http://international.craftsvilla.com:8000/api/front_end';
   let org_url = req.originalUrl.split('?')[0];
   let url = '';
+  let isProductUrl = false;
   if(org_url === '/us/') {
     url = base_url + '/home';
     view_dir = path.join(__dirname, '/static/home');
@@ -126,25 +131,26 @@ function ngApp(req, res) {
     let url_arr = (org_url.split('/')).filter((item) => item !== "");
     url = base_url + '/shop/' + url_arr[url_arr.length - 1];
     view_dir = path.join(__dirname, '/static/shop/', url_arr[url_arr.length - 1]);
+    isProductUrl = true;
   }else{
     let url_arr = org_url.split('/us/');
     let temp_url = ((url_arr[url_arr.length - 1]).split('/')).filter((item) => item !== "").join('/');
     url = base_url + '/' + temp_url;
     view_dir = path.join(__dirname, '/static/', temp_url);
   }
-  request.get(url, options,function(err,response,body){
-    if(err) {
-      res.redirect('/us/');
-    }
-    if(response.statusCode === 200 ){
-      renderDynamicHtml(req, res);
-    }else{
-      res.redirect('/us/');
-    }
-  });
+
+  if(isProductUrl) { 
+    generateHtml(url, options, req, res);
+  } else {
+    renderDynamicHtml(req, res, url, options);
+  }
+
 }
 
-function renderDynamicHtml(req, res) {
+function renderDynamicHtml(req, res, url, options) {
+  let now = moment();
+  let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+  console.log("Render Html. Time: ",formatted, "Url:", req.originalUrl);
   app.set('views', view_dir);
   res.render('index', {
     req,
@@ -156,12 +162,43 @@ function renderDynamicHtml(req, res) {
     originUrl: `http://localhost:${ app.get('port') }`
   }, function(err, html) {
     if(err) {
-      res.redirect('/us/');
+      now = moment();
+      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+      console.log("HTML Not found. Generate HTML. Time: ",formatted, "Url:", req.originalUrl);
+      generateHtml(url, options, req, res);
     } else {
+      now = moment();
+      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+      console.log("HTML Found. Render HTML. Time: ",formatted, "Url:", req.originalUrl);
       res.send(html);
     }
   });
   // body...
+}
+
+function generateHtml(url, options, req, res) {
+  let now = moment();
+  let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+  console.log("Request to Generate HTML. Time: ",formatted, "Url:", req.originalUrl);
+  request.get(url, options,function(err,response,body){
+    if(err) {
+      now = moment();
+      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+      console.log("HTML Generatation Error. Time: ",formatted, "Url:", req.originalUrl);
+      res.redirect('/us/');
+    }
+    if(response.statusCode === 200 ){
+      now = moment();
+      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+      console.log("HTML Generated. Time: ",formatted, "Url:", req.originalUrl);
+      renderDynamicHtml(req, res, url, options);
+    }else{
+      now = moment();
+      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+      console.log("HTML Generatation Error. Time: ",formatted, "Url:", req.originalUrl, "Status Code: ", response.statusCode);
+      res.redirect('/us/');
+    }
+  });
 }
 /**
  * use universal for specific routes

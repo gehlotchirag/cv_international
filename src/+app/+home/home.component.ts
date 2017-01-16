@@ -128,7 +128,8 @@ export class HomeComponent implements OnInit {
                   .resolveComponentFactory(componentType);
       let cmpRef: any = this.contentContainer.createComponent(factory);
       cmpRef.instance.dataItems = component.data;
-      cmpRef.instance.header = component.title
+      cmpRef.instance.header = component.title;
+      cmpRef.instance.viewMoreUrl = component.dataUrl;
     }
     catch(e){
       console.error(e, component.widget_type);

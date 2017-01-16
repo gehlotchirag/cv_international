@@ -994,20 +994,18 @@ class _View_HeaderComponent4 extends import3.AppView<any> {
   _text_16:any;
   _el_17:any;
   _text_18:any;
-  _text_19:any;
-  _el_20:any;
+  _el_19:any;
+  _text_20:any;
   _text_21:any;
-  _text_22:any;
-  _el_23:any;
+  _el_22:any;
+  _text_23:any;
   _text_24:any;
-  _text_25:any;
-  _el_26:any;
+  _el_25:any;
+  _text_26:any;
   _text_27:any;
-  _text_28:any;
+  _el_28:any;
   _text_29:any;
-  _el_30:any;
-  /*private*/ _appEl_30:import5.AppElement;
-  _Tab_30_4:import48.Wrapper_Tab;
+  _text_30:any;
   _text_31:any;
   _el_32:any;
   _text_33:any;
@@ -1024,15 +1022,35 @@ class _View_HeaderComponent4 extends import3.AppView<any> {
   _el_44:any;
   _text_45:any;
   _text_46:any;
-  _el_47:any;
-  _text_48:any;
+  _text_47:any;
+  _el_48:any;
+  /*private*/ _appEl_48:import5.AppElement;
+  _Tab_48_4:import48.Wrapper_Tab;
   _text_49:any;
   _el_50:any;
   _text_51:any;
   _text_52:any;
-  _text_53:any;
+  _el_53:any;
   _text_54:any;
   _text_55:any;
+  _el_56:any;
+  _text_57:any;
+  _text_58:any;
+  _el_59:any;
+  _text_60:any;
+  _text_61:any;
+  _el_62:any;
+  _text_63:any;
+  _text_64:any;
+  _el_65:any;
+  _text_66:any;
+  _text_67:any;
+  _el_68:any;
+  _text_69:any;
+  _text_70:any;
+  _text_71:any;
+  _text_72:any;
+  _text_73:any;
   constructor(viewUtils:import2.ViewUtils,parentInjector:import7.Injector,declarationEl:import5.AppElement) {
     super(_View_HeaderComponent4,renderType_HeaderComponent,import8.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
   }
@@ -1061,20 +1079,38 @@ class _View_HeaderComponent4 extends import3.AppView<any> {
     this._text_12 = this.renderer.createText(this._el_11,'Easy Return:',(null as any));
     this._text_13 = this.renderer.createText((null as any),'\n        ',(null as any));
     this._el_14 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_15 = this.renderer.createText(this._el_14,'\n          We have a 100% Buyer protection policy wherein you can return the product for any reason whatsoever.\n          You can ship it back to us within 7 days and get a full refund\n        ',(null as any));
+    this._text_15 = this.renderer.createText(this._el_14,'\n          We have a 100% Buyer protection policy wherein you can return the product for any of the below reasons:\n        ',(null as any));
     this._text_16 = this.renderer.createText((null as any),'\n        ',(null as any));
-    this._el_17 = import2.createRenderElement(this.renderer,(null as any),'b',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_18 = this.renderer.createText(this._el_17,'Return Process:',(null as any));
-    this._text_19 = this.renderer.createText((null as any),'\n        ',(null as any));
-    this._el_20 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_21 = this.renderer.createText(this._el_20,'\n          Just email us your complaint with order number within 7 days of receipt of the product.\n          You can also login to your account and raise a dispute from there.\n          We will pickup up the product from your doorstep if the pincode is serviceable.\n          In case we can’t pickup, our team will reply to you with an email, containing instructions and return shipping address to which you need to send back the product within 10 days.\n        ',(null as any));
-    this._text_22 = this.renderer.createText((null as any),'\n        ',(null as any));
-    this._el_23 = import2.createRenderElement(this.renderer,(null as any),'b',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_24 = this.renderer.createText(this._el_23,'Refund:',(null as any));
-    this._text_25 = this.renderer.createText((null as any),'\n        ',(null as any));
-    this._el_26 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_27 = this.renderer.createText(this._el_26,'\n          If you wish, we can offer you a redeemable voucher worth the refund amount for future purchases.\n          Else we can also refund the entire amount back to your bank account without any deductions along.\n        ',(null as any));
-    this._text_28 = this.renderer.createText((null as any),'\n      ',(null as any));
+    this._el_17 = import2.createRenderElement(this.renderer,(null as any),'ol',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_18 = this.renderer.createText(this._el_17,'\n          ',(null as any));
+    this._el_19 = import2.createRenderElement(this.renderer,this._el_17,'li',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_20 = this.renderer.createText(this._el_19,'Received a wrong size to what was ordered',(null as any));
+    this._text_21 = this.renderer.createText(this._el_17,'\n          ',(null as any));
+    this._el_22 = import2.createRenderElement(this.renderer,this._el_17,'li',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_23 = this.renderer.createText(this._el_22,'Received the wrong product',(null as any));
+    this._text_24 = this.renderer.createText(this._el_17,'\n          ',(null as any));
+    this._el_25 = import2.createRenderElement(this.renderer,this._el_17,'li',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_26 = this.renderer.createText(this._el_25,'Received a damaged product',(null as any));
+    this._text_27 = this.renderer.createText(this._el_17,'\n          ',(null as any));
+    this._el_28 = import2.createRenderElement(this.renderer,this._el_17,'li',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_29 = this.renderer.createText(this._el_28,'Package missing product components',(null as any));
+    this._text_30 = this.renderer.createText(this._el_17,'\n        ',(null as any));
+    this._text_31 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_32 = import2.createRenderElement(this.renderer,(null as any),'b',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_33 = this.renderer.createText(this._el_32,'Return Process:',(null as any));
+    this._text_34 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_35 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_36 = this.renderer.createText(this._el_35,'\n          Just email us your complaint with a picture of the received product within 5 days of receipt of the product. \n        ',(null as any));
+    this._text_37 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_38 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_39 = this.renderer.createText(this._el_38,'\n          Our customer care will reach out to solve your particular case. \n        ',(null as any));
+    this._text_40 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_41 = import2.createRenderElement(this.renderer,(null as any),'b',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_42 = this.renderer.createText(this._el_41,'Refund:',(null as any));
+    this._text_43 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_44 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_45 = this.renderer.createText(this._el_44,'\n          If you wish, we can offer you a redeemable voucher worth the refund amount for future purchases. Else we can also refund the entire refund amount back to your bank account without any deductions along.\n        ',(null as any));
+    this._text_46 = this.renderer.createText((null as any),'\n      ',(null as any));
       compView_9.create(this._Tab_9_4.context,[([] as any[]).concat([
         this._text_10,
         this._el_11,
@@ -1082,44 +1118,6 @@ class _View_HeaderComponent4 extends import3.AppView<any> {
         this._el_14,
         this._text_16,
         this._el_17,
-        this._text_19,
-        this._el_20,
-        this._text_22,
-        this._el_23,
-        this._text_25,
-        this._el_26,
-        this._text_28
-      ]
-    )],(null as any));
-    this._text_29 = this.renderer.createText((null as any),'\n      ',(null as any));
-    this._el_30 = import2.createRenderElement(this.renderer,(null as any),'tab',new import2.InlineArray2(2,'tabTitle','100% Secure Payments'),(null as any));
-    this._appEl_30 = new import5.AppElement(30,7,this,this._el_30);
-    var compView_30:any = import48.viewFactory_Tab0(this.viewUtils,this.injector(30),this._appEl_30);
-    this._Tab_30_4 = new import48.Wrapper_Tab();
-    this._appEl_30.initComponent(this._Tab_30_4.context,([] as any[]),compView_30);
-    this._text_31 = this.renderer.createText((null as any),'\n        ',(null as any));
-    this._el_32 = import2.createRenderElement(this.renderer,(null as any),'b',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_33 = this.renderer.createText(this._el_32,'Payment Modes:',(null as any));
-    this._text_34 = this.renderer.createText((null as any),'\n        ',(null as any));
-    this._el_35 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_36 = this.renderer.createText(this._el_35,'\n          Net Banking, Debit cards/ Credit Cards (Visa, MasterCard, American Express, Diners Club cards accepted)\n        ',(null as any));
-    this._text_37 = this.renderer.createText((null as any),'\n        ',(null as any));
-    this._el_38 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_39 = this.renderer.createText(this._el_38,'International Credit Cards',(null as any));
-    this._text_40 = this.renderer.createText((null as any),'\n        ',(null as any));
-    this._el_41 = import2.createRenderElement(this.renderer,(null as any),'b',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_42 = this.renderer.createText(this._el_41,'Payment Details:',(null as any));
-    this._text_43 = this.renderer.createText((null as any),'\n        ',(null as any));
-    this._el_44 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_45 = this.renderer.createText(this._el_44,'\n          Immediately after you make a purchase, an invoice with your payment details and a unique payment ID will be sent to you.\n          In case of any issues, our customer care would be happy to help you.\n        ',(null as any));
-    this._text_46 = this.renderer.createText((null as any),'\n        ',(null as any));
-    this._el_47 = import2.createRenderElement(this.renderer,(null as any),'b',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_48 = this.renderer.createText(this._el_47,'Payment Security:',(null as any));
-    this._text_49 = this.renderer.createText((null as any),'\n        ',(null as any));
-    this._el_50 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_51 = this.renderer.createText(this._el_50,'\n          You pay through our secured Payment Gateway and all data is transferred through high level encryption technology.\n          We guarantee your payments are 100% safe with us and the details are never shared with anyone during the payment process.\n        ',(null as any));
-    this._text_52 = this.renderer.createText((null as any),'\n      ',(null as any));
-      compView_30.create(this._Tab_30_4.context,[([] as any[]).concat([
         this._text_31,
         this._el_32,
         this._text_34,
@@ -1130,24 +1128,66 @@ class _View_HeaderComponent4 extends import3.AppView<any> {
         this._el_41,
         this._text_43,
         this._el_44,
-        this._text_46,
-        this._el_47,
-        this._text_49,
-        this._el_50,
-        this._text_52
+        this._text_46
       ]
     )],(null as any));
-    this._text_53 = this.renderer.createText((null as any),'\n    ',(null as any));
+    this._text_47 = this.renderer.createText((null as any),'\n      ',(null as any));
+    this._el_48 = import2.createRenderElement(this.renderer,(null as any),'tab',new import2.InlineArray2(2,'tabTitle','100% Secure Payments'),(null as any));
+    this._appEl_48 = new import5.AppElement(48,7,this,this._el_48);
+    var compView_48:any = import48.viewFactory_Tab0(this.viewUtils,this.injector(48),this._appEl_48);
+    this._Tab_48_4 = new import48.Wrapper_Tab();
+    this._appEl_48.initComponent(this._Tab_48_4.context,([] as any[]),compView_48);
+    this._text_49 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_50 = import2.createRenderElement(this.renderer,(null as any),'b',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_51 = this.renderer.createText(this._el_50,'Payment Modes:',(null as any));
+    this._text_52 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_53 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_54 = this.renderer.createText(this._el_53,'\n          Net Banking, Debit cards/ Credit Cards (Visa, MasterCard, American Express, Diners Club cards accepted)\n        ',(null as any));
+    this._text_55 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_56 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_57 = this.renderer.createText(this._el_56,'International Credit Cards',(null as any));
+    this._text_58 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_59 = import2.createRenderElement(this.renderer,(null as any),'b',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_60 = this.renderer.createText(this._el_59,'Payment Details:',(null as any));
+    this._text_61 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_62 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_63 = this.renderer.createText(this._el_62,'\n          Immediately after you make a purchase, an invoice with your payment details and a unique payment ID will be sent to you.\n          In case of any issues, our customer care would be happy to help you.\n        ',(null as any));
+    this._text_64 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_65 = import2.createRenderElement(this.renderer,(null as any),'b',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_66 = this.renderer.createText(this._el_65,'Payment Security:',(null as any));
+    this._text_67 = this.renderer.createText((null as any),'\n        ',(null as any));
+    this._el_68 = import2.createRenderElement(this.renderer,(null as any),'p',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_69 = this.renderer.createText(this._el_68,'\n          You pay through our secured Payment Gateway and all data is transferred through high level encryption technology.\n          We guarantee your payments are 100% safe with us and the details are never shared with anyone during the payment process.\n        ',(null as any));
+    this._text_70 = this.renderer.createText((null as any),'\n      ',(null as any));
+      compView_48.create(this._Tab_48_4.context,[([] as any[]).concat([
+        this._text_49,
+        this._el_50,
+        this._text_52,
+        this._el_53,
+        this._text_55,
+        this._el_56,
+        this._text_58,
+        this._el_59,
+        this._text_61,
+        this._el_62,
+        this._text_64,
+        this._el_65,
+        this._text_67,
+        this._el_68,
+        this._text_70
+      ]
+    )],(null as any));
+    this._text_71 = this.renderer.createText((null as any),'\n    ',(null as any));
       compView_7.create(this._Tabs_7_4.context,[([] as any[]).concat([
         this._text_8,
         this._el_9,
-        this._text_29,
-        this._el_30,
-        this._text_53
+        this._text_47,
+        this._el_48,
+        this._text_71
       ]
     )],(null as any));
-    this._text_54 = this.renderer.createText(this._el_2,'\n  ',(null as any));
-    this._text_55 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_72 = this.renderer.createText(this._el_2,'\n  ',(null as any));
+    this._text_73 = this.renderer.createText(this._el_0,'\n',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_4,'click',this.eventHandler(this._handle_click_4_0.bind(this)));
     this.init(([] as any[]).concat([this._el_0]),[
       this._el_0,
@@ -1169,18 +1209,18 @@ class _View_HeaderComponent4 extends import3.AppView<any> {
       this._text_16,
       this._el_17,
       this._text_18,
-      this._text_19,
-      this._el_20,
+      this._el_19,
+      this._text_20,
       this._text_21,
-      this._text_22,
-      this._el_23,
+      this._el_22,
+      this._text_23,
       this._text_24,
-      this._text_25,
-      this._el_26,
+      this._el_25,
+      this._text_26,
       this._text_27,
-      this._text_28,
+      this._el_28,
       this._text_29,
-      this._el_30,
+      this._text_30,
       this._text_31,
       this._el_32,
       this._text_33,
@@ -1197,23 +1237,41 @@ class _View_HeaderComponent4 extends import3.AppView<any> {
       this._el_44,
       this._text_45,
       this._text_46,
-      this._el_47,
-      this._text_48,
+      this._text_47,
+      this._el_48,
       this._text_49,
       this._el_50,
       this._text_51,
       this._text_52,
-      this._text_53,
+      this._el_53,
       this._text_54,
-      this._text_55
+      this._text_55,
+      this._el_56,
+      this._text_57,
+      this._text_58,
+      this._el_59,
+      this._text_60,
+      this._text_61,
+      this._el_62,
+      this._text_63,
+      this._text_64,
+      this._el_65,
+      this._text_66,
+      this._text_67,
+      this._el_68,
+      this._text_69,
+      this._text_70,
+      this._text_71,
+      this._text_72,
+      this._text_73
     ]
     ,[disposable_0],([] as any[]));
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import49.Tab) && ((9 <= requestNodeIndex) && (requestNodeIndex <= 28)))) { return this._Tab_9_4.context; }
-    if (((token === import49.Tab) && ((30 <= requestNodeIndex) && (requestNodeIndex <= 52)))) { return this._Tab_30_4.context; }
-    if (((token === import50.Tabs) && ((7 <= requestNodeIndex) && (requestNodeIndex <= 53)))) { return this._Tabs_7_4.context; }
+    if (((token === import49.Tab) && ((9 <= requestNodeIndex) && (requestNodeIndex <= 46)))) { return this._Tab_9_4.context; }
+    if (((token === import49.Tab) && ((48 <= requestNodeIndex) && (requestNodeIndex <= 70)))) { return this._Tab_48_4.context; }
+    if (((token === import50.Tabs) && ((7 <= requestNodeIndex) && (requestNodeIndex <= 71)))) { return this._Tabs_7_4.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -1223,15 +1281,15 @@ class _View_HeaderComponent4 extends import3.AppView<any> {
     const currVal_9_0_0:any = 'Easy Refunds and Returns';
     this._Tab_9_4.check_title(currVal_9_0_0,throwOnChange,false);
     this._Tab_9_4.detectChangesInInputProps(this,this._el_9,throwOnChange);
-    const currVal_30_0_0:any = '100% Secure Payments';
-    this._Tab_30_4.check_title(currVal_30_0_0,throwOnChange,false);
-    this._Tab_30_4.detectChangesInInputProps(this,this._el_30,throwOnChange);
+    const currVal_48_0_0:any = '100% Secure Payments';
+    this._Tab_48_4.check_title(currVal_48_0_0,throwOnChange,false);
+    this._Tab_48_4.detectChangesInInputProps(this,this._el_48,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
     if (!throwOnChange) {
       if (this._query_Tab_7_0.dirty) {
         this._query_Tab_7_0.reset([
           this._Tab_9_4.context,
-          this._Tab_30_4.context
+          this._Tab_48_4.context
         ]
         );
         this._Tabs_7_4.context.tabs = this._query_Tab_7_0;
@@ -1241,7 +1299,7 @@ class _View_HeaderComponent4 extends import3.AppView<any> {
     }
     this._Tabs_7_4.detectChangesInHostProps(this,this._el_7,throwOnChange);
     this._Tab_9_4.detectChangesInHostProps(this,this._el_9,throwOnChange);
-    this._Tab_30_4.detectChangesInHostProps(this,this._el_30,throwOnChange);
+    this._Tab_48_4.detectChangesInHostProps(this,this._el_48,throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
   private _handle_click_4_0($event:any):boolean {

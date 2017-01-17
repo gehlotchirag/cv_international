@@ -225,7 +225,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
       ,
       [
         {
-          path: 'premium',
+          path: ':premium-category',
           component: import67.CategoryComponent,
           resolve: {
             filters: import28.FilterResolveService,
@@ -242,11 +242,6 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
             products: import29.ProductResolveService
           }
 
-        }
-        ,
-        {
-          path: ':category',
-          redirectTo: '/'
         }
 
       ]
@@ -289,7 +284,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
     return this.__SitemapResolveService_27;
   }
   get _ListingService_28():import27.ListingService {
-    if ((this.__ListingService_28 == (null as any))) { (this.__ListingService_28 = new import27.ListingService(this._HttpClientService_23,this.parent.get(import70.Router))); }
+    if ((this.__ListingService_28 == (null as any))) { (this.__ListingService_28 = new import27.ListingService(this._HttpClientService_23)); }
     return this.__ListingService_28;
   }
   get _FilterResolveService_29():import28.FilterResolveService {

@@ -70,7 +70,7 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
   get _ROUTES_7():any[] {
       if ((this.__ROUTES_7 == (null as any))) { (this.__ROUTES_7 = [[
         {
-          path: 'premium',
+          path: ':premium-category',
           component: import26.CategoryComponent,
           resolve: {
             filters: import10.FilterResolveService,
@@ -88,11 +88,6 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
           }
 
         }
-        ,
-        {
-          path: ':category',
-          redirectTo: '/'
-        }
 
       ]
     ]); }
@@ -103,7 +98,7 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
     return this.__NgLocalization_8;
   }
   get _ListingService_9():import9.ListingService {
-    if ((this.__ListingService_9 == (null as any))) { (this.__ListingService_9 = new import9.ListingService(this.parent.get(import28.HttpClientService),this.parent.get(import29.Router))); }
+    if ((this.__ListingService_9 == (null as any))) { (this.__ListingService_9 = new import9.ListingService(this.parent.get(import28.HttpClientService))); }
     return this.__ListingService_9;
   }
   get _FilterResolveService_10():import10.FilterResolveService {

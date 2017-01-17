@@ -125,6 +125,8 @@ function ngApp(req, res) {
   let org_url = req.originalUrl.split('?')[0];
   let url = '';
   let isProductUrl = false;
+  generateReadHTML = true;
+
   if(org_url === '/us/') {
     url = base_url + '/home';
     view_dir = path.join(__dirname, '/static/home');
@@ -179,7 +181,7 @@ function renderDynamicHtml(req, res, url, options) {
 function generateHtml(url, options, req, res) {
   let now = moment();
   let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-  console.log("Request to Generate HTML. Time: ",formatted, "Url:", url);
+  console.log("Request to Generate HTML. Time: ",formatted, "Url:", url, "generateReadHTML", generateReadHTML);
   if(generateReadHTML) { 
     request.get(url, options,function(err,response,body){
       let response_body = JSON.parse(body);
@@ -199,7 +201,7 @@ function generateHtml(url, options, req, res) {
       }else{
         now = moment();
         formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-        console.log("HTML Not Generated. Time: ",formatted, "Url:", url, "Status: ", body);
+        console.log("HTML Not Generated. Redirecting to US. Time: ",formatted, "Url:", url, "Status: ", body);
         generateReadHTML = true;
         res.redirect('/us/');
       }
@@ -207,7 +209,7 @@ function generateHtml(url, options, req, res) {
   } else {
     now = moment();
     formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-    console.log("HTML Generatation Request more than once. Time: ",formatted, "Url:", url);
+    console.log("Retrying. Redirecting to US. Time: ",formatted, "Url:", url);
     generateReadHTML = true;
     res.redirect('/us/');
   }

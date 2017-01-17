@@ -17,14 +17,6 @@ import { FilterResolveService } from './filter-resolve.service';
           products: ProductResolveService
         }
       },
-      // { 
-      //   path: ':category', 
-      //   component: CategoryComponent, 
-      //   resolve: {
-      //     filters: FilterResolveService,
-      //     products: ProductResolveService
-      //   }
-      // },
       { 
         path: ':category/:sub-category', 
         component: CategoryComponent, 
@@ -33,6 +25,15 @@ import { FilterResolveService } from './filter-resolve.service';
           products: ProductResolveService
         }
       },
+      // { 
+      //   path: ':category', 
+      //   // component: CategoryComponent, 
+      //   // resolve: {
+      //   //   filters: FilterResolveService,
+      //   //   products: ProductResolveService
+      //   // }
+      //   redirectTo: '/' 
+      // }
     ])
   ]
 })

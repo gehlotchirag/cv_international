@@ -135,6 +135,9 @@
     pointer-events: none;
     font-weight: 500;
 }
+.breadcrumb-list:nth-child(2) {
+    pointer-events: none;
+}
 .breadcrumb-list:after {
     content: '';
     margin-left: 5px;

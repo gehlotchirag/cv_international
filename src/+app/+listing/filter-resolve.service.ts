@@ -18,11 +18,11 @@ export class FilterResolveService implements Resolve<Listing> {
   constructor(private ls: ListingService, private router: Router){}
 
   resolve(route: ActivatedRouteSnapshot): Observable<any>|Promise<any>|any {
+    let queryParams = route.queryParams
     let _tempUrl = route['_routerState'].url.split('?')[0];
     let _urlArr = (_tempUrl.split('/')).filter((item) => item !== "");
     let url = _urlArr.join('/')
     let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
-
 
     if(isPremiumUrl){
       return this.ls.getPremiumFilters(url)
@@ -36,7 +36,7 @@ export class FilterResolveService implements Resolve<Listing> {
                });      
     }
 
-    return this.ls.getFilterList()
+    return this.ls.getFilterList(queryParams, url)
                .then(filter => {
                  if(filter){
                     return filter.json();

@@ -160,7 +160,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     this.pageBreadcrumbs = [];
     let url = this.router.url.split('?')[0];
     let _urlArr = url.split('/');
-    let isFilterUrl = this.filtersMap[url] ? true : false;
+    let isFilterUrl = this.filtersMap[url.split('/').filter((s) => s !== '').join('/')] ? true : false;
     for (var i = 0; i < _urlArr.length; ++i) {
       let breadcrumbObj:Object = {};
       if(i === 0) {

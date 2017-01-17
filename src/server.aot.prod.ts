@@ -180,29 +180,37 @@ function generateHtml(url, options, req, res) {
   let now = moment();
   let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
   console.log("Request to Generate HTML. Time: ",formatted, "Url:", url);
-  request.get(url, options,function(err,response,body){
-    let response_body = JSON.parse(body);
-    if(err) {
-      now = moment();
-      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Generatation Error. Time: ",formatted, "Url:", url);
-      generateReadHTML = true;
-      res.redirect('/us/');
-    }
-    if((response_body['s'] === 1) && generateReadHTML){
-      now = moment();
-      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Generated. Time: ",formatted, "Url:", url);
-      generateReadHTML = false;
-      renderDynamicHtml(req, res, url, options);
-    }else{
-      now = moment();
-      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Generatation Error. Time: ",formatted, "Url:", url, "Status: ", body);
-      generateReadHTML = true;
-      res.redirect('/us/');
-    }
-  });
+  if(generateReadHTML) { 
+    request.get(url, options,function(err,response,body){
+      let response_body = JSON.parse(body);
+      if(err) {
+        now = moment();
+        formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+        console.log("HTML Generatation Error. Time: ",formatted, "Url:", url);
+        generateReadHTML = true;
+        res.redirect('/us/');
+      }
+      if((response_body['s'] === 1)){
+        now = moment();
+        formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+        console.log("HTML Generated. Time: ",formatted, "Url:", url);
+        generateReadHTML = false;
+        renderDynamicHtml(req, res, url, options);
+      }else{
+        now = moment();
+        formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+        console.log("HTML Not Generated. Time: ",formatted, "Url:", url, "Status: ", body);
+        generateReadHTML = true;
+        res.redirect('/us/');
+      }
+    });
+  } else {
+    now = moment();
+    formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+    console.log("HTML Generatation Request more than once. Time: ",formatted, "Url:", url);
+    generateReadHTML = true;
+    res.redirect('/us/');
+  }
 }
 /**
  * use universal for specific routes

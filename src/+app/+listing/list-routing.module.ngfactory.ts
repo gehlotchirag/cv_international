@@ -20,7 +20,6 @@ class ListRoutingModuleInjector extends import0.NgModuleInjector<import1.ListRou
   constructor(parent:import3.Injector) {
     super(parent,[
       import4.CategoryComponentNgFactory,
-      import4.CategoryComponentNgFactory,
       import4.CategoryComponentNgFactory
     ]
     ,([] as any[]));
@@ -28,17 +27,7 @@ class ListRoutingModuleInjector extends import0.NgModuleInjector<import1.ListRou
   get _ROUTES_2():any[] {
       if ((this.__ROUTES_2 == (null as any))) { (this.__ROUTES_2 = [[
         {
-          path: 'premium',
-          component: import5.CategoryComponent,
-          resolve: {
-            filters: import6.FilterResolveService,
-            products: import7.ProductResolveService
-          }
-
-        }
-        ,
-        {
-          path: ':category',
+          path: ':premium-category',
           component: import5.CategoryComponent,
           resolve: {
             filters: import6.FilterResolveService,

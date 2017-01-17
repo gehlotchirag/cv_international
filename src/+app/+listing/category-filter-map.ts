@@ -1,5 +1,7 @@
 'use strict';
 
+export var premiumUrlArr = ['premium', 'traditional', 'contemporary'];
+
 export var filtersMap = {
 	"sarees/bollywood-sarees": {
 		"name": "Bollywood",

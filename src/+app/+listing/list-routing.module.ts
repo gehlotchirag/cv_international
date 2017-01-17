@@ -10,21 +10,21 @@ import { FilterResolveService } from './filter-resolve.service';
   imports: [
     RouterModule.forChild([
       {
-        path: 'premium',
+        path: ':premium-category',
         component: CategoryComponent,
         resolve: {
           filters: FilterResolveService,
           products: ProductResolveService
         }
       },
-      { 
-        path: ':category', 
-        component: CategoryComponent, 
-        resolve: {
-          filters: FilterResolveService,
-          products: ProductResolveService
-        }
-      },
+      // { 
+      //   path: ':category', 
+      //   component: CategoryComponent, 
+      //   resolve: {
+      //     filters: FilterResolveService,
+      //     products: ProductResolveService
+      //   }
+      // },
       { 
         path: ':category/:sub-category', 
         component: CategoryComponent, 

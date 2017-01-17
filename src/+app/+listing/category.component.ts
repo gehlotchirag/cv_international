@@ -35,6 +35,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
   public resultCountObj: Object = {};
   public queryParams: Object = {};
   public filtersMap = categoryFilterMap.filtersMap;
+  public premiumUrlArr = categoryFilterMap.premiumUrlArr;
   public sortType: Array<any> = [
    {
       'data': [
@@ -103,22 +104,23 @@ export class CategoryComponent implements OnInit, OnDestroy{
   ngOnInit(){
     this.subscription = this.route.queryParams.subscribe(
       (queryParams: any) => {
-        let query, params, page, premium;
+        let query, params, page;
+        let url = this.getPageUrl();
+        let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
         if(queryParams){
           query = queryParams['query'];
           params = queryParams['params'];
           page = queryParams['page'];
-          premium = queryParams['premium']
         }
         let paramObj = {
           query: query ? query : '',
           params: params ? params : "{}",
-          page: page && !isNaN(page) ? page : 1,
-          premium
+          page: page && !isNaN(page) ? page : 1
         }
-        if(!paramObj['premium']){
-          delete paramObj['premium'];
+        if(isPremiumUrl) { 
+           paramObj[url] = 1;
         }
+
         this.queryParams = paramObj;
       });
     this.setCountPerPage();
@@ -131,14 +133,16 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
   trackPage(){
     if (typeof _satellite != "undefined") {
-      let categoryName = this.listingProducts.category_name ? this.listingProducts.category_name : 'all'
+      let categoryName = this.listingProducts.category_name ? this.listingProducts.category_name : 'all';
+      let url = this.getPageUrl();
+      let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
       digitalData.page={
         pageInfo:{
-          pageName:this.router.url.indexOf("/premium") > -1 ? "category: premium" : "category:" + categoryName,
+          pageName: isPremiumUrl ? "category:" + url : "category:" + categoryName,
         },
         category:{
           pageType:"category",
-      y0: categoryName,
+          subCategory0: categoryName,
           subCategory1: "",
         },
         device:{
@@ -154,7 +158,9 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
   setBreadcrumbs(){
     this.pageBreadcrumbs = [];
-    let _urlArr = this.router.url.split('?')[0].split('/');
+    let url = this.router.url.split('?')[0];
+    let _urlArr = url.split('/');
+    let isFilterUrl = this.filtersMap[url] ? true : false;
     for (var i = 0; i < _urlArr.length; ++i) {
       let breadcrumbObj:Object = {};
       if(i === 0) {
@@ -162,7 +168,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
         breadcrumbObj["link"] = "/";
         this.pageBreadcrumbs.push(breadcrumbObj);
       }else if (i === 1){
-        if(_urlArr[i] !== 'womens-clothing' && _urlArr[i] !== 'premium'){
+        if(isFilterUrl){
           breadcrumbObj["name"] = "Womens Clothing";
           breadcrumbObj["link"] = "/womens-clothing";
           this.pageBreadcrumbs.push(breadcrumbObj);
@@ -252,7 +258,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     let filter = appliedFilter.charAt(0).toUpperCase() + appliedFilter.slice(1);
     let url = this.getPageUrl();
     let isFilterUrl = this.filtersMap[url] ? true : false;
-    let isPremiumUrl = url.indexOf('premium') > -1 ? true : false;
+    let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
     let filterString = "" + filters.key + ":" + filter;
 
     this.filterData[filters.key]["applied"].push(appliedFilter);
@@ -284,7 +290,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     let paramFilterIndex = filterArr.indexOf(filter);
     let url = this.getPageUrl();
     let isFilterUrl = this.filtersMap[url] ? true : false;
-    let isPremiumUrl = url.indexOf('premium') > -1 ? true : false;
+    let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
 
     if (valueIndex > -1) this.filterData[filters.key]["applied"].splice(valueIndex, 1);
     if (appliedFilterIndex > -1) this.appliedFilter.splice(appliedFilterIndex, 1);
@@ -339,19 +345,19 @@ export class CategoryComponent implements OnInit, OnDestroy{
   }
 
   changePageUrl(url){
-    let isPremiumUrl = this.router.url.indexOf("/premium") > -1;
+    let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
     let params = `query=${this.queryParams['query']}&params=${encodeURIComponent(this.queryParams['params'])}&page=${this.queryParams['page']}`;
     if(isPremiumUrl){
-      params = `query=${this.queryParams['query']}&params=${encodeURIComponent(this.queryParams['params'])}&page=${this.queryParams['page']}&premium=${this.queryParams['premium']}`
+      params = `query=${this.queryParams['query']}&params=${encodeURIComponent(this.queryParams['params'])}&page=${this.queryParams['page']}&${url}=${this.queryParams[url]}`
     }
     this.location.replaceState(url, params);
   }
 
   fetchCategoryData(){
     let url = this.getPageUrl();
-
-    if(this.router.url.indexOf("/premium") > -1){
-      this.queryParams['premium'] = 1;
+    let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
+    if(isPremiumUrl){
+      this.queryParams[url] = 1;
     }
     
     this.listingService.getListingList(this.queryParams, url).then((listing: Response) => {
@@ -367,7 +373,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
   applyMobileFilters(){
     let params = this.queryParams['params'] ? JSON.parse(this.queryParams['params']) : {};
-    let filterObj = params['filters'] ? params['filters'] : {};
+    let filterObj = {};
     let self = this;
     this.queryParams['page'] = 1;
     Object.keys(this.filterData).forEach((key) => {

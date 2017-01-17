@@ -259,7 +259,6 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
       import80.ShippingRefundComponentNgFactory,
       import81.CategoryComponentNgFactory,
       import81.CategoryComponentNgFactory,
-      import81.CategoryComponentNgFactory,
       import82.NotFoundComponentNgFactory,
       import83.AppComponentNgFactory
     ]
@@ -493,17 +492,7 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
       ,
       [
         {
-          path: 'premium',
-          component: import95.CategoryComponent,
-          resolve: {
-            filters: import50.FilterResolveService,
-            products: import51.ProductResolveService
-          }
-
-        }
-        ,
-        {
-          path: ':category',
+          path: ':premium-category',
           component: import95.CategoryComponent,
           resolve: {
             filters: import50.FilterResolveService,
@@ -591,7 +580,7 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
     return this.__SitemapResolveService_83;
   }
   get _ListingService_84():import49.ListingService {
-    if ((this.__ListingService_84 == (null as any))) { (this.__ListingService_84 = new import49.ListingService(this._HttpClientService_72,this._Router_80)); }
+    if ((this.__ListingService_84 == (null as any))) { (this.__ListingService_84 = new import49.ListingService(this._HttpClientService_72)); }
     return this.__ListingService_84;
   }
   get _FilterResolveService_85():import50.FilterResolveService {

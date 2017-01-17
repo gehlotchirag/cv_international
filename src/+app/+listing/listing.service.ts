@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Http, Response , Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs';
 
 import Listing from './listing';
+
 import { HttpClientService } from '../shared/services/http-client.service'
-import { isDefined , isEmpty} from '../shared/utils';
+
 import categoryFilterMap = require('./category-filter-map');
 
 @Injectable()
@@ -13,39 +11,27 @@ export class ListingService {
   private listingsUrl = 'api/products/';
   private filtersUrl = 'api/category/1/filters';
   public filtersMap = categoryFilterMap.filtersMap;
+  public premiumUrlArr = categoryFilterMap.premiumUrlArr;
 
   constructor(
-      private httpClient: HttpClientService, 
-      private router: Router
+      private httpClient: HttpClientService
   ){}
-
-  loadCategoryList(params:Object): any {
-      return this.httpClient
-        .get(this.listingsUrl, params)
-        .map((res: Response) => res.json() as Listing[])
-        .catch((err)=>{
-          console.error(err)
-          return Observable.of<Listing[]>([]);
-        });
-  }
 
   getListingList(paramObj: Object, url:string): any {
     let  query, params, page, premium;
     let categoryId = categoryFilterMap.categoriesMap[url] ? categoryFilterMap.categoriesMap[url].id : null;
     let appliedFilterObj = this.filtersMap[url.toLowerCase()] ? this.filtersMap[url.toLowerCase()] : null;
-    let isPremiumUrl = url.indexOf('premium') > -1 ? true : false;
+    let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
     if(paramObj){
       query = paramObj['query'];
       params = paramObj['params'];
       page = paramObj['page'];
-      premium = paramObj['premium']
     }
 
     let searchObj = {
       query: query ? query : '',
       params: params ? params : null,
-      page: page && !isNaN(page) ? page : 1,
-      premium
+      page: page && !isNaN(page) ? page : 1
     }
 
     let paramsObj = searchObj.params ? JSON.parse(searchObj.params) : {};
@@ -71,7 +57,7 @@ export class ListingService {
       searchObj.params = JSON.stringify(paramsObj);
 
       if(isPremiumUrl){
-        searchObj.premium = 1;
+        searchObj[url] = 1;
       }
      
       return this.httpClient
@@ -89,8 +75,8 @@ export class ListingService {
                .toPromise();
   }
 
-  getPremiumFilters(): any{
-    this.filtersUrl = 'api/premium/filters';
+  getPremiumFilters(url): any{
+    this.filtersUrl = 'api/' + url + '/filters';
     return this.httpClient
                .get(this.filtersUrl)
                .toPromise();

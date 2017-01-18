@@ -132,12 +132,10 @@ function ngApp(req, res) {
     view_dir = path.join(__dirname, '/static/', temp_url);
   }
   request.get(url, options,function(err,response,body){
-    let response_body = JSON.parse(body);
     if(err) {
       res.redirect('/');
     }
     if(response.statusCode === 200 ){
-      console.log(response_body['s']);
       renderDynamicHtml(req, res);
     }else{
       res.redirect('/');

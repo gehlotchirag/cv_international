@@ -81,6 +81,15 @@ export class CategoryComponent implements OnInit, OnDestroy{
     'key': 'relevance',
     'value': 'Popular'
   }
+  public priceFilter = {
+    'key': 'price',
+    'value': [
+      {'name': 'Below $20', 'value': {'min': 1, 'max': 20}},
+      {'name': '$20 - $50', 'value': {'min': 20, 'max': 50}},
+      {'name': '$50 - $100', 'value': {'min': 50, 'max': 100}},
+      {'name': '$100 - $200', 'value': {'min': 100, 'max': 200}},
+      {'name': 'Above $200', 'value': {'min': 200, 'max': 1000}},
+    ]}
 
   constructor(  private route: ActivatedRoute,
     private router: Router,
@@ -207,16 +216,39 @@ export class CategoryComponent implements OnInit, OnDestroy{
       let self = this;
       if(params['filters'] && Object.keys(params['filters']).length !== 0){
         Object.keys(params['filters']).forEach(function(key) {
-          if(self.filterData[key]) {
+          let isPriceFilter = (key === 'price');
+          if(self.filterData[key] && !isPriceFilter) {
             self.filterData[key]["applied"] = params['filters'][key];
             self.appliedFilter = self.appliedFilter.concat(params['filters'][key]);
             for (var i = 0; i < self.filterData[key]["applied"].length; ++i) {
               let tempFilter = self.filterData[key]["applied"][i]
               self.filterData[key]["available"] = self.filterData[key]["available"].filter(function (element) {
-                return element !== tempFilter 
+                return element !== tempFilter
               })
             }
-          }
+          } else if(isPriceFilter) { 
+            params['filters'][key].forEach(function(filterObj) {
+              let appliedFilter = {}
+              if(filterObj.min === 1) { 
+                appliedFilter['name'] = "Below $20";
+                appliedFilter['value'] = filterObj;
+              } else if(filterObj.min === 200) { 
+                appliedFilter['name'] = "Above $200";
+                appliedFilter['value'] = filterObj;
+              } else {
+                appliedFilter['name'] = '$' + filterObj.min + ' - ' + '$' + filterObj.max;
+                appliedFilter['value'] = filterObj;
+              }
+              self.filterData[key]["applied"] ? self.filterData[key]["applied"].push(appliedFilter) : [appliedFilter] ;
+              self.appliedFilter = self.appliedFilter.concat(JSON.stringify(appliedFilter['name']));
+              for (var i = 0; i < self.filterData[key]["applied"].length; ++i) {
+                let tempFilter = self.filterData[key]["applied"][i]
+                self.filterData[key]["available"] = self.filterData[key]["available"].filter(function (element) {
+                  return JSON.stringify(element) !== JSON.stringify(tempFilter)
+                })
+              }
+            });
+          } 
         });
       }
       if(params['sort']){
@@ -237,13 +269,20 @@ export class CategoryComponent implements OnInit, OnDestroy{
   manageFilterData(filters: any, rearrangeFilter?: boolean){
     let url = this.getPageUrl();
     let isFilterUrl = this.filtersMap[url] ? true : false;
+    let isPriceFilter = (filters.key === 'price');
     if(rearrangeFilter) {
       this.filterData[filters.key]["available"] = filters.value;
       for (var i = 0; i < this.filterData[filters.key]["applied"].length; ++i) {
         let tempFilter = this.filterData[filters.key]["applied"][i]
-        this.filterData[filters.key]["available"] = this.filterData[filters.key]["available"].filter(function (element) {
-          return element !== tempFilter 
-        })
+        if(isPriceFilter) { 
+          this.filterData[filters.key]["available"] = this.filterData[filters.key]["available"].filter(function (element) {
+            return JSON.stringify(element) !== JSON.stringify(tempFilter)
+          })
+        } else {
+           this.filterData[filters.key]["available"] = this.filterData[filters.key]["available"].filter(function (element) {
+            return element !== tempFilter 
+          }) 
+        }
       }
     }else{
       this.appliedFilter = [];
@@ -252,6 +291,9 @@ export class CategoryComponent implements OnInit, OnDestroy{
         this.filterData[key]["applied"] = [];
         this.filterData[key]["available"] = filters[key];
       }); 
+      this.filterData['price'] = {};
+      this.filterData['price']["applied"] = [];
+      this.filterData['price']["available"] = this.priceFilter['value'];
       if(isFilterUrl) { 
         let filterObj = this.filtersMap[url];
         this.appliedFilter.push(filterObj.name);
@@ -263,22 +305,26 @@ export class CategoryComponent implements OnInit, OnDestroy{
     }
   }
 
-  selectFilter(filters: any, appliedFilter: String){
+  selectFilter(filters: any, appliedFilter){
     let params = this.queryParams['params'] ? JSON.parse(this.queryParams['params']) : {};
     let filterObj = params['filters'] ? params['filters'] : {};
-    let filter = appliedFilter.charAt(0).toUpperCase() + appliedFilter.slice(1);
+    let isPriceFilter = (filters.key === 'price');
+    let filter = appliedFilter;
     let url = this.getPageUrl();
     let isFilterUrl = this.filtersMap[url] ? true : false;
     let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
-    let filterString = "" + filters.key + ":" + filter;
-
+    let filterString = isPriceFilter ? "" + filters.key + ":" + JSON.stringify(filter) : "" + filters.key + ":" + filter;
     this.filterData[filters.key]["applied"].push(appliedFilter);
     this.queryParams['page'] = 1;
-    if(this.appliedFilter.length === 0 && !isFilterUrl && !isPremiumUrl) {
+    if(this.appliedFilter.length === 0 && !isFilterUrl && !isPremiumUrl && !isPriceFilter) {
       this.navigateToFilterUrl(appliedFilter);
     }else{
-      this.appliedFilter.push(appliedFilter);
-      filterObj[filters.key] ? filterObj[filters.key].push(filter) : filterObj[filters.key] = [filter];
+      isPriceFilter ? this.appliedFilter.push(JSON.stringify(appliedFilter.name)) : this.appliedFilter.push(appliedFilter);
+      if(isPriceFilter) { 
+        filterObj[filters.key] ? filterObj[filters.key].push(filter.value) : filterObj[filters.key] = [filter.value];
+      } else {
+        filterObj[filters.key] ? filterObj[filters.key].push(filter) : filterObj[filters.key] = [filter];
+      }
       params['filters'] = filterObj;
       this.queryParams['params'] = JSON.stringify(params)
       this.manageFilterData(filters, true);
@@ -292,21 +338,37 @@ export class CategoryComponent implements OnInit, OnDestroy{
     }
   }
 
-  deselectFilter(filters: any, removedFilter: String){
+  deselectFilter(filters: any, removedFilter){
+    let isPriceFilter = (filters.key === 'price');
+    let filter = removedFilter;
     let valueIndex = this.filterData[filters.key]["applied"].indexOf(removedFilter);
-    let appliedFilterIndex = this.appliedFilter.indexOf(removedFilter);
+    let appliedFilterIndex = !isPriceFilter ? this.appliedFilter.indexOf(removedFilter) : this.appliedFilter.indexOf(JSON.stringify(removedFilter.name))
     let params = this.queryParams['params'] ? JSON.parse(this.queryParams['params']) : {};
     let filterArr = params['filters'] ? params['filters'][filters.key] : [];
-    let filter = removedFilter.charAt(0).toUpperCase() + removedFilter.slice(1);
-    let paramFilterIndex = filterArr.indexOf(filter);
+    let paramFilterIndex = filterArr ? filterArr.indexOf(filter) : -1;
     let url = this.getPageUrl();
     let isFilterUrl = this.filtersMap[url] ? true : false;
     let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
 
-    if (valueIndex > -1) this.filterData[filters.key]["applied"].splice(valueIndex, 1);
     if (appliedFilterIndex > -1) this.appliedFilter.splice(appliedFilterIndex, 1);
-    filterArr.splice(paramFilterIndex, 1);
-    if(params['filters']) { 
+
+    if(isPriceFilter) { 
+      let tempFilter = removedFilter;
+      this.filterData[filters.key]["applied"] = this.filterData[filters.key]["applied"].filter(function (element) {
+        return JSON.stringify(element) !== JSON.stringify(tempFilter) 
+      })
+      for (var i = 0; i < filterArr.length; ++i) {
+        let filterVal = JSON.stringify(filterArr[i]);
+        if(filterVal === JSON.stringify(removedFilter.value)) { 
+          filterArr.splice(i, 1);
+        }
+      }
+    } else {
+      if (valueIndex > -1) this.filterData[filters.key]["applied"].splice(valueIndex, 1);
+      if(paramFilterIndex > -1)filterArr.splice(paramFilterIndex, 1);
+    }
+
+    if(params['filters'] && filterArr) { 
       if(filterArr.length === 0) {
         delete params['filters'][filters.key];
       }else{
@@ -315,7 +377,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     }
     this.queryParams['params'] = JSON.stringify(params)
     this.queryParams['page'] = 1;
-    if(this.appliedFilter.length === 0 && isFilterUrl && !isPremiumUrl) {
+    if(this.appliedFilter.length === 0 && isFilterUrl && !isPremiumUrl && !isPriceFilter) {
       this.navigateToCategoryUrl();
     }else{
       this.manageFilterData(filters, true);
@@ -324,17 +386,25 @@ export class CategoryComponent implements OnInit, OnDestroy{
   }
 
 
-  selectFiltersMobile(filters: any, appliedFilter: String){
+  selectFiltersMobile(filters: any, appliedFilter){
+    let isPriceFilter = (filters.key === 'price');
     this.filterData[filters.key]["applied"].push(appliedFilter);
-    this.appliedFilter.push(appliedFilter);
+    isPriceFilter ? this.appliedFilter.push(JSON.stringify(appliedFilter.name)) : this.appliedFilter.push(appliedFilter);
     this.manageFilterData(filters, true);
   }
 
-  deselectFiltersMobile(filters: any, removedFilter: String){
+  deselectFiltersMobile(filters: any, removedFilter){
+    let isPriceFilter = (filters.key === 'price');
     let valueIndex = this.filterData[filters.key]["applied"].indexOf(removedFilter);
-    let appliedFilterIndex = this.appliedFilter.indexOf(removedFilter);
+    let appliedFilterIndex = !isPriceFilter ? this.appliedFilter.indexOf(removedFilter) : this.appliedFilter.indexOf(JSON.stringify(removedFilter.name));
     if (valueIndex > -1) this.filterData[filters.key]["applied"].splice(valueIndex, 1);
     if (appliedFilterIndex > -1) this.appliedFilter.splice(appliedFilterIndex, 1);
+    if(isPriceFilter) { 
+      let tempFilter = removedFilter;
+      this.filterData[filters.key]["applied"] = this.filterData[filters.key]["applied"].filter(function (element) {
+        return JSON.stringify(element) !== JSON.stringify(tempFilter) 
+      })
+    }
     this.manageFilterData(filters, true);
   }
 
@@ -390,11 +460,20 @@ export class CategoryComponent implements OnInit, OnDestroy{
     let self = this;
     this.queryParams['page'] = 1;
     Object.keys(this.filterData).forEach((key) => {
-      if(self.filterData[key]['applied'].length > 0){
-        self.filterData[key]['applied'].forEach( function (data) {
-          let filter = data.charAt(0).toUpperCase() + data.slice(1);
-          filterObj[key] ? filterObj[key].push(filter) : filterObj[key] = [filter];
-        })
+      if(key === 'price') { 
+        if(self.filterData[key]['applied'].length > 0){
+          self.filterData[key]['applied'].forEach( function (data) {
+            let filter = data;
+            filterObj[key] ? filterObj[key].push(filter.value) : filterObj[key] = [filter.value];
+          })
+        }
+      } else {
+        if(self.filterData[key]['applied'].length > 0){
+          self.filterData[key]['applied'].forEach( function (data) {
+            let filter = data;
+            filterObj[key] ? filterObj[key].push(filter) : filterObj[key] = [filter];
+          })
+        }
       }
     })    
     params['filters'] = filterObj;

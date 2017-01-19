@@ -1,12 +1,14 @@
 import { Component, OnInit, OnChanges, DoCheck, EventEmitter, Output, Input, SimpleChanges } from '@angular/core';
 import { ViewContainerRef, ViewChild, ComponentFactoryResolver } from '@angular/core';
 import { HostListener, trigger, state, style, transition, animate } from '@angular/core';
+import { ProgressBarComponent } from './progress-bar.component';
 
 import { Router } from '@angular/router';
 
 import { CartDetailsService } from '../../services/cart-details.service';
 import { MegaMenuComponent } from '../mega-menu/mega-menu.component';
 import { RouterHeaderBindingService } from '../../services/router-header-binding.service';
+import { ProgressBarService } from '../../services/progress-bar.service';
 
 import { getRouterLink } from '../../utils';
 
@@ -61,6 +63,8 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   public selectedSubCategory: any;
   public menuState:string = 'out';
   private getRouterLink = getRouterLink;
+  public barProgress:string = '0';
+  public barVisibility: boolean = false;
 
   @Input() showMegaMenuCaret: boolean;
 
@@ -82,6 +86,16 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
     RouterHeaderBindingService.getMegaMenuData().subscribe(
       (data) =>  {
         setTimeout(_ => this.menuCategoriesData = data);
+      }
+    );
+    ProgressBarService.getBarProgress().subscribe(
+      (data) => {
+        setTimeout(_ => this.barProgress = data);  
+      }
+    );
+    ProgressBarService.getBarVisibility().subscribe(
+      (data) => {
+        setTimeout(_ => this.barVisibility = data);
       }
     );
   }

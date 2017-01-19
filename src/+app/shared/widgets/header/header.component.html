@@ -91,9 +91,9 @@
           <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/usa-flag.gif" class="flag"> USD
         </div>
       </span>
-      <span class="top-menu-item" style="cursor: pointer;" (click)="clearCookieAndDomestic($event)">
+      <a class="top-menu-item" href="http://www.craftsvilla.com">
         Visit Craftsvilla India
-      </span>
+      </a>
       </span>
     </div>
   </div>
@@ -144,6 +144,8 @@
       </div>
     </div>
   </div>
+  <cvi-progress-bar [progress]="barProgress" [visible]="barVisibility"></cvi-progress-bar>
+
 </div>
 <div class="menu-slider-container occupy fixed" [ngStyle]="{'display': showBottomMenu}" [ngClass] = "{'change-slider-top' : !showTopMenu}">
   <div class="menu-overlay-div" (mouseover)="displayMegaMenu(false)"></div>

@@ -14,12 +14,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './+not_found/not-found.component';
 import { HeaderComponent } from './shared/widgets/header/header.component';
+import { ProgressBarComponent } from './shared/widgets/header/progress-bar.component';
+
 import { FooterComponent } from './shared/widgets/footer/footer.component';
 import {Tabs} from './shared/widgets/tabs-widget/tabs.component';
 import {Tab} from './shared/widgets/tabs-widget/tab.component';
 
 import { HttpClientService } from './shared/services/http-client.service';
 import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
+import { ProgressBarService } from './shared/services/progress-bar.service';
 import { DataHoldingService } from './shared/services/data-holding.service';
 
 
@@ -29,6 +32,7 @@ import { DataHoldingService } from './shared/services/data-holding.service';
 		HeaderComponent,
 		FooterComponent,
 		NotFoundComponent,
+		ProgressBarComponent,
 		Tabs,
 		Tab 
 	],
@@ -44,6 +48,7 @@ import { DataHoldingService } from './shared/services/data-holding.service';
 		HttpClientService,
       	RouterHeaderBindingService,
       	DataHoldingService,
+      	ProgressBarService,
       	Title	
 	]
 })

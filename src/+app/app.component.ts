@@ -1,8 +1,10 @@
 import { Component, HostListener } from '@angular/core';
 import { Response } from '@angular/http';
-import { Router, NavigationEnd } from '@angular/router';
+
+import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 
 import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
+import { ProgressBarService } from './shared/services/progress-bar.service';
 // import { MetaService } from './shared/services/meta-tags.service';
 
 import { HttpClientService } from './shared/services/http-client.service';
@@ -17,7 +19,7 @@ import { HttpClientService } from './shared/services/http-client.service';
   selector: 'cvi-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ HttpClientService, RouterHeaderBindingService ]
+  providers: [ HttpClientService, RouterHeaderBindingService, ProgressBarService ]
 })
 export class AppComponent {
 
@@ -39,17 +41,25 @@ export class AppComponent {
   public hasMegaMenu: boolean = false;
 
   constructor(private router: Router,
-              private httpClient: HttpClientService){
-      this.router.events.subscribe((val) => {
-        let _currentUrl = val.url;
+              private httpClient: HttpClientService,
+              private progressBar: ProgressBarService){
+      this.router.events.subscribe((event) => {
+        let _currentUrl = event.url;
         if(_currentUrl === '/'){
           RouterHeaderBindingService.setMegaMenuStatus(false);
         }
         else {
           RouterHeaderBindingService.setMegaMenuStatus(true);
         }
-        if(val instanceof NavigationEnd && typeof window !== 'undefined'){
+        if(event instanceof NavigationEnd && typeof window !== 'undefined'){
           window.scrollTo(0,0);
+        }
+        if (event instanceof NavigationStart) {
+          this.progressBar.start();
+        } else if ( event instanceof NavigationEnd ||
+                    event instanceof NavigationCancel ||
+                    event instanceof NavigationError) {
+          this.progressBar.complete();
         }
       });
   }

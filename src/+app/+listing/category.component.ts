@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 
 import { ListingService } from './listing.service';
 import { CommonSharedService } from '../shared/services/common-shared.service';
+import { ProgressBarService } from '../shared/services/progress-bar.service';
 
 import Listing from './listing';
 
@@ -18,7 +19,7 @@ declare var digitalData: any;
   selector: 'cvi-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css'],
-  providers: [ ListingService, CommonSharedService ],
+  providers: [ ListingService, CommonSharedService, ProgressBarService ],
 })
 
 export class CategoryComponent implements OnInit, OnDestroy{
@@ -95,7 +96,8 @@ export class CategoryComponent implements OnInit, OnDestroy{
     private router: Router,
     private location: Location,
     private commonService: CommonSharedService,
-    private listingService:ListingService
+    private listingService:ListingService,
+    private progressBar: ProgressBarService
   ){
     this.route.data.pluck('filters').subscribe((data: any) => {
       this.recievedFilter = data;
@@ -437,6 +439,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
   }
 
   fetchCategoryData(){
+    this.progressBar.start();
     let url = this.getPageUrl();
     let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
     if(isPremiumUrl){
@@ -447,6 +450,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
       if (listing) {
         this.listingProducts = listing.json().d;
         this.setCountPerPage();
+        this.progressBar.complete();
       }
     })
 

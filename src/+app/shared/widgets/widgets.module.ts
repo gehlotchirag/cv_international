@@ -7,7 +7,7 @@ import { CategoryWidgetComponent } from './category-widget/category-widget.compo
 import { ExtraMenuComponent } from './extra-menu/extra-menu.component';
 import { HeroBannerComponent } from './hero-banner/hero-banner.component';
 import { MegaMenuComponent } from './mega-menu/mega-menu.component';
-import { MegaMenuLinkComponent } from './mega-menu/mega-menu-link.component'
+import { MegaMenuLinkComponent } from './mega-menu/mega-menu-link.component';
 import { PortfolioWidgetComponent } from './portfolio-widget/portfolio-widget.component';
 import { StorylineWidgetComponent } from './storyline-widget/storyline-widget.component';
 import { ProductSliderComponent } from './product-slider/product-slider.component';

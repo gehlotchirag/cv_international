@@ -41,9 +41,6 @@ export class HomeComponent implements OnInit {
   )
   {
     this.children = this.homeService.getComponentsData();
-    // if(!this.cartService.isInitialized){
-    //   this.cartService.fetchCartDetails();
-    // }
   }
 
   ngOnInit(){

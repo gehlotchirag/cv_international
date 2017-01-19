@@ -9,8 +9,8 @@
 			<div class="product-name">{{ product.title }}</div>
 			<div class="product-price">
 				<span class="discounted-price">{{ product.discountedPrice | currency:'USD':true:'1.0-0' }}</span> 
-				<span class="actual-price"><s>{{ product.regularPrice | currency:'USD': true:'1.0-0' }}</s></span> 
-				<span class="discount">{{ product.discountPercentage | number:'3.1-5'}}</span>
+				<span class="actual-price" *ngIf="product.discountPercentage !== 0"><s>{{ product.regularPrice | currency:'USD': true:'1.0-0' }}</s></span> 
+				<span class="discount" *ngIf="product.discountPercentage !== 0">{{ product.discountPercentage | number:'1.1-5'}}%</span>
 			</div>
 		</div>
 	</a>

@@ -3,7 +3,7 @@
 # compiled output
 /dist
 /tmp
-
+webpack.records.json
 **/*.ngfactory.ts 
 **/*.css.shim.ts
 

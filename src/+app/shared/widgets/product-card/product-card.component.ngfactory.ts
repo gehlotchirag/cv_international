@@ -328,7 +328,7 @@ class _View_ProductCardComponent2 extends import3.AppView<any> {
     const valUnwrapper:any = new import1.ValueUnwrapper();
     this.detectContentChildrenChanges(throwOnChange);
     valUnwrapper.reset();
-    const currVal_2:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_number_1_0,(<_View_ProductCardComponent0>this.parent)._pipe_number_1.transform)(this.parent.context.product.discountPercentage,'1.0-0')),'%');
+    const currVal_2:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_number_1_0,(<_View_ProductCardComponent0>this.parent)._pipe_number_1.transform)(this.parent.context.product.discountPercentage,'1.0-0')),'% off');
     if ((valUnwrapper.hasWrappedValue || import2.checkBinding(throwOnChange,this._expr_2,currVal_2))) {
       this.renderer.setText(this._text_1,currVal_2);
       this._expr_2 = currVal_2;

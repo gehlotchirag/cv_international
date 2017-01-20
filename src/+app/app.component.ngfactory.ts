@@ -25,19 +25,18 @@ import * as import17 from '@angular/router/src/router_state';
 import * as import18 from '@angular/core/src/metadata/view';
 import * as import19 from '@angular/core/src/linker/component_factory';
 import * as import20 from './app.component.css.shim';
-import * as import21 from '@angular/core/src/linker/query_list';
-import * as import22 from './shared/services/cart-details.service';
-import * as import23 from './shared/widgets/header/header.component.ngfactory';
-import * as import24 from '../../node_modules/@angular/router/src/directives/router_outlet.ngfactory';
-import * as import25 from './shared/widgets/footer/footer.component.ngfactory';
-import * as import26 from '@angular/core/src/linker/component_factory_resolver';
-import * as import27 from './shared/widgets/mega-menu/mega-menu.component.ngfactory';
-import * as import28 from '@angular/router/src/router_outlet_map';
-import * as import29 from '@angular/core/src/linker/component_factory_resolver';
-import * as import30 from '@angular/core/src/linker/element_ref';
-import * as import31 from './shared/widgets/header/header.component';
-import * as import32 from '@angular/router/src/directives/router_outlet';
-import * as import33 from './shared/widgets/footer/footer.component';
+import * as import21 from './shared/services/cart-details.service';
+import * as import22 from './shared/widgets/header/header.component.ngfactory';
+import * as import23 from '../../node_modules/@angular/router/src/directives/router_outlet.ngfactory';
+import * as import24 from './shared/widgets/footer/footer.component.ngfactory';
+import * as import25 from '@angular/core/src/linker/component_factory_resolver';
+import * as import26 from './shared/widgets/mega-menu/mega-menu.component.ngfactory';
+import * as import27 from '@angular/router/src/router_outlet_map';
+import * as import28 from '@angular/core/src/linker/component_factory_resolver';
+import * as import29 from './shared/widgets/header/header.component';
+import * as import30 from '@angular/router/src/directives/router_outlet';
+import * as import31 from './shared/widgets/footer/footer.component';
+import * as import32 from '@angular/core/src/security';
 export class Wrapper_AppComponent {
   context:import0.AppComponent;
   changed:boolean;
@@ -114,38 +113,38 @@ export const AppComponentNgFactory:import19.ComponentFactory<import0.AppComponen
 const styles_AppComponent:any[] = [import20.styles];
 var renderType_AppComponent:import2.RenderComponentType = (null as any);
 class _View_AppComponent0 extends import1.AppView<import0.AppComponent> {
-  _viewQuery_footerContainer_0:import21.QueryList<any>;
   _el_0:any;
   /*private*/ _appEl_0:import3.AppElement;
   _ComponentFactoryResolver_0_4:any;
-  _CartDetailsService_0_5:import22.CartDetailsService;
-  _HeaderComponent_0_6:import23.Wrapper_HeaderComponent;
+  _CartDetailsService_0_5:import21.CartDetailsService;
+  _HeaderComponent_0_6:import22.Wrapper_HeaderComponent;
   _text_1:any;
   _el_2:any;
   _text_3:any;
   _el_4:any;
   /*private*/ _appEl_4:import3.AppElement;
-  _RouterOutlet_4_5:import24.Wrapper_RouterOutlet;
+  _RouterOutlet_4_5:import23.Wrapper_RouterOutlet;
   _text_5:any;
   _text_6:any;
   _el_7:any;
   _text_8:any;
   _el_9:any;
   /*private*/ _appEl_9:import3.AppElement;
-  _FooterComponent_9_4:import25.Wrapper_FooterComponent;
+  _FooterComponent_9_4:import24.Wrapper_FooterComponent;
   _text_10:any;
+  /*private*/ _expr_19:any;
   constructor(viewUtils:import9.ViewUtils,parentInjector:import10.Injector,declarationEl:import3.AppElement) {
     super(_View_AppComponent0,renderType_AppComponent,import11.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import12.ChangeDetectorStatus.CheckAlways);
+    this._expr_19 = import12.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import3.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
-    this._viewQuery_footerContainer_0 = new import21.QueryList<any>();
     this._el_0 = import9.createRenderElement(this.renderer,parentRenderNode,'cvi-header',import9.EMPTY_INLINE_ARRAY,(null as any));
     this._appEl_0 = new import3.AppElement(0,(null as any),this,this._el_0);
-    var compView_0:any = import23.viewFactory_HeaderComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._ComponentFactoryResolver_0_4 = new import26.CodegenComponentFactoryResolver([import27.MegaMenuComponentNgFactory],this.parentInjector.get(import26.ComponentFactoryResolver));
-    this._CartDetailsService_0_5 = new import22.CartDetailsService(this.parentInjector.get(import4.HttpClientService));
-    this._HeaderComponent_0_6 = new import23.Wrapper_HeaderComponent(this.parentInjector.get(import14.Router),this._ComponentFactoryResolver_0_4,this._CartDetailsService_0_5);
+    var compView_0:any = import22.viewFactory_HeaderComponent0(this.viewUtils,this.injector(0),this._appEl_0);
+    this._ComponentFactoryResolver_0_4 = new import25.CodegenComponentFactoryResolver([import26.MegaMenuComponentNgFactory],this.parentInjector.get(import25.ComponentFactoryResolver));
+    this._CartDetailsService_0_5 = new import21.CartDetailsService(this.parentInjector.get(import4.HttpClientService));
+    this._HeaderComponent_0_6 = new import22.Wrapper_HeaderComponent(this.parentInjector.get(import14.Router),this._ComponentFactoryResolver_0_4,this._CartDetailsService_0_5);
     this._appEl_0.initComponent(this._HeaderComponent_0_6.context,([] as any[]),compView_0);
     compView_0.create(this._HeaderComponent_0_6.context,([] as any[]),(null as any));
     this._text_1 = this.renderer.createText(parentRenderNode,'\n',(null as any));
@@ -153,21 +152,19 @@ class _View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     this._text_3 = this.renderer.createText(this._el_2,'\n	',(null as any));
     this._el_4 = import9.createRenderElement(this.renderer,this._el_2,'router-outlet',import9.EMPTY_INLINE_ARRAY,(null as any));
     this._appEl_4 = new import3.AppElement(4,2,this,this._el_4);
-    this._RouterOutlet_4_5 = new import24.Wrapper_RouterOutlet(this.parentInjector.get(import28.RouterOutletMap),this._appEl_4.vcRef,this.parentInjector.get(import29.ComponentFactoryResolver),(null as any));
+    this._RouterOutlet_4_5 = new import23.Wrapper_RouterOutlet(this.parentInjector.get(import27.RouterOutletMap),this._appEl_4.vcRef,this.parentInjector.get(import28.ComponentFactoryResolver),(null as any));
     this._text_5 = this.renderer.createText(this._el_2,'\n',(null as any));
     this._text_6 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     this._el_7 = import9.createRenderElement(this.renderer,parentRenderNode,'div',import9.EMPTY_INLINE_ARRAY,(null as any));
     this._text_8 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     this._el_9 = import9.createRenderElement(this.renderer,parentRenderNode,'cvi-footer',import9.EMPTY_INLINE_ARRAY,(null as any));
     this._appEl_9 = new import3.AppElement(9,(null as any),this,this._el_9);
-    var compView_9:any = import25.viewFactory_FooterComponent0(this.viewUtils,this.injector(9),this._appEl_9);
-    this._FooterComponent_9_4 = new import25.Wrapper_FooterComponent();
+    var compView_9:any = import24.viewFactory_FooterComponent0(this.viewUtils,this.injector(9),this._appEl_9);
+    this._FooterComponent_9_4 = new import24.Wrapper_FooterComponent();
     this._appEl_9.initComponent(this._FooterComponent_9_4.context,([] as any[]),compView_9);
     compView_9.create(this._FooterComponent_9_4.context,([] as any[]),(null as any));
     this._text_10 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     var disposable_0:Function = this.renderer.listenGlobal('window','scroll',this.eventHandler(this._handle_scroll_0_0.bind(this)));
-    this._viewQuery_footerContainer_0.reset([new import30.ElementRef(this._el_7)]);
-    this.context.footerContainer = this._viewQuery_footerContainer_0.first;
     this.init(([] as any[]),[
       this._el_0,
       this._text_1,
@@ -185,11 +182,11 @@ class _View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import26.ComponentFactoryResolver) && (0 === requestNodeIndex))) { return this._ComponentFactoryResolver_0_4; }
-    if (((token === import22.CartDetailsService) && (0 === requestNodeIndex))) { return this._CartDetailsService_0_5; }
-    if (((token === import31.HeaderComponent) && (0 === requestNodeIndex))) { return this._HeaderComponent_0_6.context; }
-    if (((token === import32.RouterOutlet) && (4 === requestNodeIndex))) { return this._RouterOutlet_4_5.context; }
-    if (((token === import33.FooterComponent) && (9 === requestNodeIndex))) { return this._FooterComponent_9_4.context; }
+    if (((token === import25.ComponentFactoryResolver) && (0 === requestNodeIndex))) { return this._ComponentFactoryResolver_0_4; }
+    if (((token === import21.CartDetailsService) && (0 === requestNodeIndex))) { return this._CartDetailsService_0_5; }
+    if (((token === import29.HeaderComponent) && (0 === requestNodeIndex))) { return this._HeaderComponent_0_6.context; }
+    if (((token === import30.RouterOutlet) && (4 === requestNodeIndex))) { return this._RouterOutlet_4_5.context; }
+    if (((token === import31.FooterComponent) && (9 === requestNodeIndex))) { return this._FooterComponent_9_4.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -201,6 +198,11 @@ class _View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     this.detectContentChildrenChanges(throwOnChange);
     this._HeaderComponent_0_6.detectChangesInHostProps(this,this._el_0,throwOnChange);
     this._RouterOutlet_4_5.detectChangesInHostProps(this,this._el_4,throwOnChange);
+    const currVal_19:any = this.context.footerContent;
+    if (import9.checkBinding(throwOnChange,this._expr_19,currVal_19)) {
+      this.renderer.setElementProperty(this._el_7,'innerHTML',this.viewUtils.sanitizer.sanitize(import32.SecurityContext.HTML,currVal_19));
+      this._expr_19 = currVal_19;
+    }
     this._FooterComponent_9_4.detectChangesInHostProps(this,this._el_9,throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }

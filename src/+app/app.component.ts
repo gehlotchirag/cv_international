@@ -1,4 +1,4 @@
-import { Component, HostListener, ViewChild, ElementRef} from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 
@@ -43,10 +43,10 @@ export class AppComponent {
       };
     }
   }
-  @ViewChild('footerContainer') footerContainer: ElementRef;
 
   public hasMegaMenu: boolean = false;
   public seoContent;
+  public footerContent;
   public currentUrl = '';
 
   constructor(private router: Router,
@@ -87,9 +87,7 @@ export class AppComponent {
 
   addSeoData() {
     if(typeof window !== 'undefined') {
-      let footerContent = this.seoContent['footer_content'];
       let self = this;
-      this.footerContainer.nativeElement.innerHTML = footerContent;
       Object.keys(this.seoContent).forEach(function(key) {
         if(key !== 'footer_content'){
           if(key === 'title') {
@@ -111,6 +109,7 @@ export class AppComponent {
   getSeoData(url){
     this.appService.getSeoContent(url).pluck('d').subscribe((data) => {
       this.seoContent = data;
+      this.footerContent = this.seoContent['footer_content'];
       this.addSeoData()
     });
   }

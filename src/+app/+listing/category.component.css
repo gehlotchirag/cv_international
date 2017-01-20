@@ -170,6 +170,8 @@
     font-size: 15px;
     text-transform: uppercase;
     margin-right: 5px;
+    margin: 0;
+    display: inline-block;
 }
 .sorting-type{
     position: absolute;

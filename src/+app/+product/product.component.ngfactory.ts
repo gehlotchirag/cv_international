@@ -1636,7 +1636,7 @@ class _View_ProductComponent15 extends import1.AppView<any> {
     const valUnwrapper:any = new import10.ValueUnwrapper();
     this.detectContentChildrenChanges(throwOnChange);
     valUnwrapper.reset();
-    const currVal_2:any = import7.interpolate(1,'',valUnwrapper.unwrap(import7.castByValue(this._pipe_number_0_0,(<_View_ProductComponent0>this.parent.parent)._pipe_number_0.transform)(this.parent.parent.context.products.discountPercentage,'2.1-2')),'% off');
+    const currVal_2:any = import7.interpolate(1,'',valUnwrapper.unwrap(import7.castByValue(this._pipe_number_0_0,(<_View_ProductComponent0>this.parent.parent)._pipe_number_0.transform)(this.parent.parent.context.products.discountPercentage,'1.0-0')),'% off');
     if ((valUnwrapper.hasWrappedValue || import7.checkBinding(throwOnChange,this._expr_2,currVal_2))) {
       this.renderer.setText(this._text_1,currVal_2);
       this._expr_2 = currVal_2;

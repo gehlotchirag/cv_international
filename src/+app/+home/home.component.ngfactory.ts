@@ -159,32 +159,7 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
   _el_28:any;
   /*private*/ _appEl_28:import3.AppElement;
   _text_29:any;
-  _el_30:any;
-  _text_31:any;
-  _el_32:any;
-  _text_33:any;
-  _el_34:any;
-  _text_35:any;
-  _el_36:any;
-  _el_37:any;
-  _text_38:any;
-  _text_39:any;
-  _text_40:any;
-  _el_41:any;
-  _text_42:any;
-  _el_43:any;
-  _text_44:any;
-  _el_45:any;
-  _text_46:any;
-  _text_47:any;
-  _el_48:any;
-  _text_49:any;
-  _text_50:any;
-  _text_51:any;
-  _text_52:any;
-  _text_53:any;
-  _text_54:any;
-  _text_55:any;
+  _text_30:any;
   constructor(viewUtils:import9.ViewUtils,parentInjector:import10.Injector,declarationEl:import3.AppElement) {
     super(_View_HomeComponent0,renderType_HomeComponent,import11.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import12.ChangeDetectorStatus.CheckAlways);
   }
@@ -243,33 +218,8 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
     this._text_27 = this.renderer.createText(this._el_0,'\n	',(null as any));
     this._el_28 = import9.createRenderElement(this.renderer,this._el_0,'div',import9.EMPTY_INLINE_ARRAY,(null as any));
     this._appEl_28 = new import3.AppElement(28,0,this,this._el_28);
-    this._text_29 = this.renderer.createText(this._el_0,'\n	',(null as any));
-    this._el_30 = import9.createRenderElement(this.renderer,this._el_0,'div',new import9.InlineArray2(2,'class','occupy mob-section'),(null as any));
-    this._text_31 = this.renderer.createText(this._el_30,'\n		',(null as any));
-    this._el_32 = import9.createRenderElement(this.renderer,this._el_30,'div',new import9.InlineArray2(2,'class','contain bg-white mob-bg-white home-section clearfix'),(null as any));
-    this._text_33 = this.renderer.createText(this._el_32,'\n			',(null as any));
-    this._el_34 = import9.createRenderElement(this.renderer,this._el_32,'div',new import9.InlineArray2(2,'class','section-header mob-section-heading'),(null as any));
-    this._text_35 = this.renderer.createText(this._el_34,'\n				',(null as any));
-    this._el_36 = import9.createRenderElement(this.renderer,this._el_34,'span',new import9.InlineArray2(2,'class','heading pull-left'),(null as any));
-    this._el_37 = import9.createRenderElement(this.renderer,this._el_36,'img',new import9.InlineArray2(2,'src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/ethnic-1.png'),(null as any));
-    this._text_38 = this.renderer.createText(this._el_36,' Craftsvilla - An Ethnic Destination',(null as any));
-    this._text_39 = this.renderer.createText(this._el_34,'\n			',(null as any));
-    this._text_40 = this.renderer.createText(this._el_32,'\n			',(null as any));
-    this._el_41 = import9.createRenderElement(this.renderer,this._el_32,'div',new import9.InlineArray2(2,'class','section-body mob-section-body'),(null as any));
-    this._text_42 = this.renderer.createText(this._el_41,'\n				',(null as any));
-    this._el_43 = import9.createRenderElement(this.renderer,this._el_41,'div',import9.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_44 = this.renderer.createText(this._el_43,'\n          			',(null as any));
-    this._el_45 = import9.createRenderElement(this.renderer,this._el_43,'p',import9.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_46 = this.renderer.createText(this._el_45,'Craftsvilla celebrates everything ethnic and is designed to capture the essence of India by connecting local artisans and designers directly to global customers. We believe in catering to the diverse preferences of our customers and ensuring a great online shopping experience. Craftsvilla.com helps customers discover and buy products that are not easily available to them today. We, at Craftsvilla — the largest online ethnic store, take pride in our roots. So, if you are looking for anything Indian that is top quality, yet affordable, Craftsvilla.com is the best online marketplace for you to shop from. We cater to the masses with an enviable collection of ethnic products including Sarees, Lehengas, Salwar Suits, Men’s Kurtas, Kurtis, Jewellery and Accessories.',(null as any));
-    this._text_47 = this.renderer.createText(this._el_43,'\n          			',(null as any));
-    this._el_48 = import9.createRenderElement(this.renderer,this._el_43,'p',import9.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_49 = this.renderer.createText(this._el_48,'Staying true to our commitment of taking Indian ethnic fashion to every corner of the world, we have launched the Craftsvilla shopping app for those who love to shop on the go! Craftsvilla.com is not just about a memorable shopping experience, it also offers customer-friendly services so that you can enjoy the best deals and awesome discounts on all products. Customer satisfaction is something we swear by and that is why we offer free shipping and CoD facilities on most of our products. We also ensure 100% security on payment gateways. We make online shopping a dream with multiple payment options, timely delivery and a prompt customer care service. We also offer reverse pick-up services and easy refund policies. So, hangout on Craftsvilla.com, your one-stop destination for ethnic shopping in India.',(null as any));
-    this._text_50 = this.renderer.createText(this._el_43,'\n        		',(null as any));
-    this._text_51 = this.renderer.createText(this._el_41,'\n			',(null as any));
-    this._text_52 = this.renderer.createText(this._el_32,'\n		',(null as any));
-    this._text_53 = this.renderer.createText(this._el_30,'\n	',(null as any));
-    this._text_54 = this.renderer.createText(this._el_0,'\n',(null as any));
-    this._text_55 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._text_29 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_30 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     this._viewQuery_content_0.reset([this._appEl_28.vcRef]);
     this.context.contentContainer = this._viewQuery_content_0.first;
     this.init(([] as any[]),[
@@ -303,32 +253,7 @@ class _View_HomeComponent0 extends import1.AppView<import0.HomeComponent> {
       this._text_27,
       this._el_28,
       this._text_29,
-      this._el_30,
-      this._text_31,
-      this._el_32,
-      this._text_33,
-      this._el_34,
-      this._text_35,
-      this._el_36,
-      this._el_37,
-      this._text_38,
-      this._text_39,
-      this._text_40,
-      this._el_41,
-      this._text_42,
-      this._el_43,
-      this._text_44,
-      this._el_45,
-      this._text_46,
-      this._text_47,
-      this._el_48,
-      this._text_49,
-      this._text_50,
-      this._text_51,
-      this._text_52,
-      this._text_53,
-      this._text_54,
-      this._text_55
+      this._text_30
     ]
     ,([] as any[]),([] as any[]));
     return (null as any);

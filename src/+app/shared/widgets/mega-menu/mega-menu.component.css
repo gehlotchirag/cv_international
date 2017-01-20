@@ -55,3 +55,7 @@ img.mega-menu-list-ico {
   margin-bottom: 14px;
   font-size: 11px;
 }
+.menu .menu-list .header {
+  font-size: 11px;
+  margin: 15px 0;
+}

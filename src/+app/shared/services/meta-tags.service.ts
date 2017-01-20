@@ -12,6 +12,9 @@ export class MetaService {
 
   private _getOrCreateMetaTag(name: string): HTMLElement {
     let el: HTMLElement = this.document.querySelector(`meta[name='${name}']`);
+    if(!el) {
+      el = this.document.querySelector(`meta[property='${name}']`);
+    }
     if (!el) {
       el = this.document.createElement('meta');
       el.setAttribute('name', name);
@@ -29,6 +32,25 @@ export class MetaService {
     titleElement.setAttribute('content', titleStr);
     ogTitleElement.setAttribute('content', titleStr);
     this.titleService.setTitle(titleStr);
+    return this;
+  }
+
+  _getOrCreateHrefLangTag(name: string){
+    let el: HTMLElement = this.document.querySelector(`link[hreflang="in"]`);
+    if (!el) {
+      el = this.document.createElement('link');
+      el.setAttribute('name', name);
+      el.setAttribute('rel', 'alternate');
+      el.setAttribute('hreflang', 'in');
+      this.document.head.appendChild(el);
+    }
+    return el;
+  }
+
+  setHrefLangTag(tag: string, value: string){
+    const tagElement = this._getOrCreateHrefLangTag(tag);
+    let tagStr = isDefined(value) ? value : '';
+    tagElement.setAttribute('href', tagStr);
     return this;
   }
 

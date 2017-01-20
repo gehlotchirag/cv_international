@@ -84,7 +84,7 @@
           <div class="price mob-section-body">
             <span class="discounted-price"  >${{products.discountedPrice}}</span>
             &nbsp;<span class="actual-price" *ngIf="isRegularPriceMore"><s>${{products.regularPrice}}</s></span>
-            &nbsp;<span class="discount green"  *ngIf="isDiscountPercVesible">{{products.discountPercentage | number:'2.1-2'}}% off</span>
+            &nbsp;<span class="discount green"  *ngIf="isDiscountPercVesible">{{products.discountPercentage | number:'1.0-0'}}% off</span>
             <!-- &nbsp;<span class="discount green"  *ngIf="isDiscountPercVesible">{{products.discountPercentage | currency:'USD':true:'1.2-2'}}% off</span> -->
             <span class="pull-right details-wishlist-container" (click)="addWish($event)" style="display:none;"><img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/wishlist-product.png" class="img-responsive wishlist-details-page inline mob-inline" > Add to Wishlist</span>
           </div>

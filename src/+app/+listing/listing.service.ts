@@ -48,7 +48,7 @@ export class ListingService {
     if(appliedFilterObj) {
       categoryId = appliedFilterObj.id;
       let filter = paramsObj.filters ? paramsObj.filters : {};
-      filter[appliedFilterObj.type] ? filter[appliedFilterObj.type].push(appliedFilterObj.name) : filter[appliedFilterObj.type] = [appliedFilterObj.name];
+      filter[appliedFilterObj.type] ? filter[appliedFilterObj.type].push(appliedFilterObj.value.name) : filter[appliedFilterObj.type] = [appliedFilterObj.value.name];
       paramsObj.filters = filter;
     }
     if(categoryId || isPremiumUrl){
@@ -76,7 +76,7 @@ export class ListingService {
   }
 
   getFilterList(paramObj: Object, url:string) {
-    this.filtersUrl = 'api/filters';
+    this.filtersUrl = 'api/ufilters';
     let categoryId = categoryFilterMap.categoriesMap[url] ? categoryFilterMap.categoriesMap[url].id : null;
     let appliedFilterObj = this.filtersMap[url.toLowerCase()] ? this.filtersMap[url.toLowerCase()] : null;
     let searchObj = this.getParamsObj(paramObj);
@@ -85,7 +85,7 @@ export class ListingService {
     if(appliedFilterObj) {
       categoryId = appliedFilterObj.id;
       let filter = paramsObj.filters ? paramsObj.filters : {};
-      filter[appliedFilterObj.type] ? filter[appliedFilterObj.type].push(appliedFilterObj.name) : filter[appliedFilterObj.type] = [appliedFilterObj.name];
+      filter[appliedFilterObj.type] ? filter[appliedFilterObj.type].push(appliedFilterObj.value.name) : filter[appliedFilterObj.type] = [appliedFilterObj.value.name];
       paramsObj.filters = filter;
     }
     

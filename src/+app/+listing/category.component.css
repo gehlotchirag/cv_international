@@ -340,6 +340,9 @@
 	.filter-box{
 	    padding: 10px 10px 0px 10px;
 	}
+    .filter-box-link{
+        color: #000;
+    }
 	.color-filter {
 	    margin: 0px 10px 0px 10px;
 	}

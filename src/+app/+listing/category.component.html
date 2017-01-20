@@ -90,7 +90,7 @@
 			<img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/filter.svg" class="filter-ico pull-left">
 			<div class="sort-filter-text pull-left col-xs-9">
 				<div class="sort-filter-header">Filter</div>
-				<p class="sort-filter-status">{{ appliedFilter['name'] }}</p>
+				<p class="sort-filter-status">{{ appliedFilter }}</p>
 			</div>
 		</div>
 	</div>
@@ -153,8 +153,8 @@
 			</div>
 			<div *ngIf="selectedFilterCategory.key !== 'price'">
 				<div class="applied-filter" *ngIf="filterData[selectedFilterCategory.key].applied.length > 0">
-					<div *ngFor="let appliedfilter of filterData[selectedFilterCategory.key].applied">
-						<a class="filter-box clearfix" href="{{appliedfilter.url}}" (click)="deselectFiltersMobile($event,selectedFilterCategory, appliedfilter)">
+					<div *ngFor="let appliedfilter of filterData[selectedFilterCategory.key].applied" class="filter-box">
+						<a class="filter-box-link clearfix" href="{{appliedfilter.url}}" (click)="deselectFiltersMobile($event,selectedFilterCategory, appliedfilter)">
 							<p class="filter-checkbox pull-left"></p>
 							<div class="pull-left" [style.background-color] = "selectedFilterCategory.key.toLowerCase() === 'color' ? appliedfilter : 'transparent'" [ngClass]="{'color-filter' : selectedFilterCategory.key.toLowerCase() === 'color', 'multicolor-filter' : appliedfilter['name'].toLowerCase() === 'multicolor', 'pastelcolor-filter' : appliedfilter['name'].toLowerCase() === 'pastel', 'whitecolor-filter' : appliedfilter['name'].toLowerCase() === 'white'}"></div>
 							<p class="filter-name pull-left">{{appliedfilter['name']}}</p>
@@ -162,8 +162,8 @@
 					</div>
 				</div>
 				<div class="available-filter" *ngIf="filterData[selectedFilterCategory.key].available.length > 0">
-					<div *ngFor="let availablefilter of filterData[selectedFilterCategory.key].available">
-						<a class="filter-box clearfix" href="{{availablefilter.url}}" (click)="selectFiltersMobile($event,selectedFilterCategory, availablefilter)">
+					<div *ngFor="let availablefilter of filterData[selectedFilterCategory.key].available" class="filter-box">
+						<a class="filter-box-link clearfix" href="{{availablefilter.url}}" (click)="selectFiltersMobile($event,selectedFilterCategory, availablefilter)">
 							<p class="filter-checkbox pull-left"></p>
 							<div class="pull-left" [style.background-color] = "selectedFilterCategory.key.toLowerCase() === 'color' ? availablefilter['name'] : 'transparent'" [ngClass]="{'color-filter' : selectedFilterCategory.key.toLowerCase() === 'color', 'multicolor-filter' : availablefilter['name'].toLowerCase() === 'multicolor', 'pastelcolor-filter' : availablefilter['name'].toLowerCase() === 'pastel', 'whitecolor-filter' : availablefilter['name'].toLowerCase() === 'white'}"></div>
 							<p class="filter-name pull-left">{{availablefilter['name']}}</p>

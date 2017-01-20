@@ -5,17 +5,17 @@
 			<div class="filter-list">
 				<div class="applied-filter" *ngIf="filterData['price'].applied.length > 0">
 					<div *ngFor="let appliedfilter of filterData['price'].applied">
-						<div class="filter-box clearfix" (click)="deselectFilter(priceFilter, appliedfilter)">
+						<div class="filter-box clearfix" (click)="deselectFilter($event,priceFilter, appliedfilter)">
 							<p class="filter-checkbox"></p>
-							<p class="filter-name">{{appliedfilter.name}}</p>
+							<p class="filter-name">{{appliedfilter['name']}}</p>
 						</div>
 					</div>
 				</div>
 				<div class="available-filter" *ngIf="filterData['price'].available.length > 0">
 					<div *ngFor="let availablefilter of filterData['price'].available">
-						<div class="filter-box clearfix" (click)="selectFilter(priceFilter, availablefilter)">
+						<div class="filter-box clearfix" (click)="selectFilter($event,priceFilter, availablefilter)">
 							<p class="filter-checkbox"></p>
-							<p class="filter-name">{{availablefilter.name}}</p>
+							<p class="filter-name">{{availablefilter['name']}}</p>
 						</div>
 					</div>
 				</div>
@@ -26,20 +26,20 @@
 			<div class="filter-list" [style.height] = "data.key.toLowerCase() === 'color' ? '145px' : 'auto'">
 				<div class="applied-filter" *ngIf="filterData[data.key].applied.length > 0">
 					<div *ngFor="let appliedfilter of filterData[data.key].applied">
-						<div class="filter-box clearfix" (click)="deselectFilter(data, appliedfilter)" [style.background-color] = "data.key.toLowerCase() === 'color' ? appliedfilter : 'transparent'" [ngClass]="{'color-filter' : data.key.toLowerCase() === 'color', 'multicolor-filter' : appliedfilter.toLowerCase() === 'multicolor', 'pastelcolor-filter' : appliedfilter.toLowerCase() === 'pastel', 'whitecolor-filter' : appliedfilter.toLowerCase() === 'white'}">
+						<a class="filter-box clearfix" href="{{appliedfilter.url}}" (click)="deselectFilter($event,data, appliedfilter)" [style.background-color] = "data.key.toLowerCase() === 'color' ? appliedfilter['name'] : 'transparent'" [ngClass]="{'color-filter' : data.key.toLowerCase() === 'color', 'multicolor-filter' : appliedfilter['name'].toLowerCase() === 'multicolor', 'pastelcolor-filter' : appliedfilter['name'].toLowerCase() === 'pastel', 'whitecolor-filter' : appliedfilter['name'].toLowerCase() === 'white'}">
 							<p class="filter-checkbox"></p>
-							<p class="filter-name" [ngClass]="{'hidden' : data.key.toLowerCase() === 'color'}	">{{appliedfilter}}</p>
-							<div class="color-tooltip" *ngIf="data.key.toLowerCase() === 'color'">{{appliedfilter}}</div>
-						</div>
+							<p class="filter-name" [ngClass]="{'hidden' : data.key.toLowerCase() === 'color'}	">{{appliedfilter['name']}}</p>
+							<div class="color-tooltip" *ngIf="data.key.toLowerCase() === 'color'">{{appliedfilter['name']}}</div>
+						</a>
 					</div>
 				</div>
 				<div class="available-filter" *ngIf="filterData[data.key].available.length > 0">
 					<div *ngFor="let availablefilter of filterData[data.key].available">
-						<div class="filter-box clearfix" (click)="selectFilter(data, availablefilter)" [style.background-color] = "data.key.toLowerCase() === 'color' ? availablefilter : 'transparent'" [ngClass]="{'color-filter' : data.key.toLowerCase() === 'color', 'multicolor-filter' : availablefilter.toLowerCase() === 'multicolor', 'pastelcolor-filter' : availablefilter.toLowerCase() === 'pastel', 'whitecolor-filter' : availablefilter.toLowerCase() === 'white'}">
+						<a class="filter-box clearfix" href="{{availablefilter.url}}" (click)="selectFilter($event,data, availablefilter)" [style.background-color] = "data.key.toLowerCase() === 'color' ? availablefilter['name'] : 'transparent'" [ngClass]="{'color-filter' : data.key.toLowerCase() === 'color', 'multicolor-filter' : availablefilter['name'].toLowerCase() === 'multicolor', 'pastelcolor-filter' : availablefilter['name'].toLowerCase() === 'pastel', 'whitecolor-filter' : availablefilter['name'].toLowerCase() === 'white'}">
 							<p class="filter-checkbox"></p>
-							<p class="filter-name" [ngClass]="{'hidden' : data.key.toLowerCase() === 'color'}">{{availablefilter}}</p>
-							<div class="color-tooltip" *ngIf="data.key.toLowerCase() === 'color'">{{availablefilter}}</div>
-						</div>
+							<p class="filter-name" [ngClass]="{'hidden' : data.key.toLowerCase() === 'color'}">{{availablefilter['name']}}</p>
+							<div class="color-tooltip" *ngIf="data.key.toLowerCase() === 'color'">{{availablefilter['name']}}</div>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -66,10 +66,10 @@
 		</div>
 		<div class="applied-filter-container clearfix visible-lg visible-md" *ngIf="appliedFilter.length > 0">
 			<div class="applied-filter-list pull-left" *ngIf="filterData['price'].applied.length > 0">
-				<span *ngFor="let appliedfilter of filterData['price'].applied" class="selected-filter" (click)="deselectFilter(priceFilter, appliedfilter)">{{appliedfilter.name}}</span>
+				<span *ngFor="let appliedfilter of filterData['price'].applied" class="selected-filter" (click)="deselectFilter($event,priceFilter, appliedfilter)">{{appliedfilter['name']}}</span>
 			</div>
 			<div class="applied-filter-list pull-left" *ngFor="let data of recievedFilter | keyvalue">
-				<span *ngFor="let appliedfilter of filterData[data.key].applied" class="selected-filter" (click)="deselectFilter(data, appliedfilter)">{{appliedfilter}}</span>
+				<span *ngFor="let appliedfilter of filterData[data.key].applied" class="selected-filter" (click)="deselectFilter($event,data, appliedfilter)">{{appliedfilter['name']}}</span>
 			</div>
 			<span class="clear-filters selected-filter" (click)="clearFilters()">Clear All</span>
 		</div>
@@ -90,7 +90,7 @@
 			<img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/filter.svg" class="filter-ico pull-left">
 			<div class="sort-filter-text pull-left col-xs-9">
 				<div class="sort-filter-header">Filter</div>
-				<p class="sort-filter-status">{{ appliedFilter.toString() }}</p>
+				<p class="sort-filter-status">{{ appliedFilter['name'] }}</p>
 			</div>
 		</div>
 	</div>
@@ -122,13 +122,13 @@
 			<div class="filters-list" (click)="selectFilterType(priceFilter)">
 				<p class="filter-type">{{priceFilter.key}}</p>
 				<div class="applied-filter clearfix" *ngIf="filterData[priceFilter.key].applied.length > 0">
-					<small class="filter-name pull-left" *ngFor="let appliedfilter of filterData[priceFilter.key].applied">{{appliedfilter.name}}</small>
+					<small class="filter-name pull-left" *ngFor="let appliedfilter of filterData[priceFilter.key].applied">{{appliedfilter['name']}}</small>
 				</div>
 			</div>
 			<div class="filters-list" *ngFor="let data of recievedFilter | keyvalue" (click)="selectFilterType(data)">
 				<p class="filter-type">{{data.key}}</p>
 				<div class="applied-filter clearfix" *ngIf="filterData[data.key].applied.length > 0">
-					<small class="filter-name pull-left" *ngFor="let appliedfilter of filterData[data.key].applied">{{appliedfilter}}</small>
+					<small class="filter-name pull-left" *ngFor="let appliedfilter of filterData[data.key].applied">{{appliedfilter['name']}}</small>
 				</div>
 			</div>
 		</div>
@@ -136,17 +136,17 @@
 			<div *ngIf="selectedFilterCategory.key === 'price'">
 				<div class="applied-filter" *ngIf="filterData['price'].applied.length > 0">
 					<div *ngFor="let appliedfilter of filterData['price'].applied">
-						<div class="filter-box clearfix" (click)="deselectFiltersMobile(priceFilter, appliedfilter)">
+						<div class="filter-box clearfix" (click)="deselectFiltersMobile($event,priceFilter, appliedfilter)">
 							<p class="filter-checkbox"></p>
-							<p class="filter-name">{{appliedfilter.name}}</p>
+							<p class="filter-name">{{appliedfilter['name']}}</p>
 						</div>
 					</div>
 				</div>
 				<div class="available-filter" *ngIf="filterData['price'].available.length > 0">
 					<div *ngFor="let availablefilter of filterData['price'].available">
-						<div class="filter-box clearfix" (click)="selectFiltersMobile(priceFilter, availablefilter)">
+						<div class="filter-box clearfix" (click)="selectFiltersMobile($event,priceFilter, availablefilter)">
 							<p class="filter-checkbox"></p>
-							<p class="filter-name">{{availablefilter.name}}</p>
+							<p class="filter-name">{{availablefilter['name']}}</p>
 						</div>
 					</div>
 				</div>
@@ -154,20 +154,20 @@
 			<div *ngIf="selectedFilterCategory.key !== 'price'">
 				<div class="applied-filter" *ngIf="filterData[selectedFilterCategory.key].applied.length > 0">
 					<div *ngFor="let appliedfilter of filterData[selectedFilterCategory.key].applied">
-						<div class="filter-box clearfix" (click)="deselectFiltersMobile(selectedFilterCategory, appliedfilter)">
+						<a class="filter-box clearfix" href="{{appliedfilter.url}}" (click)="deselectFiltersMobile($event,selectedFilterCategory, appliedfilter)">
 							<p class="filter-checkbox pull-left"></p>
-							<div class="pull-left" [style.background-color] = "selectedFilterCategory.key.toLowerCase() === 'color' ? appliedfilter : 'transparent'" [ngClass]="{'color-filter' : selectedFilterCategory.key.toLowerCase() === 'color', 'multicolor-filter' : appliedfilter.toLowerCase() === 'multicolor', 'pastelcolor-filter' : appliedfilter.toLowerCase() === 'pastel', 'whitecolor-filter' : appliedfilter.toLowerCase() === 'white'}"></div>
-							<p class="filter-name pull-left">{{appliedfilter}}</p>
-						</div>
+							<div class="pull-left" [style.background-color] = "selectedFilterCategory.key.toLowerCase() === 'color' ? appliedfilter : 'transparent'" [ngClass]="{'color-filter' : selectedFilterCategory.key.toLowerCase() === 'color', 'multicolor-filter' : appliedfilter['name'].toLowerCase() === 'multicolor', 'pastelcolor-filter' : appliedfilter['name'].toLowerCase() === 'pastel', 'whitecolor-filter' : appliedfilter['name'].toLowerCase() === 'white'}"></div>
+							<p class="filter-name pull-left">{{appliedfilter['name']}}</p>
+						</a>
 					</div>
 				</div>
 				<div class="available-filter" *ngIf="filterData[selectedFilterCategory.key].available.length > 0">
 					<div *ngFor="let availablefilter of filterData[selectedFilterCategory.key].available">
-						<div class="filter-box clearfix" (click)="selectFiltersMobile(selectedFilterCategory, availablefilter)">
+						<a class="filter-box clearfix" href="{{availablefilter.url}}" (click)="selectFiltersMobile($event,selectedFilterCategory, availablefilter)">
 							<p class="filter-checkbox pull-left"></p>
-							<div class="pull-left" [style.background-color] = "selectedFilterCategory.key.toLowerCase() === 'color' ? availablefilter : 'transparent'" [ngClass]="{'color-filter' : selectedFilterCategory.key.toLowerCase() === 'color', 'multicolor-filter' : availablefilter.toLowerCase() === 'multicolor', 'pastelcolor-filter' : availablefilter.toLowerCase() === 'pastel', 'whitecolor-filter' : availablefilter.toLowerCase() === 'white'}"></div>
-							<p class="filter-name pull-left">{{availablefilter}}</p>
-						</div>
+							<div class="pull-left" [style.background-color] = "selectedFilterCategory.key.toLowerCase() === 'color' ? availablefilter['name'] : 'transparent'" [ngClass]="{'color-filter' : selectedFilterCategory.key.toLowerCase() === 'color', 'multicolor-filter' : availablefilter['name'].toLowerCase() === 'multicolor', 'pastelcolor-filter' : availablefilter['name'].toLowerCase() === 'pastel', 'whitecolor-filter' : availablefilter['name'].toLowerCase() === 'white'}"></div>
+							<p class="filter-name pull-left">{{availablefilter['name']}}</p>
+						</a>
 					</div>
 				</div>
 			</div>

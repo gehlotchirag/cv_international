@@ -220,12 +220,18 @@ export class CategoryComponent implements OnInit, OnDestroy{
         Object.keys(params['filters']).forEach(function(key) {
           let isPriceFilter = (key === 'price');
           if(self.filterData[key] && !isPriceFilter) {
-            self.filterData[key]["applied"] = params['filters'][key];
-            self.appliedFilter = self.appliedFilter.concat(params['filters'][key]);
+            let _paramArr = params['filters'][key];
+            _paramArr.forEach(function (filter) {
+              let appliedFilterObj = self.recievedFilter[key].filter(function ( obj ) {
+                return obj.name ===  filter;
+              })[0];
+              self.filterData[key]["applied"] ? self.filterData[key]["applied"].push(appliedFilterObj) : [appliedFilterObj];
+            })
+            self.appliedFilter = self.appliedFilter.concat(params['filters'][key]['name']);
             for (var i = 0; i < self.filterData[key]["applied"].length; ++i) {
               let tempFilter = self.filterData[key]["applied"][i]
               self.filterData[key]["available"] = self.filterData[key]["available"].filter(function (element) {
-                return element !== tempFilter
+                return JSON.stringify(element) !== JSON.stringify(tempFilter)
               })
             }
           } else if(isPriceFilter) { 
@@ -276,15 +282,9 @@ export class CategoryComponent implements OnInit, OnDestroy{
       this.filterData[filters.key]["available"] = filters.value;
       for (var i = 0; i < this.filterData[filters.key]["applied"].length; ++i) {
         let tempFilter = this.filterData[filters.key]["applied"][i]
-        if(isPriceFilter) { 
-          this.filterData[filters.key]["available"] = this.filterData[filters.key]["available"].filter(function (element) {
-            return JSON.stringify(element) !== JSON.stringify(tempFilter)
-          })
-        } else {
-           this.filterData[filters.key]["available"] = this.filterData[filters.key]["available"].filter(function (element) {
-            return element !== tempFilter 
-          }) 
-        }
+        this.filterData[filters.key]["available"] = this.filterData[filters.key]["available"].filter(function (element) {
+          return JSON.stringify(element) !== JSON.stringify(tempFilter)
+        })
       }
     }else{
       this.appliedFilter = [];
@@ -298,16 +298,17 @@ export class CategoryComponent implements OnInit, OnDestroy{
       this.filterData['price']["available"] = this.priceFilter['value'];
       if(isFilterUrl) { 
         let filterObj = this.filtersMap[url];
-        this.appliedFilter.push(filterObj.name);
-        this.filterData[filterObj.type]["applied"].push(filterObj.name);
+        this.appliedFilter.push(filterObj.value.name);
+        this.filterData[filterObj.type]["applied"].push(filterObj.value);
         this.filterData[filterObj.type]["available"] = this.filterData[filterObj.type]["available"].filter(function (element) {
-          return element !== filterObj.name 
+          return JSON.stringify(element) !== JSON.stringify(filterObj.value) 
         })
       }
     }
   }
 
-  selectFilter(filters: any, appliedFilter){
+  selectFilter(event, filters: any, appliedFilter){
+    event.preventDefault();
     let params = this.queryParams['params'] ? JSON.parse(this.queryParams['params']) : {};
     let filterObj = params['filters'] ? params['filters'] : {};
     let isPriceFilter = (filters.key === 'price');
@@ -315,17 +316,17 @@ export class CategoryComponent implements OnInit, OnDestroy{
     let url = this.getPageUrl();
     let isFilterUrl = this.filtersMap[url] ? true : false;
     let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
-    let filterString = isPriceFilter ? "" + filters.key + ":" + JSON.stringify(filter) : "" + filters.key + ":" + filter;
+    let filterString = "" + filters.key + ":" + JSON.stringify(filter.name);
     this.filterData[filters.key]["applied"].push(appliedFilter);
     this.queryParams['page'] = 1;
-    if(this.appliedFilter.length === 0 && !isFilterUrl && !isPremiumUrl && !isPriceFilter) {
+    if(this.appliedFilter.length === 0 && !isFilterUrl && !isPremiumUrl && !isPriceFilter && appliedFilter.url !== '#') {
       this.navigateToFilterUrl(appliedFilter);
     }else{
-      isPriceFilter ? this.appliedFilter.push(JSON.stringify(appliedFilter.name)) : this.appliedFilter.push(appliedFilter);
+      this.appliedFilter.push(appliedFilter.name);
       if(isPriceFilter) { 
         filterObj[filters.key] ? filterObj[filters.key].push(filter.value) : filterObj[filters.key] = [filter.value];
       } else {
-        filterObj[filters.key] ? filterObj[filters.key].push(filter) : filterObj[filters.key] = [filter];
+        filterObj[filters.key] ? filterObj[filters.key].push(filter.name) : filterObj[filters.key] = [filter.name];
       }
       params['filters'] = filterObj;
       this.queryParams['params'] = JSON.stringify(params)
@@ -340,25 +341,24 @@ export class CategoryComponent implements OnInit, OnDestroy{
     }
   }
 
-  deselectFilter(filters: any, removedFilter){
+  deselectFilter(event, filters: any, removedFilter){
+    event.preventDefault();
     let isPriceFilter = (filters.key === 'price');
     let filter = removedFilter;
-    let valueIndex = this.filterData[filters.key]["applied"].indexOf(removedFilter);
-    let appliedFilterIndex = !isPriceFilter ? this.appliedFilter.indexOf(removedFilter) : this.appliedFilter.indexOf(JSON.stringify(removedFilter.name))
+    let appliedFilterIndex = this.appliedFilter.indexOf(removedFilter.name)
     let params = this.queryParams['params'] ? JSON.parse(this.queryParams['params']) : {};
     let filterArr = params['filters'] ? params['filters'][filters.key] : [];
-    let paramFilterIndex = filterArr ? filterArr.indexOf(filter) : -1;
+    let paramFilterIndex = filterArr ? filterArr.indexOf(filter.name) : -1;
     let url = this.getPageUrl();
     let isFilterUrl = this.filtersMap[url] ? true : false;
     let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
 
     if (appliedFilterIndex > -1) this.appliedFilter.splice(appliedFilterIndex, 1);
+    this.filterData[filters.key]["applied"] = this.filterData[filters.key]["applied"].filter(function (element) {
+      return JSON.stringify(element) !== JSON.stringify(removedFilter) 
+    })
 
     if(isPriceFilter) { 
-      let tempFilter = removedFilter;
-      this.filterData[filters.key]["applied"] = this.filterData[filters.key]["applied"].filter(function (element) {
-        return JSON.stringify(element) !== JSON.stringify(tempFilter) 
-      })
       for (var i = 0; i < filterArr.length; ++i) {
         let filterVal = JSON.stringify(filterArr[i]);
         if(filterVal === JSON.stringify(removedFilter.value)) { 
@@ -366,7 +366,6 @@ export class CategoryComponent implements OnInit, OnDestroy{
         }
       }
     } else {
-      if (valueIndex > -1) this.filterData[filters.key]["applied"].splice(valueIndex, 1);
       if(paramFilterIndex > -1)filterArr.splice(paramFilterIndex, 1);
     }
 
@@ -379,7 +378,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     }
     this.queryParams['params'] = JSON.stringify(params)
     this.queryParams['page'] = 1;
-    if(this.appliedFilter.length === 0 && isFilterUrl && !isPremiumUrl && !isPriceFilter) {
+    if(this.appliedFilter.length === 0 && isFilterUrl) {
       this.navigateToCategoryUrl();
     }else{
       this.manageFilterData(filters, true);
@@ -388,25 +387,22 @@ export class CategoryComponent implements OnInit, OnDestroy{
   }
 
 
-  selectFiltersMobile(filters: any, appliedFilter){
+  selectFiltersMobile(event, filters: any, appliedFilter){
+    event.preventDefault();
     let isPriceFilter = (filters.key === 'price');
     this.filterData[filters.key]["applied"].push(appliedFilter);
-    isPriceFilter ? this.appliedFilter.push(JSON.stringify(appliedFilter.name)) : this.appliedFilter.push(appliedFilter);
+    this.appliedFilter.push(JSON.stringify(appliedFilter.name));
     this.manageFilterData(filters, true);
   }
 
-  deselectFiltersMobile(filters: any, removedFilter){
+  deselectFiltersMobile(event, filters: any, removedFilter){
+    event.preventDefault();
     let isPriceFilter = (filters.key === 'price');
-    let valueIndex = this.filterData[filters.key]["applied"].indexOf(removedFilter);
-    let appliedFilterIndex = !isPriceFilter ? this.appliedFilter.indexOf(removedFilter) : this.appliedFilter.indexOf(JSON.stringify(removedFilter.name));
-    if (valueIndex > -1) this.filterData[filters.key]["applied"].splice(valueIndex, 1);
+    let appliedFilterIndex = this.appliedFilter.indexOf(JSON.stringify(removedFilter.name));
     if (appliedFilterIndex > -1) this.appliedFilter.splice(appliedFilterIndex, 1);
-    if(isPriceFilter) { 
-      let tempFilter = removedFilter;
-      this.filterData[filters.key]["applied"] = this.filterData[filters.key]["applied"].filter(function (element) {
-        return JSON.stringify(element) !== JSON.stringify(tempFilter) 
-      })
-    }
+    this.filterData[filters.key]["applied"] = this.filterData[filters.key]["applied"].filter(function (element) {
+      return JSON.stringify(element) !== JSON.stringify(removedFilter) 
+    })
     this.manageFilterData(filters, true);
   }
 
@@ -475,7 +471,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
         if(self.filterData[key]['applied'].length > 0){
           self.filterData[key]['applied'].forEach( function (data) {
             let filter = data;
-            filterObj[key] ? filterObj[key].push(filter) : filterObj[key] = [filter];
+            filterObj[key] ? filterObj[key].push(filter.name) : filterObj[key] = [filter.name];
           })
         }
       }
@@ -490,7 +486,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     let obj =  JSON.parse(this.queryParams['params']).filters;
     let filterString = "";
     Object.keys(obj).forEach(function(key, index) {
-      filterString = "" + filterString + key + ":" + obj[key].toString() + "|";
+      filterString = "" + filterString + key + ":" + obj[key]['name'] + "|";
     });
     if(typeof _satellite != 'undefined') {
       digitalData = {
@@ -531,9 +527,9 @@ export class CategoryComponent implements OnInit, OnDestroy{
   navigateToFilterUrl(appliedFilter){
     let _urlArr = this.router.url.split('?')[0].split('/');
     let category = _urlArr[_urlArr.length - 1];
-    let url = '/' + category + '/' + appliedFilter + '-' + category;
+    let url = '/' + category + '/' + appliedFilter.name + '-' + category;
     let breadcrumbObj:Object = {};
-    breadcrumbObj["name"] = appliedFilter + ' ' + category;;
+    breadcrumbObj["name"] = appliedFilter.name + ' ' + category;;
     breadcrumbObj["link"] = "";
     this.pageBreadcrumbs.push(breadcrumbObj);
 

@@ -50,7 +50,6 @@ class ProductModuleInjector extends import0.NgModuleInjector<import1.ProductModu
     super(parent,[
       import12.ProductComponentNgFactory,
       import12.ProductComponentNgFactory,
-      import12.ProductComponentNgFactory,
       import13.MegaMenuComponentNgFactory,
       import14.MegaMenuLinkComponentNgFactory,
       import15.AnnouncementWidgetComponentNgFactory,
@@ -72,13 +71,6 @@ class ProductModuleInjector extends import0.NgModuleInjector<import1.ProductModu
   }
   get _ROUTES_8():any[] {
       if ((this.__ROUTES_8 == (null as any))) { (this.__ROUTES_8 = [[
-        {
-          path: 'product/:id',
-          component: import26.ProductComponent,
-          pathMatch: 'full',
-          resolve: {product: import10.ProductDetailResolve}
-        }
-        ,
         {
           path: 'shop/:id',
           component: import26.ProductComponent,

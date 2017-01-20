@@ -17,15 +17,18 @@ import * as import9 from '@angular/core/src/linker/component_factory';
 import * as import10 from './product-card.component.css.shim';
 import * as import11 from '../../../../../node_modules/@angular/router/src/directives/router_link.ngfactory';
 import * as import12 from '../../lazyload-image/lazyload-image.directive.ngfactory';
-import * as import13 from '@angular/common/src/pipes/number_pipe';
-import * as import14 from '@angular/router/src/router';
-import * as import15 from '@angular/router/src/router_state';
-import * as import16 from '@angular/common/src/location/location_strategy';
-import * as import17 from '@angular/core/src/linker/element_ref';
-import * as import18 from '@angular/core/src/zone/ng_zone';
-import * as import19 from '@angular/core/src/i18n/tokens';
-import * as import20 from '../../lazyload-image/lazyload-image.directive';
-import * as import21 from '@angular/router/src/directives/router_link';
+import * as import13 from '../../../../../node_modules/@angular/common/src/directives/ng_if.ngfactory';
+import * as import14 from '@angular/common/src/pipes/number_pipe';
+import * as import15 from '@angular/router/src/router';
+import * as import16 from '@angular/router/src/router_state';
+import * as import17 from '@angular/common/src/location/location_strategy';
+import * as import18 from '@angular/core/src/linker/element_ref';
+import * as import19 from '@angular/core/src/zone/ng_zone';
+import * as import20 from '@angular/core/src/linker/template_ref';
+import * as import21 from '@angular/core/src/i18n/tokens';
+import * as import22 from '../../lazyload-image/lazyload-image.directive';
+import * as import23 from '@angular/common/src/directives/ng_if';
+import * as import24 from '@angular/router/src/directives/router_link';
 export class Wrapper_ProductCardComponent {
   context:import0.ProductCardComponent;
   changed:boolean;
@@ -116,32 +119,29 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
   _el_14:any;
   _text_15:any;
   _text_16:any;
-  _el_17:any;
-  _el_18:any;
-  _text_19:any;
+  _anchor_17:any;
+  /*private*/ _appEl_17:import5.AppElement;
+  _TemplateRef_17_5:any;
+  _NgIf_17_6:import13.Wrapper_NgIf;
+  _text_18:any;
+  _anchor_19:any;
+  /*private*/ _appEl_19:import5.AppElement;
+  _TemplateRef_19_5:any;
+  _NgIf_19_6:import13.Wrapper_NgIf;
   _text_20:any;
-  _el_21:any;
+  _text_21:any;
   _text_22:any;
   _text_23:any;
   _text_24:any;
-  _text_25:any;
-  _text_26:any;
-  _text_27:any;
-  /*private*/ _expr_30:any;
-  /*private*/ _expr_31:any;
-  _pipe_currency_0:import13.CurrencyPipe;
-  _pipe_currency_0_0:any;
+  /*private*/ _expr_33:any;
   /*private*/ _expr_34:any;
-  _pipe_currency_0_1:any;
-  /*private*/ _expr_36:any;
-  _pipe_number_1:import13.DecimalPipe;
-  _pipe_number_1_0:any;
+  _pipe_currency_0:import14.CurrencyPipe;
+  _pipe_currency_0_0:any;
+  _pipe_number_1:import14.DecimalPipe;
   constructor(viewUtils:import2.ViewUtils,parentInjector:import6.Injector,declarationEl:import5.AppElement) {
     super(_View_ProductCardComponent0,renderType_ProductCardComponent,import7.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
-    this._expr_30 = import1.UNINITIALIZED;
-    this._expr_31 = import1.UNINITIALIZED;
+    this._expr_33 = import1.UNINITIALIZED;
     this._expr_34 = import1.UNINITIALIZED;
-    this._expr_36 = import1.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import5.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
@@ -149,10 +149,10 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
     this._text_1 = this.renderer.createText(this._el_0,'\n	',(null as any));
     this._text_2 = this.renderer.createText(this._el_0,'\n	',(null as any));
     this._el_3 = import2.createRenderElement(this.renderer,this._el_0,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._RouterLinkWithHref_3_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import14.Router),this.parentInjector.get(import15.ActivatedRoute),this.parentInjector.get(import16.LocationStrategy));
+    this._RouterLinkWithHref_3_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import15.Router),this.parentInjector.get(import16.ActivatedRoute),this.parentInjector.get(import17.LocationStrategy));
     this._text_4 = this.renderer.createText(this._el_3,'\n		',(null as any));
     this._el_5 = import2.createRenderElement(this.renderer,this._el_3,'img',new import2.InlineArray4(4,'alt','','class','img-responsive loading'),(null as any));
-    this._LazyLoadImageDirective_5_3 = new import12.Wrapper_LazyLoadImageDirective(new import17.ElementRef(this._el_5),this.parentInjector.get(import18.NgZone));
+    this._LazyLoadImageDirective_5_3 = new import12.Wrapper_LazyLoadImageDirective(new import18.ElementRef(this._el_5),this.parentInjector.get(import19.NgZone));
     this._text_6 = this.renderer.createText(this._el_3,'\n		',(null as any));
     this._el_7 = import2.createRenderElement(this.renderer,this._el_3,'div',new import2.InlineArray2(2,'class','product-info'),(null as any));
     this._text_8 = this.renderer.createText(this._el_7,'\n			',(null as any));
@@ -164,23 +164,24 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
     this._el_14 = import2.createRenderElement(this.renderer,this._el_12,'span',new import2.InlineArray2(2,'class','discounted-price'),(null as any));
     this._text_15 = this.renderer.createText(this._el_14,'',(null as any));
     this._text_16 = this.renderer.createText(this._el_12,' \n				',(null as any));
-    this._el_17 = import2.createRenderElement(this.renderer,this._el_12,'span',new import2.InlineArray2(2,'class','actual-price'),(null as any));
-    this._el_18 = import2.createRenderElement(this.renderer,this._el_17,'s',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_19 = this.renderer.createText(this._el_18,'',(null as any));
-    this._text_20 = this.renderer.createText(this._el_12,' \n				',(null as any));
-    this._el_21 = import2.createRenderElement(this.renderer,this._el_12,'span',new import2.InlineArray2(2,'class','discount'),(null as any));
-    this._text_22 = this.renderer.createText(this._el_21,'',(null as any));
-    this._text_23 = this.renderer.createText(this._el_12,'\n			',(null as any));
-    this._text_24 = this.renderer.createText(this._el_7,'\n		',(null as any));
-    this._text_25 = this.renderer.createText(this._el_3,'\n	',(null as any));
-    this._text_26 = this.renderer.createText(this._el_0,'\n',(null as any));
-    this._text_27 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._anchor_17 = this.renderer.createTemplateAnchor(this._el_12,(null as any));
+    this._appEl_17 = new import5.AppElement(17,12,this,this._anchor_17);
+    this._TemplateRef_17_5 = new import20.TemplateRef_(this._appEl_17,viewFactory_ProductCardComponent1);
+    this._NgIf_17_6 = new import13.Wrapper_NgIf(this._appEl_17.vcRef,this._TemplateRef_17_5);
+    this._text_18 = this.renderer.createText(this._el_12,' \n				',(null as any));
+    this._anchor_19 = this.renderer.createTemplateAnchor(this._el_12,(null as any));
+    this._appEl_19 = new import5.AppElement(19,12,this,this._anchor_19);
+    this._TemplateRef_19_5 = new import20.TemplateRef_(this._appEl_19,viewFactory_ProductCardComponent2);
+    this._NgIf_19_6 = new import13.Wrapper_NgIf(this._appEl_19.vcRef,this._TemplateRef_19_5);
+    this._text_20 = this.renderer.createText(this._el_12,'\n			',(null as any));
+    this._text_21 = this.renderer.createText(this._el_7,'\n		',(null as any));
+    this._text_22 = this.renderer.createText(this._el_3,'\n	',(null as any));
+    this._text_23 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_24 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_3,'click',this.eventHandler(this._handle_click_3_0.bind(this)));
-    this._pipe_currency_0 = new import13.CurrencyPipe(this.parentInjector.get(import19.LOCALE_ID));
+    this._pipe_currency_0 = new import14.CurrencyPipe(this.parentInjector.get(import21.LOCALE_ID));
     this._pipe_currency_0_0 = import2.pureProxy4(this._pipe_currency_0.transform.bind(this._pipe_currency_0));
-    this._pipe_currency_0_1 = import2.pureProxy4(this._pipe_currency_0.transform.bind(this._pipe_currency_0));
-    this._pipe_number_1 = new import13.DecimalPipe(this.parentInjector.get(import19.LOCALE_ID));
-    this._pipe_number_1_0 = import2.pureProxy2(this._pipe_number_1.transform.bind(this._pipe_number_1));
+    this._pipe_number_1 = new import14.DecimalPipe(this.parentInjector.get(import21.LOCALE_ID));
     this.init(([] as any[]),[
       this._el_0,
       this._text_1,
@@ -199,24 +200,25 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
       this._el_14,
       this._text_15,
       this._text_16,
-      this._el_17,
-      this._el_18,
-      this._text_19,
+      this._anchor_17,
+      this._text_18,
+      this._anchor_19,
       this._text_20,
-      this._el_21,
+      this._text_21,
       this._text_22,
       this._text_23,
-      this._text_24,
-      this._text_25,
-      this._text_26,
-      this._text_27
+      this._text_24
     ]
     ,[disposable_0],([] as any[]));
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import20.LazyLoadImageDirective) && (5 === requestNodeIndex))) { return this._LazyLoadImageDirective_5_3.context; }
-    if (((token === import21.RouterLinkWithHref) && ((3 <= requestNodeIndex) && (requestNodeIndex <= 25)))) { return this._RouterLinkWithHref_3_3.context; }
+    if (((token === import22.LazyLoadImageDirective) && (5 === requestNodeIndex))) { return this._LazyLoadImageDirective_5_3.context; }
+    if (((token === import20.TemplateRef) && (17 === requestNodeIndex))) { return this._TemplateRef_17_5; }
+    if (((token === import23.NgIf) && (17 === requestNodeIndex))) { return this._NgIf_17_6.context; }
+    if (((token === import20.TemplateRef) && (19 === requestNodeIndex))) { return this._TemplateRef_19_5; }
+    if (((token === import23.NgIf) && (19 === requestNodeIndex))) { return this._NgIf_19_6.context; }
+    if (((token === import24.RouterLinkWithHref) && ((3 <= requestNodeIndex) && (requestNodeIndex <= 22)))) { return this._RouterLinkWithHref_3_3.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -227,32 +229,26 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
     const currVal_5_0_0:any = this.context.product.imgUrl;
     this._LazyLoadImageDirective_5_3.check_lazyImage(currVal_5_0_0,throwOnChange,false);
     this._LazyLoadImageDirective_5_3.detectChangesInInputProps(this,this._el_5,throwOnChange);
+    const currVal_17_0_0:any = (this.context.product.discountPercentage !== 0);
+    this._NgIf_17_6.check_ngIf(currVal_17_0_0,throwOnChange,false);
+    this._NgIf_17_6.detectChangesInInputProps(this,this._anchor_17,throwOnChange);
+    const currVal_19_0_0:any = (this.context.product.discountPercentage !== 0);
+    this._NgIf_19_6.check_ngIf(currVal_19_0_0,throwOnChange,false);
+    this._NgIf_19_6.detectChangesInInputProps(this,this._anchor_19,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
     if (!throwOnChange) { if ((this.numberOfChecks === 0)) { this._LazyLoadImageDirective_5_3.context.ngAfterContentInit(); } }
     this._RouterLinkWithHref_3_3.detectChangesInHostProps(this,this._el_3,throwOnChange);
     this._LazyLoadImageDirective_5_3.detectChangesInHostProps(this,this._el_5,throwOnChange);
-    const currVal_30:any = import2.interpolate(1,'',this.context.product.title,'');
-    if (import2.checkBinding(throwOnChange,this._expr_30,currVal_30)) {
-      this.renderer.setText(this._text_10,currVal_30);
-      this._expr_30 = currVal_30;
+    const currVal_33:any = import2.interpolate(1,'',this.context.product.title,'');
+    if (import2.checkBinding(throwOnChange,this._expr_33,currVal_33)) {
+      this.renderer.setText(this._text_10,currVal_33);
+      this._expr_33 = currVal_33;
     }
     valUnwrapper.reset();
-    const currVal_31:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_currency_0_0,this._pipe_currency_0.transform)(this.context.product.discountedPrice,'USD',true,'1.0-0')),'');
-    if ((valUnwrapper.hasWrappedValue || import2.checkBinding(throwOnChange,this._expr_31,currVal_31))) {
-      this.renderer.setText(this._text_15,currVal_31);
-      this._expr_31 = currVal_31;
-    }
-    valUnwrapper.reset();
-    const currVal_34:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_currency_0_1,this._pipe_currency_0.transform)(this.context.product.regularPrice,'USD',true,'1.0-0')),'');
+    const currVal_34:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_currency_0_0,this._pipe_currency_0.transform)(this.context.product.discountedPrice,'USD',true,'1.0-0')),'');
     if ((valUnwrapper.hasWrappedValue || import2.checkBinding(throwOnChange,this._expr_34,currVal_34))) {
-      this.renderer.setText(this._text_19,currVal_34);
+      this.renderer.setText(this._text_15,currVal_34);
       this._expr_34 = currVal_34;
-    }
-    valUnwrapper.reset();
-    const currVal_36:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_number_1_0,this._pipe_number_1.transform)(this.context.product.discountPercentage,'3.1-5')),'');
-    if ((valUnwrapper.hasWrappedValue || import2.checkBinding(throwOnChange,this._expr_36,currVal_36))) {
-      this.renderer.setText(this._text_22,currVal_36);
-      this._expr_36 = currVal_36;
     }
     this.detectViewChildrenChanges(throwOnChange);
   }
@@ -269,4 +265,77 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
 export function viewFactory_ProductCardComponent0(viewUtils:import2.ViewUtils,parentInjector:import6.Injector,declarationEl:import5.AppElement):import3.AppView<import0.ProductCardComponent> {
   if ((renderType_ProductCardComponent === (null as any))) { (renderType_ProductCardComponent = viewUtils.createRenderComponentType('',0,import8.ViewEncapsulation.Emulated,styles_ProductCardComponent,{})); }
   return new _View_ProductCardComponent0(viewUtils,parentInjector,declarationEl);
+}
+class _View_ProductCardComponent1 extends import3.AppView<any> {
+  _el_0:any;
+  _el_1:any;
+  _text_2:any;
+  /*private*/ _expr_3:any;
+  _pipe_currency_0_1:any;
+  constructor(viewUtils:import2.ViewUtils,parentInjector:import6.Injector,declarationEl:import5.AppElement) {
+    super(_View_ProductCardComponent1,renderType_ProductCardComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
+    this._expr_3 = import1.UNINITIALIZED;
+  }
+  createInternal(rootSelector:string):import5.AppElement {
+    this._el_0 = import2.createRenderElement(this.renderer,(null as any),'span',new import2.InlineArray2(2,'class','actual-price'),(null as any));
+    this._el_1 = import2.createRenderElement(this.renderer,this._el_0,'s',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_2 = this.renderer.createText(this._el_1,'',(null as any));
+    this._pipe_currency_0_1 = import2.pureProxy4((<_View_ProductCardComponent0>this.parent)._pipe_currency_0.transform.bind((<_View_ProductCardComponent0>this.parent)._pipe_currency_0));
+    this.init(([] as any[]).concat([this._el_0]),[
+      this._el_0,
+      this._el_1,
+      this._text_2
+    ]
+    ,([] as any[]),([] as any[]));
+    return (null as any);
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    const valUnwrapper:any = new import1.ValueUnwrapper();
+    this.detectContentChildrenChanges(throwOnChange);
+    valUnwrapper.reset();
+    const currVal_3:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_currency_0_1,(<_View_ProductCardComponent0>this.parent)._pipe_currency_0.transform)(this.parent.context.product.regularPrice,'USD',true,'1.0-0')),'');
+    if ((valUnwrapper.hasWrappedValue || import2.checkBinding(throwOnChange,this._expr_3,currVal_3))) {
+      this.renderer.setText(this._text_2,currVal_3);
+      this._expr_3 = currVal_3;
+    }
+    this.detectViewChildrenChanges(throwOnChange);
+  }
+}
+function viewFactory_ProductCardComponent1(viewUtils:import2.ViewUtils,parentInjector:import6.Injector,declarationEl:import5.AppElement):import3.AppView<any> {
+  return new _View_ProductCardComponent1(viewUtils,parentInjector,declarationEl);
+}
+class _View_ProductCardComponent2 extends import3.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  /*private*/ _expr_2:any;
+  _pipe_number_1_0:any;
+  constructor(viewUtils:import2.ViewUtils,parentInjector:import6.Injector,declarationEl:import5.AppElement) {
+    super(_View_ProductCardComponent2,renderType_ProductCardComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
+    this._expr_2 = import1.UNINITIALIZED;
+  }
+  createInternal(rootSelector:string):import5.AppElement {
+    this._el_0 = import2.createRenderElement(this.renderer,(null as any),'span',new import2.InlineArray2(2,'class','discount'),(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'',(null as any));
+    this._pipe_number_1_0 = import2.pureProxy2((<_View_ProductCardComponent0>this.parent)._pipe_number_1.transform.bind((<_View_ProductCardComponent0>this.parent)._pipe_number_1));
+    this.init(([] as any[]).concat([this._el_0]),[
+      this._el_0,
+      this._text_1
+    ]
+    ,([] as any[]),([] as any[]));
+    return (null as any);
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    const valUnwrapper:any = new import1.ValueUnwrapper();
+    this.detectContentChildrenChanges(throwOnChange);
+    valUnwrapper.reset();
+    const currVal_2:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_number_1_0,(<_View_ProductCardComponent0>this.parent)._pipe_number_1.transform)(this.parent.context.product.discountPercentage,'1.0-0')),'%');
+    if ((valUnwrapper.hasWrappedValue || import2.checkBinding(throwOnChange,this._expr_2,currVal_2))) {
+      this.renderer.setText(this._text_1,currVal_2);
+      this._expr_2 = currVal_2;
+    }
+    this.detectViewChildrenChanges(throwOnChange);
+  }
+}
+function viewFactory_ProductCardComponent2(viewUtils:import2.ViewUtils,parentInjector:import6.Injector,declarationEl:import5.AppElement):import3.AppView<any> {
+  return new _View_ProductCardComponent2(viewUtils,parentInjector,declarationEl);
 }

@@ -7,14 +7,6 @@ import { ProductDetailResolve } from './product-detail-resolve.service';
 @NgModule({
   	imports: [
 	    RouterModule.forChild([
-		    {
-				path: 'product/:id', 
-				component: ProductComponent,
-				pathMatch: 'full',
-				resolve: {
-				  product: ProductDetailResolve
-				}
-			},
 			{
 				path: 'shop/:id', 
 				component: ProductComponent,

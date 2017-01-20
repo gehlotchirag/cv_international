@@ -322,7 +322,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     if(this.appliedFilter.length === 0 && !isFilterUrl && !isPremiumUrl && !isPriceFilter && appliedFilter.url !== '#') {
       this.navigateToFilterUrl(appliedFilter);
     }else{
-      this.appliedFilter.push(JSON.stringify(appliedFilter.name));
+      this.appliedFilter.push(appliedFilter.name);
       if(isPriceFilter) { 
         filterObj[filters.key] ? filterObj[filters.key].push(filter.value) : filterObj[filters.key] = [filter.value];
       } else {
@@ -345,7 +345,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     event.preventDefault();
     let isPriceFilter = (filters.key === 'price');
     let filter = removedFilter;
-    let appliedFilterIndex = this.appliedFilter.indexOf(JSON.stringify(removedFilter.name))
+    let appliedFilterIndex = this.appliedFilter.indexOf(removedFilter.name)
     let params = this.queryParams['params'] ? JSON.parse(this.queryParams['params']) : {};
     let filterArr = params['filters'] ? params['filters'][filters.key] : [];
     let paramFilterIndex = filterArr ? filterArr.indexOf(filter.name) : -1;
@@ -378,7 +378,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     }
     this.queryParams['params'] = JSON.stringify(params)
     this.queryParams['page'] = 1;
-    if(this.appliedFilter.length === 0 && isFilterUrl && !isPremiumUrl && !isPriceFilter) {
+    if(this.appliedFilter.length === 0 && isFilterUrl) {
       this.navigateToCategoryUrl();
     }else{
       this.manageFilterData(filters, true);

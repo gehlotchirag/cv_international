@@ -71,6 +71,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
             speed: 600,
         };
     imageUrl: any;
+    zoomedImageUrl: any;
 
   constructor(private productService : ProductService,
               private cartDetailsService: CartDetailsService,
@@ -163,7 +164,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
         // this.stitching_enabled=data.stitching_enabled;
         this.stitching_type = data.stitching_type;
         this.stitching_enabled = data.stitching_enabled;
-        this.imageUrl = data.imgUrl;
+        this.imageUrl = this.galleryImages.length > 0 ? this.galleryImages[0]['imgUrl'] : data.imgUrl;
+        this.zoomedImageUrl = this.galleryImages.length > 0 ? this.galleryImages[0]['bigUrl'] : data.bigUrl;
 
         if (data.discountPercentage == 0) {
           this.isDiscountPercVesible = false;
@@ -365,8 +367,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
   }
 
   showImage(event: any, galleryImage: any): void {
-    let imageUrl = galleryImage;
-    this.imageUrl = imageUrl;
+    this.imageUrl = galleryImage.imgUrl;
+    this.zoomedImageUrl = galleryImage.bigUrl;
   }
 
   selectStitchingType(stitchingType): void {

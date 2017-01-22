@@ -51,10 +51,10 @@
   <div class="product-container">
     <div class="contain" *ngIf="products" >
       <div class="product-thumbnails inline pull-left hide-sm">
-        <img  src="{{galleryImage}}"  class="img-responsive"  on-mouseover="showImage($event, galleryImage)" *ngFor="let galleryImage of galleryImages">
+        <img  src="{{galleryImage.imgUrl}}"  class="img-responsive"  on-mouseover="showImage($event, galleryImage)" *ngFor="let galleryImage of galleryImages">
       </div>
       <div class="product-img-container inline pull-left text-center hide-sm">
-        <img (mouseover)="onImageHover(products.bigUrl, $event)" (mousemove) = "onImageHoverMove($event)" (mouseout) = "onHoverOut()" src="{{imageUrl}}" class="img-responsive">
+        <img (mouseover)="onImageHover(zoomedImageUrl, $event)" (mousemove) = "onImageHoverMove($event)" (mouseout) = "onHoverOut()" src="{{imageUrl}}" class="img-responsive">
         <div class="product-stitch-type">
           <p *ngIf="products.stitching_type !== 'Null'">{{products.stitching_type}}</p>
           <p *ngIf="products.stitching_type === 'Null'">Unstiched</p>
@@ -66,11 +66,11 @@
           <p *ngIf="products.stitching_type !== 'Null'">{{products.stitching_type}}</p>
           <p *ngIf="products.stitching_type === 'Null'">Unstiched</p>
         </div>
+        <img class="productImage img-responsive" *ngIf=" galleryImages.length  <= 0" src="{{imageUrl}}" alt="{{products.productName}}" >
         <swiper [config]="config" *ngIf="galleryImages.length > 0">
           <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let galleryImage of galleryImages;">
-              <img class="productImage  img-responsive" *ngIf=" galleryImages.length  > 0" src="{{galleryImage}}" alt="{{products.productName}}" >
-              <img class="productImage img-responsive" *ngIf=" galleryImages.length  <= 0" src="https://s3-ap-southeast-1.amazonaws.com/cvshopdesk/images/product.jpg" alt="{{products.productName}}" >
+              <img class="productImage  img-responsive" *ngIf=" galleryImages.length  > 0" src="{{galleryImage.imgUrl}}" alt="{{products.productName}}" >
             </div>
           </div>
           <div class="swiper-pagination"></div>

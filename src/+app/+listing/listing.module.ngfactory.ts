@@ -34,7 +34,8 @@ import * as import26 from './category.component';
 import * as import27 from '@angular/core/src/i18n/tokens';
 import * as import28 from '../shared/services/http-client.service';
 import * as import29 from '@angular/router/src/router';
-import * as import30 from '@angular/router/src/router_config_loader';
+import * as import30 from '../shared/cache.service';
+import * as import31 from '@angular/router/src/router_config_loader';
 class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModule> {
   _RouterModule_0:import2.RouterModule;
   _ListRoutingModule_1:import3.ListRoutingModule;
@@ -102,11 +103,11 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
     return this.__ListingService_9;
   }
   get _FilterResolveService_10():import10.FilterResolveService {
-    if ((this.__FilterResolveService_10 == (null as any))) { (this.__FilterResolveService_10 = new import10.FilterResolveService(this._ListingService_9,this.parent.get(import29.Router))); }
+    if ((this.__FilterResolveService_10 == (null as any))) { (this.__FilterResolveService_10 = new import10.FilterResolveService(this._ListingService_9,this.parent.get(import29.Router),this.parent.get(import30.CacheService))); }
     return this.__FilterResolveService_10;
   }
   get _ProductResolveService_11():import11.ProductResolveService {
-    if ((this.__ProductResolveService_11 == (null as any))) { (this.__ProductResolveService_11 = new import11.ProductResolveService(this._ListingService_9,this.parent.get(import29.Router))); }
+    if ((this.__ProductResolveService_11 == (null as any))) { (this.__ProductResolveService_11 = new import11.ProductResolveService(this._ListingService_9,this.parent.get(import29.Router),this.parent.get(import30.CacheService))); }
     return this.__ProductResolveService_11;
   }
   createInternal():import1.ListingModule {
@@ -127,7 +128,7 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
     if ((token === import6.LazyLoadImageModule)) { return this._LazyLoadImageModule_4; }
     if ((token === import7.WidgetModule)) { return this._WidgetModule_5; }
     if ((token === import1.ListingModule)) { return this._ListingModule_6; }
-    if ((token === import30.ROUTES)) { return this._ROUTES_7; }
+    if ((token === import31.ROUTES)) { return this._ROUTES_7; }
     if ((token === import8.NgLocalization)) { return this._NgLocalization_8; }
     if ((token === import9.ListingService)) { return this._ListingService_9; }
     if ((token === import10.FilterResolveService)) { return this._FilterResolveService_10; }

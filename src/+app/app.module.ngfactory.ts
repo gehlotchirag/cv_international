@@ -76,7 +76,8 @@ import * as import68 from './+listing/category.component';
 import * as import69 from './+not_found/not-found.component';
 import * as import70 from '@angular/http/src/http';
 import * as import71 from '@angular/router/src/router';
-import * as import72 from '@angular/router/src/router_config_loader';
+import * as import72 from './shared/cache.service';
+import * as import73 from '@angular/router/src/router_config_loader';
 class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
   _CommonModule_0:import2.CommonModule;
   _RouterModule_1:import3.RouterModule;
@@ -266,7 +267,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
     return this.__ProductService_24;
   }
   get _ProductDetailResolve_25():import24.ProductDetailResolve {
-    if ((this.__ProductDetailResolve_25 == (null as any))) { (this.__ProductDetailResolve_25 = new import24.ProductDetailResolve(this._ProductService_24,this.parent.get(import71.Router))); }
+    if ((this.__ProductDetailResolve_25 == (null as any))) { (this.__ProductDetailResolve_25 = new import24.ProductDetailResolve(this._ProductService_24,this.parent.get(import71.Router),this.parent.get(import72.CacheService))); }
     return this.__ProductDetailResolve_25;
   }
   get _SitemapService_26():import25.SitemapService {
@@ -282,11 +283,11 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
     return this.__ListingService_28;
   }
   get _FilterResolveService_29():import28.FilterResolveService {
-    if ((this.__FilterResolveService_29 == (null as any))) { (this.__FilterResolveService_29 = new import28.FilterResolveService(this._ListingService_28,this.parent.get(import71.Router))); }
+    if ((this.__FilterResolveService_29 == (null as any))) { (this.__FilterResolveService_29 = new import28.FilterResolveService(this._ListingService_28,this.parent.get(import71.Router),this.parent.get(import72.CacheService))); }
     return this.__FilterResolveService_29;
   }
   get _ProductResolveService_30():import29.ProductResolveService {
-    if ((this.__ProductResolveService_30 == (null as any))) { (this.__ProductResolveService_30 = new import29.ProductResolveService(this._ListingService_28,this.parent.get(import71.Router))); }
+    if ((this.__ProductResolveService_30 == (null as any))) { (this.__ProductResolveService_30 = new import29.ProductResolveService(this._ListingService_28,this.parent.get(import71.Router),this.parent.get(import72.CacheService))); }
     return this.__ProductResolveService_30;
   }
   get _RouterHeaderBindingService_31():import30.RouterHeaderBindingService {
@@ -350,7 +351,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
     if ((token === import19.NgLocalization)) { return this._NgLocalization_19; }
     if ((token === import20.RadioControlRegistry)) { return this._RadioControlRegistry_20; }
     if ((token === import21.FormBuilder)) { return this._FormBuilder_21; }
-    if ((token === import72.ROUTES)) { return this._ROUTES_22; }
+    if ((token === import73.ROUTES)) { return this._ROUTES_22; }
     if ((token === import22.HttpClientService)) { return this._HttpClientService_23; }
     if ((token === import23.ProductService)) { return this._ProductService_24; }
     if ((token === import24.ProductDetailResolve)) { return this._ProductDetailResolve_25; }

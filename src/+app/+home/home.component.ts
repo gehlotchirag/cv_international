@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   public heroBannerData: any = {};
   public extraMenuData: any = {};
 
-  children: Observable<any>;
+  children:any;
   cartContents: Product[];
 
   constructor(private resolver: ComponentFactoryResolver,
@@ -40,7 +40,12 @@ export class HomeComponent implements OnInit {
               private commonService: CommonSharedService,
   )
   {
-    this.children = this.homeService.getComponentsData();
+    this.homeService.getComponentsData()
+                    .pluck('d')
+                    .subscribe((data) =>{
+                      this.children = data;
+                      this.updateComponent();
+                    });
   }
 
   ngOnInit(){
@@ -89,29 +94,21 @@ export class HomeComponent implements OnInit {
       this.cmpRef.destroy();
     }
 
-    let _componentsData = this.children.publish()
-
-    _componentsData.filter(
-                    (component: any) => component.widget_type == 'HeroBanner'
-                  ).subscribe((data) => this.heroBannerData = data,
-                              (err) => console.error(err))
-
-    _componentsData.filter(
-                    (component: any) => component.widget_type == 'AnnouncementWidget'
-                  ).subscribe((data) => this.annoucementWidgetData = data,
-                              (err) => console.error(err))
-
-    _componentsData.filter(
-                (component: any) => component.widget_type == 'OfferMenu'
-              ).subscribe((data) =>
-                          this.extraMenuData = data,
-                          (err) => console.error(err));
-
-    _componentsData.filter(
-                  (component: any) => !(component.widget_type == 'HeroBanner' || component.widget_type == 'OfferMenu' || component.widget_type == 'AnnouncementWidget')
-                ).subscribe( (data) => {this.componentsData = data, this.attachComponents(this.componentsData)},
-                              (err) => console.error(err));
-    _componentsData.connect();
+    let _componentsData = this.children
+    if(_componentsData) {
+      _componentsData.forEach((component) => {
+        if(component.widget_type == 'HeroBanner') {
+          this.heroBannerData = component
+        } else if(component.widget_type == 'AnnouncementWidget') {
+          this.annoucementWidgetData = component
+        } else if(component.widget_type == 'OfferMenu') {
+          this.extraMenuData = component
+        } else {
+          this.componentsData = component; 
+          this.attachComponents(this.componentsData)
+        }
+      })
+    }
   }
 
   attachComponents(data: any){

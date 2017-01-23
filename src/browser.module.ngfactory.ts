@@ -549,7 +549,7 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
     return this.__ProductService_80;
   }
   get _ProductDetailResolve_81():import53.ProductDetailResolve {
-    if ((this.__ProductDetailResolve_81 == (null as any))) { (this.__ProductDetailResolve_81 = new import53.ProductDetailResolve(this._ProductService_80,this._Router_71)); }
+    if ((this.__ProductDetailResolve_81 == (null as any))) { (this.__ProductDetailResolve_81 = new import53.ProductDetailResolve(this._ProductService_80,this._Router_71,this._CacheService_30)); }
     return this.__ProductDetailResolve_81;
   }
   get _SitemapService_82():import54.SitemapService {
@@ -565,11 +565,11 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
     return this.__ListingService_84;
   }
   get _FilterResolveService_85():import57.FilterResolveService {
-    if ((this.__FilterResolveService_85 == (null as any))) { (this.__FilterResolveService_85 = new import57.FilterResolveService(this._ListingService_84,this._Router_71)); }
+    if ((this.__FilterResolveService_85 == (null as any))) { (this.__FilterResolveService_85 = new import57.FilterResolveService(this._ListingService_84,this._Router_71,this._CacheService_30)); }
     return this.__FilterResolveService_85;
   }
   get _ProductResolveService_86():import58.ProductResolveService {
-    if ((this.__ProductResolveService_86 == (null as any))) { (this.__ProductResolveService_86 = new import58.ProductResolveService(this._ListingService_84,this._Router_71)); }
+    if ((this.__ProductResolveService_86 == (null as any))) { (this.__ProductResolveService_86 = new import58.ProductResolveService(this._ListingService_84,this._Router_71,this._CacheService_30)); }
     return this.__ProductResolveService_86;
   }
   get _RouterHeaderBindingService_87():import59.RouterHeaderBindingService {

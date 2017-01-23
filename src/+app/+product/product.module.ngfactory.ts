@@ -33,7 +33,8 @@ import * as import25 from '@angular/core/src/i18n/tokens';
 import * as import26 from './product.component';
 import * as import27 from '../shared/services/http-client.service';
 import * as import28 from '@angular/router/src/router';
-import * as import29 from '@angular/router/src/router_config_loader';
+import * as import29 from '../shared/cache.service';
+import * as import30 from '@angular/router/src/router_config_loader';
 class ProductModuleInjector extends import0.NgModuleInjector<import1.ProductModule> {
   _CommonModule_0:import2.CommonModule;
   _SwiperModule_1:import3.SwiperModule;
@@ -94,7 +95,7 @@ class ProductModuleInjector extends import0.NgModuleInjector<import1.ProductModu
     return this.__ProductService_9;
   }
   get _ProductDetailResolve_10():import10.ProductDetailResolve {
-    if ((this.__ProductDetailResolve_10 == (null as any))) { (this.__ProductDetailResolve_10 = new import10.ProductDetailResolve(this._ProductService_9,this.parent.get(import28.Router))); }
+    if ((this.__ProductDetailResolve_10 == (null as any))) { (this.__ProductDetailResolve_10 = new import10.ProductDetailResolve(this._ProductService_9,this.parent.get(import28.Router),this.parent.get(import29.CacheService))); }
     return this.__ProductDetailResolve_10;
   }
   createInternal():import1.ProductModule {
@@ -116,7 +117,7 @@ class ProductModuleInjector extends import0.NgModuleInjector<import1.ProductModu
     if ((token === import7.WidgetModule)) { return this._WidgetModule_5; }
     if ((token === import1.ProductModule)) { return this._ProductModule_6; }
     if ((token === import8.NgLocalization)) { return this._NgLocalization_7; }
-    if ((token === import29.ROUTES)) { return this._ROUTES_8; }
+    if ((token === import30.ROUTES)) { return this._ROUTES_8; }
     if ((token === import9.ProductService)) { return this._ProductService_9; }
     if ((token === import10.ProductDetailResolve)) { return this._ProductDetailResolve_10; }
     return notFoundResult;

@@ -4,9 +4,15 @@ import { Response } from '@angular/http';
 import { Router } from '@angular/router';
 import { HttpClientService } from '../../services/http-client.service';
 import { RouterHeaderBindingService } from '../../services/router-header-binding.service';
-import { DataHoldingService } from '../../services/data-holding.service';
 
 import { MegaMenuLinkComponent } from './mega-menu-link.component';
+
+import { Observable } from 'rxjs';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/share';
+
+import { MegaMenuService  } from './mega-menu.service';
 
 import { getRouterLink } from '../../utils/index';
 
@@ -14,6 +20,7 @@ import { getRouterLink } from '../../utils/index';
   selector: 'cvi-mega-menu',
   templateUrl: './mega-menu.component.html',
   styleUrls: ['./mega-menu.component.css'],
+  providers: [ MegaMenuService ],
   exportAs: 'cvi-mega-menu',
 })
 export class MegaMenuComponent implements OnInit {
@@ -32,29 +39,16 @@ export class MegaMenuComponent implements OnInit {
     private httpClient: HttpClientService,
     private el: ElementRef, 
     private router: Router,
-    private renderer: Renderer
-   ) { }
+    private renderer: Renderer, 
+    private megaMenuService: MegaMenuService
+   ) {
+    this.megaMenuService.getMegaMenuData().pluck('d').subscribe((data) => {
+      this.menuCategoriesData = data;
+      RouterHeaderBindingService.setMegaMenuData(data);
+    })
+   }
 
   ngOnInit() {
-    let megaMenuUrl = 'api/dmegamenu/';
-    let menuCategoriesData = DataHoldingService.getItem("megamenu");
-    if(!menuCategoriesData){
-      this.httpClient
-          .get(megaMenuUrl)
-          .map((res: Response) => res.json())
-          .subscribe(
-             (data) => {
-               this.menuCategoriesData = data['d'];
-               DataHoldingService.setItem("megamenu", this.menuCategoriesData);
-               RouterHeaderBindingService.setMegaMenuData(data['d']);
-             },
-             (error) => { console.error(error)}
-          );
-    }
-    else {
-      RouterHeaderBindingService.setMegaMenuData(menuCategoriesData);
-      this.menuCategoriesData = menuCategoriesData;
-    }
   }
 
   getSelectedCategory(categoryData){

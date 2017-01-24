@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-terms-condition',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TermsConditionComponent implements OnInit {
 
-  constructor() { }
+	public pageContent = "";
+	constructor(private route: ActivatedRoute) {
+		this.route.data.pluck('html', 'd').subscribe((data: any) => {
+			this.pageContent = data;
+	    });
+
+  	}
 
   ngOnInit() {
   }

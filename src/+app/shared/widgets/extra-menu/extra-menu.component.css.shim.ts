@@ -4,4 +4,4 @@
  */
  /* tslint:disable */
 
-export const styles:any[] = ['.swiper-slide.extra-menu-item[_ngcontent-%COMP%]{\n	width: 250px;\n}\n.extra-menu-wrapper[_ngcontent-%COMP%]{\n	margin-top: 2%;\n}'];
+export const styles:any[] = ['.swiper-slide.extra-menu-item[_ngcontent-%COMP%]{\n	width: 250px;\n}\n.extra-menu-wrapper[_ngcontent-%COMP%]{\n	margin-top: 2%;\n}\n.extra-menu-item[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    margin: 0 auto;\n}'];

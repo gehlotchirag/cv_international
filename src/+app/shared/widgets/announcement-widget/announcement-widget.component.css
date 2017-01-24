@@ -1,7 +1,9 @@
 .annoucement-mobile-image{
 	display: none;
 }
-
+.annoucement-web-image{
+	width: 100%;
+}
 @media only screen and (max-width: 480px){
 	.annoucement-mobile-image{
 		display: block;

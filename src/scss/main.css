@@ -353,8 +353,8 @@ ul.nav.nav-tabs.tabs-widget li a {
     letter-spacing: 0.5px; }
 
   .contain {
-    width: 100%;
-    max-width: 1400px;
+    width: 95%;
+    max-width: 1230px;
     margin: auto;
     height: inherit; }
 

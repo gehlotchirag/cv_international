@@ -3,12 +3,12 @@
 export var premiumUrlArr = ['premium', 'traditional', 'contemporary'];
 
 export var filtersMap = {
-	"sarees/half-half-saree-sarees": {
+	"sarees/bollywood-sarees": {
 		"type": "Style",
 		"value": {
-			"url": "sarees/half-half-saree-sarees",
+			"url": "sarees/bollywood-sarees",
 			"enabled": false,
-			"name": "half half saree"
+			"name": "bollywood"
 		},
 		"id": 2
 	},
@@ -30,33 +30,6 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/bollywood-sarees": {
-		"type": "Style",
-		"value": {
-			"url": "sarees/bollywood-sarees",
-			"enabled": false,
-			"name": "bollywood"
-		},
-		"id": 2
-	},
-	"sarees/traditional-sarees": {
-		"type": "Style",
-		"value": {
-			"url": "sarees/traditional-sarees",
-			"enabled": false,
-			"name": "traditional "
-		},
-		"id": 2
-	},
-	"sarees/color-pleated-sarees-sarees": {
-		"type": "Style",
-		"value": {
-			"url": "sarees/color-pleated-sarees-sarees",
-			"enabled": false,
-			"name": "color pleated sarees"
-		},
-		"id": 2
-	},
 	"sarees/lehenga-saree-sarees": {
 		"type": "Style",
 		"value": {
@@ -66,12 +39,21 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/dupatta-saree-sarees": {
+	"sarees/half-half-saree-sarees": {
 		"type": "Style",
 		"value": {
-			"url": "sarees/dupatta-saree-sarees",
+			"url": "sarees/half-half-saree-sarees",
 			"enabled": false,
-			"name": "dupatta saree"
+			"name": "half half saree"
+		},
+		"id": 2
+	},
+	"sarees/traditional-sarees": {
+		"type": "Style",
+		"value": {
+			"url": "sarees/traditional-sarees",
+			"enabled": false,
+			"name": "traditional"
 		},
 		"id": 2
 	},
@@ -84,116 +66,17 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/cape-sarees-sarees": {
-		"type": "Style",
+	"sarees/net-sarees": {
+		"type": "Saree Fabric",
 		"value": {
-			"url": "sarees/cape-sarees-sarees",
+			"url": "sarees/net-sarees",
 			"enabled": false,
-			"name": "cape sarees"
-		},
-		"id": 2
-	},
-	"sarees/kanjivaram-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/kanjivaram-silk-sarees",
-			"enabled": false,
-			"name": "kanjivaram silk"
-		},
-		"id": 2
-	},
-	"sarees/noil-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/noil-sarees",
-			"enabled": false,
-			"name": "noil"
-		},
-		"id": 2
-	},
-	"sarees/polyester-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/polyester-sarees",
-			"enabled": false,
-			"name": "polyester"
-		},
-		"id": 2
-	},
-	"sarees/cotton-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/cotton-sarees",
-			"enabled": false,
-			"name": "cotton"
-		},
-		"id": 2
-	},
-	"sarees/banarasi-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/banarasi-silk-sarees",
-			"enabled": false,
-			"name": "banarasi silk"
-		},
-		"id": 2
-	},
-	"sarees/bengal-cotton-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/bengal-cotton-sarees",
-			"enabled": false,
-			"name": "bengal cotton"
-		},
-		"id": 2
-	},
-	"sarees/santoon-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/santoon-sarees",
-			"enabled": false,
-			"name": "santoon"
-		},
-		"id": 2
-	},
-	"sarees/faux-georgette-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/faux-georgette-sarees",
-			"enabled": false,
-			"name": "faux georgette"
-		},
-		"id": 2
-	},
-	"sarees/taffeta-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/taffeta-sarees",
-			"enabled": false,
-			"name": "taffeta"
-		},
-		"id": 2
-	},
-	"sarees/bangalore-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/bangalore-silk-sarees",
-			"enabled": false,
-			"name": "bangalore silk"
-		},
-		"id": 2
-	},
-	"sarees/matka-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/matka-silk-sarees",
-			"enabled": false,
-			"name": "matka silk"
+			"name": "net"
 		},
 		"id": 2
 	},
 	"sarees/lycra-sarees": {
-		"type": "Fabric",
+		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/lycra-sarees",
 			"enabled": false,
@@ -201,8 +84,287 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
+	"sarees/eri-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/eri-silk-sarees",
+			"enabled": false,
+			"name": "eri silk"
+		},
+		"id": 2
+	},
+	"sarees/banarasi-net-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/banarasi-net-sarees",
+			"enabled": false,
+			"name": "banarasi net"
+		},
+		"id": 2
+	},
+	"sarees/raw-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/raw-silk-sarees",
+			"enabled": false,
+			"name": "raw silk"
+		},
+		"id": 2
+	},
+	"sarees/cotton-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/cotton-sarees",
+			"enabled": false,
+			"name": "cotton"
+		},
+		"id": 2
+	},
+	"sarees/denim-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/denim-sarees",
+			"enabled": false,
+			"name": "denim"
+		},
+		"id": 2
+	},
+	"sarees/chanderi-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/chanderi-sarees",
+			"enabled": false,
+			"name": "chanderi"
+		},
+		"id": 2
+	},
+	"sarees/mulberry-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/mulberry-silk-sarees",
+			"enabled": false,
+			"name": "mulberry silk"
+		},
+		"id": 2
+	},
+	"sarees/cotton-blend-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/cotton-blend-sarees",
+			"enabled": false,
+			"name": "cotton blend"
+		},
+		"id": 2
+	},
+	"sarees/kota-cotton-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/kota-cotton-sarees",
+			"enabled": false,
+			"name": "kota cotton"
+		},
+		"id": 2
+	},
+	"sarees/uppada-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/uppada-silk-sarees",
+			"enabled": false,
+			"name": "uppada silk"
+		},
+		"id": 2
+	},
+	"sarees/cotton-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/cotton-silk-sarees",
+			"enabled": false,
+			"name": "cotton silk"
+		},
+		"id": 2
+	},
+	"sarees/tissue-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/tissue-sarees",
+			"enabled": false,
+			"name": "tissue"
+		},
+		"id": 2
+	},
+	"sarees/muslin-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/muslin-sarees",
+			"enabled": false,
+			"name": "muslin"
+		},
+		"id": 2
+	},
+	"sarees/organza-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/organza-sarees",
+			"enabled": false,
+			"name": "organza"
+		},
+		"id": 2
+	},
+	"sarees/art-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/art-silk-sarees",
+			"enabled": false,
+			"name": "art silk"
+		},
+		"id": 2
+	},
+	"sarees/silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/silk-sarees",
+			"enabled": false,
+			"name": "silk"
+		},
+		"id": 2
+	},
+	"sarees/kota-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/kota-silk-sarees",
+			"enabled": false,
+			"name": "kota silk"
+		},
+		"id": 2
+	},
+	"sarees/kora-cotton-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/kora-cotton-sarees",
+			"enabled": false,
+			"name": "kora cotton"
+		},
+		"id": 2
+	},
+	"sarees/banarasi-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/banarasi-silk-sarees",
+			"enabled": false,
+			"name": "banarasi silk"
+		},
+		"id": 2
+	},
+	"sarees/faux-georgette-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/faux-georgette-sarees",
+			"enabled": false,
+			"name": "faux georgette"
+		},
+		"id": 2
+	},
+	"sarees/faux-chiffon-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/faux-chiffon-sarees",
+			"enabled": false,
+			"name": "faux chiffon"
+		},
+		"id": 2
+	},
+	"sarees/taffeta-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/taffeta-sarees",
+			"enabled": false,
+			"name": "taffeta"
+		},
+		"id": 2
+	},
+	"sarees/chiffon-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/chiffon-sarees",
+			"enabled": false,
+			"name": "chiffon"
+		},
+		"id": 2
+	},
+	"sarees/crepe-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/crepe-sarees",
+			"enabled": false,
+			"name": "crepe"
+		},
+		"id": 2
+	},
+	"sarees/kora-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/kora-silk-sarees",
+			"enabled": false,
+			"name": "kora silk"
+		},
+		"id": 2
+	},
+	"sarees/bengal-cotton-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/bengal-cotton-sarees",
+			"enabled": false,
+			"name": "bengal cotton"
+		},
+		"id": 2
+	},
+	"sarees/nylon-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/nylon-sarees",
+			"enabled": false,
+			"name": "nylon"
+		},
+		"id": 2
+	},
+	"sarees/jamdani-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/jamdani-sarees",
+			"enabled": false,
+			"name": "jamdani"
+		},
+		"id": 2
+	},
+	"sarees/bangalore-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/bangalore-silk-sarees",
+			"enabled": false,
+			"name": "bangalore silk"
+		},
+		"id": 2
+	},
+	"sarees/manipuri-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/manipuri-silk-sarees",
+			"enabled": false,
+			"name": "manipuri silk"
+		},
+		"id": 2
+	},
+	"sarees/lurex-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/lurex-sarees",
+			"enabled": false,
+			"name": "lurex"
+		},
+		"id": 2
+	},
 	"sarees/super-net-sarees": {
-		"type": "Fabric",
+		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/super-net-sarees",
 			"enabled": false,
@@ -210,8 +372,197 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
+	"sarees/bhagalpuri-cotton-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/bhagalpuri-cotton-sarees",
+			"enabled": false,
+			"name": "bhagalpuri cotton"
+		},
+		"id": 2
+	},
+	"sarees/viscose-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/viscose-sarees",
+			"enabled": false,
+			"name": "viscose"
+		},
+		"id": 2
+	},
+	"sarees/silk-crepe-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/silk-crepe-sarees",
+			"enabled": false,
+			"name": "silk crepe"
+		},
+		"id": 2
+	},
+	"sarees/jute-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/jute-sarees",
+			"enabled": false,
+			"name": "jute"
+		},
+		"id": 2
+	},
+	"sarees/nazneen-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/nazneen-sarees",
+			"enabled": false,
+			"name": "nazneen"
+		},
+		"id": 2
+	},
+	"sarees/kanjivaram-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/kanjivaram-silk-sarees",
+			"enabled": false,
+			"name": "kanjivaram silk"
+		},
+		"id": 2
+	},
+	"sarees/matka-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/matka-silk-sarees",
+			"enabled": false,
+			"name": "matka silk"
+		},
+		"id": 2
+	},
+	"sarees/shimmer-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/shimmer-sarees",
+			"enabled": false,
+			"name": "shimmer"
+		},
+		"id": 2
+	},
+	"sarees/velvet-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/velvet-sarees",
+			"enabled": false,
+			"name": "velvet"
+		},
+		"id": 2
+	},
+	"sarees/satin-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/satin-sarees",
+			"enabled": false,
+			"name": "satin"
+		},
+		"id": 2
+	},
+	"sarees/faux-crepe-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/faux-crepe-sarees",
+			"enabled": false,
+			"name": "faux crepe"
+		},
+		"id": 2
+	},
+	"sarees/brocade-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/brocade-sarees",
+			"enabled": false,
+			"name": "brocade"
+		},
+		"id": 2
+	},
+	"sarees/linen-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/linen-sarees",
+			"enabled": false,
+			"name": "linen"
+		},
+		"id": 2
+	},
+	"sarees/santoon-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/santoon-sarees",
+			"enabled": false,
+			"name": "santoon"
+		},
+		"id": 2
+	},
+	"sarees/dupion-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/dupion-silk-sarees",
+			"enabled": false,
+			"name": "dupion silk"
+		},
+		"id": 2
+	},
+	"sarees/other-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/other-sarees",
+			"enabled": false,
+			"name": "other"
+		},
+		"id": 2
+	},
+	"sarees/georgette-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/georgette-sarees",
+			"enabled": false,
+			"name": "georgette"
+		},
+		"id": 2
+	},
+	"sarees/polyester-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/polyester-sarees",
+			"enabled": false,
+			"name": "polyester"
+		},
+		"id": 2
+	},
+	"sarees/silk-blend-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/silk-blend-sarees",
+			"enabled": false,
+			"name": "silk blend"
+		},
+		"id": 2
+	},
+	"sarees/bhagalpuri-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/bhagalpuri-silk-sarees",
+			"enabled": false,
+			"name": "bhagalpuri silk"
+		},
+		"id": 2
+	},
+	"sarees/tussar-silk-sarees": {
+		"type": "Saree Fabric",
+		"value": {
+			"url": "sarees/tussar-silk-sarees",
+			"enabled": false,
+			"name": "tussar silk"
+		},
+		"id": 2
+	},
 	"sarees/bemberg-sarees": {
-		"type": "Fabric",
+		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/bemberg-sarees",
 			"enabled": false,
@@ -224,448 +575,16 @@ export var filtersMap = {
 		"value": {
 			"url": "sarees/khadi-sarees",
 			"enabled": false,
-			"name": "Khadi"
+			"name": "khadi"
 		},
 		"id": 2
 	},
-	"sarees/nylon-sarees": {
-		"type": "Fabric",
+	"sarees/noil-sarees": {
+		"type": "Saree Fabric",
 		"value": {
-			"url": "sarees/nylon-sarees",
+			"url": "sarees/noil-sarees",
 			"enabled": false,
-			"name": "nylon"
-		},
-		"id": 2
-	},
-	"sarees/jute-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/jute-sarees",
-			"enabled": false,
-			"name": "jute"
-		},
-		"id": 2
-	},
-	"sarees/jamdani-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/jamdani-sarees",
-			"enabled": false,
-			"name": "Jamdani"
-		},
-		"id": 2
-	},
-	"sarees/raw-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/raw-silk-sarees",
-			"enabled": false,
-			"name": "raw silk"
-		},
-		"id": 2
-	},
-	"sarees/kota-cotton-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/kota-cotton-sarees",
-			"enabled": false,
-			"name": "kota cotton"
-		},
-		"id": 2
-	},
-	"sarees/silk-crepe-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/silk-crepe-sarees",
-			"enabled": false,
-			"name": "silk crepe"
-		},
-		"id": 2
-	},
-	"sarees/lurex-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/lurex-sarees",
-			"enabled": false,
-			"name": "lurex"
-		},
-		"id": 2
-	},
-	"sarees/manipuri-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/manipuri-silk-sarees",
-			"enabled": false,
-			"name": "manipuri silk"
-		},
-		"id": 2
-	},
-	"sarees/linen-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/linen-sarees",
-			"enabled": false,
-			"name": "linen"
-		},
-		"id": 2
-	},
-	"sarees/silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/silk-sarees",
-			"enabled": false,
-			"name": "silk"
-		},
-		"id": 2
-	},
-	"sarees/bhagalpuri-cotton-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/bhagalpuri-cotton-sarees",
-			"enabled": false,
-			"name": "bhagalpuri cotton"
-		},
-		"id": 2
-	},
-	"sarees/net-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/net-sarees",
-			"enabled": false,
-			"name": "net"
-		},
-		"id": 2
-	},
-	"sarees/chanderi-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/chanderi-sarees",
-			"enabled": false,
-			"name": "chanderi"
-		},
-		"id": 2
-	},
-	"sarees/tissue-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/tissue-sarees",
-			"enabled": false,
-			"name": "tissue"
-		},
-		"id": 2
-	},
-	"sarees/kora-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/kora-silk-sarees",
-			"enabled": false,
-			"name": "kora silk"
-		},
-		"id": 2
-	},
-	"sarees/muslin-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/muslin-sarees",
-			"enabled": false,
-			"name": "muslin"
-		},
-		"id": 2
-	},
-	"sarees/chiffon-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/chiffon-sarees",
-			"enabled": false,
-			"name": "chiffon"
-		},
-		"id": 2
-	},
-	"sarees/organza-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/organza-sarees",
-			"enabled": false,
-			"name": "organza"
-		},
-		"id": 2
-	},
-	"sarees/viscose-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/viscose-sarees",
-			"enabled": false,
-			"name": "viscose"
-		},
-		"id": 2
-	},
-	"sarees/denim-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/denim-sarees",
-			"enabled": false,
-			"name": "denim"
-		},
-		"id": 2
-	},
-	"sarees/dupion-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/dupion-silk-sarees",
-			"enabled": false,
-			"name": "dupion silk"
-		},
-		"id": 2
-	},
-	"sarees/kota-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/kota-silk-sarees",
-			"enabled": false,
-			"name": "kota silk"
-		},
-		"id": 2
-	},
-	"sarees/uppada-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/uppada-silk-sarees",
-			"enabled": false,
-			"name": "uppada silk"
-		},
-		"id": 2
-	},
-	"sarees/art-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/art-silk-sarees",
-			"enabled": false,
-			"name": "art silk"
-		},
-		"id": 2
-	},
-	"sarees/faux-chiffon-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/faux-chiffon-sarees",
-			"enabled": false,
-			"name": "faux chiffon"
-		},
-		"id": 2
-	},
-	"sarees/kora-cotton-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/kora-cotton-sarees",
-			"enabled": false,
-			"name": "kora cotton"
-		},
-		"id": 2
-	},
-	"sarees/banarasi-net-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/banarasi-net-sarees",
-			"enabled": false,
-			"name": "banarasi net"
-		},
-		"id": 2
-	},
-	"sarees/faux-crepe-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/faux-crepe-sarees",
-			"enabled": false,
-			"name": "faux crepe"
-		},
-		"id": 2
-	},
-	"sarees/velvet-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/velvet-sarees",
-			"enabled": false,
-			"name": "velvet"
-		},
-		"id": 2
-	},
-	"sarees/crepe-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/crepe-sarees",
-			"enabled": false,
-			"name": "crepe"
-		},
-		"id": 2
-	},
-	"sarees/other-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/other-sarees",
-			"enabled": false,
-			"name": "Other"
-		},
-		"id": 2
-	},
-	"sarees/cotton-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/cotton-silk-sarees",
-			"enabled": false,
-			"name": "cotton silk"
-		},
-		"id": 2
-	},
-	"sarees/nazneen-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/nazneen-sarees",
-			"enabled": false,
-			"name": "nazneen"
-		},
-		"id": 2
-	},
-	"sarees/cotton-blend-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/cotton-blend-sarees",
-			"enabled": false,
-			"name": "cotton blend"
-		},
-		"id": 2
-	},
-	"sarees/satin-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/satin-sarees",
-			"enabled": false,
-			"name": "satin"
-		},
-		"id": 2
-	},
-	"sarees/brocade-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/brocade-sarees",
-			"enabled": false,
-			"name": "brocade"
-		},
-		"id": 2
-	},
-	"sarees/eri-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/eri-silk-sarees",
-			"enabled": false,
-			"name": "eri silk"
-		},
-		"id": 2
-	},
-	"sarees/tussar-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/tussar-silk-sarees",
-			"enabled": false,
-			"name": "tussar silk"
-		},
-		"id": 2
-	},
-	"sarees/georgette-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/georgette-sarees",
-			"enabled": false,
-			"name": "georgette"
-		},
-		"id": 2
-	},
-	"sarees/shimmer-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/shimmer-sarees",
-			"enabled": false,
-			"name": "shimmer"
-		},
-		"id": 2
-	},
-	"sarees/mulberry-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/mulberry-silk-sarees",
-			"enabled": false,
-			"name": "mulberry silk"
-		},
-		"id": 2
-	},
-	"sarees/bhagalpuri-silk-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/bhagalpuri-silk-sarees",
-			"enabled": false,
-			"name": "bhagalpuri silk"
-		},
-		"id": 2
-	},
-	"sarees/silk-blend-sarees": {
-		"type": "Fabric",
-		"value": {
-			"url": "sarees/silk-blend-sarees",
-			"enabled": false,
-			"name": "silk blend"
-		},
-		"id": 2
-	},
-	"sarees/peach-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/peach-sarees",
-			"enabled": false,
-			"name": "peach"
-		},
-		"id": 2
-	},
-	"sarees/brown-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/brown-sarees",
-			"enabled": false,
-			"name": "brown"
-		},
-		"id": 2
-	},
-	"sarees/orange-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/orange-sarees",
-			"enabled": false,
-			"name": "orange"
-		},
-		"id": 2
-	},
-	"sarees/beige-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/beige-sarees",
-			"enabled": false,
-			"name": "beige"
-		},
-		"id": 2
-	},
-	"sarees/green-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/green-sarees",
-			"enabled": false,
-			"name": "green"
-		},
-		"id": 2
-	},
-	"sarees/yellow-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/yellow-sarees",
-			"enabled": false,
-			"name": "yellow"
+			"name": "noil"
 		},
 		"id": 2
 	},
@@ -678,48 +597,12 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/teal-blue-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/teal-blue-sarees",
-			"enabled": false,
-			"name": "teal blue"
-		},
-		"id": 2
-	},
-	"sarees/silver-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/silver-sarees",
-			"enabled": false,
-			"name": "silver"
-		},
-		"id": 2
-	},
-	"sarees/maroon-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/maroon-sarees",
-			"enabled": false,
-			"name": "maroon"
-		},
-		"id": 2
-	},
 	"sarees/grey-sarees": {
 		"type": "Color",
 		"value": {
 			"url": "sarees/grey-sarees",
 			"enabled": false,
 			"name": "grey"
-		},
-		"id": 2
-	},
-	"sarees/white-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/white-sarees",
-			"enabled": false,
-			"name": "white"
 		},
 		"id": 2
 	},
@@ -732,12 +615,57 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/purple-sarees": {
+	"sarees/beige-sarees": {
 		"type": "Color",
 		"value": {
-			"url": "sarees/purple-sarees",
+			"url": "sarees/beige-sarees",
 			"enabled": false,
-			"name": "purple"
+			"name": "beige"
+		},
+		"id": 2
+	},
+	"sarees/yellow-sarees": {
+		"type": "Color",
+		"value": {
+			"url": "sarees/yellow-sarees",
+			"enabled": false,
+			"name": "yellow"
+		},
+		"id": 2
+	},
+	"sarees/white-sarees": {
+		"type": "Color",
+		"value": {
+			"url": "sarees/white-sarees",
+			"enabled": false,
+			"name": "white"
+		},
+		"id": 2
+	},
+	"sarees/green-sarees": {
+		"type": "Color",
+		"value": {
+			"url": "sarees/green-sarees",
+			"enabled": false,
+			"name": "green"
+		},
+		"id": 2
+	},
+	"sarees/brown-sarees": {
+		"type": "Color",
+		"value": {
+			"url": "sarees/brown-sarees",
+			"enabled": false,
+			"name": "brown"
+		},
+		"id": 2
+	},
+	"sarees/navy-sarees": {
+		"type": "Color",
+		"value": {
+			"url": "sarees/navy-sarees",
+			"enabled": false,
+			"name": "navy"
 		},
 		"id": 2
 	},
@@ -759,21 +687,21 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
+	"sarees/silver-sarees": {
+		"type": "Color",
+		"value": {
+			"url": "sarees/silver-sarees",
+			"enabled": false,
+			"name": "silver"
+		},
+		"id": 2
+	},
 	"sarees/multicolor-sarees": {
 		"type": "Color",
 		"value": {
 			"url": "sarees/multicolor-sarees",
 			"enabled": false,
 			"name": "multicolor"
-		},
-		"id": 2
-	},
-	"sarees/n/a-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/n/a-sarees",
-			"enabled": false,
-			"name": "N/A"
 		},
 		"id": 2
 	},
@@ -786,21 +714,21 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/coral-pink/pink-sarees": {
+	"sarees/peach-sarees": {
 		"type": "Color",
 		"value": {
-			"url": "sarees/coral-pink/pink-sarees",
+			"url": "sarees/peach-sarees",
 			"enabled": false,
-			"name": "Coral Pink/Pink"
+			"name": "peach"
 		},
 		"id": 2
 	},
-	"sarees/sky-blue_ferozi-sarees": {
+	"sarees/maroon-sarees": {
 		"type": "Color",
 		"value": {
-			"url": "sarees/sky-blue_ferozi-sarees",
+			"url": "sarees/maroon-sarees",
 			"enabled": false,
-			"name": "Sky Blue_Ferozi"
+			"name": "maroon"
 		},
 		"id": 2
 	},
@@ -813,21 +741,21 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/olive-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/olive-sarees",
-			"enabled": false,
-			"name": "olive"
-		},
-		"id": 2
-	},
 	"sarees/pastel-sarees": {
 		"type": "Color",
 		"value": {
 			"url": "sarees/pastel-sarees",
 			"enabled": false,
 			"name": "pastel"
+		},
+		"id": 2
+	},
+	"sarees/orange-sarees": {
+		"type": "Color",
+		"value": {
+			"url": "sarees/orange-sarees",
+			"enabled": false,
+			"name": "orange"
 		},
 		"id": 2
 	},
@@ -849,21 +777,21 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/red/pink-sarees": {
-		"type": "Color",
-		"value": {
-			"url": "sarees/red/pink-sarees",
-			"enabled": false,
-			"name": "Red/Pink"
-		},
-		"id": 2
-	},
 	"sarees/turquoise-sarees": {
 		"type": "Color",
 		"value": {
 			"url": "sarees/turquoise-sarees",
 			"enabled": false,
 			"name": "turquoise"
+		},
+		"id": 2
+	},
+	"sarees/purple-sarees": {
+		"type": "Color",
+		"value": {
+			"url": "sarees/purple-sarees",
+			"enabled": false,
+			"name": "purple"
 		},
 		"id": 2
 	},
@@ -876,399 +804,30 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/navy-sarees": {
+	"sarees/teal-blue-sarees": {
 		"type": "Color",
 		"value": {
-			"url": "sarees/navy-sarees",
+			"url": "sarees/teal-blue-sarees",
 			"enabled": false,
-			"name": "navy"
+			"name": "teal blue"
 		},
 		"id": 2
 	},
-	"sarees/woven-woven-resham-border-with-print-all-over-sarees": {
-		"type": "Saree Work",
+	"sarees/olive-sarees": {
+		"type": "Color",
 		"value": {
-			"url": "sarees/woven-woven-resham-border-with-print-all-over-sarees",
+			"url": "sarees/olive-sarees",
 			"enabled": false,
-			"name": "Woven Woven Resham Border With Print All OVER"
+			"name": "olive"
 		},
 		"id": 2
 	},
-	"sarees/ikat-sarees": {
-		"type": "Saree Work",
+	"sarees/n/a-sarees": {
+		"type": "Color",
 		"value": {
-			"url": "sarees/ikat-sarees",
+			"url": "sarees/n/a-sarees",
 			"enabled": false,
-			"name": "Ikat"
-		},
-		"id": 2
-	},
-	"sarees/dori-embroidered-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/dori-embroidered-sarees",
-			"enabled": false,
-			"name": "Dori Embroidered"
-		},
-		"id": 2
-	},
-	"sarees/warli-art-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/warli-art-sarees",
-			"enabled": false,
-			"name": "Warli Art"
-		},
-		"id": 2
-	},
-	"sarees/woven-design-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-design-all-over-sarees",
-			"enabled": false,
-			"name": "Woven Design All Over"
-		},
-		"id": 2
-	},
-	"sarees/mirror-work-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/mirror-work-sarees",
-			"enabled": false,
-			"name": "mirror work"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-border-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-border-all-over-sarees",
-			"enabled": false,
-			"name": "Woven Zari Border All Over"
-		},
-		"id": 2
-	},
-	"sarees/dye-&-dye-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/dye-&-dye-border-sarees",
-			"enabled": false,
-			"name": "Dye & Dye Border"
-		},
-		"id": 2
-	},
-	"sarees/woven-resham-black-butty-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-resham-black-butty-all-over-sarees",
-			"enabled": false,
-			"name": "Woven Resham Black Butty All Over"
-		},
-		"id": 2
-	},
-	"sarees/applique-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/applique-sarees",
-			"enabled": false,
-			"name": "Applique"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-contrast-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-contrast-border-sarees",
-			"enabled": false,
-			"name": "Woven Zari Contrast Border"
-		},
-		"id": 2
-	},
-	"sarees/bhandhej-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/bhandhej-sarees",
-			"enabled": false,
-			"name": "Bhandhej"
-		},
-		"id": 2
-	},
-	"sarees/polka-dots-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/polka-dots-sarees",
-			"enabled": false,
-			"name": "Polka Dots"
-		},
-		"id": 2
-	},
-	"sarees/printed-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/printed-sarees",
-			"enabled": false,
-			"name": "Printed"
-		},
-		"id": 2
-	},
-	"sarees/print-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/print-sarees",
-			"enabled": false,
-			"name": "Print"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-border-and-self-checks-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-border-and-self-checks-all-over-sarees",
-			"enabled": false,
-			"name": "Woven Zari Border and Self Checks All Over"
-		},
-		"id": 2
-	},
-	"sarees/floral-print-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/floral-print-sarees",
-			"enabled": false,
-			"name": "Floral Print"
-		},
-		"id": 2
-	},
-	"sarees/woven-silvar-zari-butty-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-silvar-zari-butty-sarees",
-			"enabled": false,
-			"name": "Woven Silvar Zari Butty"
-		},
-		"id": 2
-	},
-	"sarees/block-printed-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/block-printed-sarees",
-			"enabled": false,
-			"name": "block printed"
-		},
-		"id": 2
-	},
-	"sarees/solid-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/solid-sarees",
-			"enabled": false,
-			"name": "Solid"
-		},
-		"id": 2
-	},
-	"sarees/self-lining-pattern-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/self-lining-pattern-sarees",
-			"enabled": false,
-			"name": "Self-Lining Pattern"
-		},
-		"id": 2
-	},
-	"sarees/bandhani-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/bandhani-sarees",
-			"enabled": false,
-			"name": "Bandhani"
-		},
-		"id": 2
-	},
-	"sarees/woven-self-checks-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-self-checks-all-over-sarees",
-			"enabled": false,
-			"name": "Woven Self Checks All over"
-		},
-		"id": 2
-	},
-	"sarees/woven-stipes-and-zari-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-stipes-and-zari-border-sarees",
-			"enabled": false,
-			"name": "Woven Stipes and Zari Border"
-		},
-		"id": 2
-	},
-	"sarees/pearl-embellished-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/pearl-embellished-sarees",
-			"enabled": false,
-			"name": "Pearl Embellished"
-		},
-		"id": 2
-	},
-	"sarees/lehariya-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/lehariya-sarees",
-			"enabled": false,
-			"name": "Lehariya"
-		},
-		"id": 2
-	},
-	"sarees/woven-resham-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-resham-border-sarees",
-			"enabled": false,
-			"name": "Woven Resham Border"
-		},
-		"id": 2
-	},
-	"sarees/dye-&-dye-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/dye-&-dye-sarees",
-			"enabled": false,
-			"name": "Dye & Dye"
-		},
-		"id": 2
-	},
-	"sarees/ajrakh-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/ajrakh-sarees",
-			"enabled": false,
-			"name": "Ajrakh"
-		},
-		"id": 2
-	},
-	"sarees/woven-multi-stipe-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-multi-stipe-border-sarees",
-			"enabled": false,
-			"name": "Woven Multi Stipe Border"
-		},
-		"id": 2
-	},
-	"sarees/kantha-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/kantha-sarees",
-			"enabled": false,
-			"name": "Kantha"
-		},
-		"id": 2
-	},
-	"sarees/banarasi-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/banarasi-sarees",
-			"enabled": false,
-			"name": "Banarasi"
-		},
-		"id": 2
-	},
-	"sarees/cutdana-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/cutdana-sarees",
-			"enabled": false,
-			"name": "Cutdana"
-		},
-		"id": 2
-	},
-	"sarees/woven-contrast-butty-design-with-zari-border-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-contrast-butty-design-with-zari-border-all-over-sarees",
-			"enabled": false,
-			"name": "Woven Contrast Butty Design wIth Zari Border All over"
-		},
-		"id": 2
-	},
-	"sarees/woven-silver-zari-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-silver-zari-border-sarees",
-			"enabled": false,
-			"name": "Woven Silver Zari Border"
-		},
-		"id": 2
-	},
-	"sarees/madhubani-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/madhubani-sarees",
-			"enabled": false,
-			"name": "Madhubani"
-		},
-		"id": 2
-	},
-	"sarees/zari-butty-and-border-woven-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/zari-butty-and-border-woven-all-over-sarees",
-			"enabled": false,
-			"name": "Zari Butty and Border Woven All Over"
-		},
-		"id": 2
-	},
-	"sarees/embroidered-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/embroidered-sarees",
-			"enabled": false,
-			"name": "Embroidered"
-		},
-		"id": 2
-	},
-	"sarees/thread-work-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/thread-work-sarees",
-			"enabled": false,
-			"name": "thread work"
-		},
-		"id": 2
-	},
-	"sarees/zari-woven-border-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/zari-woven-border-all-over-sarees",
-			"enabled": false,
-			"name": "Zari Woven Border All Over"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-border-and-multi-colour-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-border-and-multi-colour-all-over-sarees",
-			"enabled": false,
-			"name": "Woven Zari Border And Multi Colour All Over"
-		},
-		"id": 2
-	},
-	"sarees/hand-painted-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/hand-painted-sarees",
-			"enabled": false,
-			"name": "Hand Painted"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-design-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-design-all-over-sarees",
-			"enabled": false,
-			"name": "Woven Zari Design All Over"
+			"name": "N/A"
 		},
 		"id": 2
 	},
@@ -1281,255 +840,12 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/embellished-sarees": {
+	"sarees/handcrafted-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/embellished-sarees",
+			"url": "sarees/handcrafted-sarees",
 			"enabled": false,
-			"name": "Embellished"
-		},
-		"id": 2
-	},
-	"sarees/hand-embroidered-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/hand-embroidered-sarees",
-			"enabled": false,
-			"name": "Hand Embroidered"
-		},
-		"id": 2
-	},
-	"sarees/woven-stripes-and-zari-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-stripes-and-zari-border-sarees",
-			"enabled": false,
-			"name": "Woven Stripes and Zari Border"
-		},
-		"id": 2
-	},
-	"sarees/border-worked-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/border-worked-sarees",
-			"enabled": false,
-			"name": "Border Worked"
-		},
-		"id": 2
-	},
-	"sarees/woven-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-sarees",
-			"enabled": false,
-			"name": "woven"
-		},
-		"id": 2
-	},
-	"sarees/embroiderd-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/embroiderd-sarees",
-			"enabled": false,
-			"name": "Embroiderd"
-		},
-		"id": 2
-	},
-	"sarees/woven-contrast-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-contrast-border-sarees",
-			"enabled": false,
-			"name": "Woven Contrast Border"
-		},
-		"id": 2
-	},
-	"sarees/woven-multi-stripes-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-multi-stripes-sarees",
-			"enabled": false,
-			"name": "Woven Multi Stripes"
-		},
-		"id": 2
-	},
-	"sarees/kalamkari-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/kalamkari-sarees",
-			"enabled": false,
-			"name": "Kalamkari"
-		},
-		"id": 2
-	},
-	"sarees/batik-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/batik-sarees",
-			"enabled": false,
-			"name": "Batik"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-border-sarees",
-			"enabled": false,
-			"name": "Woven Zari Border"
-		},
-		"id": 2
-	},
-	"sarees/handwoven-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/handwoven-sarees",
-			"enabled": false,
-			"name": "Handwoven"
-		},
-		"id": 2
-	},
-	"sarees/zari-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/zari-border-sarees",
-			"enabled": false,
-			"name": "Zari Border"
-		},
-		"id": 2
-	},
-	"sarees/gota-patti-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/gota-patti-sarees",
-			"enabled": false,
-			"name": "Gota Patti"
-		},
-		"id": 2
-	},
-	"sarees/gota-work-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/gota-work-sarees",
-			"enabled": false,
-			"name": "Gota Work"
-		},
-		"id": 2
-	},
-	"sarees/resham-woven-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/resham-woven-sarees",
-			"enabled": false,
-			"name": "Resham Woven"
-		},
-		"id": 2
-	},
-	"sarees/woven-multi-colour-self-checks-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-multi-colour-self-checks-sarees",
-			"enabled": false,
-			"name": "Woven Multi colour  self checks"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-and-embose-design-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-and-embose-design-sarees",
-			"enabled": false,
-			"name": "Woven Zari and Embose Design"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-and-kalamkari-work-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-and-kalamkari-work-sarees",
-			"enabled": false,
-			"name": "Woven Zari and Kalamkari work"
-		},
-		"id": 2
-	},
-	"sarees/sequined-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/sequined-sarees",
-			"enabled": false,
-			"name": "Sequined"
-		},
-		"id": 2
-	},
-	"sarees/woven-multi-zari-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-multi-zari-border-sarees",
-			"enabled": false,
-			"name": "Woven Multi Zari Border"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-all-over-sarees",
-			"enabled": false,
-			"name": "Woven Zari All Over"
-		},
-		"id": 2
-	},
-	"sarees/woven-self-butty-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-self-butty-sarees",
-			"enabled": false,
-			"name": "Woven Self Butty"
-		},
-		"id": 2
-	},
-	"sarees/aari-embroidered-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/aari-embroidered-sarees",
-			"enabled": false,
-			"name": "Aari Embroidered"
-		},
-		"id": 2
-	},
-	"sarees/woven-mango-zari-butta-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-mango-zari-butta-sarees",
-			"enabled": false,
-			"name": "Woven Mango Zari Butta"
-		},
-		"id": 2
-	},
-	"sarees/cut-work-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/cut-work-sarees",
-			"enabled": false,
-			"name": "Cut Work"
-		},
-		"id": 2
-	},
-	"sarees/textured-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/textured-sarees",
-			"enabled": false,
-			"name": "Textured"
-		},
-		"id": 2
-	},
-	"sarees/print-finish-t-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/print-finish-t-sarees",
-			"enabled": false,
-			"name": "Print     Finish T"
+			"name": "handcrafted"
 		},
 		"id": 2
 	},
@@ -1542,165 +858,21 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/woven-zari-border-and-self-checks-sarees": {
+	"sarees/dye-&-dye-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/woven-zari-border-and-self-checks-sarees",
+			"url": "sarees/dye-&-dye-sarees",
 			"enabled": false,
-			"name": "Woven Zari Border and Self Checks"
+			"name": "dye & dye"
 		},
 		"id": 2
 	},
-	"sarees/woven-zig-zag-zari-design-sarees": {
+	"sarees/dye-border-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/woven-zig-zag-zari-design-sarees",
+			"url": "sarees/dye-border-sarees",
 			"enabled": false,
-			"name": "Woven Zig Zag Zari Design"
-		},
-		"id": 2
-	},
-	"sarees/woven-multi-design-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-multi-design-sarees",
-			"enabled": false,
-			"name": "Woven Multi Design"
-		},
-		"id": 2
-	},
-	"sarees/woven-stripes-and-multi-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-stripes-and-multi-border-sarees",
-			"enabled": false,
-			"name": "Woven Stripes and Multi Border"
-		},
-		"id": 2
-	},
-	"sarees/hand-embriodery-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/hand-embriodery-sarees",
-			"enabled": false,
-			"name": "Hand Embriodery"
-		},
-		"id": 2
-	},
-	"sarees/jacquard-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/jacquard-sarees",
-			"enabled": false,
-			"name": "Jacquard"
-		},
-		"id": 2
-	},
-	"sarees/weaving-thread-butta-with-double-blouse-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/weaving-thread-butta-with-double-blouse-sarees",
-			"enabled": false,
-			"name": "Weaving Thread Butta with Double Blouse"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-meena-border-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-meena-border-sarees",
-			"enabled": false,
-			"name": "Woven Zari Meena Border"
-		},
-		"id": 2
-	},
-	"sarees/tie-dyed-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/tie-dyed-sarees",
-			"enabled": false,
-			"name": "Tie Dyed"
-		},
-		"id": 2
-	},
-	"sarees/resham-embroidered-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/resham-embroidered-sarees",
-			"enabled": false,
-			"name": "Resham Embroidered"
-		},
-		"id": 2
-	},
-	"sarees/paisley-print-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/paisley-print-sarees",
-			"enabled": false,
-			"name": "Paisley Print"
-		},
-		"id": 2
-	},
-	"sarees/maheshwari-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/maheshwari-sarees",
-			"enabled": false,
-			"name": "Maheshwari"
-		},
-		"id": 2
-	},
-	"sarees/paithani-silk-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/paithani-silk-sarees",
-			"enabled": false,
-			"name": "Paithani Silk"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-work-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-work-sarees",
-			"enabled": false,
-			"name": "Woven Zari Work"
-		},
-		"id": 2
-	},
-	"sarees/blocked-patti-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/blocked-patti-sarees",
-			"enabled": false,
-			"name": "Blocked Patti"
-		},
-		"id": 2
-	},
-	"sarees/stone-embellished-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/stone-embellished-sarees",
-			"enabled": false,
-			"name": "Stone Embellished"
-		},
-		"id": 2
-	},
-	"sarees/assam-tant-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/assam-tant-sarees",
-			"enabled": false,
-			"name": "Assam Tant"
-		},
-		"id": 2
-	},
-	"sarees/hand-crafted-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/hand-crafted-sarees",
-			"enabled": false,
-			"name": "Hand Crafted"
+			"name": "dye border"
 		},
 		"id": 2
 	},
@@ -1709,34 +881,7 @@ export var filtersMap = {
 		"value": {
 			"url": "sarees/beads-sarees",
 			"enabled": false,
-			"name": "Beads"
-		},
-		"id": 2
-	},
-	"sarees/dabka-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/dabka-sarees",
-			"enabled": false,
-			"name": "Dabka"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-border-all-over-with-multi-dye-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-border-all-over-with-multi-dye-sarees",
-			"enabled": false,
-			"name": "Woven Zari Border All Over With Multi Dye"
-		},
-		"id": 2
-	},
-	"sarees/woven-self-embose-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-self-embose-sarees",
-			"enabled": false,
-			"name": "Woven Self Embose"
+			"name": "beads"
 		},
 		"id": 2
 	},
@@ -1745,16 +890,169 @@ export var filtersMap = {
 		"value": {
 			"url": "sarees/zari-work-sarees",
 			"enabled": false,
-			"name": "Zari Work"
+			"name": "zari work"
 		},
 		"id": 2
 	},
-	"sarees/self-checks-weaving-pattern-with-double-blouse-sarees": {
+	"sarees/shibori-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/self-checks-weaving-pattern-with-double-blouse-sarees",
+			"url": "sarees/shibori-sarees",
 			"enabled": false,
-			"name": "Self-Checks Weaving Pattern with Double Blouse"
+			"name": "shibori"
+		},
+		"id": 2
+	},
+	"sarees/zardosi-work-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/zardosi-work-sarees",
+			"enabled": false,
+			"name": "zardosi work"
+		},
+		"id": 2
+	},
+	"sarees/border-worked-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/border-worked-sarees",
+			"enabled": false,
+			"name": "border worked"
+		},
+		"id": 2
+	},
+	"sarees/pearl-embellishment-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/pearl-embellishment-sarees",
+			"enabled": false,
+			"name": "pearl embellishment"
+		},
+		"id": 2
+	},
+	"sarees/paisley-print-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/paisley-print-sarees",
+			"enabled": false,
+			"name": "paisley print"
+		},
+		"id": 2
+	},
+	"sarees/handwoven-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/handwoven-sarees",
+			"enabled": false,
+			"name": "handwoven"
+		},
+		"id": 2
+	},
+	"sarees/cutdana-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/cutdana-sarees",
+			"enabled": false,
+			"name": "cutdana"
+		},
+		"id": 2
+	},
+	"sarees/woven-zari-border-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/woven-zari-border-sarees",
+			"enabled": false,
+			"name": "woven zari border"
+		},
+		"id": 2
+	},
+	"sarees/cut-work-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/cut-work-sarees",
+			"enabled": false,
+			"name": "cut work"
+		},
+		"id": 2
+	},
+	"sarees/weaving-thread-butta-with-double-blouse-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/weaving-thread-butta-with-double-blouse-sarees",
+			"enabled": false,
+			"name": "weaving thread butta with double blouse"
+		},
+		"id": 2
+	},
+	"sarees/meena-border-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/meena-border-sarees",
+			"enabled": false,
+			"name": "meena border"
+		},
+		"id": 2
+	},
+	"sarees/assam-tant-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/assam-tant-sarees",
+			"enabled": false,
+			"name": "assam tant"
+		},
+		"id": 2
+	},
+	"sarees/thread-work-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/thread-work-sarees",
+			"enabled": false,
+			"name": "thread work"
+		},
+		"id": 2
+	},
+	"sarees/embellished-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/embellished-sarees",
+			"enabled": false,
+			"name": "embellished"
+		},
+		"id": 2
+	},
+	"sarees/mangalgiri-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/mangalgiri-sarees",
+			"enabled": false,
+			"name": "mangalgiri"
+		},
+		"id": 2
+	},
+	"sarees/warli-art-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/warli-art-sarees",
+			"enabled": false,
+			"name": "warli art"
+		},
+		"id": 2
+	},
+	"sarees/batik-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/batik-sarees",
+			"enabled": false,
+			"name": "batik"
+		},
+		"id": 2
+	},
+	"sarees/woven-zari-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/woven-zari-sarees",
+			"enabled": false,
+			"name": "woven zari"
 		},
 		"id": 2
 	},
@@ -1763,25 +1061,277 @@ export var filtersMap = {
 		"value": {
 			"url": "sarees/woven-self-design-sarees",
 			"enabled": false,
-			"name": "Woven Self design"
+			"name": "woven self design"
 		},
 		"id": 2
 	},
-	"sarees/woven-resham-and-zari-border-sarees": {
+	"sarees/self-checks-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/woven-resham-and-zari-border-sarees",
+			"url": "sarees/self-checks-sarees",
 			"enabled": false,
-			"name": "Woven Resham And Zari Border"
+			"name": "self-checks"
 		},
 		"id": 2
 	},
-	"sarees/digitally-printed-sarees": {
+	"sarees/gota-work-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/digitally-printed-sarees",
+			"url": "sarees/gota-work-sarees",
 			"enabled": false,
-			"name": "Digitally Printed"
+			"name": "gota work"
+		},
+		"id": 2
+	},
+	"sarees/foil-print-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/foil-print-sarees",
+			"enabled": false,
+			"name": "foil print"
+		},
+		"id": 2
+	},
+	"sarees/dori-embroidery-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/dori-embroidery-sarees",
+			"enabled": false,
+			"name": "dori embroidery"
+		},
+		"id": 2
+	},
+	"sarees/tie-dye-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/tie-dye-sarees",
+			"enabled": false,
+			"name": "tie dye"
+		},
+		"id": 2
+	},
+	"sarees/sequin-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/sequin-sarees",
+			"enabled": false,
+			"name": "sequin"
+		},
+		"id": 2
+	},
+	"sarees/ikat-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/ikat-sarees",
+			"enabled": false,
+			"name": "ikat"
+		},
+		"id": 2
+	},
+	"sarees/hand-paint-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/hand-paint-sarees",
+			"enabled": false,
+			"name": "hand paint"
+		},
+		"id": 2
+	},
+	"sarees/applique-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/applique-sarees",
+			"enabled": false,
+			"name": "applique"
+		},
+		"id": 2
+	},
+	"sarees/patch-work-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/patch-work-sarees",
+			"enabled": false,
+			"name": "patch work"
+		},
+		"id": 2
+	},
+	"sarees/lace-work-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/lace-work-sarees",
+			"enabled": false,
+			"name": "lace work"
+		},
+		"id": 2
+	},
+	"sarees/hand-embriodery-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/hand-embriodery-sarees",
+			"enabled": false,
+			"name": "hand embriodery"
+		},
+		"id": 2
+	},
+	"sarees/paithani-work-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/paithani-work-sarees",
+			"enabled": false,
+			"name": "paithani work"
+		},
+		"id": 2
+	},
+	"sarees/dye-dye-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/dye-dye-sarees",
+			"enabled": false,
+			"name": "dye dye"
+		},
+		"id": 2
+	},
+	"sarees/floral-print-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/floral-print-sarees",
+			"enabled": false,
+			"name": "floral print"
+		},
+		"id": 2
+	},
+	"sarees/banarasi-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/banarasi-sarees",
+			"enabled": false,
+			"name": "banarasi"
+		},
+		"id": 2
+	},
+	"sarees/texture-work-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/texture-work-sarees",
+			"enabled": false,
+			"name": "texture work"
+		},
+		"id": 2
+	},
+	"sarees/zari-woven-border-all-over-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/zari-woven-border-all-over-sarees",
+			"enabled": false,
+			"name": "zari woven border all over"
+		},
+		"id": 2
+	},
+	"sarees/block-print-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/block-print-sarees",
+			"enabled": false,
+			"name": "block print"
+		},
+		"id": 2
+	},
+	"sarees/chikankari-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/chikankari-sarees",
+			"enabled": false,
+			"name": "chikankari"
+		},
+		"id": 2
+	},
+	"sarees/self-checks-weaving-pattern-with-double-blouse-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/self-checks-weaving-pattern-with-double-blouse-sarees",
+			"enabled": false,
+			"name": "self-checks weaving pattern with double blouse"
+		},
+		"id": 2
+	},
+	"sarees/lehariya-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/lehariya-sarees",
+			"enabled": false,
+			"name": "lehariya"
+		},
+		"id": 2
+	},
+	"sarees/woven-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/woven-sarees",
+			"enabled": false,
+			"name": "woven"
+		},
+		"id": 2
+	},
+	"sarees/woven-zari-design-all-over-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/woven-zari-design-all-over-sarees",
+			"enabled": false,
+			"name": "woven zari design all over"
+		},
+		"id": 2
+	},
+	"sarees/embroidered-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/embroidered-sarees",
+			"enabled": false,
+			"name": "embroidered"
+		},
+		"id": 2
+	},
+	"sarees/woven-contrast-border-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/woven-contrast-border-sarees",
+			"enabled": false,
+			"name": "woven contrast border"
+		},
+		"id": 2
+	},
+	"sarees/embroiderd-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/embroiderd-sarees",
+			"enabled": false,
+			"name": "embroiderd"
+		},
+		"id": 2
+	},
+	"sarees/mirror-work-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/mirror-work-sarees",
+			"enabled": false,
+			"name": "mirror work"
+		},
+		"id": 2
+	},
+	"sarees/bandhani-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/bandhani-sarees",
+			"enabled": false,
+			"name": "bandhani"
+		},
+		"id": 2
+	},
+	"sarees/bandhej-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/bandhej-sarees",
+			"enabled": false,
+			"name": "bandhej"
 		},
 		"id": 2
 	},
@@ -1794,165 +1344,111 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/embossed-sarees": {
+	"sarees/emboss-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/embossed-sarees",
+			"url": "sarees/emboss-sarees",
 			"enabled": false,
-			"name": "Embossed"
+			"name": "emboss"
 		},
 		"id": 2
 	},
-	"sarees/woven-multi-colour-all-over-sarees": {
+	"sarees/hand-crafted-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/woven-multi-colour-all-over-sarees",
+			"url": "sarees/hand-crafted-sarees",
 			"enabled": false,
-			"name": "Woven Multi Colour All Over"
+			"name": "hand crafted"
 		},
 		"id": 2
 	},
-	"sarees/patch-work-sarees": {
+	"sarees/stone-embellishment-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/patch-work-sarees",
+			"url": "sarees/stone-embellishment-sarees",
 			"enabled": false,
-			"name": "Patch Work"
+			"name": "stone embellishment"
 		},
 		"id": 2
 	},
-	"sarees/woven-fancy-butty-print-all-over-sarees": {
+	"sarees/print-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/woven-fancy-butty-print-all-over-sarees",
+			"url": "sarees/print-sarees",
 			"enabled": false,
-			"name": "Woven Fancy Butty Print All Over"
+			"name": "print"
 		},
 		"id": 2
 	},
-	"sarees/woven-self-design-all-over-sarees": {
+	"sarees/kantha-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/woven-self-design-all-over-sarees",
+			"url": "sarees/kantha-sarees",
 			"enabled": false,
-			"name": "Woven Self Design All over"
+			"name": "kantha"
 		},
 		"id": 2
 	},
-	"sarees/woven-zari-border-with-fancy-print-sarees": {
+	"sarees/woven-zari-border-all-over-with-multi-dye-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/woven-zari-border-with-fancy-print-sarees",
+			"url": "sarees/woven-zari-border-all-over-with-multi-dye-sarees",
 			"enabled": false,
-			"name": "Woven Zari Border With Fancy Print"
+			"name": "woven zari border all over with multi dye"
 		},
 		"id": 2
 	},
-	"sarees/kundan-sarees": {
+	"sarees/dabka-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/kundan-sarees",
+			"url": "sarees/dabka-sarees",
 			"enabled": false,
-			"name": "Kundan"
+			"name": "dabka"
 		},
 		"id": 2
 	},
-	"sarees/woven-zari-fancy-border-sarees": {
+	"sarees/embellishment-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/woven-zari-fancy-border-sarees",
+			"url": "sarees/embellishment-sarees",
 			"enabled": false,
-			"name": "Woven Zari Fancy Border"
+			"name": "embellishment"
 		},
 		"id": 2
 	},
-	"sarees/mangalgiri-sarees": {
+	"sarees/border-work-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/mangalgiri-sarees",
+			"url": "sarees/border-work-sarees",
 			"enabled": false,
-			"name": "Mangalgiri"
+			"name": "border work"
 		},
 		"id": 2
 	},
-	"sarees/chikankari-sarees": {
+	"sarees/maheshwari-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/chikankari-sarees",
+			"url": "sarees/maheshwari-sarees",
 			"enabled": false,
-			"name": "Chikankari"
+			"name": "maheshwari"
 		},
 		"id": 2
 	},
-	"sarees/shibori-sarees": {
+	"sarees/kalamkari-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/shibori-sarees",
+			"url": "sarees/kalamkari-sarees",
 			"enabled": false,
-			"name": "Shibori"
+			"name": "kalamkari"
 		},
 		"id": 2
 	},
-	"sarees/woven-zari-stripes-sarees": {
+	"sarees/resham-woven-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/woven-zari-stripes-sarees",
+			"url": "sarees/resham-woven-sarees",
 			"enabled": false,
-			"name": "Woven Zari Stripes"
-		},
-		"id": 2
-	},
-	"sarees/zardosi-work-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/zardosi-work-sarees",
-			"enabled": false,
-			"name": "Zardosi Work"
-		},
-		"id": 2
-	},
-	"sarees/woven-zari-design-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-zari-design-sarees",
-			"enabled": false,
-			"name": "Woven Zari Design"
-		},
-		"id": 2
-	},
-	"sarees/lace-work-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/lace-work-sarees",
-			"enabled": false,
-			"name": "Lace Work"
-		},
-		"id": 2
-	},
-	"sarees/woven-jute-stripes-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-jute-stripes-all-over-sarees",
-			"enabled": false,
-			"name": "Woven Jute Stripes All Over"
-		},
-		"id": 2
-	},
-	"sarees/woven-resham-meena-butty-all-over-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/woven-resham-meena-butty-all-over-sarees",
-			"enabled": false,
-			"name": "Woven Resham Meena Butty All Over"
-		},
-		"id": 2
-	},
-	"sarees/foil-printed-sarees": {
-		"type": "Saree Work",
-		"value": {
-			"url": "sarees/foil-printed-sarees",
-			"enabled": false,
-			"name": "Foil Printed"
+			"name": "resham woven"
 		},
 		"id": 2
 	},
@@ -1961,16 +1457,187 @@ export var filtersMap = {
 		"value": {
 			"url": "sarees/plain-sarees",
 			"enabled": false,
-			"name": "Plain"
+			"name": "plain"
 		},
 		"id": 2
 	},
-	"sarees/woven-meena-border-all-over-sarees": {
+	"sarees/embroidery-sarees": {
 		"type": "Saree Work",
 		"value": {
-			"url": "sarees/woven-meena-border-all-over-sarees",
+			"url": "sarees/embroidery-sarees",
 			"enabled": false,
-			"name": "Woven Meena Border All over"
+			"name": "embroidery"
+		},
+		"id": 2
+	},
+	"sarees/dye-&-dye-border-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/dye-&-dye-border-sarees",
+			"enabled": false,
+			"name": "dye & dye border"
+		},
+		"id": 2
+	},
+	"sarees/madhubani-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/madhubani-sarees",
+			"enabled": false,
+			"name": "madhubani"
+		},
+		"id": 2
+	},
+	"sarees/block-patti-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/block-patti-sarees",
+			"enabled": false,
+			"name": "block patti"
+		},
+		"id": 2
+	},
+	"sarees/kundan-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/kundan-sarees",
+			"enabled": false,
+			"name": "kundan"
+		},
+		"id": 2
+	},
+	"sarees/woven-zari-design-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/woven-zari-design-sarees",
+			"enabled": false,
+			"name": "woven zari design"
+		},
+		"id": 2
+	},
+	"sarees/solid-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/solid-sarees",
+			"enabled": false,
+			"name": "solid"
+		},
+		"id": 2
+	},
+	"sarees/ajrakh-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/ajrakh-sarees",
+			"enabled": false,
+			"name": "ajrakh"
+		},
+		"id": 2
+	},
+	"sarees/jacquard-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/jacquard-sarees",
+			"enabled": false,
+			"name": "jacquard"
+		},
+		"id": 2
+	},
+	"sarees/aari-embroidery-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/aari-embroidery-sarees",
+			"enabled": false,
+			"name": "aari embroidery"
+		},
+		"id": 2
+	},
+	"sarees/hand-embroidery-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/hand-embroidery-sarees",
+			"enabled": false,
+			"name": "hand embroidery"
+		},
+		"id": 2
+	},
+	"sarees/self-lining-pattern-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/self-lining-pattern-sarees",
+			"enabled": false,
+			"name": "self-lining pattern"
+		},
+		"id": 2
+	},
+	"sarees/gota-patti-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/gota-patti-sarees",
+			"enabled": false,
+			"name": "gota patti"
+		},
+		"id": 2
+	},
+	"sarees/digital-print-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/digital-print-sarees",
+			"enabled": false,
+			"name": "digital print"
+		},
+		"id": 2
+	},
+	"sarees/resham-embroidered-sarees": {
+		"type": "Saree Work",
+		"value": {
+			"url": "sarees/resham-embroidered-sarees",
+			"enabled": false,
+			"name": "resham embroidered"
+		},
+		"id": 2
+	},
+	"sarees/festive-sarees": {
+		"type": "Occasion",
+		"value": {
+			"url": "sarees/festive-sarees",
+			"enabled": false,
+			"name": "festive"
+		},
+		"id": 2
+	},
+	"sarees/festival-sarees": {
+		"type": "Occasion",
+		"value": {
+			"url": "sarees/festival-sarees",
+			"enabled": false,
+			"name": "Festival"
+		},
+		"id": 2
+	},
+	"sarees/party-sarees": {
+		"type": "Occasion",
+		"value": {
+			"url": "sarees/party-sarees",
+			"enabled": false,
+			"name": "party"
+		},
+		"id": 2
+	},
+	"sarees/casual-sarees": {
+		"type": "Occasion",
+		"value": {
+			"url": "sarees/casual-sarees",
+			"enabled": false,
+			"name": "casual"
+		},
+		"id": 2
+	},
+	"sarees/bridal-sarees": {
+		"type": "Occasion",
+		"value": {
+			"url": "sarees/bridal-sarees",
+			"enabled": false,
+			"name": "bridal"
 		},
 		"id": 2
 	},
@@ -1992,68 +1659,239 @@ export var filtersMap = {
 		},
 		"id": 2
 	},
-	"sarees/bridal-sarees": {
-		"type": "Occasion",
+	"blouses/contemporary-blouses": {
+		"type": "Style",
 		"value": {
-			"url": "sarees/bridal-sarees",
+			"url": "blouses/contemporary-blouses",
 			"enabled": false,
-			"name": "bridal"
+			"name": "contemporary"
 		},
-		"id": 2
+		"id": 3
 	},
-	"sarees/casual-sarees": {
-		"type": "Occasion",
+	"blouses/designer-blouses": {
+		"type": "Style",
 		"value": {
-			"url": "sarees/casual-sarees",
+			"url": "blouses/designer-blouses",
 			"enabled": false,
-			"name": "casual"
+			"name": "designer"
 		},
-		"id": 2
+		"id": 3
 	},
-	"sarees/party-sarees": {
-		"type": "Occasion",
+	"blouses/traditional-blouses": {
+		"type": "Style",
 		"value": {
-			"url": "sarees/party-sarees",
+			"url": "blouses/traditional-blouses",
 			"enabled": false,
-			"name": "party"
+			"name": "traditional"
 		},
-		"id": 2
+		"id": 3
 	},
-	"sarees/festival-sarees": {
-		"type": "Occasion",
+	"blouses/art-silk-blouses": {
+		"type": "Fabric",
 		"value": {
-			"url": "sarees/festival-sarees",
+			"url": "blouses/art-silk-blouses",
 			"enabled": false,
-			"name": "festival"
+			"name": "art silk"
 		},
-		"id": 2
+		"id": 3
 	},
-	"sarees/festive-sarees": {
-		"type": "Occasion",
+	"blouses/bangalore-silk-blouses": {
+		"type": "Fabric",
 		"value": {
-			"url": "sarees/festive-sarees",
+			"url": "blouses/bangalore-silk-blouses",
 			"enabled": false,
-			"name": "festive"
+			"name": "bangalore silk"
 		},
-		"id": 2
+		"id": 3
 	},
-	"sarees/yes-sarees": {
-		"type": "Has Petticoat",
+	"blouses/bhagalpuri-silk-blouses": {
+		"type": "Fabric",
 		"value": {
-			"url": "sarees/yes-sarees",
+			"url": "blouses/bhagalpuri-silk-blouses",
 			"enabled": false,
-			"name": "Yes"
+			"name": "bhagalpuri silk"
 		},
-		"id": 2
+		"id": 3
 	},
-	"sarees/no-sarees": {
-		"type": "Has Petticoat",
+	"blouses/brocade-blouses": {
+		"type": "Fabric",
 		"value": {
-			"url": "sarees/no-sarees",
+			"url": "blouses/brocade-blouses",
 			"enabled": false,
-			"name": "No"
+			"name": "brocade"
 		},
-		"id": 2
+		"id": 3
+	},
+	"blouses/chanderi-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/chanderi-blouses",
+			"enabled": false,
+			"name": "chanderi"
+		},
+		"id": 3
+	},
+	"blouses/chiffon-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/chiffon-blouses",
+			"enabled": false,
+			"name": "chiffon"
+		},
+		"id": 3
+	},
+	"blouses/cotton-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/cotton-blouses",
+			"enabled": false,
+			"name": "cotton"
+		},
+		"id": 3
+	},
+	"blouses/dupion-silk-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/dupion-silk-blouses",
+			"enabled": false,
+			"name": "dupion silk"
+		},
+		"id": 3
+	},
+	"blouses/eri-silk-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/eri-silk-blouses",
+			"enabled": false,
+			"name": "eri silk"
+		},
+		"id": 3
+	},
+	"blouses/faux-georgette-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/faux-georgette-blouses",
+			"enabled": false,
+			"name": "faux georgette"
+		},
+		"id": 3
+	},
+	"blouses/georgette-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/georgette-blouses",
+			"enabled": false,
+			"name": "georgette"
+		},
+		"id": 3
+	},
+	"blouses/lycra-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/lycra-blouses",
+			"enabled": false,
+			"name": "lycra"
+		},
+		"id": 3
+	},
+	"blouses/net-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/net-blouses",
+			"enabled": false,
+			"name": "net"
+		},
+		"id": 3
+	},
+	"blouses/other-blouses": {
+		"type": "Work",
+		"value": {
+			"url": "blouses/other-blouses",
+			"enabled": false,
+			"name": "other"
+		},
+		"id": 3
+	},
+	"blouses/raw-silk-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/raw-silk-blouses",
+			"enabled": false,
+			"name": "raw silk"
+		},
+		"id": 3
+	},
+	"blouses/satin-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/satin-blouses",
+			"enabled": false,
+			"name": "satin"
+		},
+		"id": 3
+	},
+	"blouses/shimmer-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/shimmer-blouses",
+			"enabled": false,
+			"name": "shimmer"
+		},
+		"id": 3
+	},
+	"blouses/silk-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/silk-blouses",
+			"enabled": false,
+			"name": "silk"
+		},
+		"id": 3
+	},
+	"blouses/silk-blend-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/silk-blend-blouses",
+			"enabled": false,
+			"name": "silk blend"
+		},
+		"id": 3
+	},
+	"blouses/taffeta-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/taffeta-blouses",
+			"enabled": false,
+			"name": "taffeta"
+		},
+		"id": 3
+	},
+	"blouses/tissue-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/tissue-blouses",
+			"enabled": false,
+			"name": "tissue"
+		},
+		"id": 3
+	},
+	"blouses/velvet-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/velvet-blouses",
+			"enabled": false,
+			"name": "velvet"
+		},
+		"id": 3
+	},
+	"blouses/viscose-blouses": {
+		"type": "Fabric",
+		"value": {
+			"url": "blouses/viscose-blouses",
+			"enabled": false,
+			"name": "viscose"
+		},
+		"id": 3
 	},
 	"blouses/beige-blouses": {
 		"type": "Color",
@@ -2208,96 +2046,6 @@ export var filtersMap = {
 		},
 		"id": 3
 	},
-	"blouses/bridal-blouses": {
-		"type": "Occasion",
-		"value": {
-			"url": "blouses/bridal-blouses",
-			"enabled": false,
-			"name": "bridal"
-		},
-		"id": 3
-	},
-	"blouses/casual-blouses": {
-		"type": "Occasion",
-		"value": {
-			"url": "blouses/casual-blouses",
-			"enabled": false,
-			"name": "casual"
-		},
-		"id": 3
-	},
-	"blouses/ceremonial-blouses": {
-		"type": "Occasion",
-		"value": {
-			"url": "blouses/ceremonial-blouses",
-			"enabled": false,
-			"name": "ceremonial"
-		},
-		"id": 3
-	},
-	"blouses/festival-blouses": {
-		"type": "Occasion",
-		"value": {
-			"url": "blouses/festival-blouses",
-			"enabled": false,
-			"name": "festival"
-		},
-		"id": 3
-	},
-	"blouses/festive-blouses": {
-		"type": "Occasion",
-		"value": {
-			"url": "blouses/festive-blouses",
-			"enabled": false,
-			"name": "festive"
-		},
-		"id": 3
-	},
-	"blouses/party-blouses": {
-		"type": "Occasion",
-		"value": {
-			"url": "blouses/party-blouses",
-			"enabled": false,
-			"name": "party"
-		},
-		"id": 3
-	},
-	"blouses/wedding-blouses": {
-		"type": "Occasion",
-		"value": {
-			"url": "blouses/wedding-blouses",
-			"enabled": false,
-			"name": "wedding"
-		},
-		"id": 3
-	},
-	"blouses/contemporary-blouses": {
-		"type": "Style",
-		"value": {
-			"url": "blouses/contemporary-blouses",
-			"enabled": false,
-			"name": "contemporary"
-		},
-		"id": 3
-	},
-	"blouses/designer-blouses": {
-		"type": "Style",
-		"value": {
-			"url": "blouses/designer-blouses",
-			"enabled": false,
-			"name": "designer"
-		},
-		"id": 3
-	},
-	"blouses/traditional-blouses": {
-		"type": "Style",
-		"value": {
-			"url": "blouses/traditional-blouses",
-			"enabled": false,
-			"name": "traditional"
-		},
-		"id": 3
-	},
 	"blouses/aari-embroidery-blouses": {
 		"type": "Work",
 		"value": {
@@ -2394,15 +2142,6 @@ export var filtersMap = {
 			"url": "blouses/mirror-work-blouses",
 			"enabled": false,
 			"name": "mirror work"
-		},
-		"id": 3
-	},
-	"blouses/other-blouses": {
-		"type": "Fabric",
-		"value": {
-			"url": "blouses/other-blouses",
-			"enabled": false,
-			"name": "other"
 		},
 		"id": 3
 	},
@@ -2514,230 +2253,158 @@ export var filtersMap = {
 		},
 		"id": 3
 	},
-	"blouses/art-silk-blouses": {
-		"type": "Fabric",
+	"blouses/boat-neck-blouses": {
+		"type": "Neck Style",
 		"value": {
-			"url": "blouses/art-silk-blouses",
+			"url": "blouses/boat-neck-blouses",
 			"enabled": false,
-			"name": "art silk"
+			"name": "boat neck"
 		},
 		"id": 3
 	},
-	"blouses/bangalore-silk-blouses": {
-		"type": "Fabric",
+	"blouses/chinese-collar-neck-blouses": {
+		"type": "Neck Style",
 		"value": {
-			"url": "blouses/bangalore-silk-blouses",
+			"url": "blouses/chinese-collar-neck-blouses",
 			"enabled": false,
-			"name": "bangalore silk"
+			"name": "chinese collar neck"
 		},
 		"id": 3
 	},
-	"blouses/bhagalpuri-silk-blouses": {
-		"type": "Fabric",
+	"blouses/collar-neck-blouses": {
+		"type": "Neck Style",
 		"value": {
-			"url": "blouses/bhagalpuri-silk-blouses",
+			"url": "blouses/collar-neck-blouses",
 			"enabled": false,
-			"name": "bhagalpuri silk"
+			"name": "collar neck"
 		},
 		"id": 3
 	},
-	"blouses/brocade-blouses": {
-		"type": "Fabric",
+	"blouses/low-cut-neck-blouses": {
+		"type": "Neck Style",
 		"value": {
-			"url": "blouses/brocade-blouses",
+			"url": "blouses/low-cut-neck-blouses",
 			"enabled": false,
-			"name": "brocade"
+			"name": "low cut neck"
 		},
 		"id": 3
 	},
-	"blouses/chanderi-blouses": {
-		"type": "Fabric",
+	"blouses/round-collar-blouses": {
+		"type": "Neck Style",
 		"value": {
-			"url": "blouses/chanderi-blouses",
+			"url": "blouses/round-collar-blouses",
 			"enabled": false,
-			"name": "chanderi"
+			"name": "round collar"
 		},
 		"id": 3
 	},
-	"blouses/chiffon-blouses": {
-		"type": "Fabric",
+	"blouses/round-neck-blouses": {
+		"type": "Neck Style",
 		"value": {
-			"url": "blouses/chiffon-blouses",
+			"url": "blouses/round-neck-blouses",
 			"enabled": false,
-			"name": "chiffon"
+			"name": "round neck"
 		},
 		"id": 3
 	},
-	"blouses/cotton-blouses": {
-		"type": "Fabric",
+	"blouses/square-collar-blouses": {
+		"type": "Neck Style",
 		"value": {
-			"url": "blouses/cotton-blouses",
+			"url": "blouses/square-collar-blouses",
 			"enabled": false,
-			"name": "cotton"
+			"name": "square collar"
 		},
 		"id": 3
 	},
-	"blouses/dupion-silk-blouses": {
-		"type": "Fabric",
+	"blouses/square-neck-blouses": {
+		"type": "Neck Style",
 		"value": {
-			"url": "blouses/dupion-silk-blouses",
+			"url": "blouses/square-neck-blouses",
 			"enabled": false,
-			"name": "dupion silk"
+			"name": "square neck"
 		},
 		"id": 3
 	},
-	"blouses/eri-silk-blouses": {
-		"type": "Fabric",
+	"blouses/u-neck-blouses": {
+		"type": "Neck Style",
 		"value": {
-			"url": "blouses/eri-silk-blouses",
+			"url": "blouses/u-neck-blouses",
 			"enabled": false,
-			"name": "eri silk"
+			"name": "u neck"
 		},
 		"id": 3
 	},
-	"blouses/faux-georgette-blouses": {
-		"type": "Fabric",
+	"blouses/v-neck-blouses": {
+		"type": "Neck Style",
 		"value": {
-			"url": "blouses/faux-georgette-blouses",
+			"url": "blouses/v-neck-blouses",
 			"enabled": false,
-			"name": "faux georgette"
+			"name": "v neck"
 		},
 		"id": 3
 	},
-	"blouses/georgette-blouses": {
-		"type": "Fabric",
+	"blouses/bridal-blouses": {
+		"type": "Occasion",
 		"value": {
-			"url": "blouses/georgette-blouses",
+			"url": "blouses/bridal-blouses",
 			"enabled": false,
-			"name": "georgette"
+			"name": "bridal"
 		},
 		"id": 3
 	},
-	"blouses/lycra-blouses": {
-		"type": "Fabric",
+	"blouses/casual-blouses": {
+		"type": "Occasion",
 		"value": {
-			"url": "blouses/lycra-blouses",
+			"url": "blouses/casual-blouses",
 			"enabled": false,
-			"name": "lycra"
+			"name": "casual"
 		},
 		"id": 3
 	},
-	"blouses/net-blouses": {
-		"type": "Fabric",
+	"blouses/ceremonial-blouses": {
+		"type": "Occasion",
 		"value": {
-			"url": "blouses/net-blouses",
+			"url": "blouses/ceremonial-blouses",
 			"enabled": false,
-			"name": "net"
+			"name": "ceremonial"
 		},
 		"id": 3
 	},
-	"blouses/raw-silk-blouses": {
-		"type": "Fabric",
+	"blouses/festival-blouses": {
+		"type": "Occasion",
 		"value": {
-			"url": "blouses/raw-silk-blouses",
+			"url": "blouses/festival-blouses",
 			"enabled": false,
-			"name": "raw silk"
+			"name": "festival"
 		},
 		"id": 3
 	},
-	"blouses/satin-blouses": {
-		"type": "Fabric",
+	"blouses/festive-blouses": {
+		"type": "Occasion",
 		"value": {
-			"url": "blouses/satin-blouses",
+			"url": "blouses/festive-blouses",
 			"enabled": false,
-			"name": "satin"
+			"name": "festive"
 		},
 		"id": 3
 	},
-	"blouses/shimmer-blouses": {
-		"type": "Fabric",
+	"blouses/party-blouses": {
+		"type": "Occasion",
 		"value": {
-			"url": "blouses/shimmer-blouses",
+			"url": "blouses/party-blouses",
 			"enabled": false,
-			"name": "shimmer"
+			"name": "party"
 		},
 		"id": 3
 	},
-	"blouses/silk-blouses": {
-		"type": "Fabric",
+	"blouses/wedding-blouses": {
+		"type": "Occasion",
 		"value": {
-			"url": "blouses/silk-blouses",
+			"url": "blouses/wedding-blouses",
 			"enabled": false,
-			"name": "silk"
+			"name": "wedding"
 		},
 		"id": 3
-	},
-	"blouses/silk-blend-blouses": {
-		"type": "Fabric",
-		"value": {
-			"url": "blouses/silk-blend-blouses",
-			"enabled": false,
-			"name": "silk blend"
-		},
-		"id": 3
-	},
-	"blouses/taffeta-blouses": {
-		"type": "Fabric",
-		"value": {
-			"url": "blouses/taffeta-blouses",
-			"enabled": false,
-			"name": "taffeta"
-		},
-		"id": 3
-	},
-	"blouses/tissue-blouses": {
-		"type": "Fabric",
-		"value": {
-			"url": "blouses/tissue-blouses",
-			"enabled": false,
-			"name": "tissue"
-		},
-		"id": 3
-	},
-	"blouses/velvet-blouses": {
-		"type": "Fabric",
-		"value": {
-			"url": "blouses/velvet-blouses",
-			"enabled": false,
-			"name": "velvet"
-		},
-		"id": 3
-	},
-	"blouses/viscose-blouses": {
-		"type": "Fabric",
-		"value": {
-			"url": "blouses/viscose-blouses",
-			"enabled": false,
-			"name": "viscose"
-		},
-		"id": 3
-	},
-	"lehengas/no-lehengas": {
-		"type": "Has Dupatta",
-		"value": {
-			"url": "lehengas/no-lehengas",
-			"enabled": false,
-			"name": "no"
-		},
-		"id": 5
-	},
-	"lehengas/yes-lehengas": {
-		"type": "Has Dupatta",
-		"value": {
-			"url": "lehengas/yes-lehengas",
-			"enabled": false,
-			"name": "yes"
-		},
-		"id": 5
-	},
-	"lehengas/ahimsa-silk-lehengas": {
-		"type": "Fabric",
-		"value": {
-			"url": "lehengas/ahimsa-silk-lehengas",
-			"enabled": false,
-			"name": "ahimsa silk"
-		},
-		"id": 5
 	},
 	"lehengas/art-silk-lehengas": {
 		"type": "Fabric",
@@ -2762,7 +2429,7 @@ export var filtersMap = {
 		"value": {
 			"url": "lehengas/bengal-handloom-lehengas",
 			"enabled": false,
-			"name": "Bengal Handloom"
+			"name": "bengal handloom"
 		},
 		"id": 5
 	},
@@ -2933,7 +2600,7 @@ export var filtersMap = {
 		"value": {
 			"url": "lehengas/south-silk-lehengas",
 			"enabled": false,
-			"name": "South Silk"
+			"name": "south silk"
 		},
 		"id": 5
 	},
@@ -2951,7 +2618,7 @@ export var filtersMap = {
 		"value": {
 			"url": "lehengas/tulle-lehengas",
 			"enabled": false,
-			"name": "Tulle"
+			"name": "tulle"
 		},
 		"id": 5
 	},
@@ -4737,6 +4404,411 @@ export var filtersMap = {
 		},
 		"id": 8
 	},
+	"kurtis-tunics/sleevless-kurtis-tunics": {
+		"type": "Sleeves Type",
+		"value": {
+			"url": "kurtis-tunics/sleevless-kurtis-tunics",
+			"enabled": false,
+			"name": "Sleevless"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/half-sleeve-kurtis-tunics": {
+		"type": "Sleeves Type",
+		"value": {
+			"url": "kurtis-tunics/half-sleeve-kurtis-tunics",
+			"enabled": false,
+			"name": "half sleeve"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/3/4-th-sleeve-kurtis-tunics": {
+		"type": "Sleeves Type",
+		"value": {
+			"url": "kurtis-tunics/3/4-th-sleeve-kurtis-tunics",
+			"enabled": false,
+			"name": "3/4 Th Sleeve"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/cap-sleeve-kurtis-tunics": {
+		"type": "Sleeves Type",
+		"value": {
+			"url": "kurtis-tunics/cap-sleeve-kurtis-tunics",
+			"enabled": false,
+			"name": "cap sleeve"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/sleeveless-kurtis-tunics": {
+		"type": "Sleeves Type",
+		"value": {
+			"url": "kurtis-tunics/sleeveless-kurtis-tunics",
+			"enabled": false,
+			"name": "sleeveless"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/full-sleeve-kurtis-tunics": {
+		"type": "Sleeves Type",
+		"value": {
+			"url": "kurtis-tunics/full-sleeve-kurtis-tunics",
+			"enabled": false,
+			"name": "full sleeve"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/3/4th-sleeve-kurtis-tunics": {
+		"type": "Sleeves Type",
+		"value": {
+			"url": "kurtis-tunics/3/4th-sleeve-kurtis-tunics",
+			"enabled": false,
+			"name": "3/4th sleeve"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/short-sleeve-kurtis-tunics": {
+		"type": "Sleeves Type",
+		"value": {
+			"url": "kurtis-tunics/short-sleeve-kurtis-tunics",
+			"enabled": false,
+			"name": "short sleeve"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/normal-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/normal-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "Normal Wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/wash-with-same-colors::use-mild-detergents::dry-in-shade::wash-separately-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/wash-with-same-colors::use-mild-detergents::dry-in-shade::wash-separately-kurtis-tunics",
+			"enabled": false,
+			"name": "Wash with same colors::Use mild detergents::Dry in shade::Wash Separately"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/col-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/col-kurtis-tunics",
+			"enabled": false,
+			"name": "col"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/dry-clean-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/dry-clean-kurtis-tunics",
+			"enabled": false,
+			"name": "dry clean"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/cold-water-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/cold-water-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "Cold Water Wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/mild-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/mild-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "Mild Wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/first-wash-dry-clean-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/first-wash-dry-clean-kurtis-tunics",
+			"enabled": false,
+			"name": "First wash dry clean"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/any-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/any-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "ANY WASH"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/gentle-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/gentle-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "Gentle Wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/mild-wash-only-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/mild-wash-only-kurtis-tunics",
+			"enabled": false,
+			"name": "Mild Wash Only"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/hand-wash/delicate-machine-wash-in-cold-water-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/hand-wash/delicate-machine-wash-in-cold-water-kurtis-tunics",
+			"enabled": false,
+			"name": "hand wash/delicate machine wash in cold water"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/machine-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/machine-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "machine wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/soft-cold-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/soft-cold-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "SOFT COLD WASH"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/dry-clean-only-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/dry-clean-only-kurtis-tunics",
+			"enabled": false,
+			"name": "Dry clean Only"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/dry-clean-recommended-first-time.-then-wash-in-cold-water-with-mild-detergent-like-ezee.-wash-with-like-colors.-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/dry-clean-recommended-first-time.-then-wash-in-cold-water-with-mild-detergent-like-ezee.-wash-with-like-colors.-kurtis-tunics",
+			"enabled": false,
+			"name": "Dry clean recommended first time. Then wash in cold water with mild detergent like Ezee. Wash with like colors."
+		},
+		"id": 8
+	},
+	"kurtis-tunics/easy-hand-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/easy-hand-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "Easy Hand Wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/light-hand-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/light-hand-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "Light hand wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/handwash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/handwash-kurtis-tunics",
+			"enabled": false,
+			"name": "Handwash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/first-time-dry-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/first-time-dry-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "First Time Dry Wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/cold-water-wsash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/cold-water-wsash-kurtis-tunics",
+			"enabled": false,
+			"name": "Cold water wsash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/dry-and-clean-only-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/dry-and-clean-only-kurtis-tunics",
+			"enabled": false,
+			"name": "Dry and clean only"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/hand-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/hand-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "Hand Wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/maintenance-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/maintenance-kurtis-tunics",
+			"enabled": false,
+			"name": "Maintenance"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/first-dry-clean-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/first-dry-clean-kurtis-tunics",
+			"enabled": false,
+			"name": "First Dry Clean"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/cold-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/cold-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "Cold Wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/wash-with-same-colors-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/wash-with-same-colors-kurtis-tunics",
+			"enabled": false,
+			"name": "Wash with same colors"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/drywash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/drywash-kurtis-tunics",
+			"enabled": false,
+			"name": "DRYWASH"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/normal-hand/-machine-wash-in-lukewarm-water.-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/normal-hand/-machine-wash-in-lukewarm-water.-kurtis-tunics",
+			"enabled": false,
+			"name": "Normal Hand/ Machine wash in lukewarm water."
+		},
+		"id": 8
+	},
+	"kurtis-tunics/midwash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/midwash-kurtis-tunics",
+			"enabled": false,
+			"name": "midwash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/recommended-dry-clean-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/recommended-dry-clean-kurtis-tunics",
+			"enabled": false,
+			"name": "RECOMMENDED DRY CLEAN"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/dry-wash-only-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/dry-wash-only-kurtis-tunics",
+			"enabled": false,
+			"name": "dry wash only"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/dry-clean-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/dry-clean-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "Dry Clean wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/do-not-bleach-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/do-not-bleach-kurtis-tunics",
+			"enabled": false,
+			"name": "do not bleach"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/dry-care-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/dry-care-kurtis-tunics",
+			"enabled": false,
+			"name": "Dry care"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/dry-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/dry-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "DRY WASH"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/regular-wash-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/regular-wash-kurtis-tunics",
+			"enabled": false,
+			"name": "Regular Wash"
+		},
+		"id": 8
+	},
+	"kurtis-tunics/hand-wash-separately-kurtis-tunics": {
+		"type": "Wash Care",
+		"value": {
+			"url": "kurtis-tunics/hand-wash-separately-kurtis-tunics",
+			"enabled": false,
+			"name": "hand wash separately"
+		},
+		"id": 8
+	},
 	"salwar-suits/a-line-style-salwar-suits": {
 		"type": "Style",
 		"value": {
@@ -4770,15 +4842,6 @@ export var filtersMap = {
 			"url": "salwar-suits/designer-salwar-suits",
 			"enabled": false,
 			"name": "designer"
-		},
-		"id": 9
-	},
-	"salwar-suits/readymade-saree-salwar-suits": {
-		"type": "Style",
-		"value": {
-			"url": "salwar-suits/readymade-saree-salwar-suits",
-			"enabled": false,
-			"name": "readymade saree"
 		},
 		"id": 9
 	},
@@ -5850,15 +5913,6 @@ export var filtersMap = {
 			"url": "salwar-suits/2--mtr-salwar-suits",
 			"enabled": false,
 			"name": "2- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.no-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.no-mtr-salwar-suits",
-			"enabled": false,
-			"name": "2.No MTR"
 		},
 		"id": 9
 	},

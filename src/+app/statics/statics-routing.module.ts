@@ -11,6 +11,8 @@ import { SitemapComponent } from './sitemap/sitemap.component';
 import { SitemapResolveService } from './sitemap/sitemap-resolve.service';
 import { ShippingRefundComponent } from './shipping-refunds/shipping-refund.component';
 import { CookieInfoComponent } from './cookie-info/cookie-info.component';
+import { TermsPageResolveService } from './terms-and-condition/terms-page-resolve.service';
+
 
 @NgModule({
   imports: [
@@ -37,7 +39,10 @@ import { CookieInfoComponent } from './cookie-info/cookie-info.component';
     	},
       {
         path: 'terms-and-conditions',
-        component: TermsConditionComponent
+        component: TermsConditionComponent,
+        resolve: {
+          html: TermsPageResolveService
+        }
       },
       {
         path: 'shipping-and-refunds',

@@ -16,8 +16,10 @@ import { SitemapComponent } from './sitemap/sitemap.component';
 import { TermsConditionComponent } from './terms-and-condition/terms-condition.component';
 import { CookieInfoComponent } from './cookie-info/cookie-info.component';
 import { ShippingRefundComponent } from './shipping-refunds/shipping-refund.component';
+
 import { SitemapResolveService } from './sitemap/sitemap-resolve.service';
 import { SitemapService } from './sitemap/sitemap.service';
+import { TermsPageResolveService } from './terms-and-condition/terms-page-resolve.service';
 
 @NgModule({
   imports: [
@@ -40,6 +42,7 @@ import { SitemapService } from './sitemap/sitemap.service';
   ],
   providers:[ 
     SitemapService,
+    TermsPageResolveService,
     SitemapResolveService
   ]
 })

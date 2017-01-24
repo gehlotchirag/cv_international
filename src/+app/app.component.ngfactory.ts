@@ -258,6 +258,9 @@ class _View_AppComponent1 extends import1.AppView<any> {
   _el_9:any;
   _text_10:any;
   _text_11:any;
+  _el_12:any;
+  _text_13:any;
+  _text_14:any;
   constructor(viewUtils:import9.ViewUtils,parentInjector:import10.Injector,declarationEl:import3.AppElement) {
     super(_View_AppComponent1,renderType_AppComponent,import11.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import12.ChangeDetectorStatus.CheckAlways);
   }
@@ -274,9 +277,13 @@ class _View_AppComponent1 extends import1.AppView<any> {
     this._text_8 = this.renderer.createText(this._el_0,'\n	',(null as any));
     this._el_9 = import9.createRenderElement(this.renderer,this._el_0,'button',new import9.InlineArray2(2,'class','msg-hide-btn btn'),(null as any));
     this._text_10 = this.renderer.createText(this._el_9,'Got It',(null as any));
-    this._text_11 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_11 = this.renderer.createText(this._el_0,'\n	',(null as any));
+    this._el_12 = import9.createRenderElement(this.renderer,this._el_0,'button',new import9.InlineArray2(2,'class','msg-hide-btn btn'),(null as any));
+    this._text_13 = this.renderer.createText(this._el_12,'Close',(null as any));
+    this._text_14 = this.renderer.createText(this._el_0,'\n',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_4,'click',this.eventHandler(this._handle_click_4_0.bind(this)));
     var disposable_1:Function = this.renderer.listen(this._el_9,'click',this.eventHandler(this._handle_click_9_0.bind(this)));
+    var disposable_2:Function = this.renderer.listen(this._el_12,'click',this.eventHandler(this._handle_click_12_0.bind(this)));
     this.init(([] as any[]).concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -289,11 +296,15 @@ class _View_AppComponent1 extends import1.AppView<any> {
       this._text_8,
       this._el_9,
       this._text_10,
-      this._text_11
+      this._text_11,
+      this._el_12,
+      this._text_13,
+      this._text_14
     ]
     ,[
       disposable_0,
-      disposable_1
+      disposable_1,
+      disposable_2
     ]
     ,([] as any[]));
     return (null as any);
@@ -322,6 +333,11 @@ class _View_AppComponent1 extends import1.AppView<any> {
     this.markPathToRootAsCheckOnce();
     const pd_9_0:any = ((<any>this.parent.context.setCookie()) !== false);
     return (true && pd_9_0);
+  }
+  private _handle_click_12_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_12_0:any = ((<any>this.parent.context.setCookie()) !== false);
+    return (true && pd_12_0);
   }
 }
 function viewFactory_AppComponent1(viewUtils:import9.ViewUtils,parentInjector:import10.Injector,declarationEl:import3.AppElement):import1.AppView<any> {

@@ -4,3 +4,6 @@
 .extra-menu-wrapper{
 	margin-top: 2%;
 }
+.extra-menu-item img {
+    margin: 0 auto;
+}

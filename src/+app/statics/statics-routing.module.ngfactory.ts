@@ -22,9 +22,10 @@ import * as import14 from './order-tracking/order-tracking.component';
 import * as import15 from './in-media/in-media.component';
 import * as import16 from './contact-us/contactus.component';
 import * as import17 from './terms-and-condition/terms-condition.component';
-import * as import18 from './shipping-refunds/shipping-refund.component';
-import * as import19 from './cookie-info/cookie-info.component';
-import * as import20 from '@angular/router/src/router_config_loader';
+import * as import18 from './terms-and-condition/terms-page-resolve.service';
+import * as import19 from './shipping-refunds/shipping-refund.component';
+import * as import20 from './cookie-info/cookie-info.component';
+import * as import21 from '@angular/router/src/router_config_loader';
 class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.StaticsRoutingModule> {
   _RouterModule_0:import2.RouterModule;
   _StaticsRoutingModule_1:import1.StaticsRoutingModule;
@@ -71,17 +72,18 @@ class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.Stat
         ,
         {
           path: 'terms-and-conditions',
-          component: import17.TermsConditionComponent
+          component: import17.TermsConditionComponent,
+          resolve: {html: import18.TermsPageResolveService}
         }
         ,
         {
           path: 'shipping-and-refunds',
-          component: import18.ShippingRefundComponent
+          component: import19.ShippingRefundComponent
         }
         ,
         {
           path: 'cookie-info',
-          component: import19.CookieInfoComponent
+          component: import20.CookieInfoComponent
         }
 
       ]
@@ -96,7 +98,7 @@ class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.Stat
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.RouterModule)) { return this._RouterModule_0; }
     if ((token === import1.StaticsRoutingModule)) { return this._StaticsRoutingModule_1; }
-    if ((token === import20.ROUTES)) { return this._ROUTES_2; }
+    if ((token === import21.ROUTES)) { return this._ROUTES_2; }
     return notFoundResult;
   }
   destroyInternal():void {

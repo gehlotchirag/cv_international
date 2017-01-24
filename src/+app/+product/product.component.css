@@ -44,7 +44,9 @@
 }
 .navigation-breadcrumbs ol {
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    list-style: none;
+    max-width: 1400px;
     list-style: none;
 }
 .breadcrumb-list {

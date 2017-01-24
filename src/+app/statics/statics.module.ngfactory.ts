@@ -17,40 +17,43 @@ import * as import9 from '@angular/forms/src/form_providers';
 import * as import10 from '@angular/common/src/localization';
 import * as import11 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import12 from './sitemap/sitemap.service';
-import * as import13 from './sitemap/sitemap-resolve.service';
-import * as import14 from '@angular/core/src/di/injector';
-import * as import15 from './about-us/about-us.component.ngfactory';
-import * as import16 from './faqs/faqs.component.ngfactory';
-import * as import17 from './order-tracking/order-tracking.component.ngfactory';
-import * as import18 from './in-media/in-media.component.ngfactory';
-import * as import19 from './contact-us/contactus.component.ngfactory';
-import * as import20 from './terms-and-condition/terms-condition.component.ngfactory';
-import * as import21 from './shipping-refunds/shipping-refund.component.ngfactory';
-import * as import22 from './cookie-info/cookie-info.component.ngfactory';
-import * as import23 from '../shared/widgets/mega-menu/mega-menu.component.ngfactory';
-import * as import24 from '../shared/widgets/mega-menu/mega-menu-link.component.ngfactory';
-import * as import25 from '../shared/widgets/announcement-widget/announcement-widget.component.ngfactory';
-import * as import26 from '../shared/widgets/category-widget/category-widget.component.ngfactory';
-import * as import27 from '../shared/widgets/extra-menu/extra-menu.component.ngfactory';
-import * as import28 from '../shared/widgets/hero-banner/hero-banner.component.ngfactory';
-import * as import29 from '../shared/widgets/portfolio-widget/portfolio-widget.component.ngfactory';
-import * as import30 from '../shared/widgets/storyline-widget/storyline-widget.component.ngfactory';
-import * as import31 from '../shared/widgets/product-slider/product-slider.component.ngfactory';
-import * as import32 from '../shared/widgets/testimonials-widget/testimonials-widget.component.ngfactory';
-import * as import33 from '../shared/widgets/pagination/pagination.component.ngfactory';
-import * as import34 from '../shared/widgets/product-card/product-card.component.ngfactory';
-import * as import35 from './about-us/about-us.component';
-import * as import36 from './faqs/faqs.component';
-import * as import37 from './order-tracking/order-tracking.component';
-import * as import38 from './in-media/in-media.component';
-import * as import39 from './contact-us/contactus.component';
-import * as import40 from './terms-and-condition/terms-condition.component';
-import * as import41 from './shipping-refunds/shipping-refund.component';
-import * as import42 from './cookie-info/cookie-info.component';
-import * as import43 from '@angular/core/src/i18n/tokens';
-import * as import44 from '../shared/services/http-client.service';
-import * as import45 from '@angular/router/src/router';
-import * as import46 from '@angular/router/src/router_config_loader';
+import * as import13 from './terms-and-condition/terms-page-resolve.service';
+import * as import14 from './sitemap/sitemap-resolve.service';
+import * as import15 from '@angular/core/src/di/injector';
+import * as import16 from './about-us/about-us.component.ngfactory';
+import * as import17 from './faqs/faqs.component.ngfactory';
+import * as import18 from './order-tracking/order-tracking.component.ngfactory';
+import * as import19 from './in-media/in-media.component.ngfactory';
+import * as import20 from './contact-us/contactus.component.ngfactory';
+import * as import21 from './terms-and-condition/terms-condition.component.ngfactory';
+import * as import22 from './shipping-refunds/shipping-refund.component.ngfactory';
+import * as import23 from './cookie-info/cookie-info.component.ngfactory';
+import * as import24 from '../shared/widgets/mega-menu/mega-menu.component.ngfactory';
+import * as import25 from '../shared/widgets/mega-menu/mega-menu-link.component.ngfactory';
+import * as import26 from '../shared/widgets/announcement-widget/announcement-widget.component.ngfactory';
+import * as import27 from '../shared/widgets/category-widget/category-widget.component.ngfactory';
+import * as import28 from '../shared/widgets/extra-menu/extra-menu.component.ngfactory';
+import * as import29 from '../shared/widgets/hero-banner/hero-banner.component.ngfactory';
+import * as import30 from '../shared/widgets/portfolio-widget/portfolio-widget.component.ngfactory';
+import * as import31 from '../shared/widgets/storyline-widget/storyline-widget.component.ngfactory';
+import * as import32 from '../shared/widgets/product-slider/product-slider.component.ngfactory';
+import * as import33 from '../shared/widgets/testimonials-widget/testimonials-widget.component.ngfactory';
+import * as import34 from '../shared/widgets/pagination/pagination.component.ngfactory';
+import * as import35 from '../shared/widgets/product-card/product-card.component.ngfactory';
+import * as import36 from './about-us/about-us.component';
+import * as import37 from './faqs/faqs.component';
+import * as import38 from './order-tracking/order-tracking.component';
+import * as import39 from './in-media/in-media.component';
+import * as import40 from './contact-us/contactus.component';
+import * as import41 from './terms-and-condition/terms-condition.component';
+import * as import42 from './shipping-refunds/shipping-refund.component';
+import * as import43 from './cookie-info/cookie-info.component';
+import * as import44 from '@angular/core/src/i18n/tokens';
+import * as import45 from '../shared/services/http-client.service';
+import * as import46 from '../shared/cache.service';
+import * as import47 from '@angular/http/src/http';
+import * as import48 from '@angular/router/src/router';
+import * as import49 from '@angular/router/src/router_config_loader';
 class StaticsModuleInjector extends import0.NgModuleInjector<import1.StaticsModule> {
   _RouterModule_0:import2.RouterModule;
   _StaticsRoutingModule_1:import3.StaticsRoutingModule;
@@ -65,29 +68,30 @@ class StaticsModuleInjector extends import0.NgModuleInjector<import1.StaticsModu
   __NgLocalization_10:import10.NgLocaleLocalization;
   __RadioControlRegistry_11:import11.RadioControlRegistry;
   __SitemapService_12:import12.SitemapService;
-  __SitemapResolveService_13:import13.SitemapResolveService;
-  constructor(parent:import14.Injector) {
+  __TermsPageResolveService_13:import13.TermsPageResolveService;
+  __SitemapResolveService_14:import14.SitemapResolveService;
+  constructor(parent:import15.Injector) {
     super(parent,[
-      import15.AboutUsComponentNgFactory,
-      import16.FaqsComponentNgFactory,
-      import17.OrderTrackingComponentNgFactory,
-      import18.InMediaComponentNgFactory,
-      import19.ContactUsComponentNgFactory,
-      import20.TermsConditionComponentNgFactory,
-      import21.ShippingRefundComponentNgFactory,
-      import22.CookieInfoComponentNgFactory,
-      import23.MegaMenuComponentNgFactory,
-      import24.MegaMenuLinkComponentNgFactory,
-      import25.AnnouncementWidgetComponentNgFactory,
-      import26.CategoryWidgetComponentNgFactory,
-      import27.ExtraMenuComponentNgFactory,
-      import28.HeroBannerComponentNgFactory,
-      import29.PortfolioWidgetComponentNgFactory,
-      import30.StorylineWidgetComponentNgFactory,
-      import31.ProductSliderComponentNgFactory,
-      import32.TestimonialsWidgetComponentNgFactory,
-      import33.PaginationComponentNgFactory,
-      import34.ProductCardComponentNgFactory
+      import16.AboutUsComponentNgFactory,
+      import17.FaqsComponentNgFactory,
+      import18.OrderTrackingComponentNgFactory,
+      import19.InMediaComponentNgFactory,
+      import20.ContactUsComponentNgFactory,
+      import21.TermsConditionComponentNgFactory,
+      import22.ShippingRefundComponentNgFactory,
+      import23.CookieInfoComponentNgFactory,
+      import24.MegaMenuComponentNgFactory,
+      import25.MegaMenuLinkComponentNgFactory,
+      import26.AnnouncementWidgetComponentNgFactory,
+      import27.CategoryWidgetComponentNgFactory,
+      import28.ExtraMenuComponentNgFactory,
+      import29.HeroBannerComponentNgFactory,
+      import30.PortfolioWidgetComponentNgFactory,
+      import31.StorylineWidgetComponentNgFactory,
+      import32.ProductSliderComponentNgFactory,
+      import33.TestimonialsWidgetComponentNgFactory,
+      import34.PaginationComponentNgFactory,
+      import35.ProductCardComponentNgFactory
     ]
     ,([] as any[]));
   }
@@ -95,42 +99,43 @@ class StaticsModuleInjector extends import0.NgModuleInjector<import1.StaticsModu
       if ((this.__ROUTES_9 == (null as any))) { (this.__ROUTES_9 = [[
         {
           path: 'about_us',
-          component: import35.AboutUsComponent
+          component: import36.AboutUsComponent
         }
         ,
         {
           path: 'faqs',
-          component: import36.FaqsComponent
+          component: import37.FaqsComponent
         }
         ,
         {
           path: 'order_tracking',
-          component: import37.OrderTrackingComponent
+          component: import38.OrderTrackingComponent
         }
         ,
         {
           path: 'craftsvilla_in_media',
-          component: import38.InMediaComponent
+          component: import39.InMediaComponent
         }
         ,
         {
           path: 'contactus',
-          component: import39.ContactUsComponent
+          component: import40.ContactUsComponent
         }
         ,
         {
           path: 'terms-and-conditions',
-          component: import40.TermsConditionComponent
+          component: import41.TermsConditionComponent,
+          resolve: {html: import13.TermsPageResolveService}
         }
         ,
         {
           path: 'shipping-and-refunds',
-          component: import41.ShippingRefundComponent
+          component: import42.ShippingRefundComponent
         }
         ,
         {
           path: 'cookie-info',
-          component: import42.CookieInfoComponent
+          component: import43.CookieInfoComponent
         }
 
       ]
@@ -138,7 +143,7 @@ class StaticsModuleInjector extends import0.NgModuleInjector<import1.StaticsModu
     return this.__ROUTES_9;
   }
   get _NgLocalization_10():import10.NgLocaleLocalization {
-    if ((this.__NgLocalization_10 == (null as any))) { (this.__NgLocalization_10 = new import10.NgLocaleLocalization(this.parent.get(import43.LOCALE_ID))); }
+    if ((this.__NgLocalization_10 == (null as any))) { (this.__NgLocalization_10 = new import10.NgLocaleLocalization(this.parent.get(import44.LOCALE_ID))); }
     return this.__NgLocalization_10;
   }
   get _RadioControlRegistry_11():import11.RadioControlRegistry {
@@ -146,12 +151,16 @@ class StaticsModuleInjector extends import0.NgModuleInjector<import1.StaticsModu
     return this.__RadioControlRegistry_11;
   }
   get _SitemapService_12():import12.SitemapService {
-    if ((this.__SitemapService_12 == (null as any))) { (this.__SitemapService_12 = new import12.SitemapService(this.parent.get(import44.HttpClientService))); }
+    if ((this.__SitemapService_12 == (null as any))) { (this.__SitemapService_12 = new import12.SitemapService(this.parent.get(import45.HttpClientService))); }
     return this.__SitemapService_12;
   }
-  get _SitemapResolveService_13():import13.SitemapResolveService {
-    if ((this.__SitemapResolveService_13 == (null as any))) { (this.__SitemapResolveService_13 = new import13.SitemapResolveService(this._SitemapService_12,this.parent.get(import45.Router))); }
-    return this.__SitemapResolveService_13;
+  get _TermsPageResolveService_13():import13.TermsPageResolveService {
+    if ((this.__TermsPageResolveService_13 == (null as any))) { (this.__TermsPageResolveService_13 = new import13.TermsPageResolveService(this.parent.get(import46.CacheService),this.parent.get(import47.Http))); }
+    return this.__TermsPageResolveService_13;
+  }
+  get _SitemapResolveService_14():import14.SitemapResolveService {
+    if ((this.__SitemapResolveService_14 == (null as any))) { (this.__SitemapResolveService_14 = new import14.SitemapResolveService(this._SitemapService_12,this.parent.get(import48.Router))); }
+    return this.__SitemapResolveService_14;
   }
   createInternal():import1.StaticsModule {
     this._RouterModule_0 = new import2.RouterModule(this.parent.get(import2.ROUTER_FORROOT_GUARD,(null as any)));
@@ -175,11 +184,12 @@ class StaticsModuleInjector extends import0.NgModuleInjector<import1.StaticsModu
     if ((token === import8.InternalFormsSharedModule)) { return this._InternalFormsSharedModule_6; }
     if ((token === import9.FormsModule)) { return this._FormsModule_7; }
     if ((token === import1.StaticsModule)) { return this._StaticsModule_8; }
-    if ((token === import46.ROUTES)) { return this._ROUTES_9; }
+    if ((token === import49.ROUTES)) { return this._ROUTES_9; }
     if ((token === import10.NgLocalization)) { return this._NgLocalization_10; }
     if ((token === import11.RadioControlRegistry)) { return this._RadioControlRegistry_11; }
     if ((token === import12.SitemapService)) { return this._SitemapService_12; }
-    if ((token === import13.SitemapResolveService)) { return this._SitemapResolveService_13; }
+    if ((token === import13.TermsPageResolveService)) { return this._TermsPageResolveService_13; }
+    if ((token === import14.SitemapResolveService)) { return this._SitemapResolveService_14; }
     return notFoundResult;
   }
   destroyInternal():void {

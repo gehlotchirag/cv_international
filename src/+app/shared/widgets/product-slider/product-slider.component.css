@@ -55,7 +55,8 @@
     font-weight: 700;
 }
 .product-name{
-	min-height: 40px;
+	min-height: 60px;
+    overflow: hidden;
 }
 .product-slider-slide {
     padding: 10px;

@@ -15,14 +15,16 @@ import * as import7 from './in-media/in-media.component.ngfactory';
 import * as import8 from './contact-us/contactus.component.ngfactory';
 import * as import9 from './terms-and-condition/terms-condition.component.ngfactory';
 import * as import10 from './shipping-refunds/shipping-refund.component.ngfactory';
-import * as import11 from './about-us/about-us.component';
-import * as import12 from './faqs/faqs.component';
-import * as import13 from './order-tracking/order-tracking.component';
-import * as import14 from './in-media/in-media.component';
-import * as import15 from './contact-us/contactus.component';
-import * as import16 from './terms-and-condition/terms-condition.component';
-import * as import17 from './shipping-refunds/shipping-refund.component';
-import * as import18 from '@angular/router/src/router_config_loader';
+import * as import11 from './cookie-info/cookie-info.component.ngfactory';
+import * as import12 from './about-us/about-us.component';
+import * as import13 from './faqs/faqs.component';
+import * as import14 from './order-tracking/order-tracking.component';
+import * as import15 from './in-media/in-media.component';
+import * as import16 from './contact-us/contactus.component';
+import * as import17 from './terms-and-condition/terms-condition.component';
+import * as import18 from './shipping-refunds/shipping-refund.component';
+import * as import19 from './cookie-info/cookie-info.component';
+import * as import20 from '@angular/router/src/router_config_loader';
 class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.StaticsRoutingModule> {
   _RouterModule_0:import2.RouterModule;
   _StaticsRoutingModule_1:import1.StaticsRoutingModule;
@@ -35,7 +37,8 @@ class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.Stat
       import7.InMediaComponentNgFactory,
       import8.ContactUsComponentNgFactory,
       import9.TermsConditionComponentNgFactory,
-      import10.ShippingRefundComponentNgFactory
+      import10.ShippingRefundComponentNgFactory,
+      import11.CookieInfoComponentNgFactory
     ]
     ,([] as any[]));
   }
@@ -43,37 +46,42 @@ class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.Stat
       if ((this.__ROUTES_2 == (null as any))) { (this.__ROUTES_2 = [[
         {
           path: 'about_us',
-          component: import11.AboutUsComponent
+          component: import12.AboutUsComponent
         }
         ,
         {
           path: 'faqs',
-          component: import12.FaqsComponent
+          component: import13.FaqsComponent
         }
         ,
         {
           path: 'order_tracking',
-          component: import13.OrderTrackingComponent
+          component: import14.OrderTrackingComponent
         }
         ,
         {
           path: 'craftsvilla_in_media',
-          component: import14.InMediaComponent
+          component: import15.InMediaComponent
         }
         ,
         {
           path: 'contactus',
-          component: import15.ContactUsComponent
+          component: import16.ContactUsComponent
         }
         ,
         {
           path: 'terms-and-conditions',
-          component: import16.TermsConditionComponent
+          component: import17.TermsConditionComponent
         }
         ,
         {
           path: 'shipping-and-refunds',
-          component: import17.ShippingRefundComponent
+          component: import18.ShippingRefundComponent
+        }
+        ,
+        {
+          path: 'cookie-info',
+          component: import19.CookieInfoComponent
         }
 
       ]
@@ -88,7 +96,7 @@ class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.Stat
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.RouterModule)) { return this._RouterModule_0; }
     if ((token === import1.StaticsRoutingModule)) { return this._StaticsRoutingModule_1; }
-    if ((token === import18.ROUTES)) { return this._ROUTES_2; }
+    if ((token === import20.ROUTES)) { return this._ROUTES_2; }
     return notFoundResult;
   }
   destroyInternal():void {

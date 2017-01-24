@@ -223,10 +223,10 @@ class _View_AnnouncementWidgetComponent1 extends import3.AppView<any> {
     this._el_2 = import2.createRenderElement(this.renderer,this._el_0,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_2_3 = new import17.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import19.Router),this.parent.parentInjector.get(import20.ActivatedRoute),this.parent.parentInjector.get(import21.LocationStrategy));
     this._text_3 = this.renderer.createText(this._el_2,'\n          ',(null as any));
-    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','','class','img-responsive annoucement-web-image loading'),(null as any));
+    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','Annoucement','class','img-responsive annoucement-web-image loading'),(null as any));
     this._LazyLoadImageDirective_4_3 = new import18.Wrapper_LazyLoadImageDirective(new import22.ElementRef(this._el_4),this.parent.parentInjector.get(import23.NgZone));
     this._text_5 = this.renderer.createText(this._el_2,'\n          ',(null as any));
-    this._el_6 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','','class','img-responsive annoucement-mobile-image loading'),(null as any));
+    this._el_6 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','Annoucement','class','img-responsive annoucement-mobile-image loading'),(null as any));
     this._LazyLoadImageDirective_6_3 = new import18.Wrapper_LazyLoadImageDirective(new import22.ElementRef(this._el_6),this.parent.parentInjector.get(import23.NgZone));
     this._text_7 = this.renderer.createText(this._el_2,'\n        ',(null as any));
     this._text_8 = this.renderer.createText(this._el_0,'\n      ',(null as any));

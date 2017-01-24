@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
 
@@ -17,6 +18,7 @@ import { ProductService } from './product.service';
   @NgModule({
     imports: [      
       SwiperModule,
+      RouterModule,
       ProductRoutingModule,
       WidgetModule,
       CommonModule

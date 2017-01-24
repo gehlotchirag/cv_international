@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, AfterViewInit } from '@angular/core';
 
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 
@@ -27,7 +27,7 @@ import { AppService } from './app.service';
     MetaService 
   ]
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   showMegaMenu(event) {
@@ -48,7 +48,7 @@ export class AppComponent {
   public seoContent;
   public footerContent;
   public currentUrl = '';
-
+  public showCookieWarn = false;
   constructor(private router: Router,
               private httpClient: HttpClientService,
               private progressBar: ProgressBarService,
@@ -81,9 +81,40 @@ export class AppComponent {
           this.progressBar.complete();
         }
       });
-
   }
 
+  ngAfterViewInit(){
+    if(typeof window !== 'undefined') {
+      let cookie = this.getCookie("cv_sc");
+      if(!cookie) {
+        this.showCookieWarn = true;
+      }
+    }
+  }
+
+  private getCookie(name: string) {
+    let ca: Array<string> = document.cookie.split(';');
+    let caLen: number = ca.length;
+    let cookieName = name + "=";
+    let c: string;
+
+    for (let i: number = 0; i < caLen; i += 1) {
+        c = ca[i].replace(/^\s\+/g, "");
+        if (c.indexOf(cookieName) > -1) {
+          return c.substring(cookieName.length, c.length);
+        }
+    }
+    return "";
+  }
+
+  private setCookie() {
+    let name: string = "cv_sc", value: string = "true", expireDays: number = 365, path: string = ""
+    let d:Date = new Date();
+    d.setTime(d.getTime() + expireDays * 24 * 60 * 60 * 1000);
+    let expires:string = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + value + "; " + expires + (path.length > 0 ? "; path=" + path : "");
+    this.showCookieWarn = false;
+  }
 
   addSeoData() {
     if(typeof window !== 'undefined') {
@@ -113,5 +144,4 @@ export class AppComponent {
       this.addSeoData()
     });
   }
-
 }

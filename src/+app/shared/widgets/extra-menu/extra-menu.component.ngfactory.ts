@@ -247,7 +247,7 @@ class _View_ExtraMenuComponent1 extends import3.AppView<any> {
     this._el_2 = import2.createRenderElement(this.renderer,this._el_0,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_2_3 = new import22.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import24.Router),this.parent.parentInjector.get(import25.ActivatedRoute),this.parent.parentInjector.get(import26.LocationStrategy));
     this._text_3 = this.renderer.createText(this._el_2,'\n      ',(null as any));
-    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','','class','img-responsive'),(null as any));
+    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','Extra Menu','class','img-responsive'),(null as any));
     this._text_5 = this.renderer.createText(this._el_2,'\n    ',(null as any));
     this._text_6 = this.renderer.createText(this._el_0,'\n  ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
@@ -327,7 +327,7 @@ class _View_ExtraMenuComponent2 extends import3.AppView<any> {
     this._el_2 = import2.createRenderElement(this.renderer,this._el_0,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_2_3 = new import22.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import24.Router),this.parent.parentInjector.get(import25.ActivatedRoute),this.parent.parentInjector.get(import26.LocationStrategy));
     this._text_3 = this.renderer.createText(this._el_2,'\n          ',(null as any));
-    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','','class','img-responsive'),(null as any));
+    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','Extra Menu','class','img-responsive'),(null as any));
     this._text_5 = this.renderer.createText(this._el_2,'\n	      ',(null as any));
     this._text_6 = this.renderer.createText(this._el_0,'\n      ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));

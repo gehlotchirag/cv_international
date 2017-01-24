@@ -214,7 +214,7 @@ class _View_StorylineWidgetComponent1 extends import1.AppView<any> {
     this._el_2 = import5.createRenderElement(this.renderer,this._el_0,'a',import5.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_2_3 = new import18.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import22.Router),this.parent.parentInjector.get(import23.ActivatedRoute),this.parent.parentInjector.get(import24.LocationStrategy));
     this._text_3 = this.renderer.createText(this._el_2,'\n              ',(null as any));
-    this._el_4 = import5.createRenderElement(this.renderer,this._el_2,'img',new import5.InlineArray4(4,'alt','','class','img-responsive loading'),(null as any));
+    this._el_4 = import5.createRenderElement(this.renderer,this._el_2,'img',new import5.InlineArray4(4,'alt','Story Line','class','img-responsive loading'),(null as any));
     this._LazyLoadImageDirective_4_3 = new import19.Wrapper_LazyLoadImageDirective(new import21.ElementRef(this._el_4),this.parent.parentInjector.get(import25.NgZone));
     this._text_5 = this.renderer.createText(this._el_2,'\n            ',(null as any));
     this._text_6 = this.renderer.createText(this._el_0,'\n      ',(null as any));

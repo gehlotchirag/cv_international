@@ -9,8 +9,8 @@
     <div class="section-body mob-section-body">
       <div *ngFor="let item of dataItems" class="col-sm-6 col-xs-12 annoucement-data">
         <a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
-          <img [lazyLoad]="item.imageUrl" class="img-responsive annoucement-web-image loading" alt="">
-          <img [lazyLoad]="item.mobile_imageUrl" class="img-responsive annoucement-mobile-image loading" alt="">
+          <img [lazyLoad]="item.imageUrl" class="img-responsive annoucement-web-image loading" alt="Annoucement">
+          <img [lazyLoad]="item.mobile_imageUrl" class="img-responsive annoucement-mobile-image loading" alt="Annoucement">
         </a>
       </div>
     </div>

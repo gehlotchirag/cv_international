@@ -353,7 +353,7 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._text_26 = this.renderer.createText(this._el_23,'\n        ',(null as any));
     this._el_27 = import2.createRenderElement(this.renderer,this._el_23,'a',new import2.InlineArray2(2,'routerLink','/'),(null as any));
     this._RouterLinkWithHref_27_3 = new import26.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import36.ActivatedRoute),this.parentInjector.get(import37.LocationStrategy));
-    this._el_28 = import2.createRenderElement(this.renderer,this._el_27,'img',new import2.InlineArray4(4,'class','logo-img','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/logo.png'),(null as any));
+    this._el_28 = import2.createRenderElement(this.renderer,this._el_27,'img',new import2.InlineArray8(6,'alt','Craftsvilla Logo','class','logo-img','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/logo.png'),(null as any));
     this._text_29 = this.renderer.createText(this._el_23,'\n        ',(null as any));
     this._anchor_30 = this.renderer.createTemplateAnchor(this._el_23,(null as any));
     this._appEl_30 = new import5.AppElement(30,23,this,this._anchor_30);

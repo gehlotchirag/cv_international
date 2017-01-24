@@ -10,20 +10,20 @@ import { TermsConditionComponent } from './terms-and-condition/terms-condition.c
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { SitemapResolveService } from './sitemap/sitemap-resolve.service';
 import { ShippingRefundComponent } from './shipping-refunds/shipping-refund.component';
-
+import { CookieInfoComponent } from './cookie-info/cookie-info.component';
 
 @NgModule({
   imports: [
     RouterModule.forChild([
-		{ 
-      		path: 'about_us',
-       		component: AboutUsComponent 
-       	},
-      	{ 
-      		path: 'faqs', 
-      		component: FaqsComponent 
-      	},
-      	{ 
+	    { 
+    		path: 'about_us',
+     		component: AboutUsComponent 
+     	},
+    	{ 
+    		path: 'faqs', 
+    		component: FaqsComponent 
+    	},
+    	{ 
   			path: 'order_tracking', 
   			component: OrderTrackingComponent 
   		}, 
@@ -42,6 +42,10 @@ import { ShippingRefundComponent } from './shipping-refunds/shipping-refund.comp
       {
         path: 'shipping-and-refunds',
         component: ShippingRefundComponent
+      },
+      {
+        path: 'cookie-info',
+        component: CookieInfoComponent
       }
 	    /* { 
   			path: 'online-shopping',

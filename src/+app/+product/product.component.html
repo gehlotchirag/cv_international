@@ -31,14 +31,13 @@
 }
 </style>
 <div class="content product-page">
-<!--   <div class="contain hide-sm">
-    <ol class="breadcrumb">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Women</a></li>
-      <li><a href="#">Lehengas</a></li>
-      <li class="active">Black Color Goergette Lehenga</li>
+  <div class="navigation-breadcrumbs clearfix visible-lg visible-md" *ngIf="breadCrumbs.length > 0">
+    <ol class="clearfix">
+      <li class="breadcrumb-list pull-left" *ngFor="let breadcrumb of breadCrumbs" >
+        <a routerLink="{{breadcrumb['url']}}">{{breadcrumb['name']}}</a>
+      </li>
     </ol>
-  </div> -->
+  </div>
   <div class="message-box-green" *ngIf="addToBagSuccess && !addToBagUnSuccess && !outOfStockMsgDspl">
     Product has been successfully added to your cart.
   </div>
@@ -51,10 +50,10 @@
   <div class="product-container">
     <div class="contain" *ngIf="products" >
       <div class="product-thumbnails inline pull-left hide-sm">
-        <img  src="{{galleryImage.imgUrl}}"  class="img-responsive"  on-mouseover="showImage($event, galleryImage)" *ngFor="let galleryImage of galleryImages">
+        <img  src="{{galleryImage.imgUrl}}"  class="img-responsive"  on-mouseover="showImage($event, galleryImage)" *ngFor="let galleryImage of galleryImages" alt="{{products.productName}}">
       </div>
       <div class="product-img-container inline pull-left text-center hide-sm">
-        <img (mouseover)="onImageHover(zoomedImageUrl, $event)" (mousemove) = "onImageHoverMove($event)" (mouseout) = "onHoverOut()" src="{{imageUrl}}" class="img-responsive">
+        <img (mouseover)="onImageHover(zoomedImageUrl, $event)" (mousemove) = "onImageHoverMove($event)" (mouseout) = "onHoverOut()" src="{{imageUrl}}" class="img-responsive" alt="{{products.productName}}">
         <div class="product-stitch-type">
           <p *ngIf="products.stitching_type !== 'Null'">{{products.stitching_type}}</p>
           <p *ngIf="products.stitching_type === 'Null'">Unstiched</p>
@@ -66,7 +65,7 @@
           <p *ngIf="products.stitching_type !== 'Null'">{{products.stitching_type}}</p>
           <p *ngIf="products.stitching_type === 'Null'">Unstiched</p>
         </div>
-        <img class="productImage img-responsive" *ngIf=" galleryImages.length  <= 0" src="{{imageUrl}}" alt="{{products.productName}}" >
+        <img class="productImage img-responsive" *ngIf=" galleryImages.length  <= 0" src="{{imageUrl}}" alt="{{products.productName}}">
         <swiper [config]="config" *ngIf="galleryImages.length > 0">
           <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let galleryImage of galleryImages;">
@@ -113,7 +112,7 @@
             <div class="shipping-cost-value">{{vendorDetails.vendorName}} </div>
           </div>
           <span class="add-to-bag-block">
-            <div class="size occupy mob-inline cover">
+            <div class="size occupy mob-inline cover" *ngIf="showSizeDiv">
              <!--  <div class="heading mob-section-heading"  [class.displayNone]="!stitching_enabled">
                 <span class="pull-left">Select Stitch Type</span>
               </div>

@@ -3,7 +3,7 @@
        class="extra-menu-item pull-left"
        [ngClass]="{middle: i == 2}">
     <a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
-      <img src="{{item.imageUrl}}" class="img-responsive" alt="">
+      <img src="{{item.imageUrl}}" class="img-responsive" alt="Extra Menu">
     </a>
   </div>
 </div>
@@ -12,7 +12,7 @@
    	<div class="swiper-wrapper extra-menu-wrapper">
       <div class="swiper-slide extra-menu-item" *ngFor="let item of dataItems; let i = index" [ngClass]="{middle: i == 2}">
       	<a [routerLink]="getRouterLink(item.dataUrl)['rl']" [queryParams]="getRouterLink(item.dataUrl)['qp']">
-          <img src="{{item.imageUrl}}" class="img-responsive" alt="">
+          <img src="{{item.imageUrl}}" class="img-responsive" alt="Extra Menu">
 	      </a>
       </div>
     </div>

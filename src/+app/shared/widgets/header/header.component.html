@@ -101,7 +101,7 @@
     <div class="contain mob-contain">
       <div class="logo inline mob-inline pull-left js-header-menu-show" [ngClass] = "{'homepage-logo' : !showMegaMenuCaret}" >
         <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/menu_white.svg" class="hide-lg menu-icon header-navbar-toggle navbar-toggle" (click)="toggleMenu()">
-        <a routerLink="/"><img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/logo.png" class="logo-img"></a>
+        <a routerLink="/"><img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/logo.png" class="logo-img" alt="Craftsvilla Logo"></a>
         <div *ngIf="showMegaMenuCaret" class="hide-sm mega-menu-hamburger"
               [class.hovered]="showBottomMenu == 'block'"
               (mouseover)="displayMegaMenu(true, $event)"

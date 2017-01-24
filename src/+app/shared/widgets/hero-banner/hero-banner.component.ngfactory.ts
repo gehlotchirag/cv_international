@@ -273,7 +273,7 @@ class _View_HeroBannerComponent2 extends import3.AppView<any> {
     this._el_2 = import2.createRenderElement(this.renderer,this._el_0,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_2_3 = new import18.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import19.Router),this.parent.parentInjector.get(import20.ActivatedRoute),this.parent.parentInjector.get(import21.LocationStrategy));
     this._text_3 = this.renderer.createText(this._el_2,'\n          ',(null as any));
-    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','','class','slider-img'),(null as any));
+    this._el_4 = import2.createRenderElement(this.renderer,this._el_2,'img',new import2.InlineArray4(4,'alt','Hero Banner','class','slider-img'),(null as any));
     this._text_5 = this.renderer.createText(this._el_2,'\n        ',(null as any));
     this._text_6 = this.renderer.createText(this._el_0,'\n      ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_0,'swipeleft',this.eventHandler(this._handle_swipeleft_0_0.bind(this)));

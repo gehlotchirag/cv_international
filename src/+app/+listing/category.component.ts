@@ -299,10 +299,12 @@ export class CategoryComponent implements OnInit, OnDestroy{
       if(isFilterUrl) { 
         let filterObj = this.filtersMap[url];
         this.appliedFilter.push(filterObj.value.name);
-        this.filterData[filterObj.type]["applied"].push(filterObj.value);
-        this.filterData[filterObj.type]["available"] = this.filterData[filterObj.type]["available"].filter(function (element) {
-          return JSON.stringify(element) !== JSON.stringify(filterObj.value) 
-        })
+        if(this.filterData[filterObj.type]) {
+          this.filterData[filterObj.type]["applied"].push(filterObj.value);
+          this.filterData[filterObj.type]["available"] = this.filterData[filterObj.type]["available"].filter(function (element) {
+            return JSON.stringify(element) !== JSON.stringify(filterObj.value) 
+          })
+        }
       }
     }
   }

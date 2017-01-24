@@ -10,13 +10,13 @@
           <div class="product-slider-slide col-sm-3 col-xs-6" #productSlide [style.width]="slideWidth" *ngFor="let product of dataItems; let i = index "[ngClass]="{'hidden': ((i > 3) && isResponsive)}">
             <!-- <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>  -->
             <a routerLink="/shop/{{product.slug}}/{{product.productId}}" (click)="feedClick(product, i+1)">
-              <img [lazyLoad]="product.imgUrl" class="img-responsive loading" alt="">
+              <img [lazyLoad]="product.imgUrl" class="img-responsive loading" alt="{{ product.productName }}">
               <div class="product-info">
                 <div class="product-name">{{ product.productName }}</div>
                 <div class="product-price">
                   <span class="discounted-price">${{ product.discountedPrice  }}</span>
-                  <span class="actual-price"><s>${{ product.regularPrice  }}</s></span>
-                  <span class="discount">{{ product.discountPercentage | number:'2.0-2' }}%</span>
+                  <span class="actual-price" *ngIf="product.discountPercentage !== 0"><s>${{ product.regularPrice  }}</s></span>
+                  <span class="discount" *ngIf="product.discountPercentage !== 0">{{ product.discountPercentage | number:'1.0-0' }}% off</span>
                 </div>
               </div>
             </a>

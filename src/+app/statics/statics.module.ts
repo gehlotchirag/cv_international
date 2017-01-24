@@ -14,6 +14,7 @@ import { OrderTrackingComponent } from './order-tracking/order-tracking.componen
 import { ContactUsComponent } from './contact-us/contactus.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { TermsConditionComponent } from './terms-and-condition/terms-condition.component';
+import { CookieInfoComponent } from './cookie-info/cookie-info.component';
 import { ShippingRefundComponent } from './shipping-refunds/shipping-refund.component';
 import { SitemapResolveService } from './sitemap/sitemap-resolve.service';
 import { SitemapService } from './sitemap/sitemap.service';
@@ -34,7 +35,8 @@ import { SitemapService } from './sitemap/sitemap.service';
     OrderTrackingComponent,
     ContactUsComponent,
     TermsConditionComponent,
-    ShippingRefundComponent
+    ShippingRefundComponent,
+    CookieInfoComponent
   ],
   providers:[ 
     SitemapService,

@@ -135,6 +135,7 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
   _text_24:any;
   /*private*/ _expr_33:any;
   /*private*/ _expr_34:any;
+  /*private*/ _expr_35:any;
   _pipe_currency_0:import14.CurrencyPipe;
   _pipe_currency_0_0:any;
   _pipe_number_1:import14.DecimalPipe;
@@ -142,6 +143,7 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
     super(_View_ProductCardComponent0,renderType_ProductCardComponent,import7.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
     this._expr_33 = import1.UNINITIALIZED;
     this._expr_34 = import1.UNINITIALIZED;
+    this._expr_35 = import1.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import5.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
@@ -151,7 +153,7 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
     this._el_3 = import2.createRenderElement(this.renderer,this._el_0,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_3_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import15.Router),this.parentInjector.get(import16.ActivatedRoute),this.parentInjector.get(import17.LocationStrategy));
     this._text_4 = this.renderer.createText(this._el_3,'\n		',(null as any));
-    this._el_5 = import2.createRenderElement(this.renderer,this._el_3,'img',new import2.InlineArray4(4,'alt','','class','img-responsive loading'),(null as any));
+    this._el_5 = import2.createRenderElement(this.renderer,this._el_3,'img',new import2.InlineArray2(2,'class','img-responsive loading'),(null as any));
     this._LazyLoadImageDirective_5_3 = new import12.Wrapper_LazyLoadImageDirective(new import18.ElementRef(this._el_5),this.parentInjector.get(import19.NgZone));
     this._text_6 = this.renderer.createText(this._el_3,'\n		',(null as any));
     this._el_7 = import2.createRenderElement(this.renderer,this._el_3,'div',new import2.InlineArray2(2,'class','product-info'),(null as any));
@@ -238,17 +240,22 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
     this.detectContentChildrenChanges(throwOnChange);
     if (!throwOnChange) { if ((this.numberOfChecks === 0)) { this._LazyLoadImageDirective_5_3.context.ngAfterContentInit(); } }
     this._RouterLinkWithHref_3_3.detectChangesInHostProps(this,this._el_3,throwOnChange);
-    this._LazyLoadImageDirective_5_3.detectChangesInHostProps(this,this._el_5,throwOnChange);
     const currVal_33:any = import2.interpolate(1,'',this.context.product.title,'');
     if (import2.checkBinding(throwOnChange,this._expr_33,currVal_33)) {
-      this.renderer.setText(this._text_10,currVal_33);
+      this.renderer.setElementProperty(this._el_5,'alt',currVal_33);
       this._expr_33 = currVal_33;
     }
-    valUnwrapper.reset();
-    const currVal_34:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_currency_0_0,this._pipe_currency_0.transform)(this.context.product.discountedPrice,'USD',true,'1.0-0')),'');
-    if ((valUnwrapper.hasWrappedValue || import2.checkBinding(throwOnChange,this._expr_34,currVal_34))) {
-      this.renderer.setText(this._text_15,currVal_34);
+    this._LazyLoadImageDirective_5_3.detectChangesInHostProps(this,this._el_5,throwOnChange);
+    const currVal_34:any = import2.interpolate(1,'',this.context.product.title,'');
+    if (import2.checkBinding(throwOnChange,this._expr_34,currVal_34)) {
+      this.renderer.setText(this._text_10,currVal_34);
       this._expr_34 = currVal_34;
+    }
+    valUnwrapper.reset();
+    const currVal_35:any = import2.interpolate(1,'',valUnwrapper.unwrap(import2.castByValue(this._pipe_currency_0_0,this._pipe_currency_0.transform)(this.context.product.discountedPrice,'USD',true,'1.0-0')),'');
+    if ((valUnwrapper.hasWrappedValue || import2.checkBinding(throwOnChange,this._expr_35,currVal_35))) {
+      this.renderer.setText(this._text_15,currVal_35);
+      this._expr_35 = currVal_35;
     }
     this.detectViewChildrenChanges(throwOnChange);
   }

@@ -1,8 +1,31 @@
 .cvi-outlet-body{
 	margin-top: 110px;
-	min-height: 1000px;
 }
-
+.cookie-msg-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    background: #e34141;
+    text-align: center;
+}
+.msg-hide-btn {
+    margin: 10px;
+    padding: 2px 25px;
+    background: #fff;
+    position: relative;
+}
+.cookie-msg {
+    color: #fff;
+    letter-spacing: 0.6px;
+    margin: 0;
+    padding: 13px;
+    font-size: 14px;
+}
+.cookie-msg a {
+    color: #000;
+    text-transform: capitalize;
+}
 @media only screen and (max-width: 1050px){
 	.cvi-outlet-body{
 		margin-top: 100px;

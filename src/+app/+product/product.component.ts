@@ -63,7 +63,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     shippingCostWorld: any; 
     showBuyLoader: boolean = false;
     private renderedDescription:Object = {};
-    private productName: String;
+    private productName: string;
     config: Object = {
             slidesPerView: 1,
             pagination: '.swiper-pagination',
@@ -72,6 +72,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
         };
     imageUrl: any;
     zoomedImageUrl: any;
+    breadCrumbs: Array<Object> = [];
 
   constructor(private productService : ProductService,
               private cartDetailsService: CartDetailsService,
@@ -241,6 +242,18 @@ export class ProductComponent implements OnInit, AfterViewInit {
       (error: any) => console.error(error),
       () => console.log('completed')
     );
+
+    this.route.data.pluck('product', 'd', 'category').subscribe((data: Array<any>) => {
+      let breadcrumbObj = {'name': 'Home', 'url': '/'};
+      this.breadCrumbs.push(breadcrumbObj);
+      for (let i = 0; i < data.length; i++) {
+        breadcrumbObj = {'name': data[i]['name'], 'url': this.breadCrumbs[i]['url'] + data[i]['slug'] + '/'};
+        this.breadCrumbs.push(breadcrumbObj);
+      }
+      breadcrumbObj = {'name': this.productName, 'url': this.breadCrumbs[this.breadCrumbs.length - 1]['url'] + this.products['slug'] + '/'};
+      this.breadCrumbs.push(breadcrumbObj);
+    })
+
   }
 
   ngAfterViewInit() {

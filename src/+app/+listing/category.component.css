@@ -129,9 +129,6 @@
     text-transform: capitalize;
     position: relative;
 }
-.breadcrumb-list:nth-child(2) {
-    pointer-events: none;
-}
 .breadcrumb-list:last-child {
     pointer-events: none;
     font-weight: 500;

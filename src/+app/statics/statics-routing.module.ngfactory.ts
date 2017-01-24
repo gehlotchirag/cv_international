@@ -16,16 +16,19 @@ import * as import8 from './contact-us/contactus.component.ngfactory';
 import * as import9 from './terms-and-condition/terms-condition.component.ngfactory';
 import * as import10 from './shipping-refunds/shipping-refund.component.ngfactory';
 import * as import11 from './cookie-info/cookie-info.component.ngfactory';
-import * as import12 from './about-us/about-us.component';
-import * as import13 from './faqs/faqs.component';
-import * as import14 from './order-tracking/order-tracking.component';
-import * as import15 from './in-media/in-media.component';
-import * as import16 from './contact-us/contactus.component';
-import * as import17 from './terms-and-condition/terms-condition.component';
-import * as import18 from './terms-and-condition/terms-page-resolve.service';
-import * as import19 from './shipping-refunds/shipping-refund.component';
-import * as import20 from './cookie-info/cookie-info.component';
-import * as import21 from '@angular/router/src/router_config_loader';
+import * as import12 from './sitemap/sitemap.component.ngfactory';
+import * as import13 from './about-us/about-us.component';
+import * as import14 from './faqs/faqs.component';
+import * as import15 from './order-tracking/order-tracking.component';
+import * as import16 from './in-media/in-media.component';
+import * as import17 from './contact-us/contactus.component';
+import * as import18 from './terms-and-condition/terms-condition.component';
+import * as import19 from './terms-and-condition/terms-page-resolve.service';
+import * as import20 from './shipping-refunds/shipping-refund.component';
+import * as import21 from './cookie-info/cookie-info.component';
+import * as import22 from './sitemap/sitemap.component';
+import * as import23 from './sitemap/sitemap-resolve.service';
+import * as import24 from '@angular/router/src/router_config_loader';
 class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.StaticsRoutingModule> {
   _RouterModule_0:import2.RouterModule;
   _StaticsRoutingModule_1:import1.StaticsRoutingModule;
@@ -39,7 +42,8 @@ class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.Stat
       import8.ContactUsComponentNgFactory,
       import9.TermsConditionComponentNgFactory,
       import10.ShippingRefundComponentNgFactory,
-      import11.CookieInfoComponentNgFactory
+      import11.CookieInfoComponentNgFactory,
+      import12.SitemapComponentNgFactory
     ]
     ,([] as any[]));
   }
@@ -47,43 +51,49 @@ class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.Stat
       if ((this.__ROUTES_2 == (null as any))) { (this.__ROUTES_2 = [[
         {
           path: 'about_us',
-          component: import12.AboutUsComponent
+          component: import13.AboutUsComponent
         }
         ,
         {
           path: 'faqs',
-          component: import13.FaqsComponent
+          component: import14.FaqsComponent
         }
         ,
         {
           path: 'order_tracking',
-          component: import14.OrderTrackingComponent
+          component: import15.OrderTrackingComponent
         }
         ,
         {
           path: 'craftsvilla_in_media',
-          component: import15.InMediaComponent
+          component: import16.InMediaComponent
         }
         ,
         {
           path: 'contactus',
-          component: import16.ContactUsComponent
+          component: import17.ContactUsComponent
         }
         ,
         {
           path: 'terms-and-conditions',
-          component: import17.TermsConditionComponent,
-          resolve: {html: import18.TermsPageResolveService}
+          component: import18.TermsConditionComponent,
+          resolve: {html: import19.TermsPageResolveService}
         }
         ,
         {
           path: 'shipping-and-refunds',
-          component: import19.ShippingRefundComponent
+          component: import20.ShippingRefundComponent
         }
         ,
         {
           path: 'cookie-info',
-          component: import20.CookieInfoComponent
+          component: import21.CookieInfoComponent
+        }
+        ,
+        {
+          path: 'online-shopping',
+          component: import22.SitemapComponent,
+          resolve: {sitemap: import23.SitemapResolveService}
         }
 
       ]
@@ -98,7 +108,7 @@ class StaticsRoutingModuleInjector extends import0.NgModuleInjector<import1.Stat
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.RouterModule)) { return this._RouterModule_0; }
     if ((token === import1.StaticsRoutingModule)) { return this._StaticsRoutingModule_1; }
-    if ((token === import21.ROUTES)) { return this._ROUTES_2; }
+    if ((token === import24.ROUTES)) { return this._ROUTES_2; }
     return notFoundResult;
   }
   destroyInternal():void {

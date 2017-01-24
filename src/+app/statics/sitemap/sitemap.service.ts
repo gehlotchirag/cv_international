@@ -4,7 +4,7 @@ import { HttpClientService } from '../../shared/services/http-client.service'
 
 @Injectable()
 export class SitemapService {
-  private sitemapUrl = 'api/megamenu/';
+  private sitemapUrl = 'api/seo/html_map';
 
   constructor(
       private httpClient: HttpClientService

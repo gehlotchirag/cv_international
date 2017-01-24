@@ -51,14 +51,14 @@ import { TermsPageResolveService } from './terms-and-condition/terms-page-resolv
       {
         path: 'cookie-info',
         component: CookieInfoComponent
-      }
-	    /* { 
+      },
+	    { 
   			path: 'online-shopping',
 	  		component: SitemapComponent, 
         resolve: {
       		sitemap: SitemapResolveService
         }
-    	} */
+    	} 
     ])
   ],
 })

@@ -59,3 +59,7 @@ img.mega-menu-list-ico {
   font-size: 11px;
   margin: 15px 0;
 }
+.menu .menu-list .header a {
+  color: #fff !important;
+  text-decoration: none !Important;
+}

@@ -20,18 +20,18 @@ import * as import12 from '@angular/router/src/router';
 import * as import13 from '@angular/core/src/metadata/view';
 import * as import14 from '@angular/core/src/linker/component_factory';
 import * as import15 from './mega-menu.component.css.shim';
-import * as import16 from '../../../../../node_modules/@angular/common/src/directives/ng_for.ngfactory';
-import * as import17 from '../../../../../node_modules/@angular/common/src/directives/ng_if.ngfactory';
-import * as import18 from '@angular/core/src/linker/template_ref';
-import * as import19 from '@angular/core/src/change_detection/differs/iterable_differs';
-import * as import20 from '@angular/common/src/directives/ng_for';
-import * as import21 from '@angular/common/src/directives/ng_if';
-import * as import22 from './mega-menu-link.component.ngfactory';
-import * as import23 from './mega-menu-link.component';
-import * as import24 from '../../../../../node_modules/@angular/router/src/directives/router_link.ngfactory';
-import * as import25 from '@angular/router/src/router_state';
-import * as import26 from '@angular/common/src/location/location_strategy';
-import * as import27 from '@angular/router/src/directives/router_link';
+import * as import16 from '../../../../../node_modules/@angular/router/src/directives/router_link.ngfactory';
+import * as import17 from '../../../../../node_modules/@angular/common/src/directives/ng_for.ngfactory';
+import * as import18 from '../../../../../node_modules/@angular/common/src/directives/ng_if.ngfactory';
+import * as import19 from '@angular/router/src/router_state';
+import * as import20 from '@angular/common/src/location/location_strategy';
+import * as import21 from '@angular/core/src/linker/template_ref';
+import * as import22 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import23 from '@angular/router/src/directives/router_link';
+import * as import24 from '@angular/common/src/directives/ng_for';
+import * as import25 from '@angular/common/src/directives/ng_if';
+import * as import26 from './mega-menu-link.component.ngfactory';
+import * as import27 from './mega-menu-link.component';
 export class Wrapper_MegaMenuComponent {
   context:import0.MegaMenuComponent;
   changed:boolean;
@@ -97,25 +97,27 @@ class _View_MegaMenuComponent0 extends import1.AppView<import0.MegaMenuComponent
   _el_6:any;
   _text_7:any;
   _el_8:any;
-  _text_9:any;
+  _RouterLinkWithHref_8_3:import16.Wrapper_RouterLinkWithHref;
+  _el_9:any;
   _text_10:any;
   _text_11:any;
-  _anchor_12:any;
-  /*private*/ _appEl_12:import3.AppElement;
-  _TemplateRef_12_5:any;
-  _NgFor_12_6:import16.Wrapper_NgFor;
-  _text_13:any;
-  _anchor_14:any;
-  /*private*/ _appEl_14:import3.AppElement;
-  _TemplateRef_14_5:any;
-  _NgIf_14_6:import17.Wrapper_NgIf;
-  _text_15:any;
+  _text_12:any;
+  _anchor_13:any;
+  /*private*/ _appEl_13:import3.AppElement;
+  _TemplateRef_13_5:any;
+  _NgFor_13_6:import17.Wrapper_NgFor;
+  _text_14:any;
+  _anchor_15:any;
+  /*private*/ _appEl_15:import3.AppElement;
+  _TemplateRef_15_5:any;
+  _NgIf_15_6:import18.Wrapper_NgIf;
   _text_16:any;
   _text_17:any;
-  /*private*/ _expr_24:any;
+  _text_18:any;
+  /*private*/ _expr_26:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import3.AppElement) {
     super(_View_MegaMenuComponent0,renderType_MegaMenuComponent,import7.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
-    this._expr_24 = import8.UNINITIALIZED;
+    this._expr_26 = import8.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import3.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
@@ -127,24 +129,27 @@ class _View_MegaMenuComponent0 extends import1.AppView<import0.MegaMenuComponent
     this._text_5 = this.renderer.createText(this._el_4,'\n      ',(null as any));
     this._el_6 = import5.createRenderElement(this.renderer,this._el_4,'img',new import5.InlineArray4(4,'class','mega-menu-list-ico pull-left','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/menu_filled.svg'),(null as any));
     this._text_7 = this.renderer.createText(this._el_4,'\n      ',(null as any));
-    this._el_8 = import5.createRenderElement(this.renderer,this._el_4,'h1',new import5.InlineArray2(2,'class','pull-left'),(null as any));
-    this._text_9 = this.renderer.createText(this._el_8,'SHOP BY CATEGORY',(null as any));
-    this._text_10 = this.renderer.createText(this._el_4,'\n    ',(null as any));
-    this._text_11 = this.renderer.createText(this._el_2,'\n    ',(null as any));
-    this._anchor_12 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
-    this._appEl_12 = new import3.AppElement(12,2,this,this._anchor_12);
-    this._TemplateRef_12_5 = new import18.TemplateRef_(this._appEl_12,viewFactory_MegaMenuComponent1);
-    this._NgFor_12_6 = new import16.Wrapper_NgFor(this._appEl_12.vcRef,this._TemplateRef_12_5,this.parentInjector.get(import19.IterableDiffers),this.ref);
-    this._text_13 = this.renderer.createText(this._el_2,'\n    ',(null as any));
-    this._anchor_14 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
-    this._appEl_14 = new import3.AppElement(14,2,this,this._anchor_14);
-    this._TemplateRef_14_5 = new import18.TemplateRef_(this._appEl_14,viewFactory_MegaMenuComponent2);
-    this._NgIf_14_6 = new import17.Wrapper_NgIf(this._appEl_14.vcRef,this._TemplateRef_14_5);
-    this._text_15 = this.renderer.createText(this._el_2,'\n  ',(null as any));
-    this._text_16 = this.renderer.createText(this._el_0,'\n',(null as any));
-    this._text_17 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_8 = import5.createRenderElement(this.renderer,this._el_4,'a',new import5.InlineArray2(2,'routerLink','online-shopping'),(null as any));
+    this._RouterLinkWithHref_8_3 = new import16.Wrapper_RouterLinkWithHref(this.parentInjector.get(import12.Router),this.parentInjector.get(import19.ActivatedRoute),this.parentInjector.get(import20.LocationStrategy));
+    this._el_9 = import5.createRenderElement(this.renderer,this._el_8,'h1',new import5.InlineArray2(2,'class','pull-left'),(null as any));
+    this._text_10 = this.renderer.createText(this._el_9,'SHOP BY CATEGORY',(null as any));
+    this._text_11 = this.renderer.createText(this._el_4,'\n    ',(null as any));
+    this._text_12 = this.renderer.createText(this._el_2,'\n    ',(null as any));
+    this._anchor_13 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
+    this._appEl_13 = new import3.AppElement(13,2,this,this._anchor_13);
+    this._TemplateRef_13_5 = new import21.TemplateRef_(this._appEl_13,viewFactory_MegaMenuComponent1);
+    this._NgFor_13_6 = new import17.Wrapper_NgFor(this._appEl_13.vcRef,this._TemplateRef_13_5,this.parentInjector.get(import22.IterableDiffers),this.ref);
+    this._text_14 = this.renderer.createText(this._el_2,'\n    ',(null as any));
+    this._anchor_15 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
+    this._appEl_15 = new import3.AppElement(15,2,this,this._anchor_15);
+    this._TemplateRef_15_5 = new import21.TemplateRef_(this._appEl_15,viewFactory_MegaMenuComponent2);
+    this._NgIf_15_6 = new import18.Wrapper_NgIf(this._appEl_15.vcRef,this._TemplateRef_15_5);
+    this._text_16 = this.renderer.createText(this._el_2,'\n  ',(null as any));
+    this._text_17 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_18 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'mouseleave',this.eventHandler(this._handle_mouseleave_2_0.bind(this)));
     var disposable_1:Function = this.renderer.listen(this._el_2,'selectedCategory',this.eventHandler(this._handle_selectedCategory_2_1.bind(this)));
+    var disposable_2:Function = this.renderer.listen(this._el_8,'click',this.eventHandler(this._handle_click_8_0.bind(this)));
     this.init(([] as any[]),[
       this._el_0,
       this._text_1,
@@ -155,44 +160,54 @@ class _View_MegaMenuComponent0 extends import1.AppView<import0.MegaMenuComponent
       this._el_6,
       this._text_7,
       this._el_8,
-      this._text_9,
+      this._el_9,
       this._text_10,
       this._text_11,
-      this._anchor_12,
-      this._text_13,
-      this._anchor_14,
-      this._text_15,
+      this._text_12,
+      this._anchor_13,
+      this._text_14,
+      this._anchor_15,
       this._text_16,
-      this._text_17
+      this._text_17,
+      this._text_18
     ]
     ,[
       disposable_0,
-      disposable_1
+      disposable_1,
+      disposable_2
     ]
     ,([] as any[]));
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import18.TemplateRef) && (12 === requestNodeIndex))) { return this._TemplateRef_12_5; }
-    if (((token === import20.NgFor) && (12 === requestNodeIndex))) { return this._NgFor_12_6.context; }
-    if (((token === import18.TemplateRef) && (14 === requestNodeIndex))) { return this._TemplateRef_14_5; }
-    if (((token === import21.NgIf) && (14 === requestNodeIndex))) { return this._NgIf_14_6.context; }
+    if (((token === import23.RouterLinkWithHref) && ((8 <= requestNodeIndex) && (requestNodeIndex <= 10)))) { return this._RouterLinkWithHref_8_3.context; }
+    if (((token === import21.TemplateRef) && (13 === requestNodeIndex))) { return this._TemplateRef_13_5; }
+    if (((token === import24.NgFor) && (13 === requestNodeIndex))) { return this._NgFor_13_6.context; }
+    if (((token === import21.TemplateRef) && (15 === requestNodeIndex))) { return this._TemplateRef_15_5; }
+    if (((token === import25.NgIf) && (15 === requestNodeIndex))) { return this._NgIf_15_6.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_12_0_0:any = this.context.menuCategoriesData;
-    this._NgFor_12_6.check_ngForOf(currVal_12_0_0,throwOnChange,false);
-    this._NgFor_12_6.detectChangesInInputProps(this,this._anchor_12,throwOnChange);
-    const currVal_14_0_0:any = (this.context.activeCategoryData && (this.context.activeCategoryData.data.length > 0));
-    this._NgIf_14_6.check_ngIf(currVal_14_0_0,throwOnChange,false);
-    this._NgIf_14_6.detectChangesInInputProps(this,this._anchor_14,throwOnChange);
+    const currVal_8_0_0:any = 'online-shopping';
+    this._RouterLinkWithHref_8_3.check_routerLink(currVal_8_0_0,throwOnChange,false);
+    this._RouterLinkWithHref_8_3.detectChangesInInputProps(this,this._el_8,throwOnChange);
+    const currVal_13_0_0:any = this.context.menuCategoriesData;
+    this._NgFor_13_6.check_ngForOf(currVal_13_0_0,throwOnChange,false);
+    this._NgFor_13_6.detectChangesInInputProps(this,this._anchor_13,throwOnChange);
+    const currVal_15_0_0:any = (this.context.activeCategoryData && (this.context.activeCategoryData.data.length > 0));
+    this._NgIf_15_6.check_ngIf(currVal_15_0_0,throwOnChange,false);
+    this._NgIf_15_6.detectChangesInInputProps(this,this._anchor_15,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
-    const currVal_24:any = this.context.isNonHomePage;
-    if (import5.checkBinding(throwOnChange,this._expr_24,currVal_24)) {
-      this.renderer.setElementClass(this._el_0,'overlay-menu',currVal_24);
-      this._expr_24 = currVal_24;
+    const currVal_26:any = this.context.isNonHomePage;
+    if (import5.checkBinding(throwOnChange,this._expr_26,currVal_26)) {
+      this.renderer.setElementClass(this._el_0,'overlay-menu',currVal_26);
+      this._expr_26 = currVal_26;
     }
+    this._RouterLinkWithHref_8_3.detectChangesInHostProps(this,this._el_8,throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
+  }
+  destroyInternal():void {
+    this._RouterLinkWithHref_8_3.context.ngOnDestroy();
   }
   private _handle_mouseleave_2_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
@@ -204,6 +219,11 @@ class _View_MegaMenuComponent0 extends import1.AppView<import0.MegaMenuComponent
     const pd_2_0:any = ((<any>this.context.getSelectedCategory($event)) !== false);
     return (true && pd_2_0);
   }
+  private _handle_click_8_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_8_0:any = ((<any>this._RouterLinkWithHref_8_3.context.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_8_0);
+  }
 }
 export function viewFactory_MegaMenuComponent0(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import3.AppElement):import1.AppView<import0.MegaMenuComponent> {
   if ((renderType_MegaMenuComponent === (null as any))) { (renderType_MegaMenuComponent = viewUtils.createRenderComponentType('',0,import13.ViewEncapsulation.Emulated,styles_MegaMenuComponent,{})); }
@@ -212,7 +232,7 @@ export function viewFactory_MegaMenuComponent0(viewUtils:import5.ViewUtils,paren
 class _View_MegaMenuComponent1 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import3.AppElement;
-  _MegaMenuLinkComponent_0_4:import22.Wrapper_MegaMenuLinkComponent;
+  _MegaMenuLinkComponent_0_4:import26.Wrapper_MegaMenuLinkComponent;
   _text_1:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import3.AppElement) {
     super(_View_MegaMenuComponent1,renderType_MegaMenuComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
@@ -220,8 +240,8 @@ class _View_MegaMenuComponent1 extends import1.AppView<any> {
   createInternal(rootSelector:string):import3.AppElement {
     this._el_0 = import5.createRenderElement(this.renderer,(null as any),'cv-menu-link',import5.EMPTY_INLINE_ARRAY,(null as any));
     this._appEl_0 = new import3.AppElement(0,(null as any),this,this._el_0);
-    var compView_0:any = import22.viewFactory_MegaMenuLinkComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._MegaMenuLinkComponent_0_4 = new import22.Wrapper_MegaMenuLinkComponent(new import11.ElementRef(this._el_0),this.renderer);
+    var compView_0:any = import26.viewFactory_MegaMenuLinkComponent0(this.viewUtils,this.injector(0),this._appEl_0);
+    this._MegaMenuLinkComponent_0_4 = new import26.Wrapper_MegaMenuLinkComponent(new import11.ElementRef(this._el_0),this.renderer);
     this._appEl_0.initComponent(this._MegaMenuLinkComponent_0_4.context,([] as any[]),compView_0);
     this._text_1 = this.renderer.createText((null as any),'\n    ',(null as any));
     compView_0.create(this._MegaMenuLinkComponent_0_4.context,([] as any[]),(null as any));
@@ -245,7 +265,7 @@ class _View_MegaMenuComponent1 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import23.MegaMenuLinkComponent) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 1)))) { return this._MegaMenuLinkComponent_0_4.context; }
+    if (((token === import27.MegaMenuLinkComponent) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 1)))) { return this._MegaMenuLinkComponent_0_4.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -280,7 +300,7 @@ class _View_MegaMenuComponent2 extends import1.AppView<any> {
   _anchor_2:any;
   /*private*/ _appEl_2:import3.AppElement;
   _TemplateRef_2_5:any;
-  _NgFor_2_6:import16.Wrapper_NgFor;
+  _NgFor_2_6:import17.Wrapper_NgFor;
   _text_3:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import3.AppElement) {
     super(_View_MegaMenuComponent2,renderType_MegaMenuComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
@@ -290,8 +310,8 @@ class _View_MegaMenuComponent2 extends import1.AppView<any> {
     this._text_1 = this.renderer.createText(this._el_0,'\n      ',(null as any));
     this._anchor_2 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
     this._appEl_2 = new import3.AppElement(2,0,this,this._anchor_2);
-    this._TemplateRef_2_5 = new import18.TemplateRef_(this._appEl_2,viewFactory_MegaMenuComponent3);
-    this._NgFor_2_6 = new import16.Wrapper_NgFor(this._appEl_2.vcRef,this._TemplateRef_2_5,this.parent.parentInjector.get(import19.IterableDiffers),this.parent.ref);
+    this._TemplateRef_2_5 = new import21.TemplateRef_(this._appEl_2,viewFactory_MegaMenuComponent3);
+    this._NgFor_2_6 = new import17.Wrapper_NgFor(this._appEl_2.vcRef,this._TemplateRef_2_5,this.parent.parentInjector.get(import22.IterableDiffers),this.parent.ref);
     this._text_3 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this.init(([] as any[]).concat([this._el_0]),[
       this._el_0,
@@ -303,8 +323,8 @@ class _View_MegaMenuComponent2 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import18.TemplateRef) && (2 === requestNodeIndex))) { return this._TemplateRef_2_5; }
-    if (((token === import20.NgFor) && (2 === requestNodeIndex))) { return this._NgFor_2_6.context; }
+    if (((token === import21.TemplateRef) && (2 === requestNodeIndex))) { return this._TemplateRef_2_5; }
+    if (((token === import24.NgFor) && (2 === requestNodeIndex))) { return this._NgFor_2_6.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -327,7 +347,7 @@ class _View_MegaMenuComponent3 extends import1.AppView<any> {
   _anchor_5:any;
   /*private*/ _appEl_5:import3.AppElement;
   _TemplateRef_5_5:any;
-  _NgFor_5_6:import16.Wrapper_NgFor;
+  _NgFor_5_6:import17.Wrapper_NgFor;
   _text_6:any;
   /*private*/ _expr_10:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import3.AppElement) {
@@ -342,8 +362,8 @@ class _View_MegaMenuComponent3 extends import1.AppView<any> {
     this._text_4 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     this._anchor_5 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
     this._appEl_5 = new import3.AppElement(5,0,this,this._anchor_5);
-    this._TemplateRef_5_5 = new import18.TemplateRef_(this._appEl_5,viewFactory_MegaMenuComponent4);
-    this._NgFor_5_6 = new import16.Wrapper_NgFor(this._appEl_5.vcRef,this._TemplateRef_5_5,this.parent.parent.parentInjector.get(import19.IterableDiffers),this.parent.parent.ref);
+    this._TemplateRef_5_5 = new import21.TemplateRef_(this._appEl_5,viewFactory_MegaMenuComponent4);
+    this._NgFor_5_6 = new import17.Wrapper_NgFor(this._appEl_5.vcRef,this._TemplateRef_5_5,this.parent.parent.parentInjector.get(import22.IterableDiffers),this.parent.parent.ref);
     this._text_6 = this.renderer.createText(this._el_0,'\n      ',(null as any));
     this.init(([] as any[]).concat([this._el_0]),[
       this._el_0,
@@ -358,8 +378,8 @@ class _View_MegaMenuComponent3 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import18.TemplateRef) && (5 === requestNodeIndex))) { return this._TemplateRef_5_5; }
-    if (((token === import20.NgFor) && (5 === requestNodeIndex))) { return this._NgFor_5_6.context; }
+    if (((token === import21.TemplateRef) && (5 === requestNodeIndex))) { return this._TemplateRef_5_5; }
+    if (((token === import24.NgFor) && (5 === requestNodeIndex))) { return this._NgFor_5_6.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -382,7 +402,7 @@ class _View_MegaMenuComponent4 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
-  _RouterLinkWithHref_2_3:import24.Wrapper_RouterLinkWithHref;
+  _RouterLinkWithHref_2_3:import16.Wrapper_RouterLinkWithHref;
   _text_3:any;
   _text_4:any;
   /*private*/ _expr_6:any;
@@ -394,7 +414,7 @@ class _View_MegaMenuComponent4 extends import1.AppView<any> {
     this._el_0 = import5.createRenderElement(this.renderer,(null as any),'li',new import5.InlineArray2(2,'class','sub-cat-list-item'),(null as any));
     this._text_1 = this.renderer.createText(this._el_0,'\n          ',(null as any));
     this._el_2 = import5.createRenderElement(this.renderer,this._el_0,'a',import5.EMPTY_INLINE_ARRAY,(null as any));
-    this._RouterLinkWithHref_2_3 = new import24.Wrapper_RouterLinkWithHref(this.parent.parent.parent.parentInjector.get(import12.Router),this.parent.parent.parent.parentInjector.get(import25.ActivatedRoute),this.parent.parent.parent.parentInjector.get(import26.LocationStrategy));
+    this._RouterLinkWithHref_2_3 = new import16.Wrapper_RouterLinkWithHref(this.parent.parent.parent.parentInjector.get(import12.Router),this.parent.parent.parent.parentInjector.get(import19.ActivatedRoute),this.parent.parent.parent.parentInjector.get(import20.LocationStrategy));
     this._text_3 = this.renderer.createText(this._el_2,'',(null as any));
     this._text_4 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
@@ -409,7 +429,7 @@ class _View_MegaMenuComponent4 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import27.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 3)))) { return this._RouterLinkWithHref_2_3.context; }
+    if (((token === import23.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 3)))) { return this._RouterLinkWithHref_2_3.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {

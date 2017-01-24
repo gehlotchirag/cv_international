@@ -267,7 +267,7 @@ class _View_AppComponent1 extends import1.AppView<any> {
   createInternal(rootSelector:string):import3.AppElement {
     this._el_0 = import9.createRenderElement(this.renderer,(null as any),'div',new import9.InlineArray2(2,'class','cookie-msg-container clearfix'),(null as any));
     this._text_1 = this.renderer.createText(this._el_0,'\n	',(null as any));
-    this._el_2 = import9.createRenderElement(this.renderer,this._el_0,'p',new import9.InlineArray2(2,'class','cookie-msg col-md-10'),(null as any));
+    this._el_2 = import9.createRenderElement(this.renderer,this._el_0,'p',new import9.InlineArray2(2,'class','cookie-msg col-md-9'),(null as any));
     this._text_3 = this.renderer.createText(this._el_2,'By continuing to browse the site you are agreeing to our use of cookies.\nReview our ',(null as any));
     this._el_4 = import9.createRenderElement(this.renderer,this._el_2,'a',new import9.InlineArray2(2,'routerLink','cookie-info'),(null as any));
     this._RouterLinkWithHref_4_3 = new import37.Wrapper_RouterLinkWithHref(this.parentInjector.get(import15.Router),this.parentInjector.get(import18.ActivatedRoute),this.parentInjector.get(import38.LocationStrategy));

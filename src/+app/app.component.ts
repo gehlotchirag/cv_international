@@ -8,6 +8,7 @@ import { MetaService } from './shared/services/meta-tags.service';
 
 import { HttpClientService } from './shared/services/http-client.service';
 import { AppService } from './app.service';
+declare let ga: Function;
 
 //
 /////////////////////////
@@ -79,6 +80,12 @@ export class AppComponent implements AfterViewInit {
                     event instanceof NavigationCancel ||
                     event instanceof NavigationError) {
           this.progressBar.complete();
+        }
+        if(event instanceof NavigationEnd) {
+          if(typeof ga !== 'undefined') {
+            ga('set', 'page', event.urlAfterRedirects);
+            ga('send', 'pageview');
+          }
         }
       });
   }

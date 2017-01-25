@@ -167,7 +167,7 @@ class _View_ProductSliderComponent0 extends import1.AppView<import0.ProductSlide
     this._text_11 = this.renderer.createText(this._el_10,'View more',(null as any));
     this._text_12 = this.renderer.createText(this._el_4,'\n    ',(null as any));
     this._text_13 = this.renderer.createText(this._el_2,'\n    ',(null as any));
-    this._el_14 = import4.createRenderElement(this.renderer,this._el_2,'div',new import4.InlineArray2(2,'class','section-body text-center page-listing clearfix'),(null as any));
+    this._el_14 = import4.createRenderElement(this.renderer,this._el_2,'div',new import4.InlineArray2(2,'class','section-body text-center page-listing clearfix pull-left'),(null as any));
     this._text_15 = this.renderer.createText(this._el_14,'\n      ',(null as any));
     this._el_16 = import4.createRenderElement(this.renderer,this._el_14,'div',new import4.InlineArray2(2,'class','col-md-12 product-slider-container'),(null as any));
     this._text_17 = this.renderer.createText(this._el_16,'\n        ',(null as any));

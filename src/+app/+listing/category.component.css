@@ -297,17 +297,32 @@
     background: #45ae45;
     color: #fff;
 }
-.multicolor-filter, .pastelcolor-filter{
+.multicolor, .pastel{
     background-color: transparent;
     background-image: url('http://assetsintl.craftsvilla.com/cvintlfe/assets/images/mclr.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-.pastelcolor-filter{
+.pastel{
     background-image: url('http://assetsintl.craftsvilla.com/cvintlfe/assets/images/pastel.jpg');
 }
-.whitecolor-filter{
+.white{
     border: 1px solid;
+}
+.beige{
+    background-color: #f5f5dc !important;
+}
+.tealblue{
+    background-color: #367588 !important;   
+}
+.rust{
+    background-color: #b7410e !important;
+}
+.offwhite{
+    background-color: #faebd7 !important;
+}
+.peach{
+    background-color: #ffdab9 !important;
 }
 .color-tooltip {
     visibility: hidden;

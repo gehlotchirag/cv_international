@@ -33,12 +33,6 @@ img.mega-menu-list-ico {
   display: block;
   padding-left: 10%;
 }
-.menu .menu-list li:hover, .menu .menu-list li:hover a {
-  width: 100.5%;
-  position: relative;
-  z-index: 100;
-  color: #c74444 !important;
-}
 .menu .menu-list li:hover.header {
   color: #fff !important;
 }

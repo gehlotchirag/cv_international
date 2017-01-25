@@ -17,7 +17,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { ObjectKeysPipe } from '../utils';
 import { SwiperModule } from '../../+swiper/swiper.module';
 import { LazyLoadImageModule } from '../lazyload-image/lazyload-image.module';
-
+import { TruncatePipe } from '../filter-pipes/truncate.pipe';
 
 
 
@@ -41,7 +41,8 @@ import { LazyLoadImageModule } from '../lazyload-image/lazyload-image.module';
       TestimonialsWidgetComponent,
       PaginationComponent,
       ProductCardComponent,
-      ObjectKeysPipe
+      ObjectKeysPipe,
+      TruncatePipe
     ],
 
     exports: [

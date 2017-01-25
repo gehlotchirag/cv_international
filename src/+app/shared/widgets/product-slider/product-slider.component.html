@@ -4,7 +4,7 @@
       <span class="heading pull-left"><img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/ethnic-1.png"> {{ header }}</span>
       <a class="btn btn-brand btn-xs view-more pull-right" routerLink="{{viewMoreUrl}}">View more</a>
     </div>
-    <div class="section-body text-center page-listing clearfix">
+    <div class="section-body text-center page-listing clearfix pull-left">
       <div class="col-md-12 product-slider-container" #productSliderContainer>
         <div class="product-slider-wrapper clearfix" #productSlider [style.width]="sliderWidth">
           <div class="product-slider-slide col-sm-3 col-xs-6" #productSlide [style.width]="slideWidth" *ngFor="let product of dataItems; let i = index "[ngClass]="{'hidden': ((i > 3) && isResponsive)}">

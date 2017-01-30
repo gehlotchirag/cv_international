@@ -9,12 +9,7 @@ import { MetaService } from './shared/services/meta-tags.service';
 import { HttpClientService } from './shared/services/http-client.service';
 import { AppService } from './app.service';
 declare let ga: Function;
-
-//
-/////////////////////////
-// ** Example Directive
-// Notice we don't touch the Element directly
-
+declare var dataLayer: any;
 
 @Component({
   selector: 'cvi-root',
@@ -85,6 +80,13 @@ export class AppComponent implements AfterViewInit {
           if(typeof ga !== 'undefined') {
             ga('set', 'page', event.urlAfterRedirects);
             ga('send', 'pageview');
+          }
+          if (typeof dataLayer !== 'undefined' && dataLayer) {
+            dataLayer.push({
+              'event': 'Page View',
+              'content-name': event.urlAfterRedirects,
+              'userId': null
+            });
           }
         }
       });

@@ -7,7 +7,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "sarees/bollywood-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bollywood"
 		},
 		"id": 2
@@ -16,7 +16,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "sarees/contemporary-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "contemporary"
 		},
 		"id": 2
@@ -25,7 +25,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "sarees/designer-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "designer"
 		},
 		"id": 2
@@ -34,7 +34,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "sarees/lehenga-saree-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "lehenga saree"
 		},
 		"id": 2
@@ -43,7 +43,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "sarees/half-half-saree-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "half half saree"
 		},
 		"id": 2
@@ -52,7 +52,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "sarees/traditional-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "traditional"
 		},
 		"id": 2
@@ -61,7 +61,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "sarees/readymade-saree-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "readymade saree"
 		},
 		"id": 2
@@ -70,7 +70,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/net-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "net"
 		},
 		"id": 2
@@ -79,7 +79,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/lycra-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "lycra"
 		},
 		"id": 2
@@ -88,7 +88,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/eri-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "eri silk"
 		},
 		"id": 2
@@ -97,7 +97,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/banarasi-net-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "banarasi net"
 		},
 		"id": 2
@@ -106,7 +106,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/raw-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "raw silk"
 		},
 		"id": 2
@@ -115,7 +115,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/cotton-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton"
 		},
 		"id": 2
@@ -124,7 +124,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/denim-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "denim"
 		},
 		"id": 2
@@ -133,7 +133,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/chanderi-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chanderi"
 		},
 		"id": 2
@@ -142,7 +142,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/mulberry-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "mulberry silk"
 		},
 		"id": 2
@@ -151,7 +151,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/cotton-blend-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton blend"
 		},
 		"id": 2
@@ -160,7 +160,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/kota-cotton-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "kota cotton"
 		},
 		"id": 2
@@ -169,7 +169,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/uppada-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "uppada silk"
 		},
 		"id": 2
@@ -178,7 +178,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/cotton-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton silk"
 		},
 		"id": 2
@@ -187,7 +187,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/tissue-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "tissue"
 		},
 		"id": 2
@@ -196,7 +196,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/muslin-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "muslin"
 		},
 		"id": 2
@@ -205,7 +205,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/organza-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "organza"
 		},
 		"id": 2
@@ -214,7 +214,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/art-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "art silk"
 		},
 		"id": 2
@@ -223,7 +223,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk"
 		},
 		"id": 2
@@ -232,7 +232,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/kota-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "kota silk"
 		},
 		"id": 2
@@ -241,7 +241,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/kora-cotton-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "kora cotton"
 		},
 		"id": 2
@@ -250,7 +250,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/banarasi-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "banarasi silk"
 		},
 		"id": 2
@@ -259,7 +259,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/faux-georgette-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "faux georgette"
 		},
 		"id": 2
@@ -268,7 +268,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/faux-chiffon-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "faux chiffon"
 		},
 		"id": 2
@@ -277,7 +277,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/taffeta-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "taffeta"
 		},
 		"id": 2
@@ -286,7 +286,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/chiffon-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chiffon"
 		},
 		"id": 2
@@ -295,7 +295,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/crepe-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "crepe"
 		},
 		"id": 2
@@ -304,7 +304,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/kora-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "kora silk"
 		},
 		"id": 2
@@ -313,7 +313,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/bengal-cotton-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bengal cotton"
 		},
 		"id": 2
@@ -322,7 +322,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/nylon-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "nylon"
 		},
 		"id": 2
@@ -331,7 +331,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/jamdani-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "jamdani"
 		},
 		"id": 2
@@ -340,7 +340,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/bangalore-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bangalore silk"
 		},
 		"id": 2
@@ -349,7 +349,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/manipuri-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "manipuri silk"
 		},
 		"id": 2
@@ -358,7 +358,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/lurex-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "lurex"
 		},
 		"id": 2
@@ -367,7 +367,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/super-net-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "super net"
 		},
 		"id": 2
@@ -376,7 +376,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/bhagalpuri-cotton-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bhagalpuri cotton"
 		},
 		"id": 2
@@ -385,7 +385,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/viscose-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "viscose"
 		},
 		"id": 2
@@ -394,7 +394,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/silk-crepe-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk crepe"
 		},
 		"id": 2
@@ -403,7 +403,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/jute-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "jute"
 		},
 		"id": 2
@@ -412,7 +412,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/nazneen-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "nazneen"
 		},
 		"id": 2
@@ -421,7 +421,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/kanjivaram-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "kanjivaram silk"
 		},
 		"id": 2
@@ -430,7 +430,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/matka-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "matka silk"
 		},
 		"id": 2
@@ -439,7 +439,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/shimmer-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "shimmer"
 		},
 		"id": 2
@@ -448,7 +448,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/velvet-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "velvet"
 		},
 		"id": 2
@@ -457,7 +457,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/satin-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "satin"
 		},
 		"id": 2
@@ -466,7 +466,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/faux-crepe-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "faux crepe"
 		},
 		"id": 2
@@ -475,7 +475,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/brocade-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brocade"
 		},
 		"id": 2
@@ -484,7 +484,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/linen-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "linen"
 		},
 		"id": 2
@@ -493,7 +493,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/santoon-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "santoon"
 		},
 		"id": 2
@@ -502,7 +502,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/dupion-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dupion silk"
 		},
 		"id": 2
@@ -511,7 +511,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/other-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "other"
 		},
 		"id": 2
@@ -520,7 +520,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/georgette-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "georgette"
 		},
 		"id": 2
@@ -529,7 +529,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/polyester-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "polyester"
 		},
 		"id": 2
@@ -538,7 +538,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/silk-blend-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk blend"
 		},
 		"id": 2
@@ -547,7 +547,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/bhagalpuri-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bhagalpuri silk"
 		},
 		"id": 2
@@ -556,7 +556,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/tussar-silk-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "tussar silk"
 		},
 		"id": 2
@@ -565,7 +565,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/bemberg-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bemberg"
 		},
 		"id": 2
@@ -574,7 +574,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/khadi-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "khadi"
 		},
 		"id": 2
@@ -583,7 +583,7 @@ export var filtersMap = {
 		"type": "Saree Fabric",
 		"value": {
 			"url": "sarees/noil-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "noil"
 		},
 		"id": 2
@@ -592,7 +592,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/black-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "black"
 		},
 		"id": 2
@@ -601,7 +601,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/grey-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "grey"
 		},
 		"id": 2
@@ -610,7 +610,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/blue-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "blue"
 		},
 		"id": 2
@@ -619,7 +619,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/beige-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "beige"
 		},
 		"id": 2
@@ -628,7 +628,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/yellow-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "yellow"
 		},
 		"id": 2
@@ -637,7 +637,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/white-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "white"
 		},
 		"id": 2
@@ -646,7 +646,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/green-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "green"
 		},
 		"id": 2
@@ -655,7 +655,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/brown-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brown"
 		},
 		"id": 2
@@ -664,7 +664,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/navy-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "navy"
 		},
 		"id": 2
@@ -673,7 +673,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/violet-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "violet"
 		},
 		"id": 2
@@ -682,7 +682,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/pink-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pink"
 		},
 		"id": 2
@@ -691,7 +691,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/silver-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silver"
 		},
 		"id": 2
@@ -700,7 +700,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/multicolor-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "multicolor"
 		},
 		"id": 2
@@ -709,7 +709,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/red-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "red"
 		},
 		"id": 2
@@ -718,7 +718,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/peach-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "peach"
 		},
 		"id": 2
@@ -727,7 +727,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/maroon-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "maroon"
 		},
 		"id": 2
@@ -736,7 +736,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/off-white-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "off white"
 		},
 		"id": 2
@@ -745,7 +745,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/pastel-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pastel"
 		},
 		"id": 2
@@ -754,7 +754,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/orange-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "orange"
 		},
 		"id": 2
@@ -763,7 +763,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/coral-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "coral"
 		},
 		"id": 2
@@ -772,7 +772,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/rust-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "rust"
 		},
 		"id": 2
@@ -781,7 +781,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/turquoise-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "turquoise"
 		},
 		"id": 2
@@ -790,7 +790,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/purple-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "purple"
 		},
 		"id": 2
@@ -799,7 +799,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/gold-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "gold"
 		},
 		"id": 2
@@ -808,7 +808,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/teal-blue-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "teal blue"
 		},
 		"id": 2
@@ -817,7 +817,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/olive-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "olive"
 		},
 		"id": 2
@@ -826,7 +826,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "sarees/n/a-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "N/A"
 		},
 		"id": 2
@@ -835,7 +835,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/phulkari-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "phulkari"
 		},
 		"id": 2
@@ -844,7 +844,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/handcrafted-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "handcrafted"
 		},
 		"id": 2
@@ -853,7 +853,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/brasso-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brasso"
 		},
 		"id": 2
@@ -862,7 +862,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/dye-&-dye-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dye & dye"
 		},
 		"id": 2
@@ -871,7 +871,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/dye-border-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dye border"
 		},
 		"id": 2
@@ -880,7 +880,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/beads-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "beads"
 		},
 		"id": 2
@@ -889,7 +889,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/zari-work-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "zari work"
 		},
 		"id": 2
@@ -898,7 +898,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/shibori-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "shibori"
 		},
 		"id": 2
@@ -907,7 +907,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/zardosi-work-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "zardosi work"
 		},
 		"id": 2
@@ -916,7 +916,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/border-worked-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "border worked"
 		},
 		"id": 2
@@ -925,7 +925,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/pearl-embellishment-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pearl embellishment"
 		},
 		"id": 2
@@ -934,7 +934,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/paisley-print-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "paisley print"
 		},
 		"id": 2
@@ -943,7 +943,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/handwoven-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "handwoven"
 		},
 		"id": 2
@@ -952,7 +952,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/cutdana-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cutdana"
 		},
 		"id": 2
@@ -961,7 +961,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/woven-zari-border-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "woven zari border"
 		},
 		"id": 2
@@ -970,7 +970,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/cut-work-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cut work"
 		},
 		"id": 2
@@ -979,7 +979,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/weaving-thread-butta-with-double-blouse-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "weaving thread butta with double blouse"
 		},
 		"id": 2
@@ -988,7 +988,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/meena-border-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "meena border"
 		},
 		"id": 2
@@ -997,7 +997,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/assam-tant-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "assam tant"
 		},
 		"id": 2
@@ -1006,7 +1006,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/thread-work-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "thread work"
 		},
 		"id": 2
@@ -1015,7 +1015,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/embellished-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "embellished"
 		},
 		"id": 2
@@ -1024,7 +1024,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/mangalgiri-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "mangalgiri"
 		},
 		"id": 2
@@ -1033,7 +1033,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/warli-art-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "warli art"
 		},
 		"id": 2
@@ -1042,7 +1042,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/batik-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "batik"
 		},
 		"id": 2
@@ -1051,7 +1051,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/woven-zari-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "woven zari"
 		},
 		"id": 2
@@ -1060,7 +1060,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/woven-self-design-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "woven self design"
 		},
 		"id": 2
@@ -1069,7 +1069,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/self-checks-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "self-checks"
 		},
 		"id": 2
@@ -1078,7 +1078,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/gota-work-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "gota work"
 		},
 		"id": 2
@@ -1087,7 +1087,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/foil-print-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "foil print"
 		},
 		"id": 2
@@ -1096,7 +1096,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/dori-embroidery-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dori embroidery"
 		},
 		"id": 2
@@ -1105,7 +1105,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/tie-dye-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "tie dye"
 		},
 		"id": 2
@@ -1114,7 +1114,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/sequin-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "sequin"
 		},
 		"id": 2
@@ -1123,7 +1123,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/ikat-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "ikat"
 		},
 		"id": 2
@@ -1132,7 +1132,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/hand-paint-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "hand paint"
 		},
 		"id": 2
@@ -1141,7 +1141,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/applique-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "applique"
 		},
 		"id": 2
@@ -1150,7 +1150,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/patch-work-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "patch work"
 		},
 		"id": 2
@@ -1159,7 +1159,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/lace-work-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "lace work"
 		},
 		"id": 2
@@ -1168,7 +1168,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/hand-embriodery-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "hand embriodery"
 		},
 		"id": 2
@@ -1177,7 +1177,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/paithani-work-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "paithani work"
 		},
 		"id": 2
@@ -1186,7 +1186,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/dye-dye-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dye dye"
 		},
 		"id": 2
@@ -1195,7 +1195,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/floral-print-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "floral print"
 		},
 		"id": 2
@@ -1204,7 +1204,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/banarasi-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "banarasi"
 		},
 		"id": 2
@@ -1213,7 +1213,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/texture-work-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "texture work"
 		},
 		"id": 2
@@ -1222,7 +1222,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/zari-woven-border-all-over-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "zari woven border all over"
 		},
 		"id": 2
@@ -1231,7 +1231,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/block-print-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "block print"
 		},
 		"id": 2
@@ -1240,7 +1240,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/chikankari-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chikankari"
 		},
 		"id": 2
@@ -1249,7 +1249,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/self-checks-weaving-pattern-with-double-blouse-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "self-checks weaving pattern with double blouse"
 		},
 		"id": 2
@@ -1258,7 +1258,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/lehariya-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "lehariya"
 		},
 		"id": 2
@@ -1267,7 +1267,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/woven-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "woven"
 		},
 		"id": 2
@@ -1276,7 +1276,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/woven-zari-design-all-over-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "woven zari design all over"
 		},
 		"id": 2
@@ -1285,7 +1285,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/embroidered-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "embroidered"
 		},
 		"id": 2
@@ -1294,7 +1294,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/woven-contrast-border-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "woven contrast border"
 		},
 		"id": 2
@@ -1303,7 +1303,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/embroiderd-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "embroiderd"
 		},
 		"id": 2
@@ -1312,7 +1312,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/mirror-work-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "mirror work"
 		},
 		"id": 2
@@ -1321,7 +1321,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/bandhani-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bandhani"
 		},
 		"id": 2
@@ -1330,7 +1330,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/bandhej-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bandhej"
 		},
 		"id": 2
@@ -1339,7 +1339,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/resham-embroidery-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "resham embroidery"
 		},
 		"id": 2
@@ -1348,7 +1348,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/emboss-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "emboss"
 		},
 		"id": 2
@@ -1357,7 +1357,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/hand-crafted-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "hand crafted"
 		},
 		"id": 2
@@ -1366,7 +1366,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/stone-embellishment-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "stone embellishment"
 		},
 		"id": 2
@@ -1375,7 +1375,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/print-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "print"
 		},
 		"id": 2
@@ -1384,7 +1384,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/kantha-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "kantha"
 		},
 		"id": 2
@@ -1393,7 +1393,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/woven-zari-border-all-over-with-multi-dye-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "woven zari border all over with multi dye"
 		},
 		"id": 2
@@ -1402,7 +1402,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/dabka-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dabka"
 		},
 		"id": 2
@@ -1411,7 +1411,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/embellishment-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "embellishment"
 		},
 		"id": 2
@@ -1420,7 +1420,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/border-work-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "border work"
 		},
 		"id": 2
@@ -1429,7 +1429,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/maheshwari-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "maheshwari"
 		},
 		"id": 2
@@ -1438,7 +1438,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/kalamkari-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "kalamkari"
 		},
 		"id": 2
@@ -1447,7 +1447,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/resham-woven-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "resham woven"
 		},
 		"id": 2
@@ -1456,7 +1456,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/plain-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "plain"
 		},
 		"id": 2
@@ -1465,7 +1465,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/embroidery-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "embroidery"
 		},
 		"id": 2
@@ -1474,7 +1474,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/dye-&-dye-border-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dye & dye border"
 		},
 		"id": 2
@@ -1483,7 +1483,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/madhubani-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "madhubani"
 		},
 		"id": 2
@@ -1492,7 +1492,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/block-patti-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "block patti"
 		},
 		"id": 2
@@ -1501,7 +1501,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/kundan-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "kundan"
 		},
 		"id": 2
@@ -1510,7 +1510,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/woven-zari-design-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "woven zari design"
 		},
 		"id": 2
@@ -1519,7 +1519,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/solid-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "solid"
 		},
 		"id": 2
@@ -1528,7 +1528,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/ajrakh-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "ajrakh"
 		},
 		"id": 2
@@ -1537,7 +1537,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/jacquard-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "jacquard"
 		},
 		"id": 2
@@ -1546,7 +1546,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/aari-embroidery-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "aari embroidery"
 		},
 		"id": 2
@@ -1555,7 +1555,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/hand-embroidery-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "hand embroidery"
 		},
 		"id": 2
@@ -1564,7 +1564,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/self-lining-pattern-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "self-lining pattern"
 		},
 		"id": 2
@@ -1573,7 +1573,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/gota-patti-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "gota patti"
 		},
 		"id": 2
@@ -1582,7 +1582,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/digital-print-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "digital print"
 		},
 		"id": 2
@@ -1591,7 +1591,7 @@ export var filtersMap = {
 		"type": "Saree Work",
 		"value": {
 			"url": "sarees/resham-embroidered-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "resham embroidered"
 		},
 		"id": 2
@@ -1600,7 +1600,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "sarees/festive-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "festive"
 		},
 		"id": 2
@@ -1609,7 +1609,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "sarees/festival-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Festival"
 		},
 		"id": 2
@@ -1618,7 +1618,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "sarees/party-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "party"
 		},
 		"id": 2
@@ -1627,7 +1627,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "sarees/casual-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "casual"
 		},
 		"id": 2
@@ -1636,7 +1636,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "sarees/bridal-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bridal"
 		},
 		"id": 2
@@ -1645,7 +1645,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "sarees/wedding-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "wedding"
 		},
 		"id": 2
@@ -1654,7 +1654,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "sarees/officewear-sarees",
-			"enabled": "false",
+			"enabled": false,
 			"name": "officewear"
 		},
 		"id": 2
@@ -1663,7 +1663,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "blouses/contemporary-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "contemporary"
 		},
 		"id": 3
@@ -1672,7 +1672,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "blouses/designer-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "designer"
 		},
 		"id": 3
@@ -1681,7 +1681,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "blouses/traditional-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "traditional"
 		},
 		"id": 3
@@ -1690,7 +1690,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/art-silk-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "art silk"
 		},
 		"id": 3
@@ -1699,7 +1699,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/bangalore-silk-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bangalore silk"
 		},
 		"id": 3
@@ -1708,7 +1708,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/bhagalpuri-silk-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bhagalpuri silk"
 		},
 		"id": 3
@@ -1717,7 +1717,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/brocade-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brocade"
 		},
 		"id": 3
@@ -1726,7 +1726,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/chanderi-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chanderi"
 		},
 		"id": 3
@@ -1735,7 +1735,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/chiffon-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chiffon"
 		},
 		"id": 3
@@ -1744,7 +1744,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/cotton-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton"
 		},
 		"id": 3
@@ -1753,7 +1753,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/dupion-silk-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dupion silk"
 		},
 		"id": 3
@@ -1762,7 +1762,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/eri-silk-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "eri silk"
 		},
 		"id": 3
@@ -1771,7 +1771,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/faux-georgette-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "faux georgette"
 		},
 		"id": 3
@@ -1780,7 +1780,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/georgette-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "georgette"
 		},
 		"id": 3
@@ -1789,7 +1789,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/lycra-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "lycra"
 		},
 		"id": 3
@@ -1798,7 +1798,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/net-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "net"
 		},
 		"id": 3
@@ -1807,7 +1807,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/other-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "other"
 		},
 		"id": 3
@@ -1816,7 +1816,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/raw-silk-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "raw silk"
 		},
 		"id": 3
@@ -1825,7 +1825,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/satin-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "satin"
 		},
 		"id": 3
@@ -1834,7 +1834,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/shimmer-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "shimmer"
 		},
 		"id": 3
@@ -1843,7 +1843,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/silk-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk"
 		},
 		"id": 3
@@ -1852,7 +1852,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/silk-blend-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk blend"
 		},
 		"id": 3
@@ -1861,7 +1861,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/taffeta-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "taffeta"
 		},
 		"id": 3
@@ -1870,7 +1870,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/tissue-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "tissue"
 		},
 		"id": 3
@@ -1879,7 +1879,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/velvet-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "velvet"
 		},
 		"id": 3
@@ -1888,7 +1888,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "blouses/viscose-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "viscose"
 		},
 		"id": 3
@@ -1897,7 +1897,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/beige-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "beige"
 		},
 		"id": 3
@@ -1906,7 +1906,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/black-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "black"
 		},
 		"id": 3
@@ -1915,7 +1915,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/blue-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "blue"
 		},
 		"id": 3
@@ -1924,7 +1924,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/brown-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brown"
 		},
 		"id": 3
@@ -1933,7 +1933,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/gold-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "gold"
 		},
 		"id": 3
@@ -1942,7 +1942,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/green-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "green"
 		},
 		"id": 3
@@ -1951,7 +1951,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/grey-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "grey"
 		},
 		"id": 3
@@ -1960,7 +1960,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/maroon-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "maroon"
 		},
 		"id": 3
@@ -1969,7 +1969,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/multicolor-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "multicolor"
 		},
 		"id": 3
@@ -1978,7 +1978,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/orange-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "orange"
 		},
 		"id": 3
@@ -1987,7 +1987,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/pink-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pink"
 		},
 		"id": 3
@@ -1996,7 +1996,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/purple-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "purple"
 		},
 		"id": 3
@@ -2005,7 +2005,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/red-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "red"
 		},
 		"id": 3
@@ -2014,7 +2014,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/silver-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silver"
 		},
 		"id": 3
@@ -2023,7 +2023,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/violet-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "violet"
 		},
 		"id": 3
@@ -2032,7 +2032,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/white-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "white"
 		},
 		"id": 3
@@ -2041,7 +2041,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "blouses/yellow-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "yellow"
 		},
 		"id": 3
@@ -2050,7 +2050,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/aari-embroidery-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "aari embroidery"
 		},
 		"id": 3
@@ -2059,7 +2059,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/cutdana-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cutdana"
 		},
 		"id": 3
@@ -2068,7 +2068,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/cut-work-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cut work"
 		},
 		"id": 3
@@ -2077,7 +2077,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/digital-print-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "digital print"
 		},
 		"id": 3
@@ -2086,7 +2086,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/dori-embroidery-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dori embroidery"
 		},
 		"id": 3
@@ -2095,7 +2095,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/embroidery-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "embroidery"
 		},
 		"id": 3
@@ -2104,7 +2104,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/gota-patti-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "gota patti"
 		},
 		"id": 3
@@ -2113,7 +2113,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/hand-embroidery-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "hand embroidery"
 		},
 		"id": 3
@@ -2122,7 +2122,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/kasab-embroidery-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "kasab embroidery"
 		},
 		"id": 3
@@ -2131,7 +2131,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/kundan-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "kundan"
 		},
 		"id": 3
@@ -2140,7 +2140,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/mirror-work-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "mirror work"
 		},
 		"id": 3
@@ -2149,7 +2149,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/pearl-embellishment-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pearl embellishment"
 		},
 		"id": 3
@@ -2158,7 +2158,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/pitta-embroidery-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pitta embroidery"
 		},
 		"id": 3
@@ -2167,7 +2167,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/print-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "print"
 		},
 		"id": 3
@@ -2176,7 +2176,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/resham-embroidery-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "resham embroidery"
 		},
 		"id": 3
@@ -2185,7 +2185,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/sequin-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "sequin"
 		},
 		"id": 3
@@ -2194,7 +2194,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/solid-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "solid"
 		},
 		"id": 3
@@ -2203,7 +2203,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/stone-embellishment-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "stone embellishment"
 		},
 		"id": 3
@@ -2212,7 +2212,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/texture-work-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "texture work"
 		},
 		"id": 3
@@ -2221,7 +2221,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/thread-work-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "thread work"
 		},
 		"id": 3
@@ -2230,7 +2230,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/woven-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "woven"
 		},
 		"id": 3
@@ -2239,7 +2239,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/zardosi-work-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "zardosi work"
 		},
 		"id": 3
@@ -2248,7 +2248,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "blouses/zari-work-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "zari work"
 		},
 		"id": 3
@@ -2257,7 +2257,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "blouses/boat-neck-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "boat neck"
 		},
 		"id": 3
@@ -2266,7 +2266,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "blouses/chinese-collar-neck-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chinese collar neck"
 		},
 		"id": 3
@@ -2275,7 +2275,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "blouses/collar-neck-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "collar neck"
 		},
 		"id": 3
@@ -2284,7 +2284,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "blouses/low-cut-neck-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "low cut neck"
 		},
 		"id": 3
@@ -2293,7 +2293,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "blouses/round-collar-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "round collar"
 		},
 		"id": 3
@@ -2302,7 +2302,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "blouses/round-neck-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "round neck"
 		},
 		"id": 3
@@ -2311,7 +2311,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "blouses/square-collar-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "square collar"
 		},
 		"id": 3
@@ -2320,7 +2320,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "blouses/square-neck-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "square neck"
 		},
 		"id": 3
@@ -2329,7 +2329,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "blouses/u-neck-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "u neck"
 		},
 		"id": 3
@@ -2338,7 +2338,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "blouses/v-neck-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "v neck"
 		},
 		"id": 3
@@ -2347,7 +2347,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "blouses/bridal-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bridal"
 		},
 		"id": 3
@@ -2356,7 +2356,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "blouses/casual-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "casual"
 		},
 		"id": 3
@@ -2365,7 +2365,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "blouses/ceremonial-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "ceremonial"
 		},
 		"id": 3
@@ -2374,7 +2374,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "blouses/festival-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "festival"
 		},
 		"id": 3
@@ -2383,7 +2383,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "blouses/festive-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "festive"
 		},
 		"id": 3
@@ -2392,7 +2392,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "blouses/party-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "party"
 		},
 		"id": 3
@@ -2401,7 +2401,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "blouses/wedding-blouses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "wedding"
 		},
 		"id": 3
@@ -2410,7 +2410,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/art-silk-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "art silk"
 		},
 		"id": 5
@@ -2419,7 +2419,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/bengal-cotton-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bengal cotton"
 		},
 		"id": 5
@@ -2428,7 +2428,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/bengal-handloom-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bengal handloom"
 		},
 		"id": 5
@@ -2437,7 +2437,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/brocade-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brocade"
 		},
 		"id": 5
@@ -2446,7 +2446,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/chanderi-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chanderi"
 		},
 		"id": 5
@@ -2455,7 +2455,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/cotton-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton"
 		},
 		"id": 5
@@ -2464,7 +2464,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/crepe-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "crepe"
 		},
 		"id": 5
@@ -2473,7 +2473,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/dupion-silk-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dupion silk"
 		},
 		"id": 5
@@ -2482,7 +2482,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/georgette-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "georgette"
 		},
 		"id": 5
@@ -2491,7 +2491,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/lycra-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "lycra"
 		},
 		"id": 5
@@ -2500,7 +2500,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/nazneen-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "nazneen"
 		},
 		"id": 5
@@ -2509,7 +2509,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/net-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "net"
 		},
 		"id": 5
@@ -2518,7 +2518,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/nylon-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "nylon"
 		},
 		"id": 5
@@ -2527,7 +2527,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/organza-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "organza"
 		},
 		"id": 5
@@ -2536,7 +2536,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/polyester-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "polyester"
 		},
 		"id": 5
@@ -2545,7 +2545,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/raw-silk-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "raw silk"
 		},
 		"id": 5
@@ -2554,7 +2554,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/santoon-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "santoon"
 		},
 		"id": 5
@@ -2563,7 +2563,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/satin-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "satin"
 		},
 		"id": 5
@@ -2572,7 +2572,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/silk-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk"
 		},
 		"id": 5
@@ -2581,7 +2581,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/silk-blend-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk blend"
 		},
 		"id": 5
@@ -2590,7 +2590,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/silk-crepe-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk crepe"
 		},
 		"id": 5
@@ -2599,7 +2599,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/south-silk-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "south silk"
 		},
 		"id": 5
@@ -2608,7 +2608,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/taffeta-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "taffeta"
 		},
 		"id": 5
@@ -2617,7 +2617,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/tulle-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "tulle"
 		},
 		"id": 5
@@ -2626,7 +2626,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/velvet-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "velvet"
 		},
 		"id": 5
@@ -2635,7 +2635,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "lehengas/viscose-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "viscose"
 		},
 		"id": 5
@@ -2644,7 +2644,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/beige-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "beige"
 		},
 		"id": 5
@@ -2653,7 +2653,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/black-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "black"
 		},
 		"id": 5
@@ -2662,7 +2662,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/blue-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "blue"
 		},
 		"id": 5
@@ -2671,7 +2671,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/brown-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brown"
 		},
 		"id": 5
@@ -2680,7 +2680,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/gold-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "gold"
 		},
 		"id": 5
@@ -2689,7 +2689,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/green-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "green"
 		},
 		"id": 5
@@ -2698,7 +2698,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/grey-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "grey"
 		},
 		"id": 5
@@ -2707,7 +2707,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/maroon-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "maroon"
 		},
 		"id": 5
@@ -2716,7 +2716,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/multicolor-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "multicolor"
 		},
 		"id": 5
@@ -2725,7 +2725,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/orange-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "orange"
 		},
 		"id": 5
@@ -2734,7 +2734,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/pastel-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pastel"
 		},
 		"id": 5
@@ -2743,7 +2743,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/pink-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pink"
 		},
 		"id": 5
@@ -2752,7 +2752,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/purple-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "purple"
 		},
 		"id": 5
@@ -2761,7 +2761,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/red-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "red"
 		},
 		"id": 5
@@ -2770,7 +2770,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/silver-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silver"
 		},
 		"id": 5
@@ -2779,7 +2779,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/white-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "white"
 		},
 		"id": 5
@@ -2788,7 +2788,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "lehengas/yellow-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "yellow"
 		},
 		"id": 5
@@ -2797,7 +2797,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/aari-embroidery-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "aari embroidery"
 		},
 		"id": 5
@@ -2806,7 +2806,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/block-print-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "block print"
 		},
 		"id": 5
@@ -2815,7 +2815,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/crystal-work-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "crystal work"
 		},
 		"id": 5
@@ -2824,7 +2824,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/cutdana-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cutdana"
 		},
 		"id": 5
@@ -2833,7 +2833,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/digital-print-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "digital print"
 		},
 		"id": 5
@@ -2842,7 +2842,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/dori-embroidery-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dori embroidery"
 		},
 		"id": 5
@@ -2851,7 +2851,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/embroidery-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "embroidery"
 		},
 		"id": 5
@@ -2860,7 +2860,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/foil-print-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "foil print"
 		},
 		"id": 5
@@ -2869,7 +2869,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/hand-embroidery-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "hand embroidery"
 		},
 		"id": 5
@@ -2878,7 +2878,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/handwoven-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "handwoven"
 		},
 		"id": 5
@@ -2887,7 +2887,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/jacquard-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "jacquard"
 		},
 		"id": 5
@@ -2896,7 +2896,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/kundan-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "kundan"
 		},
 		"id": 5
@@ -2905,7 +2905,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/mirror-work-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "mirror work"
 		},
 		"id": 5
@@ -2914,7 +2914,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/patch-work-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "patch work"
 		},
 		"id": 5
@@ -2923,7 +2923,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/pearl-embellishment-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pearl embellishment"
 		},
 		"id": 5
@@ -2932,7 +2932,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/plain-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "plain"
 		},
 		"id": 5
@@ -2941,7 +2941,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/print-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "print"
 		},
 		"id": 5
@@ -2950,7 +2950,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/resham-embroidery-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "resham embroidery"
 		},
 		"id": 5
@@ -2959,7 +2959,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/sequin-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "sequin"
 		},
 		"id": 5
@@ -2968,7 +2968,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/solid-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "solid"
 		},
 		"id": 5
@@ -2977,7 +2977,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/thread-work-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "thread work"
 		},
 		"id": 5
@@ -2986,7 +2986,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/zardosi-work-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "zardosi work"
 		},
 		"id": 5
@@ -2995,7 +2995,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "lehengas/zari-work-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "zari work"
 		},
 		"id": 5
@@ -3004,7 +3004,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "lehengas/bridal-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bridal"
 		},
 		"id": 5
@@ -3013,7 +3013,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "lehengas/casual-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "casual"
 		},
 		"id": 5
@@ -3022,7 +3022,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "lehengas/ceremonial-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "ceremonial"
 		},
 		"id": 5
@@ -3031,7 +3031,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "lehengas/festival-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "festival"
 		},
 		"id": 5
@@ -3040,7 +3040,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "lehengas/festive-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "festive"
 		},
 		"id": 5
@@ -3049,7 +3049,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "lehengas/party-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "party"
 		},
 		"id": 5
@@ -3058,7 +3058,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "lehengas/wedding-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "wedding"
 		},
 		"id": 5
@@ -3067,7 +3067,7 @@ export var filtersMap = {
 		"type": "Choli Neck Style",
 		"value": {
 			"url": "lehengas/boat-neck-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "boat neck"
 		},
 		"id": 5
@@ -3076,7 +3076,7 @@ export var filtersMap = {
 		"type": "Choli Neck Style",
 		"value": {
 			"url": "lehengas/chinese-collar-neck-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chinese collar neck"
 		},
 		"id": 5
@@ -3085,7 +3085,7 @@ export var filtersMap = {
 		"type": "Choli Neck Style",
 		"value": {
 			"url": "lehengas/closed-neck-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "closed neck"
 		},
 		"id": 5
@@ -3094,7 +3094,7 @@ export var filtersMap = {
 		"type": "Choli Neck Style",
 		"value": {
 			"url": "lehengas/low-cut-neck-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "low cut neck"
 		},
 		"id": 5
@@ -3103,7 +3103,7 @@ export var filtersMap = {
 		"type": "Choli Neck Style",
 		"value": {
 			"url": "lehengas/round-collar-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "round collar"
 		},
 		"id": 5
@@ -3112,7 +3112,7 @@ export var filtersMap = {
 		"type": "Choli Neck Style",
 		"value": {
 			"url": "lehengas/round-neck-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "round neck"
 		},
 		"id": 5
@@ -3121,7 +3121,7 @@ export var filtersMap = {
 		"type": "Choli Neck Style",
 		"value": {
 			"url": "lehengas/square-collar-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "square collar"
 		},
 		"id": 5
@@ -3130,7 +3130,7 @@ export var filtersMap = {
 		"type": "Choli Neck Style",
 		"value": {
 			"url": "lehengas/square-neck-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "square neck"
 		},
 		"id": 5
@@ -3139,7 +3139,7 @@ export var filtersMap = {
 		"type": "Choli Neck Style",
 		"value": {
 			"url": "lehengas/u-neck-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "u neck"
 		},
 		"id": 5
@@ -3148,7 +3148,7 @@ export var filtersMap = {
 		"type": "Choli Neck Style",
 		"value": {
 			"url": "lehengas/v-neck-lehengas",
-			"enabled": "false",
+			"enabled": false,
 			"name": "v neck"
 		},
 		"id": 5
@@ -3157,7 +3157,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "tops/black-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "black"
 		},
 		"id": 6
@@ -3166,7 +3166,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "tops/green-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "green"
 		},
 		"id": 6
@@ -3175,7 +3175,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "tops/grey-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "grey"
 		},
 		"id": 6
@@ -3184,7 +3184,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "tops/maroon-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "maroon"
 		},
 		"id": 6
@@ -3193,7 +3193,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "tops/orange-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "orange"
 		},
 		"id": 6
@@ -3202,7 +3202,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "tops/pink-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pink"
 		},
 		"id": 6
@@ -3211,7 +3211,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "tops/purple-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "purple"
 		},
 		"id": 6
@@ -3220,7 +3220,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "tops/white-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "white"
 		},
 		"id": 6
@@ -3229,7 +3229,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "tops/yellow-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "yellow"
 		},
 		"id": 6
@@ -3238,7 +3238,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "tops/casual-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "casual"
 		},
 		"id": 6
@@ -3247,7 +3247,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "tops/party-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "party"
 		},
 		"id": 6
@@ -3256,7 +3256,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "tops/chanderi-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chanderi"
 		},
 		"id": 6
@@ -3265,7 +3265,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "tops/cotton-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton"
 		},
 		"id": 6
@@ -3274,7 +3274,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "tops/georgette-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "georgette"
 		},
 		"id": 6
@@ -3283,7 +3283,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "tops/mangalgiri-cotton-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "mangalgiri cotton"
 		},
 		"id": 6
@@ -3292,7 +3292,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "tops/3/4th-sleeve-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "3/4th sleeve"
 		},
 		"id": 6
@@ -3301,7 +3301,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "tops/full-sleeve-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "full sleeve"
 		},
 		"id": 6
@@ -3310,7 +3310,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "tops/short-sleeve-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "short sleeve"
 		},
 		"id": 6
@@ -3319,7 +3319,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "tops/sleeveless-tops",
-			"enabled": "false",
+			"enabled": false,
 			"name": "sleeveless"
 		},
 		"id": 6
@@ -3328,7 +3328,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "palazzos/beige-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "beige"
 		},
 		"id": 7
@@ -3337,7 +3337,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "palazzos/black-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "black"
 		},
 		"id": 7
@@ -3346,7 +3346,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "palazzos/blue-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "blue"
 		},
 		"id": 7
@@ -3355,7 +3355,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "palazzos/gold-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "gold"
 		},
 		"id": 7
@@ -3364,7 +3364,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "palazzos/grey-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "grey"
 		},
 		"id": 7
@@ -3373,7 +3373,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "palazzos/orange-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "orange"
 		},
 		"id": 7
@@ -3382,7 +3382,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "palazzos/white-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "white"
 		},
 		"id": 7
@@ -3391,7 +3391,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "palazzos/cotton-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton"
 		},
 		"id": 7
@@ -3400,7 +3400,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "palazzos/crepe-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "crepe"
 		},
 		"id": 7
@@ -3409,7 +3409,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "palazzos/georgette-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "georgette"
 		},
 		"id": 7
@@ -3418,7 +3418,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "palazzos/jersey-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "jersey"
 		},
 		"id": 7
@@ -3427,7 +3427,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "palazzos/raw-silk-palazzos",
-			"enabled": "false",
+			"enabled": false,
 			"name": "raw silk"
 		},
 		"id": 7
@@ -3436,7 +3436,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "kurtis/anarkali-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "anarkali"
 		},
 		"id": 8
@@ -3445,7 +3445,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "kurtis/a-line-style-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "a line style"
 		},
 		"id": 8
@@ -3454,7 +3454,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "kurtis/designer-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "designer"
 		},
 		"id": 8
@@ -3463,7 +3463,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "kurtis/straight-suit-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "straight suit"
 		},
 		"id": 8
@@ -3472,7 +3472,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "kurtis/high-low-hem-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "high low hem"
 		},
 		"id": 8
@@ -3481,7 +3481,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "kurtis/long-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "long kurti"
 		},
 		"id": 8
@@ -3490,7 +3490,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "kurtis/shirt-style-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "shirt style"
 		},
 		"id": 8
@@ -3499,7 +3499,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "kurtis/straight-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "straight"
 		},
 		"id": 8
@@ -3508,7 +3508,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "kurtis/short-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "short kurti"
 		},
 		"id": 8
@@ -3517,7 +3517,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/faux-georgette-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "faux georgette"
 		},
 		"id": 8
@@ -3526,7 +3526,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/silk-blend-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk blend"
 		},
 		"id": 8
@@ -3535,7 +3535,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/silk-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk"
 		},
 		"id": 8
@@ -3544,7 +3544,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/taffeta-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "taffeta"
 		},
 		"id": 8
@@ -3553,7 +3553,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/synthetic-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "synthetic"
 		},
 		"id": 8
@@ -3562,7 +3562,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/cotton-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton"
 		},
 		"id": 8
@@ -3571,7 +3571,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/bhagalpuri-silk-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bhagalpuri silk"
 		},
 		"id": 8
@@ -3580,7 +3580,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/cotton-blend-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton blend"
 		},
 		"id": 8
@@ -3589,7 +3589,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/rayon-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "rayon"
 		},
 		"id": 8
@@ -3598,7 +3598,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/bhagalpuri-cotton-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bhagalpuri cotton"
 		},
 		"id": 8
@@ -3607,7 +3607,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/tissue-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "tissue"
 		},
 		"id": 8
@@ -3616,7 +3616,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/jersey-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "jersey"
 		},
 		"id": 8
@@ -3625,7 +3625,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/raw-silk-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "raw silk"
 		},
 		"id": 8
@@ -3634,7 +3634,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/brocade-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brocade"
 		},
 		"id": 8
@@ -3643,7 +3643,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/silk-crepe-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk crepe"
 		},
 		"id": 8
@@ -3652,7 +3652,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/crepe-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "crepe"
 		},
 		"id": 8
@@ -3661,7 +3661,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/khadi-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "khadi"
 		},
 		"id": 8
@@ -3670,7 +3670,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/polyester-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "polyester"
 		},
 		"id": 8
@@ -3679,7 +3679,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/georgette-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "georgette"
 		},
 		"id": 8
@@ -3688,7 +3688,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/satin-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "satin"
 		},
 		"id": 8
@@ -3697,7 +3697,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/nylon-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "nylon"
 		},
 		"id": 8
@@ -3706,7 +3706,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/bangalore-silk-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bangalore silk"
 		},
 		"id": 8
@@ -3715,7 +3715,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/linen-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "linen"
 		},
 		"id": 8
@@ -3724,7 +3724,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/net-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "net"
 		},
 		"id": 8
@@ -3733,7 +3733,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/chanderi-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chanderi"
 		},
 		"id": 8
@@ -3742,7 +3742,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/viscose-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "viscose"
 		},
 		"id": 8
@@ -3751,7 +3751,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/velvet-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "velvet"
 		},
 		"id": 8
@@ -3760,7 +3760,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "kurtis/chiffon-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chiffon"
 		},
 		"id": 8
@@ -3769,7 +3769,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/pink-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pink"
 		},
 		"id": 8
@@ -3778,7 +3778,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/purple-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "purple"
 		},
 		"id": 8
@@ -3787,7 +3787,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/grey-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "grey"
 		},
 		"id": 8
@@ -3796,7 +3796,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/maroon-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "maroon"
 		},
 		"id": 8
@@ -3805,7 +3805,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/white-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "white"
 		},
 		"id": 8
@@ -3814,7 +3814,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/beige-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "beige"
 		},
 		"id": 8
@@ -3823,7 +3823,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/yellow-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "yellow"
 		},
 		"id": 8
@@ -3832,7 +3832,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/orange-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "orange"
 		},
 		"id": 8
@@ -3841,7 +3841,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/blue-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "blue"
 		},
 		"id": 8
@@ -3850,7 +3850,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/red-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "red"
 		},
 		"id": 8
@@ -3859,7 +3859,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/black-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "black"
 		},
 		"id": 8
@@ -3868,7 +3868,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/green-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "green"
 		},
 		"id": 8
@@ -3877,7 +3877,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/violet-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "violet"
 		},
 		"id": 8
@@ -3886,7 +3886,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/gold-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "gold"
 		},
 		"id": 8
@@ -3895,7 +3895,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/multicolor-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "multicolor"
 		},
 		"id": 8
@@ -3904,7 +3904,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/peach-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "peach"
 		},
 		"id": 8
@@ -3913,7 +3913,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/pastel-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pastel"
 		},
 		"id": 8
@@ -3922,7 +3922,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "kurtis/brown-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brown"
 		},
 		"id": 8
@@ -3931,7 +3931,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/ikat-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "ikat"
 		},
 		"id": 8
@@ -3940,7 +3940,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/abstract-print-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "abstract print"
 		},
 		"id": 8
@@ -3949,7 +3949,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/handcrafted-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "handcrafted"
 		},
 		"id": 8
@@ -3958,7 +3958,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/jacquard-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "jacquard"
 		},
 		"id": 8
@@ -3967,7 +3967,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/hand-embroidery-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "hand embroidery"
 		},
 		"id": 8
@@ -3976,7 +3976,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/resham-embroidery-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "resham embroidery"
 		},
 		"id": 8
@@ -3985,7 +3985,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/embellishment-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "embellishment"
 		},
 		"id": 8
@@ -3994,7 +3994,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/lehariya-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "lehariya"
 		},
 		"id": 8
@@ -4003,7 +4003,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/digital-print-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "digital print"
 		},
 		"id": 8
@@ -4012,7 +4012,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/patch-work-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "patch work"
 		},
 		"id": 8
@@ -4021,7 +4021,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/mirror-work-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "mirror work"
 		},
 		"id": 8
@@ -4030,7 +4030,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/sequin-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "sequin"
 		},
 		"id": 8
@@ -4039,7 +4039,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/block-print-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "block print"
 		},
 		"id": 8
@@ -4048,7 +4048,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/cut-work-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cut work"
 		},
 		"id": 8
@@ -4057,7 +4057,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/block-patti-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "block patti"
 		},
 		"id": 8
@@ -4066,7 +4066,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/solid-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "solid"
 		},
 		"id": 8
@@ -4075,7 +4075,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/floral-print-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "floral print"
 		},
 		"id": 8
@@ -4084,7 +4084,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/chikankari-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chikankari"
 		},
 		"id": 8
@@ -4093,7 +4093,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/dori-embroidery-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dori embroidery"
 		},
 		"id": 8
@@ -4102,7 +4102,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/paisley-print-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "paisley print"
 		},
 		"id": 8
@@ -4111,7 +4111,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/thread-work-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "thread work"
 		},
 		"id": 8
@@ -4120,7 +4120,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/zari-work-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "zari work"
 		},
 		"id": 8
@@ -4129,7 +4129,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/handwoven-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "handwoven"
 		},
 		"id": 8
@@ -4138,7 +4138,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/print-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "print"
 		},
 		"id": 8
@@ -4147,7 +4147,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/bandhej-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bandhej"
 		},
 		"id": 8
@@ -4156,7 +4156,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/plain-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "plain"
 		},
 		"id": 8
@@ -4165,7 +4165,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/embroidery-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "embroidery"
 		},
 		"id": 8
@@ -4174,7 +4174,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/gota-work-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "gota work"
 		},
 		"id": 8
@@ -4183,7 +4183,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/aari-embroidery-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "aari embroidery"
 		},
 		"id": 8
@@ -4192,7 +4192,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/tie-dye-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "tie dye"
 		},
 		"id": 8
@@ -4201,7 +4201,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/texture-work-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "texture work"
 		},
 		"id": 8
@@ -4210,7 +4210,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "kurtis/emboss-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "emboss"
 		},
 		"id": 8
@@ -4219,7 +4219,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/square-neck-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "square neck"
 		},
 		"id": 8
@@ -4228,7 +4228,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/round-nevk-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "round nevk"
 		},
 		"id": 8
@@ -4237,7 +4237,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/low-cut-neck-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "low cut neck"
 		},
 		"id": 8
@@ -4246,7 +4246,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/square-collar-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "square collar"
 		},
 		"id": 8
@@ -4255,7 +4255,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/closed-neck-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "closed neck"
 		},
 		"id": 8
@@ -4264,7 +4264,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/chinese-collar-neck-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chinese collar neck"
 		},
 		"id": 8
@@ -4273,7 +4273,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/round-neck-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "round neck"
 		},
 		"id": 8
@@ -4282,7 +4282,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/round-collar-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "round collar"
 		},
 		"id": 8
@@ -4291,7 +4291,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/v-neck-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "v neck"
 		},
 		"id": 8
@@ -4300,7 +4300,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/boat-neck-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "boat neck"
 		},
 		"id": 8
@@ -4309,7 +4309,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/collar-neck-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "collar neck"
 		},
 		"id": 8
@@ -4318,7 +4318,7 @@ export var filtersMap = {
 		"type": "Neck Style",
 		"value": {
 			"url": "kurtis/u-neck-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "u neck"
 		},
 		"id": 8
@@ -4327,7 +4327,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "kurtis/ceremonial-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "ceremonial"
 		},
 		"id": 8
@@ -4336,7 +4336,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "kurtis/festival-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "festival"
 		},
 		"id": 8
@@ -4345,7 +4345,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "kurtis/casual-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "casual"
 		},
 		"id": 8
@@ -4354,7 +4354,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "kurtis/party-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "party"
 		},
 		"id": 8
@@ -4363,7 +4363,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "kurtis/officewear-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "officewear"
 		},
 		"id": 8
@@ -4372,7 +4372,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "kurtis/bridal-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bridal"
 		},
 		"id": 8
@@ -4381,7 +4381,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "kurtis/festive-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "festive"
 		},
 		"id": 8
@@ -4390,7 +4390,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "kurtis/wedding-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "wedding"
 		},
 		"id": 8
@@ -4399,7 +4399,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "kurtis/sleevless-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Sleevless"
 		},
 		"id": 8
@@ -4408,7 +4408,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "kurtis/half-sleeve-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "half sleeve"
 		},
 		"id": 8
@@ -4417,7 +4417,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "kurtis/3/4-th-sleeve-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "3/4 Th Sleeve"
 		},
 		"id": 8
@@ -4426,7 +4426,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "kurtis/cap-sleeve-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cap sleeve"
 		},
 		"id": 8
@@ -4435,7 +4435,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "kurtis/sleeveless-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "sleeveless"
 		},
 		"id": 8
@@ -4444,7 +4444,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "kurtis/full-sleeve-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "full sleeve"
 		},
 		"id": 8
@@ -4453,7 +4453,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "kurtis/3/4th-sleeve-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "3/4th sleeve"
 		},
 		"id": 8
@@ -4462,7 +4462,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "kurtis/short-sleeve-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "short sleeve"
 		},
 		"id": 8
@@ -4471,7 +4471,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/normal-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Normal Wash"
 		},
 		"id": 8
@@ -4480,7 +4480,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/wash-with-same-colors::use-mild-detergents::dry-in-shade::wash-separately-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Wash with same colors::Use mild detergents::Dry in shade::Wash Separately"
 		},
 		"id": 8
@@ -4489,7 +4489,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/col-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "col"
 		},
 		"id": 8
@@ -4498,7 +4498,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/dry-clean-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dry clean"
 		},
 		"id": 8
@@ -4507,7 +4507,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/cold-water-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Cold Water Wash"
 		},
 		"id": 8
@@ -4516,7 +4516,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/mild-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Mild Wash"
 		},
 		"id": 8
@@ -4525,7 +4525,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/first-wash-dry-clean-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "First wash dry clean"
 		},
 		"id": 8
@@ -4534,7 +4534,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/any-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "ANY WASH"
 		},
 		"id": 8
@@ -4543,7 +4543,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/gentle-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Gentle Wash"
 		},
 		"id": 8
@@ -4552,7 +4552,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/mild-wash-only-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Mild Wash Only"
 		},
 		"id": 8
@@ -4561,7 +4561,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/hand-wash/delicate-machine-wash-in-cold-water-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "hand wash/delicate machine wash in cold water"
 		},
 		"id": 8
@@ -4570,7 +4570,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/machine-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "machine wash"
 		},
 		"id": 8
@@ -4579,7 +4579,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/soft-cold-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "SOFT COLD WASH"
 		},
 		"id": 8
@@ -4588,7 +4588,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/dry-clean-only-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Dry clean Only"
 		},
 		"id": 8
@@ -4597,7 +4597,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/easy-hand-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Easy Hand Wash"
 		},
 		"id": 8
@@ -4606,7 +4606,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/light-hand-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Light hand wash"
 		},
 		"id": 8
@@ -4615,7 +4615,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/handwash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Handwash"
 		},
 		"id": 8
@@ -4624,7 +4624,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/first-time-dry-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "First Time Dry Wash"
 		},
 		"id": 8
@@ -4633,7 +4633,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/cold-water-wsash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Cold water wsash"
 		},
 		"id": 8
@@ -4642,7 +4642,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/dry-and-clean-only-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Dry and clean only"
 		},
 		"id": 8
@@ -4651,7 +4651,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/hand-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Hand Wash"
 		},
 		"id": 8
@@ -4660,7 +4660,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/maintenance-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Maintenance"
 		},
 		"id": 8
@@ -4669,7 +4669,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/first-dry-clean-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "First Dry Clean"
 		},
 		"id": 8
@@ -4678,7 +4678,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/cold-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Cold Wash"
 		},
 		"id": 8
@@ -4687,7 +4687,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/wash-with-same-colors-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Wash with same colors"
 		},
 		"id": 8
@@ -4696,7 +4696,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/drywash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "DRYWASH"
 		},
 		"id": 8
@@ -4705,7 +4705,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/midwash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "midwash"
 		},
 		"id": 8
@@ -4714,7 +4714,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/recommended-dry-clean-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "RECOMMENDED DRY CLEAN"
 		},
 		"id": 8
@@ -4723,7 +4723,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/dry-wash-only-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dry wash only"
 		},
 		"id": 8
@@ -4732,7 +4732,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/dry-clean-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Dry Clean wash"
 		},
 		"id": 8
@@ -4741,7 +4741,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/do-not-bleach-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "do not bleach"
 		},
 		"id": 8
@@ -4750,7 +4750,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/dry-care-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Dry care"
 		},
 		"id": 8
@@ -4759,7 +4759,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/dry-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "DRY WASH"
 		},
 		"id": 8
@@ -4768,7 +4768,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/regular-wash-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "Regular Wash"
 		},
 		"id": 8
@@ -4777,7 +4777,7 @@ export var filtersMap = {
 		"type": "Wash Care",
 		"value": {
 			"url": "kurtis/hand-wash-separately-kurtis",
-			"enabled": "false",
+			"enabled": false,
 			"name": "hand wash separately"
 		},
 		"id": 8
@@ -4786,7 +4786,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "salwar-suits/a-line-style-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "a line style"
 		},
 		"id": 9
@@ -4795,7 +4795,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "salwar-suits/anarkali-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "anarkali"
 		},
 		"id": 9
@@ -4804,7 +4804,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "salwar-suits/contemporary-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "contemporary"
 		},
 		"id": 9
@@ -4813,7 +4813,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "salwar-suits/designer-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "designer"
 		},
 		"id": 9
@@ -4822,7 +4822,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "salwar-suits/straight-suit-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "straight suit"
 		},
 		"id": 9
@@ -4831,7 +4831,7 @@ export var filtersMap = {
 		"type": "Style",
 		"value": {
 			"url": "salwar-suits/traditional-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "traditional"
 		},
 		"id": 9
@@ -4840,7 +4840,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "salwar-suits/unstitched-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "unstitched"
 		},
 		"id": 9
@@ -4849,7 +4849,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/art-silk-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "art silk"
 		},
 		"id": 9
@@ -4858,7 +4858,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/banarasi-silk-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "banarasi silk"
 		},
 		"id": 9
@@ -4867,7 +4867,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/bangalore-silk-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bangalore silk"
 		},
 		"id": 9
@@ -4876,7 +4876,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/bemberg-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bemberg"
 		},
 		"id": 9
@@ -4885,7 +4885,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/bengal-cotton-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bengal cotton"
 		},
 		"id": 9
@@ -4894,7 +4894,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/bhagalpuri-cotton-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bhagalpuri cotton"
 		},
 		"id": 9
@@ -4903,7 +4903,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/bhagalpuri-silk-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bhagalpuri silk"
 		},
 		"id": 9
@@ -4912,7 +4912,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/brocade-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brocade"
 		},
 		"id": 9
@@ -4921,7 +4921,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/chanderi-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chanderi"
 		},
 		"id": 9
@@ -4930,7 +4930,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/chiffon-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chiffon"
 		},
 		"id": 9
@@ -4939,7 +4939,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/cotton-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton"
 		},
 		"id": 9
@@ -4948,7 +4948,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/cotton-blend-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton blend"
 		},
 		"id": 9
@@ -4957,7 +4957,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/cotton-silk-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton silk"
 		},
 		"id": 9
@@ -4966,7 +4966,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/crepe-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "crepe"
 		},
 		"id": 9
@@ -4975,7 +4975,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/dupion-silk-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "dupion silk"
 		},
 		"id": 9
@@ -4984,7 +4984,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/faux-georgette-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "faux georgette"
 		},
 		"id": 9
@@ -4993,7 +4993,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/georgette-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "georgette"
 		},
 		"id": 9
@@ -5002,7 +5002,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/jersey-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "jersey"
 		},
 		"id": 9
@@ -5011,7 +5011,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/linen-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "linen"
 		},
 		"id": 9
@@ -5020,7 +5020,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "salwar-suits/maheshwari-silk-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "maheshwari silk"
 		},
 		"id": 9
@@ -5029,7 +5029,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/matka-silk-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "matka silk"
 		},
 		"id": 9
@@ -5038,7 +5038,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/nazneen-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "nazneen"
 		},
 		"id": 9
@@ -5047,7 +5047,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/net-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "net"
 		},
 		"id": 9
@@ -5056,7 +5056,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/pashmina-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pashmina"
 		},
 		"id": 9
@@ -5065,7 +5065,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/polyester-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "polyester"
 		},
 		"id": 9
@@ -5074,7 +5074,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/raw-silk-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "raw silk"
 		},
 		"id": 9
@@ -5083,7 +5083,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/santoon-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "santoon"
 		},
 		"id": 9
@@ -5092,7 +5092,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/satin-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "satin"
 		},
 		"id": 9
@@ -5101,7 +5101,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/silk-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk"
 		},
 		"id": 9
@@ -5110,7 +5110,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/silk-blend-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk blend"
 		},
 		"id": 9
@@ -5119,7 +5119,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/silk-crepe-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "silk crepe"
 		},
 		"id": 9
@@ -5128,7 +5128,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/taffeta-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "taffeta"
 		},
 		"id": 9
@@ -5137,7 +5137,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/velvet-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "velvet"
 		},
 		"id": 9
@@ -5146,7 +5146,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/viscose-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "viscose"
 		},
 		"id": 9
@@ -5155,7 +5155,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/beige-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "beige"
 		},
 		"id": 9
@@ -5164,7 +5164,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/black-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "black"
 		},
 		"id": 9
@@ -5173,7 +5173,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/blue-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "blue"
 		},
 		"id": 9
@@ -5182,7 +5182,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/brown-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brown"
 		},
 		"id": 9
@@ -5191,7 +5191,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/gold-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "gold"
 		},
 		"id": 9
@@ -5200,7 +5200,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/green-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "green"
 		},
 		"id": 9
@@ -5209,7 +5209,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/grey-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "grey"
 		},
 		"id": 9
@@ -5218,7 +5218,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/maroon-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "maroon"
 		},
 		"id": 9
@@ -5227,7 +5227,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/multicolor-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "multicolor"
 		},
 		"id": 9
@@ -5236,7 +5236,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/orange-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "orange"
 		},
 		"id": 9
@@ -5245,7 +5245,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/pastel-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pastel"
 		},
 		"id": 9
@@ -5254,7 +5254,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/peach-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "peach"
 		},
 		"id": 9
@@ -5263,7 +5263,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/pink-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "pink"
 		},
 		"id": 9
@@ -5272,7 +5272,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/purple-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "purple"
 		},
 		"id": 9
@@ -5281,7 +5281,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/red-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "red"
 		},
 		"id": 9
@@ -5290,7 +5290,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/turquoise-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "turquoise"
 		},
 		"id": 9
@@ -5299,7 +5299,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/violet-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "violet"
 		},
 		"id": 9
@@ -5308,7 +5308,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/white-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "white"
 		},
 		"id": 9
@@ -5317,7 +5317,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "salwar-suits/yellow-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "yellow"
 		},
 		"id": 9
@@ -5326,7 +5326,7 @@ export var filtersMap = {
 		"type": "Work",
 		"value": {
 			"url": "salwar-suits/maheshwari-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "maheshwari"
 		},
 		"id": 9
@@ -5335,7 +5335,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/boat-neck-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "boat neck"
 		},
 		"id": 9
@@ -5344,7 +5344,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/chinese-collar-neck-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chinese collar neck"
 		},
 		"id": 9
@@ -5353,7 +5353,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/closed-neck-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "closed neck"
 		},
 		"id": 9
@@ -5362,7 +5362,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/collar-neck-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "collar neck"
 		},
 		"id": 9
@@ -5371,7 +5371,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/halter-neck-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "halter neck"
 		},
 		"id": 9
@@ -5380,7 +5380,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/low-cut-neck-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "low cut neck"
 		},
 		"id": 9
@@ -5389,7 +5389,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/round-collar-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "round collar"
 		},
 		"id": 9
@@ -5398,7 +5398,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/round-neck-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "round neck"
 		},
 		"id": 9
@@ -5407,7 +5407,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/square-collar-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "square collar"
 		},
 		"id": 9
@@ -5416,7 +5416,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/square-neck-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "square neck"
 		},
 		"id": 9
@@ -5425,7 +5425,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/u-neck-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "u neck"
 		},
 		"id": 9
@@ -5434,7 +5434,7 @@ export var filtersMap = {
 		"type": "Kurta Neck Style",
 		"value": {
 			"url": "salwar-suits/v-neck-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "v neck"
 		},
 		"id": 9
@@ -5443,7 +5443,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "salwar-suits/bridal-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "bridal"
 		},
 		"id": 9
@@ -5452,7 +5452,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "salwar-suits/casual-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "casual"
 		},
 		"id": 9
@@ -5461,7 +5461,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "salwar-suits/ceremonial-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "ceremonial"
 		},
 		"id": 9
@@ -5470,7 +5470,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "salwar-suits/festival-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "festival"
 		},
 		"id": 9
@@ -5479,7 +5479,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "salwar-suits/festive-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "festive"
 		},
 		"id": 9
@@ -5488,7 +5488,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "salwar-suits/party-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "party"
 		},
 		"id": 9
@@ -5497,7 +5497,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "salwar-suits/wedding-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "wedding"
 		},
 		"id": 9
@@ -5506,7 +5506,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "salwar-suits/3/4th-sleeve-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "3/4th sleeve"
 		},
 		"id": 9
@@ -5515,7 +5515,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "salwar-suits/cap-sleeve-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cap sleeve"
 		},
 		"id": 9
@@ -5524,7 +5524,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "salwar-suits/elbow-sleeve-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "elbow sleeve"
 		},
 		"id": 9
@@ -5533,7 +5533,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "salwar-suits/full-sleeve-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "full sleeve"
 		},
 		"id": 9
@@ -5542,7 +5542,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "salwar-suits/full-sleeves-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "full sleeves"
 		},
 		"id": 9
@@ -5551,7 +5551,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "salwar-suits/half-sleeve-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "half sleeve"
 		},
 		"id": 9
@@ -5560,7 +5560,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "salwar-suits/puff-sleeve-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "puff sleeve"
 		},
 		"id": 9
@@ -5569,7 +5569,7 @@ export var filtersMap = {
 		"type": "Sleeves Type",
 		"value": {
 			"url": "salwar-suits/sleeveless-salwar-suits",
-			"enabled": "false",
+			"enabled": false,
 			"name": "sleeveless"
 		},
 		"id": 9
@@ -5578,7 +5578,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "skirts/black-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "black"
 		},
 		"id": 10
@@ -5587,7 +5587,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "skirts/blue-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "blue"
 		},
 		"id": 10
@@ -5596,7 +5596,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "skirts/brown-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "brown"
 		},
 		"id": 10
@@ -5605,7 +5605,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "skirts/gold-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "gold"
 		},
 		"id": 10
@@ -5614,7 +5614,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "skirts/green-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "green"
 		},
 		"id": 10
@@ -5623,7 +5623,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "skirts/maroon-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "maroon"
 		},
 		"id": 10
@@ -5632,7 +5632,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "skirts/multicolor-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "multicolor"
 		},
 		"id": 10
@@ -5641,7 +5641,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "skirts/orange-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "orange"
 		},
 		"id": 10
@@ -5650,7 +5650,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "skirts/white-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "white"
 		},
 		"id": 10
@@ -5659,7 +5659,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "skirts/casual-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "casual"
 		},
 		"id": 10
@@ -5668,7 +5668,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "skirts/festive-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "festive"
 		},
 		"id": 10
@@ -5677,7 +5677,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "skirts/party-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "party"
 		},
 		"id": 10
@@ -5686,7 +5686,7 @@ export var filtersMap = {
 		"type": "Length",
 		"value": {
 			"url": "skirts/3/4th-length-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "3/4th length"
 		},
 		"id": 10
@@ -5695,7 +5695,7 @@ export var filtersMap = {
 		"type": "Length",
 		"value": {
 			"url": "skirts/ankle-length-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "ankle length"
 		},
 		"id": 10
@@ -5704,7 +5704,7 @@ export var filtersMap = {
 		"type": "Length",
 		"value": {
 			"url": "skirts/knee-length-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "knee length"
 		},
 		"id": 10
@@ -5713,7 +5713,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "skirts/art-silk-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "art silk"
 		},
 		"id": 10
@@ -5722,7 +5722,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "skirts/chiffon-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "chiffon"
 		},
 		"id": 10
@@ -5731,7 +5731,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "skirts/cotton-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton"
 		},
 		"id": 10
@@ -5740,7 +5740,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "skirts/crepe-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "crepe"
 		},
 		"id": 10
@@ -5749,7 +5749,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "skirts/georgette-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "georgette"
 		},
 		"id": 10
@@ -5758,7 +5758,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "skirts/viscose-skirts",
-			"enabled": "false",
+			"enabled": false,
 			"name": "viscose"
 		},
 		"id": 10
@@ -5767,7 +5767,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "dresses/beige-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "beige"
 		},
 		"id": 11
@@ -5776,7 +5776,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "dresses/black-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "black"
 		},
 		"id": 11
@@ -5785,7 +5785,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "dresses/grey-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "grey"
 		},
 		"id": 11
@@ -5794,7 +5794,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "dresses/maroon-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "maroon"
 		},
 		"id": 11
@@ -5803,7 +5803,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "dresses/orange-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "orange"
 		},
 		"id": 11
@@ -5812,7 +5812,7 @@ export var filtersMap = {
 		"type": "Color",
 		"value": {
 			"url": "dresses/white-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "white"
 		},
 		"id": 11
@@ -5821,7 +5821,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "dresses/casual-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "casual"
 		},
 		"id": 11
@@ -5830,7 +5830,7 @@ export var filtersMap = {
 		"type": "Occasion",
 		"value": {
 			"url": "dresses/party-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "party"
 		},
 		"id": 11
@@ -5839,7 +5839,7 @@ export var filtersMap = {
 		"type": "Length",
 		"value": {
 			"url": "dresses/3/4th-length-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "3/4th length"
 		},
 		"id": 11
@@ -5848,7 +5848,7 @@ export var filtersMap = {
 		"type": "Length",
 		"value": {
 			"url": "dresses/ankle-length-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "ankle length"
 		},
 		"id": 11
@@ -5857,7 +5857,7 @@ export var filtersMap = {
 		"type": "Length",
 		"value": {
 			"url": "dresses/knee-length-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "knee length"
 		},
 		"id": 11
@@ -5866,7 +5866,7 @@ export var filtersMap = {
 		"type": "Fabric",
 		"value": {
 			"url": "dresses/cotton-dresses",
-			"enabled": "false",
+			"enabled": false,
 			"name": "cotton"
 		},
 		"id": 11

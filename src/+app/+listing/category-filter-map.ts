@@ -3252,15 +3252,6 @@ export var filtersMap = {
 		},
 		"id": 6
 	},
-	"tops/top-tops": {
-		"type": "Type",
-		"value": {
-			"url": "tops/top-tops",
-			"enabled": "false",
-			"name": "top"
-		},
-		"id": 6
-	},
 	"tops/chanderi-tops": {
 		"type": "Fabric",
 		"value": {
@@ -3486,10 +3477,10 @@ export var filtersMap = {
 		},
 		"id": 8
 	},
-	"kurtis/long-kurti-kurtis": {
+	"kurtis/long-kurtis": {
 		"type": "Style",
 		"value": {
-			"url": "kurtis/long-kurti-kurtis",
+			"url": "kurtis/long-kurtis",
 			"enabled": "false",
 			"name": "long kurti"
 		},
@@ -3513,10 +3504,10 @@ export var filtersMap = {
 		},
 		"id": 8
 	},
-	"kurtis/short-kurti-kurtis": {
+	"kurtis/short-kurtis": {
 		"type": "Style",
 		"value": {
-			"url": "kurtis/short-kurti-kurtis",
+			"url": "kurtis/short-kurtis",
 			"enabled": "false",
 			"name": "short kurti"
 		},
@@ -4602,15 +4593,6 @@ export var filtersMap = {
 		},
 		"id": 8
 	},
-	"kurtis/dry-clean-recommended-first-time.-then-wash-in-cold-water-with-mild-detergent-like-ezee.-wash-with-like-colors.-kurtis": {
-		"type": "Wash Care",
-		"value": {
-			"url": "kurtis/dry-clean-recommended-first-time.-then-wash-in-cold-water-with-mild-detergent-like-ezee.-wash-with-like-colors.-kurtis",
-			"enabled": "false",
-			"name": "Dry clean recommended first time. Then wash in cold water with mild detergent like Ezee. Wash with like colors."
-		},
-		"id": 8
-	},
 	"kurtis/easy-hand-wash-kurtis": {
 		"type": "Wash Care",
 		"value": {
@@ -4716,15 +4698,6 @@ export var filtersMap = {
 			"url": "kurtis/drywash-kurtis",
 			"enabled": "false",
 			"name": "DRYWASH"
-		},
-		"id": 8
-	},
-	"kurtis/normal-hand/-machine-wash-in-lukewarm-water.-kurtis": {
-		"type": "Wash Care",
-		"value": {
-			"url": "kurtis/normal-hand/-machine-wash-in-lukewarm-water.-kurtis",
-			"enabled": "false",
-			"name": "Normal Hand/ Machine wash in lukewarm water."
 		},
 		"id": 8
 	},
@@ -5358,1428 +5331,6 @@ export var filtersMap = {
 		},
 		"id": 9
 	},
-	"salwar-suits/1.27-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/1.27-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "1.27 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.00-meter-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.00-meter-salwar-suits",
-			"enabled": "false",
-			"name": "2.00 meter"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.00-metre-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.00-metre-salwar-suits",
-			"enabled": "false",
-			"name": "2.00 metre"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.00-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.00-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.00 mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.0mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.0mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.0mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.0-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.0-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.0 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.0-mtr-fabric-form-only-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.0-mtr-fabric-form-only-salwar-suits",
-			"enabled": "false",
-			"name": "2.0 mtr fabric form only"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.1-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.1-salwar-suits",
-			"enabled": "false",
-			"name": "2.1"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.10-meter-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.10-meter-salwar-suits",
-			"enabled": "false",
-			"name": "2.10 meter"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.10-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.10-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.10 mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.14--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.14--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.14- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.15-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.15-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.15 mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.16-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.16-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.16 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.1-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.1-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.1 MTr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.2-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.2-salwar-suits",
-			"enabled": "false",
-			"name": "2.2"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.20-mater-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.20-mater-salwar-suits",
-			"enabled": "false",
-			"name": "2.20 Mater"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.20-metre-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.20-metre-salwar-suits",
-			"enabled": "false",
-			"name": "2.20 Metre"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.20-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.20-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.20 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.20--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.20--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.20- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.24-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.24-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.24-Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.24--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.24--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.24- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.25-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.25-salwar-suits",
-			"enabled": "false",
-			"name": "2.25"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.25m-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.25m-salwar-suits",
-			"enabled": "false",
-			"name": "2.25m"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.25-meter-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.25-meter-salwar-suits",
-			"enabled": "false",
-			"name": "2.25 Meter"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.25-metre-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.25-metre-salwar-suits",
-			"enabled": "false",
-			"name": "2.25 metre"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.25mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.25mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.25mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.25-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.25-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.25 mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.25-mtr(length-38+inch)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.25-mtr(length-38+inch)-salwar-suits",
-			"enabled": "false",
-			"name": "2.25 Mtr(Length-38+Inch)"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.25-mtr(length-49-inch)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.25-mtr(length-49-inch)-salwar-suits",
-			"enabled": "false",
-			"name": "2.25 Mtr(Length-49 Inch)"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.25-mtr(length-49+inch)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.25-mtr(length-49+inch)-salwar-suits",
-			"enabled": "false",
-			"name": "2.25 Mtr(Length-49+Inch)"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.2-m-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.2-m-salwar-suits",
-			"enabled": "false",
-			"name": "2.2 m"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.2-meter-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.2-meter-salwar-suits",
-			"enabled": "false",
-			"name": "2.2 Meter"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.2-metre-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.2-metre-salwar-suits",
-			"enabled": "false",
-			"name": "2.2 metre"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.30-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.30-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.30 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.34-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.34-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.34 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.3--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.3--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.3- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.40-metre-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.40-metre-salwar-suits",
-			"enabled": "false",
-			"name": "2.40 Metre"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.40-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.40-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.40 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.40--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.40--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.40- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.45--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.45--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.45- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.4--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.4--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.4- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.5-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.5-salwar-suits",
-			"enabled": "false",
-			"name": "2.5"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.50-meter-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.50-meter-salwar-suits",
-			"enabled": "false",
-			"name": "2.50 Meter"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.50-metre-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.50-metre-salwar-suits",
-			"enabled": "false",
-			"name": "2.50 metre"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.50-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.50-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.50 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.50--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.50--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.50- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.5m-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.5m-salwar-suits",
-			"enabled": "false",
-			"name": "2.5m"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.5-metre-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.5-metre-salwar-suits",
-			"enabled": "false",
-			"name": "2.5 metre"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.5mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.5mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.5mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.5-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.5-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.5 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.5--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.5--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.5- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.60-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.60-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.60-Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.70-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.70-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.70 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.7--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.7--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.7- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.80-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.80-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.80 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.82--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.82--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.82- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2.88-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2.88-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2.88-Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2-metre-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2-metre-salwar-suits",
-			"enabled": "false",
-			"name": "2 metre"
-		},
-		"id": 9
-	},
-	"salwar-suits/2mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/2-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/2-mtr.-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2-mtr.-salwar-suits",
-			"enabled": "false",
-			"name": "2 Mtr."
-		},
-		"id": 9
-	},
-	"salwar-suits/2--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/2--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "2- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/30-40-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/30-40-salwar-suits",
-			"enabled": "false",
-			"name": "30-40"
-		},
-		"id": 9
-	},
-	"salwar-suits/30-42-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/30-42-salwar-suits",
-			"enabled": "false",
-			"name": "30-42"
-		},
-		"id": 9
-	},
-	"salwar-suits/30-44-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/30-44-salwar-suits",
-			"enabled": "false",
-			"name": "30-44"
-		},
-		"id": 9
-	},
-	"salwar-suits/30-54-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/30-54-salwar-suits",
-			"enabled": "false",
-			"name": "30-54"
-		},
-		"id": 9
-	},
-	"salwar-suits/31-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/31-inch-salwar-suits",
-			"enabled": "false",
-			"name": "31 inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/3.20-metre-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/3.20-metre-salwar-suits",
-			"enabled": "false",
-			"name": "3.20 metre"
-		},
-		"id": 9
-	},
-	"salwar-suits/3.20-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/3.20-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "3.20 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/32-44-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/32-44-salwar-suits",
-			"enabled": "false",
-			"name": "32-44"
-		},
-		"id": 9
-	},
-	"salwar-suits/3.50mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/3.50mtr-salwar-suits",
-			"enabled": "false",
-			"name": "3.50Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/3.50-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/3.50-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "3.50-Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/36-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/36-salwar-suits",
-			"enabled": "false",
-			"name": "36"
-		},
-		"id": 9
-	},
-	"salwar-suits/38-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/38-salwar-suits",
-			"enabled": "false",
-			"name": "38"
-		},
-		"id": 9
-	},
-	"salwar-suits/38-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/38-inch-salwar-suits",
-			"enabled": "false",
-			"name": "38 Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/3-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/3-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "3 MTR"
-		},
-		"id": 9
-	},
-	"salwar-suits/3--mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/3--mtr-salwar-suits",
-			"enabled": "false",
-			"name": "3- Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/40-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/40-salwar-suits",
-			"enabled": "false",
-			"name": "40"
-		},
-		"id": 9
-	},
-	"salwar-suits/40-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/40-inch-salwar-suits",
-			"enabled": "false",
-			"name": "40 inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/40-inches-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/40-inches-salwar-suits",
-			"enabled": "false",
-			"name": "40  inches"
-		},
-		"id": 9
-	},
-	"salwar-suits/40-inch-(length)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/40-inch-(length)-salwar-suits",
-			"enabled": "false",
-			"name": "40 inch (Length)"
-		},
-		"id": 9
-	},
-	"salwar-suits/40-to-max.-up-to.-44-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/40-to-max.-up-to.-44-salwar-suits",
-			"enabled": "false",
-			"name": "40 TO Max. Up To. 44"
-		},
-		"id": 9
-	},
-	"salwar-suits/42-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/42-salwar-suits",
-			"enabled": "false",
-			"name": "42"
-		},
-		"id": 9
-	},
-	"salwar-suits/42-44-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/42-44-inch-salwar-suits",
-			"enabled": "false",
-			"name": "42-44 inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/42inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/42inch-salwar-suits",
-			"enabled": "false",
-			"name": "42Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/42-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/42-inch-salwar-suits",
-			"enabled": "false",
-			"name": "42 Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/42-inches-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/42-inches-salwar-suits",
-			"enabled": "false",
-			"name": "42 inches"
-		},
-		"id": 9
-	},
-	"salwar-suits/42-inch-(length)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/42-inch-(length)-salwar-suits",
-			"enabled": "false",
-			"name": "42 inch (Length)"
-		},
-		"id": 9
-	},
-	"salwar-suits/43-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/43-salwar-suits",
-			"enabled": "false",
-			"name": "43"
-		},
-		"id": 9
-	},
-	"salwar-suits/43-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/43-inch-salwar-suits",
-			"enabled": "false",
-			"name": "43 inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/43-inches-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/43-inches-salwar-suits",
-			"enabled": "false",
-			"name": "43 inches"
-		},
-		"id": 9
-	},
-	"salwar-suits/44-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/44-salwar-suits",
-			"enabled": "false",
-			"name": "44"
-		},
-		"id": 9
-	},
-	"salwar-suits/44-46-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/44-46-salwar-suits",
-			"enabled": "false",
-			"name": "44-46"
-		},
-		"id": 9
-	},
-	"salwar-suits/44-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/44-inch-salwar-suits",
-			"enabled": "false",
-			"name": "44 Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/44-inches-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/44-inches-salwar-suits",
-			"enabled": "false",
-			"name": "44 inches"
-		},
-		"id": 9
-	},
-	"salwar-suits/45-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/45-salwar-suits",
-			"enabled": "false",
-			"name": "45"
-		},
-		"id": 9
-	},
-	"salwar-suits/45-inches-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/45-inches-salwar-suits",
-			"enabled": "false",
-			"name": "45 inches"
-		},
-		"id": 9
-	},
-	"salwar-suits/46-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/46-inch-salwar-suits",
-			"enabled": "false",
-			"name": "46 inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/46-inches-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/46-inches-salwar-suits",
-			"enabled": "false",
-			"name": "46 inches"
-		},
-		"id": 9
-	},
-	"salwar-suits/47-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/47-salwar-suits",
-			"enabled": "false",
-			"name": "47"
-		},
-		"id": 9
-	},
-	"salwar-suits/47-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/47-inch-salwar-suits",
-			"enabled": "false",
-			"name": "47 Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/47-inch-(length)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/47-inch-(length)-salwar-suits",
-			"enabled": "false",
-			"name": "47 inch (Length)"
-		},
-		"id": 9
-	},
-	"salwar-suits/48-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/48-salwar-suits",
-			"enabled": "false",
-			"name": "48"
-		},
-		"id": 9
-	},
-	"salwar-suits/48-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/48-inch-salwar-suits",
-			"enabled": "false",
-			"name": "48 Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/48+-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/48+-inch-salwar-suits",
-			"enabled": "false",
-			"name": "48+ Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/48-inches-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/48-inches-salwar-suits",
-			"enabled": "false",
-			"name": "48 inches"
-		},
-		"id": 9
-	},
-	"salwar-suits/48+-inch-(-length-)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/48+-inch-(-length-)-salwar-suits",
-			"enabled": "false",
-			"name": "48+ inch ( length )"
-		},
-		"id": 9
-	},
-	"salwar-suits/48-inch-(length)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/48-inch-(length)-salwar-suits",
-			"enabled": "false",
-			"name": "48 inch (Length)"
-		},
-		"id": 9
-	},
-	"salwar-suits/48+-inch-(length)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/48+-inch-(length)-salwar-suits",
-			"enabled": "false",
-			"name": "48+ inch (Length)"
-		},
-		"id": 9
-	},
-	"salwar-suits/49-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/49-inch-salwar-suits",
-			"enabled": "false",
-			"name": "49 inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/49-inch-(length)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/49-inch-(length)-salwar-suits",
-			"enabled": "false",
-			"name": "49 inch (Length)"
-		},
-		"id": 9
-	},
-	"salwar-suits/4-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/4-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "4-Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/50-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/50-inch-salwar-suits",
-			"enabled": "false",
-			"name": "50 Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/50+-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/50+-inch-salwar-suits",
-			"enabled": "false",
-			"name": "50+ Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/50-+-inch-(-length-)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/50-+-inch-(-length-)-salwar-suits",
-			"enabled": "false",
-			"name": "50 + inch ( length )"
-		},
-		"id": 9
-	},
-	"salwar-suits/50-inch-(length)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/50-inch-(length)-salwar-suits",
-			"enabled": "false",
-			"name": "50 inch (Length)"
-		},
-		"id": 9
-	},
-	"salwar-suits/51-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/51-inch-salwar-suits",
-			"enabled": "false",
-			"name": "51 Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/52-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/52-salwar-suits",
-			"enabled": "false",
-			"name": "52"
-		},
-		"id": 9
-	},
-	"salwar-suits/52-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/52-inch-salwar-suits",
-			"enabled": "false",
-			"name": "52 Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/52+-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/52+-inch-salwar-suits",
-			"enabled": "false",
-			"name": "52+ Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/52+-inch+-koti(40-inch)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/52+-inch+-koti(40-inch)-salwar-suits",
-			"enabled": "false",
-			"name": "52+ Inch+ Koti(40 Inch)"
-		},
-		"id": 9
-	},
-	"salwar-suits/54-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/54-inch-salwar-suits",
-			"enabled": "false",
-			"name": "54 Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/5.5-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/5.5-salwar-suits",
-			"enabled": "false",
-			"name": "5.5"
-		},
-		"id": 9
-	},
-	"salwar-suits/55inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/55inch-salwar-suits",
-			"enabled": "false",
-			"name": "55Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/55-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/55-inch-salwar-suits",
-			"enabled": "false",
-			"name": "55 Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/55-inch-(length)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/55-inch-(length)-salwar-suits",
-			"enabled": "false",
-			"name": "55 inch (Length)"
-		},
-		"id": 9
-	},
-	"salwar-suits/56-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/56-inch-salwar-suits",
-			"enabled": "false",
-			"name": "56 inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/57-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/57-inch-salwar-suits",
-			"enabled": "false",
-			"name": "57 inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/58-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/58-inch-salwar-suits",
-			"enabled": "false",
-			"name": "58 inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/58-inch-(length)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/58-inch-(length)-salwar-suits",
-			"enabled": "false",
-			"name": "58 inch (Length)"
-		},
-		"id": 9
-	},
-	"salwar-suits/6-mtr-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/6-mtr-salwar-suits",
-			"enabled": "false",
-			"name": "6-Mtr"
-		},
-		"id": 9
-	},
-	"salwar-suits/98-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/98-salwar-suits",
-			"enabled": "false",
-			"name": "98"
-		},
-		"id": 9
-	},
-	"salwar-suits/chest-size-max-42-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/chest-size-max-42-salwar-suits",
-			"enabled": "false",
-			"name": "chest size-max 42"
-		},
-		"id": 9
-	},
-	"salwar-suits/chest-size-max-44-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/chest-size-max-44-salwar-suits",
-			"enabled": "false",
-			"name": "chest size-max 44"
-		},
-		"id": 9
-	},
-	"salwar-suits/choli-31-inch/gown-44-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/choli-31-inch/gown-44-inch-salwar-suits",
-			"enabled": "false",
-			"name": "Choli 31 Inch/Gown-44 Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/free-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/free-salwar-suits",
-			"enabled": "false",
-			"name": "FREE"
-		},
-		"id": 9
-	},
-	"salwar-suits/free-size-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/free-size-salwar-suits",
-			"enabled": "false",
-			"name": "FREE SIZE"
-		},
-		"id": 9
-	},
-	"salwar-suits/free-size-approx-up-to-44-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/free-size-approx-up-to-44-salwar-suits",
-			"enabled": "false",
-			"name": "Free Size Approx Up to 44"
-		},
-		"id": 9
-	},
-	"salwar-suits/free-size-up-to-44-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/free-size-up-to-44-salwar-suits",
-			"enabled": "false",
-			"name": "Free Size up to 44"
-		},
-		"id": 9
-	},
-	"salwar-suits/free-size-upto-44-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/free-size-upto-44-salwar-suits",
-			"enabled": "false",
-			"name": "Free Size upto 44"
-		},
-		"id": 9
-	},
-	"salwar-suits/free-up-to-44-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/free-up-to-44-salwar-suits",
-			"enabled": "false",
-			"name": "Free up to 44"
-		},
-		"id": 9
-	},
-	"salwar-suits/kurta-length--2.6-mtrs-;-width--44-inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/kurta-length--2.6-mtrs-;-width--44-inch-salwar-suits",
-			"enabled": "false",
-			"name": "Kurta Length- 2.6 mtrs ; Width- 44 inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/l-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/l-salwar-suits",
-			"enabled": "false",
-			"name": "L"
-		},
-		"id": 9
-	},
-	"salwar-suits/length-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/length-salwar-suits",
-			"enabled": "false",
-			"name": "Length"
-		},
-		"id": 9
-	},
-	"salwar-suits/length--2.4-mtr;-width--45-inches-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/length--2.4-mtr;-width--45-inches-salwar-suits",
-			"enabled": "false",
-			"name": "Length- 2.4 mtr; Width- 45 inches"
-		},
-		"id": 9
-	},
-	"salwar-suits/length---43+-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/length---43+-salwar-suits",
-			"enabled": "false",
-			"name": "Length - 43+"
-		},
-		"id": 9
-	},
-	"salwar-suits/length-44+inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/length-44+inch-salwar-suits",
-			"enabled": "false",
-			"name": "Length 44+Inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/length---46-inch---semi-stitched-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/length---46-inch---semi-stitched-salwar-suits",
-			"enabled": "false",
-			"name": "length - 46 inch - Semi stitched"
-		},
-		"id": 9
-	},
-	"salwar-suits/(length-50+inch-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/(length-50+inch-salwar-suits",
-			"enabled": "false",
-			"name": "(length 50+inch"
-		},
-		"id": 9
-	},
-	"salwar-suits/length---54+-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/length---54+-salwar-suits",
-			"enabled": "false",
-			"name": "Length - 54+"
-		},
-		"id": 9
-	},
-	"salwar-suits/m-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/m-salwar-suits",
-			"enabled": "false",
-			"name": "M"
-		},
-		"id": 9
-	},
-	"salwar-suits/max-42-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/max-42-salwar-suits",
-			"enabled": "false",
-			"name": "max 42"
-		},
-		"id": 9
-	},
-	"salwar-suits/pure-georgette-of-4-meters(with-lining)-length-46-48.-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/pure-georgette-of-4-meters(with-lining)-length-46-48.-salwar-suits",
-			"enabled": "false",
-			"name": "Pure georgette of 4 meters(with lining) length 46-48."
-		},
-		"id": 9
-	},
-	"salwar-suits/s-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/s-salwar-suits",
-			"enabled": "false",
-			"name": "S"
-		},
-		"id": 9
-	},
-	"salwar-suits/top-length(in-metres)-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/top-length(in-metres)-salwar-suits",
-			"enabled": "false",
-			"name": "Top Length(in metres)"
-		},
-		"id": 9
-	},
-	"salwar-suits/up-to-44-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/up-to-44-salwar-suits",
-			"enabled": "false",
-			"name": "Up To 44"
-		},
-		"id": 9
-	},
-	"salwar-suits/xl-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/xl-salwar-suits",
-			"enabled": "false",
-			"name": "XL"
-		},
-		"id": 9
-	},
-	"salwar-suits/xxl-salwar-suits": {
-		"type": "Kurta Size",
-		"value": {
-			"url": "salwar-suits/xxl-salwar-suits",
-			"enabled": "false",
-			"name": "XXL"
-		},
-		"id": 9
-	},
 	"salwar-suits/boat-neck-salwar-suits": {
 		"type": "Kurta Neck Style",
 		"value": {
@@ -7212,127 +5763,109 @@ export var filtersMap = {
 		},
 		"id": 10
 	},
-	"dresses-gowns-kaftans/beige-dresses-gowns-kaftans": {
+	"dresses/beige-dresses": {
 		"type": "Color",
 		"value": {
-			"url": "dresses-gowns-kaftans/beige-dresses-gowns-kaftans",
+			"url": "dresses/beige-dresses",
 			"enabled": "false",
 			"name": "beige"
 		},
 		"id": 11
 	},
-	"dresses-gowns-kaftans/black-dresses-gowns-kaftans": {
+	"dresses/black-dresses": {
 		"type": "Color",
 		"value": {
-			"url": "dresses-gowns-kaftans/black-dresses-gowns-kaftans",
+			"url": "dresses/black-dresses",
 			"enabled": "false",
 			"name": "black"
 		},
 		"id": 11
 	},
-	"dresses-gowns-kaftans/grey-dresses-gowns-kaftans": {
+	"dresses/grey-dresses": {
 		"type": "Color",
 		"value": {
-			"url": "dresses-gowns-kaftans/grey-dresses-gowns-kaftans",
+			"url": "dresses/grey-dresses",
 			"enabled": "false",
 			"name": "grey"
 		},
 		"id": 11
 	},
-	"dresses-gowns-kaftans/maroon-dresses-gowns-kaftans": {
+	"dresses/maroon-dresses": {
 		"type": "Color",
 		"value": {
-			"url": "dresses-gowns-kaftans/maroon-dresses-gowns-kaftans",
+			"url": "dresses/maroon-dresses",
 			"enabled": "false",
 			"name": "maroon"
 		},
 		"id": 11
 	},
-	"dresses-gowns-kaftans/orange-dresses-gowns-kaftans": {
+	"dresses/orange-dresses": {
 		"type": "Color",
 		"value": {
-			"url": "dresses-gowns-kaftans/orange-dresses-gowns-kaftans",
+			"url": "dresses/orange-dresses",
 			"enabled": "false",
 			"name": "orange"
 		},
 		"id": 11
 	},
-	"dresses-gowns-kaftans/white-dresses-gowns-kaftans": {
+	"dresses/white-dresses": {
 		"type": "Color",
 		"value": {
-			"url": "dresses-gowns-kaftans/white-dresses-gowns-kaftans",
+			"url": "dresses/white-dresses",
 			"enabled": "false",
 			"name": "white"
 		},
 		"id": 11
 	},
-	"dresses-gowns-kaftans/casual-dresses-gowns-kaftans": {
+	"dresses/casual-dresses": {
 		"type": "Occasion",
 		"value": {
-			"url": "dresses-gowns-kaftans/casual-dresses-gowns-kaftans",
+			"url": "dresses/casual-dresses",
 			"enabled": "false",
 			"name": "casual"
 		},
 		"id": 11
 	},
-	"dresses-gowns-kaftans/party-dresses-gowns-kaftans": {
+	"dresses/party-dresses": {
 		"type": "Occasion",
 		"value": {
-			"url": "dresses-gowns-kaftans/party-dresses-gowns-kaftans",
+			"url": "dresses/party-dresses",
 			"enabled": "false",
 			"name": "party"
 		},
 		"id": 11
 	},
-	"dresses-gowns-kaftans/3/4th-length-dresses-gowns-kaftans": {
+	"dresses/3/4th-length-dresses": {
 		"type": "Length",
 		"value": {
-			"url": "dresses-gowns-kaftans/3/4th-length-dresses-gowns-kaftans",
+			"url": "dresses/3/4th-length-dresses",
 			"enabled": "false",
 			"name": "3/4th length"
 		},
 		"id": 11
 	},
-	"dresses-gowns-kaftans/ankle-length-dresses-gowns-kaftans": {
+	"dresses/ankle-length-dresses": {
 		"type": "Length",
 		"value": {
-			"url": "dresses-gowns-kaftans/ankle-length-dresses-gowns-kaftans",
+			"url": "dresses/ankle-length-dresses",
 			"enabled": "false",
 			"name": "ankle length"
 		},
 		"id": 11
 	},
-	"dresses-gowns-kaftans/knee-length-dresses-gowns-kaftans": {
+	"dresses/knee-length-dresses": {
 		"type": "Length",
 		"value": {
-			"url": "dresses-gowns-kaftans/knee-length-dresses-gowns-kaftans",
+			"url": "dresses/knee-length-dresses",
 			"enabled": "false",
 			"name": "knee length"
 		},
 		"id": 11
 	},
-	"dresses-gowns-kaftans/dress-dresses-gowns-kaftans": {
-		"type": "Type",
-		"value": {
-			"url": "dresses-gowns-kaftans/dress-dresses-gowns-kaftans",
-			"enabled": "false",
-			"name": "Dress"
-		},
-		"id": 11
-	},
-	"dresses-gowns-kaftans/gown-dresses-gowns-kaftans": {
-		"type": "Type",
-		"value": {
-			"url": "dresses-gowns-kaftans/gown-dresses-gowns-kaftans",
-			"enabled": "false",
-			"name": "Gown"
-		},
-		"id": 11
-	},
-	"dresses-gowns-kaftans/cotton-dresses-gowns-kaftans": {
+	"dresses/cotton-dresses": {
 		"type": "Fabric",
 		"value": {
-			"url": "dresses-gowns-kaftans/cotton-dresses-gowns-kaftans",
+			"url": "dresses/cotton-dresses",
 			"enabled": "false",
 			"name": "cotton"
 		},
@@ -7356,13 +5889,13 @@ export var categoriesMap = {
   "womens-clothing/lehengas": {
     "id": 5
   },
-  "womens-clothing/cholis-tops": {
+  "womens-clothing/tops": {
     "id": 6
   },
-  "womens-clothing/palazzos-bottoms-pants": {
+  "womens-clothing/palazzos": {
     "id": 7
   },
-  "womens-clothing/kurtis-tunics": {
+  "womens-clothing/kurtis": {
     "id": 8
   },
   "womens-clothing/salwar-suits": {
@@ -7371,7 +5904,7 @@ export var categoriesMap = {
   "womens-clothing/skirts": {
     "id": 10
   },
-  "womens-clothing/dresses-gowns-kaftans": {
+  "womens-clothing/dresses": {
     "id": 11
   },
   "womens-clothing/dupattas-stoles-scarves-shawls": {

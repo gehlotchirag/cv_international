@@ -129,17 +129,25 @@ function ngApp(req, res) {
 
   if(org_url === '/us/') {
     url = base_url + '/home';
+    console.log("url", url);
     view_dir = path.join(__dirname, '/static/home');
+    console.log("view_dir", view_dir);
   }else if(org_url.indexOf('/shop/') > -1) {
     let url_arr = (org_url.split('/')).filter((item) => item !== "");
+    console.log("url_arr", url_arr);
     url = base_url + '/shop/' + url_arr[url_arr.length - 1];
+    console.log("url", url);
     view_dir = path.join(__dirname, '/static/shop/', url_arr[url_arr.length - 1]);
+    console.log("view_dir", view_dir);
     isProductUrl = true;
   }else{
     let url_arr = org_url.split('/us/');
     let temp_url = ((url_arr[url_arr.length - 1]).split('/')).filter((item) => item !== "").join('/');
+    console.log("temp_url",temp_url);
     url = base_url + '/' + temp_url;
+    console.log("url", url);
     view_dir = path.join(__dirname, '/static/', temp_url);
+    console.log("view_dir", view_dir);
   }
 
   if(isProductUrl) { 
@@ -173,7 +181,6 @@ function renderDynamicHtml(req, res, url, options) {
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
       console.log("HTML Found. Render HTML. Time: ",formatted, "Url:", url);
-      console.log("HTML", html);
       res.send(html);
     }
   });

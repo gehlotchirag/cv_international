@@ -173,6 +173,7 @@ function renderDynamicHtml(req, res, url, options) {
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
       console.log("HTML Found. Render HTML. Time: ",formatted, "Url:", url);
+      console.log("HTML", html);
       res.send(html);
     }
   });

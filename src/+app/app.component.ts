@@ -70,13 +70,13 @@ export class AppComponent implements AfterViewInit {
         }
         if (event instanceof NavigationStart) {
           this.progressBar.start();
-          this.getSeoData(url);
         } else if ( event instanceof NavigationEnd ||
                     event instanceof NavigationCancel ||
                     event instanceof NavigationError) {
           this.progressBar.complete();
         }
         if(event instanceof NavigationEnd) {
+          this.getSeoData(url);
           if(typeof ga !== 'undefined') {
             ga('set', 'page', event.urlAfterRedirects);
             ga('send', 'pageview');

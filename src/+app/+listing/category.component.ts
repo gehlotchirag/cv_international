@@ -232,7 +232,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
       startCount = this.listingProducts.total_count - perPageCount + 1;
       endCount = this.listingProducts.total_count
     }
-    this.resultCountObj['startCount'] = startCount;
+    this.resultCountObj['startCount'] = perPageCount > 0 ? startCount : 0;
     this.resultCountObj['endCount'] = endCount;
     this.resultCountObj['totalCount'] = this.listingProducts.total_count; 
   }
@@ -463,6 +463,9 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
   fetchCategoryData(){
     this.progressBar.start();
+    if(typeof window !== 'undefined') {
+      window.scroll(0,0);
+    }
     let url = this.getPageUrl();
     let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
     if(isPremiumUrl){

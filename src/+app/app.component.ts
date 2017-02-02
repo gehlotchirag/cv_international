@@ -133,7 +133,9 @@ export class AppComponent implements AfterViewInit {
           if(key === 'title') {
             self.metaService.setTitle(self.seoContent[key]);
           } else if(key === 'href_lang') {
-            self.metaService.setHrefLangTag(key, self.seoContent[key]);
+            self.metaService.setHrefLangTag(key, self.seoContent[key], self.seoContent['canonical']);
+          } else if(key === 'canonical') { 
+            self.metaService.setCanonicalTag(key, self.seoContent['canonical']);
           } else {
             self.metaService.setTag(key, self.seoContent[key]);
           }

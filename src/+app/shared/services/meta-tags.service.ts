@@ -8,6 +8,7 @@ const isDefined = (val: any) => typeof val !== 'undefined';
 
 @Injectable()
 export class MetaService {
+  public hreflangArr = ['en-us', 'en-in'];
   constructor(private router: Router, @Inject(DOCUMENT) private document: any, private titleService: Title, private activatedRoute: ActivatedRoute) {}
 
   private _getOrCreateMetaTag(name: string): HTMLElement {
@@ -36,21 +37,49 @@ export class MetaService {
   }
 
   _getOrCreateHrefLangTag(name: string){
-    let el: HTMLElement = this.document.querySelector(`link[hreflang="in"]`);
+    let el: Array<HTMLElement> = this.document.querySelectorAll(`link[hreflang`);
+    if (el.length == 0) {
+      el = [];
+      this.hreflangArr.forEach((hreflang) => {
+        let element = this.document.createElement('link');
+        element.setAttribute('rel', 'alternate');
+        element.setAttribute('hreflang', hreflang);
+        this.document.head.appendChild(element);
+        el.push(element);
+      })
+    }
+    return el;
+  }
+
+  setHrefLangTag(tag: string, value: string, canonical: string){
+    const tagElement = this._getOrCreateHrefLangTag(tag);
+    tagElement.forEach((element) => {
+      let tagStr = isDefined(value) ? value : '';
+      let canonicalStr = isDefined(canonical) ? canonical : '';
+      if(element['hreflang'] === 'en-in') {
+        element.setAttribute('href', tagStr);    
+      }
+      if(element['hreflang'] === 'en-us') {
+        element.setAttribute('href', canonicalStr);    
+      }
+    })
+    return this;
+  }
+
+  _getOrCreateCanonicalTag(name: string){
+    let el: HTMLElement = this.document.querySelector(`link[rel="canonical"]`);
     if (!el) {
       el = this.document.createElement('link');
-      el.setAttribute('name', name);
-      el.setAttribute('rel', 'alternate');
-      el.setAttribute('hreflang', 'in');
+      el.setAttribute('rel', 'canonical');
       this.document.head.appendChild(el);
     }
     return el;
   }
 
-  setHrefLangTag(tag: string, value: string){
-    const tagElement = this._getOrCreateHrefLangTag(tag);
-    let tagStr = isDefined(value) ? value : '';
-    tagElement.setAttribute('href', tagStr);
+  setCanonicalTag(tag: string, canonical: string){
+    const tagElement = this._getOrCreateMetaTag(tag);
+    let tagStr = isDefined(canonical) ? canonical : '';
+    tagElement.setAttribute('href', canonical);
     return this;
   }
 

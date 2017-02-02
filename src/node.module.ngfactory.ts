@@ -268,6 +268,7 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
       import84.SitemapComponentNgFactory,
       import85.CategoryComponentNgFactory,
       import85.CategoryComponentNgFactory,
+      import85.CategoryComponentNgFactory,
       import86.NotFoundComponentNgFactory,
       import87.AppComponentNgFactory
     ]
@@ -507,6 +508,16 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
       [
         {
           path: ':premium-category',
+          component: import101.CategoryComponent,
+          resolve: {
+            filters: import51.FilterResolveService,
+            products: import52.ProductResolveService
+          }
+
+        }
+        ,
+        {
+          path: 'search',
           component: import101.CategoryComponent,
           resolve: {
             filters: import51.FilterResolveService,

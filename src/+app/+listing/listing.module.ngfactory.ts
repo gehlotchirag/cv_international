@@ -53,6 +53,7 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
     super(parent,[
       import13.CategoryComponentNgFactory,
       import13.CategoryComponentNgFactory,
+      import13.CategoryComponentNgFactory,
       import14.MegaMenuComponentNgFactory,
       import15.MegaMenuLinkComponentNgFactory,
       import16.AnnouncementWidgetComponentNgFactory,
@@ -72,6 +73,16 @@ class ListingModuleInjector extends import0.NgModuleInjector<import1.ListingModu
       if ((this.__ROUTES_7 == (null as any))) { (this.__ROUTES_7 = [[
         {
           path: ':premium-category',
+          component: import26.CategoryComponent,
+          resolve: {
+            filters: import10.FilterResolveService,
+            products: import11.ProductResolveService
+          }
+
+        }
+        ,
+        {
+          path: 'search',
           component: import26.CategoryComponent,
           resolve: {
             filters: import10.FilterResolveService,

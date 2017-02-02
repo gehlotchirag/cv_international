@@ -41,6 +41,7 @@ export class ListingService {
     let categoryId = categoryFilterMap.categoriesMap[url] ? categoryFilterMap.categoriesMap[url].id : null;
     let appliedFilterObj = this.filtersMap[url.toLowerCase()] ? this.filtersMap[url.toLowerCase()] : null;
     let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
+    let isSearchUrl = url.indexOf('search') > -1;
     let searchObj = this.getParamsObj(paramObj);
 
     let paramsObj = searchObj.params ? JSON.parse(searchObj.params) : {};
@@ -51,7 +52,7 @@ export class ListingService {
       filter[appliedFilterObj.type] ? filter[appliedFilterObj.type].push(appliedFilterObj.value.name) : filter[appliedFilterObj.type] = [appliedFilterObj.value.name];
       paramsObj.filters = filter;
     }
-    if(categoryId || isPremiumUrl){
+    if(categoryId || isPremiumUrl || isSearchUrl){
 
       if(categoryId && categoryId !== 1) {
         paramsObj.categoryId = [categoryId];

@@ -26,13 +26,16 @@ export class FilterResolveService implements Resolve<Listing> {
     let _urlArr = (_tempUrl.split('/')).filter((item) => item !== "");
     let url = _urlArr.join('/')
     let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
-
+    let isSearchUrl = url.indexOf('search') > -1;
     let key = 'filter' + url + JSON.stringify(queryParams);
 
     if (this._cache.has(key)) {
       return Observable.of(this._cache.get(key));
     }
 
+    if(isSearchUrl) {
+      return {};
+    }
     if(isPremiumUrl){
       return this.ls.getPremiumFilters(url)
                .then(filter => {

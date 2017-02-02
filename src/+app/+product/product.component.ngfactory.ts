@@ -266,7 +266,7 @@ class _View_ProductComponent0 extends import1.AppView<import0.ProductComponent> 
     this._el_24 = import7.createRenderElement(this.renderer,this._el_22,'div',new import7.InlineArray2(2,'class','mob-section-heading section-heading'),(null as any));
     this._text_25 = this.renderer.createText(this._el_24,'PRODUCT DETAILS',(null as any));
     this._text_26 = this.renderer.createText(this._el_22,'\n        ',(null as any));
-    this._el_27 = import7.createRenderElement(this.renderer,this._el_22,'table',new import7.InlineArray2(2,'class','table table-striped'),(null as any));
+    this._el_27 = import7.createRenderElement(this.renderer,this._el_22,'table',new import7.InlineArray2(2,'class','table table-striped  text-capitalize'),(null as any));
     this._text_28 = this.renderer.createText(this._el_27,'\n          ',(null as any));
     this._el_29 = import7.createRenderElement(this.renderer,this._el_27,'tbody',import7.EMPTY_INLINE_ARRAY,(null as any));
     this._anchor_30 = this.renderer.createTemplateAnchor(this._el_29,(null as any));
@@ -818,42 +818,56 @@ class _View_ProductComponent6 extends import1.AppView<any> {
   _text_114:any;
   _el_115:any;
   _text_116:any;
-  _el_117:any;
-  _text_118:any;
+  _text_117:any;
+  _el_118:any;
   _text_119:any;
-  _el_120:any;
-  _text_121:any;
-  _el_122:any;
+  _text_120:any;
+  _el_121:any;
+  _text_122:any;
   _text_123:any;
-  _text_124:any;
-  _el_125:any;
+  _el_124:any;
+  _text_125:any;
   _text_126:any;
   _el_127:any;
   _text_128:any;
-  _text_129:any;
+  _el_129:any;
   _text_130:any;
   _text_131:any;
-  _text_132:any;
-  _el_133:any;
-  _text_134:any;
-  /*private*/ _expr_177:any;
-  /*private*/ _expr_178:any;
-  /*private*/ _expr_179:any;
-  /*private*/ _expr_180:any;
-  /*private*/ _expr_181:any;
-  /*private*/ _expr_182:any;
-  /*private*/ _expr_183:any;
-  /*private*/ _expr_184:any;
+  _el_132:any;
+  _text_133:any;
+  _el_134:any;
+  _text_135:any;
+  _text_136:any;
+  _el_137:any;
+  _text_138:any;
+  _el_139:any;
+  _text_140:any;
+  _text_141:any;
+  _text_142:any;
+  _text_143:any;
+  _text_144:any;
+  _el_145:any;
+  _text_146:any;
+  /*private*/ _expr_189:any;
+  /*private*/ _expr_190:any;
+  /*private*/ _expr_191:any;
+  /*private*/ _expr_192:any;
+  /*private*/ _expr_193:any;
+  /*private*/ _expr_194:any;
+  /*private*/ _expr_195:any;
+  /*private*/ _expr_196:any;
+  /*private*/ _expr_197:any;
   constructor(viewUtils:import7.ViewUtils,parentInjector:import8.Injector,declarationEl:import3.AppElement) {
     super(_View_ProductComponent6,renderType_ProductComponent,import9.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import10.ChangeDetectorStatus.CheckAlways);
-    this._expr_177 = import10.UNINITIALIZED;
-    this._expr_178 = import10.UNINITIALIZED;
-    this._expr_179 = import10.UNINITIALIZED;
-    this._expr_180 = import10.UNINITIALIZED;
-    this._expr_181 = import10.UNINITIALIZED;
-    this._expr_182 = import10.UNINITIALIZED;
-    this._expr_183 = import10.UNINITIALIZED;
-    this._expr_184 = import10.UNINITIALIZED;
+    this._expr_189 = import10.UNINITIALIZED;
+    this._expr_190 = import10.UNINITIALIZED;
+    this._expr_191 = import10.UNINITIALIZED;
+    this._expr_192 = import10.UNINITIALIZED;
+    this._expr_193 = import10.UNINITIALIZED;
+    this._expr_194 = import10.UNINITIALIZED;
+    this._expr_195 = import10.UNINITIALIZED;
+    this._expr_196 = import10.UNINITIALIZED;
+    this._expr_197 = import10.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import3.AppElement {
     this._el_0 = import7.createRenderElement(this.renderer,(null as any),'div',new import7.InlineArray2(2,'class','contain'),(null as any));
@@ -976,7 +990,7 @@ class _View_ProductComponent6 extends import1.AppView<any> {
     this._el_84 = import7.createRenderElement(this.renderer,this._el_37,'div',new import7.InlineArray2(2,'class','sold-by inline hide-sm'),(null as any));
     this._text_85 = this.renderer.createText(this._el_84,'\n            ',(null as any));
     this._el_86 = import7.createRenderElement(this.renderer,this._el_84,'div',new import7.InlineArray2(2,'class','heading mob-section-heading'),(null as any));
-    this._text_87 = this.renderer.createText(this._el_86,'Sold by',(null as any));
+    this._text_87 = this.renderer.createText(this._el_86,'Curator',(null as any));
     this._text_88 = this.renderer.createText(this._el_84,'\n            ',(null as any));
     this._el_89 = import7.createRenderElement(this.renderer,this._el_84,'div',new import7.InlineArray2(2,'class','shipping-cost-value'),(null as any));
     this._text_90 = this.renderer.createText(this._el_89,'',(null as any));
@@ -1011,28 +1025,40 @@ class _View_ProductComponent6 extends import1.AppView<any> {
     this._el_110 = import7.createRenderElement(this.renderer,this._el_37,'div',new import7.InlineArray4(4,'class','share-product hide-sm','id','share-buttons'),(null as any));
     this._text_111 = this.renderer.createText(this._el_110,'\n            ',(null as any));
     this._el_112 = import7.createRenderElement(this.renderer,this._el_110,'span',new import7.InlineArray2(2,'class','header'),(null as any));
-    this._text_113 = this.renderer.createText(this._el_112,'Share on  ',(null as any));
+    this._text_113 = this.renderer.createText(this._el_112,'',(null as any));
     this._text_114 = this.renderer.createText(this._el_110,'\n            ',(null as any));
-    this._el_115 = import7.createRenderElement(this.renderer,this._el_110,'a',new import7.InlineArray4(4,'href','http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts','target','_blank'),(null as any));
-    this._text_116 = this.renderer.createText(this._el_115,'\n              ',(null as any));
-    this._el_117 = import7.createRenderElement(this.renderer,this._el_115,'img',new import7.InlineArray4(4,'alt','Facebook','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/facebook.png'),(null as any));
-    this._text_118 = this.renderer.createText(this._el_115,'\n            ',(null as any));
-    this._text_119 = this.renderer.createText(this._el_110,'\n            ',(null as any));
-    this._el_120 = import7.createRenderElement(this.renderer,this._el_110,'a',new import7.InlineArray2(2,'target','_blank'),(null as any));
-    this._text_121 = this.renderer.createText(this._el_120,'\n              ',(null as any));
-    this._el_122 = import7.createRenderElement(this.renderer,this._el_120,'img',new import7.InlineArray4(4,'alt','Twitter','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/twitter.png'),(null as any));
-    this._text_123 = this.renderer.createText(this._el_120,'\n            ',(null as any));
-    this._text_124 = this.renderer.createText(this._el_110,'\n            ',(null as any));
-    this._el_125 = import7.createRenderElement(this.renderer,this._el_110,'a',new import7.InlineArray2(2,'href','javascript:void((function()%7Bvar%20e=document.createElement(\'script\');e.setAttribute(\'type\',\'text/javascript\');e.setAttribute(\'charset\',\'UTF-8\');e.setAttribute(\'src\',\'http://assets.pinterest.com/js/pinmarklet.js?r=\'+Math.random()*99999999);document.body.appendChild(e)%7D)());'),(null as any));
-    this._text_126 = this.renderer.createText(this._el_125,'\n              ',(null as any));
-    this._el_127 = import7.createRenderElement(this.renderer,this._el_125,'img',new import7.InlineArray4(4,'alt','Pinterest','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/pinterest.png'),(null as any));
-    this._text_128 = this.renderer.createText(this._el_125,'\n            ',(null as any));
-    this._text_129 = this.renderer.createText(this._el_110,'\n          ',(null as any));
-    this._text_130 = this.renderer.createText(this._el_37,'\n        ',(null as any));
-    this._text_131 = this.renderer.createText(this._el_35,'\n      ',(null as any));
-    this._text_132 = this.renderer.createText(this._el_0,'\n      ',(null as any));
-    this._el_133 = import7.createRenderElement(this.renderer,this._el_0,'div',new import7.InlineArray2(2,'class','clearfix'),(null as any));
-    this._text_134 = this.renderer.createText(this._el_0,'\n    ',(null as any));
+    this._el_115 = import7.createRenderElement(this.renderer,this._el_110,'span',new import7.InlineArray2(2,'class','header'),(null as any));
+    this._text_116 = this.renderer.createText(this._el_115,' | ',(null as any));
+    this._text_117 = this.renderer.createText(this._el_110,'\n            ',(null as any));
+    this._el_118 = import7.createRenderElement(this.renderer,this._el_110,'span',new import7.InlineArray2(2,'class','header'),(null as any));
+    this._text_119 = this.renderer.createText(this._el_118,'Sold By: Istreet',(null as any));
+    this._text_120 = this.renderer.createText(this._el_110,'\n            ',(null as any));
+    this._el_121 = import7.createRenderElement(this.renderer,this._el_110,'span',new import7.InlineArray2(2,'class','header'),(null as any));
+    this._text_122 = this.renderer.createText(this._el_121,' | ',(null as any));
+    this._text_123 = this.renderer.createText(this._el_110,'\n            ',(null as any));
+    this._el_124 = import7.createRenderElement(this.renderer,this._el_110,'span',new import7.InlineArray2(2,'class','header'),(null as any));
+    this._text_125 = this.renderer.createText(this._el_124,'Share on  ',(null as any));
+    this._text_126 = this.renderer.createText(this._el_110,'\n            ',(null as any));
+    this._el_127 = import7.createRenderElement(this.renderer,this._el_110,'a',new import7.InlineArray4(4,'href','http://www.facebook.com/sharer.php?u=https://www.facebook.com/craftsvilla/?fref=ts','target','_blank'),(null as any));
+    this._text_128 = this.renderer.createText(this._el_127,'\n              ',(null as any));
+    this._el_129 = import7.createRenderElement(this.renderer,this._el_127,'img',new import7.InlineArray4(4,'alt','Facebook','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/facebook.png'),(null as any));
+    this._text_130 = this.renderer.createText(this._el_127,'\n            ',(null as any));
+    this._text_131 = this.renderer.createText(this._el_110,'\n            ',(null as any));
+    this._el_132 = import7.createRenderElement(this.renderer,this._el_110,'a',new import7.InlineArray2(2,'target','_blank'),(null as any));
+    this._text_133 = this.renderer.createText(this._el_132,'\n              ',(null as any));
+    this._el_134 = import7.createRenderElement(this.renderer,this._el_132,'img',new import7.InlineArray4(4,'alt','Twitter','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/twitter.png'),(null as any));
+    this._text_135 = this.renderer.createText(this._el_132,'\n            ',(null as any));
+    this._text_136 = this.renderer.createText(this._el_110,'\n            ',(null as any));
+    this._el_137 = import7.createRenderElement(this.renderer,this._el_110,'a',new import7.InlineArray2(2,'href','javascript:void((function()%7Bvar%20e=document.createElement(\'script\');e.setAttribute(\'type\',\'text/javascript\');e.setAttribute(\'charset\',\'UTF-8\');e.setAttribute(\'src\',\'http://assets.pinterest.com/js/pinmarklet.js?r=\'+Math.random()*99999999);document.body.appendChild(e)%7D)());'),(null as any));
+    this._text_138 = this.renderer.createText(this._el_137,'\n              ',(null as any));
+    this._el_139 = import7.createRenderElement(this.renderer,this._el_137,'img',new import7.InlineArray4(4,'alt','Pinterest','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/pinterest.png'),(null as any));
+    this._text_140 = this.renderer.createText(this._el_137,'\n            ',(null as any));
+    this._text_141 = this.renderer.createText(this._el_110,'\n          ',(null as any));
+    this._text_142 = this.renderer.createText(this._el_37,'\n        ',(null as any));
+    this._text_143 = this.renderer.createText(this._el_35,'\n      ',(null as any));
+    this._text_144 = this.renderer.createText(this._el_0,'\n      ',(null as any));
+    this._el_145 = import7.createRenderElement(this.renderer,this._el_0,'div',new import7.InlineArray2(2,'class','clearfix'),(null as any));
+    this._text_146 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_9,'mouseover',this.eventHandler(this._handle_mouseover_9_0.bind(this)));
     var disposable_1:Function = this.renderer.listen(this._el_9,'mousemove',this.eventHandler(this._handle_mousemove_9_1.bind(this)));
     var disposable_2:Function = this.renderer.listen(this._el_9,'mouseout',this.eventHandler(this._handle_mouseout_9_2.bind(this)));
@@ -1156,24 +1182,36 @@ class _View_ProductComponent6 extends import1.AppView<any> {
       this._text_114,
       this._el_115,
       this._text_116,
-      this._el_117,
-      this._text_118,
+      this._text_117,
+      this._el_118,
       this._text_119,
-      this._el_120,
-      this._text_121,
-      this._el_122,
+      this._text_120,
+      this._el_121,
+      this._text_122,
       this._text_123,
-      this._text_124,
-      this._el_125,
+      this._el_124,
+      this._text_125,
       this._text_126,
       this._el_127,
       this._text_128,
-      this._text_129,
+      this._el_129,
       this._text_130,
       this._text_131,
-      this._text_132,
-      this._el_133,
-      this._text_134
+      this._el_132,
+      this._text_133,
+      this._el_134,
+      this._text_135,
+      this._text_136,
+      this._el_137,
+      this._text_138,
+      this._el_139,
+      this._text_140,
+      this._text_141,
+      this._text_142,
+      this._text_143,
+      this._text_144,
+      this._el_145,
+      this._text_146
     ]
     ,[
       disposable_0,
@@ -1260,45 +1298,50 @@ class _View_ProductComponent6 extends import1.AppView<any> {
     this._NgIf_106_6.check_ngIf(currVal_106_0_0,throwOnChange,false);
     this._NgIf_106_6.detectChangesInInputProps(this,this._anchor_106,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
-    const currVal_177:any = import7.interpolate(1,'',this.parent.context.imageUrl,'');
-    if (import7.checkBinding(throwOnChange,this._expr_177,currVal_177)) {
-      this.renderer.setElementProperty(this._el_9,'src',this.viewUtils.sanitizer.sanitize(import29.SecurityContext.URL,currVal_177));
-      this._expr_177 = currVal_177;
+    const currVal_189:any = import7.interpolate(1,'',this.parent.context.imageUrl,'');
+    if (import7.checkBinding(throwOnChange,this._expr_189,currVal_189)) {
+      this.renderer.setElementProperty(this._el_9,'src',this.viewUtils.sanitizer.sanitize(import29.SecurityContext.URL,currVal_189));
+      this._expr_189 = currVal_189;
     }
-    const currVal_178:any = import7.interpolate(1,'',this.parent.context.products.productName,'');
-    if (import7.checkBinding(throwOnChange,this._expr_178,currVal_178)) {
-      this.renderer.setElementProperty(this._el_9,'alt',currVal_178);
-      this._expr_178 = currVal_178;
+    const currVal_190:any = import7.interpolate(1,'',this.parent.context.products.productName,'');
+    if (import7.checkBinding(throwOnChange,this._expr_190,currVal_190)) {
+      this.renderer.setElementProperty(this._el_9,'alt',currVal_190);
+      this._expr_190 = currVal_190;
     }
-    const currVal_179:any = import7.interpolate(1,'',this.parent.context.products.productName,'');
-    if (import7.checkBinding(throwOnChange,this._expr_179,currVal_179)) {
-      this.renderer.setText(this._text_42,currVal_179);
-      this._expr_179 = currVal_179;
+    const currVal_191:any = import7.interpolate(1,'',this.parent.context.products.productName,'');
+    if (import7.checkBinding(throwOnChange,this._expr_191,currVal_191)) {
+      this.renderer.setText(this._text_42,currVal_191);
+      this._expr_191 = currVal_191;
     }
-    const currVal_180:any = import7.interpolate(1,'$',this.parent.context.products.discountedPrice,'');
-    if (import7.checkBinding(throwOnChange,this._expr_180,currVal_180)) {
-      this.renderer.setText(this._text_48,currVal_180);
-      this._expr_180 = currVal_180;
+    const currVal_192:any = import7.interpolate(1,'$',this.parent.context.products.discountedPrice,'');
+    if (import7.checkBinding(throwOnChange,this._expr_192,currVal_192)) {
+      this.renderer.setText(this._text_48,currVal_192);
+      this._expr_192 = currVal_192;
     }
-    const currVal_181:any = import7.interpolate(1,'',this.parent.context.products.shippingCostWorld,'');
-    if (import7.checkBinding(throwOnChange,this._expr_181,currVal_181)) {
-      this.renderer.setText(this._text_72,currVal_181);
-      this._expr_181 = currVal_181;
+    const currVal_193:any = import7.interpolate(1,'',this.parent.context.products.shippingCostWorld,'');
+    if (import7.checkBinding(throwOnChange,this._expr_193,currVal_193)) {
+      this.renderer.setText(this._text_72,currVal_193);
+      this._expr_193 = currVal_193;
     }
-    const currVal_182:any = import7.interpolate(1,'',this.parent.context.products.estimatedDeliveryTime,' ');
-    if (import7.checkBinding(throwOnChange,this._expr_182,currVal_182)) {
-      this.renderer.setText(this._text_81,currVal_182);
-      this._expr_182 = currVal_182;
+    const currVal_194:any = import7.interpolate(1,'',this.parent.context.products.estimatedDeliveryTime,' ');
+    if (import7.checkBinding(throwOnChange,this._expr_194,currVal_194)) {
+      this.renderer.setText(this._text_81,currVal_194);
+      this._expr_194 = currVal_194;
     }
-    const currVal_183:any = import7.interpolate(1,'',this.parent.context.vendorDetails.vendorName,' ');
-    if (import7.checkBinding(throwOnChange,this._expr_183,currVal_183)) {
-      this.renderer.setText(this._text_90,currVal_183);
-      this._expr_183 = currVal_183;
+    const currVal_195:any = import7.interpolate(1,'',this.parent.context.vendorDetails.vendorName,' ');
+    if (import7.checkBinding(throwOnChange,this._expr_195,currVal_195)) {
+      this.renderer.setText(this._text_90,currVal_195);
+      this._expr_195 = currVal_195;
     }
-    const currVal_184:any = import7.interpolate(1,'https://twitter.com/share?url=https://www.craftsvilla.com&text=Simple%20Share%20Buttons&hashtags=',this.parent.context.products.productName,'');
-    if (import7.checkBinding(throwOnChange,this._expr_184,currVal_184)) {
-      this.renderer.setElementProperty(this._el_120,'href',this.viewUtils.sanitizer.sanitize(import29.SecurityContext.URL,currVal_184));
-      this._expr_184 = currVal_184;
+    const currVal_196:any = import7.interpolate(1,'Product ID: ',this.parent.context.productId,'');
+    if (import7.checkBinding(throwOnChange,this._expr_196,currVal_196)) {
+      this.renderer.setText(this._text_113,currVal_196);
+      this._expr_196 = currVal_196;
+    }
+    const currVal_197:any = import7.interpolate(1,'https://twitter.com/share?url=https://www.craftsvilla.com&text=Simple%20Share%20Buttons&hashtags=',this.parent.context.products.productName,'');
+    if (import7.checkBinding(throwOnChange,this._expr_197,currVal_197)) {
+      this.renderer.setElementProperty(this._el_132,'href',this.viewUtils.sanitizer.sanitize(import29.SecurityContext.URL,currVal_197));
+      this._expr_197 = currVal_197;
     }
     this.detectViewChildrenChanges(throwOnChange);
   }

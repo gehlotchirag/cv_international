@@ -110,7 +110,7 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
   }
 
   searchItems(){
-    if(typeof _satellite != 'undefined') {
+    if(typeof _satellite != 'undefined' && this.queryInput && this.queryInput != '') {
       digitalData.page={
         search:{
           searchTerm:this.queryInput,
@@ -119,10 +119,10 @@ export class HeaderComponent implements OnInit , OnChanges, DoCheck {
       _satellite.track("search-click");
     }
     if(this.queryInput && this.queryInput != ''){
-      this.router.navigate(['/womens-clothing'], { queryParams: { query: this.queryInput }});
-    }
-    else {
-      this.router.navigate(['/womens-clothing']);
+      RouterHeaderBindingService.setSearchQuery(this.queryInput);
+      if(this.router.url.split('?')[0] !== '/search') {
+        this.router.navigate(['/search'], { queryParams: { query: this.queryInput }});
+      }
     }
   }
 

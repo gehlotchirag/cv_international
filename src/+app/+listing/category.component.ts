@@ -7,6 +7,8 @@ import { Subscription } from 'rxjs';
 import { ListingService } from './listing.service';
 import { CommonSharedService } from '../shared/services/common-shared.service';
 import { ProgressBarService } from '../shared/services/progress-bar.service';
+import { RouterHeaderBindingService } from '../shared/services/router-header-binding.service';
+
 
 import Listing from './listing';
 
@@ -19,7 +21,7 @@ declare var digitalData: any;
   selector: 'cvi-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css'],
-  providers: [ ListingService, CommonSharedService, ProgressBarService ],
+  providers: [ ListingService, CommonSharedService, ProgressBarService, RouterHeaderBindingService ],
 })
 
 export class CategoryComponent implements OnInit, OnDestroy{
@@ -37,6 +39,8 @@ export class CategoryComponent implements OnInit, OnDestroy{
   public queryParams: Object = {};
   public filtersMap = categoryFilterMap.filtersMap;
   public premiumUrlArr = categoryFilterMap.premiumUrlArr;
+  public queryInput = "";
+  public searchQuery = '';
   public sortType: Array<any> = [
    {
       'data': [
@@ -110,6 +114,12 @@ export class CategoryComponent implements OnInit, OnDestroy{
       this.setCountPerPage();
       this.setBreadcrumbs();
     });
+
+    this.router.events.subscribe((event) => {
+      if(event.url.indexOf('search') > -1) {
+        this.search();
+      }
+    })
   }
 
   ngOnInit(){
@@ -118,6 +128,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
         let query, params, page;
         let url = this.getPageUrl();
         let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
+        let isSearchPage = url.indexOf('search') > -1;
         if(queryParams){
           query = queryParams['query'];
           params = queryParams['params'];
@@ -132,6 +143,10 @@ export class CategoryComponent implements OnInit, OnDestroy{
            paramObj[url] = 1;
         }
 
+        if(isSearchPage) {
+          this.searchQuery = paramObj['query'];
+        }
+
         this.queryParams = paramObj;
       });
     this.setCountPerPage();
@@ -140,6 +155,16 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(){
     this.subscription.unsubscribe();
+  }
+
+
+  search(){
+    RouterHeaderBindingService.getSearchQuery().subscribe((data) =>  {
+      if(this.searchQuery !== data) {
+        this.queryParams['query'] = data;
+        this.fetchCategoryData();
+      }
+    });
   }
 
   trackPage(){

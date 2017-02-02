@@ -2,10 +2,12 @@
   <ul class="list-unstyled menu-list"
     (mouseleave)="onMouseLeave()"
     (selectedCategory)="getSelectedCategory($event)">
-    <li class="header">
-      <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/menu_filled.svg" class="mega-menu-list-ico pull-left">
-      <a routerLink="online-shopping"><h1 class="pull-left">SHOP BY CATEGORY</h1></a>
-    </li>
+    <a routerLink="online-shopping">
+      <li class="header">
+        <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/menu_filled.svg" class="mega-menu-list-ico pull-left">
+        <span class="pull-left">SHOP BY CATEGORY</span>
+      </li>
+    </a>
     <cv-menu-link
         *ngFor="let menuCategoryData of menuCategoriesData"
         [categoryData]="menuCategoryData"

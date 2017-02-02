@@ -5,7 +5,8 @@ export class RouterHeaderBindingService {
 
   private static _emitters: { [ID: string]: EventEmitter<any> } = {
     'caretStatus': new EventEmitter<boolean>(),
-    'menuData': new EventEmitter<any>()
+    'menuData': new EventEmitter<any>(),
+    'searchQuery': new EventEmitter<any>(),
   };
   private static _emitter: EventEmitter<boolean> = new EventEmitter<boolean>(false);
 
@@ -23,6 +24,14 @@ export class RouterHeaderBindingService {
 
   static getMegaMenuData(): EventEmitter<any> {
     return this._emitters['menuData'];
+  }
+
+  static setSearchQuery(query): void {
+    this._emitters['searchQuery'].emit(query);
+  }
+
+  static getSearchQuery(): EventEmitter<any> {
+    return this._emitters['searchQuery'];
   }
 
 }

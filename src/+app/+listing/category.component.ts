@@ -256,7 +256,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
             for (var i = 0; i < self.filterData[key]["applied"].length; ++i) {
               let tempFilter = self.filterData[key]["applied"][i]
               self.filterData[key]["available"] = self.filterData[key]["available"].filter(function (element) {
-                return JSON.stringify(element) !== JSON.stringify(tempFilter)
+                return tempFilter.name.toLowerCase().indexOf(element.name.toLowerCase()) === -1;
               })
             }
           } else if(isPriceFilter) { 
@@ -308,7 +308,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
       for (var i = 0; i < this.filterData[filters.key]["applied"].length; ++i) {
         let tempFilter = this.filterData[filters.key]["applied"][i]
         this.filterData[filters.key]["available"] = this.filterData[filters.key]["available"].filter(function (element) {
-          return JSON.stringify(element) !== JSON.stringify(tempFilter)
+          return tempFilter.name.toLowerCase().indexOf(element.name.toLowerCase()) === -1;
         })
       }
     }else{
@@ -327,7 +327,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
         if(this.filterData[filterObj.type]) {
           this.filterData[filterObj.type]["applied"].push(filterObj.value);
           this.filterData[filterObj.type]["available"] = this.filterData[filterObj.type]["available"].filter(function (element) {
-            return JSON.stringify(element) !== JSON.stringify(filterObj.value) 
+            return filterObj.value.name.toLowerCase().indexOf(element.name.toLowerCase()) === -1;
           })
         }
       }
@@ -382,7 +382,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
     if (appliedFilterIndex > -1) this.appliedFilter.splice(appliedFilterIndex, 1);
     this.filterData[filters.key]["applied"] = this.filterData[filters.key]["applied"].filter(function (element) {
-      return JSON.stringify(element) !== JSON.stringify(removedFilter) 
+      return removedFilter.name.toLowerCase().indexOf(element.name.toLowerCase()) === -1;
     })
 
     if(isPriceFilter) { 
@@ -428,7 +428,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     let appliedFilterIndex = this.appliedFilter.indexOf(JSON.stringify(removedFilter.name));
     if (appliedFilterIndex > -1) this.appliedFilter.splice(appliedFilterIndex, 1);
     this.filterData[filters.key]["applied"] = this.filterData[filters.key]["applied"].filter(function (element) {
-      return JSON.stringify(element) !== JSON.stringify(removedFilter) 
+      return removedFilter.name.toLowerCase().indexOf(element.name.toLowerCase()) === -1;
     })
     this.manageFilterData(filters, true);
   }

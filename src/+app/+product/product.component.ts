@@ -13,6 +13,7 @@ import { CommonSharedService } from '../shared/services/common-shared.service';
 
 declare var _satellite: any;
 declare var digitalData: any;
+declare var dataLayer:any;
 
 @Component({
   selector: 'cvi-product',
@@ -305,8 +306,17 @@ export class ProductComponent implements OnInit, AfterViewInit {
       };
 
       digitalData.events = "prodView";
-    
+      
       _satellite.track("page-load");
+    }
+      
+    if (typeof dataLayer !== 'undefined' && dataLayer) {
+      dataLayer.push({
+        'event': 'ProductPageView',
+        'productId': this.productId,
+        'productPrice': this.offerPrice,
+        'prodName' : this.productName
+      });
     }
   }
 

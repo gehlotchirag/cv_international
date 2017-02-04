@@ -32,9 +32,12 @@
 </style>
 <div class="content product-page">
   <div class="navigation-breadcrumbs clearfix visible-lg visible-md" *ngIf="breadCrumbs.length > 0">
-    <ol class="clearfix">
-      <li class="breadcrumb-list pull-left" *ngFor="let breadcrumb of breadCrumbs" >
-        <a routerLink="{{breadcrumb['url']}}">{{breadcrumb['name']}}</a>
+    <ol class="clearfix" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li class="breadcrumb-list pull-left" *ngFor="let breadcrumb of breadCrumbs; let i = index " itemscope itemtype="http://schema.org/ListItem">
+        <a routerLink="{{breadcrumb['url']}}" itemprop="item">
+          <span itemprop="name">{{breadcrumb['name']}}</span>
+        </a>
+        <meta itemprop="position" content="{{i + 1}}" />
       </li>
     </ol>
   </div>

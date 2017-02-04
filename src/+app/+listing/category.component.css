@@ -124,6 +124,13 @@
 .navigation-breadcrumbs {
     margin-bottom: 7px;
 }
+.navigation-breadcrumbs ol {
+    margin: 0 auto;
+    list-style: none;
+    max-width: 1400px;
+    list-style: none;
+    padding: 0;
+}
 .breadcrumb-list {
     margin-right: 18px;
     text-transform: capitalize;

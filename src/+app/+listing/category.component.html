@@ -47,9 +47,14 @@
 	</div>
 	<div class="pull-left products-section">
 		<div class="navigation-breadcrumbs clearfix visible-lg visible-md" *ngIf="pageBreadcrumbs.length > 0">
-			<div class="breadcrumb-list pull-left" *ngFor="let breadcrumb of pageBreadcrumbs; let i = index">
-				<a routerLink="{{breadcrumb.link}}" (click)="breadcrumbClick(i)">{{breadcrumb.name}}</a>
-			</div>
+			<ol class="clearfix" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<li class="breadcrumb-list pull-left" *ngFor="let breadcrumb of pageBreadcrumbs; let i = index " itemscope itemtype="http://schema.org/ListItem">
+					<a routerLink="{{breadcrumb.link}}" (click)="breadcrumbClick(i)" itemprop="item">
+						<span itemprop="name">{{breadcrumb.name}}</span>
+					</a>
+					<meta itemprop="position" content="{{i + 1}}" />
+				</li>
+			</ol>
 		</div>
 		<div class="products-header clearfix">
 			<div class="product-name-count pull-left">

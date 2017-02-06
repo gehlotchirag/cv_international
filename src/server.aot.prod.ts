@@ -121,7 +121,7 @@ function ngApp(req, res) {
   let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
   console.log("User Entry Point. Time: ",formatted, "Url:", req.originalUrl);
   let options = {}
-  let base_url = 'http://international.craftsvilla.com:8000/api/front_end';
+  let base_url = 'http://international.craftsvilla.com/api/front_end';
   let org_url = req.originalUrl.split('?')[0];
   let url = '';
   let isProductUrl = false;

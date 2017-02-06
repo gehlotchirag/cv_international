@@ -503,7 +503,7 @@ class _View_ProductComponent1 extends import1.AppView<any> {
   createInternal(rootSelector:string):import3.AppElement {
     this._el_0 = import7.createRenderElement(this.renderer,(null as any),'div',new import7.InlineArray2(2,'class','navigation-breadcrumbs clearfix visible-lg visible-md'),(null as any));
     this._text_1 = this.renderer.createText(this._el_0,'\n    ',(null as any));
-    this._el_2 = import7.createRenderElement(this.renderer,this._el_0,'ol',new import7.InlineArray2(2,'class','clearfix'),(null as any));
+    this._el_2 = import7.createRenderElement(this.renderer,this._el_0,'ol',new import7.InlineArray8(6,'class','clearfix','itemscope','','itemtype','http://schema.org/BreadcrumbList'),(null as any));
     this._text_3 = this.renderer.createText(this._el_2,'\n      ',(null as any));
     this._anchor_4 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
     this._appEl_4 = new import3.AppElement(4,2,this,this._anchor_4);
@@ -545,32 +545,49 @@ class _View_ProductComponent2 extends import1.AppView<any> {
   _el_2:any;
   _RouterLinkWithHref_2_3:import26.Wrapper_RouterLinkWithHref;
   _text_3:any;
-  _text_4:any;
-  /*private*/ _expr_6:any;
+  _el_4:any;
+  _text_5:any;
+  _text_6:any;
+  _text_7:any;
+  _el_8:any;
+  _text_9:any;
+  /*private*/ _expr_11:any;
+  /*private*/ _expr_12:any;
   constructor(viewUtils:import7.ViewUtils,parentInjector:import8.Injector,declarationEl:import3.AppElement) {
     super(_View_ProductComponent2,renderType_ProductComponent,import9.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import10.ChangeDetectorStatus.CheckAlways);
-    this._expr_6 = import10.UNINITIALIZED;
+    this._expr_11 = import10.UNINITIALIZED;
+    this._expr_12 = import10.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import3.AppElement {
-    this._el_0 = import7.createRenderElement(this.renderer,(null as any),'li',new import7.InlineArray2(2,'class','breadcrumb-list pull-left'),(null as any));
+    this._el_0 = import7.createRenderElement(this.renderer,(null as any),'li',new import7.InlineArray8(6,'class','breadcrumb-list pull-left','itemscope','','itemtype','http://schema.org/ListItem'),(null as any));
     this._text_1 = this.renderer.createText(this._el_0,'\n        ',(null as any));
-    this._el_2 = import7.createRenderElement(this.renderer,this._el_0,'a',import7.EMPTY_INLINE_ARRAY,(null as any));
+    this._el_2 = import7.createRenderElement(this.renderer,this._el_0,'a',new import7.InlineArray2(2,'itemprop','item'),(null as any));
     this._RouterLinkWithHref_2_3 = new import26.Wrapper_RouterLinkWithHref(this.parent.parent.parentInjector.get(import13.Router),this.parent.parent.parentInjector.get(import12.ActivatedRoute),this.parent.parent.parentInjector.get(import27.LocationStrategy));
-    this._text_3 = this.renderer.createText(this._el_2,'',(null as any));
-    this._text_4 = this.renderer.createText(this._el_0,'\n      ',(null as any));
+    this._text_3 = this.renderer.createText(this._el_2,'\n          ',(null as any));
+    this._el_4 = import7.createRenderElement(this.renderer,this._el_2,'span',new import7.InlineArray2(2,'itemprop','name'),(null as any));
+    this._text_5 = this.renderer.createText(this._el_4,'',(null as any));
+    this._text_6 = this.renderer.createText(this._el_2,'\n        ',(null as any));
+    this._text_7 = this.renderer.createText(this._el_0,'\n        ',(null as any));
+    this._el_8 = import7.createRenderElement(this.renderer,this._el_0,'meta',new import7.InlineArray2(2,'itemprop','position'),(null as any));
+    this._text_9 = this.renderer.createText(this._el_0,'\n      ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
     this.init(([] as any[]).concat([this._el_0]),[
       this._el_0,
       this._text_1,
       this._el_2,
       this._text_3,
-      this._text_4
+      this._el_4,
+      this._text_5,
+      this._text_6,
+      this._text_7,
+      this._el_8,
+      this._text_9
     ]
     ,[disposable_0],([] as any[]));
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import28.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 3)))) { return this._RouterLinkWithHref_2_3.context; }
+    if (((token === import28.RouterLinkWithHref) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 6)))) { return this._RouterLinkWithHref_2_3.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -579,10 +596,15 @@ class _View_ProductComponent2 extends import1.AppView<any> {
     this._RouterLinkWithHref_2_3.detectChangesInInputProps(this,this._el_2,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
     this._RouterLinkWithHref_2_3.detectChangesInHostProps(this,this._el_2,throwOnChange);
-    const currVal_6:any = import7.interpolate(1,'',this.context.$implicit['name'],'');
-    if (import7.checkBinding(throwOnChange,this._expr_6,currVal_6)) {
-      this.renderer.setText(this._text_3,currVal_6);
-      this._expr_6 = currVal_6;
+    const currVal_11:any = import7.interpolate(1,'',this.context.$implicit['name'],'');
+    if (import7.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
+      this.renderer.setText(this._text_5,currVal_11);
+      this._expr_11 = currVal_11;
+    }
+    const currVal_12:any = import7.interpolate(1,'',(this.context.index + 1),'');
+    if (import7.checkBinding(throwOnChange,this._expr_12,currVal_12)) {
+      this.renderer.setElementProperty(this._el_8,'content',currVal_12);
+      this._expr_12 = currVal_12;
     }
     this.detectViewChildrenChanges(throwOnChange);
   }

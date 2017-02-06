@@ -7,7 +7,7 @@ export class HttpClientService {
   private http: Http;
   private headers = new Headers();
 
-  private BASE_URL = 'http://international.craftsvilla.com:8000/';
+  private BASE_URL = 'http://international.craftsvilla.com/';
 
   constructor(http: Http) {
     this.http = http;

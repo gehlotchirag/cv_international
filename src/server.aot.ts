@@ -116,7 +116,7 @@ app.use('/api', createTodoApi());
 
 function ngApp(req, res) {
   let options = {}
-  let base_url = 'http://international.craftsvilla.com:8000/api/front_end';
+  let base_url = 'http://international.craftsvilla.com/api/front_end';
   let org_url = req.originalUrl.split('?')[0];
   let url = '';
   if(org_url === '/') {

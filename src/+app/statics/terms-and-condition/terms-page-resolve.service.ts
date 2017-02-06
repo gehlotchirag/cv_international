@@ -18,7 +18,7 @@ export class TermsPageResolveService implements Resolve<any> {
     let url = _urlArr.join('/')
 
     let key = url;
-    let apiUrl = 'http://international.craftsvilla.com:8000/api/other/terms';
+    let apiUrl = 'http://international.craftsvilla.com/api/other/terms';
     
     if (this._cache.has(key)) {
       return Observable.of(this._cache.get(key));

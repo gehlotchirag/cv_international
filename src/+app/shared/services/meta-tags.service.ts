@@ -37,7 +37,7 @@ export class MetaService {
   }
 
   _getOrCreateHrefLangTag(name: string){
-    let el: Array<HTMLElement> = this.document.querySelectorAll(`link[hreflang`);
+    let el: Array<HTMLElement> = this.document.querySelectorAll(`link[hreflang]`);
     if (el.length == 0) {
       el = [];
       this.hreflangArr.forEach((hreflang) => {

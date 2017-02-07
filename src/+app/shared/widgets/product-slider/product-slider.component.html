@@ -12,7 +12,8 @@
             <a routerLink="/shop/{{product.slug}}/{{product.productId}}" (click)="feedClick(product, i+1)">
               <img [lazyLoad]="product.imgUrl" class="img-responsive loading" alt="{{ product.productName }}">
               <div class="product-info">
-                <div class="product-name">{{ product.productName | truncate : 35 }}</div>
+                <div class="product-name" *ngIf="product.productName">{{ product.productName | truncate : 35 }}</div>
+                <div class="product-name" *ngIf="product.title">{{ product.title | truncate : 35 }}</div>
                 <div class="product-price">
                   <span class="discounted-price">${{ product.discountedPrice  }}</span>
                   <span class="actual-price" *ngIf="product.discountPercentage !== 0"><s>${{ product.regularPrice  }}</s></span>

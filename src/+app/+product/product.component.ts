@@ -1,6 +1,8 @@
-import { Component, OnInit, ElementRef, Renderer, AfterViewInit } from '@angular/core';
+import { Component, OnInit,OnDestroy, ElementRef, Renderer, AfterViewInit } from '@angular/core';
+import { ViewContainerRef, ViewChild, ComponentRef, ComponentFactoryResolver, ComponentFactory } from '@angular/core';
+
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Response } from '@angular/http';
 
 
@@ -8,6 +10,7 @@ import { Product } from './product';
 
 import { ProductService } from './product.service';
 import { CartDetailsService } from '../shared/services/cart-details.service';
+import { WidgetFactoryService } from '../shared/widgets/widgets-factory.service';
 // import { WishListService } from '../shared/services/wish-list.service';
 import { CommonSharedService } from '../shared/services/common-shared.service';
 
@@ -19,13 +22,14 @@ declare var dataLayer:any;
   selector: 'cvi-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
-  providers: [ProductService, CartDetailsService, CommonSharedService],
+  providers: [ ProductService, CartDetailsService, CommonSharedService, WidgetFactoryService ],
 })
-export class ProductComponent implements OnInit, AfterViewInit {
+export class ProductComponent implements OnInit, AfterViewInit, OnDestroy {
 
+    @ViewChild('content', { read: ViewContainerRef }) contentContainer: ViewContainerRef;
+    cmpRef: ComponentRef<any>;
+    private subscription: Subscription;
     products: Observable<Product[]>;
-    similarProducts: Observable<Product[]>;
-    vendorDetail :any;
     attributes: Observable<Object>;
     sizeChartHeaders: string[];
     sizeChartData: any[];
@@ -35,7 +39,6 @@ export class ProductComponent implements OnInit, AfterViewInit {
     vendorDetails: Observable<Object>;
     columns: any[];
     productId:any;
-    customerId="1696318";
     selectedSize:string;
     isClassVisible:boolean;
     isDiscountPercVesible:boolean;
@@ -81,7 +84,9 @@ export class ProductComponent implements OnInit, AfterViewInit {
               private router: Router,
               private elementRef: ElementRef,
               private renderer: Renderer,
-              private commonService: CommonSharedService
+              private commonService: CommonSharedService,
+              private resolver: ComponentFactoryResolver,
+              private widgetFactoryService: WidgetFactoryService
   ) {
     this.sizeChartData = [];
     this.sizeChartHeaders = [];
@@ -245,6 +250,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     );
 
     this.route.data.pluck('product', 'd', 'category').subscribe((data: Array<any>) => {
+      this.breadCrumbs = [];
       let breadcrumbObj = {'name': 'Home', 'url': '/'};
       this.breadCrumbs.push(breadcrumbObj);
       for (let i = 0; i < data.length; i++) {
@@ -255,6 +261,25 @@ export class ProductComponent implements OnInit, AfterViewInit {
       this.breadCrumbs.push(breadcrumbObj);
     })
 
+    this.subscription = this.route.params.subscribe((params) => {
+      let id = +params['id'];
+      this.contentContainer.clear();
+      this.productService.getSimilarProducts(id)
+                         .pluck('d')
+                         .subscribe((data) => {
+                             this.attachComponent(data, 'Similar Products');
+                         })
+      this.productService.getSameVendorProducts(id)
+                         .pluck('d')
+                         .subscribe((data) => {
+                             this.attachComponent(data, 'Products From Same Curator');
+                         })
+    })
+
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 
   ngAfterViewInit() {
@@ -320,6 +345,20 @@ export class ProductComponent implements OnInit, AfterViewInit {
     }
   }
 
+  attachComponent(data, title){
+    let componentData = data;
+    try {
+      let componentType = this.widgetFactoryService.getWidgetBaseClassName('ProductSlider');
+      let factory = this.resolver.resolveComponentFactory(componentType);
+      let cmpRef: any = this.contentContainer.createComponent(factory);
+      cmpRef.instance.dataItems = data;
+      cmpRef.instance.header = title;
+      cmpRef.instance.viewMoreUrl = null;
+    }
+    catch(e){
+      console.error(e, 'ProductSlider');
+    }
+  }
 
   addWish(event: any): void {
     // this.wishListService.addToWishList(this.customerId, this.productId);

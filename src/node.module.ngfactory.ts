@@ -561,7 +561,7 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
     return this.__HttpClientService_72;
   }
   get _ProductService_73():import41.ProductService {
-    if ((this.__ProductService_73 == (null as any))) { (this.__ProductService_73 = new import41.ProductService(this._HttpClientService_72)); }
+    if ((this.__ProductService_73 == (null as any))) { (this.__ProductService_73 = new import41.ProductService(this._HttpClientService_72,this._CacheService_26)); }
     return this.__ProductService_73;
   }
   get _UrlSerializer_74():import42.DefaultUrlSerializer {

@@ -32,8 +32,8 @@ import * as import24 from '../shared/widgets/product-card/product-card.component
 import * as import25 from '@angular/core/src/i18n/tokens';
 import * as import26 from './product.component';
 import * as import27 from '../shared/services/http-client.service';
-import * as import28 from '@angular/router/src/router';
-import * as import29 from '../shared/cache.service';
+import * as import28 from '../shared/cache.service';
+import * as import29 from '@angular/router/src/router';
 import * as import30 from '@angular/router/src/router_config_loader';
 class ProductModuleInjector extends import0.NgModuleInjector<import1.ProductModule> {
   _CommonModule_0:import2.CommonModule;
@@ -91,11 +91,11 @@ class ProductModuleInjector extends import0.NgModuleInjector<import1.ProductModu
     return this.__ROUTES_8;
   }
   get _ProductService_9():import9.ProductService {
-    if ((this.__ProductService_9 == (null as any))) { (this.__ProductService_9 = new import9.ProductService(this.parent.get(import27.HttpClientService))); }
+    if ((this.__ProductService_9 == (null as any))) { (this.__ProductService_9 = new import9.ProductService(this.parent.get(import27.HttpClientService),this.parent.get(import28.CacheService))); }
     return this.__ProductService_9;
   }
   get _ProductDetailResolve_10():import10.ProductDetailResolve {
-    if ((this.__ProductDetailResolve_10 == (null as any))) { (this.__ProductDetailResolve_10 = new import10.ProductDetailResolve(this._ProductService_9,this.parent.get(import28.Router),this.parent.get(import29.CacheService))); }
+    if ((this.__ProductDetailResolve_10 == (null as any))) { (this.__ProductDetailResolve_10 = new import10.ProductDetailResolve(this._ProductService_9,this.parent.get(import29.Router),this.parent.get(import28.CacheService))); }
     return this.__ProductDetailResolve_10;
   }
   createInternal():import1.ProductModule {

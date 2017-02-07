@@ -74,7 +74,7 @@ class _View_HomeComponent_Host0 extends import1.AppView<any> {
     super(_View_HomeComponent_Host0,renderType_HomeComponent_Host,import11.ViewType.HOST,viewUtils,parentInjector,declarationEl,import12.ChangeDetectorStatus.CheckAlways);
   }
   get _ProductService_0_9():import8.ProductService {
-    if ((this.__ProductService_0_9 == (null as any))) { (this.__ProductService_0_9 = new import8.ProductService(this.parentInjector.get(import13.HttpClientService))); }
+    if ((this.__ProductService_0_9 == (null as any))) { (this.__ProductService_0_9 = new import8.ProductService(this.parentInjector.get(import13.HttpClientService),this.parentInjector.get(import14.CacheService))); }
     return this.__ProductService_0_9;
   }
   createInternal(rootSelector:string):import3.AppElement {

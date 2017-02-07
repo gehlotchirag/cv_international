@@ -576,7 +576,7 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
     return this.__HttpClientService_79;
   }
   get _ProductService_80():import52.ProductService {
-    if ((this.__ProductService_80 == (null as any))) { (this.__ProductService_80 = new import52.ProductService(this._HttpClientService_79)); }
+    if ((this.__ProductService_80 == (null as any))) { (this.__ProductService_80 = new import52.ProductService(this._HttpClientService_79,this._CacheService_30)); }
     return this.__ProductService_80;
   }
   get _ProductDetailResolve_81():import53.ProductDetailResolve {

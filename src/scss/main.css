@@ -42,8 +42,19 @@ ul.nav.nav-tabs.tabs-widget li a {
     float: none;
     max-width: 1400px;
     margin: 0 auto;
+    width: 95%;
 }
 
+.product-container {
+  background-color: white;
+  width: 95%;
+  max-width: 1400px;
+  -webkit-box-shadow: 1px 1px 4px #e2e2e2;
+  -moz-box-shadow: 1px 1px 4px #e2e2e2;
+  box-shadow: 1px 1px 4px #e2e2e2;
+  margin: 5px auto;
+  padding: 15px 25px 15px 15px;
+}
 .displayNone{display: none;}
 
 .bag-container .bag-header {
@@ -354,7 +365,7 @@ ul.nav.nav-tabs.tabs-widget li a {
 
   .contain {
     width: 95%;
-    max-width: 1230px;
+    max-width: 1400px;
     margin: auto;
     height: inherit; }
 
@@ -1028,7 +1039,7 @@ ul.nav.nav-tabs.tabs-widget li a {
         margin-bottom: 14px;
         font-size: 0.9vw; }
     .menu-slider-container .slider {
-      width: 58%;
+      width: 55%;
       margin-left: 1%;
       margin-right: 1%;
       height: 400px;
@@ -1038,7 +1049,7 @@ ul.nav.nav-tabs.tabs-widget li a {
         width: auto;
         max-width: none !important; }
     .menu-slider-container .extra-menu {
-      width: 22%;
+      width: 25%;
       height: 400px; }
       .menu-slider-container .extra-menu .middle {
         margin-bottom: 0 !important; }
@@ -1561,16 +1572,6 @@ ul.nav.nav-tabs.tabs-widget li a {
     margin-top: 8px;
     cursor: pointer; }
 
-  .product-container {
-    background-color: white;
-    width: 100%;
-    max-width: 1400px;
-    -webkit-box-shadow: 1px 1px 4px #e2e2e2;
-    -moz-box-shadow: 1px 1px 4px #e2e2e2;
-    box-shadow: 1px 1px 4px #e2e2e2;
-    margin: 10px auto;
-    padding: 15px 25px 15px 15px;
-  }
     .product-container .share-product {
       font-size: 18px; }
       .product-container .share-product .header {
@@ -1783,10 +1784,11 @@ ul.nav.nav-tabs.tabs-widget li a {
     border: none; }
   .product-page .product-img-container {
     background-color: white;
-    width: 100%;
-    margin-bottom: 5px;
+    width: 95%;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    float: none !important;
+    margin: 5px auto; }
     .product-page .product-img-container img {
       width: 500px;
       height: auto;

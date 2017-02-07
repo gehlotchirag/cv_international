@@ -58,6 +58,7 @@
 }
 .product-info .discounted-price {
     font-weight: 700;
+    font-size: 14px;
 }
 .product-name{
 	min-height: 60px;

@@ -1,6 +1,7 @@
 <ul class="mobile-nav-container" id="mobile-nav"  [@slideInOut]="menuState">
-  <p (click)="toggleMenu()" class="mobile-nav-header">Categories
-    <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/multiply.svg" class="mobile-nav-close-icon pull-right">
+  <p class="mobile-nav-header">
+    <a routerLink="online-shopping">Categories</a>
+    <img src="http://assetsintl.craftsvilla.com/cvintlfe/assets/images/multiply.svg" class="mobile-nav-close-icon pull-right" (click)="toggleMenu()">
   </p>
   <li class="menu-list">
     <ul class="menu-category" *ngFor="let menuCategoryData of menuCategoriesData">

@@ -353,7 +353,6 @@ export class ProductComponent implements OnInit, AfterViewInit, OnDestroy {
       let cmpRef: any = this.contentContainer.createComponent(factory);
       cmpRef.instance.dataItems = data;
       cmpRef.instance.header = title;
-      cmpRef.instance.viewMoreUrl = null;
     }
     catch(e){
       console.error(e, 'ProductSlider');

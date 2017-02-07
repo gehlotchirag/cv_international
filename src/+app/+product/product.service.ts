@@ -24,7 +24,7 @@ export  class ProductService{
 
     getSimilarProducts(productId) {
     	let id = productId;
-	    let key = 'same-vendor-product-' + id;
+	    let key = 'similar-product-' + id;
 	    
 	    if (this._cache.has(key)) {
 	      return Observable.of(this._cache.get(key));

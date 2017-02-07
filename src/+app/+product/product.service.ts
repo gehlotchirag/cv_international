@@ -11,8 +11,8 @@ import { CacheService  } from '../shared/cache.service';
 export  class ProductService{
 
     private productDetailUrl = '1/public/catalog/productDetail';
-    private similarProductUrl = 'api/product/same_vendor';
-    private sameVendorProductUrl = 'api/product/similar';
+    private similarProductUrl = 'api/product/similar';
+    private sameVendorProductUrl = 'api/product/same_vendor';
 
     constructor(private httpClient: HttpClientService, private _cache: CacheService) {}
 

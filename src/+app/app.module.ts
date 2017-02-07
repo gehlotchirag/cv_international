@@ -24,7 +24,8 @@ import { HttpClientService } from './shared/services/http-client.service';
 import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
 import { ProgressBarService } from './shared/services/progress-bar.service';
 import { DataHoldingService } from './shared/services/data-holding.service';
-import 'intl';
+require('intl');
+require('intl/locale-data/jsonp/en.js');
 
 @NgModule({
 	declarations: [ 

@@ -32,6 +32,11 @@
   position:relative;
   overflow:hidden;
   padding: 0;
+  transition: left 0.5s ease;
+  -webkit-transition: left 0.5s ease;
+  -moz-transition: left 0.5s ease;
+  -ms-transition: left 0.5s ease;
+  -o-transition: left 0.5s ease;
 }
 .hero-carousel-body .item{
   width: 100%;

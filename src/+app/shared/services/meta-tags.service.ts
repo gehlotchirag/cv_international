@@ -53,7 +53,8 @@ export class MetaService {
 
   setHrefLangTag(tag: string, value: string, canonical: string){
     const tagElement = this._getOrCreateHrefLangTag(tag);
-    tagElement.forEach((element) => {
+    for (var i = 0; i < tagElement.length; i++) {
+      let element = tagElement[i];
       let tagStr = isDefined(value) ? value : '';
       let canonicalStr = isDefined(canonical) ? canonical : '';
       if(element['hreflang'] === 'en-in') {
@@ -62,7 +63,8 @@ export class MetaService {
       if(element['hreflang'] === 'en-us') {
         element.setAttribute('href', canonicalStr);    
       }
-    })
+    }
+    
     return this;
   }
 

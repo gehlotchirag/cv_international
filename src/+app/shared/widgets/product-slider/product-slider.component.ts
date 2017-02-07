@@ -25,7 +25,7 @@ export class ProductSliderComponent implements OnInit, DoCheck {
   public slideWidth = '20%';
   public totalIndex;
   public currentIndex = 0;
-  public sliderPosition = 0;
+  // public sliderPosition = 0;
   public isResponsive = false;
 
   constructor(private renderer: Renderer){}
@@ -95,7 +95,9 @@ export class ProductSliderComponent implements OnInit, DoCheck {
 
     posX = -(nextIndex * sliderWidth);
 
-    this.renderer.invokeElementMethod(
+    slider.style.left = '' + posX + 'px';
+    
+    /* this.renderer.invokeElementMethod(
       slider, 
       'animate', 
       [
@@ -111,7 +113,7 @@ export class ProductSliderComponent implements OnInit, DoCheck {
       ]
     );
 
-    this.sliderPosition = posX;
+    this.sliderPosition = posX; */
     this.currentIndex = nextIndex; 
   }
 }

@@ -19,7 +19,7 @@ export class HeroBannerComponent implements OnChanges, OnInit, OnDestroy{
 
   private subscription: Subscription;
   public currentSlideIndex = 0;
-  public bannerPosX = 0;
+  // public bannerPosX = 0;
   public itemWidth;
   public sliderWidth;
   public timerActivated = false;
@@ -88,7 +88,9 @@ export class HeroBannerComponent implements OnChanges, OnInit, OnDestroy{
 
     posX = -(nextIndex * elementWidth);
 
-    this.renderer.invokeElementMethod(
+    element.style.left = '' + posX + 'px';
+
+    /* this.renderer.invokeElementMethod(
       element, 
       'animate', 
       [
@@ -102,8 +104,8 @@ export class HeroBannerComponent implements OnChanges, OnInit, OnDestroy{
           fill: "forwards"
         } 
       ]
-    );
-    this.bannerPosX = posX;
+    ); */
+    // this.bannerPosX = posX;
     this.currentSlideIndex = nextIndex; 
   }
 }

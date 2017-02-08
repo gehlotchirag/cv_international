@@ -13,6 +13,7 @@ import { CommonSharedService } from '../shared/services/common-shared.service';
 
 declare var _satellite: any;
 declare var digitalData: any;
+declare var __insp:any;
 
 @Component({
   selector: 'cvi-home',
@@ -72,6 +73,9 @@ export class HomeComponent implements OnInit {
         }
       }      
       _satellite.track("page-load");
+    }
+    if(typeof __insp !== 'undefined') {
+      __insp.push(["virtualPage"]);
     }
   }
 

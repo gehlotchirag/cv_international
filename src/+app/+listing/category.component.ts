@@ -16,6 +16,7 @@ import categoryFilterMap = require('./category-filter-map');
 
 declare var _satellite: any;
 declare var digitalData: any;
+declare var __insp: any;
 
 @Component({
   selector: 'cvi-category',
@@ -190,6 +191,10 @@ export class CategoryComponent implements OnInit, OnDestroy{
       } 
       _satellite.track("page-load");
     }
+    if(typeof __insp !== 'undefined') {
+      __insp.push(["virtualPage"]);
+    }
+
   }
 
   setBreadcrumbs(){

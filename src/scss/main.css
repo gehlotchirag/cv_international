@@ -10,6 +10,12 @@ svg:not(:root) {
 .dropdown-backdrop {
   display: none !important; 
 }
+a {
+    color: #333333 !important; 
+}
+a:hover {
+  text-decoration: none !important; 
+}
 
 /** Tabs Widget Css */
 ul.nav.nav-tabs.tabs-widget {
@@ -368,11 +374,6 @@ ul.nav.nav-tabs.tabs-widget li a {
     max-width: 1400px;
     margin: auto;
     height: inherit; }
-
-  a {
-    color: #333333 !important; }
-    a:hover {
-      text-decoration: none !important; }
 
   .link {
     color: #46b8da;

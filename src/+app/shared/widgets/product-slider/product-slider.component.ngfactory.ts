@@ -389,7 +389,7 @@ class _View_ProductSliderComponent2 extends import1.AppView<any> {
     this._el_3 = import4.createRenderElement(this.renderer,this._el_0,'a',import4.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_3_3 = new import23.Wrapper_RouterLinkWithHref(this.parent.parentInjector.get(import24.Router),this.parent.parentInjector.get(import25.ActivatedRoute),this.parent.parentInjector.get(import26.LocationStrategy));
     this._text_4 = this.renderer.createText(this._el_3,'\n              ',(null as any));
-    this._el_5 = import4.createRenderElement(this.renderer,this._el_3,'img',new import4.InlineArray2(2,'class','img-responsive loading'),(null as any));
+    this._el_5 = import4.createRenderElement(this.renderer,this._el_3,'img',new import4.InlineArray4(4,'class','img-responsive loading','src','http://res.cloudinary.com/craftsvilla/image/upload/evsfw5eqlqwwiabgtanc'),(null as any));
     this._LazyLoadImageDirective_5_3 = new import29.Wrapper_LazyLoadImageDirective(new import19.ElementRef(this._el_5),this.parent.parentInjector.get(import31.NgZone));
     this._text_6 = this.renderer.createText(this._el_3,'\n              ',(null as any));
     this._el_7 = import4.createRenderElement(this.renderer,this._el_3,'div',new import4.InlineArray2(2,'class','product-info'),(null as any));
@@ -478,6 +478,8 @@ class _View_ProductSliderComponent2 extends import1.AppView<any> {
     this._RouterLinkWithHref_3_3.detectChangesInInputProps(this,this._el_3,throwOnChange);
     const currVal_5_0_0:any = this.context.$implicit.imgUrl;
     this._LazyLoadImageDirective_5_3.check_lazyImage(currVal_5_0_0,throwOnChange,false);
+    const currVal_5_0_1:any = 'http://res.cloudinary.com/craftsvilla/image/upload/evsfw5eqlqwwiabgtanc';
+    this._LazyLoadImageDirective_5_3.check_defaultImg(currVal_5_0_1,throwOnChange,false);
     this._LazyLoadImageDirective_5_3.detectChangesInInputProps(this,this._el_5,throwOnChange);
     const currVal_9_0_0:any = this.context.$implicit.productName;
     this._NgIf_9_6.check_ngIf(currVal_9_0_0,throwOnChange,false);

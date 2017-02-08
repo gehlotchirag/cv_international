@@ -1,5 +1,5 @@
 <div class="container-fluid category-container clearfix">
-	<div class="pull-left filter-section visible-lg visible-md">
+	<div #filterContainer class="pull-left filter-section visible-lg visible-md">
 		<div class="filters-list price-filter">
 			<p class="filter-type">Price</p>
 			<div class="filter-list">
@@ -45,7 +45,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="pull-left products-section">
+	<div class="pull-right products-section">
 		<div class="navigation-breadcrumbs clearfix visible-lg visible-md" *ngIf="pageBreadcrumbs.length > 0">
 			<ol class="clearfix" itemscope itemtype="http://schema.org/BreadcrumbList">
 				<li class="breadcrumb-list pull-left" *ngFor="let breadcrumb of pageBreadcrumbs; let i = index " itemscope itemtype="http://schema.org/ListItem">
@@ -78,10 +78,13 @@
 			</div>
 			<span class="clear-filters selected-filter" (click)="clearFilters()">Clear All</span>
 		</div>
-		<div class="products-data clearfix">
-			<cvi-product-card *ngFor="let listingProduct of listingProducts?.results" [product]="listingProduct"></cvi-product-card>
+		<div #productListContainer class="products-data clearfix">
+			<cvi-product-card *ngFor="let listingProduct of productsList" [product]="listingProduct"></cvi-product-card>
 		</div>
-		<cvi-pagination [totalPages]="listingProducts.total_pages" [currentPage]="listingProducts.current_page" [maxSize]="3" (pageChange)="onPageChange($event)"></cvi-pagination>
+		<div class="load-more-btn" (click)="appendLoadedProducts()" *ngIf="showLoadMore">
+			<p>Load More Products</p>
+		</div>
+		<!-- <cvi-pagination [totalPages]="listingProducts.total_pages" [currentPage]="listingProducts.current_page" [maxSize]="3" (pageChange)="onPageChange($event)"></cvi-pagination> -->
 	</div>
 	<div class="responsive-sort-filters-block visible-sm visible-xs">
 		<div class="sort-button col-xs-6" (click)="showMobileSort = true">

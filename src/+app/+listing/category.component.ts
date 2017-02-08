@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { Response } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -26,9 +26,18 @@ declare var __insp: any;
 })
 
 export class CategoryComponent implements OnInit, OnDestroy{
+  @ViewChild('productListContainer') productListContainer: ElementRef;
+  @ViewChild('filterContainer') filterContainer: ElementRef;
+  public lastScrollTop: number = 0;
   private subscription: Subscription;
   public recievedFilter: Object = {};
   public listingProducts: Listing;
+  public earlyFetchedData: Listing;
+  public isLoadMore: boolean= true;
+  public showLoadMore: boolean = true;
+  public isBottomFixed:boolean = false;
+  public isTopFixed: boolean = false;
+  public productsList: Array<any> = [];
   public filterData: Object = {};
   public appliedFilter: Array<any> = [];
   public pageBreadcrumbs: Array<any> = [];
@@ -97,6 +106,93 @@ export class CategoryComponent implements OnInit, OnDestroy{
       {'name': 'Above $200', 'value': {'min': 200, 'max': 1000}},
     ]}
 
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event){
+    if(typeof window !== 'undefined'){  
+      this.loadProducts(); 
+      this.changeFilterBlockPos(); 
+    }
+  }
+
+
+  loadProducts() {
+    let productContainerHeight = this.productListContainer.nativeElement.offsetHeight;
+    if(this.queryParams && this.listingProducts.next_page){
+      let page = parseInt(this.queryParams['page']);
+      if(page < 4 && document.body.scrollTop > productContainerHeight/2 ){
+        this.queryParams['page'] = page + 1;    
+        this.fetchCategoryData();
+      } else if(document.body.scrollTop > productContainerHeight/2 && page > 3 && this.isLoadMore) {
+        this.queryParams['page'] = page + 1;    
+        this.earlyFetchCategoryData()        
+      }
+      this.showLoadMore = true;
+    }else{
+      this.showLoadMore = false;
+    }
+  }
+
+  changeFilterBlockPos(){
+    if(window.innerWidth > 992 && this.productsList.length > 15){
+      let filterTop = this.filterContainer.nativeElement.offsetTop;
+      let filterHeight = this.filterContainer.nativeElement.offsetHeight;
+      let totalFilterHeight = filterTop + filterHeight;
+      let windowHeight = window.innerHeight;
+      let scrollHeight = totalFilterHeight - windowHeight;
+      let direction = "";
+      let filterStyleTop = parseInt(this.filterContainer.nativeElement.style.top.split('px')[0]);
+      let productContainerHeight = this.productListContainer.nativeElement.offsetHeight;
+      if(document.body.scrollTop > this.lastScrollTop) {
+        this.lastScrollTop = document.body.scrollTop;
+        direction = 'down';
+      } else if(document.body.scrollTop < this.lastScrollTop) {
+        this.lastScrollTop = document.body.scrollTop;
+        direction = 'up';
+      }
+      if(document.body.scrollTop < 30){
+        this.filterContainer.nativeElement.style.position = 'relative';
+        this.filterContainer.nativeElement.style.top = '0px';
+        this.filterContainer.nativeElement.style.bottom = 'auto';
+        this.productListContainer.nativeElement.style.float = "left !important";
+        this.isBottomFixed = false;
+        this.isTopFixed = false;
+      } else if(this.isBottomFixed && ((productContainerHeight - document.body.scrollTop) < 650) && direction === 'down'){
+        let top = document.body.scrollTop - filterHeight + 600;
+        this.filterContainer.nativeElement.style.position = 'relative';
+        this.filterContainer.nativeElement.style.top = top + 'px';
+        this.filterContainer.nativeElement.style.bottom = 'auto';
+        this.isBottomFixed = false;
+        this.isTopFixed = false;
+      }else if(document.body.scrollTop > scrollHeight && direction === 'down' && !this.isTopFixed && !((productContainerHeight - document.body.scrollTop) < 650)) {
+        this.filterContainer.nativeElement.style.position = 'fixed';
+        this.filterContainer.nativeElement.style.top = 'auto';
+        this.filterContainer.nativeElement.style.bottom = '0px';
+        this.isBottomFixed = true;
+        this.isTopFixed = false;
+      } else if(this.isBottomFixed && direction === 'up') {
+        let top = document.body.scrollTop + filterTop + 50;
+        this.filterContainer.nativeElement.style.position = 'relative';
+        this.filterContainer.nativeElement.style.top = top + 'px';
+        this.filterContainer.nativeElement.style.bottom = 'auto';
+        this.isBottomFixed = false;
+        this.isTopFixed = false;
+      } else if (this.isTopFixed && direction === 'down'){
+        let top = document.body.scrollTop - 60;
+        this.filterContainer.nativeElement.style.position = 'relative';
+        this.filterContainer.nativeElement.style.top = top + 'px';
+        this.filterContainer.nativeElement.style.bottom = 'auto';
+        this.isBottomFixed = false;
+        this.isTopFixed = false;
+      }else if(!this.isBottomFixed && document.body.scrollTop < filterStyleTop  && direction === 'up') {
+        this.filterContainer.nativeElement.style.position = 'fixed';
+        this.filterContainer.nativeElement.style.top = '70px';
+        this.filterContainer.nativeElement.style.bottom = 'auto';
+        this.isBottomFixed = false;
+        this.isTopFixed = true;
+      }
+    }
+  }
+
   constructor(  private route: ActivatedRoute,
     private router: Router,
     private location: Location,
@@ -111,6 +207,8 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
     this.route.data.pluck('products', 'd').subscribe((data: any) => {
       this.listingProducts = data;
+      this.productsList = [];
+      this.productsList = this.productsList.concat(this.listingProducts.results);
       this.trackPage();
       this.setCountPerPage();
       this.setBreadcrumbs();
@@ -125,31 +223,31 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
   ngOnInit(){
     this.subscription = this.route.queryParams.subscribe(
-      (queryParams: any) => {
-        let query, params, page;
-        let url = this.getPageUrl();
-        let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
-        let isSearchPage = url.indexOf('search') > -1;
-        if(queryParams){
-          query = queryParams['query'];
-          params = queryParams['params'];
-          page = queryParams['page'];
-        }
-        let paramObj = {
-          query: query ? query : '',
-          params: params ? params : "{}",
-          page: page && !isNaN(page) ? page : 1
-        }
-        if(isPremiumUrl) { 
-           paramObj[url] = 1;
-        }
+    (queryParams: any) => {
+      let query, params, page;
+      let url = this.getPageUrl();
+      let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
+      let isSearchPage = url.indexOf('search') > -1;
+      if(queryParams){
+        query = queryParams['query'];
+        params = queryParams['params'];
+        page = queryParams['page'];
+      }
+      let paramObj = {
+        query: query ? query : '',
+        params: params ? params : "{}",
+        page: page && !isNaN(page) ? page : 1
+      }
+      if(isPremiumUrl) { 
+         paramObj[url] = 1;
+      }
 
-        if(isSearchPage) {
-          this.searchQuery = paramObj['query'];
-        }
+      if(isSearchPage) {
+        this.searchQuery = paramObj['query'];
+      }
 
-        this.queryParams = paramObj;
-      });
+      this.queryParams = paramObj;
+    });
     this.setCountPerPage();
     this.setUrlFilterSort();
   }
@@ -228,13 +326,12 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
   setCountPerPage(){
     let perPageCount, currentPage, startCount, endCount;
-    perPageCount = this.listingProducts.results.length;
+    perPageCount = this.productsList.length;
+    startCount = 1;
     if(this.listingProducts.next_page) {
       currentPage = this.listingProducts.current_page ? this.listingProducts.current_page : 1;
-      startCount = (perPageCount * currentPage) - (perPageCount - 1);
-      endCount = (perPageCount * currentPage);
+      endCount = perPageCount;
     }else{
-      startCount = this.listingProducts.total_count - perPageCount + 1;
       endCount = this.listingProducts.total_count
     }
     this.resultCountObj['startCount'] = perPageCount > 0 ? startCount : 0;
@@ -467,10 +564,10 @@ export class CategoryComponent implements OnInit, OnDestroy{
   }
 
   fetchCategoryData(){
-    this.progressBar.start();
-    if(typeof window !== 'undefined') {
-      window.scroll(0,0);
-    }
+    // this.progressBar.start();
+    // if(typeof window !== 'undefined') {
+    //   window.scroll(0,0);
+    // }
     let url = this.getPageUrl();
     let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
     if(isPremiumUrl){
@@ -480,6 +577,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     this.listingService.getListingList(this.queryParams, url).then((listing: Response) => {
       if (listing) {
         this.listingProducts = listing.json().d;
+        this.productsList = this.productsList.concat(this.listingProducts.results);
         this.setCountPerPage();
         this.progressBar.complete();
       }
@@ -589,5 +687,30 @@ export class CategoryComponent implements OnInit, OnDestroy{
     for (var i = 1; i < index; ++i) {
       this.pageBreadcrumbs.pop();
     }
+  }
+
+  earlyFetchCategoryData(){
+    this.isLoadMore = false;
+    let url = this.getPageUrl();
+    let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
+    if(isPremiumUrl){
+      this.queryParams[url] = 1;
+    }
+    
+    this.listingService.getListingList(this.queryParams, url).then((listing: Response) => {
+      if (listing) {
+        this.earlyFetchedData = listing.json().d
+      }
+    })
+  }
+
+  appendLoadedProducts(){
+    let url = this.getPageUrl();
+    this.listingProducts = this.earlyFetchedData;
+    this.productsList = this.productsList.concat(this.listingProducts.results);
+    this.setCountPerPage();
+    this.progressBar.complete();
+    this.changePageUrl(url);
+    this.isLoadMore = true;
   }
 }

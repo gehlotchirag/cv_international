@@ -10,7 +10,7 @@
           <div class="product-slider-slide col-sm-3 col-xs-6" #productSlide [style.width]="slideWidth" *ngFor="let product of dataItems; let i = index "[ngClass]="{'hidden': ((i > 3) && isResponsive)}">
             <!-- <span class="glyphicon glyphicon-heart-empty product-wishlist"></span>  -->
             <a routerLink="/shop/{{product.slug}}/{{product.productId}}" (click)="feedClick(product, i+1)">
-              <img [lazyLoad]="product.imgUrl" class="img-responsive loading" alt="{{ product.productName }}">
+              <img [lazyLoad]="product.imgUrl" class="img-responsive" alt="{{ product.productName }}" src="http://res.cloudinary.com/craftsvilla/image/upload/evsfw5eqlqwwiabgtanc">
               <div class="product-info">
                 <div class="product-name" *ngIf="product.productName">{{ product.productName | truncate : 35 }}</div>
                 <div class="product-name" *ngIf="product.title">{{ product.title | truncate : 35 }}</div>

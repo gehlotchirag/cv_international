@@ -1,9 +1,24 @@
 <cvi-header [showMegaMenuCaret]="hasMegaMenu"></cvi-header>
-<div class="cvi-outlet-body clearfix">
+<div _ngcontent-4e31-1="" class="col-xs-12 hidden-xs" style="margin:5px 0;padding:0;">
+    <div _ngcontent-4e31-1="" class="col-xs-12 col-sm-12 col-md-12 buyer-section" style="border: solid 1px #ebebeb;border-right: solid 1px #ebebeb;padding: 5px;text-align: center;background-color: #ffffff;height: 50px;">
+        <img _ngcontent-4e31-1="" class="free-shipping-icon" style="margin-bottom: -6px;width: 60px" src="http://res.cloudinary.com/craftsvilla/image/upload/scwdno5oyimpfqpgmx0f">
+        <span _ngcontent-4e31-1="" style="display:inline-block;font-size: 18px;color: #981937;/* padding: 10px; */vertical-align: middle;font-weight: bold;">FREE SHIPPING</span>
+        <span _ngcontent-4e31-1="" style="display:inline-block;font-size: 16px;margin: 0px 5px;vertical-align: middle;">|</span>
+        <span _ngcontent-4e31-1="" style="display:inline-block;font-size: 14px;vertical-align: middle;">No Minimum Order Required</span>
+    </div>
+</div>
+<div _ngcontent-4e31-1="" class="col-xs-12 visible-xs" style="background-color: #ffffff;margin: 5px 0;">
+	<div _ngcontent-4e31-1="" class="col-xs-12 col-sm-12 col-md-12 buyer-section" style="text-align: center;  padding: 5px 0px;background-color: #ffffff;">
+	    <img _ngcontent-4e31-1="" class="free-shipping-icon" style="margin-bottom: 0;width: 60px;" src="http://res.cloudinary.com/craftsvilla/image/upload/scwdno5oyimpfqpgmx0f">
+	    <span _ngcontent-4e31-1="" style="display:inline-block; font-size: 15px; color: #981937; font-weight: bold;">FREE SHIPPING</span>
+	    
+	    <span _ngcontent-4e31-1="" style="display: block;font-size: 11px;">No Minimum Order Required</span>
+	</div>
+</div><div class="cvi-outlet-body clearfix">
 	<router-outlet></router-outlet>
 </div>
 <div [innerHTML]="footerContent"></div>
-<div class="cookie-msg-container clearfix" *ngIf="showCookieWarn">
+<div class="cookie-msg-container clearfix visible-lg visible-md" *ngIf="showCookieWarn">
 	<p class="cookie-msg col-md-9">By continuing to browse the site you are agreeing to our use of cookies.
 Review our <a routerLink="cookie-info"><b>cookies information</b></a> for more details.</p>
 	<button class="msg-hide-btn btn" (click)="setCookie()">Got It</button>

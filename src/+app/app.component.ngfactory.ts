@@ -130,25 +130,55 @@ class _View_AppComponent0 extends import1.AppView<import0.AppComponent> {
   _el_2:any;
   _text_3:any;
   _el_4:any;
-  /*private*/ _appEl_4:import3.AppElement;
-  _RouterOutlet_4_5:import24.Wrapper_RouterOutlet;
   _text_5:any;
-  _text_6:any;
-  _el_7:any;
-  _text_8:any;
-  _anchor_9:any;
-  /*private*/ _appEl_9:import3.AppElement;
-  _TemplateRef_9_5:any;
-  _NgIf_9_6:import25.Wrapper_NgIf;
+  _el_6:any;
+  _text_7:any;
+  _el_8:any;
+  _text_9:any;
   _text_10:any;
   _el_11:any;
-  /*private*/ _appEl_11:import3.AppElement;
-  _FooterComponent_11_4:import26.Wrapper_FooterComponent;
   _text_12:any;
-  /*private*/ _expr_24:any;
+  _text_13:any;
+  _el_14:any;
+  _text_15:any;
+  _text_16:any;
+  _text_17:any;
+  _text_18:any;
+  _el_19:any;
+  _text_20:any;
+  _el_21:any;
+  _text_22:any;
+  _el_23:any;
+  _text_24:any;
+  _el_25:any;
+  _text_26:any;
+  _text_27:any;
+  _el_28:any;
+  _text_29:any;
+  _text_30:any;
+  _text_31:any;
+  _el_32:any;
+  _text_33:any;
+  _el_34:any;
+  /*private*/ _appEl_34:import3.AppElement;
+  _RouterOutlet_34_5:import24.Wrapper_RouterOutlet;
+  _text_35:any;
+  _text_36:any;
+  _el_37:any;
+  _text_38:any;
+  _anchor_39:any;
+  /*private*/ _appEl_39:import3.AppElement;
+  _TemplateRef_39_5:any;
+  _NgIf_39_6:import25.Wrapper_NgIf;
+  _text_40:any;
+  _el_41:any;
+  /*private*/ _appEl_41:import3.AppElement;
+  _FooterComponent_41_4:import26.Wrapper_FooterComponent;
+  _text_42:any;
+  /*private*/ _expr_54:any;
   constructor(viewUtils:import9.ViewUtils,parentInjector:import10.Injector,declarationEl:import3.AppElement) {
     super(_View_AppComponent0,renderType_AppComponent,import11.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import12.ChangeDetectorStatus.CheckAlways);
-    this._expr_24 = import12.UNINITIALIZED;
+    this._expr_54 = import12.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import3.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
@@ -161,27 +191,57 @@ class _View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     this._appEl_0.initComponent(this._HeaderComponent_0_6.context,([] as any[]),compView_0);
     compView_0.create(this._HeaderComponent_0_6.context,([] as any[]),(null as any));
     this._text_1 = this.renderer.createText(parentRenderNode,'\n',(null as any));
-    this._el_2 = import9.createRenderElement(this.renderer,parentRenderNode,'div',new import9.InlineArray2(2,'class','cvi-outlet-body clearfix'),(null as any));
-    this._text_3 = this.renderer.createText(this._el_2,'\n	',(null as any));
-    this._el_4 = import9.createRenderElement(this.renderer,this._el_2,'router-outlet',import9.EMPTY_INLINE_ARRAY,(null as any));
-    this._appEl_4 = new import3.AppElement(4,2,this,this._el_4);
-    this._RouterOutlet_4_5 = new import24.Wrapper_RouterOutlet(this.parentInjector.get(import29.RouterOutletMap),this._appEl_4.vcRef,this.parentInjector.get(import30.ComponentFactoryResolver),(null as any));
-    this._text_5 = this.renderer.createText(this._el_2,'\n',(null as any));
-    this._text_6 = this.renderer.createText(parentRenderNode,'\n',(null as any));
-    this._el_7 = import9.createRenderElement(this.renderer,parentRenderNode,'div',import9.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_8 = this.renderer.createText(parentRenderNode,'\n',(null as any));
-    this._anchor_9 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
-    this._appEl_9 = new import3.AppElement(9,(null as any),this,this._anchor_9);
-    this._TemplateRef_9_5 = new import31.TemplateRef_(this._appEl_9,viewFactory_AppComponent1);
-    this._NgIf_9_6 = new import25.Wrapper_NgIf(this._appEl_9.vcRef,this._TemplateRef_9_5);
-    this._text_10 = this.renderer.createText(parentRenderNode,'\n',(null as any));
-    this._el_11 = import9.createRenderElement(this.renderer,parentRenderNode,'cvi-footer',import9.EMPTY_INLINE_ARRAY,(null as any));
-    this._appEl_11 = new import3.AppElement(11,(null as any),this,this._el_11);
-    var compView_11:any = import26.viewFactory_FooterComponent0(this.viewUtils,this.injector(11),this._appEl_11);
-    this._FooterComponent_11_4 = new import26.Wrapper_FooterComponent();
-    this._appEl_11.initComponent(this._FooterComponent_11_4.context,([] as any[]),compView_11);
-    compView_11.create(this._FooterComponent_11_4.context,([] as any[]),(null as any));
-    this._text_12 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_2 = import9.createRenderElement(this.renderer,parentRenderNode,'div',new import9.InlineArray8(6,'_ngcontent-4e31-1','','class','col-xs-12 hidden-xs','style','margin:5px 0;padding:0;'),(null as any));
+    this._text_3 = this.renderer.createText(this._el_2,'\n    ',(null as any));
+    this._el_4 = import9.createRenderElement(this.renderer,this._el_2,'div',new import9.InlineArray8(6,'_ngcontent-4e31-1','','class','col-xs-12 col-sm-12 col-md-12 buyer-section','style','border: solid 1px #ebebeb;border-right: solid 1px #ebebeb;padding: 5px;text-align: center;background-color: #ffffff;height: 50px;'),(null as any));
+    this._text_5 = this.renderer.createText(this._el_4,'\n        ',(null as any));
+    this._el_6 = import9.createRenderElement(this.renderer,this._el_4,'img',new import9.InlineArray8(8,'_ngcontent-4e31-1','','class','free-shipping-icon','src','http://res.cloudinary.com/craftsvilla/image/upload/scwdno5oyimpfqpgmx0f','style','margin-bottom: -6px;width: 60px'),(null as any));
+    this._text_7 = this.renderer.createText(this._el_4,'\n        ',(null as any));
+    this._el_8 = import9.createRenderElement(this.renderer,this._el_4,'span',new import9.InlineArray4(4,'_ngcontent-4e31-1','','style','display:inline-block;font-size: 18px;color: #981937;/* padding: 10px; */vertical-align: middle;font-weight: bold;'),(null as any));
+    this._text_9 = this.renderer.createText(this._el_8,'FREE SHIPPING',(null as any));
+    this._text_10 = this.renderer.createText(this._el_4,'\n        ',(null as any));
+    this._el_11 = import9.createRenderElement(this.renderer,this._el_4,'span',new import9.InlineArray4(4,'_ngcontent-4e31-1','','style','display:inline-block;font-size: 16px;margin: 0px 5px;vertical-align: middle;'),(null as any));
+    this._text_12 = this.renderer.createText(this._el_11,'|',(null as any));
+    this._text_13 = this.renderer.createText(this._el_4,'\n        ',(null as any));
+    this._el_14 = import9.createRenderElement(this.renderer,this._el_4,'span',new import9.InlineArray4(4,'_ngcontent-4e31-1','','style','display:inline-block;font-size: 14px;vertical-align: middle;'),(null as any));
+    this._text_15 = this.renderer.createText(this._el_14,'No Minimum Order Required',(null as any));
+    this._text_16 = this.renderer.createText(this._el_4,'\n    ',(null as any));
+    this._text_17 = this.renderer.createText(this._el_2,'\n',(null as any));
+    this._text_18 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_19 = import9.createRenderElement(this.renderer,parentRenderNode,'div',new import9.InlineArray8(6,'_ngcontent-4e31-1','','class','col-xs-12 visible-xs','style','background-color: #ffffff;margin: 5px 0;'),(null as any));
+    this._text_20 = this.renderer.createText(this._el_19,'\n	',(null as any));
+    this._el_21 = import9.createRenderElement(this.renderer,this._el_19,'div',new import9.InlineArray8(6,'_ngcontent-4e31-1','','class','col-xs-12 col-sm-12 col-md-12 buyer-section','style','text-align: center;  padding: 5px 0px;background-color: #ffffff;'),(null as any));
+    this._text_22 = this.renderer.createText(this._el_21,'\n	    ',(null as any));
+    this._el_23 = import9.createRenderElement(this.renderer,this._el_21,'img',new import9.InlineArray8(8,'_ngcontent-4e31-1','','class','free-shipping-icon','src','http://res.cloudinary.com/craftsvilla/image/upload/scwdno5oyimpfqpgmx0f','style','margin-bottom: 0;width: 60px;'),(null as any));
+    this._text_24 = this.renderer.createText(this._el_21,'\n	    ',(null as any));
+    this._el_25 = import9.createRenderElement(this.renderer,this._el_21,'span',new import9.InlineArray4(4,'_ngcontent-4e31-1','','style','display:inline-block; font-size: 15px; color: #981937; font-weight: bold;'),(null as any));
+    this._text_26 = this.renderer.createText(this._el_25,'FREE SHIPPING',(null as any));
+    this._text_27 = this.renderer.createText(this._el_21,'\n	    \n	    ',(null as any));
+    this._el_28 = import9.createRenderElement(this.renderer,this._el_21,'span',new import9.InlineArray4(4,'_ngcontent-4e31-1','','style','display: block;font-size: 11px;'),(null as any));
+    this._text_29 = this.renderer.createText(this._el_28,'No Minimum Order Required',(null as any));
+    this._text_30 = this.renderer.createText(this._el_21,'\n	',(null as any));
+    this._text_31 = this.renderer.createText(this._el_19,'\n',(null as any));
+    this._el_32 = import9.createRenderElement(this.renderer,parentRenderNode,'div',new import9.InlineArray2(2,'class','cvi-outlet-body clearfix'),(null as any));
+    this._text_33 = this.renderer.createText(this._el_32,'\n	',(null as any));
+    this._el_34 = import9.createRenderElement(this.renderer,this._el_32,'router-outlet',import9.EMPTY_INLINE_ARRAY,(null as any));
+    this._appEl_34 = new import3.AppElement(34,32,this,this._el_34);
+    this._RouterOutlet_34_5 = new import24.Wrapper_RouterOutlet(this.parentInjector.get(import29.RouterOutletMap),this._appEl_34.vcRef,this.parentInjector.get(import30.ComponentFactoryResolver),(null as any));
+    this._text_35 = this.renderer.createText(this._el_32,'\n',(null as any));
+    this._text_36 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_37 = import9.createRenderElement(this.renderer,parentRenderNode,'div',import9.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_38 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._anchor_39 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
+    this._appEl_39 = new import3.AppElement(39,(null as any),this,this._anchor_39);
+    this._TemplateRef_39_5 = new import31.TemplateRef_(this._appEl_39,viewFactory_AppComponent1);
+    this._NgIf_39_6 = new import25.Wrapper_NgIf(this._appEl_39.vcRef,this._TemplateRef_39_5);
+    this._text_40 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_41 = import9.createRenderElement(this.renderer,parentRenderNode,'cvi-footer',import9.EMPTY_INLINE_ARRAY,(null as any));
+    this._appEl_41 = new import3.AppElement(41,(null as any),this,this._el_41);
+    var compView_41:any = import26.viewFactory_FooterComponent0(this.viewUtils,this.injector(41),this._appEl_41);
+    this._FooterComponent_41_4 = new import26.Wrapper_FooterComponent();
+    this._appEl_41.initComponent(this._FooterComponent_41_4.context,([] as any[]),compView_41);
+    compView_41.create(this._FooterComponent_41_4.context,([] as any[]),(null as any));
+    this._text_42 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     var disposable_0:Function = this.renderer.listenGlobal('window','scroll',this.eventHandler(this._handle_scroll_0_0.bind(this)));
     this.init(([] as any[]),[
       this._el_0,
@@ -190,13 +250,43 @@ class _View_AppComponent0 extends import1.AppView<import0.AppComponent> {
       this._text_3,
       this._el_4,
       this._text_5,
-      this._text_6,
-      this._el_7,
-      this._text_8,
-      this._anchor_9,
+      this._el_6,
+      this._text_7,
+      this._el_8,
+      this._text_9,
       this._text_10,
       this._el_11,
-      this._text_12
+      this._text_12,
+      this._text_13,
+      this._el_14,
+      this._text_15,
+      this._text_16,
+      this._text_17,
+      this._text_18,
+      this._el_19,
+      this._text_20,
+      this._el_21,
+      this._text_22,
+      this._el_23,
+      this._text_24,
+      this._el_25,
+      this._text_26,
+      this._text_27,
+      this._el_28,
+      this._text_29,
+      this._text_30,
+      this._text_31,
+      this._el_32,
+      this._text_33,
+      this._el_34,
+      this._text_35,
+      this._text_36,
+      this._el_37,
+      this._text_38,
+      this._anchor_39,
+      this._text_40,
+      this._el_41,
+      this._text_42
     ]
     ,[disposable_0],([] as any[]));
     return (null as any);
@@ -205,34 +295,34 @@ class _View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     if (((token === import27.ComponentFactoryResolver) && (0 === requestNodeIndex))) { return this._ComponentFactoryResolver_0_4; }
     if (((token === import22.CartDetailsService) && (0 === requestNodeIndex))) { return this._CartDetailsService_0_5; }
     if (((token === import32.HeaderComponent) && (0 === requestNodeIndex))) { return this._HeaderComponent_0_6.context; }
-    if (((token === import33.RouterOutlet) && (4 === requestNodeIndex))) { return this._RouterOutlet_4_5.context; }
-    if (((token === import31.TemplateRef) && (9 === requestNodeIndex))) { return this._TemplateRef_9_5; }
-    if (((token === import34.NgIf) && (9 === requestNodeIndex))) { return this._NgIf_9_6.context; }
-    if (((token === import35.FooterComponent) && (11 === requestNodeIndex))) { return this._FooterComponent_11_4.context; }
+    if (((token === import33.RouterOutlet) && (34 === requestNodeIndex))) { return this._RouterOutlet_34_5.context; }
+    if (((token === import31.TemplateRef) && (39 === requestNodeIndex))) { return this._TemplateRef_39_5; }
+    if (((token === import34.NgIf) && (39 === requestNodeIndex))) { return this._NgIf_39_6.context; }
+    if (((token === import35.FooterComponent) && (41 === requestNodeIndex))) { return this._FooterComponent_41_4.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
     const currVal_0_0_0:any = this.context.hasMegaMenu;
     this._HeaderComponent_0_6.check_showMegaMenuCaret(currVal_0_0_0,throwOnChange,false);
     this._HeaderComponent_0_6.detectChangesInInputProps(this,this._el_0,throwOnChange);
-    this._RouterOutlet_4_5.detectChangesInInputProps(this,this._el_4,throwOnChange);
-    const currVal_9_0_0:any = this.context.showCookieWarn;
-    this._NgIf_9_6.check_ngIf(currVal_9_0_0,throwOnChange,false);
-    this._NgIf_9_6.detectChangesInInputProps(this,this._anchor_9,throwOnChange);
-    this._FooterComponent_11_4.detectChangesInInputProps(this,this._el_11,throwOnChange);
+    this._RouterOutlet_34_5.detectChangesInInputProps(this,this._el_34,throwOnChange);
+    const currVal_39_0_0:any = this.context.showCookieWarn;
+    this._NgIf_39_6.check_ngIf(currVal_39_0_0,throwOnChange,false);
+    this._NgIf_39_6.detectChangesInInputProps(this,this._anchor_39,throwOnChange);
+    this._FooterComponent_41_4.detectChangesInInputProps(this,this._el_41,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
     this._HeaderComponent_0_6.detectChangesInHostProps(this,this._el_0,throwOnChange);
-    this._RouterOutlet_4_5.detectChangesInHostProps(this,this._el_4,throwOnChange);
-    const currVal_24:any = this.context.footerContent;
-    if (import9.checkBinding(throwOnChange,this._expr_24,currVal_24)) {
-      this.renderer.setElementProperty(this._el_7,'innerHTML',this.viewUtils.sanitizer.sanitize(import36.SecurityContext.HTML,currVal_24));
-      this._expr_24 = currVal_24;
+    this._RouterOutlet_34_5.detectChangesInHostProps(this,this._el_34,throwOnChange);
+    const currVal_54:any = this.context.footerContent;
+    if (import9.checkBinding(throwOnChange,this._expr_54,currVal_54)) {
+      this.renderer.setElementProperty(this._el_37,'innerHTML',this.viewUtils.sanitizer.sanitize(import36.SecurityContext.HTML,currVal_54));
+      this._expr_54 = currVal_54;
     }
-    this._FooterComponent_11_4.detectChangesInHostProps(this,this._el_11,throwOnChange);
+    this._FooterComponent_41_4.detectChangesInHostProps(this,this._el_41,throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
   destroyInternal():void {
-    this._RouterOutlet_4_5.context.ngOnDestroy();
+    this._RouterOutlet_34_5.context.ngOnDestroy();
   }
   private _handle_scroll_0_0($event:any):boolean {
     this._appEl_0.componentView.markPathToRootAsCheckOnce();
@@ -265,7 +355,7 @@ class _View_AppComponent1 extends import1.AppView<any> {
     super(_View_AppComponent1,renderType_AppComponent,import11.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import12.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import3.AppElement {
-    this._el_0 = import9.createRenderElement(this.renderer,(null as any),'div',new import9.InlineArray2(2,'class','cookie-msg-container clearfix'),(null as any));
+    this._el_0 = import9.createRenderElement(this.renderer,(null as any),'div',new import9.InlineArray2(2,'class','cookie-msg-container clearfix visible-lg visible-md'),(null as any));
     this._text_1 = this.renderer.createText(this._el_0,'\n	',(null as any));
     this._el_2 = import9.createRenderElement(this.renderer,this._el_0,'p',new import9.InlineArray2(2,'class','cookie-msg col-md-9'),(null as any));
     this._text_3 = this.renderer.createText(this._el_2,'By continuing to browse the site you are agreeing to our use of cookies.\nReview our ',(null as any));

@@ -4,7 +4,7 @@
 		<div class="wishlisted-count">{{ product.wishlist?.length }}</div>
 	</div> -->
 	<a routerLink="/shop/{{product.slug}}/{{product.productId}}">
-		<img [lazyLoad]="product.imgUrl" class="img-responsive loading" alt="{{ product.title }}">
+		<img [lazyLoad]="product.imgUrl" class="img-responsive" alt="{{ product.title }}" src="http://res.cloudinary.com/craftsvilla/image/upload/evsfw5eqlqwwiabgtanc">
 		<div class="product-info">
 			<div class="product-name">{{ product.title }}</div>
 			<div class="product-price">

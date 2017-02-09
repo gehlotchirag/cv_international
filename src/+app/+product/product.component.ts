@@ -34,6 +34,7 @@ export class ProductComponent implements OnInit, AfterViewInit, OnDestroy {
     attributes: Observable<Object>;
     sizeChartHeaders: string[];
     sizeChartData: any[];
+    showSizeChart: boolean = false;
     sizes: Observable<Object>;
     colors : Observable<Object>;
     individualQuantity : string[];
@@ -412,17 +413,22 @@ export class ProductComponent implements OnInit, AfterViewInit, OnDestroy {
       _satellite.track("cart-add"),
       _satellite.track("cartsrc")
     }
-    let cartStream = this.cartDetailsService
+    if (!this.showSizeDiv && this.selectedSize == "undefine") {
+      this.addToBagUnSuccess = true;
+      this.showBuyLoader = false;
+    } else {
+      let cartStream = this.cartDetailsService
                            .addToCart(this.productId, 1)
-    cartStream.map((r: Response) => { return r.json() }).pluck('d')
-              .subscribe(
-                (data) => {
-                  window.location.href = 'https://securestaticintl.craftsvilla.com/buy/cart';
-                },
-                (error) => console.error(error),
-                () => {console.log('completed')}
-              );
-    cartStream.connect();
+      cartStream.map((r: Response) => { return r.json() }).pluck('d')
+                .subscribe(
+                  (data) => {
+                    window.location.href = 'https://securestaticintl.craftsvilla.com/buy/cart';
+                  },
+                  (error) => console.error(error),
+                  () => {console.log('completed')}
+                );
+      cartStream.connect();
+    }
   }
 
   selectSize(event: any, size: any): void {

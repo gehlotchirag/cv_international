@@ -115,7 +115,7 @@
             <div class="shipping-cost-value">{{vendorDetails.vendorName}} </div>
           </div>
           <span class="add-to-bag-block">
-            <div class="size occupy mob-inline cover" *ngIf="showSizeDiv">
+            <div class="size occupy mob-inline cover" *ngIf="sizes.length > 0">
              <!--  <div class="heading mob-section-heading"  [class.displayNone]="!stitching_enabled">
                 <span class="pull-left">Select Stitch Type</span>
               </div>
@@ -132,10 +132,10 @@
                   <span><strong>Stitching Type : </strong></span> <span>{{stitching_type}}</span></div>
 
                 </div> -->
-              <div class [class.displayNone]="showSizeDiv" >
+              <div>
                 <div class="heading select-size-header mob-section-heading" id="sizeChartDiv">
                   <span class="pull-left">Select Size</span>
-                  <span class="pull-right mob-link link" data-toggle="modal" data-target="#sizeChartModal">Size Chart</span>
+                  <span class="pull-right mob-link link" (click)="showSizeChart = !showSizeChart">Size Chart</span>
                 </div>
                 <div class="sizes occupy mob-section-body" >
                  <!--  <span *ngFor="let size of sizes  let i=index  ">
@@ -151,7 +151,7 @@
                 </div>
               </div>
             </div>
-            <div class="stitch"></div>
+            <!-- <div class="stitch"></div> -->
             <div class="add-to-bag occupy fixed-bottom-bar product-buy-btns">
               <button class="btn btn-default add-cart-btn flat-btn purchase" (click)="addToBag($event)">ADD TO CART</button>
               <button *ngIf="!showBuyLoader" (click)="buyNow($event)" class="btn btn-brand buy-btn flat-btn purchase">BUY NOW</button>
@@ -221,35 +221,37 @@
   <div class="clearfix"></div>
   <div #content></div>
 </div>
-<div class="modal fade" tabindex="-1" role="dialog" id="sizeChartModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Size Chart</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-sm-5 text-center">
-            <p>All measurements shown are of the garment</p>
-          </div>
-          <div class="col-sm-7">
-            <p><strong>Dimensions for Women</strong></p>
-            <table class="table table-bordered"  >
-              <thead >
-                <tr class="active">
-                  <th *ngFor="let columnName of sizeChartHeaders">{{columnName}}</th>
-                </tr>
-              </thead>
-              <tbody *ngIf="sizeChartData">
-                <tr *ngFor="let temp of sizeChartData[0]; let i=index">
-                  <td *ngFor="let j of sizeChartData"> {{ j[i] }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+<div class="modal-overlay" *ngIf="showSizeChart">
+  <div id="sizeChartModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" (click)="showSizeChart = !showSizeChart"><span>&times;</span></button>
+          <h4 class="modal-title">Size Chart</h4>
         </div>
-
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-5 text-center">
+              <p>All measurements shown are of the garment</p>
+            </div>
+            <div class="col-sm-7">
+              <p><strong>Dimensions for Women</strong></p>
+              <table class="table table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th *ngFor="let columnName of sizeChartHeaders">{{columnName}}</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="sizeChartData">
+                  <tr *ngFor="let temp of sizeChartData[0]; let i=index ">
+                    <td *ngFor="let j of sizeChartData"> {{ j[i] }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </div>
+</div>

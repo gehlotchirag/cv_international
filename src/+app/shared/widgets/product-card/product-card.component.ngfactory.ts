@@ -153,7 +153,7 @@ class _View_ProductCardComponent0 extends import3.AppView<import0.ProductCardCom
     this._el_3 = import2.createRenderElement(this.renderer,this._el_0,'a',import2.EMPTY_INLINE_ARRAY,(null as any));
     this._RouterLinkWithHref_3_3 = new import11.Wrapper_RouterLinkWithHref(this.parentInjector.get(import15.Router),this.parentInjector.get(import16.ActivatedRoute),this.parentInjector.get(import17.LocationStrategy));
     this._text_4 = this.renderer.createText(this._el_3,'\n		',(null as any));
-    this._el_5 = import2.createRenderElement(this.renderer,this._el_3,'img',new import2.InlineArray4(4,'class','img-responsive loading','src','http://res.cloudinary.com/craftsvilla/image/upload/evsfw5eqlqwwiabgtanc'),(null as any));
+    this._el_5 = import2.createRenderElement(this.renderer,this._el_3,'img',new import2.InlineArray4(4,'class','img-responsive','src','http://res.cloudinary.com/craftsvilla/image/upload/evsfw5eqlqwwiabgtanc'),(null as any));
     this._LazyLoadImageDirective_5_3 = new import12.Wrapper_LazyLoadImageDirective(new import18.ElementRef(this._el_5),this.parentInjector.get(import19.NgZone));
     this._text_6 = this.renderer.createText(this._el_3,'\n		',(null as any));
     this._el_7 = import2.createRenderElement(this.renderer,this._el_3,'div',new import2.InlineArray2(2,'class','product-info'),(null as any));

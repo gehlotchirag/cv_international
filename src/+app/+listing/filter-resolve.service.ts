@@ -11,12 +11,12 @@ import Listing from './listing';
 
 import { ListingService } from './listing.service';
 
-import categoryFilterMap = require('./category-filter-map');
+// import categoryFilterMap = require('./category-filter-map');
 
 @Injectable()
 export class FilterResolveService implements Resolve<Listing> {
 
-  public premiumUrlArr = categoryFilterMap.premiumUrlArr;
+  public premiumUrlArr = ['premium', 'traditional', 'contemporary']; //categoryFilterMap.premiumUrlArr;
 
   constructor(private ls: ListingService, private router: Router, private _cache: CacheService){}
 

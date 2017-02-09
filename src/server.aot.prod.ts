@@ -149,14 +149,11 @@ function ngApp(req, res) {
     view_dir = path.join(__dirname, '/static/', temp_url);
     console.log("view_dir", view_dir);
   }
-  if(url && url !== 'undefined' && url !== null) {
-    if(isProductUrl) { 
-      generateHtml(url, options, req, res);
-    } else {
-      renderDynamicHtml(req, res, url, options);
-    } 
-  }
-
+  if(isProductUrl) { 
+    generateHtml(url, options, req, res);
+  } else {
+    renderDynamicHtml(req, res, url, options);
+  } 
 }
 
 function renderDynamicHtml(req, res, url, options) {
@@ -193,6 +190,7 @@ function generateHtml(url, options, req, res) {
   console.log("Request to Generate HTML. Time: ",formatted, "Url:", url, "generateReadHTML", generateReadHTML);
   if(generateReadHTML) { 
     request.get(url, options,function(err,response,body){
+      console.log(body);
       let response_body = JSON.parse(body);
       if(err) {
         now = moment();

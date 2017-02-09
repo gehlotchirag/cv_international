@@ -131,18 +131,21 @@ function ngApp(req, res) {
     url = base_url + '/' + temp_url;
     view_dir = path.join(__dirname, '/static/', temp_url);
   }
-  if(url && url !== 'undefined' && url !== null) {
-    request.get(url, options,function(err,response,body){
-      if(err) {
-        res.redirect('/');
-      }
-      if(response.statusCode === 200 ){
-        renderDynamicHtml(req, res);
-      }else{
-        res.redirect('/');
-      }
-    });
-  }
+  request.get(url, options,function(err,response,body){
+    console.log(url, "url");
+    console.log(JSON.parse(body), "body");
+    if(err) {
+      console.log(err, "err");
+      res.redirect('/');
+    }
+    if(response.statusCode === 200 ){
+      console.log(response, "response");
+      renderDynamicHtml(req, res);
+    }else{
+      console.log("redirect");
+      res.redirect('/');
+    }
+  });
 }
 
 function renderDynamicHtml(req, res) {
@@ -157,8 +160,10 @@ function renderDynamicHtml(req, res) {
     originUrl: `http://localhost:${ app.get('port') }`
   }, function(err, html) {
     if(err) {
+      console.log("HTML Not found. Generate HTML. Time: ");
       res.redirect('/');
     } else {
+      console.log(html, "html");
       res.send(html);
     }
   });

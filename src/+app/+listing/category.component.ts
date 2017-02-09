@@ -117,11 +117,13 @@ export class CategoryComponent implements OnInit, OnDestroy{
 
   loadProducts() {
     let productContainerHeight = this.productListContainer.nativeElement.offsetHeight;
+    console.log(this.queryParams);
     if(this.queryParams && this.listingProducts.next_page){
       let page = parseInt(this.queryParams['page']);
-      if(page < 4 && document.body.scrollTop > productContainerHeight/2 ){
+      if(page < 4 && document.body.scrollTop > productContainerHeight/2 && this.isLoadMore){
         this.queryParams['page'] = page + 1;    
-        this.fetchCategoryData();
+        this.isLoadMore = false;
+        this.fetchCategoryData('scroll');
       } else if(document.body.scrollTop > productContainerHeight/2 && page > 3 && this.isLoadMore) {
         this.queryParams['page'] = page + 1;    
         this.earlyFetchCategoryData()        
@@ -149,46 +151,70 @@ export class CategoryComponent implements OnInit, OnDestroy{
         this.lastScrollTop = document.body.scrollTop;
         direction = 'up';
       }
-      if(document.body.scrollTop < 30){
-        this.filterContainer.nativeElement.style.position = 'relative';
-        this.filterContainer.nativeElement.style.top = '0px';
-        this.filterContainer.nativeElement.style.bottom = 'auto';
-        this.productListContainer.nativeElement.style.float = "left !important";
-        this.isBottomFixed = false;
-        this.isTopFixed = false;
-      } else if(this.isBottomFixed && ((productContainerHeight - document.body.scrollTop) < 650) && direction === 'down'){
-        let top = document.body.scrollTop - filterHeight + 600;
-        this.filterContainer.nativeElement.style.position = 'relative';
-        this.filterContainer.nativeElement.style.top = top + 'px';
-        this.filterContainer.nativeElement.style.bottom = 'auto';
-        this.isBottomFixed = false;
-        this.isTopFixed = false;
-      }else if(document.body.scrollTop > scrollHeight && direction === 'down' && !this.isTopFixed && !((productContainerHeight - document.body.scrollTop) < 650)) {
-        this.filterContainer.nativeElement.style.position = 'fixed';
-        this.filterContainer.nativeElement.style.top = 'auto';
-        this.filterContainer.nativeElement.style.bottom = '0px';
-        this.isBottomFixed = true;
-        this.isTopFixed = false;
-      } else if(this.isBottomFixed && direction === 'up') {
-        let top = document.body.scrollTop + filterTop + 50;
-        this.filterContainer.nativeElement.style.position = 'relative';
-        this.filterContainer.nativeElement.style.top = top + 'px';
-        this.filterContainer.nativeElement.style.bottom = 'auto';
-        this.isBottomFixed = false;
-        this.isTopFixed = false;
-      } else if (this.isTopFixed && direction === 'down'){
-        let top = document.body.scrollTop - 60;
-        this.filterContainer.nativeElement.style.position = 'relative';
-        this.filterContainer.nativeElement.style.top = top + 'px';
-        this.filterContainer.nativeElement.style.bottom = 'auto';
-        this.isBottomFixed = false;
-        this.isTopFixed = false;
-      }else if(!this.isBottomFixed && document.body.scrollTop < filterStyleTop  && direction === 'up') {
-        this.filterContainer.nativeElement.style.position = 'fixed';
-        this.filterContainer.nativeElement.style.top = '70px';
-        this.filterContainer.nativeElement.style.bottom = 'auto';
-        this.isBottomFixed = false;
-        this.isTopFixed = true;
+      if(filterHeight > windowHeight) {
+        if(document.body.scrollTop < 30){
+          this.filterContainer.nativeElement.style.position = 'relative';
+          this.filterContainer.nativeElement.style.top = '0px';
+          this.filterContainer.nativeElement.style.bottom = 'auto';
+          this.productListContainer.nativeElement.style.float = "left !important";
+          this.isBottomFixed = false;
+          this.isTopFixed = false;
+        } else if(this.isBottomFixed && ((productContainerHeight - document.body.scrollTop) < 650) && direction === 'down'){
+          let top = document.body.scrollTop - filterHeight + 650;
+          this.filterContainer.nativeElement.style.position = 'relative';
+          this.filterContainer.nativeElement.style.top = top + 'px';
+          this.filterContainer.nativeElement.style.bottom = 'auto';
+          this.isBottomFixed = false;
+          this.isTopFixed = false;
+        }else if(document.body.scrollTop > scrollHeight && direction === 'down' && !this.isTopFixed && !((productContainerHeight - document.body.scrollTop) < 650)) {
+          this.filterContainer.nativeElement.style.position = 'fixed';
+          this.filterContainer.nativeElement.style.top = 'auto';
+          this.filterContainer.nativeElement.style.bottom = '0px';
+          this.isBottomFixed = true;
+          this.isTopFixed = false;
+        } else if(this.isBottomFixed && direction === 'up') {
+          let top = document.body.scrollTop + filterTop + 50;
+          this.filterContainer.nativeElement.style.position = 'relative';
+          this.filterContainer.nativeElement.style.top = top + 'px';
+          this.filterContainer.nativeElement.style.bottom = 'auto';
+          this.isBottomFixed = false;
+          this.isTopFixed = false;
+        } else if (this.isTopFixed && direction === 'down'){
+          let top = document.body.scrollTop - 60;
+          this.filterContainer.nativeElement.style.position = 'relative';
+          this.filterContainer.nativeElement.style.top = top + 'px';
+          this.filterContainer.nativeElement.style.bottom = 'auto';
+          this.isBottomFixed = false;
+          this.isTopFixed = false;
+        }else if(!this.isBottomFixed && document.body.scrollTop < filterStyleTop  && direction === 'up') {
+          this.filterContainer.nativeElement.style.position = 'fixed';
+          this.filterContainer.nativeElement.style.top = '70px';
+          this.filterContainer.nativeElement.style.bottom = 'auto';
+          this.isBottomFixed = false;
+          this.isTopFixed = true;
+        }
+      } else if(filterHeight < windowHeight) {
+        if(document.body.scrollTop < 30){
+          this.filterContainer.nativeElement.style.position = 'relative';
+          this.filterContainer.nativeElement.style.top = '0px';
+          this.filterContainer.nativeElement.style.bottom = 'auto';
+          this.productListContainer.nativeElement.style.float = "left !important";
+          this.isBottomFixed = false;
+          this.isTopFixed = false;
+        } else if (this.isTopFixed && ((productContainerHeight - document.body.scrollTop) < 650) && direction === 'down'){
+          let top = document.body.scrollTop - filterHeight + 650;;
+          this.filterContainer.nativeElement.style.position = 'relative';
+          this.filterContainer.nativeElement.style.top = top + 'px';
+          this.filterContainer.nativeElement.style.bottom = 'auto';
+          this.isBottomFixed = false;
+          this.isTopFixed = false;
+        } else if(document.body.scrollTop > 30 && !((productContainerHeight - document.body.scrollTop) < 650)){
+          this.filterContainer.nativeElement.style.position = 'fixed';
+          this.filterContainer.nativeElement.style.top = '70px';
+          this.filterContainer.nativeElement.style.bottom = 'auto';
+          this.isBottomFixed = false;
+          this.isTopFixed = true;
+        }
       }
     }
   }
@@ -246,7 +272,9 @@ export class CategoryComponent implements OnInit, OnDestroy{
         this.searchQuery = paramObj['query'];
       }
 
-      this.queryParams = paramObj;
+      setInterval(_ => {
+        this.queryParams = paramObj;
+       }, 30);
     });
     this.setCountPerPage();
     this.setUrlFilterSort();
@@ -261,7 +289,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     RouterHeaderBindingService.getSearchQuery().subscribe((data) =>  {
       if(this.searchQuery !== data) {
         this.queryParams['query'] = data;
-        this.fetchCategoryData();
+        this.fetchCategoryData('search');
       }
     });
   }
@@ -466,7 +494,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
         },
         _satellite.track("filter-used")
       }
-      this.fetchCategoryData();
+      this.fetchCategoryData('filter');
     }
   }
 
@@ -511,7 +539,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
       this.navigateToCategoryUrl();
     }else{
       this.manageFilterData(filters, true);
-      this.fetchCategoryData();
+      this.fetchCategoryData('filter');
     }
   }
 
@@ -546,7 +574,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
       }
       _satellite.track("sorting-used");
     }
-    this.fetchCategoryData();
+    this.fetchCategoryData('sort');
   }
 
   selectFilterType(filterData){
@@ -563,7 +591,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     this.location.replaceState(url, params);
   }
 
-  fetchCategoryData(){
+  fetchCategoryData(type){
     // this.progressBar.start();
     // if(typeof window !== 'undefined') {
     //   window.scroll(0,0);
@@ -573,13 +601,19 @@ export class CategoryComponent implements OnInit, OnDestroy{
     if(isPremiumUrl){
       this.queryParams[url] = 1;
     }
-    
     this.listingService.getListingList(this.queryParams, url).then((listing: Response) => {
       if (listing) {
         this.listingProducts = listing.json().d;
+        if(type !== 'scroll') {
+          this.productsList = [];
+        }
+        if(!this.listingProducts.next_page){
+          this.showLoadMore = false;
+        }
         this.productsList = this.productsList.concat(this.listingProducts.results);
         this.setCountPerPage();
         this.progressBar.complete();
+        this.isLoadMore = true;
       }
     })
 
@@ -612,7 +646,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     params['filters'] = filterObj;
     this.queryParams['params'] = JSON.stringify(params)
     this.mobileFilterTracking();
-    this.fetchCategoryData();
+    this.fetchCategoryData('filter');
   }
 
   mobileFilterTracking(){
@@ -645,7 +679,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     if(isFilterUrl){
       this.navigateToCategoryUrl();
     }else{
-      this.fetchCategoryData();  
+      this.fetchCategoryData('filter');  
     }
   }
 
@@ -675,13 +709,13 @@ export class CategoryComponent implements OnInit, OnDestroy{
     return _urlArr.join('/');
   }
 
-  onPageChange(page) {
-    this.queryParams['page'] = page;
-    if(typeof window !== 'undefined') {
-      window.scrollTo(0,0);
-    }
-    this.fetchCategoryData();
-  }
+  // onPageChange(page) {
+  //   this.queryParams['page'] = page;
+  //   if(typeof window !== 'undefined') {
+  //     window.scrollTo(0,0);
+  //   }
+  //   this.fetchCategoryData();
+  // }
 
   breadcrumbClick(index){
     for (var i = 1; i < index; ++i) {

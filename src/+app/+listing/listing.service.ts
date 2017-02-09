@@ -4,14 +4,14 @@ import Listing from './listing';
 
 import { HttpClientService } from '../shared/services/http-client.service'
 
-// import categoryFilterMap = require('./category-filter-map');
+import categoryFilterMap = require('./category-filter-map');
 
 @Injectable()
 export class ListingService {
   private listingsUrl = 'api/products/';
   private filtersUrl = 'api/category/1/filters';
-  // public filtersMap = categoryFilterMap.filtersMap;
-  public premiumUrlArr = ['premium', 'traditional', 'contemporary']; //categoryFilterMap.premiumUrlArr;
+  public filtersMap = categoryFilterMap.filtersMap;
+  public premiumUrlArr = categoryFilterMap.premiumUrlArr;
 
   constructor(
       private httpClient: HttpClientService
@@ -37,10 +37,9 @@ export class ListingService {
   }
 
   getListingList(paramObj: Object, url:string): any {
-    let categoryId = 2;
-    let appliedFilterObj = null;
-    // let categoryId = categoryFilterMap.categoriesMap[url] ? categoryFilterMap.categoriesMap[url].id : null;
-    // let appliedFilterObj = this.filtersMap[url.toLowerCase()] ? this.filtersMap[url.toLowerCase()] : null;
+    
+    let categoryId = categoryFilterMap.categoriesMap[url] ? categoryFilterMap.categoriesMap[url].id : null;
+    let appliedFilterObj = this.filtersMap[url.toLowerCase()] ? this.filtersMap[url.toLowerCase()] : null;
     let isPremiumUrl = this.premiumUrlArr.indexOf(url) > -1;
     let isSearchUrl = url.indexOf('search') > -1;
     let searchObj = this.getParamsObj(paramObj);
@@ -68,7 +67,6 @@ export class ListingService {
       if(isPremiumUrl){
         searchObj[url] = 1;
       }
-     
       return this.httpClient
                   .get(this.listingsUrl, searchObj)
                   .toPromise()
@@ -79,10 +77,8 @@ export class ListingService {
 
   getFilterList(paramObj: Object, url:string) {
     this.filtersUrl = 'api/ufilters';
-    let categoryId = 2;
-    let appliedFilterObj = null;
-    // let categoryId = categoryFilterMap.categoriesMap[url] ? categoryFilterMap.categoriesMap[url].id : null;
-    // let appliedFilterObj = this.filtersMap[url.toLowerCase()] ? this.filtersMap[url.toLowerCase()] : null;
+    let categoryId = categoryFilterMap.categoriesMap[url] ? categoryFilterMap.categoriesMap[url].id : null;
+    let appliedFilterObj = this.filtersMap[url.toLowerCase()] ? this.filtersMap[url.toLowerCase()] : null;
     let searchObj = this.getParamsObj(paramObj);
     let paramsObj = searchObj.params ? JSON.parse(searchObj.params) : {};
     
@@ -97,7 +93,6 @@ export class ListingService {
       paramsObj.categoryId = [categoryId];
       searchObj.params = JSON.stringify(paramsObj);
     }
-
     return this.httpClient
                .get(this.filtersUrl, searchObj)
                .toPromise();

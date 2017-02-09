@@ -132,17 +132,12 @@ function ngApp(req, res) {
     view_dir = path.join(__dirname, '/static/', temp_url);
   }
   request.get(url, options,function(err,response,body){
-    console.log(url, "url");
-    console.log(JSON.parse(body), "body");
     if(err) {
-      console.log(err, "err");
       res.redirect('/');
     }
     if(response.statusCode === 200 ){
-      console.log(response, "response");
       renderDynamicHtml(req, res);
     }else{
-      console.log("redirect");
       res.redirect('/');
     }
   });
@@ -160,10 +155,8 @@ function renderDynamicHtml(req, res) {
     originUrl: `http://localhost:${ app.get('port') }`
   }, function(err, html) {
     if(err) {
-      console.log("HTML Not found. Generate HTML. Time: ");
       res.redirect('/');
     } else {
-      console.log(html, "html");
       res.send(html);
     }
   });

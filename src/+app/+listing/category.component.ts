@@ -1,9 +1,7 @@
-import { Component, OnInit, OnDestroy, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { Response } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { Subscription } from 'rxjs';
-
 import { ListingService } from './listing.service';
 import { CommonSharedService } from '../shared/services/common-shared.service';
 import { ProgressBarService } from '../shared/services/progress-bar.service';
@@ -25,11 +23,10 @@ declare var __insp: any;
   providers: [ ListingService, CommonSharedService, ProgressBarService, RouterHeaderBindingService ],
 })
 
-export class CategoryComponent implements OnInit, OnDestroy{
+export class CategoryComponent implements OnInit{
   @ViewChild('productListContainer') productListContainer: ElementRef;
   @ViewChild('filterContainer') filterContainer: ElementRef;
   public lastScrollTop: number = 0;
-  private subscription: Subscription;
   public recievedFilter: Object = {};
   public listingProducts: Listing;
   public earlyFetchedData: Listing;
@@ -226,6 +223,7 @@ export class CategoryComponent implements OnInit, OnDestroy{
     private listingService:ListingService,
     private progressBar: ProgressBarService
   ){
+
     this.route.data.pluck('filters').subscribe((data: any) => {
       this.recievedFilter = data;
       this.manageFilterData(data);
@@ -235,6 +233,8 @@ export class CategoryComponent implements OnInit, OnDestroy{
       this.listingProducts = data;
       this.productsList = [];
       this.productsList = this.productsList.concat(this.listingProducts.results);
+      this.isLoadMore = true;
+      this.setQueryParams();
       this.trackPage();
       this.setCountPerPage();
       this.setBreadcrumbs();
@@ -248,7 +248,12 @@ export class CategoryComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(){
-    this.subscription = this.route.queryParams.subscribe(
+    this.setCountPerPage();
+    this.setUrlFilterSort();
+  }
+
+  setQueryParams(){
+    this.route.queryParams.subscribe(
     (queryParams: any) => {
       let query, params, page;
       let url = this.getPageUrl();
@@ -271,19 +276,9 @@ export class CategoryComponent implements OnInit, OnDestroy{
       if(isSearchPage) {
         this.searchQuery = paramObj['query'];
       }
-
-      setInterval(_ => {
-        this.queryParams = paramObj;
-       }, 30);
+      this.queryParams = paramObj;
     });
-    this.setCountPerPage();
-    this.setUrlFilterSort();
   }
-
-  ngOnDestroy(){
-    this.subscription.unsubscribe();
-  }
-
 
   search(){
     RouterHeaderBindingService.getSearchQuery().subscribe((data) =>  {

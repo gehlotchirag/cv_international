@@ -339,7 +339,11 @@ export class CategoryComponent implements OnInit{
         breadcrumbObj["name"] = _urlArr[i].split('-').join(' ');
         breadcrumbObj["link"] = this.pageBreadcrumbs[i] ? this.pageBreadcrumbs[i]["link"] + "/" + _urlArr[i] : "/" + _urlArr[i];
         this.pageBreadcrumbs.push(breadcrumbObj);
-      }else {
+      } else if(i === _urlArr.length - 1) {
+        breadcrumbObj["name"] = _urlArr[i].split('-').join(' ');
+        breadcrumbObj["link"] = url;
+        this.pageBreadcrumbs.push(breadcrumbObj);
+      } else {
         breadcrumbObj["name"] = _urlArr[i].split('-').join(' ');
         breadcrumbObj["link"] = this.pageBreadcrumbs[i - 1]["link"] + "/" + _urlArr[i];
         this.pageBreadcrumbs.push(breadcrumbObj);

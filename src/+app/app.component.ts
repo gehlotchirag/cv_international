@@ -53,7 +53,7 @@ export class AppComponent implements AfterViewInit {
               private metaService: MetaService){
       let url = '';
       this.router.events.subscribe((event) => {
-        this.currentUrl = event.url;
+        this.currentUrl = event.url.split('?')[0];
         if(this.currentUrl === '/'){
           url = '/home';
           RouterHeaderBindingService.setMegaMenuStatus(false);

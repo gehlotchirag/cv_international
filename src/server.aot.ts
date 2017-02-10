@@ -131,16 +131,20 @@ function ngApp(req, res) {
     url = base_url + '/' + temp_url;
     view_dir = path.join(__dirname, '/static/', temp_url);
   }
-  request.get(url, options,function(err,response,body){
-    if(err) {
-      res.redirect('/');
-    }
-    if(response.statusCode === 200 ){
-      renderDynamicHtml(req, res);
-    }else{
-      res.redirect('/');
-    }
-  });
+  if(url && url !== 'undefined' && url !== null) {
+    request.get(url, options,function(err,response,body){
+      if(err) {
+        res.redirect('/');
+      }
+      if(response.statusCode === 200 ){
+        renderDynamicHtml(req, res);
+      }else{
+        res.redirect('/');
+      }
+    });
+  } else {
+    res.redirect('/');
+  }
 }
 
 function renderDynamicHtml(req, res) {

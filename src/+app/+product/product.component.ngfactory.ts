@@ -458,7 +458,7 @@ class _View_ProductComponent2 extends import1.AppView<any> {
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_2_0_0:any = import8.interpolate(1,'',this.context.$implicit['url'],'');
+    const currVal_2_0_0:any = this.context.$implicit['url'];
     this._RouterLinkWithHref_2_3.check_routerLink(currVal_2_0_0,throwOnChange,false);
     this._RouterLinkWithHref_2_3.detectChangesInInputProps(this,this._el_2,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);

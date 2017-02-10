@@ -259,7 +259,7 @@ export class ProductComponent implements OnInit, AfterViewInit, OnDestroy {
         breadcrumbObj = {'name': data[i]['name'], 'url': this.breadCrumbs[i]['url'] + data[i]['slug'] + '/'};
         this.breadCrumbs.push(breadcrumbObj);
       }
-      breadcrumbObj = {'name': this.productName, 'url': this.breadCrumbs[this.breadCrumbs.length - 1]['url'] + this.products['slug'] + '/'};
+      breadcrumbObj = {'name': this.productName, 'url': '/shop/' + this.products['slug'] + '/' + this.productId};
       this.breadCrumbs.push(breadcrumbObj);
     })
 

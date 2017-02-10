@@ -141,15 +141,7 @@ function ngApp(req, res) {
     url = base_url + '/' + temp_url;
     view_dir = path.join(__dirname, '/static/', temp_url);
   }
-  if(url && url !== 'undefined' && url !== null) {
-    renderDynamicHtml(req, res, url, options);  
-  } else {
-    let now = moment();
-    let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-    console.log("Null URL Error. Time: ",formatted, "Url:", req.originalUrl);
-    res.redirect('/us/');
-  }
-  
+  renderDynamicHtml(req, res, url, options);  
 }
 
 function renderDynamicHtml(req, res, url, options) {

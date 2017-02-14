@@ -13,13 +13,13 @@ import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as morgan from 'morgan';
 import * as mcache from 'memory-cache';
+import * as moment from 'moment';
+
 
 const { gzipSync } = require('zlib');
 const accepts = require('accepts');
 const { compressSync } = require('iltorb');
 const interceptor = require('express-interceptor');
-const request = require('request');
-let view_dir = '';
 
 // Angular 2
 import { enableProdMode } from '@angular/core';
@@ -115,40 +115,9 @@ app.get('/data.json', serverApi);
 app.use('/api', createTodoApi());
 
 function ngApp(req, res) {
-  let options = {}
-  let base_url = 'http://international.craftsvilla.com/api/front_end';
-  let org_url = req.originalUrl.split('?')[0];
-  let url = '';
-  if(org_url === '/') {
-    url = base_url + '/home';
-    view_dir = path.join(__dirname, '/static/home');
-  }else if(org_url.indexOf('/shop/') > -1) {
-    let url_arr = (org_url.split('/')).filter((item) => item !== "");
-    url = base_url + '/shop/' + url_arr[url_arr.length - 1];
-    view_dir = path.join(__dirname, '/static/shop/', url_arr[url_arr.length - 1]);
-  }else{
-    let temp_url = (org_url.split('/')).filter((item) => item !== "").join('/');
-    url = base_url + '/' + temp_url;
-    view_dir = path.join(__dirname, '/static/', temp_url);
-  }
-  if(url && url !== 'undefined' && url !== null) {
-    request.get(url, options,function(err,response,body){
-      if(err) {
-        res.redirect('/');
-      }
-      if(response.statusCode === 200 ){
-        renderDynamicHtml(req, res);
-      }else{
-        res.redirect('/');
-      }
-    });
-  } else {
-    res.redirect('/');
-  }
-}
-
-function renderDynamicHtml(req, res) {
-  // app.set('views', view_dir);
+  let now = moment();
+  let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+  console.log("User Entry Point. Time: ",formatted, "Url:", req.originalUrl);
   res.render('indexStage', {
     req,
     res,
@@ -159,12 +128,17 @@ function renderDynamicHtml(req, res) {
     originUrl: `http://localhost:${ app.get('port') }`
   }, function(err, html) {
     if(err) {
+      now = moment();
+      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+      console.log("HTML Not found. Generate HTML. Time: ",formatted, "Url:", req.originalUrl);
       res.redirect('/');
     } else {
+      now = moment();
+      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+      console.log("HTML Found. Render HTML. Time: ",formatted, "Url:", req.originalUrl);
       res.send(html);
     }
   });
-  // body...
 }
 
 /**

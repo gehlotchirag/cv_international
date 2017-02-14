@@ -656,7 +656,7 @@ class MainModuleInjector extends import0.NgModuleInjector<import1.MainModule> {
     return this.__res_99;
   }
   get _Meta_100():import65.Meta {
-    if ((this.__Meta_100 == (null as any))) { (this.__Meta_100 = new import65.Meta()); }
+    if ((this.__Meta_100 == (null as any))) { (this.__Meta_100 = new import65.Meta(this._DOCUMENT_5)); }
     return this.__Meta_100;
   }
   createInternal():import1.MainModule {

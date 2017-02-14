@@ -6,9 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Injectable} from '@angular/core';
+import {Injectable, Inject} from '@angular/core';
 // es6-modules are used here
 import {DomAdapter, getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
+import {DOCUMENT} from '@angular/platform-browser';
 
 /**
  * Represent meta element.
@@ -54,6 +55,69 @@ export interface MetaDefinition {
 @Injectable()
 export class Meta {
   private _dom: DomAdapter = getDOM();
+
+  constructor( @Inject(DOCUMENT) private _document: any) { }
+  /**
+   * Sets the title of the page
+   */
+  setTitle(title: string) {
+    this._document.title = title
+    const head = this._document.head;
+    let childNodesAsList = this._dom.childNodesAsList(head);
+    let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].property == 'og:title' : false);
+    if (metaEl) metaEl['attribs'].content = title;
+  }
+
+  /**
+   * this.meta.updateMeta('description', 'test'); will  set <meta name="description" content="test">
+   */
+  updateMeta(name, content) {
+    const head = this._document.head;
+    let childNodesAsList = this._dom.childNodesAsList(head);
+    let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].name == name : false);
+    if(name === 'canonical') {
+      if (metaEl) metaEl['attribs'].href = content;
+    } else {
+      if (metaEl) metaEl['attribs'].content = content;
+    }
+    if(name === 'description') {
+      metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].property == 'og:description' : false);
+      if (metaEl) metaEl['attribs'].content = content;
+    }
+  }
+
+  updateHrefLang(name, content) {
+    const head = this._document.head;
+    let childNodesAsList = this._dom.childNodesAsList(head);
+    let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].hreflang == name : false);
+    if (metaEl) metaEl['attribs'].href = content;
+  }
+
+  updateSchemaTag(content, type){
+    const head = this._document.head;
+    let childNodesAsList = this._dom.childNodesAsList(head);
+    let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].id == 'product-schema' : false);
+    let data = `
+      {
+        "@context":"http://schema.org/",
+        "@type":"` + type + `",
+        "name":"` + content['title'] + `",
+        "image":"`+ content['imgUrl'] +`",
+        "description":"`+ content['description'] +`",
+        "mpn":"p.id",
+        "offers":{
+          "@type":"Offer",
+          "availability":"http://schema.org/InStock",
+          "price":"`+ content['discount_price'] +`",
+          "priceCurrency":"USD"
+        }
+      }
+    `;
+    if(metaEl) {
+      metaEl['children'][0]['data'] = data;
+      console.log(metaEl);
+    } 
+  }
 
   /**
    * Adds a new meta tag to the dom.
@@ -152,6 +216,14 @@ export class Meta {
     }
   }
 
+  addCanonicalLink(href: string) {
+    const link: any = this._createElement('link');
+    const tag = {rel: 'canonical', href};
+    this._prepareMetaElement(tag, link);
+    this._appendMetaElement(link);
+    return link;
+  }
+
   private _addInternal(tag: MetaDefinition): HTMLMetaElement {
     const meta: HTMLMetaElement = this._createMetaElement();
     this._prepareMetaElement(tag, meta);
@@ -163,14 +235,18 @@ export class Meta {
     return this._dom.createElement('meta') as HTMLMetaElement;
   }
 
-  private _prepareMetaElement(tag: MetaDefinition, el: HTMLMetaElement): HTMLMetaElement {
+  private _createElement(tag: string): HTMLElement {
+    return this._dom.createElement(tag) as HTMLElement;
+  }
+
+  private _prepareMetaElement(tag: any, el: HTMLElement): any {
     Object.keys(tag).forEach((prop: string) => this._dom.setAttribute(el, prop, tag[prop]));
     return el;
   }
 
-  private _appendMetaElement(meta: HTMLMetaElement): void {
-    const head = this._dom.getElementsByTagName(this._dom.defaultDoc(), 'head')[0];
-    this._dom.appendChild(head, meta);
+  private _appendMetaElement(el: HTMLElement): void {
+    const head = this._document.head;
+    this._dom.appendChild(head, el);
   }
 
   private _removeMetaElement(meta: HTMLMetaElement): void {

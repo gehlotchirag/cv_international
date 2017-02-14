@@ -19,9 +19,6 @@ const { gzipSync } = require('zlib');
 const accepts = require('accepts');
 const { compressSync } = require('iltorb');
 const interceptor = require('express-interceptor');
-const request = require('request');
-let view_dir = '';
-let generateReadHTML = true;
 
 // Angular 2
 import { enableProdMode } from '@angular/core';
@@ -120,39 +117,10 @@ function ngApp(req, res) {
   let now = moment();
   let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
   console.log("User Entry Point. Time: ",formatted, "Url:", req.originalUrl);
-  let options = {}
-  let base_url = 'http://international.craftsvilla.com/api/front_end';
-  let org_url = req.originalUrl.split('?')[0];
-  let url = '';
-  let isProductUrl = false;
-  generateReadHTML = true;
-
-  if(org_url === '/us/') {
-    url = base_url + '/home';
-    view_dir = path.join(__dirname, '/static/home');
-  }else if(org_url.indexOf('/shop/') > -1) {
-    let url_arr = (org_url.split('/')).filter((item) => item !== "");
-    url = base_url + '/shop/' + url_arr[url_arr.length - 1];
-    view_dir = path.join(__dirname, '/static/shop/', url_arr[url_arr.length - 1]);
-    isProductUrl = true;
-  }else{
-    let url_arr = org_url.split('/us/');
-    let temp_url = ((url_arr[url_arr.length - 1]).split('/')).filter((item) => item !== "").join('/');
-    url = base_url + '/' + temp_url;
-    view_dir = path.join(__dirname, '/static/', temp_url);
-  }
-  renderDynamicHtml(req, res, url, options);  
-}
-
-function renderDynamicHtml(req, res, url, options) {
-  let now = moment();
-  let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-  console.log("Render Html. Time: ",formatted, "Url:", url);
-  app.set('views', view_dir);
-  res.render('index', {
+  res.render('indexProd', {
     req,
     res,
-    time: true, // use this to determine what part of your app is slow only in development
+    // time: true, // use this to determine what part of your app is slow only in development
     preboot: false,
     baseUrl: '/us/',
     requestUrl: req.originalUrl,
@@ -161,53 +129,17 @@ function renderDynamicHtml(req, res, url, options) {
     if(err) {
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Not found. Generate HTML. Time: ",formatted, "Url:", url);
-      generateHtml(url, options, req, res);
+      console.log("HTML Not found. Generate HTML. Time: ",formatted, "Url:", req.originalUrl);
+      res.redirect('/us/');
     } else {
       now = moment();
       formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Found. Render HTML. Time: ",formatted, "Url:", url);
+      console.log("HTML Found. Render HTML. Time: ",formatted, "Url:", req.originalUrl);
       res.send(html);
     }
   });
 }
 
-function generateHtml(url, options, req, res) {
-  let now = moment();
-  let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-  console.log("Request to Generate HTML. Time: ",formatted, "Url:", url, "generateReadHTML", generateReadHTML);
-  if(generateReadHTML) { 
-    request.get(url, options,function(err,response,body){
-        if(response.statusCode === 200) {
-          let response_body = JSON.parse(body);
-          if((response_body['s'] === 1)){
-            now = moment();
-            formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-            console.log("HTML Generated. Time: ",formatted, "Url:", url);
-            generateReadHTML = false;
-            renderDynamicHtml(req, res, url, options);
-          }else{
-            now = moment();
-            formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-            console.log("HTML Not Generated. Redirecting to US. Time: ",formatted, "Url:", url);
-            generateReadHTML = true;
-            res.redirect('/us/');
-          }
-        } else {
-          now = moment();
-          formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-          console.log("Error . Time: ",formatted, "Url:", url, "Status Code", response.statusCode);
-          res.redirect('/us/');
-        }
-    });
-  } else {
-    now = moment();
-    formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-    console.log("Retrying. Redirecting to US. Time: ",formatted, "Url:", url);
-    generateReadHTML = true;
-    res.redirect('/us/');
-  }
-}
 /**
  * use universal for specific routes
  */

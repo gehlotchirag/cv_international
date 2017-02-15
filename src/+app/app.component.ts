@@ -4,7 +4,7 @@ import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationErr
 
 import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
 import { ProgressBarService } from './shared/services/progress-bar.service';
-// import { MetaService } from './shared/services/meta-tags.service';
+import { MetaService } from './shared/services/meta-tags.service';
 import {Meta} from "../angular2-meta";
 import {DOCUMENT} from '@angular/platform-browser';
 
@@ -23,7 +23,8 @@ declare var dataLayer: any;
     RouterHeaderBindingService, 
     ProgressBarService, 
     AppService, 
-    Meta
+    Meta,
+    MetaService
   ]
 })
 export class AppComponent implements AfterViewInit {
@@ -53,7 +54,8 @@ export class AppComponent implements AfterViewInit {
               private progressBar: ProgressBarService,
               private appService: AppService,
               @Inject(DOCUMENT) private document: any,
-              private meta: Meta){
+              private meta: Meta,
+              private metaService: MetaService){
       let url = '';
       this.router.events.subscribe((event) => {
         this.currentUrl = event.url.split('?')[0];
@@ -130,7 +132,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   addSeoData() {
-    let type = '';
+    // For Server Rendering
     this.meta.setTitle(this.seoContent['title']);
     this.meta.updateMeta('description', this.seoContent['description']);
     this.meta.updateMeta('keywords', this.seoContent['keywords']);
@@ -138,22 +140,24 @@ export class AppComponent implements AfterViewInit {
     this.meta.updateMeta('canonical', this.seoContent['canonical']);
     this.meta.updateHrefLang('en-in', this.seoContent['href_lang']);
     this.meta.updateHrefLang('en-us', this.seoContent['canonical']);
-    // if(typeof window !== 'undefined') {
-    //   let self = this;
-    //   Object.keys(this.seoContent).forEach(function(key) {
-    //     if(key !== 'footer_content'){
-    //       if(key === 'title') {
-    //         self.metaService.setTitle(self.seoContent[key]);
-    //       } else if(key === 'href_lang') {
-    //         self.metaService.setHrefLangTag(key, self.seoContent[key], self.seoContent['canonical']);
-    //       } else if(key === 'canonical') { 
-    //         self.metaService.setCanonicalTag(key, self.seoContent['canonical']);
-    //       } else {
-    //         self.metaService.setTag(key, self.seoContent[key]);
-    //       }
-    //     }
-    //   })
-    // }
+
+    // For internal Routing
+    if(typeof window !== 'undefined') {
+      let self = this;
+      Object.keys(this.seoContent).forEach(function(key) {
+        if(key !== 'footer_content'){
+          if(key === 'title') {
+            self.metaService.setTitle(self.seoContent[key]);
+          } else if(key === 'href_lang') {
+            self.metaService.setHrefLangTag(key, self.seoContent[key], self.seoContent['canonical']);
+          } else if(key === 'canonical') { 
+            self.metaService.setCanonicalTag(key, self.seoContent['canonical']);
+          } else {
+            self.metaService.setTag(key, self.seoContent[key]);
+          }
+        }
+      })
+    }
   }
 
   private receiveMegaMenu(shouldShow) {

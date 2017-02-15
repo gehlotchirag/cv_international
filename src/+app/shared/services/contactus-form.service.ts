@@ -18,9 +18,7 @@ export class ContactusFormService {
 
     formStream.map((r: Response) => { return r.json() }).pluck('d')
               .subscribe(
-                (data: any) => { 
-                  console.log(data);
-                },
+                (data: any) => { console.log("success")},
                 (error) => console.error(error),
                 () => {}
               );

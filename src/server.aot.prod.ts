@@ -114,30 +114,32 @@ app.get('/data.json', serverApi);
 app.use('/api', createTodoApi());
 
 function ngApp(req, res) {
-  let now = moment();
-  let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-  console.log("User Entry Point. Time: ",formatted, "Url:", req.originalUrl);
-  res.render('indexProd', {
-    req,
-    res,
-    // time: true, // use this to determine what part of your app is slow only in development
-    preboot: false,
-    baseUrl: '/us/',
-    requestUrl: req.originalUrl,
-    originUrl: `http://localhost:${ app.get('port') }`
-  }, function(err, html) {
-    if(err) {
-      now = moment();
-      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Not found. Generate HTML. Time: ",formatted, "Url:", req.originalUrl);
-      res.redirect('/us/');
-    } else {
-      now = moment();
-      formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
-      console.log("HTML Found. Render HTML. Time: ",formatted, "Url:", req.originalUrl);
-      res.send(html);
-    }
-  });
+  if(req.originalUrl.indexOf('favicon.ico') == -1) {
+    let now = moment();
+    let formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+    console.log("User Entry Point. Time: ",formatted, "Url:", req.originalUrl);
+    res.render('indexProd', {
+      req,
+      res,
+      // time: true, // use this to determine what part of your app is slow only in development
+      preboot: false,
+      baseUrl: '/us/',
+      requestUrl: req.originalUrl,
+      originUrl: `http://localhost:${ app.get('port') }`
+    }, function(err, html) {
+      if(err) {
+        now = moment();
+        formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+        console.log("HTML Not found. Generate HTML. Time: ",formatted, "Url:", req.originalUrl);
+        res.redirect('/us/');
+      } else {
+        now = moment();
+        formatted = now.format('YYYY-MM-DD HH:mm:ss Z');
+        console.log("HTML Found. Render HTML. Time: ",formatted, "Url:", req.originalUrl);
+        res.send(html);
+      }
+    });
+  }
 }
 
 /**

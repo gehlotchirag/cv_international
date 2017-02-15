@@ -61,36 +61,50 @@ export class Meta {
    * Sets the title of the page
    */
   setTitle(title: string) {
-    this._document.title = title
-    const head = this._document.head;
-    let childNodesAsList = this._dom.childNodesAsList(head);
-    let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].property == 'og:title' : false);
-    if (metaEl) metaEl['attribs'].content = title;
+    if(title) {
+      this._document.title = title
+      const head = this._document.head;
+      let childNodesAsList = this._dom.childNodesAsList(head);
+      let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].property == 'og:title' : false);
+      if (metaEl) {
+        metaEl['attribs'].content = title;
+      };
+    }
   }
 
   /**
    * this.meta.updateMeta('description', 'test'); will  set <meta name="description" content="test">
    */
   updateMeta(name, content) {
-    const head = this._document.head;
-    let childNodesAsList = this._dom.childNodesAsList(head);
-    let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].name == name : false);
-    if(name === 'canonical') {
-      if (metaEl) metaEl['attribs'].href = content;
-    } else {
-      if (metaEl) metaEl['attribs'].content = content;
-    }
-    if(name === 'description') {
-      metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].property == 'og:description' : false);
-      if (metaEl) metaEl['attribs'].content = content;
+    if(content) {
+      const head = this._document.head;
+      let childNodesAsList = this._dom.childNodesAsList(head);
+      let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].name == name : false);
+      if(name === 'canonical') {
+        if (metaEl) {
+          metaEl['attribs'].href = content;
+        }
+      } else {
+        if (metaEl) {
+          metaEl['attribs'].content = content;
+        }
+      }
+      if(name === 'description') {
+        metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].property == 'og:description' : false);
+        if (metaEl) metaEl['attribs'].content = content;
+      }
     }
   }
 
   updateHrefLang(name, content) {
-    const head = this._document.head;
-    let childNodesAsList = this._dom.childNodesAsList(head);
-    let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].hreflang == name : false);
-    if (metaEl) metaEl['attribs'].href = content;
+    if(content) {
+      const head = this._document.head;
+      let childNodesAsList = this._dom.childNodesAsList(head);
+      let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].hreflang == name : false);
+      if (metaEl) {
+        metaEl['attribs'].href = content;
+      } 
+    }
   }
 
   updateSchemaTag(content, type){
@@ -116,7 +130,6 @@ export class Meta {
     `;
     if(metaEl) {
       metaEl['children'][0]['data'] = data;
-      console.log(metaEl);
     } 
   }
 
@@ -168,7 +181,6 @@ export class Meta {
    * ```ts
    * const meta: HTMLMetaElement = this.meta.updateTag('name=description', {name: 'description',
    * content: 'New description'});
-   * console.log(meta.content); // 'New description'
    * ```
    *
    * @param selector

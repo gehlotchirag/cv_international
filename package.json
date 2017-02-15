@@ -20,7 +20,7 @@
     "build:stage": "node --max_old_space_size=4096 ./node_modules/webpack/bin/webpack.js --config webpack.stage.config.ts --progress",
     "build:prod:json": "webpack --config webpack.prod.config.ts --json | webpack-bundle-size-analyzer",
     "ngc": "ngc -p tsconfig.aot.json",
-    "prestart": "npm run build",
+    "prestart": "npm run build:stage:ngc",
     "server": "nodemon dist/server/index.js",
     "debug:server": "node-nightly --inspect --debug-brk dist/server/index.js",
     "start": "npm run server",

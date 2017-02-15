@@ -114,7 +114,6 @@ export class CategoryComponent implements OnInit{
 
   loadProducts() {
     let productContainerHeight = this.productListContainer.nativeElement.offsetHeight;
-    console.log(this.queryParams);
     if(this.queryParams && this.listingProducts.next_page){
       let page = parseInt(this.queryParams['page']);
       if(page < 4 && document.body.scrollTop > productContainerHeight/2 && this.isLoadMore){

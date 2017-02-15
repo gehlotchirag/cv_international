@@ -1,10 +1,12 @@
-import { Component, HostListener, AfterViewInit } from '@angular/core';
+import { Component, HostListener, AfterViewInit, Inject } from '@angular/core';
 
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 
 import { RouterHeaderBindingService } from './shared/services/router-header-binding.service';
 import { ProgressBarService } from './shared/services/progress-bar.service';
 import { MetaService } from './shared/services/meta-tags.service';
+import {Meta} from "../angular2-meta";
+import {DOCUMENT} from '@angular/platform-browser';
 
 import { HttpClientService } from './shared/services/http-client.service';
 import { AppService } from './app.service';
@@ -21,7 +23,8 @@ declare var dataLayer: any;
     RouterHeaderBindingService, 
     ProgressBarService, 
     AppService, 
-    MetaService 
+    Meta,
+    MetaService
   ]
 })
 export class AppComponent implements AfterViewInit {
@@ -50,6 +53,8 @@ export class AppComponent implements AfterViewInit {
               private httpClient: HttpClientService,
               private progressBar: ProgressBarService,
               private appService: AppService,
+              @Inject(DOCUMENT) private document: any,
+              private meta: Meta,
               private metaService: MetaService){
       let url = '';
       this.router.events.subscribe((event) => {
@@ -127,6 +132,16 @@ export class AppComponent implements AfterViewInit {
   }
 
   addSeoData() {
+    // For Server Rendering
+    this.meta.setTitle(this.seoContent['title']);
+    this.meta.updateMeta('description', this.seoContent['description']);
+    this.meta.updateMeta('keywords', this.seoContent['keywords']);
+    this.meta.updateMeta('robots', this.seoContent['robots']);
+    this.meta.updateMeta('canonical', this.seoContent['canonical']);
+    this.meta.updateHrefLang('en-in', this.seoContent['href_lang']);
+    this.meta.updateHrefLang('en-us', this.seoContent['canonical']);
+
+    // For internal Routing
     if(typeof window !== 'undefined') {
       let self = this;
       Object.keys(this.seoContent).forEach(function(key) {

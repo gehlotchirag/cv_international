@@ -1,7 +1,7 @@
 import { Component, OnInit,OnDestroy, ElementRef, Renderer, AfterViewInit } from '@angular/core';
 import { ViewContainerRef, ViewChild, ComponentRef, ComponentFactoryResolver, ComponentFactory } from '@angular/core';
 
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { Response } from '@angular/http';
 
@@ -13,6 +13,9 @@ import { CartDetailsService } from '../shared/services/cart-details.service';
 import { WidgetFactoryService } from '../shared/widgets/widgets-factory.service';
 // import { WishListService } from '../shared/services/wish-list.service';
 import { CommonSharedService } from '../shared/services/common-shared.service';
+import { Meta } from '../../angular2-meta';
+
+
 
 declare var _satellite: any;
 declare var digitalData: any;
@@ -88,6 +91,7 @@ export class ProductComponent implements OnInit, AfterViewInit, OnDestroy {
               private renderer: Renderer,
               private commonService: CommonSharedService,
               private resolver: ComponentFactoryResolver,
+              private meta: Meta,
               private widgetFactoryService: WidgetFactoryService
   ) {
     this.sizeChartData = [];
@@ -232,6 +236,7 @@ export class ProductComponent implements OnInit, AfterViewInit, OnDestroy {
       (error: any) => console.error(error),
       () => console.log('completed')
       );
+
     this.route.data.pluck('product', 'd', 'chartList').subscribe(
       (data: any) => {
         this.columns = data['columns']
@@ -243,6 +248,7 @@ export class ProductComponent implements OnInit, AfterViewInit, OnDestroy {
       (error: any) => console.error(error),
       () => console.log('completed')
     );
+
     this.route.data.pluck('product', 'd', 'vendorDetails').subscribe(
       (data: any) => {
         this.vendorDetails = data
@@ -262,6 +268,13 @@ export class ProductComponent implements OnInit, AfterViewInit, OnDestroy {
       breadcrumbObj = {'name': this.productName, 'url': '/shop/' + this.products['slug'] + '/' + this.productId};
       this.breadCrumbs.push(breadcrumbObj);
     })
+
+    this.router.events.subscribe((event) => {
+      if(event instanceof NavigationEnd) {
+        this.meta.updateSchemaTag(this.products, 'Product');
+      }  
+    })
+    
 
     this.subscription = this.route.params.subscribe((params) => {
       let id = +params['id'];

@@ -138,12 +138,6 @@ export class AppComponent implements AfterViewInit {
     this.meta.updateMeta('canonical', this.seoContent['canonical']);
     this.meta.updateHrefLang('en-in', this.seoContent['href_lang']);
     this.meta.updateHrefLang('en-us', this.seoContent['canonical']);
-    if(this.seoContent['is_shop']) {
-      type = 'Product'
-    }
-    if(this.seoContent['schema']) {
-      this.meta.updateSchemaTag(this.seoContent['schema'], type);
-    }
     // if(typeof window !== 'undefined') {
     //   let self = this;
     //   Object.keys(this.seoContent).forEach(function(key) {

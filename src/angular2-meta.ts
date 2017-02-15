@@ -94,21 +94,22 @@ export class Meta {
   }
 
   updateSchemaTag(content, type){
-    const head = this._document.head;
-    let childNodesAsList = this._dom.childNodesAsList(head);
-    let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].id == 'product-schema' : false);
+    const body = this._document.body;
+    let childNodesAsList = this._dom.childNodesAsList(body);
+    let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].type == 'application/ld+json' : false);
+    let stock = content['isInStock'] === 1 ? 'InStock' : 'OutOfStock'
     let data = `
       {
         "@context":"http://schema.org/",
         "@type":"` + type + `",
-        "name":"` + content['title'] + `",
+        "name":"` + content['productName'] + `",
         "image":"`+ content['imgUrl'] +`",
         "description":"`+ content['description'] +`",
-        "mpn":"p.id",
+        "mpn":` + content['productId'] + `,
         "offers":{
           "@type":"Offer",
-          "availability":"http://schema.org/InStock",
-          "price":"`+ content['discount_price'] +`",
+          "availability": "http://schema.org/` + stock +`",
+          "price":"`+ content['discountedPrice'] +`",
           "priceCurrency":"USD"
         }
       }

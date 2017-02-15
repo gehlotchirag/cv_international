@@ -256,62 +256,55 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
   _text_50:any;
   _el_51:any;
   _text_52:any;
-  _el_53:any;
+  _text_53:any;
   _text_54:any;
   _el_55:any;
   _text_56:any;
   _el_57:any;
   _text_58:any;
-  _text_59:any;
+  _el_59:any;
   _text_60:any;
-  _text_61:any;
-  _el_62:any;
+  _el_61:any;
+  _text_62:any;
   _text_63:any;
-  _el_64:any;
+  _text_64:any;
   _text_65:any;
-  _el_66:any;
+  _text_66:any;
   _text_67:any;
-  _el_68:any;
-  _text_69:any;
+  _text_68:any;
+  _el_69:any;
+  /*private*/ _appEl_69:import5.AppElement;
+  _ProgressBarComponent_69_4:import30.Wrapper_ProgressBarComponent;
   _text_70:any;
   _text_71:any;
-  _text_72:any;
+  _el_72:any;
+  _NgClass_72_3:import26.Wrapper_NgClass;
+  _NgStyle_72_4:import31.Wrapper_NgStyle;
   _text_73:any;
-  _text_74:any;
+  _el_74:any;
   _text_75:any;
   _el_76:any;
   /*private*/ _appEl_76:import5.AppElement;
-  _ProgressBarComponent_76_4:import30.Wrapper_ProgressBarComponent;
   _text_77:any;
   _text_78:any;
-  _el_79:any;
-  _NgClass_79_3:import26.Wrapper_NgClass;
-  _NgStyle_79_4:import31.Wrapper_NgStyle;
-  _text_80:any;
-  _el_81:any;
-  _text_82:any;
-  _el_83:any;
-  /*private*/ _appEl_83:import5.AppElement;
-  _text_84:any;
-  _text_85:any;
-  /*private*/ _expr_113:any;
-  _map_114:any;
-  _map_115:any;
-  _map_116:any;
-  _map_117:any;
+  /*private*/ _expr_106:any;
+  _map_107:any;
+  _map_108:any;
+  _map_109:any;
+  _map_110:any;
   constructor(viewUtils:import2.ViewUtils,parentInjector:import7.Injector,declarationEl:import5.AppElement) {
     super(_View_HeaderComponent0,renderType_HeaderComponent,import8.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import1.ChangeDetectorStatus.CheckAlways);
-    this._expr_113 = import1.UNINITIALIZED;
-    this._map_114 = import2.pureProxy1((p0:any):{[key: string]:any} => {
+    this._expr_106 = import1.UNINITIALIZED;
+    this._map_107 = import2.pureProxy1((p0:any):{[key: string]:any} => {
       return {'homepage-logo': p0};
     });
-    this._map_115 = import2.pureProxy1((p0:any):{[key: string]:any} => {
+    this._map_108 = import2.pureProxy1((p0:any):{[key: string]:any} => {
       return {'homepage-search': p0};
     });
-    this._map_116 = import2.pureProxy1((p0:any):{[key: string]:any} => {
+    this._map_109 = import2.pureProxy1((p0:any):{[key: string]:any} => {
       return {'change-slider-top': p0};
     });
-    this._map_117 = import2.pureProxy1((p0:any):{[key: string]:any} => {
+    this._map_110 = import2.pureProxy1((p0:any):{[key: string]:any} => {
       return {display: p0};
     });
   }
@@ -392,47 +385,40 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._text_50 = this.renderer.createText(this._el_49,'\n        ',(null as any));
     this._el_51 = import2.createRenderElement(this.renderer,this._el_49,'div',new import2.InlineArray8(8,'class','profile option inline pull-right','data-target','#loginModal','data-toggle','modal','style','display: none !important;'),(null as any));
     this._text_52 = this.renderer.createText(this._el_51,'\n          ',(null as any));
-    this._el_53 = import2.createRenderElement(this.renderer,this._el_51,'a',new import2.InlineArray2(2,'href','https://secure.craftsvilla.com/buy/login'),(null as any));
-    this._text_54 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_55 = import2.createRenderElement(this.renderer,this._el_53,'img',new import2.InlineArray4(4,'class','img-responsive pull-left icon','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/profile_icon.png'),(null as any));
-    this._text_56 = this.renderer.createText(this._el_53,' ',(null as any));
-    this._el_57 = import2.createRenderElement(this.renderer,this._el_53,'span',new import2.InlineArray2(2,'class','hide-sm'),(null as any));
-    this._text_58 = this.renderer.createText(this._el_57,'Sign in',(null as any));
-    this._text_59 = this.renderer.createText(this._el_53,'\n          ',(null as any));
-    this._text_60 = this.renderer.createText(this._el_51,'\n        ',(null as any));
-    this._text_61 = this.renderer.createText(this._el_49,'\n        ',(null as any));
-    this._el_62 = import2.createRenderElement(this.renderer,this._el_49,'div',new import2.InlineArray2(2,'class','cart option inline pull-right'),(null as any));
-    this._text_63 = this.renderer.createText(this._el_62,'\n          ',(null as any));
-    this._el_64 = import2.createRenderElement(this.renderer,this._el_62,'a',new import2.InlineArray2(2,'href','https://securestaticintl.craftsvilla.com/buy/cart'),(null as any));
-    this._text_65 = this.renderer.createText(this._el_64,'\n            ',(null as any));
-    this._el_66 = import2.createRenderElement(this.renderer,this._el_64,'img',new import2.InlineArray4(4,'class','img-responsive icon','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/bag_icon.png'),(null as any));
-    this._text_67 = this.renderer.createText(this._el_64,'\n            ',(null as any));
-    this._el_68 = import2.createRenderElement(this.renderer,this._el_64,'span',new import2.InlineArray4(4,'class','notification-circle','id','js-cart-count'),(null as any));
-    this._text_69 = this.renderer.createText(this._el_64,'\n          ',(null as any));
-    this._text_70 = this.renderer.createText(this._el_62,'\n        ',(null as any));
-    this._text_71 = this.renderer.createText(this._el_49,'\n        ',(null as any));
-    this._text_72 = this.renderer.createText(this._el_49,'\n      ',(null as any));
-    this._text_73 = this.renderer.createText(this._el_24,'\n    ',(null as any));
-    this._text_74 = this.renderer.createText(this._el_22,'\n  ',(null as any));
-    this._text_75 = this.renderer.createText(this._el_18,'\n  ',(null as any));
-    this._el_76 = import2.createRenderElement(this.renderer,this._el_18,'cvi-progress-bar',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._appEl_76 = new import5.AppElement(76,18,this,this._el_76);
-    var compView_76:any = import30.viewFactory_ProgressBarComponent0(this.viewUtils,this.injector(76),this._appEl_76);
-    this._ProgressBarComponent_76_4 = new import30.Wrapper_ProgressBarComponent();
-    this._appEl_76.initComponent(this._ProgressBarComponent_76_4.context,([] as any[]),compView_76);
-    compView_76.create(this._ProgressBarComponent_76_4.context,([] as any[]),(null as any));
-    this._text_77 = this.renderer.createText(this._el_18,'\n\n',(null as any));
+    this._text_53 = this.renderer.createText(this._el_51,'\n        ',(null as any));
+    this._text_54 = this.renderer.createText(this._el_49,'\n        ',(null as any));
+    this._el_55 = import2.createRenderElement(this.renderer,this._el_49,'div',new import2.InlineArray2(2,'class','cart option inline pull-right'),(null as any));
+    this._text_56 = this.renderer.createText(this._el_55,'\n          ',(null as any));
+    this._el_57 = import2.createRenderElement(this.renderer,this._el_55,'a',new import2.InlineArray2(2,'href','https://securestaticintl.craftsvilla.com/buy/cart'),(null as any));
+    this._text_58 = this.renderer.createText(this._el_57,'\n            ',(null as any));
+    this._el_59 = import2.createRenderElement(this.renderer,this._el_57,'img',new import2.InlineArray4(4,'class','img-responsive icon','src','http://assetsintl.craftsvilla.com/cvintlfe/assets/images/bag_icon.png'),(null as any));
+    this._text_60 = this.renderer.createText(this._el_57,'\n            ',(null as any));
+    this._el_61 = import2.createRenderElement(this.renderer,this._el_57,'span',new import2.InlineArray4(4,'class','notification-circle','id','js-cart-count'),(null as any));
+    this._text_62 = this.renderer.createText(this._el_57,'\n          ',(null as any));
+    this._text_63 = this.renderer.createText(this._el_55,'\n        ',(null as any));
+    this._text_64 = this.renderer.createText(this._el_49,'\n        ',(null as any));
+    this._text_65 = this.renderer.createText(this._el_49,'\n      ',(null as any));
+    this._text_66 = this.renderer.createText(this._el_24,'\n    ',(null as any));
+    this._text_67 = this.renderer.createText(this._el_22,'\n  ',(null as any));
+    this._text_68 = this.renderer.createText(this._el_18,'\n  ',(null as any));
+    this._el_69 = import2.createRenderElement(this.renderer,this._el_18,'cvi-progress-bar',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._appEl_69 = new import5.AppElement(69,18,this,this._el_69);
+    var compView_69:any = import30.viewFactory_ProgressBarComponent0(this.viewUtils,this.injector(69),this._appEl_69);
+    this._ProgressBarComponent_69_4 = new import30.Wrapper_ProgressBarComponent();
+    this._appEl_69.initComponent(this._ProgressBarComponent_69_4.context,([] as any[]),compView_69);
+    compView_69.create(this._ProgressBarComponent_69_4.context,([] as any[]),(null as any));
+    this._text_70 = this.renderer.createText(this._el_18,'\n\n',(null as any));
+    this._text_71 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_72 = import2.createRenderElement(this.renderer,parentRenderNode,'div',new import2.InlineArray2(2,'class','menu-slider-container occupy fixed'),(null as any));
+    this._NgClass_72_3 = new import26.Wrapper_NgClass(this.parentInjector.get(import35.IterableDiffers),this.parentInjector.get(import36.KeyValueDiffers),new import37.ElementRef(this._el_72),this.renderer);
+    this._NgStyle_72_4 = new import31.Wrapper_NgStyle(this.parentInjector.get(import36.KeyValueDiffers),new import37.ElementRef(this._el_72),this.renderer);
+    this._text_73 = this.renderer.createText(this._el_72,'\n  ',(null as any));
+    this._el_74 = import2.createRenderElement(this.renderer,this._el_72,'div',new import2.InlineArray2(2,'class','menu-overlay-div'),(null as any));
+    this._text_75 = this.renderer.createText(this._el_72,'\n  ',(null as any));
+    this._el_76 = import2.createRenderElement(this.renderer,this._el_72,'div',import2.EMPTY_INLINE_ARRAY,(null as any));
+    this._appEl_76 = new import5.AppElement(76,72,this,this._el_76);
+    this._text_77 = this.renderer.createText(this._el_72,'\n',(null as any));
     this._text_78 = this.renderer.createText(parentRenderNode,'\n',(null as any));
-    this._el_79 = import2.createRenderElement(this.renderer,parentRenderNode,'div',new import2.InlineArray2(2,'class','menu-slider-container occupy fixed'),(null as any));
-    this._NgClass_79_3 = new import26.Wrapper_NgClass(this.parentInjector.get(import35.IterableDiffers),this.parentInjector.get(import36.KeyValueDiffers),new import37.ElementRef(this._el_79),this.renderer);
-    this._NgStyle_79_4 = new import31.Wrapper_NgStyle(this.parentInjector.get(import36.KeyValueDiffers),new import37.ElementRef(this._el_79),this.renderer);
-    this._text_80 = this.renderer.createText(this._el_79,'\n  ',(null as any));
-    this._el_81 = import2.createRenderElement(this.renderer,this._el_79,'div',new import2.InlineArray2(2,'class','menu-overlay-div'),(null as any));
-    this._text_82 = this.renderer.createText(this._el_79,'\n  ',(null as any));
-    this._el_83 = import2.createRenderElement(this.renderer,this._el_79,'div',import2.EMPTY_INLINE_ARRAY,(null as any));
-    this._appEl_83 = new import5.AppElement(83,79,this,this._el_83);
-    this._text_84 = this.renderer.createText(this._el_79,'\n',(null as any));
-    this._text_85 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_4,'click',this.eventHandler(this._handle_click_4_0.bind(this)));
     var disposable_1:Function = this.renderer.listen(this._el_7,'click',this.eventHandler(this._handle_click_7_0.bind(this)));
     var disposable_2:Function = this.renderer.listen(this._el_28,'click',this.eventHandler(this._handle_click_28_0.bind(this)));
@@ -445,9 +431,9 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     const subscription_0:any = this._NgModel_40_5.context.update.subscribe(this.eventHandler(this._handle_ngModelChange_40_0.bind(this)));
     var disposable_9:Function = this.renderer.listen(this._el_42,'click',this.eventHandler(this._handle_click_42_0.bind(this)));
     var disposable_10:Function = this.renderer.listen(this._el_49,'mouseover',this.eventHandler(this._handle_mouseover_49_0.bind(this)));
-    var disposable_11:Function = this.renderer.listen(this._el_64,'click',this.eventHandler(this._handle_click_64_0.bind(this)));
-    var disposable_12:Function = this.renderer.listen(this._el_81,'mouseover',this.eventHandler(this._handle_mouseover_81_0.bind(this)));
-    this._viewQuery_headerContent_0.reset([this._appEl_83.vcRef]);
+    var disposable_11:Function = this.renderer.listen(this._el_57,'click',this.eventHandler(this._handle_click_57_0.bind(this)));
+    var disposable_12:Function = this.renderer.listen(this._el_74,'mouseover',this.eventHandler(this._handle_mouseover_74_0.bind(this)));
+    this._viewQuery_headerContent_0.reset([this._appEl_76.vcRef]);
     this.context.contentContainer = this._viewQuery_headerContent_0.first;
     this.init(([] as any[]),[
       this._el_0,
@@ -503,39 +489,32 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
       this._text_50,
       this._el_51,
       this._text_52,
-      this._el_53,
+      this._text_53,
       this._text_54,
       this._el_55,
       this._text_56,
       this._el_57,
       this._text_58,
-      this._text_59,
+      this._el_59,
       this._text_60,
-      this._text_61,
-      this._el_62,
+      this._el_61,
+      this._text_62,
       this._text_63,
-      this._el_64,
+      this._text_64,
       this._text_65,
-      this._el_66,
+      this._text_66,
       this._text_67,
-      this._el_68,
-      this._text_69,
+      this._text_68,
+      this._el_69,
       this._text_70,
       this._text_71,
-      this._text_72,
+      this._el_72,
       this._text_73,
-      this._text_74,
+      this._el_74,
       this._text_75,
       this._el_76,
       this._text_77,
-      this._text_78,
-      this._el_79,
-      this._text_80,
-      this._el_81,
-      this._text_82,
-      this._el_83,
-      this._text_84,
-      this._text_85
+      this._text_78
     ]
     ,[
       disposable_0,
@@ -573,16 +552,16 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     if (((token === import45.NgControl) && (40 === requestNodeIndex))) { return this._NgControl_40_6; }
     if (((token === import46.NgControlStatus) && (40 === requestNodeIndex))) { return this._NgControlStatus_40_7.context; }
     if (((token === import41.NgClass) && ((36 <= requestNodeIndex) && (requestNodeIndex <= 47)))) { return this._NgClass_36_3.context; }
-    if (((token === import47.ProgressBarComponent) && (76 === requestNodeIndex))) { return this._ProgressBarComponent_76_4.context; }
-    if (((token === import41.NgClass) && ((79 <= requestNodeIndex) && (requestNodeIndex <= 84)))) { return this._NgClass_79_3.context; }
-    if (((token === import48.NgStyle) && ((79 <= requestNodeIndex) && (requestNodeIndex <= 84)))) { return this._NgStyle_79_4.context; }
+    if (((token === import47.ProgressBarComponent) && (69 === requestNodeIndex))) { return this._ProgressBarComponent_69_4.context; }
+    if (((token === import41.NgClass) && ((72 <= requestNodeIndex) && (requestNodeIndex <= 77)))) { return this._NgClass_72_3.context; }
+    if (((token === import48.NgStyle) && ((72 <= requestNodeIndex) && (requestNodeIndex <= 77)))) { return this._NgStyle_72_4.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_113:any = this.context.menuState;
-    if (import2.checkBinding(throwOnChange,this._expr_113,currVal_113)) {
-      var animationTransition_slideInOut:any = this.componentType.animations['slideInOut'](this,this._el_0,((this._expr_113 == import1.UNINITIALIZED)? 'void': this._expr_113),((currVal_113 == import1.UNINITIALIZED)? 'void': currVal_113));
-      this._expr_113 = currVal_113;
+    const currVal_106:any = this.context.menuState;
+    if (import2.checkBinding(throwOnChange,this._expr_106,currVal_106)) {
+      var animationTransition_slideInOut:any = this.componentType.animations['slideInOut'](this,this._el_0,((this._expr_106 == import1.UNINITIALIZED)? 'void': this._expr_106),((currVal_106 == import1.UNINITIALIZED)? 'void': currVal_106));
+      this._expr_106 = currVal_106;
     }
     const currVal_4_0_0:any = 'online-shopping';
     this._RouterLinkWithHref_4_3.check_routerLink(currVal_4_0_0,throwOnChange,false);
@@ -598,7 +577,7 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._NgIf_20_6.detectChangesInInputProps(this,this._anchor_20,throwOnChange);
     const currVal_26_0_0:any = 'logo inline mob-inline pull-left js-header-menu-show';
     this._NgClass_26_3.check_klass(currVal_26_0_0,throwOnChange,false);
-    const currVal_26_0_1:any = this._map_114(!this.context.showMegaMenuCaret);
+    const currVal_26_0_1:any = this._map_107(!this.context.showMegaMenuCaret);
     this._NgClass_26_3.check_ngClass(currVal_26_0_1,throwOnChange,false);
     this._NgClass_26_3.detectChangesInInputProps(this,this._el_26,throwOnChange);
     const currVal_30_0_0:any = '/';
@@ -609,7 +588,7 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._NgIf_33_6.detectChangesInInputProps(this,this._anchor_33,throwOnChange);
     const currVal_36_0_0:any = 'search inline pull-left';
     this._NgClass_36_3.check_klass(currVal_36_0_0,throwOnChange,false);
-    const currVal_36_0_1:any = this._map_115(!this.context.showMegaMenuCaret);
+    const currVal_36_0_1:any = this._map_108(!this.context.showMegaMenuCaret);
     this._NgClass_36_3.check_ngClass(currVal_36_0_1,throwOnChange,false);
     this._NgClass_36_3.detectChangesInInputProps(this,this._el_36,throwOnChange);
     this._DefaultValueAccessor_40_3.detectChangesInInputProps(this,this._el_40,throwOnChange);
@@ -617,19 +596,19 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._NgModel_40_5.check_model(currVal_40_1_0,throwOnChange,false);
     this._NgModel_40_5.detectChangesInInputProps(this,this._el_40,throwOnChange);
     this._NgControlStatus_40_7.detectChangesInInputProps(this,this._el_40,throwOnChange);
-    const currVal_76_0_0:any = this.context.barProgress;
-    this._ProgressBarComponent_76_4.check_progress(currVal_76_0_0,throwOnChange,false);
-    const currVal_76_0_1:any = this.context.barVisibility;
-    this._ProgressBarComponent_76_4.check_visible(currVal_76_0_1,throwOnChange,false);
-    this._ProgressBarComponent_76_4.detectChangesInInputProps(this,this._el_76,throwOnChange);
-    const currVal_79_0_0:any = 'menu-slider-container occupy fixed';
-    this._NgClass_79_3.check_klass(currVal_79_0_0,throwOnChange,false);
-    const currVal_79_0_1:any = this._map_116(!this.context.showTopMenu);
-    this._NgClass_79_3.check_ngClass(currVal_79_0_1,throwOnChange,false);
-    this._NgClass_79_3.detectChangesInInputProps(this,this._el_79,throwOnChange);
-    const currVal_79_1_0:any = this._map_117(this.context.showBottomMenu);
-    this._NgStyle_79_4.check_ngStyle(currVal_79_1_0,throwOnChange,false);
-    this._NgStyle_79_4.detectChangesInInputProps(this,this._el_79,throwOnChange);
+    const currVal_69_0_0:any = this.context.barProgress;
+    this._ProgressBarComponent_69_4.check_progress(currVal_69_0_0,throwOnChange,false);
+    const currVal_69_0_1:any = this.context.barVisibility;
+    this._ProgressBarComponent_69_4.check_visible(currVal_69_0_1,throwOnChange,false);
+    this._ProgressBarComponent_69_4.detectChangesInInputProps(this,this._el_69,throwOnChange);
+    const currVal_72_0_0:any = 'menu-slider-container occupy fixed';
+    this._NgClass_72_3.check_klass(currVal_72_0_0,throwOnChange,false);
+    const currVal_72_0_1:any = this._map_109(!this.context.showTopMenu);
+    this._NgClass_72_3.check_ngClass(currVal_72_0_1,throwOnChange,false);
+    this._NgClass_72_3.detectChangesInInputProps(this,this._el_72,throwOnChange);
+    const currVal_72_1_0:any = this._map_110(this.context.showBottomMenu);
+    this._NgStyle_72_4.check_ngStyle(currVal_72_1_0,throwOnChange,false);
+    this._NgStyle_72_4.detectChangesInInputProps(this,this._el_72,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
     this._RouterLinkWithHref_4_3.detectChangesInHostProps(this,this._el_4,throwOnChange);
     this._NgClass_26_3.detectChangesInHostProps(this,this._el_26,throwOnChange);
@@ -638,9 +617,9 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._DefaultValueAccessor_40_3.detectChangesInHostProps(this,this._el_40,throwOnChange);
     this._NgModel_40_5.detectChangesInHostProps(this,this._el_40,throwOnChange);
     this._NgControlStatus_40_7.detectChangesInHostProps(this,this._el_40,throwOnChange);
-    this._ProgressBarComponent_76_4.detectChangesInHostProps(this,this._el_76,throwOnChange);
-    this._NgClass_79_3.detectChangesInHostProps(this,this._el_79,throwOnChange);
-    this._NgStyle_79_4.detectChangesInHostProps(this,this._el_79,throwOnChange);
+    this._ProgressBarComponent_69_4.detectChangesInHostProps(this,this._el_69,throwOnChange);
+    this._NgClass_72_3.detectChangesInHostProps(this,this._el_72,throwOnChange);
+    this._NgStyle_72_4.detectChangesInHostProps(this,this._el_72,throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
   destroyInternal():void {
@@ -649,7 +628,7 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     this._NgModel_40_5.context.ngOnDestroy();
   }
   detachInternal():void {
-    var animationTransition_slideInOut:any = this.componentType.animations['slideInOut'](this,this._el_0,this._expr_113,'void');
+    var animationTransition_slideInOut:any = this.componentType.animations['slideInOut'](this,this._el_0,this._expr_106,'void');
   }
   private _handle_click_4_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
@@ -706,15 +685,15 @@ class _View_HeaderComponent0 extends import3.AppView<import0.HeaderComponent> {
     const pd_49_0:any = ((<any>this.context.displayMegaMenu(false)) !== false);
     return (true && pd_49_0);
   }
-  private _handle_click_64_0($event:any):boolean {
+  private _handle_click_57_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_64_0:any = ((<any>this.context.topCartTracker()) !== false);
-    return (true && pd_64_0);
+    const pd_57_0:any = ((<any>this.context.topCartTracker()) !== false);
+    return (true && pd_57_0);
   }
-  private _handle_mouseover_81_0($event:any):boolean {
+  private _handle_mouseover_74_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_81_0:any = ((<any>this.context.displayMegaMenu(false)) !== false);
-    return (true && pd_81_0);
+    const pd_74_0:any = ((<any>this.context.displayMegaMenu(false)) !== false);
+    return (true && pd_74_0);
   }
 }
 export function viewFactory_HeaderComponent0(viewUtils:import2.ViewUtils,parentInjector:import7.Injector,declarationEl:import5.AppElement):import3.AppView<import0.HeaderComponent> {

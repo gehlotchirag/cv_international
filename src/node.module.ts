@@ -28,13 +28,12 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
   bootstrap: [ AppComponent ],
   imports: [
     // MaterialModule.forRoot() should be included first
-    UniversalModule, // BrowserModule, HttpModule, and JsonpModule are included
-
     FormsModule,
     RouterModule.forRoot([], { useHash: false }),
 
     SharedModule.forRoot(),
     AppModule,
+    UniversalModule, // BrowserModule, HttpModule, and JsonpModule are included
   ],
   providers: [
     { provide: 'isBrowser', useValue: isBrowser },

@@ -1923,3 +1923,6 @@ ul.nav.nav-tabs.tabs-widget li a {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+#webklipper-publisher-widget-container-content-expand-collapse{
+  bottom: 50px !important;
+}
